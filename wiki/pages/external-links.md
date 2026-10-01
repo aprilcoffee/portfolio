@@ -62,7 +62,6 @@ Where Liu's work can be checked, watched or read outside his own website: talk r
 
 - **Leon-Etienne Kühr:** https://leon-etienne.com/ (not opened when this was written)
 - **Synthiola (Fabian Mosele, collaborator on Just Jailbreak):** https://www.fabianmosele.com/synthiola
-- **[Chaya Shen](people/chaya-shen.md)** (artist, Cologne; Liu's partner): https://chayashen.info/
 - Friends and other artists: [Site map and links](site-map.md#friends-websites)
 
 ## Open questions

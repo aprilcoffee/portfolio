@@ -79,18 +79,13 @@
     });
   }
 
-  // Plain text with clickable https URLs (trailing punctuation stays outside the link).
+  // Plain text only. Links come as checked buttons (suggest_links), so any URL the model
+  // writes into the text is dropped: it may point to a page that does not exist.
   function render(el, text) {
-    text = undash(text);
-    el.textContent = '';
-    var re = /https:\/\/[^\s<>()"'“”「」（）]+/g, at = 0, m;
-    while ((m = re.exec(text))) {
-      var href = m[0].replace(/[.,;:!?。，、；：！？]+$/, '');
-      el.appendChild(document.createTextNode(text.slice(at, m.index)));
-      el.appendChild(link(href, href.replace(/^https:\/\/(www\.)?/, '').replace(/\/$/, '')));
-      at = m.index + href.length;
-    }
-    el.appendChild(document.createTextNode(text.slice(at)));
+    el.textContent = undash(text)
+      .replace(/[ \t]*[(（]?\s*https?:\/\/[^\s<>()（）"'“”「」]*[)）]?/g, '')
+      .replace(/[ \t]+([.,;:!?。，、；：！？])/g, '$1')
+      .replace(/[:：]([.。])/g, '$1');
   }
 
   function link(href, label) {
