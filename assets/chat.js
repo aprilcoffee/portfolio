@@ -117,6 +117,8 @@
     if (!q || busy) return;
     busy = true;
     btn.disabled = true;
+    // keep the box at least as tall as before, so hiding the example questions doesn't make it jump
+    if (!box.classList.contains('open')) box.style.minHeight = box.offsetHeight + 'px';
     target = 87; fanSpeed(80);
     box.classList.add('open');
     log.textContent = '';                       // one exchange at a time
