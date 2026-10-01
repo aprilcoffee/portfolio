@@ -18,6 +18,24 @@
   var last = null;   // the previous exchange, sent along as context: [question, answer]
   var busy = false;
 
+  // The ASCII GPU above the box: fans idle slowly and spin up while an answer is being
+  // written; the temperature climbs with them and cools down afterwards.
+  var fans = box.querySelectorAll('.ask-gpu b'), temp = box.querySelector('.ask-gpu i');
+  var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var frame = 0, heat = 41, target = 41, spin = null;
+  function tick() {
+    frame = (frame + 1) % 4;
+    for (var i = 0; i < fans.length; i++) fans[i].textContent = '|/-\\'.charAt(frame);
+    heat += (target - heat) * 0.06;
+    if (temp) temp.textContent = Math.round(heat);
+    box.classList.toggle('hot', heat > 65);
+  }
+  function fanSpeed(ms) {
+    clearInterval(spin);
+    spin = (still && !busy) ? null : setInterval(tick, ms);
+  }
+  fanSpeed(450);
+
   // ---- optional Cloudflare Turnstile (invisible check), when a site key is configured ----
   var siteKey = box.getAttribute('data-turnstile');
   var widget = null, pendingToken = null;
@@ -92,6 +110,7 @@
     if (!q || busy) return;
     busy = true;
     btn.disabled = true;
+    target = 87; fanSpeed(70);
     box.classList.add('open');
     log.textContent = '';                       // one exchange at a time
     line('ask-q', q);
@@ -112,6 +131,8 @@
       if (links && links.length && problem !== 'ask_refusal') showLinks(links);
       busy = false;
       btn.disabled = false;
+      target = 41; fanSpeed(still ? 120 : 450);
+      if (still) setTimeout(function () { fanSpeed(0); clearInterval(spin); }, 4000);
     }
 
     function handle(lineText) {
