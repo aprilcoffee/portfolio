@@ -250,10 +250,7 @@ button.embed.lite:hover img { opacity: 1; }
 .perf p { font-size: 0.9688rem; color: var(--mut); margin-top: 0.25rem; }
 
 /* ---------- about / cv ---------- */
-/* the homepage's character field, fixed behind the CV and kept faint so the text stays readable */
-.bg-field { position: fixed; top: 0; bottom: 0; left: var(--side-w); right: 0; z-index: 0; opacity: .45; pointer-events: none; }
-.bg-field canvas { width: 100% !important; height: 100% !important; }
-.about-top, .cv-sec { position: relative; z-index: 1; margin-right: clamp(0rem, 9vw, 11rem); }
+.about-top, .cv-sec { margin-right: clamp(0rem, 18vw, 22rem); }
 .about-top { display: grid; grid-template-columns: var(--label) 1fr; gap: 3rem; margin-bottom: 5.5rem; }
 .bio { font-size: clamp(1.125rem, 1.55vw, 1.375rem); line-height: 1.5; max-width: 54rem; letter-spacing: -0.005em; }
 .contact { margin-top: 1.75rem; font-family: var(--mono); font-size: var(--fs-meta); }
@@ -355,7 +352,6 @@ button.embed.lite:hover img { opacity: 1; }
   .year-group a { grid-template-columns: 1fr; }
   .year-group .cat { grid-row: auto; grid-column: 1; }
   .cv-row { grid-template-columns: 5.6em 1fr; }
-  .bg-field { left: 0; }
   .about-top, .cv-sec { margin-right: 0; }
   .pager { flex-direction: column; }
   .pager a, .pager a:last-child { max-width: none; text-align: left; margin-left: 0; }

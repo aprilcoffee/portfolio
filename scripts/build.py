@@ -659,11 +659,8 @@ for L in LANGS:
         cv += '<section class="cv-sec"><h2>%s</h2><div>%s</div></section>' % (esc(tr(sec, "title", L)), rows)
     bio = tr(D["about"], "bio", L)
     page(P + "about/", u["about"], bio,
-         # the homepage's character field, fixed behind the CV
-         '<div class="field bg-field" data-effect="field" data-words="%s" aria-hidden="true"></div>'
          '<div class="about-top"><h1 class="page-title">%s</h1><div><p class="bio">%s</p>'
          '<p class="contact"><a href="mailto:%s">%s</a></p></div></div>%s' % (
-             esc(json.dumps(S.get("hidden_words", []), ensure_ascii=False)),
              esc(u["about"]), esc(bio), esc(S["email"]), esc(S["email"]), cv),
          ld=dict(person(L), description=bio), og_type="profile", section="about", lang=L, alts=each("about/"))
 
