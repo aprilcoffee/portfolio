@@ -39,3 +39,7 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 - New page: people/chaya-shen (from chayashen.info about page, her CJD essay, KHM and ground zero pages; projects pages could not be read).
 - Touched: external-links, teaching-education-awards (Weimar staff page link, now also the CV link in data/site.json).
 - CLAUDE.md: the chat uses no dashes as punctuation.
+
+## [2026-10-01] fix | chat links, Chaya Shen page trimmed
+- people/chaya-shen cut to a short note: her topics (body, medicine) leaked into answers about Liu. Her site is listed with the friends (data/site.json, so in Site map and links).
+- worker RULES: links from Site map and External links, URLs copied exactly, wiki paths are not web pages, people pages are not about Liu. chat.js drops URLs written in answer text.

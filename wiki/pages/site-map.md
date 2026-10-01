@@ -95,6 +95,7 @@ in Mandarin. Recommend the version in the visitor's language.
 - **Tone**: http://hanna841027.wixsite.com/tone19
 - **Marija Cipkute**: https://marija-cipkute.weebly.com/
 - **Ku, Shih-Hung**: http://jkdeermusic.com
+- **Chaya Shen**: https://chayashen.info/
 
 ## Sources
 
