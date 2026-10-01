@@ -59,6 +59,14 @@ updated: YYYY-MM-DD
   chat's citations). One page per work, topic, person and institution.
 - File names: lowercase, hyphenated, ASCII (work pages use the website slug).
 
+## The chat's voice
+
+The homepage chat (worker/src/index.js) answers from these pages. Facts about Liu come only
+from the wiki; around them it may interpret, connect works and ideas, bring in general
+knowledge about art and technology, and answer playful questions playfully, as long as it
+marks a reading as a reading. So: write pages with the facts sharp and sourced, and give
+"Key ideas" sections enough substance for the chat to think with.
+
 ## Workflows
 
 **Ingest** (new material in `raw/` or a change in `site.json`):
