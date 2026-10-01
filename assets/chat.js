@@ -18,23 +18,30 @@
   var last = null;   // the previous exchange, sent along as context: [question, answer]
   var busy = false;
 
-  // The ASCII GPU above the box: fans idle slowly and spin up while an answer is being
-  // written; the temperature climbs with them and cools down afterwards.
-  var fans = box.querySelectorAll('.ask-gpu b'), temp = box.querySelector('.ask-gpu i');
+  // The ASCII GPU above the box: its blades alternate "+" and "x" (slowly at rest, fast
+  // while an answer is written); the temperature climbs and the drawing's colour moves
+  // from blue to red with it, then everything cools down.
+  var gpu = box.querySelector('.ask-gpu'), temp = box.querySelector('.ask-gpu i');
   var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var frame = 0, heat = 41, target = 41, spin = null;
-  function tick() {
-    frame = (frame + 1) % 4;
-    for (var i = 0; i < fans.length; i++) fans[i].textContent = '|/-\\'.charAt(frame);
-    heat += (target - heat) * 0.06;
+  var COOL = [22, 140, 190], HOT = [228, 3, 46];
+  function paint() {
+    var t = Math.max(0, Math.min(1, (heat - 41) / (87 - 41)));
+    var c = COOL.map(function (v, k) { return Math.round(v + (HOT[k] - v) * t); });
+    if (gpu) gpu.style.color = 'rgb(' + c.join(',') + ')';
     if (temp) temp.textContent = Math.round(heat);
-    box.classList.toggle('hot', heat > 65);
+  }
+  function tick() {
+    frame = 1 - frame;
+    if (gpu) gpu.className = 'ask-gpu f' + (frame + 1);
+    heat += (target - heat) * (busy ? 0.05 : 0.03);
+    paint();
   }
   function fanSpeed(ms) {
     clearInterval(spin);
     spin = (still && !busy) ? null : setInterval(tick, ms);
   }
-  fanSpeed(450);
+  fanSpeed(520);
 
   // ---- optional Cloudflare Turnstile (invisible check), when a site key is configured ----
   var siteKey = box.getAttribute('data-turnstile');
@@ -110,7 +117,7 @@
     if (!q || busy) return;
     busy = true;
     btn.disabled = true;
-    target = 87; fanSpeed(70);
+    target = 87; fanSpeed(80);
     box.classList.add('open');
     log.textContent = '';                       // one exchange at a time
     line('ask-q', q);
@@ -121,6 +128,7 @@
 
     function finish(p) {
       problem = problem || p;
+      if (typing) { clearInterval(typing); typing = null; }
       out.classList.remove('pending');
       if (problem) {
         out.classList.add('err');
@@ -131,9 +139,25 @@
       if (links && links.length && problem !== 'ask_refusal') showLinks(links);
       busy = false;
       btn.disabled = false;
-      target = 41; fanSpeed(still ? 120 : 450);
-      if (still) setTimeout(function () { fanSpeed(0); clearInterval(spin); }, 4000);
+      target = 41; fanSpeed(still ? 160 : 520);
+      if (still) setTimeout(function () { clearInterval(spin); if (gpu) gpu.className = 'ask-gpu'; }, 6000);
     }
+
+    // Streamed text is revealed at a calm, typewriter pace (faster when a lot is waiting).
+    var shown = '', typing = null, ended = null;
+    function type() {
+      if (shown.length < text.length) {
+        var backlog = text.length - shown.length;
+        shown = text.slice(0, shown.length + (backlog > 200 ? 4 : backlog > 60 ? 2 : 1));
+        out.classList.remove('pending');
+        render(out, shown);
+        log.scrollTop = log.scrollHeight;
+      } else if (ended) {
+        clearInterval(typing); typing = null;
+        var e = ended; ended = null; e();
+      }
+    }
+    function startTyping() { if (!typing) typing = setInterval(type, 28); }
 
     function handle(lineText) {
       if (!lineText.trim()) return;
@@ -141,8 +165,7 @@
       try { ev = JSON.parse(lineText); } catch (e) { return; }
       if (typeof ev.t === 'string') {
         text += ev.t;
-        out.classList.remove('pending');
-        render(out, text);
+        startTyping();
       } else if (Array.isArray(ev.links)) {
         links = ev.links.filter(function (l) { return l && /^(https:|mailto:)/.test(l.url); });
       } else if (ev.error) {
@@ -154,7 +177,7 @@
       fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: history, token: t })
+        body: JSON.stringify({ messages: history, token: t, lang: document.documentElement.lang })
       }).then(function (res) {
         if (res.status === 429) return finish('ask_busy');
         if (!res.ok || !res.body) return finish('ask_err');
@@ -163,7 +186,9 @@
           return reader.read().then(function (r) {
             if (r.done) {
               handle(buf);
-              return finish(text.trim() ? null : 'ask_err');
+              ended = function () { finish(text.trim() ? null : 'ask_err'); };
+              startTyping();
+              return;
             }
             buf += dec.decode(r.value, { stream: true });
             var parts = buf.split('\n');

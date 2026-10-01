@@ -122,19 +122,21 @@ button { font: inherit; color: inherit; }
 /* chat: "Ask me about my work" — a text terminal floating on the field, after the
    ASCII GPU in llms.txt. Everything is monospace; borders are drawn with characters. */
 .ask {
-  position: relative; z-index: 2; width: min(40rem, calc(100% - 2 * var(--pad))); margin-top: max(13vh, 4.5rem);
-  padding: 1.25rem 1.5rem 1rem; font-family: var(--mono); font-size: 1rem; line-height: 1.6;
+  position: relative; z-index: 2; width: min(48rem, calc(100% - 2 * var(--pad))); margin-top: max(11vh, 4rem);
+  padding: 1.25rem 1.5rem 1rem; font-family: var(--mono); font-size: 1.125rem; line-height: 1.6;
+  container-type: inline-size;
   background: rgba(255, 255, 255, .78);
   -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
   border: 1px solid var(--ink);
 }
 .ask-gpu {
   margin: 0 auto 0.75rem; width: max-content; max-width: 100%; overflow: hidden;
-  font: min(0.9375rem, calc((100vw - 4.5rem) / 38))/1.2 var(--mono); color: var(--ink);
+  font: min(0.875rem, calc(100cqi / 43))/1.2 var(--mono); color: rgb(22, 140, 190);
 }
-.ask-gpu b { font-weight: 400; color: rgb(22, 140, 190); }
-.ask-gpu i { font-style: normal; color: rgb(22, 140, 190); transition: color .6s; }
-.ask.hot .ask-gpu i { color: var(--red); }
+.ask-gpu b { font-weight: 400; }
+/* fan blades: chat.js alternates "+" (f1) and "x" (f2), which reads as spinning */
+.ask-gpu.f1 .d, .ask-gpu.f2 .v, .ask-gpu.f2 .h { visibility: hidden; }
+.ask-gpu i { font-style: normal; }
 .ask-h { font: 700 1rem/1.3 var(--mono); text-align: center; margin-bottom: 0.875rem; letter-spacing: 0; }
 .ask-h::before { content: "[ "; color: var(--dim); font-weight: 400; }
 .ask-h::after { content: " ]"; color: var(--dim); font-weight: 400; }
@@ -175,7 +177,7 @@ button { font: inherit; color: inherit; }
 .ask-chips button::before { content: "$ "; color: var(--dim); }
 .ask-chips button:hover, .ask-form button:hover:not(:disabled) { color: rgb(22, 140, 190); }
 .ask.open .ask-chips { display: none; }
-.ask-note { margin-top: 0.75rem; font-size: 0.8125rem; line-height: 1.5; color: var(--mut); }
+.ask-note { margin-top: 0.75rem; font-size: 0.875rem; line-height: 1.5; color: var(--mut); }
 .ask-note::before { content: "// "; color: var(--dim); }
 .ask-note a { border-bottom: 1px solid rgba(0, 0, 0, .25); }
 .ask-check:empty { display: none; }
@@ -338,7 +340,7 @@ button.embed.lite:hover img { opacity: 1; }
   .home-hero { min-height: calc(100svh - 3.4375rem); }
   .home-statement { margin: auto var(--pad) 2rem; font-size: 1.1875rem; }
   .home-selected { padding: 4rem var(--pad) 5rem; }
-  .ask { margin-top: 1.5rem; padding: 1rem 0.875rem 0.75rem; }
+  .ask { margin-top: 1.5rem; padding: 1rem 0.875rem 0.75rem; font-size: 1rem; }
   .ask-form input { font-size: 1rem; }
   .grid { grid-template-columns: 1fr; gap: 2.75rem; }
   .grid.friends { grid-template-columns: repeat(2, 1fr); }
