@@ -19,3 +19,7 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 
 ## [2026-10-01] schema | chat voice
 - CLAUDE.md: "The chat's voice" — facts strictly from the wiki; interpretation, connections, general context and playful answers allowed when marked as readings. The Worker's rules were loosened to match.
+
+## [2026-10-01] add | external links
+- Added: Stifterverband fellow page (teaching-education-awards, timeline, overview, institutions/bauhaus-university-weimar); Museum Angewandte Kunst AI-Worlding page (exhibitions-and-performances, timeline, works/steering-through-the-inner-residue, people/leon-etienne-kuehr); Synthiola page (works/just-jailbreak); Leon-Etienne Kühr's website (people/leon-etienne-kuehr).
+- The first three URLs are also in data/site.json (CV `url`, work `links`). leon-etienne.com is wiki-only and was not fetched (robots check timed out).

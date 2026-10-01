@@ -5,6 +5,7 @@ tags: [exhibitions, performances]
 sources:
   - ../../data/site.json (about.sections)
   - https://liutingchun.com/about/
+  - https://www.museumangewandtekunst.de/de/besuch/ausstellungen/2026/ai-worlding-kuenstlerische-forschung-zu-ki-generierten-weltmodellen/
 updated: 2026-10-01
 ---
 # Exhibitions and performances
@@ -14,7 +15,7 @@ Exhibitions, performances and collaborative new-media / theatre projects, as lis
 ## Exhibitions
 
 - 2026 — AI-Worlding, Staatstheater Darmstadt, w/ Leon-Etienne Kühr
-- 2026 — AI-Worlding, Museum Angewandte Kunst, Frankfurt, w/ Leon-Etienne Kühr
+- 2026 — AI-Worlding, Museum Angewandte Kunst, Frankfurt, w/ Leon-Etienne Kühr ([link](https://www.museumangewandtekunst.de/de/besuch/ausstellungen/2026/ai-worlding-kuenstlerische-forschung-zu-ki-generierten-weltmodellen/))
 - 2025 — Interpolation of the Invisible Color, Storage Museum, Düsseldorf, w/ Leon-Etienne Kühr
 - 2025 — Art Cologne, Messe, Cologne
 - 2025 — Ars Electronica Campus, Linz
@@ -69,3 +70,4 @@ Exhibitions, performances and collaborative new-media / theatre projects, as lis
 
 - ../../data/site.json
 - https://liutingchun.com/about/
+- https://www.museumangewandtekunst.de/de/besuch/ausstellungen/2026/ai-worlding-kuenstlerische-forschung-zu-ki-generierten-weltmodellen/

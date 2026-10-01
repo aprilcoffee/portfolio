@@ -5,13 +5,14 @@ tags: [teaching, weimar]
 sources:
   - ../../../data/site.json
   - https://liutingchun.com/about/
+  - https://www.stifterverband.org/digital-lehrfellows-thueringen/2026/liu
 updated: 2026-10-01
 ---
 # Bauhaus University Weimar
 
 Liu has been Lecturer and Artistic Associate (Künstlerischer Mitarbeiter) at the Faculty of Art and
 Design since 2025, after teaching as a guest lecturer (Lehrbeauftragter) at the Chair of Media
-Environments in 2024, and gave a Bauhaus Master Lecture in 2025. The 2026 Stifterverband fellowship
+Environments in 2024, and gave a Bauhaus Master Lecture in 2025. The 2026 Stifterverband fellowship ([fellow page](https://www.stifterverband.org/digital-lehrfellows-thueringen/2026/liu))
 (project "Lokale KI-Anwendung im Bewegtbild-Studio", until 2027) concerns digital teaching in Thuringia.
 
 ## Related
@@ -22,3 +23,4 @@ Environments in 2024, and gave a Bauhaus Master Lecture in 2025. The 2026 Stifte
 
 - ../../../data/site.json
 - https://liutingchun.com/about/
+- https://www.stifterverband.org/digital-lehrfellows-thueringen/2026/liu

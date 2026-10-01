@@ -6,6 +6,7 @@ sources:
   - ../../data/site.json (site, about)
   - https://liutingchun.com/
   - https://liutingchun.com/about/
+  - https://www.stifterverband.org/digital-lehrfellows-thueringen/2026/liu
 updated: 2026-10-01
 ---
 # Ting-Chun Liu (劉庭均) — overview
@@ -26,7 +27,7 @@ computational processes".
   [Academy of Media Arts Cologne (KHM)](institutions/khm-cologne.md), 2020–2025; B.F.A. in New Media Art,
   [Taipei National University of the Arts](institutions/tnua.md), 2014–2018.
 - **Recognition:** Weizenbaum-Studienpreis 2025 ([FIfF e.V.](institutions/fiff.md)); 2026 fellowship of the
-  Stifterverband for innovation in digital university teaching in Thuringia.
+  Stifterverband for innovation in digital university teaching in Thuringia ([fellow page](https://www.stifterverband.org/digital-lehrfellows-thueringen/2026/liu)).
 - **Frequent collaborator:** [Leon-Etienne Kühr](people/leon-etienne-kuehr.md), on installations, curatorial
   work and many talks, including three at the [Chaos Communication Congress](institutions/chaos-communication-congress.md).
 
@@ -67,3 +68,4 @@ computational processes".
 - ../../data/site.json (site, about)
 - https://liutingchun.com/
 - https://liutingchun.com/about/
+- https://www.stifterverband.org/digital-lehrfellows-thueringen/2026/liu

@@ -5,6 +5,8 @@ tags: [timeline, cv]
 sources:
   - ../../data/site.json (works, about.sections)
   - https://liutingchun.com/about/
+  - https://www.stifterverband.org/digital-lehrfellows-thueringen/2026/liu
+  - https://www.museumangewandtekunst.de/de/besuch/ausstellungen/2026/ai-worlding-kuenstlerische-forschung-zu-ki-generierten-weltmodellen/
 updated: 2026-10-01
 ---
 # Timeline
@@ -15,7 +17,7 @@ Year-by-year list of works, teaching, education, awards, talks, publications, ex
 
 - Work: [Steering Through the Inner Residue](works/steering-through-the-inner-residue.md) — Video Installation
 - Teaching: Guest Lecturer (Lehrbeauftragter), Institute of Fine Arts and Media Art, Digital Art, University of Applied Arts Vienna (Erasmus+ Staff Mobility for Teaching)
-- Awards & Fellowships: Fellowship für Innovationen in der digitalen Hochschullehre Thüringen, Stifterverband. Project “Lokale KI-Anwendung im Bewegtbild-Studio” (Local AI Application in the Moving-Image Studio), until 2027
+- Awards & Fellowships: Fellowship für Innovationen in der digitalen Hochschullehre Thüringen, Stifterverband. Project “Lokale KI-Anwendung im Bewegtbild-Studio” (Local AI Application in the Moving-Image Studio), until 2027 ([link](https://www.stifterverband.org/digital-lehrfellows-thueringen/2026/liu))
 - Lectures, Talks & Workshops: “Condition for Emotions”, DFG network “Das Wissen der digitalen Literatur”
 - Lectures, Talks & Workshops: Animism Revisited, Digital Arts Community, ACM SIGGRAPH, w/ Leon-Etienne Kühr
 - Lectures, Talks & Workshops: mtrail Ausbildungscamp, Lindau, w/ Leon-Etienne Kühr
@@ -25,7 +27,7 @@ Year-by-year list of works, teaching, education, awards, talks, publications, ex
 - Lectures, Talks & Workshops: Generating for the Archive, Storage Museum Düsseldorf, w/ Leon-Etienne Kühr
 - Publications & Writing: Heat as (Generative) Image Making, FIfF-Kommunikation 1/26, p. 64, FIfF e.V. Essay for the Weizenbaum-Studienpreis 2025
 - Exhibitions: AI-Worlding, Staatstheater Darmstadt, w/ Leon-Etienne Kühr
-- Exhibitions: AI-Worlding, Museum Angewandte Kunst, Frankfurt, w/ Leon-Etienne Kühr
+- Exhibitions: AI-Worlding, Museum Angewandte Kunst, Frankfurt, w/ Leon-Etienne Kühr ([link](https://www.museumangewandtekunst.de/de/besuch/ausstellungen/2026/ai-worlding-kuenstlerische-forschung-zu-ki-generierten-weltmodellen/))
 
 ## 2025
 
@@ -152,3 +154,5 @@ Year-by-year list of works, teaching, education, awards, talks, publications, ex
 
 - ../../data/site.json
 - https://liutingchun.com/about/
+- https://www.stifterverband.org/digital-lehrfellows-thueringen/2026/liu
+- https://www.museumangewandtekunst.de/de/besuch/ausstellungen/2026/ai-worlding-kuenstlerische-forschung-zu-ki-generierten-weltmodellen/

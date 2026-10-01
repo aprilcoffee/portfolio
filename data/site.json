@@ -243,6 +243,10 @@
         {
           "label": "Kuai Kuai culture",
           "url": "https://en.wikipedia.org/wiki/Kuai_Kuai_culture"
+        },
+        {
+          "label": "Synthiola (Fabian Mosele)",
+          "url": "https://www.fabianmosele.com/synthiola"
         }
       ],
       "credits": "Photo: Kito Li",
@@ -822,7 +826,7 @@
           {
             "year": "2026",
             "text": "Fellowship für Innovationen in der digitalen Hochschullehre Thüringen, Stifterverband. Project “Lokale KI-Anwendung im Bewegtbild-Studio” (Local AI Application in the Moving-Image Studio), until 2027",
-            "url": "",
+            "url": "https://www.stifterverband.org/digital-lehrfellows-thueringen/2026/liu",
             "text_zh": "圖林根邦數位高教創新獎助（Fellowship für Innovationen in der digitalen Hochschullehre Thüringen），德國科學捐助者協會（Stifterverband）。計畫「Lokale KI-Anwendung im Bewegtbild-Studio」（動態影像工作室中的本地 AI 應用），至 2027 年"
           },
           {
@@ -1035,7 +1039,7 @@
           {
             "year": "2026",
             "text": "AI-Worlding, Museum Angewandte Kunst, Frankfurt, w/ Leon-Etienne Kühr",
-            "url": "",
+            "url": "https://www.museumangewandtekunst.de/de/besuch/ausstellungen/2026/ai-worlding-kuenstlerische-forschung-zu-ki-generierten-weltmodellen/",
             "text_zh": "AI-Worlding，法蘭克福應用藝術博物館，與 Leon-Etienne Kühr"
           },
           {
