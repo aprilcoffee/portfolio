@@ -5,6 +5,9 @@ https://liutingchun.com 的原始碼：從 Wix 搬出來的個人網站，由 Gi
 - `data/site.json`：作品、表演、CV、朋友、文章列表、網站設定
 - `posts/<slug>.md`：每篇文章的內文（Markdown）
 
+**這個 repo 是主要版本。** 舊網址 `aprilcoffee.github.io/liutingchun/` 已封存，所有頁面都轉到 liutingchun.com 對應的網址
+（`aprilcoffee.github.io` 上的 `sun/`、`heat_as_image/` 不動）。
+
 `scripts/build.py` 會把它們產生成每一頁一個資料夾的靜態 HTML（`works/sun/`、`blog/lift-off/`…），每頁都有自己的 title、description、canonical、Open Graph、JSON-LD，並產生 `sitemap.xml`、`robots.txt`（放在網域根目錄）與文章 RSS（`blog/feed.xml`）。
 
 網站是三語：英文在根目錄，德文在 `de/`，繁體中文在 `zh/`（部落格文章不翻譯，只有一份在 `blog/<slug>/`）。翻譯寫在 site.json 裡同名欄位加 `_de` / `_zh`（例如 `text_de`、`text_zh`、`statement_zh`、`bio_de`、`note_zh`），留空就顯示英文。舊的 `writing/…` 網址會自動轉到 `blog/…`。
@@ -43,7 +46,10 @@ https://liutingchun.com 的原始碼：從 Wix 搬出來的個人網站，由 Gi
 
 `site.json` 裡的 `site.base_url`（`https://liutingchun.com`）決定 canonical、分享連結與 sitemap。網站在網域根目錄，所以 `build.py` 也會為舊的 Wix 網址（`/cv`、`/post/...`、`/sun`…）產生轉址頁。
 
-DNS 在 Cloudflare：`@` 四筆 A 紀錄指向 GitHub Pages（185.199.108–111.153），`www` 的 CNAME 指向 `aprilcoffee.github.io`，都設成 DNS only（灰色雲朵）。
+目前網域註冊與 DNS 都還在 Wix：`@` 四筆 A 紀錄指向 GitHub Pages（185.199.108–111.153），`www` 的 CNAME 指向 `aprilcoffee.github.io`，HTTPS 憑證由 GitHub（Let's Encrypt）自動續期。
+另外有一筆 Google Search Console 驗證用的 TXT 記錄，**不要刪**。
+
+之後轉到 Namecheap、DNS 改到 Cloudflare 時：先在 Cloudflare 建好同樣的記錄（4 筆 A、www CNAME、Search Console 的 TXT），都設成 DNS only（灰色雲朵），再改 NS，網站就不會中斷。
 
 ## 設計
 
