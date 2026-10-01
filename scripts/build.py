@@ -766,6 +766,9 @@ llms = ["# %s (%s)" % (S["name"], S.get("name_zh", "")), "",
 llms += ["- [%s](%s) (%s): %s" % (w["title"], abs_url("works/%s/" % w["slug"]), w.get("year"), w.get("type"))
          for w in works]
 llms += ["", "## Contact", "", "- Email: " + S["email"]] + ["- %s: %s" % (l["label"], l["url"]) for l in S.get("links", [])]
+extra = os.path.join(ROOT, "data", "llms-extra.md")  # free text appended as is (edit it on GitHub)
+if os.path.exists(extra):
+    llms += ["", open(extra, encoding="utf-8").read().strip()]
 llms_txt = "\n".join(llms) + "\n"
 write("llms.txt", llms_txt)
 
