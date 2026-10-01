@@ -66,7 +66,7 @@ Where Liu's work can be checked, watched or read outside his own website: talk r
 
 ## Open questions
 
-- **Dates that differ between the CV and the organisers' own pages:** *Generating for the Archive* and the *Stereotype Encoding* symposium talk (CV: 2026; organiser: November 2025); the Dortmund lecture (CV: 2024; organiser's page: 12 June 2025).
+- **A date that differs between the CV and the organiser's own page:** the Dortmund lecture (CV: 2024; organiser's page: 12 June 2025).
 - **Not yet read:** *The Rule Becomes the Author!* (2021), *Positioning – A Prerequisite for Immersion* (2024), the MOCA Taipei catalogue text.
 - **Not found:** a 2025 prize-winners page at FIfF naming Liu, an independent news or press article about Liu, and a public page for the Digi-Lehrfellows seminar's student exhibition.
 

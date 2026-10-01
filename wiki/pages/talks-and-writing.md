@@ -23,8 +23,8 @@ Lectures, talks, workshops and publications, as listed in the CV on the website.
 - 2026 — mtrail Ausbildungscamp, Lindau, w/ Leon-Etienne Kühr
 - 2026 — KISDtalk: Paranoia De-Prompting, KISD Köln International School of Design, w/ Leon-Etienne Kühr
 - 2026 — Latenz, Storage Museum Düsseldorf, w/ Leon-Etienne Kühr, Dominik Bönisch-Alpári, Prof. Dr. Ludger Schwarte ([link](https://www.filmwerkstatt-duesseldorf.de/latenz/); organiser's date: 20 January 2026)
-- 2026 — Stereotype Encoding, Latent Space Symposium, Filmwerkstatt Düsseldorf, w/ Leon-Etienne Kühr ([organiser's page](https://www.filmwerkstatt-duesseldorf.de/latent-space-symposium/) dates it 29 November 2025; see [Stereotype Encoding](texts/stereotype-encoding.md))
-- 2026 — Generating for the Archive, Storage Museum Düsseldorf, w/ Leon-Etienne Kühr ([link](https://www.filmwerkstatt-duesseldorf.de/generating-for-the-archive/); organiser's date: 28 November 2025)
+- 2025 — Stereotype Encoding, Latent Space Symposium, Filmwerkstatt Düsseldorf, w/ Leon-Etienne Kühr ([organiser's page](https://www.filmwerkstatt-duesseldorf.de/latent-space-symposium/): 29 November 2025; see [Stereotype Encoding](texts/stereotype-encoding.md))
+- 2025 — Generating for the Archive, Storage Museum Düsseldorf, w/ Leon-Etienne Kühr ([link](https://www.filmwerkstatt-duesseldorf.de/generating-for-the-archive/); organiser's date: 28 November 2025)
 - 2025 — 51 Ways to Spell the Image Giraffe: The Hidden Politics of Token Languages in Generative AI, 39th Chaos Communication Congress, w/ Leon-Etienne Kühr ([recording](https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai))
 - 2025 — Reverberation of the Blackbox Image, Auditory Aesthetics Series, National Tsing Hua University
 - 2025 — Bauhaus Master Lecture, Bauhaus University Weimar
@@ -53,7 +53,7 @@ Lectures, talks, workshops and publications, as listed in the CV on the website.
 
 ## Open questions
 
-- Three entries carry a different year in the CV than on the organisers' pages: *Generating for the Archive* and the *Stereotype Encoding* symposium talk (CV 2026, organiser November 2025) and the Dortmund lecture (CV 2024, organiser 2025). Both are kept as written; the CV may need a correction.
+- The Dortmund lecture carries 2024 in the CV, but the organiser's page dates it 2025. Kept as written; the CV may need a correction.
 
 ## Related
 

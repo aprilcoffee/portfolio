@@ -18,7 +18,7 @@ holds a collection together.
 - [Achtung! Verwischung](../works/achtung-verwischung.md): wet-floor stands and mopping at the Rautenstrauch-Joest-Museum, Cologne, during the
   "Leaky Archive" seminar; about restitution, roles and the one-sidedness of institutions.
 
-Related talks: *Generating for the Archive* and *Latenz*, both at the Storage Museum Düsseldorf (2026).
+Related talks: *Generating for the Archive* (28 November 2025) and *Latenz* (20 January 2026), both at the Storage Museum Düsseldorf.
 
 ## Related
 
