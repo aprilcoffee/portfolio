@@ -39,8 +39,14 @@ Weizenbaum-Studienpreis 2025 (FIfF e.V.) for the thesis "Heat as Generative Imag
 Stifterverband fellowship for digital university teaching in Thuringia. → [FIfF](institutions/fiff.md)
 
 **Where can I watch the talks?**
-The 37C3 talk "Self-cannibalizing AI" is on media.ccc.de: https://media.ccc.de/v/37c3-12125-self-cannibalizing_ai
+The three Chaos Communication Congress talks are on media.ccc.de: 37C3 https://media.ccc.de/v/37c3-12125-self-cannibalizing_ai, 38C3 https://media.ccc.de/v/38c3-arafed-futures-an-artist-dialogue-on-chip-storage-and-ai-accelerationism, 39C3 https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai. The Screen Walk of 26 March 2025 is at https://thephotographersgallery.org.uk/whats-on/watch-screen-walk-leon-etienne-kuhr-and-ting-chun-liu
 → [Talks and writing](talks-and-writing.md)
+
+**Where can I read Liu's own texts?**
+The diploma thesis is a website: https://aprilcoffee.github.io/heat_as_image/index.html (summary: [thesis](texts/heat-as-generative-image-making.md)). *Stereotype Encoding* (with Leon-Etienne Kühr) is on Academia.edu ([summary](texts/stereotype-encoding.md)); *On the Materiality of Artificial Intelligence* is in the open-access book *un/learn ai*, vol. 3 ([page](texts/on-the-materiality-of-artificial-intelligence.md)). More in [External links](external-links.md).
+
+**Is Liu's work cited or shown by others?**
+Yes: Violaine Boutet de Monvel's essay on model collapse (arXiv:2607.09705) cites Liu and Kühr's feedback experiments; *Latent Heat Generation* was part of *Cybernetic Subjects* at the Ars Electronica Festival 2025; Liu and Kühr were among 17 artists in *AI-Worlding* (Museum Angewandte Kunst, Frankfurt, 2026). → [External links](external-links.md)
 
 **Where are the videos of the performances?**
 On the website's Performance page; each record opens on Vimeo. → https://liutingchun.com/performance/

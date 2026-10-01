@@ -53,10 +53,14 @@ computational processes".
 
 - Website (English, Deutsch, 中文): https://liutingchun.com/
 - Instagram: https://www.instagram.com/liu_tingchun/ · GitHub: https://github.com/aprilcoffee
+- Pages by others (talk recordings, texts, exhibitions, citations): [External links](external-links.md)
 - Contact: tingchun.liu.tw@gmail.com
 
 ## Related
 
+- [External links](external-links.md)
+- [Heat as (Generative) Image Making (thesis)](texts/heat-as-generative-image-making.md)
+- [Stereotype Encoding (text)](texts/stereotype-encoding.md)
 - [Timeline](timeline.md)
 - [FAQ](faq.md)
 - [Talks and writing](talks-and-writing.md)

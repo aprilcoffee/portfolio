@@ -7,6 +7,8 @@ sources:
   - https://liutingchun.com/works/self-cannibalizing-ai/
   - https://liutingchun.com/de/works/self-cannibalizing-ai/
   - https://liutingchun.com/zh/works/self-cannibalizing-ai/
+  - https://ground-zero.khm.de/artistic-research-on-recursive-dynamics-in-generative-image-models/
+  - https://arxiv.org/abs/2607.09705
 updated: 2026-10-01
 ---
 # Self-cannibalizing AI
@@ -29,6 +31,14 @@ A talk with Leon-Etienne Kühr at the 37th Chaos Communication Congress (37C3, 2
 - When models learn from each other's output, they 'cannibalize' themselves.
 - CLIP correlations expose problematic stereotypes in everyday tools.
 
+## Talk details, versions and echoes
+
+- **37C3 recording:** 30 December 2023, 53 minutes, English with German translation. Three strands: dataset filtering (aesthetic scores, NSFW classifiers), CLIP correlations, and recursive generation, where images "gradually transform into purple patterns or mundane concepts". https://media.ccc.de/v/37c3-12125-self-cannibalizing_ai
+- **Poster version:** *Artistic Research on Recursive Dynamics in Generative Image Models* (shown as "Self-Cannibalizing AI"), TEDA'24, University of Cambridge, 19–20 September 2024. Feedback loops in Stable Diffusion show emergent behaviour, systematic bias and signs of model collapse; the claim is that the algorithmic parts of the pipeline, not only the training data, shape the look of generated images. https://ground-zero.khm.de/artistic-research-on-recursive-dynamics-in-generative-image-models/
+- **Written up in the thesis:** the same feedback experiment appears as "The purple coincidence" in [Heat as (Generative) Image Making](../texts/heat-as-generative-image-making.md); the aesthetic-score and NSFW findings are developed in [Stereotype Encoding](../texts/stereotype-encoding.md).
+- **Cited by others:** Violaine Boutet de Monvel's essay on model collapse (arXiv:2607.09705) cites the TEDA poster and writes that Liu and Kühr "have created feedback loops within BLIP-2" and tested ways of collapsing Stable Diffusion "without extended retraining or even textual prompting". https://arxiv.org/abs/2607.09705
+- **Later talks in the same line:** 38C3 *arafed futures* (2024) and 39C3 *51 Ways to Spell the Image Giraffe* (2025), see [Chaos Communication Congress](../institutions/chaos-communication-congress.md).
+
 ## Related
 
 - [Critical AI and image models](../topics/critical-ai-and-image-models.md)
@@ -37,6 +47,8 @@ A talk with Leon-Etienne Kühr at the 37th Chaos Communication Congress (37C3, 2
 - [Chaos Communication Congress](../institutions/chaos-communication-congress.md)
 - [Steering Through the Inner Residue](steering-through-the-inner-residue.md)
 - [Just Jailbreak](just-jailbreak.md)
+- [Stereotype Encoding](../texts/stereotype-encoding.md)
+- [External links](../external-links.md)
 
 ## Sources
 
@@ -44,3 +56,5 @@ A talk with Leon-Etienne Kühr at the 37th Chaos Communication Congress (37C3, 2
 - https://liutingchun.com/works/self-cannibalizing-ai/
 - https://liutingchun.com/de/works/self-cannibalizing-ai/
 - https://liutingchun.com/zh/works/self-cannibalizing-ai/
+- https://ground-zero.khm.de/artistic-research-on-recursive-dynamics-in-generative-image-models/
+- https://arxiv.org/abs/2607.09705

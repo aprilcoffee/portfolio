@@ -7,6 +7,9 @@ sources:
   - https://liutingchun.com/works/latent-heat-generation/
   - https://liutingchun.com/de/works/latent-heat-generation/
   - https://liutingchun.com/zh/works/latent-heat-generation/
+  - https://aprilcoffee.github.io/heat_as_image/index.html
+  - https://github.com/aprilcoffee/heat_as_image
+  - https://ars.electronica.art/panic/en/view/cybernetic-subjects-21338ddb450c817ab718ce48a0a628f5/
 updated: 2026-10-01
 ---
 # Latent Heat Generation
@@ -30,10 +33,19 @@ An artistic research project that makes the material side of AI visible. Thermal
 - Written from the position of a Taiwanese artist: limited in computing power, yet tied to the infrastructure (semiconductors) that AI depends on.
 - Related research is published as 'Heat as Image' and the essay 'Heat as (Generative) Image Making' (Weizenbaum-Studienpreis 2025).
 
+## Beyond this website
+
+- **Thesis:** the writing behind the work is [Heat as (Generative) Image Making](../texts/heat-as-generative-image-making.md), at https://aprilcoffee.github.io/heat_as_image/index.html
+- **How the prototype works (from the code repository):** GPU temperature is read, sent by OSC to StreamDiffusion running in TouchDesigner, the generated image goes by NDI to a Processing visualisation, and a Parler TTS voice speaks text back. Code and instructions (MIT licence): https://github.com/aprilcoffee/heat_as_image
+- **Exhibited:** one of the works in *Cybernetic Subjects* (Bauhaus-Universität Weimar, shown at the University of Arts Linz during the Ars Electronica Festival 2025), described there as investigating "the hidden material infrastructures of AI systems through thermal imaging feedback loops, creating real-time feedback where computational waste heat becomes generative material for AI imagery": https://ars.electronica.art/panic/en/view/cybernetic-subjects-21338ddb450c817ab718ce48a0a628f5/
+- **Essay:** *Heat as (Generative) Image Making*, FIfF-Kommunikation 1/26, p. 64: https://www.fiff.de/fiff-kommunikation/2026/1/
+
 ## Related
 
 - [The material infrastructure of AI](../topics/material-infrastructure-of-ai.md)
 - [Recursion and feedback](../topics/recursion-and-feedback.md)
+- [Heat as (Generative) Image Making](../texts/heat-as-generative-image-making.md)
+- [External links](../external-links.md)
 - [Sun](sun.md)
 - [Steering Through the Inner Residue](steering-through-the-inner-residue.md)
 
@@ -43,3 +55,6 @@ An artistic research project that makes the material side of AI visible. Thermal
 - https://liutingchun.com/works/latent-heat-generation/
 - https://liutingchun.com/de/works/latent-heat-generation/
 - https://liutingchun.com/zh/works/latent-heat-generation/
+- https://aprilcoffee.github.io/heat_as_image/index.html
+- https://github.com/aprilcoffee/heat_as_image
+- https://ars.electronica.art/panic/en/view/cybernetic-subjects-21338ddb450c817ab718ce48a0a628f5/

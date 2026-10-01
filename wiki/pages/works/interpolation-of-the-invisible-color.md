@@ -7,6 +7,9 @@ sources:
   - https://liutingchun.com/works/interpolation-of-the-invisible-color/
   - https://liutingchun.com/de/works/interpolation-of-the-invisible-color/
   - https://liutingchun.com/zh/works/interpolation-of-the-invisible-color/
+  - https://www.filmwerkstatt-duesseldorf.de/interpolation-of-invisible-colors/
+  - https://www.filmwerkstatt-duesseldorf.de/latenz/
+  - https://www.filmwerkstatt-duesseldorf.de/generating-for-the-archive/
 updated: 2026-10-01
 ---
 # Interpolation of the Invisible Color
@@ -32,12 +35,21 @@ A curatorial project and interactive installation with Leon-Etienne Kühr, commi
 - "AI is simple": it finds correlations, not causes; people project meaning into the constellation.
 - A note for participating artists and visitors (EN/DE) was part of the exhibition.
 
+## Exhibition and events (organisers' pages)
+
+- **Exhibition:** at the Storage Museum, opening 15 November 2025, 6 pm, to 31 January 2026 (Thursday–Sunday, 2–6 pm). The Filmwerkstatt Düsseldorf page spells the title "Interpolation of Invisible Colors". It frames the work as two mappings of one collection: physical storage that "compresses" works by space and material, and generative models that compress the same works into high-dimensional vectors, asking "what world understanding machines form from purely digital representations". https://www.filmwerkstatt-duesseldorf.de/interpolation-of-invisible-colors/
+- **Workshop:** *Generating for the Archive*, 28 November 2025, 11:00–18:00, Storage Museum; participants worked with the digitised collection and added their own generated images to the archive's computation.
+- **Panel:** *Latenz*, 20 January 2026, with Dominik Bönisch-Alpári and Prof. Dr. Ludger Schwarte.
+- **Symposium talk:** *Stereotype Encoding*, Latent Space Symposium, 29 November 2025. See [Filmwerkstatt Düsseldorf](../institutions/filmwerkstatt-duesseldorf.md) and [Stereotype Encoding](../texts/stereotype-encoding.md).
+
 ## Related
 
 - [Archives and institutions](../topics/archives-and-institutions.md)
 - [Critical AI and image models](../topics/critical-ai-and-image-models.md)
 - [Leon-Etienne Kühr](../people/leon-etienne-kuehr.md)
 - [Storage Museum Düsseldorf](../institutions/storage-museum-duesseldorf.md)
+- [Filmwerkstatt Düsseldorf](../institutions/filmwerkstatt-duesseldorf.md)
+- [External links](../external-links.md)
 - [Achtung! Verwischung](achtung-verwischung.md)
 - [Steering Through the Inner Residue](steering-through-the-inner-residue.md)
 
@@ -47,3 +59,6 @@ A curatorial project and interactive installation with Leon-Etienne Kühr, commi
 - https://liutingchun.com/works/interpolation-of-the-invisible-color/
 - https://liutingchun.com/de/works/interpolation-of-the-invisible-color/
 - https://liutingchun.com/zh/works/interpolation-of-the-invisible-color/
+- https://www.filmwerkstatt-duesseldorf.de/interpolation-of-invisible-colors/
+- https://www.filmwerkstatt-duesseldorf.de/latenz/
+- https://www.filmwerkstatt-duesseldorf.de/generating-for-the-archive/

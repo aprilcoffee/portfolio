@@ -15,9 +15,9 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 WIKI = os.path.join(ROOT, "wiki")
-ORDER = ["overview", "faq", "timeline", "work", "topic", "person", "institution", "list"]
+ORDER = ["overview", "faq", "timeline", "work", "topic", "text", "person", "institution", "list"]
 HEAD = {"overview": "Start here", "faq": "Start here", "timeline": "Start here", "work": "Works",
-        "topic": "Topics", "person": "People", "institution": "Institutions", "list": "Lists"}
+        "topic": "Topics", "text": "Texts", "person": "People", "institution": "Institutions", "list": "Lists"}
 
 
 def front(text):

@@ -6,6 +6,11 @@ sources:
   - ../../data/site.json (about.sections)
   - https://liutingchun.com/about/
   - https://www.museumangewandtekunst.de/de/besuch/ausstellungen/2026/ai-worlding-kuenstlerische-forschung-zu-ki-generierten-weltmodellen/
+  - https://www.staatstheater-darmstadt.de/spielplan/kifestival2026/
+  - https://www.e-flux.com/announcements/6785248/ai-worlding
+  - https://www.filmwerkstatt-duesseldorf.de/interpolation-of-invisible-colors/
+  - https://ars.electronica.art/panic/en/view/cybernetic-subjects-21338ddb450c817ab718ce48a0a628f5/
+  - https://en.khm.de/termine/news.5963.soft-rotation-x-moers-festival/
 updated: 2026-10-01
 ---
 # Exhibitions and performances
@@ -14,11 +19,11 @@ Exhibitions, performances and collaborative new-media / theatre projects, as lis
 
 ## Exhibitions
 
-- 2026 — AI-Worlding, Staatstheater Darmstadt, w/ Leon-Etienne Kühr
-- 2026 — AI-Worlding, Museum Angewandte Kunst, Frankfurt, w/ Leon-Etienne Kühr ([link](https://www.museumangewandtekunst.de/de/besuch/ausstellungen/2026/ai-worlding-kuenstlerische-forschung-zu-ki-generierten-weltmodellen/))
-- 2025 — Interpolation of the Invisible Color, Storage Museum, Düsseldorf, w/ Leon-Etienne Kühr
+- 2026 — AI-Worlding, Staatstheater Darmstadt, w/ Leon-Etienne Kühr ([festival page](https://www.staatstheater-darmstadt.de/spielplan/kifestival2026/): student-curated version in the foyers, 13–16 May 2026)
+- 2026 — AI-Worlding, Museum Angewandte Kunst, Frankfurt, w/ Leon-Etienne Kühr ([link](https://www.museumangewandtekunst.de/de/besuch/ausstellungen/2026/ai-worlding-kuenstlerische-forschung-zu-ki-generierten-weltmodellen/); 13 February – 26 April 2026; [e-flux](https://www.e-flux.com/announcements/6785248/ai-worlding))
+- 2025 — Interpolation of the Invisible Color, Storage Museum, Düsseldorf, w/ Leon-Etienne Kühr ([organiser's page](https://www.filmwerkstatt-duesseldorf.de/interpolation-of-invisible-colors/): 15 November 2025 – 31 January 2026)
 - 2025 — Art Cologne, Messe, Cologne
-- 2025 — Ars Electronica Campus, Linz
+- 2025 — Ars Electronica Campus, Linz ([Cybernetic Subjects](https://ars.electronica.art/panic/en/view/cybernetic-subjects-21338ddb450c817ab718ce48a0a628f5/), with Latent Heat Generation)
 - 2025 — Ausstellung Kreisläufen, Café Nimmersatt, Wolfhagen
 - 2023 — Ephemeral Connections, Glasmoog, Cologne
 - 2023 — Ghosts at the Feast, Weltkunstzimmer, Düsseldorf
@@ -34,7 +39,7 @@ Exhibitions, performances and collaborative new-media / theatre projects, as lis
 
 ## Performances
 
-- 2025 — 54. moers festival, Moers ([link](https://www.moers-festival.de/))
+- 2025 — 54. moers festival, Moers ([link](https://www.moers-festival.de/); [soft rotation × moers festival, 6–9 June 2025](https://en.khm.de/termine/news.5963.soft-rotation-x-moers-festival/), where Liu is one of seven organisers and performed on 8 June)
 - 2023 — Blaues Rauschen Festival ’23, Folkwang-Musikschule
 - 2019 — Nuit Blanche — Lacking Sound Festival (失聲祭) #Soirée, Winsing Art Place, Taipei
 - 2019 — Xero Xerco 聲淵, Artalley Café, Taipei
@@ -65,9 +70,15 @@ Exhibitions, performances and collaborative new-media / theatre projects, as lis
 
 - [Timeline](timeline.md)
 - [Overview](overview.md)
+- [External links](external-links.md)
 
 ## Sources
 
 - ../../data/site.json
 - https://liutingchun.com/about/
 - https://www.museumangewandtekunst.de/de/besuch/ausstellungen/2026/ai-worlding-kuenstlerische-forschung-zu-ki-generierten-weltmodellen/
+- https://www.staatstheater-darmstadt.de/spielplan/kifestival2026/
+- https://www.e-flux.com/announcements/6785248/ai-worlding
+- https://www.filmwerkstatt-duesseldorf.de/interpolation-of-invisible-colors/
+- https://ars.electronica.art/panic/en/view/cybernetic-subjects-21338ddb450c817ab718ce48a0a628f5/
+- https://en.khm.de/termine/news.5963.soft-rotation-x-moers-festival/

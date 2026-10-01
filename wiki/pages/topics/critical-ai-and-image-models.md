@@ -6,6 +6,8 @@ sources:
   - ../../../data/site.json
   - https://liutingchun.com/works/
   - https://liutingchun.com/about/
+  - https://www.academia.edu/165438573/Stereotype_Encoding_How_AI_Images_Learn_Cultural_Bias
+  - https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai
 updated: 2026-10-01
 ---
 # Critical AI and image models
@@ -25,10 +27,12 @@ and probing models such as CLIP for stereotypes.
 
 ## Talks and texts on the topic (from the CV)
 
-- *Stereotype Encoding: How AI Images Learn Cultural Bias* (text, 2025; talk at the Latent Space Symposium, 2026)
+- [*Stereotype Encoding: How AI Images Learn Cultural Bias*](../texts/stereotype-encoding.md) (text with Leon-Etienne Kühr, 2025; talk at the Latent Space Symposium, Filmwerkstatt Düsseldorf, 29 November 2025): statistical indexicality, CLIP, faces and food, aesthetic scores, NSFW filters, a map of 650,000 images
 - *51 Ways to Spell the Image Giraffe: The Hidden Politics of Token Languages in Generative AI*, 39C3 (2025)
 - *Artistic Research on Recursive Dynamics in Generative Image Models*, TEDA'24, University of Cambridge (2024)
-- *Poetic Materialization – Regarding Midjourney* (2022)
+- [*Poetic Materialization – Regarding Midjourney*](../texts/poetic-materialization-regarding-midjourney.md) (2022)
+- [*Heat as (Generative) Image Making*](../texts/heat-as-generative-image-making.md) (diploma thesis): how Stable Diffusion works part by part, and what each part brings in
+- 39C3 recording: https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai
 
 ## Related
 
@@ -36,9 +40,12 @@ and probing models such as CLIP for stereotypes.
 - [The material infrastructure of AI](material-infrastructure-of-ai.md)
 - [Leon-Etienne Kühr](../people/leon-etienne-kuehr.md)
 - [Talks and writing](../talks-and-writing.md)
+- [External links](../external-links.md)
 
 ## Sources
 
 - ../../../data/site.json
 - https://liutingchun.com/works/
 - https://liutingchun.com/about/
+- https://www.academia.edu/165438573/Stereotype_Encoding_How_AI_Images_Learn_Cultural_Bias
+- https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai

@@ -36,7 +36,7 @@ This file is the **schema**: read it before touching anything in `wiki/`.
 ```markdown
 ---
 title: <page title>
-type: overview | work | topic | person | institution | list | faq
+type: overview | work | topic | text | person | institution | list | faq
 tags: [short, lowercase, tags]
 sources:
   - <repo path or URL>
@@ -56,7 +56,7 @@ updated: YYYY-MM-DD
 ```
 
 - Links are plain relative Markdown links (they work on GitHub, in Obsidian and in the
-  chat's citations). One page per work, topic, person and institution.
+  chat's citations). One page per work, topic, person and institution. A `text` page summarises one of Liu's own written texts (thesis, essay, article) in enough detail to answer questions about its arguments, with the original link.
 - File names: lowercase, hyphenated, ASCII (work pages use the website slug).
 
 ## The chat's voice
