@@ -277,8 +277,8 @@ UI = {
         "friends_lead": "Artists and collaborators.", "friends_desc": "Friends and fellow artists of %s.",
         "Date": "Date", "Category": "Category",
         "ask": "Ask me about my work", "ask_ph": "Ask me anything about my work…", "ask_btn": "Ask",
-        "ask_note": "Answers are written by an AI (ChatGPT) from notes on my website and can be wrong. Questions are sent to Cloudflare and OpenAI and are not stored. %s",
-        "ask_more": "More in the privacy policy.",
+        "ask_note": "AI answers from notes about me — may be wrong. Questions go to Cloudflare and OpenAI, not stored. %s",
+        "ask_more": "Privacy",
         "ask_q": ["What is Heat as Image about?", "Which of your works deal with AI?", "Where do you teach?"],
         "ask_err": "Sorry, that didn’t work. Please try again in a moment, or write to %s.",
         "ask_busy": "Too many questions right now. Please wait a minute.",
@@ -302,8 +302,8 @@ UI = {
         "friends_lead": "Künstler*innen und Kooperationspartner*innen.", "friends_desc": "Freund*innen und befreundete Künstler*innen von %s.",
         "Date": "Datum", "Category": "Kategorie",
         "ask": "Fragen Sie mich zu meiner Arbeit", "ask_ph": "Eine Frage zu meiner Arbeit …", "ask_btn": "Fragen",
-        "ask_note": "Die Antworten schreibt eine KI (ChatGPT) auf Grundlage der Texte meiner Website; sie können Fehler enthalten. Fragen werden an Cloudflare und OpenAI übermittelt und nicht gespeichert. %s",
-        "ask_more": "Mehr in der Datenschutzerklärung.",
+        "ask_note": "KI-Antworten aus Notizen über mich – können falsch sein. Fragen gehen an Cloudflare und OpenAI, ohne Speicherung. %s",
+        "ask_more": "Datenschutz",
         "ask_q": ["Worum geht es in Heat as Image?", "Welche Ihrer Arbeiten beschäftigen sich mit KI?", "Wo unterrichten Sie?"],
         "ask_err": "Das hat leider nicht geklappt. Bitte gleich noch einmal versuchen oder an %s schreiben.",
         "ask_busy": "Gerade kommen zu viele Fragen. Bitte eine Minute warten.",
@@ -327,8 +327,8 @@ UI = {
         "friends_lead": "藝術家與合作夥伴。", "friends_desc": "%s的朋友、合作夥伴與藝術家夥伴，以及他們的作品網站連結。",
         "Date": "日期", "Category": "分類",
         "ask": "關於我的作品，問問我", "ask_ph": "想知道我作品的什麼？", "ask_btn": "提問",
-        "ask_note": "回答由 AI（ChatGPT）根據我網站上的資料生成，可能有誤。問題會傳送至 Cloudflare 與 OpenAI，不會被保存。%s",
-        "ask_more": "詳見隱私權說明。",
+        "ask_note": "AI 依據關於我的資料回答，可能有誤。問題經 Cloudflare 與 OpenAI 處理，不會保存。%s",
+        "ask_more": "隱私權",
         "ask_q": ["《Heat as Image》在談什麼？", "你有哪些作品跟 AI 有關？", "你在哪裡教書？"],
         "ask_err": "抱歉，暫時無法回答。請稍後再試，或寫信至 %s。",
         "ask_busy": "目前提問太多，請稍候一分鐘。",
@@ -495,6 +495,18 @@ def each(path):
     return {l: LP[l] + path for l in LANGS}
 
 
+# The chat's header: the GPU from "This is also a GPU", drawn in text. chat.js spins the
+# fans (the <b> glyphs) and raises the temperature while an answer is being written.
+ASK_GPU = "\n".join([
+    ".------------------------------------------.",
+    "|  .-----.     .-----.     .-----.       = |",
+    "| (   <b>@</b>   )   (   <b>@</b>   )   (   <b>@</b>   )      = |",
+    "|  '-----'     '-----'     '-----'       = |",
+    "'-------.-----------------.----------------'",
+    "        |||||||||||||||||||    <i>41</i>°C  ~ ~",
+])
+
+
 def ask_box(lang):
     """The chat box on the homepage; only rendered once site.chat_endpoint is set."""
     if not S.get("chat_endpoint"):
@@ -505,9 +517,11 @@ def ask_box(lang):
     enc = base64.b64encode(S["chat_endpoint"].encode()).decode()[::-1]
     ts = ' data-turnstile="%s"' % esc(S["turnstile_sitekey"]) if S.get("turnstile_sitekey") else ""
     return ('<section class="ask" id="ask" aria-labelledby="ask-h" data-e="%s"%s data-msgs="%s">'
+            '<pre class="ask-gpu" aria-hidden="true">' + ASK_GPU + '</pre>'
             '<h2 id="ask-h" class="ask-h">%s</h2>'
             '<div class="ask-log" aria-live="polite"></div>'
-            '<form class="ask-form"><input name="q" type="text" maxlength="600" autocomplete="off" required '
+            '<form class="ask-form"><span class="ask-prompt" aria-hidden="true">&gt;</span>'
+            '<input name="q" type="text" maxlength="600" autocomplete="off" required '
             'placeholder="%s" aria-label="%s"><button type="submit">%s</button></form>'
             '<div class="ask-chips">%s</div>'
             '<p class="ask-note">%s</p>'
