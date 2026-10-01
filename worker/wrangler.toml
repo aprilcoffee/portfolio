@@ -4,7 +4,7 @@ name = "liutingchun-com-chat"
 main = "src/index.js"
 compatibility_date = "2026-09-01"
 compatibility_flags = ["nodejs_compat"]
-# Served at https://liutingchun-chat.<account>.workers.dev; no per-version preview URLs.
+# Served at https://liutingchun-com-chat.<account>.workers.dev; no per-version preview URLs.
 workers_dev = true
 preview_urls = false
 

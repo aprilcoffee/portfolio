@@ -12,7 +12,7 @@ OpenAI API key, asks a ChatGPT model, and streams the answer back. Nothing is st
 3. GitHub repo → Settings → Secrets and variables → Actions: add
    `CLOUDFLARE_API_TOKEN` and `OPENAI_API_KEY`.
 4. Actions → "Deploy chat worker" → Run workflow. The log prints the Worker URL
-   (`https://liutingchun-chat.<account>.workers.dev`).
+   (`https://liutingchun-com-chat.<account>.workers.dev`).
 5. Put that URL in `data/site.json` → `site.chat_endpoint`. The chat box appears on the
    homepage with the next build; leave it empty to hide it.
 
@@ -31,11 +31,11 @@ After that, every change to `wiki/` redeploys the Worker automatically.
 
 ## Bot check (optional, recommended)
 
-Cloudflare → Turnstile → Add widget (hostname `aprilcoffee.github.io`, later also
-`liutingchun.com`; mode "Invisible"). Put the **site key** in `data/site.json` →
+Cloudflare → Turnstile → Add widget (hostnames `liutingchun.com` and
+`www.liutingchun.com`; mode "Invisible"). Put the **site key** in `data/site.json` →
 `site.turnstile_sitekey`, and the **secret key** in the GitHub secret `TURNSTILE_SECRET`,
 then run "Deploy chat worker". Requests without a valid check are refused.
-- Logs (Cloudflare dashboard → Workers → liutingchun-chat → Logs) show token usage per
+- Logs (Cloudflare dashboard → Workers → liutingchun-com-chat → Logs) show token usage per
   answer, never the questions.
 
 ## Local test
