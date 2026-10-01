@@ -158,6 +158,6 @@
 
   document.querySelectorAll('[data-effect]').forEach(function (el) {
     var make = sketches[el.getAttribute('data-effect')];
-    if (make && el.offsetParent !== null) new window.p5(make(el));
+    if (make && el.getClientRects().length) new window.p5(make(el));  // visible (fixed elements included)
   });
 })();
