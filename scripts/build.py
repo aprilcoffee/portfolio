@@ -276,8 +276,8 @@ UI = {
         "blog_desc": "Blog archive of %s: notes on artworks and technical write-ups on Raspberry Pi, Processing and Python.",
         "friends_lead": "Artists and collaborators.", "friends_desc": "Friends and fellow artists of %s.",
         "Date": "Date", "Category": "Category",
-        "ask": "Ask me about my work", "ask_ph": "Ask me anything about my work…", "ask_btn": "Ask",
-        "ask_note": "AI answers from notes about me — may be wrong. Questions go to Cloudflare and OpenAI, not stored. %s",
+        "ask": "Ask me about my work", "ask_ph": "Ask me anything", "ask_btn": "Ask",
+        "ask_note": "caution: AI may create random correlations · %s",
         "ask_more": "Privacy",
         "ask_q": ["What is Heat as Image about?", "Which of your works deal with AI?", "Where do you teach?"],
         "ask_err": "Sorry, that didn’t work. Please try again in a moment, or write to %s.",
@@ -301,8 +301,8 @@ UI = {
         "blog_desc": "Blog-Archiv von %s: Notizen zu Arbeiten und technische Anleitungen zu Raspberry Pi, Processing und Python.",
         "friends_lead": "Künstler*innen und Kooperationspartner*innen.", "friends_desc": "Freund*innen und befreundete Künstler*innen von %s.",
         "Date": "Datum", "Category": "Kategorie",
-        "ask": "Fragen Sie mich zu meiner Arbeit", "ask_ph": "Eine Frage zu meiner Arbeit …", "ask_btn": "Fragen",
-        "ask_note": "KI-Antworten aus Notizen über mich – können falsch sein. Fragen gehen an Cloudflare und OpenAI, ohne Speicherung. %s",
+        "ask": "Fragen Sie mich zu meiner Arbeit", "ask_ph": "Fragen Sie mich alles", "ask_btn": "Fragen",
+        "ask_note": "Achtung: KI kann zufällige Zusammenhänge erzeugen · %s",
         "ask_more": "Datenschutz",
         "ask_q": ["Worum geht es in Heat as Image?", "Welche Ihrer Arbeiten beschäftigen sich mit KI?", "Wo unterrichten Sie?"],
         "ask_err": "Das hat leider nicht geklappt. Bitte gleich noch einmal versuchen oder an %s schreiben.",
@@ -326,8 +326,8 @@ UI = {
         "blog_desc": "%s的部落格文章彙整：作品筆記，以及 Raspberry Pi、Processing 與 Python 技術文章。",
         "friends_lead": "藝術家與合作夥伴。", "friends_desc": "%s的朋友、合作夥伴與藝術家夥伴，以及他們的作品網站連結。",
         "Date": "日期", "Category": "分類",
-        "ask": "關於我的作品，問問我", "ask_ph": "想知道我作品的什麼？", "ask_btn": "提問",
-        "ask_note": "AI 依據關於我的資料回答，可能有誤。問題經 Cloudflare 與 OpenAI 處理，不會保存。%s",
+        "ask": "關於我的作品，問問我", "ask_ph": "問我任何事", "ask_btn": "提問",
+        "ask_note": "注意：AI 可能產生隨機的關聯 · %s",
         "ask_more": "隱私權",
         "ask_q": ["《Heat as Image》在談什麼？", "你有哪些作品跟 AI 有關？", "你在哪裡教書？"],
         "ask_err": "抱歉，暫時無法回答。請稍後再試，或寫信至 %s。",
@@ -497,14 +497,20 @@ def each(path):
 
 # The chat's header: the GPU from "This is also a GPU", drawn in text. chat.js spins the
 # fans (the <b> glyphs) and raises the temperature while an answer is being written.
-ASK_GPU = "\n".join([
-    ".------------------------------------------.",
-    "|  .-----.     .-----.     .-----.       = |",
-    "| (   <b>@</b>   )   (   <b>@</b>   )   (   <b>@</b>   )      = |",
-    "|  '-----'     '-----'     '-----'       = |",
-    "'-------.-----------------.----------------'",
-    "        |||||||||||||||||||    <i>41</i>°C  ~ ~",
-])
+def _ask_gpu():
+    fan = [".---------.", "/    {s}    \\", "|----{c}----|", "\\    {s}    /", "'---------'"]
+    rows = []
+    for r in fan:
+        cell = r.format(s="<b>|</b>", c="<b>@</b>")
+        rows.append("|   " + "       ".join([cell] * 3) + "    = |")
+    width = len(rows[0].replace("<b>", "").replace("</b>", ""))
+    top = "." + "-" * (width - 2) + "."
+    foot = "'" + "-" * 12 + "." + "-" * 31 + "." + "-" * (width - 47) + "'"
+    stand = " " * 13 + "|" * 31 + "    <i>41</i>°C  ~ ~"
+    return "\n".join([top] + rows + [foot, stand])
+
+
+ASK_GPU = _ask_gpu()
 
 
 def ask_box(lang):
@@ -518,7 +524,7 @@ def ask_box(lang):
     ts = ' data-turnstile="%s"' % esc(S["turnstile_sitekey"]) if S.get("turnstile_sitekey") else ""
     return ('<section class="ask" id="ask" aria-labelledby="ask-h" data-e="%s"%s data-msgs="%s">'
             '<pre class="ask-gpu" aria-hidden="true">' + ASK_GPU + '</pre>'
-            '<h2 id="ask-h" class="ask-h">%s</h2>'
+            '<h2 id="ask-h" class="sr-only">%s</h2>'
             '<div class="ask-log" aria-live="polite"></div>'
             '<form class="ask-form"><span class="ask-prompt" aria-hidden="true">&gt;</span>'
             '<input name="q" type="text" maxlength="600" autocomplete="off" required '

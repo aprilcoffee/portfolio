@@ -113,7 +113,7 @@ button { font: inherit; color: inherit; }
 .home-hero .field canvas { width: 100% !important; height: 100% !important; }
 .home-statement {
   position: relative; z-index: 1; align-self: stretch; margin: auto var(--pad) 4.5rem 0; padding-top: 3rem;
-  max-width: 51.25rem; font-size: clamp(1.5rem, 2.6vw, 2.25rem); line-height: 1.3; font-weight: 700; letter-spacing: -0.015em;
+  max-width: 51.25rem; font-size: clamp(1.125rem, 1.75vw, 1.625rem); line-height: 1.3; font-weight: 700; letter-spacing: -0.015em;
 }
 .home-statement span { background: var(--bg); box-decoration-break: clone; -webkit-box-decoration-break: clone; padding: 0 .12em; }
 .home-selected { padding: 6rem var(--pad) 7.5rem 0; }
@@ -123,14 +123,14 @@ button { font: inherit; color: inherit; }
    ASCII GPU in llms.txt. Everything is monospace; borders are drawn with characters. */
 .ask {
   position: relative; z-index: 2; width: min(40rem, calc(100% - 2 * var(--pad))); margin-top: max(13vh, 4.5rem);
-  padding: 1.25rem 1.5rem 1rem; font-family: var(--mono); font-size: 0.875rem; line-height: 1.55;
+  padding: 1.25rem 1.5rem 1rem; font-family: var(--mono); font-size: 1rem; line-height: 1.6;
   background: rgba(255, 255, 255, .78);
   -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
   border: 1px solid var(--ink);
 }
 .ask-gpu {
   margin: 0 auto 0.75rem; width: max-content; max-width: 100%; overflow: hidden;
-  font: 0.8125rem/1.2 var(--mono); color: var(--ink);
+  font: min(0.9375rem, calc((100vw - 4.5rem) / 38))/1.2 var(--mono); color: var(--ink);
 }
 .ask-gpu b { font-weight: 400; color: rgb(22, 140, 190); }
 .ask-gpu i { font-style: normal; color: rgb(22, 140, 190); transition: color .6s; }
@@ -175,7 +175,7 @@ button { font: inherit; color: inherit; }
 .ask-chips button::before { content: "$ "; color: var(--dim); }
 .ask-chips button:hover, .ask-form button:hover:not(:disabled) { color: rgb(22, 140, 190); }
 .ask.open .ask-chips { display: none; }
-.ask-note { margin-top: 0.75rem; font-size: 0.75rem; line-height: 1.5; color: var(--mut); }
+.ask-note { margin-top: 0.75rem; font-size: 0.8125rem; line-height: 1.5; color: var(--mut); }
 .ask-note::before { content: "// "; color: var(--dim); }
 .ask-note a { border-bottom: 1px solid rgba(0, 0, 0, .25); }
 .ask-check:empty { display: none; }
@@ -336,10 +336,9 @@ button.embed.lite:hover img { opacity: 1; }
   .main { margin-left: 0; padding: 1.75rem var(--pad) 5rem; }
   .main.full { padding: 0; }
   .home-hero { min-height: calc(100svh - 3.4375rem); }
-  .home-statement { margin: auto var(--pad) 2rem; font-size: 1.5625rem; }
+  .home-statement { margin: auto var(--pad) 2rem; font-size: 1.1875rem; }
   .home-selected { padding: 4rem var(--pad) 5rem; }
   .ask { margin-top: 1.5rem; padding: 1rem 0.875rem 0.75rem; }
-  .ask-gpu { font-size: 2.15vw; }
   .ask-form input { font-size: 1rem; }
   .grid { grid-template-columns: 1fr; gap: 2.75rem; }
   .grid.friends { grid-template-columns: repeat(2, 1fr); }
