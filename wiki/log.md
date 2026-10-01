@@ -34,3 +34,8 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 ## [2026-10-01] fix | Filmwerkstatt Düsseldorf dates
 - CV (data/site.json) corrected to the organisers' dates: *Generating for the Archive* and the *Stereotype Encoding* symposium talk are 2025 (28 and 29 November 2025), not 2026.
 - Touched: timeline, talks-and-writing, institutions/filmwerkstatt-duesseldorf, external-links, topics/archives-and-institutions. Still open: the Dortmund lecture (CV 2024, organiser 2025).
+
+## [2026-10-01] ingest | Chaya Shen, Weimar staff page, chat style
+- New page: people/chaya-shen (from chayashen.info about page, her CJD essay, KHM and ground zero pages; projects pages could not be read).
+- Touched: external-links, teaching-education-awards (Weimar staff page link, now also the CV link in data/site.json).
+- CLAUDE.md: the chat uses no dashes as punctuation.
