@@ -277,7 +277,7 @@ UI = {
         "friends_lead": "Artists and collaborators.", "friends_desc": "Friends and fellow artists of %s.",
         "Date": "Date", "Category": "Category",
         "ask": "Ask me about my work", "ask_ph": "Ask me anything", "ask_btn": "Ask",
-        "ask_note": "caution: AI may create random correlations · %s",
+        "ask_note": "caution: AI may create random correlations",
         "ask_more": "Privacy",
         "ask_q": ["What is Heat as Image about?", "Which of your works deal with AI?", "Where do you teach?"],
         "ask_err": "Sorry, that didn’t work. Please try again in a moment, or write to %s.",
@@ -327,7 +327,7 @@ UI = {
         "friends_lead": "藝術家與合作夥伴。", "friends_desc": "%s的朋友、合作夥伴與藝術家夥伴，以及他們的作品網站連結。",
         "Date": "日期", "Category": "分類",
         "ask": "關於我的作品，問問我", "ask_ph": "問我任何事", "ask_btn": "提問",
-        "ask_note": "注意：AI 可能產生隨機的關聯 · %s",
+        "ask_note": "注意：AI 可能產生隨機的關聯性",
         "ask_more": "隱私權",
         "ask_q": ["《Heat as Image》在談什麼？", "你有哪些作品跟 AI 有關？", "你在哪裡教書？"],
         "ask_err": "抱歉，暫時無法回答。請稍後再試，或寫信至 %s。",
@@ -548,7 +548,7 @@ def ask_box(lang):
         enc, ts, esc(json.dumps(msgs, ensure_ascii=False)), esc(u["ask"]),
         esc(u["ask_ph"]), esc(u["ask_ph"]), esc(u["ask_btn"]),
         "".join('<button type="button">%s</button>' % esc(q) for q in u["ask_q"]),
-        esc(u["ask_note"]) % ('<a href="%s">%s</a>' % (url("datenschutz/#chat"), esc(u["ask_more"]))),
+        esc(u["ask_note"]).replace("%s", '<a href="%s">%s</a>' % (url("datenschutz/#chat"), esc(u["ask_more"]))),
         url("assets/chat.js"))
 
 
@@ -644,8 +644,11 @@ for L in LANGS:
         cv += '<section class="cv-sec"><h2>%s</h2><div>%s</div></section>' % (esc(tr(sec, "title", L)), rows)
     bio = tr(D["about"], "bio", L)
     page(P + "about/", u["about"], bio,
+         # the homepage's character field, fixed behind the CV
+         '<div class="field bg-field" data-effect="field" data-words="%s" aria-hidden="true"></div>'
          '<div class="about-top"><h1 class="page-title">%s</h1><div><p class="bio">%s</p>'
          '<p class="contact"><a href="mailto:%s">%s</a></p></div></div>%s' % (
+             esc(json.dumps(S.get("hidden_words", []), ensure_ascii=False)),
              esc(u["about"]), esc(bio), esc(S["email"]), esc(S["email"]), cv),
          ld=dict(person(L), description=bio), og_type="profile", section="about", lang=L, alts=each("about/"))
 
