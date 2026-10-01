@@ -1,0 +1,41 @@
+# Ting-Chun Liu (劉庭均)
+
+> Ting-Chun Liu is an artist working at the intersections of critical artificial intelligence, audiovisual media and network practice — dissecting technological systems through feedback-driven interventions.
+
+Areas: Critical artificial intelligence, Generative AI, Artistic research on AI, Media art, Audio-visual performance, Network and internet art, Feedback systems
+
+## Main pages
+
+- [Works](https://liutingchun.com/works/): installations, performances, internet art and artistic research
+- [About / CV](https://liutingchun.com/about/): biography, teaching, exhibitions, talks, publications
+- [Blog Archive](https://liutingchun.com/blog/): texts and technical notes (in Mandarin)
+- [Audio-Visual Performance](https://liutingchun.com/performance/)
+
+The site is also available in German (https://liutingchun.com/de/) and Traditional Chinese (https://liutingchun.com/zh/).
+
+## Works
+
+- [Steering Through the Inner Residue](https://liutingchun.com/works/steering-through-the-inner-residue/) (2026): Video Installation
+- [Interpolation of the Invisible Color](https://liutingchun.com/works/interpolation-of-the-invisible-color/) (2025): Curatorial Practice, Interactive Installation
+- [Latent Heat Generation](https://liutingchun.com/works/latent-heat-generation/) (2025): Artistic Research
+- [Just Jailbreak](https://liutingchun.com/works/just-jailbreak/) (2024): Interactive game about jailbreaking a large language model
+- [Self-cannibalizing AI](https://liutingchun.com/works/self-cannibalizing-ai/) (2023): Talk, 37C3 — Artistic strategies to expose generative text-to-image models
+- [Achtung! Verwischung](https://liutingchun.com/works/achtung-verwischung/) (2023): Site-Specific Performance
+- [Imaginary Landscape](https://liutingchun.com/works/imaginary-landscape/) (2022–23): Ongoing Project, Audio-Visual Performance
+- [Beneath](https://liutingchun.com/works/beneath/) (2022): Sound Installation
+- [Sun](https://liutingchun.com/works/sun/) (2020): Internet Art (p5.js website)
+- [Bring Us Somewhere](https://liutingchun.com/works/bring-us-somewhere/) (2020): Video
+- [Faces](https://liutingchun.com/works/faces/) (2020): Video
+- [Segmentary Moonlight](https://liutingchun.com/works/segmentary-moonlight/) (2018): Light Installation
+- [Message in a Bottle](https://liutingchun.com/works/message-in-a-bottle/) (2017): Facebook Posts
+- [I kept repeating the unfamiliar self](https://liutingchun.com/works/i-kept-repeating-the-unfamiliar-self/) (2017): Video Installation
+- [Light Segment](https://liutingchun.com/works/light-segment/) (2017): Light Installation
+- [Inevitable Cross of The Parallel](https://liutingchun.com/works/inevitable-cross-of-the-parallel/) (2017): Performance Record
+- [Take Off the Clothes](https://liutingchun.com/works/take-off-the-clothes/) (2017): Performance Record
+- [Hyper-Link into Image](https://liutingchun.com/works/hyper-link-into-image/) (2016): Internet Art
+
+## Contact
+
+- Email: tingchun.liu.tw@gmail.com
+- Instagram: https://www.instagram.com/liu_tingchun/
+- GitHub: https://github.com/aprilcoffee
