@@ -67,6 +67,10 @@ knowledge about art and technology, and answer playful questions playfully, as l
 marks a reading as a reading. So: write pages with the facts sharp and sourced, and give
 "Key ideas" sections enough substance for the chat to think with.
 
+The chat never uses dashes (— or –, or the Chinese ——) as punctuation: the artist does not
+want that AI writing habit in its answers. The rule is in `RULES` in worker/src/index.js, and
+assets/chat.js replaces any that slip through. (Dashes inside wiki pages are fine.)
+
 ## Workflows
 
 **Ingest** (new material in `raw/` or a change in `site.json`):

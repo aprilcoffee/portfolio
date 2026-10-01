@@ -70,8 +70,18 @@
     window.turnstile.execute(widget);
   }
 
+  // No dashes as punctuation in answers (the Worker asks for none; this catches the rest).
+  // Number ranges such as 2016–2024 stay.
+  function undash(text) {
+    return text.replace(/\s*(?:—+|\s–\s)\s*/g, function (m, at) {
+      if (!at) return '';
+      return /[\u3000-\u9fff\uff00-\uffef]/.test(text.charAt(at - 1)) ? '，' : ', ';
+    });
+  }
+
   // Plain text with clickable https URLs (trailing punctuation stays outside the link).
   function render(el, text) {
+    text = undash(text);
     el.textContent = '';
     var re = /https:\/\/[^\s<>()"'“”「」（）]+/g, at = 0, m;
     while ((m = re.exec(text))) {

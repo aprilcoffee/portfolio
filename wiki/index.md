@@ -49,6 +49,7 @@ Catalogue of the wiki. Read this first, then open the pages you need.
 
 ## People
 
+- [Chaya Shen](pages/people/chaya-shen.md) — Artist, born in Taiwan, who lives and works in Cologne. She is Ting-Chun Liu's partner (his significant other, as Liu states). Her website: https://chayashen.info/
 - [Leon-Etienne Kühr](pages/people/leon-etienne-kuehr.md) — Artist and long-time collaborator of Ting-Chun Liu. Together they make installations, curatorial projects and many talks about generative AI.
 - [LLL (Lin Yu-Liang, Li Ling-Syuan)](pages/people/lll.md) — LLL is the collective of Ting-Chun Liu with 林瑜亮 Lin Yu-Liang and 李翎暄 Li Ling-Syuan, making light installations with seven-segment displays.
 - [Yu-Wei He](pages/people/yu-wei-he.md) — Performer and collaborator on Inevitable Cross of The Parallel (2017).
