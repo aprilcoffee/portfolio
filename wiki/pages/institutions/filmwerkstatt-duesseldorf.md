@@ -20,10 +20,6 @@ An art venue in Düsseldorf (Birkenstr. 47, Im Hof) that ran the *LATENT SPACE �
 - **Latent Space Symposium:** Saturday 29 November 2025, 13:00–22:00. Afternoon: Ludovica Schaerf, "Do Latent Spaces Still Exist?"; Liu and Kühr, "Stereotype Encoding"; Hedda Roman, "Künstler*innen als 'Rogue Agents'". https://www.filmwerkstatt-duesseldorf.de/latent-space-symposium/
 - **Latenz:** panel with Q&A, Tuesday 20 January 2026, 6–7:30 pm, Storage Museum, with Dominik Bönisch-Alpári (cultural scientist, AI and archives) and Prof. Dr. Ludger Schwarte (philosophy, Kunstakademie Düsseldorf), on latency and latent spaces in art and AI in curating. https://www.filmwerkstatt-duesseldorf.de/latenz/
 
-## Open questions
-
-- The CV dates *Generating for the Archive* and the *Stereotype Encoding* symposium talk as 2026; the organiser's pages date both to November 2025.
-
 ## Related
 
 - [Storage Museum Düsseldorf](storage-museum-duesseldorf.md)

@@ -30,3 +30,7 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 - Touched: talks-and-writing, exhibitions-and-performances, overview, faq; works latent-heat-generation, self-cannibalizing-ai, steering-through-the-inner-residue, interpolation-of-the-invisible-color; topics material-infrastructure-of-ai, recursion-and-feedback, critical-ai-and-image-models; institutions chaos-communication-congress, bauhaus-university-weimar, storage-museum-duesseldorf, khm-cologne, fiff; people leon-etienne-kuehr.
 - Schema: new page type `text` (CLAUDE.md, scripts/wiki-lint.py).
 - Open (kept, not resolved): the CV dates *Generating for the Archive* and the *Stereotype Encoding* talk 2026 where the organiser says November 2025, and the Dortmund lecture 2024 where the page says 2025; the thesis site shows 2024-03-27 as date; the *un/learn ai* article text could not be read; leon-etienne.com could not be opened; FIfF's winners page showed no 2025 entry when checked.
+
+## [2026-10-01] fix | Filmwerkstatt Düsseldorf dates
+- CV (data/site.json) corrected to the organisers' dates: *Generating for the Archive* and the *Stereotype Encoding* symposium talk are 2025 (28 and 29 November 2025), not 2026.
+- Touched: timeline, talks-and-writing, institutions/filmwerkstatt-duesseldorf, external-links, topics/archives-and-institutions. Still open: the Dortmund lecture (CV 2024, organiser 2025).

@@ -23,8 +23,6 @@ Year-by-year list of works, teaching, education, awards, talks, publications, ex
 - Lectures, Talks & Workshops: mtrail Ausbildungscamp, Lindau, w/ Leon-Etienne Kühr
 - Lectures, Talks & Workshops: KISDtalk: Paranoia De-Prompting, KISD Köln International School of Design, w/ Leon-Etienne Kühr
 - Lectures, Talks & Workshops: Latenz, Storage Museum Düsseldorf, w/ Leon-Etienne Kühr, Dominik Bönisch-Alpári, Prof. Dr. Ludger Schwarte
-- Lectures, Talks & Workshops: Stereotype Encoding, Latent Space Symposium, Filmwerkstatt Düsseldorf, w/ Leon-Etienne Kühr
-- Lectures, Talks & Workshops: Generating for the Archive, Storage Museum Düsseldorf, w/ Leon-Etienne Kühr
 - Publications & Writing: Heat as (Generative) Image Making, FIfF-Kommunikation 1/26, p. 64, FIfF e.V. Essay for the Weizenbaum-Studienpreis 2025
 - Exhibitions: AI-Worlding, Staatstheater Darmstadt, w/ Leon-Etienne Kühr
 - Exhibitions: AI-Worlding, Museum Angewandte Kunst, Frankfurt, w/ Leon-Etienne Kühr ([link](https://www.museumangewandtekunst.de/de/besuch/ausstellungen/2026/ai-worlding-kuenstlerische-forschung-zu-ki-generierten-weltmodellen/))
@@ -35,6 +33,8 @@ Year-by-year list of works, teaching, education, awards, talks, publications, ex
 - Work: [Latent Heat Generation](works/latent-heat-generation.md) — Artistic Research
 - Teaching: Lecturer and Artistic Associate (Künstlerischer Mitarbeiter), Faculty of Art and Design, Bauhaus University Weimar (2025–)
 - Awards & Fellowships: Weizenbaum-Studienpreis, FIfF e.V. (Forum InformatikerInnen für Frieden und gesellschaftliche Verantwortung). Postgraduate thesis: Heat as Generative Image Making
+- Lectures, Talks & Workshops: Stereotype Encoding, Latent Space Symposium, Filmwerkstatt Düsseldorf, w/ Leon-Etienne Kühr
+- Lectures, Talks & Workshops: Generating for the Archive, Storage Museum Düsseldorf, w/ Leon-Etienne Kühr
 - Lectures, Talks & Workshops: 51 Ways to Spell the Image Giraffe: The Hidden Politics of Token Languages in Generative AI, 39th Chaos Communication Congress, w/ Leon-Etienne Kühr
 - Lectures, Talks & Workshops: Reverberation of the Blackbox Image, Auditory Aesthetics Series, National Tsing Hua University
 - Lectures, Talks & Workshops: Bauhaus Master Lecture, Bauhaus University Weimar
