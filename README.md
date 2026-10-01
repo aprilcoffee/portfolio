@@ -10,7 +10,9 @@ https://liutingchun.com 的原始碼：從 Wix 搬出來的個人網站，由 Gi
 
 `scripts/build.py` 會把它們產生成每一頁一個資料夾的靜態 HTML（`works/sun/`、`blog/lift-off/`…），每頁都有自己的 title、description、canonical、Open Graph、JSON-LD，並產生 `sitemap.xml`、`robots.txt`（放在網域根目錄）與文章 RSS（`blog/feed.xml`）。
 
-網站是三語：英文在根目錄，德文在 `de/`，繁體中文在 `zh/`（部落格文章不翻譯，只有一份在 `blog/<slug>/`）。翻譯寫在 site.json 裡同名欄位加 `_de` / `_zh`（例如 `text_de`、`text_zh`、`statement_zh`、`bio_de`、`note_zh`），留空就顯示英文。舊的 `writing/…` 網址會自動轉到 `blog/…`。
+網站是三語：英文在根目錄，德文在 `de/`，繁體中文在 `zh/`（部落格文章不翻譯，只有一份在 `blog/<slug>/`）。舊的 `writing/…` 網址會自動轉到 `blog/…`。翻譯放在哪裡見下面〈翻譯〉。
+
+> **用 AI agent 改網站之前，先讓它讀 [`AGENTS.md`](AGENTS.md)**：檔案地圖、翻譯規則、不能動的東西都在那裡（`CLAUDE.md` 會自動指過去）。
 
 ```
 （repo 根目錄）
@@ -18,11 +20,13 @@ https://liutingchun.com 的原始碼：從 Wix 搬出來的個人網站，由 Gi
 ├── data/site.json
 ├── posts/*.md
 ├── images/wix/          圖片與影片
-├── assets/style.css, site.js
-├── preview.html + assets/app.js   後台的草稿預覽
+├── data/llms-extra.md   接在 llms.txt 後面的彩蛋
+├── assets/style.css, site.js, effects.js, chat.js, analytics.js
+├── preview.html         後台的草稿預覽（瀏覽器裡跑 build.py）
 ├── admin/               極簡後台
 ├── wiki/                LLM Wiki：給首頁對話框用的知識庫（見 wiki/CLAUDE.md）
-└── scripts/build.py, download-images.sh, wiki-lint.py, check-videos.py
+├── worker/              首頁問答的 Cloudflare Worker
+└── scripts/build.py, build-knowledge.py, wiki-sitemap.py, wiki-lint.py, download-images.sh, check-videos.py
 ```
 
 網址：`https://liutingchun.com/`（repo 根目錄的 `CNAME` 檔）
@@ -41,6 +45,18 @@ https://liutingchun.com 的原始碼：從 Wix 搬出來的個人網站，由 Gi
 - 文章：一般 Markdown。`![說明](圖片)` 會變成有圖說的圖片；單獨一行的 Vimeo / YouTube / mp4 網址會變成播放器。
 - 舊網站 `liutingchun.com/...` 的連結會自動改指到新頁面（對照表在各作品的 `aliases`）。
 - `hidden: true` 的作品或文章不會出現在網站。
+
+## 翻譯
+
+| 要翻譯的東西 | 寫在哪裡 |
+|---|---|
+| 作品說明、形式、媒材、表演說明、Bio、CV 標題與每一行、網站描述、Statement | `data/site.json` 同名欄位加 `_de` / `_zh`（如 `text_de`、`materials_zh`、`bio_de`）；留空＝顯示英文。後台每個欄位旁都有 DE／中文 輸入框 |
+| 選單、按鈕、頁面引言、問答框的提示與錯誤訊息 | `scripts/build.py` 的 `UI` 字典（`en` / `de` / `zh` 三組，key 要一致） |
+| 部落格文章 | 不翻譯，只有中文一份 |
+| Impressum、Datenschutz | 只有德文 |
+| `wiki/`（問答知識庫）、`llms.txt` | 只有英文；問答會用訪客的語言回答，推薦連結會換成訪客語言的頁面 |
+
+作品標題不翻譯；`title_zh` 是作品的中文名，三種語言都會顯示。問答框下方的提醒只有德文版附 Datenschutz 連結。
 
 ## 網域
 
