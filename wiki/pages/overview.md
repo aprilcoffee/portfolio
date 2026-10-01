@@ -50,7 +50,7 @@ computational processes".
 
 ## Online
 
-- Website (English, Deutsch, 中文): https://liutingchun.com/ 
+- Website (English, Deutsch, 中文): https://liutingchun.com/
 - Instagram: https://www.instagram.com/liu_tingchun/ · GitHub: https://github.com/aprilcoffee
 - Contact: tingchun.liu.tw@gmail.com
 

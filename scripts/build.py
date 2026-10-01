@@ -8,11 +8,13 @@ under de/ and Traditional Chinese under zh/ (the blog posts are not translated).
     pip install markdown
     python3 scripts/build.py
 """
+import base64
 import datetime
 import html
 import json
 import os
 import re
+import runpy
 import shutil
 from urllib.parse import urlparse, urlsplit
 
@@ -274,13 +276,13 @@ UI = {
         "blog_desc": "Blog archive of %s: notes on artworks and technical write-ups on Raspberry Pi, Processing and Python.",
         "friends_lead": "Artists and collaborators.", "friends_desc": "Friends and fellow artists of %s.",
         "Date": "Date", "Category": "Category",
-        "ask": "Ask about the work", "ask_ph": "Ask a question about Liu’s work…", "ask_btn": "Ask",
-        "ask_note": "Answers are written by an AI (ChatGPT) from notes on this website and can be wrong. Questions are sent to Cloudflare and OpenAI and are not stored. %s",
+        "ask": "Ask me about my work", "ask_ph": "Ask me anything about my work…", "ask_btn": "Ask",
+        "ask_note": "Answers are written by an AI (ChatGPT) from notes on my website and can be wrong. Questions are sent to Cloudflare and OpenAI and are not stored. %s",
         "ask_more": "More in the privacy policy.",
-        "ask_q": ["What is Heat as Image about?", "Which works deal with AI?", "Where does Liu teach?"],
+        "ask_q": ["What is Heat as Image about?", "Which of your works deal with AI?", "Where do you teach?"],
         "ask_err": "Sorry, that didn’t work. Please try again in a moment, or write to %s.",
         "ask_busy": "Too many questions right now. Please wait a minute.",
-        "ask_refusal": "I can’t answer that here. Questions about Liu’s work are welcome.",
+        "ask_refusal": "I can’t answer that here, but ask me anything about my work.",
     },
     "de": {
         "nav": {"works": "Arbeiten", "performance": "Performance", "about": "Über mich", "blog": "Blog (archiviert)", "friends": "Freunde"},
@@ -299,13 +301,13 @@ UI = {
         "blog_desc": "Blog-Archiv von %s: Notizen zu Arbeiten und technische Anleitungen zu Raspberry Pi, Processing und Python.",
         "friends_lead": "Künstler*innen und Kooperationspartner*innen.", "friends_desc": "Freund*innen und befreundete Künstler*innen von %s.",
         "Date": "Datum", "Category": "Kategorie",
-        "ask": "Fragen zur Arbeit", "ask_ph": "Eine Frage zu Lius Arbeit …", "ask_btn": "Fragen",
-        "ask_note": "Die Antworten schreibt eine KI (ChatGPT) auf Grundlage der Texte dieser Website; sie können Fehler enthalten. Fragen werden an Cloudflare und OpenAI übermittelt und nicht gespeichert. %s",
+        "ask": "Fragen Sie mich zu meiner Arbeit", "ask_ph": "Eine Frage zu meiner Arbeit …", "ask_btn": "Fragen",
+        "ask_note": "Die Antworten schreibt eine KI (ChatGPT) auf Grundlage der Texte meiner Website; sie können Fehler enthalten. Fragen werden an Cloudflare und OpenAI übermittelt und nicht gespeichert. %s",
         "ask_more": "Mehr in der Datenschutzerklärung.",
-        "ask_q": ["Worum geht es in Heat as Image?", "Welche Arbeiten beschäftigen sich mit KI?", "Wo unterrichtet Liu?"],
+        "ask_q": ["Worum geht es in Heat as Image?", "Welche Ihrer Arbeiten beschäftigen sich mit KI?", "Wo unterrichten Sie?"],
         "ask_err": "Das hat leider nicht geklappt. Bitte gleich noch einmal versuchen oder an %s schreiben.",
         "ask_busy": "Gerade kommen zu viele Fragen. Bitte eine Minute warten.",
-        "ask_refusal": "Darauf kann ich hier nicht antworten. Fragen zu Lius Arbeit sind willkommen.",
+        "ask_refusal": "Darauf kann ich hier nicht antworten. Fragen Sie mich gern zu meiner Arbeit.",
     },
     "zh": {
         "nav": {"works": "作品", "performance": "表演", "about": "關於", "blog": "部落格（封存）", "friends": "朋友"},
@@ -317,20 +319,20 @@ UI = {
         "work_desc": "%s（%s），%s，%s。", "work": "作品",
         "perf_title": "影音表演",
         "perf_lead": "現場影音演出與表演紀錄，2016–2024。點擊後會在新分頁開啟 %s 影片。",
-        "perf_desc": "%s的影音表演紀錄。", "watch": "在 %s 觀看 ↗",
+        "perf_desc": "%s的影音表演紀錄：現場影音演出與表演錄像，2016 年至今，影片可在 Vimeo 與 YouTube 觀看。", "watch": "在 %s 觀看 ↗",
         "about": "關於",
         "blog_title": "部落格 Blog Archive",
         "blog_lead": "作品筆記，以及 Raspberry Pi、Processing 與 Python 的技術文章。",
         "blog_desc": "%s的部落格文章彙整：作品筆記，以及 Raspberry Pi、Processing 與 Python 技術文章。",
-        "friends_lead": "藝術家與合作夥伴。", "friends_desc": "%s的朋友與藝術家夥伴。",
+        "friends_lead": "藝術家與合作夥伴。", "friends_desc": "%s的朋友、合作夥伴與藝術家夥伴，以及他們的作品網站連結。",
         "Date": "日期", "Category": "分類",
-        "ask": "關於作品，問問看", "ask_ph": "想知道劉庭均作品的什麼？", "ask_btn": "提問",
-        "ask_note": "回答由 AI（ChatGPT）根據本網站的資料生成，可能有誤。問題會傳送至 Cloudflare 與 OpenAI，不會被保存。%s",
+        "ask": "關於我的作品，問問我", "ask_ph": "想知道我作品的什麼？", "ask_btn": "提問",
+        "ask_note": "回答由 AI（ChatGPT）根據我網站上的資料生成，可能有誤。問題會傳送至 Cloudflare 與 OpenAI，不會被保存。%s",
         "ask_more": "詳見隱私權說明。",
-        "ask_q": ["《Heat as Image》在談什麼？", "哪些作品與 AI 有關？", "劉庭均在哪裡教書？"],
+        "ask_q": ["《Heat as Image》在談什麼？", "你有哪些作品跟 AI 有關？", "你在哪裡教書？"],
         "ask_err": "抱歉，暫時無法回答。請稍後再試，或寫信至 %s。",
         "ask_busy": "目前提問太多，請稍候一分鐘。",
-        "ask_refusal": "這個問題我無法在這裡回答，歡迎詢問與作品相關的問題。",
+        "ask_refusal": "這個問題我沒辦法在這裡回答，歡迎問我作品相關的問題。",
     },
 }
 CUR = ["en"]  # language of the page being built; fix_link keeps visitors in it
@@ -496,7 +498,10 @@ def ask_box(lang):
         return ""
     u = UI[lang]
     msgs = {k: u[k] % (S["email"],) if k == "ask_err" else u[k] for k in ("ask_err", "ask_busy", "ask_refusal")}
-    return ('<section class="ask" id="ask" aria-labelledby="ask-h" data-endpoint="%s" data-msgs="%s">'
+    # the endpoint is written reversed + base64 so it is not a plain URL in the page source
+    enc = base64.b64encode(S["chat_endpoint"].encode()).decode()[::-1]
+    ts = ' data-turnstile="%s"' % esc(S["turnstile_sitekey"]) if S.get("turnstile_sitekey") else ""
+    return ('<section class="ask" id="ask" aria-labelledby="ask-h" data-e="%s"%s data-msgs="%s">'
             '<h2 id="ask-h" class="ask-h">%s</h2>'
             '<div class="ask-log" aria-live="polite"></div>'
             '<form class="ask-form"><input name="q" type="text" maxlength="600" autocomplete="off" required '
@@ -504,7 +509,7 @@ def ask_box(lang):
             '<div class="ask-chips">%s</div>'
             '<p class="ask-note">%s</p>'
             '<script src="%s" defer></script></section>') % (
-        esc(S["chat_endpoint"]), esc(json.dumps(msgs, ensure_ascii=False)), esc(u["ask"]),
+        enc, ts, esc(json.dumps(msgs, ensure_ascii=False)), esc(u["ask"]),
         esc(u["ask_ph"]), esc(u["ask_ph"]), esc(u["ask_btn"]),
         "".join('<button type="button">%s</button>' % esc(q) for q in u["ask_q"]),
         esc(u["ask_note"]) % ('<a href="%s">%s</a>' % (url("datenschutz/#chat"), esc(u["ask_more"]))),
@@ -523,12 +528,12 @@ for L in LANGS:
     # home: generative field + statement, then a few recent works
     page(P, "", tr(S, "description", L),
          '<section class="home-hero"><div class="field" data-effect="field" data-words="%s" aria-hidden="true"></div>'
-         '<h1 class="sr-only">%s %s</h1><p class="home-statement"><span>%s</span></p></section>'
-         '%s<section class="home-selected" aria-label="%s"><div class="grid">%s</div>'
+         '<h1 class="sr-only">%s %s</h1>%s<p class="home-statement"><span>%s</span></p></section>'
+         '<section class="home-selected" aria-label="%s"><div class="grid">%s</div>'
          '<a class="more" href="%s">%s</a></section>' % (
              esc(json.dumps(S.get("hidden_words", []), ensure_ascii=False)),
-             esc(S["name"]), esc(S.get("name_zh", "")), esc(tr(S, "statement", L) or tr(S, "description", L)),
-             ask_box(L), esc(u["selected"]),
+             esc(S["name"]), esc(S.get("name_zh", "")), ask_box(L), esc(tr(S, "statement", L) or tr(S, "description", L)),
+             esc(u["selected"]),
              "".join(work_card(i + 1, w, L) for i, w in enumerate(works[:3])), url(P + "works/"), esc(u["all_works"] % len(works))),
          ld=person(L), full=True, lang=L, alts=each(""))
 
@@ -563,7 +568,10 @@ for L in LANGS:
             meta(rows), ' lang="%s"' % tl if tl != HREFLANG[L] else "", prose(text),
             '<p class="credits">%s</p>' % esc(w["credits"]) if w.get("credits") else "",
             plates, pager(works, i, P + "works/%s/", "title", u["nav"]["works"]))
-        desc = summary(text) or u["work_desc"] % (w["title"], w.get("year"), tr(w, "type", L) or u["work"], lname(L))
+        generic = u["work_desc"] % (w["title"], w.get("year"), tr(w, "type", L) or u["work"], lname(L))
+        desc = summary(text) or generic
+        if len(desc) < 40:  # a one-line text alone makes a thin search snippet
+            desc = generic + ("" if L == "zh" else " ") + desc
         ld = {"@context": "https://schema.org", "@type": "CreativeWork", "name": w["title"],
               "alternateName": w.get("title_zh") or None, "dateCreated": w.get("year", "")[:4],
               "genre": tr(w, "type", L) or None, "url": abs_url(P + "works/%s/" % w["slug"]), "inLanguage": HREFLANG[L],
@@ -686,8 +694,13 @@ page("impressum/", "Impressum", "Impressum / legal notice of %s." % S["name"], l
 </div>""".format(name=esc(S["name"]), addr=addr_html, email=esc(S["email"])))
 
 CHAT_PRIVACY = """<h2 id="chat">7. Fragen zur Arbeit (KI-Chat)</h2>
-<p>Auf der Startseite können Sie Fragen zu den Arbeiten stellen. Erst wenn Sie eine Frage absenden, wird sie zusammen mit den vorherigen Fragen und Antworten dieses Gesprächs an einen Cloudflare Worker (Cloudflare, Inc., 101 Townsend St., San Francisco, CA 94107, USA) und von dort an die API von OpenAI (OpenAI Ireland Ltd., 1st Floor, The Liffey Trust Centre, 117–126 Sheriff Street Upper, Dublin 1, Irland; Konzernmutter OpenAI, L.L.C., USA) übertragen, die die Antwort erzeugt. Cloudflare verarbeitet dabei Ihre IP-Adresse, um Missbrauch zu begrenzen (höchstens einige Fragen pro Minute). Die Inhalte werden auf dieser Website nicht gespeichert und nicht für Werbung verwendet; OpenAI verwendet Daten aus der API nicht zum Training seiner Modelle und speichert sie nur kurzzeitig (in der Regel bis zu 30 Tage) zur Missbrauchserkennung. Bitte geben Sie keine personenbezogenen Daten in das Feld ein. Rechtsgrundlage ist Art. 6 Abs. 1 lit. a und f DSGVO (Ihre Anfrage; berechtigtes Interesse an einem Auskunftsangebot über die Arbeiten). Die Übermittlung in die USA erfolgt auf Grundlage der EU-Standardvertragsklauseln bzw. des EU-US Data Privacy Framework. Die Antworten werden automatisch erzeugt und können Fehler enthalten.</p>
+<p>Auf der Startseite können Sie Fragen zu den Arbeiten stellen. Erst wenn Sie eine Frage absenden, wird sie zusammen mit den vorherigen Fragen und Antworten dieses Gesprächs an einen Cloudflare Worker (Cloudflare, Inc., 101 Townsend St., San Francisco, CA 94107, USA) und von dort an die API von OpenAI (OpenAI Ireland Ltd., 1st Floor, The Liffey Trust Centre, 117–126 Sheriff Street Upper, Dublin 1, Irland; Konzernmutter OpenAI, L.L.C., USA) übertragen, die die Antwort erzeugt. Cloudflare verarbeitet dabei Ihre IP-Adresse, um Missbrauch zu begrenzen (höchstens einige Fragen pro Minute). Die Inhalte werden auf dieser Website nicht gespeichert und nicht für Werbung verwendet; OpenAI verwendet Daten aus der API nicht zum Training seiner Modelle und speichert sie nur kurzzeitig (in der Regel bis zu 30 Tage) zur Missbrauchserkennung. Bitte geben Sie keine personenbezogenen Daten in das Feld ein.{turnstile} Rechtsgrundlage ist Art. 6 Abs. 1 lit. a und f DSGVO (Ihre Anfrage; berechtigtes Interesse an einem Auskunftsangebot über die Arbeiten). Die Übermittlung in die USA erfolgt auf Grundlage der EU-Standardvertragsklauseln bzw. des EU-US Data Privacy Framework. Die Antworten werden automatisch erzeugt und können Fehler enthalten.</p>
 """
+
+CHAT_PRIVACY = CHAT_PRIVACY.replace("{turnstile}", (
+    " Zum Schutz vor automatisierten Anfragen wird beim Absenden Cloudflare Turnstile geladen, das ohne Cookies "
+    "prüft, ob die Anfrage von einem Menschen stammt (Art. 6 Abs. 1 lit. f DSGVO)."
+) if S.get("turnstile_sitekey") else "")
 
 page("datenschutz/", "Datenschutz", "Privacy policy (Datenschutzerklärung) of %s." % S["name"], lang="de", body="""
 <div class="legal-page">
@@ -777,5 +790,8 @@ if PREFIX == "/":
             write(o.strip("/") + "/index.html", '<!doctype html><meta charset="utf-8"><title>Moved</title>'
                   '<link rel="canonical" href="%s"><meta name="robots" content="noindex">'
                   '<meta http-equiv="refresh" content="0; url=%s"><a href="%s">%s</a>\n' % ((esc(abs_url(new)),) * 4))
+
+# Keep the wiki's site map (what the homepage chat may link to) in step with the site.
+runpy.run_path(os.path.join(ROOT, "scripts", "wiki-sitemap.py"))
 
 print("built %d pages -> %s" % (len(pages), BASE))
