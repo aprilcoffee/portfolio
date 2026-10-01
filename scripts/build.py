@@ -498,16 +498,29 @@ def each(path):
 # The chat's header: the GPU from "This is also a GPU", drawn in text. chat.js spins the
 # fans (the <b> glyphs) and raises the temperature while an answer is being written.
 def _ask_gpu():
-    fan = [".---------.", "/    {s}    \\", "|----{c}----|", "\\    {s}    /", "'---------'"]
+    art = r"""      .------------------------------------------------------------.
+   ___|  .-----------.      .-----------.      .-----------.       |
+  |   | /  \   |   /  \    /  \   |   /  \    /  \   |   /  \      |
+  |   ||    \  |  /    |  |    \  |  /    |  |    \  |  /    |     |
+  |   ||-----( o )-----|  |-----( o )-----|  |-----( o )-----|  =  |
+  |   ||    /  |  \    |  |    /  |  \    |  |    /  |  \    |  =  |
+  |   | \  /   |   \  /    \  /   |   \  /    \  /   |   \  /   =  |
+  |___|  '-----------'      '-----------'      '-----------'       |
+      '----------.---------------------.---------------------------'
+                 |  |||||||||||||||||  |          \       {T}
+                 '---------------------'           '---."""
+    # spokes of the first fan (row, column); the other two fans sit 19 and 38 columns further.
+    # v = vertical, d = diagonal, h = horizontal. chat.js alternates "+" (v, h) and "x" (d).
+    spokes = {(r, 15): "v" for r in (2, 3, 5, 6)}
+    spokes.update({rc: "d" for rc in ((2, 11), (3, 12), (5, 12), (6, 11), (2, 19), (3, 18), (5, 18), (6, 19))})
+    spokes.update({(4, c): "h" for c in list(range(8, 13)) + list(range(18, 23))})
+    for (r, c), k in list(spokes.items()):
+        spokes[(r, c + 19)] = spokes[(r, c + 38)] = k
     rows = []
-    for r in fan:
-        cell = r.format(s="<b>|</b>", c="<b>@</b>")
-        rows.append("|   " + "       ".join([cell] * 3) + "    = |")
-    width = len(rows[0].replace("<b>", "").replace("</b>", ""))
-    top = "." + "-" * (width - 2) + "."
-    foot = "'" + "-" * 12 + "." + "-" * 31 + "." + "-" * (width - 47) + "'"
-    stand = " " * 13 + "|" * 31 + "    <i>41</i>°C  ~ ~"
-    return "\n".join([top] + rows + [foot, stand])
+    for r, line in enumerate(art.split("\n")):
+        rows.append("".join('<b class="%s">%s</b>' % (spokes[(r, c)], ch) if (r, c) in spokes else esc(ch)
+                            for c, ch in enumerate(line)))
+    return "\n".join(rows).replace("{T}", "<i>41</i>°C")
 
 
 ASK_GPU = _ask_gpu()
