@@ -397,7 +397,10 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
 <meta name="twitter:description" content="{d}">
 <meta name="twitter:image" content="{img}">
 <meta name="theme-color" content="#ffffff">
-<link rel="icon" href="{icon}" type="image/svg+xml">
+<link rel="icon" href="{icon}" sizes="32x32" type="image/png">
+<link rel="icon" href="{ico}" sizes="any">
+<link rel="apple-touch-icon" href="{touch}">
+<link rel="manifest" href="{manifest}">
 <link rel="alternate" type="application/rss+xml" title="{name} — Blog" href="{feed}">
 {ga}
 <link rel="stylesheet" href="{css}">
@@ -428,7 +431,7 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
 """.format(lang=cl, side_lang=' lang="%s"' % HREFLANG[lang] if cl != HREFLANG[lang] else "",
            locale=LOCALE[lang] if not content_lang else ("zh_TW" if content_lang.startswith("zh") else LOCALE[lang]),
            t=esc(page_title), d=esc(desc or tr(S, "description", lang)), name=esc(S["name"]), zh=esc(S.get("name_zh", "")),
-           c=esc(canonical), hreflang=hreflang, ogt=og_type, img=esc(image), icon=url("assets/favicon.svg"),
+           c=esc(canonical), hreflang=hreflang, ogt=og_type, img=esc(image), icon=url("assets/favicon-32.png"), ico=url("favicon.ico"), touch=url("assets/apple-touch-icon.png"), manifest=url("site.webmanifest"),
            css=url("assets/style.css"), js=url("assets/site.js"), fx=url("assets/effects.js"), feed=url("blog/feed.xml"),
            ga=ga, ld=ld_tag, home=url(LP[lang]), imp=url("impressum/"), dsg=url("datenschutz/"), nav=nav, switch=switch,
            menu=u["menu"], language=u["language"], privacy=u["privacy"], email=esc(S["email"]), links=links,
