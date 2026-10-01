@@ -348,6 +348,21 @@ def lname(lang):
 
 
 # ---------- layout ----------
+_versions = {}
+
+
+def versioned(path):
+    """URL of a file in assets/ with ?v=<content hash>, so browsers fetch it again when it changes."""
+    if path not in _versions:
+        import hashlib
+        try:
+            with open(os.path.join(ROOT, path), "rb") as f:
+                _versions[path] = hashlib.md5(f.read()).hexdigest()[:8]
+        except OSError:  # e.g. the admin's in-browser preview, which has no assets/ folder
+            _versions[path] = ""
+    return "%s?v=%s" % (url(path), _versions[path]) if _versions[path] else url(path)
+
+
 def idx(n):
     return ""  # numbering removed from the design; kept as a hook
 
@@ -373,7 +388,7 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
         hreflang += '<link rel="alternate" hreflang="x-default" href="%s">\n' % esc(abs_url(alts["en"]))
     links = "".join(a(l["url"], esc(l["label"])) for l in S.get("links", []))
     ld_tag = ('<script type="application/ld+json">%s</script>' % json.dumps(ld, ensure_ascii=False)) if ld else ""
-    ga = ('<script async src="%s" data-ga="%s" data-banner></script>' % (url("assets/analytics.js"), esc(S["ga_id"]))
+    ga = ('<script async src="%s" data-ga="%s" data-banner></script>' % (versioned("assets/analytics.js"), esc(S["ga_id"]))
           if S.get("ga_id") else "")
     cl = content_lang or HREFLANG[lang]
     return """<!doctype html>
@@ -432,7 +447,7 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
            locale=LOCALE[lang] if not content_lang else ("zh_TW" if content_lang.startswith("zh") else LOCALE[lang]),
            t=esc(page_title), d=esc(desc or tr(S, "description", lang)), name=esc(S["name"]), zh=esc(S.get("name_zh", "")),
            c=esc(canonical), hreflang=hreflang, ogt=og_type, img=esc(image), icon=url("assets/favicon-32.png"), ico=url("favicon.ico"), touch=url("assets/apple-touch-icon.png"), manifest=url("site.webmanifest"),
-           css=url("assets/style.css"), js=url("assets/site.js"), fx=url("assets/effects.js"), feed=url("blog/feed.xml"),
+           css=versioned("assets/style.css"), js=versioned("assets/site.js"), fx=versioned("assets/effects.js"), feed=url("blog/feed.xml"),
            ga=ga, ld=ld_tag, home=url(LP[lang]), imp=url("impressum/"), dsg=url("datenschutz/"), nav=nav, switch=switch,
            menu=u["menu"], language=u["language"], privacy=u["privacy"], email=esc(S["email"]), links=links,
            year=datetime.date.today().year, full=" full" if full else "", body=body)
@@ -549,7 +564,7 @@ def ask_box(lang):
         esc(u["ask_ph"]), esc(u["ask_ph"]), esc(u["ask_btn"]),
         "".join('<button type="button">%s</button>' % esc(q) for q in u["ask_q"]),
         esc(u["ask_note"]).replace("%s", '<a href="%s">%s</a>' % (url("datenschutz/#chat"), esc(u["ask_more"]))),
-        url("assets/chat.js"))
+        versioned("assets/chat.js"))
 
 
 years = sorted(w["year"][:4] for w in works if w.get("year"))
