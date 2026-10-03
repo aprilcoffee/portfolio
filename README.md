@@ -75,7 +75,7 @@ https://liutingchun.com 的原始碼：從 Wix 搬出來的個人網站，由 Gi
 
 ## Google Analytics 與法律頁
 
-- GA4（`site.ga_id`，目前 `G-5XL9T33VG0`，GA 裡的串流「liutingchun - GA4」，從 Wix 時期延續）由 `assets/analytics.js` 載入，**使用者按 OK 之前完全不載入**；選擇存在瀏覽器。`aprilcoffee.github.io` 上的 `sun/`、`heat_as_image/` 用另一個串流 `G-JX0CS0510W`（「heat_as_image」），寫在它們自己的 HTML 裡，不受這裡影響。
+- GA4（`site.ga_id`，目前 `G-5XL9T33VG0`，GA 裡的串流「liutingchun - GA4」，從 Wix 時期延續）由 `assets/analytics.js` 載入，每次瀏覽都會載入（沒有 cookie 同意視窗）；訪客可以在 Datenschutz 頁按按鈕關掉，選擇存在瀏覽器。`aprilcoffee.github.io` 上的 `sun/`、`heat_as_image/` 用另一個串流 `G-JX0CS0510W`（「heat_as_image」），寫在它們自己的 HTML 裡，不受這裡影響。
 - `impressum/`、`datenschutz/` 會自動產生並連在側欄底部。**`site.address` 必須填入可送達的郵寄地址**（德國 § 5 DDG 規定），可在後台「網站設定」填寫。
 - `llms.txt`（網域根目錄）以一般文字向 AI 助理說明你的身分與作品，並由 robots.txt 指向。
 

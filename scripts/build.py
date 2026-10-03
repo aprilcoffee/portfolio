@@ -388,7 +388,7 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
         hreflang += '<link rel="alternate" hreflang="x-default" href="%s">\n' % esc(abs_url(alts["en"]))
     links = "".join(a(l["url"], esc(l["label"])) for l in S.get("links", []))
     ld_tag = ('<script type="application/ld+json">%s</script>' % json.dumps(ld, ensure_ascii=False)) if ld else ""
-    ga = ('<script async src="%s" data-ga="%s" data-banner></script>' % (versioned("assets/analytics.js"), esc(S["ga_id"]))
+    ga = ('<script async src="%s" data-ga="%s"></script>' % (versioned("assets/analytics.js"), esc(S["ga_id"]))
           if S.get("ga_id") else "")
     cl = content_lang or HREFLANG[lang]
     return """<!doctype html>
@@ -761,8 +761,8 @@ page("datenschutz/", "Datenschutz", "Privacy policy (Datenschutzerklärung) of %
 <h2>2. Hosting</h2>
 <p>Diese Website wird bei GitHub Pages (GitHub Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA) gehostet. Beim Aufruf verarbeitet GitHub technisch notwendige Daten wie IP-Adresse, Zeitpunkt und aufgerufene Seite in Server-Logfiles, um die Website auszuliefern und abzusichern. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer sicheren und funktionsfähigen Website). Die Übermittlung in die USA erfolgt auf Grundlage des EU-US Data Privacy Framework.</p>
 <h2>3. Google Analytics</h2>
-<p>Nur wenn Sie im Hinweis auf „OK“ klicken, wird Google Analytics 4 (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland) geladen. Google Analytics setzt dann Cookies und erfasst pseudonymisierte Nutzungsdaten (z.&nbsp;B. aufgerufene Seiten, Verweildauer, ungefährer Standort, Gerät), um die Nutzung dieser Website statistisch auszuwerten. IP-Adressen werden von Google Analytics 4 nicht gespeichert. Werbefunktionen sind deaktiviert. Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG). Ohne Einwilligung wird Google Analytics nicht geladen. Eine Übermittlung in die USA ist möglich; Google ist unter dem EU-US Data Privacy Framework zertifiziert.</p>
-<p>Sie können Ihre Einwilligung jederzeit widerrufen: <button type="button" data-consent-reset>Einstellung zurücksetzen / Reset choice</button></p>
+<p>Diese Website verwendet Google Analytics 4 (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland), um die Nutzung statistisch auszuwerten. Beim Aufruf einer Seite setzt Google Analytics Cookies und erfasst pseudonymisierte Nutzungsdaten (z.&nbsp;B. aufgerufene Seiten, Verweildauer, ungefährer Standort, Gerät). IP-Adressen werden von Google Analytics 4 nicht gespeichert. Werbefunktionen sind deaktiviert. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer Reichweitenmessung dieser Website). Eine Übermittlung in die USA ist möglich; Google ist unter dem EU-US Data Privacy Framework zertifiziert.</p>
+<p>Sie können der Erfassung jederzeit für diesen Browser widersprechen: <button type="button" data-ga-optout data-off="Google Analytics deaktivieren / Turn off analytics" data-on="Google Analytics wieder aktivieren / Turn analytics back on">Google Analytics deaktivieren / Turn off analytics</button> Alternativ können Sie Cookies in Ihrem Browser blockieren.</p>
 <h2>4. Eingebettete Videos (Vimeo, YouTube)</h2>
 <p>Videos werden erst geladen, wenn Sie auf das Vorschaubild klicken. Erst dann werden Daten (u.&nbsp;a. IP-Adresse) an Vimeo (Vimeo.com Inc., New York, USA) bzw. YouTube (Google Ireland Limited) übertragen; YouTube wird im erweiterten Datenschutzmodus (youtube-nocookie.com) eingebunden. Vorschaubilder einiger Vimeo-Videos werden über vumbnail.com geladen.</p>
 <h2>5. Externe Bilder</h2>
@@ -771,7 +771,7 @@ page("datenschutz/", "Datenschutz", "Privacy policy (Datenschutzerklärung) of %
 <p>Es werden keine Google Fonts von Google-Servern geladen. Die Bibliothek p5.js für die grafischen Animationen wird von cdnjs (Cloudflare, Inc.) geladen; dabei wird Ihre IP-Adresse an Cloudflare übertragen (Art. 6 Abs. 1 lit. f DSGVO).</p>
 {chat}<h2>{n}. Ihre Rechte</h2>
 <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit, Widerspruch sowie auf Widerruf erteilter Einwilligungen. Außerdem können Sie sich bei einer Datenschutz-Aufsichtsbehörde beschweren.</p>
-<p class="en">In short: analytics only runs after you click OK; videos only load when you press play;{chat_en} nothing else tracks you.</p>
+<p class="en">In short: Google Analytics counts visits (you can turn it off with the button above); videos only load when you press play;{chat_en} nothing else tracks you.</p>
 </div>""".format(name=esc(S["name"]), addr=addr_html, email=esc(S["email"]), n=8 if S.get("chat_endpoint") else 7,
                chat_en=" questions in the “Ask” box go to Cloudflare and OpenAI and are not stored;" if S.get("chat_endpoint") else "",
                chat=CHAT_PRIVACY if S.get("chat_endpoint") else ""))
