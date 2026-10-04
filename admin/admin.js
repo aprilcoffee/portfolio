@@ -325,7 +325,9 @@
       h('div', { className: 'row' }, [field('網站描述 DE', s, 'description_de', { area: true }), field('網站描述 中文', s, 'description_zh', { area: true })]),
       field('Email', s, 'email'),
       field('首頁圖片', s, 'home_image'),
-      field('首頁大字介紹 Statement', s, 'statement', { area: true }),
+      field('首頁大字（首頁下方的大字，留空＝留白）', s, 'home_text', { area: true }),
+      h('div', { className: 'row' }, [field('首頁大字 DE', s, 'home_text_de', { area: true }), field('首頁大字 中文', s, 'home_text_zh', { area: true })]),
+      field('簡介 Statement（搜尋引擎、分享、llms.txt 用，不顯示在首頁）', s, 'statement', { area: true }),
       h('div', { className: 'row' }, [field('Statement DE', s, 'statement_de', { area: true }), field('Statement 中文', s, 'statement_zh', { area: true })]),
       (function () {
         var ta = h('textarea', { value: (s.address || []).join('\n'), placeholder: 'Musterstraße 1\n12345 Berlin\nDeutschland' });

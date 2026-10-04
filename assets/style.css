@@ -115,6 +115,7 @@ button { font: inherit; color: inherit; }
   position: relative; z-index: 1; align-self: stretch; margin: auto var(--pad) 4.5rem 0; padding-top: 3rem;
   max-width: 51.25rem; font-size: clamp(1.125rem, 1.75vw, 1.625rem); line-height: 1.3; font-weight: 700; letter-spacing: -0.015em;
 }
+.home-statement.empty::before { content: ""; display: block; height: 2.6em; }
 .home-statement span { background: var(--bg); box-decoration-break: clone; -webkit-box-decoration-break: clone; padding: 0 .12em; }
 .home-selected { padding: 6rem var(--pad) 7.5rem 0; }
 .home-selected .more { display: inline-block; margin-top: 2.5rem; font-family: var(--mono); font-size: var(--fs-meta); border-bottom: 1px solid var(--ink); }

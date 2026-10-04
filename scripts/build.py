@@ -538,6 +538,15 @@ def _ask_gpu():
 ASK_GPU = _ask_gpu()
 
 
+def home_text(lang):
+    """The big text at the bottom of the homepage (site.home_text / _de / _zh). Empty: the
+    space stays, so the layout does not move when text is added later."""
+    t = tr(S, "home_text", lang)
+    if not t:
+        return '<p class="home-statement empty" aria-hidden="true"></p>'
+    return '<p class="home-statement"><span>%s</span></p>' % esc(t)
+
+
 def ask_box(lang):
     """The chat box on the homepage; only rendered once site.chat_endpoint is set."""
     if not S.get("chat_endpoint"):
@@ -574,11 +583,11 @@ for L in LANGS:
     # home: generative field + statement, then a few recent works
     page(P, "", tr(S, "description", L),
          '<section class="home-hero"><div class="field" data-effect="field" data-words="%s" aria-hidden="true"></div>'
-         '<h1 class="sr-only">%s %s</h1>%s<p class="home-statement"><span>%s</span></p></section>'
+         '<h1 class="sr-only">%s %s</h1>%s%s</section>'
          '<section class="home-selected" aria-label="%s"><div class="grid">%s</div>'
          '<a class="more" href="%s">%s</a></section>' % (
              esc(json.dumps(S.get("hidden_words", []), ensure_ascii=False)),
-             esc(S["name"]), esc(S.get("name_zh", "")), ask_box(L), esc(tr(S, "statement", L) or tr(S, "description", L)),
+             esc(S["name"]), esc(S.get("name_zh", "")), ask_box(L), home_text(L),
              esc(u["selected"]),
              "".join(work_card(i + 1, w, L) for i, w in enumerate(works[:3])), url(P + "works/"), esc(u["all_works"] % len(works))),
          ld=person(L), full=True, lang=L, alts=each(""))
