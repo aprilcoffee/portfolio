@@ -78,6 +78,15 @@ for l in S.get("links", []):
     out.append("- **%s**: %s" % (l["label"], l["url"]))
 out.append("- **Email**: mailto:%s" % S["email"])
 
+out.append("\n## CV entries with a page elsewhere\n")
+out.append("Organisers', institutions' and publishers' pages for entries in the CV (About page).\n")
+for sec in D["about"]["sections"]:
+    rows = [it for it in sec["items"] if it.get("url")]
+    if rows:
+        out.append("**%s**\n" % sec["title"])
+        out += ["- %s %s: %s" % (it.get("year", ""), it["text"], it["url"]) for it in rows]
+        out.append("")
+
 out.append("\n## Friends' websites\n")
 for f in friends:
     out.append("- **%s**: %s" % (f["name"], f["url"]))
