@@ -43,3 +43,8 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 ## [2026-10-01] fix | chat links, Chaya Shen page trimmed
 - people/chaya-shen cut to a short note: her topics (body, medicine) leaked into answers about Liu. Her site is listed with the friends (data/site.json, so in Site map and links).
 - worker RULES: links from Site map and External links, URLs copied exactly, wiki paths are not web pages, people pages are not about Liu. chat.js drops URLs written in answer text.
+
+## [2026-10-04] links | CV entries
+- 29 CV entries in data/site.json got links to organisers', institutions' or publishers' pages (each opened and checked for Liu's name or the exact event); the Screen Walk entry now points to the event page.
+- scripts/wiki-sitemap.py: site-map now lists every CV entry that has a link, so the chat can recommend them.
+- Open: soundings Xtra (CV 2022, KHM page 19 October 2023).
