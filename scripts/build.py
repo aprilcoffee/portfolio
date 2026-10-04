@@ -279,7 +279,6 @@ UI = {
         "ask": "Ask me about my work", "ask_ph": "Ask me anything", "ask_btn": "Ask",
         "ask_note": "caution: AI may create random correlations",
         "ask_more": "Privacy",
-        "ask_q": ["What is Heat as Image about?", "Which of your works deal with AI?", "Where do you teach?"],
         "ask_err": "Sorry, that didn’t work. Please try again in a moment, or write to %s.",
         "ask_busy": "Too many questions right now. Please wait a minute.",
         "ask_refusal": "I can’t answer that here, but ask me anything about my work.",
@@ -304,7 +303,6 @@ UI = {
         "ask": "Fragen Sie mich zu meiner Arbeit", "ask_ph": "Fragen Sie mich alles", "ask_btn": "Fragen",
         "ask_note": "Achtung: KI kann zufällige Zusammenhänge erzeugen · %s",
         "ask_more": "Datenschutz",
-        "ask_q": ["Worum geht es in Heat as Image?", "Welche Ihrer Arbeiten beschäftigen sich mit KI?", "Wo unterrichten Sie?"],
         "ask_err": "Das hat leider nicht geklappt. Bitte gleich noch einmal versuchen oder an %s schreiben.",
         "ask_busy": "Gerade kommen zu viele Fragen. Bitte eine Minute warten.",
         "ask_refusal": "Darauf kann ich hier nicht antworten. Fragen Sie mich gern zu meiner Arbeit.",
@@ -329,7 +327,6 @@ UI = {
         "ask": "關於我的作品，問問我", "ask_ph": "問我任何事", "ask_btn": "提問",
         "ask_note": "注意：AI 可能產生隨機的關聯性",
         "ask_more": "隱私權",
-        "ask_q": ["《Heat as Image》在談什麼？", "你有哪些作品跟 AI 有關？", "你在哪裡教書？"],
         "ask_err": "抱歉，暫時無法回答。請稍後再試，或寫信至 %s。",
         "ask_busy": "目前提問太多，請稍候一分鐘。",
         "ask_refusal": "這個問題我沒辦法在這裡回答，歡迎問我作品相關的問題。",
@@ -557,12 +554,10 @@ def ask_box(lang):
             '<form class="ask-form"><span class="ask-prompt" aria-hidden="true">&gt;</span>'
             '<input name="q" type="text" maxlength="600" autocomplete="off" required '
             'placeholder="%s" aria-label="%s"><button type="submit">%s</button></form>'
-            '<div class="ask-chips">%s</div>'
             '<p class="ask-note">%s</p>'
             '<script src="%s" defer></script></section>') % (
         enc, ts, esc(json.dumps(msgs, ensure_ascii=False)), esc(u["ask"]),
         esc(u["ask_ph"]), esc(u["ask_ph"]), esc(u["ask_btn"]),
-        "".join('<button type="button">%s</button>' % esc(q) for q in u["ask_q"]),
         esc(u["ask_note"]).replace("%s", '<a href="%s">%s</a>' % (url("datenschutz/#chat"), esc(u["ask_more"]))),
         versioned("assets/chat.js"))
 

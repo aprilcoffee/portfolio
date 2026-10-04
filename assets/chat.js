@@ -215,8 +215,4 @@
     input.value = '';
     ask(q);
   });
-  box.querySelector('.ask-chips').addEventListener('click', function (e) {
-    var b = e.target.closest('button');
-    if (b) ask(b.textContent);
-  });
 })();

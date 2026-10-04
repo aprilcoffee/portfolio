@@ -168,16 +168,12 @@ button { font: inherit; color: inherit; }
   font: inherit; color: var(--ink); caret-color: rgb(22, 140, 190);
 }
 .ask-form input::placeholder { color: var(--mut); }
-.ask-form button, .ask-chips button { font: inherit; background: none; border: 0; color: var(--ink); cursor: pointer; padding: 0; }
+.ask-form button { font: inherit; background: none; border: 0; color: var(--ink); cursor: pointer; padding: 0; }
 .ask-form button::before { content: "[ "; color: var(--dim); }
 .ask-form button::after { content: " ]"; color: var(--dim); }
 .ask-form button:disabled { color: var(--dim); cursor: default; }
-.ask-chips { display: flex; flex-direction: column; align-items: flex-start; gap: 0.125rem; margin-top: 0.75rem; }
-.ask-chips button { color: var(--mut); text-align: left; }
-.ask-chips button::before { content: "$ "; color: var(--dim); }
-.ask-chips button:hover, .ask-form button:hover:not(:disabled) { color: rgb(22, 140, 190); }
-.ask.open .ask-chips { display: none; }
-.ask-note { margin-top: 0.75rem; font-size: 0.875rem; line-height: 1.5; color: var(--mut); }
+.ask-form button:hover:not(:disabled) { color: rgb(22, 140, 190); }
+.ask.open .ask-note { margin-top: 0.75rem; font-size: 0.875rem; line-height: 1.5; color: var(--mut); }
 .ask-note::before { content: "// "; color: var(--dim); }
 .ask-note a { border-bottom: 1px solid rgba(0, 0, 0, .25); }
 .ask-check:empty { display: none; }
