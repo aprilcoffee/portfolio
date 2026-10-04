@@ -29,7 +29,7 @@ Exhibitions, performances and collaborative new-media / theatre projects, as lis
 - 2023 — Ghosts at the Feast, Weltkunstzimmer, Düsseldorf
 - 2023 — Kölner Kongress ’23, Deutschlandfunk, Cologne
 - 2023 — FILE: Electronic Language International Festival, São Paulo / Rio de Janeiro
-- 2022 — soundings Xtra, Aula, Cologne
+- 2023 — soundings Xtra, Aula, Cologne ([link](https://www.khm.de/termine/news.5626.soundings-xtra-sdcm/): audiovisual performance, 19 October 2023)
 - 2022 — ACHT BRÜCKEN Festival, Kölner Philharmonie, Cologne
 - 2020 — Urban Interpreter Online, 241 Art Gallery, Hsinchu
 - 2020 — Ars Electronica .ART Global Gallery, online
@@ -65,10 +65,6 @@ Exhibitions, performances and collaborative new-media / theatre projects, as lis
 - 2018 — Yue-Jin Lantern Festival, Tainan (Co-Artist)
 - 2017 — Bengaluru Fantastic 2017, Rangoli Metro Arts Center, Bengaluru (Sound Engineer)
 - 2017 — Nuit Blanche, Taipei (Co-Artist)
-
-## Open questions
-
-- *soundings Xtra*, Aula, Cologne: the CV dates it 2022, but the KHM page that names Liu's audiovisual performance is for 19 October 2023 (https://www.khm.de/termine/news.5626.soundings-xtra-sdcm/); the 2022 soundings Xtra pages do not list Liu.
 
 ## Related
 

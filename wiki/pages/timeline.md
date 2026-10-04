@@ -16,7 +16,7 @@ Year-by-year list of works, teaching, education, awards, talks, publications, ex
 ## 2026
 
 - Work: [Steering Through the Inner Residue](works/steering-through-the-inner-residue.md) — Video Installation
-- Teaching: Guest Lecturer (Lehrbeauftragter), Institute of Fine Arts and Media Art, Digital Art, University of Applied Arts Vienna (Erasmus+ Staff Mobility for Teaching)
+- Teaching: Erasmus+ Staff Mobility for Teaching, Digital Art, Institute of Fine Arts and Media Art, University of Applied Arts Vienna
 - Awards & Fellowships: Fellowship für Innovationen in der digitalen Hochschullehre Thüringen, Stifterverband. Project “Lokale KI-Anwendung im Bewegtbild-Studio” (Local AI Application in the Moving-Image Studio), until 2027 ([link](https://www.stifterverband.org/digital-lehrfellows-thueringen/2026/liu))
 - Lectures, Talks & Workshops: “Condition for Emotions”, DFG network “Das Wissen der digitalen Literatur”
 - Lectures, Talks & Workshops: Animism Revisited, Digital Arts Community, ACM SIGGRAPH, w/ Leon-Etienne Kühr
@@ -74,6 +74,7 @@ Year-by-year list of works, teaching, education, awards, talks, publications, ex
 - Exhibitions: Kölner Kongress ’23, Deutschlandfunk, Cologne
 - Exhibitions: FILE: Electronic Language International Festival, São Paulo / Rio de Janeiro
 - Performances: Blaues Rauschen Festival ’23, Folkwang-Musikschule
+- Exhibitions: soundings Xtra, Aula, Cologne
 
 ## 2022
 
@@ -81,7 +82,6 @@ Year-by-year list of works, teaching, education, awards, talks, publications, ex
 - Work: [Beneath](works/beneath.md) — Sound Installation
 - Teaching: Student Assistant, Experimental Informatics, Academy of Media Arts Cologne (2022–2024)
 - Publications & Writing: Poetic Materialization – Regarding Midjourney, [ ] ground zero – poetics of technics and cognition
-- Exhibitions: soundings Xtra, Aula, Cologne
 - Exhibitions: ACHT BRÜCKEN Festival, Kölner Philharmonie, Cologne
 
 ## 2021
