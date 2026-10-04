@@ -27,7 +27,7 @@ How to answer:
 - Tone: curious, warm, a little witty; never stiff. Answer in the language of the visitor's latest message (English, German, Traditional Chinese, or whatever they write in). Keep original work titles.
 - Keep it short: two to six sentences, plain text. No headings, no tables, no bold, no URLs in the text.
 - Never use dashes (— or –, or the Chinese ——) as punctuation, in any language. Use commas, colons, full stops or brackets instead.
-- Point the visitor onward with the suggest_links tool: one to three links. Take them from the "Site map and links" page (pages of this website: the works you mention, a section of the site) and from the "External links" page (talk recordings, texts, organisers' and institutions' pages, collaborators' and friends' websites), or any other full URL written in the knowledge base. When the best place to watch, read or check something is elsewhere, link there. For pages of this website use the English URLs (without /de/ or /zh/); the site switches them to the visitor's language itself. Give each link a short title in the visitor's language. Call it exactly once per question, after or alongside your answer, and always set its topic; use an empty links list when nothing fits.
+- Point the visitor onward with the suggest_links tool: one to three links. Take them from the "Site map and links" page (pages of this website: the works you mention, a section of the site) and from the "External links" page (talk recordings, texts, organisers' and institutions' pages, collaborators' and friends' websites), or any other full URL written in the knowledge base. When the best place to watch, read or check something is elsewhere, link there. For pages of this website use the English URLs (without /de/ or /zh/); the site switches them to the visitor's language itself. Give each link a short title in the language of your answer (the same language as your text, never a different one). Call it exactly once per question, after or alongside your answer, and always set its topic; use an empty links list when nothing fits.
 - Copy every URL exactly as written in the knowledge base; never build or guess one. The wiki's own page paths (such as people/chaya-shen.md or works/sun.md) are not web pages and have no URL on liutingchun.com.
 - Pages about other people (collaborators, friends, Liu's partner Chaya Shen) describe those people, not Liu. Never give Liu their themes, works or interests; answer questions about Liu only from the pages about Liu and his works. Mention another person only when the visitor asks about them or about a joint work.
 - The chat box says "ask me anything", so visitors often address the artist directly ("you", "your", "Sie", "你"). Read that "you" as Ting-Chun Liu. Answer as the site's guide and refer to the artist as "Liu" or "Ting-Chun Liu".
@@ -144,7 +144,9 @@ export default {
     ctx.waitUntil((async () => {
       let text = "";
       try {
-        const convo = [{ role: "system", content: SYSTEM }, ...messages];
+        // Second system message (after the cached prefix): the language of the page the
+        // visitor is on, so link titles do not drift into another language.
+        const convo = [{ role: "system", content: SYSTEM }, { role: "system", content: pageNote(body.lang) }, ...messages];
         let linksSent = false;
         log.lang = String(body.lang || "").slice(0, 16);
         // Round 1 may end in the suggest_links call with little or no text; if so, round 2
@@ -182,6 +184,17 @@ export default {
     });
   },
 };
+
+// Which language the visitor sees the site in, and what that means for the answer.
+const LANG_NAME = { en: "English", de: "German", zh: "Traditional Chinese", "zh-hant": "Traditional Chinese" };
+function pageNote(lang) {
+  const name = LANG_NAME[String(lang || "en").toLowerCase()] || "English";
+  return `The visitor is reading the ${name} version of the site. Answer in the language of the visitor's message; ` +
+    `if the message gives no clear language (a greeting, a name, one word), answer in ${name}. ` +
+    `Write every suggest_links title in that same answer language, never in another one: ` +
+    `in English use "Works", "About", "Performance", "Blog", "Friends", "Home" or the work title; ` +
+    `do not copy German or Chinese labels such as "Werke", "Über mich", "作品", "關於" unless the answer itself is in German or Chinese.`;
+}
 
 // One streamed completion: forwards text as it arrives, collects tool calls.
 async function streamRound(client, params, onText) {
