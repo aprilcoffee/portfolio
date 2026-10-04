@@ -3,7 +3,9 @@
 // The website is static, so it cannot hold an API key. This Cloudflare Worker sits in
 // between: the browser sends the question (plus the previous exchange) here, the Worker
 // adds the knowledge base (the LLM wiki, bundled into knowledge.js) and the key, asks the
-// OpenAI API (ChatGPT models), and streams the answer back. Nothing is stored.
+// OpenAI API (ChatGPT models), and streams the answer back. Each exchange (question,
+// answer, links, topic, page language, country; no IP address) is kept in the D1 database
+// bound as DB, to improve the chat; worker/log-viewer.py reads it.
 //
 // The answer streams as newline-delimited JSON:
 //   {"t": "text…"}                      a piece of the answer
@@ -25,7 +27,7 @@ How to answer:
 - Tone: curious, warm, a little witty; never stiff. Answer in the language of the visitor's latest message (English, German, Traditional Chinese, or whatever they write in). Keep original work titles.
 - Keep it short: two to six sentences, plain text. No headings, no tables, no bold, no URLs in the text.
 - Never use dashes (— or –, or the Chinese ——) as punctuation, in any language. Use commas, colons, full stops or brackets instead.
-- Point the visitor onward with the suggest_links tool: one to three links. Take them from the "Site map and links" page (pages of this website: the works you mention, a section of the site) and from the "External links" page (talk recordings, texts, organisers' and institutions' pages, collaborators' and friends' websites), or any other full URL written in the knowledge base. When the best place to watch, read or check something is elsewhere, link there. For pages of this website use the English URLs (without /de/ or /zh/); the site switches them to the visitor's language itself. Give each link a short title in the visitor's language. Call it at most once, after or alongside your answer.
+- Point the visitor onward with the suggest_links tool: one to three links. Take them from the "Site map and links" page (pages of this website: the works you mention, a section of the site) and from the "External links" page (talk recordings, texts, organisers' and institutions' pages, collaborators' and friends' websites), or any other full URL written in the knowledge base. When the best place to watch, read or check something is elsewhere, link there. For pages of this website use the English URLs (without /de/ or /zh/); the site switches them to the visitor's language itself. Give each link a short title in the visitor's language. Call it exactly once per question, after or alongside your answer, and always set its topic; use an empty links list when nothing fits.
 - Copy every URL exactly as written in the knowledge base; never build or guess one. The wiki's own page paths (such as people/chaya-shen.md or works/sun.md) are not web pages and have no URL on liutingchun.com.
 - Pages about other people (collaborators, friends, Liu's partner Chaya Shen) describe those people, not Liu. Never give Liu their themes, works or interests; answer questions about Liu only from the pages about Liu and his works. Mention another person only when the visitor asks about them or about a joint work.
 - The chat box says "ask me anything", so visitors often address the artist directly ("you", "your", "Sie", "你"). Read that "you" as Ting-Chun Liu. Answer as the site's guide and refer to the artist as "Liu" or "Ting-Chun Liu".
@@ -43,11 +45,15 @@ Knowledge base (a wiki written from the artist's own website; each page is in a 
 // automatically, which makes the large knowledge base much cheaper after the first question.
 const SYSTEM = RULES + KNOWLEDGE;
 
+// Topics the model sorts each question into (stored with the exchange; see log-viewer.py).
+const TOPICS = ["works", "exhibitions-performances", "teaching-education", "writing-talks", "ideas-concepts",
+  "biography", "contact-practical", "website-chat", "off-topic", "other"];
+
 const TOOLS = [{
   type: "function",
   function: {
     name: "suggest_links",
-    description: "Show the visitor up to three links as buttons below the answer: pages of this website or external pages. Only URLs copied exactly from the knowledge base; others are dropped.",
+    description: "Show the visitor up to three links as buttons below the answer (pages of this website or external pages; only URLs copied exactly from the knowledge base, others are dropped), and name the topic of the question. Call it once for every question, with an empty links list if nothing fits.",
     parameters: {
       type: "object",
       properties: {
@@ -64,8 +70,9 @@ const TOOLS = [{
             additionalProperties: false,
           },
         },
+        topic: { type: "string", enum: TOPICS, description: "What the visitor's question is about (for the site's own statistics)" },
       },
-      required: ["links"],
+      required: ["links", "topic"],
       additionalProperties: false,
     },
   },
@@ -121,36 +128,52 @@ export default {
     };
     if (env.REASONING_EFFORT) base.reasoning_effort = env.REASONING_EFFORT;
 
+    // What gets stored about this exchange (see save()). No IP address.
+    const log = {
+      question: messages[messages.length - 1].content,
+      context: messages.length > 1 ? messages[0].content : null,
+      country: request.cf?.country || null,
+      model: base.model, status: "ok", topic: null, links: [], tokensIn: 0, tokensOut: 0,
+    };
+
     const { readable, writable } = new TransformStream();
     const writer = writable.getWriter();
     const enc = new TextEncoder();
     const send = (obj) => writer.write(enc.encode(JSON.stringify(obj) + "\n"));
 
     ctx.waitUntil((async () => {
+      let text = "";
       try {
         const convo = [{ role: "system", content: SYSTEM }, ...messages];
-        let text = "", linksSent = false;
+        let linksSent = false;
+        log.lang = String(body.lang || "").slice(0, 16);
         // Round 1 may end in the suggest_links call with little or no text; if so, round 2
         // asks for the written answer (tools disabled), so the visitor always gets both.
         for (let round = 0; round < 2; round++) {
           const r = await streamRound(client, { ...base, messages: convo, tool_choice: round ? "none" : "auto" },
                                       (t) => { text += t; return send({ t }); });
-          if (r.refused) return send({ error: "refusal" });
+          log.tokensIn += r.usage?.prompt_tokens || 0;
+          log.tokensOut += r.usage?.completion_tokens || 0;
+          if (r.refused) { log.status = "refusal"; return send({ error: "refusal" }); }
           if (!linksSent && r.calls.length) {
+            log.topic = log.topic || pickTopic(r.calls);
             const links = pickLinks(r.calls, body.lang);
-            if (links.length) { await send({ links }); linksSent = true; }
+            if (links.length) { await send({ links }); linksSent = true; log.links = links; }
           }
           if (text.trim() || !r.calls.length) break;
           convo.push({ role: "assistant", content: null, tool_calls: r.calls.map((c) => ({
             id: c.id, type: "function", function: { name: c.name, arguments: c.args } })) });
           for (const c of r.calls) convo.push({ role: "tool", tool_call_id: c.id, content: "Shown to the visitor." });
         }
-        if (!text.trim()) await send({ error: "error" });
+        if (!text.trim()) { log.status = "error"; await send({ error: "error" }); }
       } catch (err) {
         console.error(err instanceof OpenAI.APIError ? `OpenAI API ${err.status}: ${err.message}` : String(err));
+        log.status = "error";
         await send({ error: "error" });
       } finally {
         await writer.close();
+        log.answer = text;
+        await save(env, log);
       }
     })());
 
@@ -180,7 +203,33 @@ async function streamRound(client, params, onText) {
   }
   if (usage) console.log(JSON.stringify({ model: params.model, in: usage.prompt_tokens,
     cached: usage.prompt_tokens_details?.cached_tokens, out: usage.completion_tokens }));
-  return { calls: calls.filter(Boolean), refused };
+  return { calls: calls.filter(Boolean), refused, usage };
+}
+
+// The topic named in a suggest_links call, if it is one of TOPICS.
+function pickTopic(calls) {
+  for (const c of calls) {
+    try { const t = JSON.parse(c.args).topic; if (TOPICS.includes(t)) return t; } catch {}
+  }
+  return null;
+}
+
+// Keeps one exchange in D1 (binding DB). Never breaks the chat: errors are only logged.
+let tableReady = false;
+async function save(env, log) {
+  if (!env.DB) return;
+  try {
+    if (!tableReady) {
+      await env.DB.exec("CREATE TABLE IF NOT EXISTS chats (id INTEGER PRIMARY KEY AUTOINCREMENT, ts TEXT NOT NULL, lang TEXT, country TEXT, topic TEXT, status TEXT, question TEXT, answer TEXT, links TEXT, context TEXT, model TEXT, tokens_in INTEGER, tokens_out INTEGER)");
+      tableReady = true;
+    }
+    await env.DB.prepare("INSERT INTO chats (ts, lang, country, topic, status, question, answer, links, context, model, tokens_in, tokens_out) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")
+      .bind(new Date().toISOString(), log.lang || null, log.country, log.topic, log.status, log.question,
+            log.answer || "", JSON.stringify(log.links), log.context, log.model, log.tokensIn, log.tokensOut)
+      .run();
+  } catch (err) {
+    console.error("D1: " + String(err));
+  }
 }
 
 // This site's pages exist in English (no prefix), German (de/) and Chinese (zh/).
