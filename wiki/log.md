@@ -48,3 +48,7 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 - 29 CV entries in data/site.json got links to organisers', institutions' or publishers' pages (each opened and checked for Liu's name or the exact event); the Screen Walk entry now points to the event page.
 - scripts/wiki-sitemap.py: site-map now lists every CV entry that has a link, so the chat can recommend them.
 - Open: soundings Xtra (CV 2022, KHM page 19 October 2023).
+
+## [2026-10-04] fix | CV from the artist
+- soundings Xtra is 2023 (KHM page, 19 October 2023); linked. KISDtalk and NTHU talk linked (links from the artist). Vienna entry reworded: Erasmus+ Staff Mobility for Teaching (not a Lehrauftrag).
+- Touched: exhibitions-and-performances, timeline, teaching-education-awards, faq.

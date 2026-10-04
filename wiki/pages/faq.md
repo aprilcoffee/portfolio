@@ -32,7 +32,7 @@ were made as the collective LLL. → [Leon-Etienne Kühr](people/leon-etienne-ku
 **Where did Liu study and teach?**
 B.F.A. at Taipei National University of the Arts (2014–2018), Postgraduate Diploma at the Academy of
 Media Arts Cologne (2020–2025, with distinction); teaching at Bauhaus University Weimar since 2024/2025
-and as a guest lecturer in Vienna (2026). → [Teaching, education and awards](teaching-education-awards.md)
+and taught in Vienna in 2026 through Erasmus+ Staff Mobility for Teaching (University of Applied Arts Vienna). → [Teaching, education and awards](teaching-education-awards.md)
 
 **Has Liu won awards?**
 Weizenbaum-Studienpreis 2025 (FIfF e.V.) for the thesis "Heat as Generative Image Making"; a 2026

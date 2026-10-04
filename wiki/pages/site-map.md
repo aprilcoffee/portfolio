@@ -104,10 +104,12 @@ Organisers', institutions' and publishers' pages for entries in the CV (About pa
 
 - 2026 Condition for Emotions, DFG network “Das Wissen der digitalen Literatur”: https://digitale-burg.de/studio/das-wissen-der-digitalen-literatur
 - 2026 Animism Revisited, Digital Arts Community, ACM SIGGRAPH, w/ Leon-Etienne Kühr: https://dac.siggraph.org/sparks/2026-05-29_animism-revisited/
+- 2026 KISDtalk: Paranoia De-Prompting, KISD Köln International School of Design, w/ Leon-Etienne Kühr: https://kisd.de/en/termine/kisdtalk-paranoia-de-prompting/
 - 2026 Latenz, Storage Museum Düsseldorf, w/ Leon-Etienne Kühr, Dominik Bönisch-Alpári, Prof. Dr. Ludger Schwarte: https://www.filmwerkstatt-duesseldorf.de/latenz/
 - 2025 Stereotype Encoding, Latent Space Symposium, Filmwerkstatt Düsseldorf, w/ Leon-Etienne Kühr: https://www.filmwerkstatt-duesseldorf.de/latent-space-symposium/
 - 2025 Generating for the Archive, Storage Museum Düsseldorf, w/ Leon-Etienne Kühr: https://www.filmwerkstatt-duesseldorf.de/generating-for-the-archive/
 - 2025 51 Ways to Spell the Image Giraffe: The Hidden Politics of Token Languages in Generative AI, 39th Chaos Communication Congress, w/ Leon-Etienne Kühr: https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai
+- 2025 Reverberation of the Blackbox Image, Auditory Aesthetics Series, National Tsing Hua University: https://www.instagram.com/p/DO3v9txD3oe/
 - 2025 Bauhaus Master Lecture, Bauhaus University Weimar: https://www.uni-weimar.de/de/kunst-und-gestaltung/aktuell/aktuelles/titel/bauhaus-master-lectures-im-sommersemester-2025/
 - 2025 Feedback in AI, Screen Walks, London, w/ Leon-Etienne Kühr: https://thephotographersgallery.org.uk/whats-on/watch-screen-walk-leon-etienne-kuhr-and-ting-chun-liu
 - 2024 arafed futures – An Artist Dialogue on Chip Storage and AI Accelerationism, 38th Chaos Communication Congress, w/ Leon-Etienne Kühr: https://media.ccc.de/v/38c3-arafed-futures-an-artist-dialogue-on-chip-storage-and-ai-accelerationism
@@ -140,6 +142,7 @@ Organisers', institutions' and publishers' pages for entries in the CV (About pa
 - 2023 Ghosts at the Feast, Weltkunstzimmer, Düsseldorf: https://weltkunstzimmer.de/en/ghosts-at-the-feast/
 - 2023 Kölner Kongress ’23, Deutschlandfunk, Cologne: https://en.khm.de/termine/news.5463.koelner-kongress-2023-auserzaehlt--divvon-krisen-und-neuerfindungen-des-erzaehlens-div/
 - 2023 FILE: Electronic Language International Festival, São Paulo / Rio de Janeiro: https://file.org.br/file_sp_2023/file-sao-paulo-2023-interactive-singularities/
+- 2023 soundings Xtra, Aula, Cologne: https://www.khm.de/termine/news.5626.soundings-xtra-sdcm/
 - 2022 ACHT BRÜCKEN Festival, Kölner Philharmonie, Cologne: https://www.khm.de/termine/news.5287.soundinstallationen-von-studierenden-im-foyer-der-koelner-philharmonie/
 - 2018 id_city: Videos by Art Graduates of HK/China/Taiwan, PMQ, Hong Kong: https://www.pmq.org.hk/event/id_city-videos-by-art-graduates-of-china-hk-taiwan/
 - 2018 Fresh Trend 2018 Art Graduates Joint Exhibition, Hong Kong City Hall: https://www.facebook.com/FreshTrendArt/

@@ -15,7 +15,7 @@ Academic positions, studies, awards and fellowships, as listed in the CV.
 ## Teaching
 
 - 2025– — Lecturer and Artistic Associate (Künstlerischer Mitarbeiter), Faculty of Art and Design, Bauhaus University Weimar ([staff page](https://www.uni-weimar.de/de/kunst-und-gestaltung/struktur/lehrgebiete-personen/visuelle-kommunikation/ting-chun-liu/): Professur Crossmediales Bewegtbild, Visuelle Kommunikation, Creative Technologist)
-- 2026 — Guest Lecturer (Lehrbeauftragter), Institute of Fine Arts and Media Art, Digital Art, University of Applied Arts Vienna (Erasmus+ Staff Mobility for Teaching)
+- 2026 — Erasmus+ Staff Mobility for Teaching, Digital Art, Institute of Fine Arts and Media Art, University of Applied Arts Vienna
 - 2024 — Guest Lecturer (Lehrbeauftragter), Chair of Media Environments, Faculty of Art and Design, Bauhaus University Weimar
 - 2022–2024 — Student Assistant, Experimental Informatics, Academy of Media Arts Cologne
 
