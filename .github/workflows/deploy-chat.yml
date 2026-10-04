@@ -40,6 +40,28 @@ jobs:
       - if: env.HAS_TOKEN == 'true'
         working-directory: worker
         run: npm install --no-audit --no-fund
+      # The chat log database (D1): found by name, created on the first run; its id goes
+      # into wrangler.toml for this deploy only.
+      - if: env.HAS_TOKEN == 'true'
+        name: Chat log database
+        env:
+          CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          api() { curl -sS -H "Authorization: Bearer $CF_TOKEN" -H "Content-Type: application/json" "$@"; }
+          ACC=$(api https://api.cloudflare.com/client/v4/accounts | jq -r '.result[0].id')
+          ID=$(api "https://api.cloudflare.com/client/v4/accounts/$ACC/d1/database?name=liutingchun-chat-log" | jq -r '.result[0].uuid // empty')
+          if [ -z "$ID" ]; then
+            R=$(api -X POST -d '{"name":"liutingchun-chat-log"}' "https://api.cloudflare.com/client/v4/accounts/$ACC/d1/database")
+            ID=$(echo "$R" | jq -r '.result.uuid // empty')
+            [ -n "$ID" ] && echo "Created D1 database $ID"
+          fi
+          if [ -n "$ID" ]; then
+            sed -i "s/D1_DATABASE_ID/$ID/" worker/wrangler.toml
+          else
+            # Without the database the chat still deploys, just without the log.
+            echo "::warning::No D1 database (the Cloudflare API token needs D1: Edit). Deploying without the chat log. $R"
+            sed -i '/^\[\[d1_databases\]\]/,/^database_id/d' worker/wrangler.toml
+          fi
       - if: env.HAS_TOKEN == 'true' && env.HAS_TURNSTILE != 'true'
         uses: cloudflare/wrangler-action@v3
         with:

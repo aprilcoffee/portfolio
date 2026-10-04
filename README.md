@@ -108,3 +108,10 @@ python3 -m http.server 8000      # 在 repo 根目錄執行
 
 `worker/` 是一個小型 Cloudflare Worker：訪客在首頁提問，它把 `wiki/` 的內容當作知識庫交給 ChatGPT（OpenAI API）回答。
 設定步驟見 `worker/README.md`。在 `data/site.json` 填入 `site.chat_endpoint` 之後，首頁才會出現問答框。
+
+每次提問和回答都會存在 Cloudflare D1（不存 IP，永久保存，Datenschutz 第 7 節有寫）。在自己電腦上看：
+
+```bash
+CLOUDFLARE_API_TOKEN=<只有 D1 Read 權限的 token> python3 worker/log-viewer.py
+# 自動打開 http://localhost:8790 ，可依主題、語言、日期篩選與搜尋
+```

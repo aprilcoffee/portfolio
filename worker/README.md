@@ -2,7 +2,8 @@
 
 The homepage chat box sends questions here. This Cloudflare Worker adds the knowledge
 base (the LLM wiki in `../wiki/`, bundled by `../scripts/build-knowledge.py`) and the
-OpenAI API key, asks a ChatGPT model, and streams the answer back. Nothing is stored.
+OpenAI API key, asks a ChatGPT model, and streams the answer back. Each exchange is kept in
+a D1 database (see "Chat log" below).
 
 ## Set up (once)
 
@@ -43,3 +44,24 @@ then run "Deploy chat worker". Requests without a valid check are refused.
     npm install
     printf 'OPENAI_API_KEY=sk-...\nALLOWED_ORIGINS=http://localhost:8000\n' > .dev.vars
     npx wrangler dev
+
+## Chat log
+
+Every exchange is stored in the Cloudflare D1 database `liutingchun-chat-log` (table `chats`):
+time, page language, country, topic (the model sorts each question into one of `TOPICS` in
+`src/index.js`), status (ok / refusal / error), question, answer, suggested links, the previous
+question if it was a follow-up, model and tokens. No IP address. Kept without time limit; the
+privacy page (Datenschutz, section 7) says so.
+
+The deploy workflow finds the database by name or creates it on the first run (the Cloudflare
+token needs **D1: Edit** besides Workers) and puts its id into `wrangler.toml` for that deploy;
+the Worker creates the table itself.
+
+To read it on your computer:
+
+    CLOUDFLARE_API_TOKEN=<token with Account / D1 / Read> python3 worker/log-viewer.py
+
+It opens http://localhost:8790 with filters for topic, language, status, country, dates and a
+text search. `--local` reads the test database of `npx wrangler dev` instead.
+Single entries can also be read or deleted in the Cloudflare dashboard: Storage & databases → D1
+→ liutingchun-chat-log → Console (e.g. `DELETE FROM chats WHERE id = 42`).

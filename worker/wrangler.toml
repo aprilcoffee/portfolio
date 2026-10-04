@@ -34,5 +34,13 @@ name = "EVERYONE"
 namespace_id = "1002"
 simple = { limit = 20, period = 60 }
 
+# Chat log: every exchange (question, answer, links, topic, language, country; no IP).
+# The deploy workflow creates the database on the first run and fills in its id;
+# worker/log-viewer.py shows the entries. `wrangler dev` uses a local copy.
+[[d1_databases]]
+binding = "DB"
+database_name = "liutingchun-chat-log"
+database_id = "D1_DATABASE_ID"
+
 [observability]
 enabled = true

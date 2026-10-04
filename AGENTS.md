@@ -34,6 +34,7 @@
 | 首頁問答框的前端（打字機效果、ASCII 顯卡風扇與溫度顏色） | `assets/chat.js`；ASCII 顯卡由 `build.py` 的 `_ask_gpu()` 產生，HTML 在 `ask_box()` |
 | GA4 同意橫幅 | `assets/analytics.js` |
 | 問答的 AI 規則、模型、連結工具 | `worker/src/index.js`（`RULES`、`suggest_links`、`localize()`），設定在 `worker/wrangler.toml` |
+| 問答紀錄（每次提問與回答，存在 Cloudflare D1，不存 IP） | 寫入：`worker/src/index.js` 的 `save()`、主題分類 `TOPICS`；本機查看：`python3 worker/log-viewer.py`（說明在 `worker/README.md`）。改了存的內容要同步改 Datenschutz 的 `CHAT_PRIVACY` |
 | 問答的知識（作品、經歷、說法） | `wiki/`（規則見 `wiki/CLAUDE.md`） |
 | `llms.txt` 最後的彩蛋（ASCII 顯卡、給 agent 的話、藝術家介紹） | `data/llms-extra.md`（原樣接在後面） |
 | 圖示、分享圖 | `favicon.ico`、`assets/favicon-32.png`、`assets/apple-touch-icon.png`、`assets/icon-192/512.png`、`site.webmanifest`、`images/og.jpg`（`site.og_image`） |
