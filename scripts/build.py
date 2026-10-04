@@ -544,7 +544,9 @@ def home_text(lang):
     t = tr(S, "home_text", lang)
     if not t:
         return '<p class="home-statement empty" aria-hidden="true"></p>'
-    return '<p class="home-statement"><span>%s</span></p>' % esc(t)
+    # a blank line in the text starts a new paragraph
+    parts = [esc(x.strip()) for x in t.split("\n\n") if x.strip()]
+    return '<p class="home-statement">%s</p>' % "<br><br>".join("<span>%s</span>" % x for x in parts)
 
 
 def ask_box(lang):
