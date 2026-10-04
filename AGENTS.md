@@ -23,7 +23,7 @@
 
 | 想改的東西 | 檔案 |
 |---|---|
-| 作品、表演、CV、朋友、文章列表、網站名稱／描述／statement／email／GA／對話框網址 | `data/site.json` |
+| 作品、表演、CV、朋友、文章列表、網站名稱／描述／statement（SEO 用）／首頁大字 `home_text`／email／GA／對話框網址 | `data/site.json` |
 | 文章內文（中文部落格，不翻譯） | `posts/<slug>.md` |
 | 介面文字（選單、按鈕、頁面引言、對話框提示…） | `scripts/build.py` 的 `UI` 字典 |
 | 頁面結構、HTML、SEO（title、canonical、hreflang、JSON-LD、sitemap） | `scripts/build.py` |
@@ -56,7 +56,9 @@
 
 | 位置 | 英文欄位 | 翻譯欄位 |
 |---|---|---|
-| `site` | `description`、`statement`、`job_title` | `description_de/_zh`、`statement_de/_zh`、`job_title_de/_zh` |
+| `site` | `description`、`statement`、`job_title`、`home_text` | `description_de/_zh`、`statement_de/_zh`、`job_title_de/_zh`、`home_text_de/_zh` |
+
+`home_text` 是首頁下方的大字，留空時只留白不顯示（不會退回英文或 statement）；`statement` 只用在 JSON-LD、分享與 llms.txt，不顯示在首頁。
 | `works[]` | `text`、`type`、`materials` | `text_de/_zh`、`type_de/_zh`、`materials_de/_zh` |
 | `performances[]` | `note` | `note_de/_zh` |
 | `about` | `bio` | `bio_de/_zh` |
