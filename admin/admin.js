@@ -422,6 +422,7 @@
       path.split('/').map(encodeURIComponent).join('/') + (method === 'GET' ? '?ref=' + encodeURIComponent(c.branch) : '');
     return fetch(url, {
       method: method,
+      cache: 'no-store',  // a cached "404" or old sha makes the next upload fail (422 / 409)
       headers: {
         Authorization: 'Bearer ' + c.token,
         Accept: raw ? 'application/vnd.github.raw' : 'application/vnd.github+json'
@@ -434,11 +435,19 @@
     });
   }
 
+  // Create or replace a file. GitHub needs the current sha to replace a file; if it changed
+  // in between (or was missing), fetch it again and retry once.
   function putFile(c, path, b64, message) {
-    return api(c, 'GET', path).then(function (cur) {
-      var body = { message: message, content: b64, branch: c.branch };
-      if (cur && cur.sha) body.sha = cur.sha;
-      return api(c, 'PUT', path, body);
+    function attempt() {
+      return api(c, 'GET', path).then(function (cur) {
+        var body = { message: message, content: b64, branch: c.branch };
+        if (cur && cur.sha) body.sha = cur.sha;
+        return api(c, 'PUT', path, body);
+      });
+    }
+    return attempt().catch(function (e) {
+      if (/^(409|422) /.test(e.message)) return attempt();
+      throw e;
     });
   }
 
