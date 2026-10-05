@@ -8,7 +8,6 @@ The folder holds the font repositories as downloaded:
     open-huninn-font/font/jf-openhuninn-2.1.ttf          github.com/justfont/open-huninn-font
     genyo-font/otf/TW/GenKiMin2TW-R.otf, -B.otf          github.com/ButTaiwan/genyo-font
     Minipax/fonts/webfonts/Minipax-Regular.woff2, -Bold   github.com/ronotypo/Minipax
-    cirrus/CirrusCumulus.otf                              gitlab.com/Clarasambot/cirruscumulus
 
 Latin fonts are copied unchanged. The Chinese fonts are far too large for the web (5 to 13 MB),
 so they are cut into chunks with a unicode-range each: the browser downloads only the chunks
@@ -34,7 +33,6 @@ CJK = [
 LATIN = [  # (CSS family, weight, source, file name in assets/fonts, format, licence)
     ("Minipax", 400, "Minipax/fonts/webfonts/Minipax-Regular.woff2", "Minipax-Regular.woff2", "woff2", "Minipax/LICENSE.txt"),
     ("Minipax", 700, "Minipax/fonts/webfonts/Minipax-Bold.woff2", "Minipax-Bold.woff2", "woff2", "Minipax/LICENSE.txt"),
-    ("CirrusCumulus", 400, "cirrus/CirrusCumulus.otf", "CirrusCumulus.otf", "opentype", "cirrus/LICENSE"),
 ]
 
 
@@ -145,8 +143,7 @@ def main():
 
     lic_files = {"open-huninn-font/LICENSE": "jf-open-huninn-OFL.txt",
                  "genyo-font/SIL_Open_Font_License_1.1.txt": "GenYo-GenKi-OFL.txt",
-                 "Minipax/LICENSE.txt": "Minipax-OFL.txt",
-                 "cirrus/LICENSE": "CirrusCumulus-OFL.txt"}
+                 "Minipax/LICENSE.txt": "Minipax-OFL.txt"}
     for src, dst in lic_files.items():
         shutil.copy(os.path.join(SRC, src), os.path.join(OUT, "LICENSES", dst))
     with open(os.path.join(OUT, "fonts.css"), "w", encoding="utf-8") as f:
