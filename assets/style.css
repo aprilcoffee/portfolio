@@ -23,7 +23,12 @@ html { font-size: 80%; }
   --plates-max: 51.25rem;  /* image field on work pages */
   --label: 21.25rem;       /* heading column on list pages */
 
-  --sans: "Helvetica Neue", Helvetica, Arial, "PingFang TC", "Noto Sans TC", "Noto Sans CJK TC", "Microsoft JhengHei", sans-serif;
+  /* Self-hosted open fonts (assets/fonts/, licences in assets/fonts/LICENSES/):
+     text: Minipax (Latin) + GenKi Min2 TW (Chinese, from 源樣/源起明體);
+     display: CirrusCumulus (Latin) + LTC Round (Chinese, from jf open 粉圓). */
+  --text: "Minipax", "GenKi Min2 TW", "Songti TC", "Noto Serif TC", "PMingLiU", serif;
+  --display: "CirrusCumulus", "LTC Round", "Helvetica Neue", Arial, "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --sans: var(--text);
   --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, "Courier New", monospace;
 
   --fs-body: 1.1562rem;
@@ -42,7 +47,7 @@ body {
 }
 a { color: inherit; text-decoration: none; }
 img, iframe, video, canvas { display: block; max-width: 100%; border: 0; }
-h1, h2, h3, h4 { font-weight: 700; margin: 0; letter-spacing: -0.01em; }
+h1, h2, h3, h4 { font-family: var(--display); font-weight: 400; margin: 0; letter-spacing: 0; }
 p, figure { margin: 0; }
 button { font: inherit; color: inherit; }
 ::selection { background: var(--ink); color: var(--bg); }
@@ -67,7 +72,8 @@ button { font: inherit; color: inherit; }
   background: var(--bg); z-index: 10;
 }
 .brand { display: block; line-height: 1.25; }
-.brand-en { display: block; font-size: 1.4375rem; font-weight: 700; letter-spacing: -0.01em; }
+.brand-en { display: block; font-family: var(--display); font-size: 1.4375rem; font-weight: 400; letter-spacing: 0; }
+.brand-zh { font-family: var(--display); }
 .brand-zh { display: block; font-size: 1.0312rem; color: var(--mut); margin-top: 2px; }
 .menu-btn { display: none; }
 
@@ -113,7 +119,7 @@ button { font: inherit; color: inherit; }
 .home-hero .field canvas { width: 100% !important; height: 100% !important; }
 .home-statement {
   position: relative; z-index: 1; align-self: stretch; margin: auto var(--pad) 4.5rem 0; padding-top: 3rem;
-  max-width: 51.25rem; font-size: clamp(1.125rem, 1.75vw, 1.625rem); line-height: 1.3; font-weight: 700; letter-spacing: -0.015em;
+  max-width: 51.25rem; font-size: clamp(1.125rem, 1.75vw, 1.625rem); line-height: 1.45; font-weight: 700; letter-spacing: -0.015em;
 }
 .home-statement.empty::before { content: ""; display: block; height: 2.6em; }
 .home-statement span { background: var(--bg); box-decoration-break: clone; -webkit-box-decoration-break: clone; padding: 0 .12em; }
@@ -189,7 +195,7 @@ button { font: inherit; color: inherit; }
 a.card:hover .thumb img { transform: scale(1.025); }
 .card .ph { padding: 1.25rem; text-align: center; color: var(--mut); font-size: 1rem; }
 .card .cap { display: grid; grid-template-columns: 1fr auto; gap: 0 0.5rem; margin-top: 0.875rem; align-items: baseline; }
-.card .cap .t { font-weight: 700; font-size: 1.1875rem; line-height: 1.35; }
+.card .cap .t { font-family: var(--display); font-weight: 400; font-size: 1.1875rem; line-height: 1.35; }
 .card .cap .zh { display: block; font-weight: 400; color: var(--mut); font-size: 1.0312rem; }
 .card .cap .mono { color: var(--mut); }
 a.card:hover .cap .t { text-decoration: underline; text-underline-offset: 0.25rem; text-decoration-thickness: 1px; }
@@ -262,7 +268,7 @@ button.embed.lite:hover img { opacity: 1; }
 .year-group > .mono { font-size: 1rem; color: var(--ink); }
 .year-group ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1.625rem; }
 .year-group a { display: grid; grid-template-columns: 1fr auto; gap: 0.25rem 1.5rem; }
-.year-group .t { font-size: 1.3125rem; font-weight: 700; line-height: 1.4; }
+.year-group .t { font-family: var(--display); font-size: 1.3125rem; font-weight: 400; line-height: 1.4; }
 .year-group .ex { grid-column: 1; color: var(--mut); font-size: 1.0312rem; line-height: 1.6; }
 .year-group .cat { grid-row: 1; grid-column: 2; color: var(--mut); }
 .year-group a:hover .t { text-decoration: underline; text-underline-offset: 0.25rem; text-decoration-thickness: 1px; }
