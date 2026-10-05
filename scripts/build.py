@@ -415,6 +415,7 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
 <link rel="manifest" href="{manifest}">
 <link rel="alternate" type="application/rss+xml" title="{name} — Blog" href="{feed}">
 {ga}
+<link rel="stylesheet" href="{fonts}">
 <link rel="stylesheet" href="{css}">
 {ld}
 </head>
@@ -444,7 +445,7 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
            locale=LOCALE[lang] if not content_lang else ("zh_TW" if content_lang.startswith("zh") else LOCALE[lang]),
            t=esc(page_title), d=esc(desc or tr(S, "description", lang)), name=esc(S["name"]), zh=esc(S.get("name_zh", "")),
            c=esc(canonical), hreflang=hreflang, ogt=og_type, img=esc(image), icon=url("assets/favicon-32.png"), ico=url("favicon.ico"), touch=url("assets/apple-touch-icon.png"), manifest=url("site.webmanifest"),
-           css=versioned("assets/style.css"), js=versioned("assets/site.js"), fx=versioned("assets/effects.js"), feed=url("blog/feed.xml"),
+           css=versioned("assets/style.css"), fonts=versioned("assets/fonts/fonts.css"), js=versioned("assets/site.js"), fx=versioned("assets/effects.js"), feed=url("blog/feed.xml"),
            ga=ga, ld=ld_tag, home=url(LP[lang]), imp=url("impressum/"), dsg=url("datenschutz/"), nav=nav, switch=switch,
            menu=u["menu"], language=u["language"], privacy=u["privacy"], email=esc(S["email"]), links=links,
            year=datetime.date.today().year, full=" full" if full else "", body=body)
@@ -747,8 +748,16 @@ page("impressum/", "Impressum", "Impressum / legal notice of %s." % S["name"], l
 <p>Diese Website enthält Links zu externen Websites Dritter, auf deren Inhalte ich keinen Einfluss habe. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter verantwortlich. Bei Bekanntwerden von Rechtsverletzungen werden derartige Links umgehend entfernt.</p>
 <h2>Urheberrecht</h2>
 <p>Texte, Bilder und Videos auf dieser Website unterliegen dem Urheberrecht von {name} bzw. der genannten Fotograf*innen und Kooperationspartner*innen. Eine Verwendung ist nur nach vorheriger Zustimmung erlaubt.</p>
+<h2 id="schriften">Schriften / Typefaces</h2>
+<p>Diese Website verwendet freie Schriften unter der <a href="https://openfontlicense.org/">SIL Open Font License 1.1</a>; die Schriftdateien liegen auf diesem Server, die Lizenztexte sind jeweils verlinkt. / This site uses open-source typefaces under the SIL Open Font License 1.1, served from this server.</p>
+<ul class="font-credits">
+<li><b>Minipax</b> von Raphaël Ronot (Fließtext Latein / body text, Latin): <a href="https://github.com/ronotypo/Minipax">github.com/ronotypo/Minipax</a>, Lizenz: <a href="{fonts}LICENSES/Minipax-OFL.txt">OFL</a></li>
+<li><b>CirrusCumulus</b> von Clara Sambot, Velvetyne Type Foundry (Überschriften Latein / headings, Latin): <a href="https://velvetyne.fr/fonts/cirruscumulus/">velvetyne.fr/fonts/cirruscumulus</a>, Lizenz: <a href="{fonts}LICENSES/CirrusCumulus-OFL.txt">OFL</a></li>
+<li><b>源起明體 GenKi Min2 TW</b> (Regular, Bold) von ButTaiwan, auf Basis von Source Han Serif (Adobe) (Fließtext Chinesisch / body text, Chinese): <a href="https://github.com/ButTaiwan/genyo-font">github.com/ButTaiwan/genyo-font</a>, Lizenz: <a href="{fonts}LICENSES/GenYo-GenKi-OFL.txt">OFL</a>. Für das Web in Teilmengen zerlegt (GenKi Min2 TW Web).</li>
+<li><b>jf open 粉圓 (jf open huninn)</b> von justfont (Überschriften Chinesisch / headings, Chinese): <a href="https://github.com/justfont/open-huninn-font">github.com/justfont/open-huninn-font</a>, Lizenz: <a href="{fonts}LICENSES/jf-open-huninn-OFL.txt">OFL</a>. Für das Web in Teilmengen zerlegt und daher umbenannt (LTC Round), wie es die Lizenz für den reservierten Namen verlangt.</li>
+</ul>
 <p class="en">Legal notice for this personal artist website. Contact: {email}.</p>
-</div>""".format(name=esc(S["name"]), addr=addr_html, email=esc(S["email"])))
+</div>""".format(name=esc(S["name"]), addr=addr_html, email=esc(S["email"]), fonts=url("assets/fonts/")))
 
 CHAT_PRIVACY = """<h2 id="chat">7. Fragen zur Arbeit (KI-Chat)</h2>
 <p>Auf der Startseite können Sie Fragen zu den Arbeiten stellen. Erst wenn Sie eine Frage absenden, wird sie zusammen mit den vorherigen Fragen und Antworten dieses Gesprächs an einen Cloudflare Worker (Cloudflare, Inc., 101 Townsend St., San Francisco, CA 94107, USA) und von dort an die API von OpenAI (OpenAI Ireland Ltd., 1st Floor, The Liffey Trust Centre, 117–126 Sheriff Street Upper, Dublin 1, Irland; Konzernmutter OpenAI, L.L.C., USA) übertragen, die die Antwort erzeugt. Cloudflare verarbeitet dabei Ihre IP-Adresse, um Missbrauch zu begrenzen (höchstens einige Fragen pro Minute). Um die Funktion des Chats zu verbessern (z.&nbsp;B. unbeantwortete oder fehlerhafte Antworten zu erkennen und die Wissensbasis zu ergänzen), werden Ihre Frage, die erzeugte Antwort, die vorgeschlagenen Links, die Sprache der Seite, eine automatische Einordnung des Themas und das Land, aus dem die Anfrage kommt (von Cloudflare aus der IP-Adresse abgeleitet), in einer Datenbank bei Cloudflare (D1) gespeichert, ohne IP-Adresse und ohne Cookies. Diese Einträge werden nicht für Werbung verwendet, nicht weitergegeben und ohne feste Löschfrist aufbewahrt; auf Anfrage löschen wir einzelne Einträge (bitte mit Datum und Wortlaut der Frage). OpenAI verwendet Daten aus der API nicht zum Training seiner Modelle und speichert sie nur kurzzeitig (in der Regel bis zu 30 Tage) zur Missbrauchserkennung. Bitte geben Sie keine personenbezogenen Daten in das Feld ein.{turnstile} Rechtsgrundlage ist Art. 6 Abs. 1 lit. a und f DSGVO (Ihre Anfrage; berechtigtes Interesse an einem Auskunftsangebot über die Arbeiten und an dessen Verbesserung). Die Übermittlung in die USA erfolgt auf Grundlage der EU-Standardvertragsklauseln bzw. des EU-US Data Privacy Framework. Die Antworten werden automatisch erzeugt und können Fehler enthalten.</p>
@@ -774,7 +783,7 @@ page("datenschutz/", "Datenschutz", "Privacy policy (Datenschutzerklärung) of %
 <h2>5. Externe Bilder</h2>
 <p>Einzelne ältere Bilder werden noch vom Server der früheren Website (static.wixstatic.com, Wix.com Ltd.) geladen. Dabei wird Ihre IP-Adresse an Wix übertragen. Diese Bilder werden nach und nach auf diese Website verlagert.</p>
 <h2>6. Schriften und Skripte</h2>
-<p>Es werden keine Google Fonts von Google-Servern geladen. Die Bibliothek p5.js für die grafischen Animationen wird von cdnjs (Cloudflare, Inc.) geladen; dabei wird Ihre IP-Adresse an Cloudflare übertragen (Art. 6 Abs. 1 lit. f DSGVO).</p>
+<p>Es werden keine Google Fonts von Google-Servern geladen; alle Schriften werden von diesem Server ausgeliefert (siehe Impressum, Schriften). Die Bibliothek p5.js für die grafischen Animationen wird von cdnjs (Cloudflare, Inc.) geladen; dabei wird Ihre IP-Adresse an Cloudflare übertragen (Art. 6 Abs. 1 lit. f DSGVO).</p>
 {chat}<h2>{n}. Ihre Rechte</h2>
 <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit, Widerspruch sowie auf Widerruf erteilter Einwilligungen. Außerdem können Sie sich bei einer Datenschutz-Aufsichtsbehörde beschweren.</p>
 <p class="en">In short: Google Analytics counts visits (you can turn it off with the button above); videos only load when you press play;{chat_en} nothing else tracks you.</p>
