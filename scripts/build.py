@@ -751,8 +751,7 @@ page("impressum/", "Impressum", "Impressum / legal notice of %s." % S["name"], l
 <h2 id="schriften">Schriften / Typefaces</h2>
 <p>Diese Website verwendet freie Schriften unter der <a href="https://openfontlicense.org/">SIL Open Font License 1.1</a>; die Schriftdateien liegen auf diesem Server, die Lizenztexte sind jeweils verlinkt. / This site uses open-source typefaces under the SIL Open Font License 1.1, served from this server.</p>
 <ul class="font-credits">
-<li><b>Minipax</b> von Raphaël Ronot (Fließtext Latein / body text, Latin): <a href="https://github.com/ronotypo/Minipax">github.com/ronotypo/Minipax</a>, Lizenz: <a href="{fonts}LICENSES/Minipax-OFL.txt">OFL</a></li>
-<li><b>CirrusCumulus</b> von Clara Sambot, Velvetyne Type Foundry (Überschriften Latein / headings, Latin): <a href="https://velvetyne.fr/fonts/cirruscumulus/">velvetyne.fr/fonts/cirruscumulus</a>, Lizenz: <a href="{fonts}LICENSES/CirrusCumulus-OFL.txt">OFL</a></li>
+<li><b>Minipax</b> von Raphaël Ronot (Text und Überschriften Latein / text and headings, Latin): <a href="https://github.com/ronotypo/Minipax">github.com/ronotypo/Minipax</a>, Lizenz: <a href="{fonts}LICENSES/Minipax-OFL.txt">OFL</a></li>
 <li><b>源起明體 GenKi Min2 TW</b> (Regular, Bold) von ButTaiwan, auf Basis von Source Han Serif (Adobe) (Fließtext Chinesisch / body text, Chinese): <a href="https://github.com/ButTaiwan/genyo-font">github.com/ButTaiwan/genyo-font</a>, Lizenz: <a href="{fonts}LICENSES/GenYo-GenKi-OFL.txt">OFL</a>. Für das Web in Teilmengen zerlegt (GenKi Min2 TW Web).</li>
 <li><b>jf open 粉圓 (jf open huninn)</b> von justfont (Überschriften Chinesisch / headings, Chinese): <a href="https://github.com/justfont/open-huninn-font">github.com/justfont/open-huninn-font</a>, Lizenz: <a href="{fonts}LICENSES/jf-open-huninn-OFL.txt">OFL</a>. Für das Web in Teilmengen zerlegt und daher umbenannt (LTC Round), wie es die Lizenz für den reservierten Namen verlangt.</li>
 </ul>

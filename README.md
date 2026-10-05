@@ -70,7 +70,7 @@ https://liutingchun.com 的原始碼：從 Wix 搬出來的個人網站，由 Gi
 ## 設計
 
 - 版面依作品集設計系統：白底、左側資訊欄＋右側圖版（plates）、等寬字的中繼資料、極少量的紅色 `#E4032E`。
-- 字型：開源字型，放在自己的伺服器（`assets/fonts/`，不從 Google 載入，德國法院曾對遠端 Google Fonts 判罰）。內文：Minipax（拉丁）＋源起明體 GenKi Min2 TW Regular／Bold（中文）；標題：CirrusCumulus（拉丁）＋ jf open 粉圓（中文，子集後改名 LTC Round）。等寬字仍用系統字。中文字型太大，用 `scripts/build-fonts.py` 切成多個 unicode-range 小檔，第一包是網站用到的字。換字型或網站新增大量新字時重跑一次（說明在腳本開頭），授權與出處標示在 Impressum。
+- 字型：開源字型，放在自己的伺服器（`assets/fonts/`，不從 Google 載入，德國法院曾對遠端 Google Fonts 判罰）。內文：Minipax（拉丁）＋源起明體 GenKi Min2 TW Regular／Bold（中文）；標題：Minipax Bold（拉丁）＋ jf open 粉圓（中文，子集後改名 LTC Round）。等寬字仍用系統字。中文字型太大，用 `scripts/build-fonts.py` 切成多個 unicode-range 小檔，第一包是網站用到的字。換字型或網站新增大量新字時重跑一次（說明在腳本開頭），授權與出處標示在 Impressum。
 - p5.js 特效在 `assets/effects.js`：首頁字元場（字元依〈Processing 蒙地卡羅演算法做文字動畫〉算出的密度排序）、側欄訊號線。p5.js 在頁面載入完成後才載入；使用者設定「減少動態」時只畫靜態一格。
 
 ## Google Analytics 與法律頁
