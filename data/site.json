@@ -237,7 +237,7 @@
       "type_zh": "藝術研究、講演",
       "materials": "CLIP tokenizer, Stable Diffusion",
       "collaborators": "Leon-Etienne Kühr",
-      "cover": "images/tokens/giraffe-one-token-vs-two.webp",
+      "cover": "images/tokens/giraffe-cover.webp",
       "images": [
         "images/tokens/giraffe-51-spellings.webp",
         "images/tokens/giraffe-one-token-vs-two.webp",
@@ -273,7 +273,7 @@
       "materials_de": "Genetischer Algorithmus, CLIP ViT-L/14, Bildmodelle",
       "materials_zh": "遺傳演算法、CLIP ViT-L/14、圖像模型",
       "collaborators": "Leon-Etienne Kühr",
-      "cover": "images/tokens/cave-prompt-reconstruction.webp",
+      "cover": "images/tokens/cave-cover.webp",
       "images": [
         "images/tokens/cave-prompt-reconstruction.webp",
         "images/tokens/cave-four-models.webp",
