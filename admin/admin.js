@@ -238,7 +238,7 @@
     main.append(
       bar('曝光 Press & Media'),
       h('div', { className: 'form' }, [
-        lines('每行一筆：分類 | 標題 | 來源 | 日期 | 網址 | 說明 | 說明 DE | 說明 中文', D, 'press', ['group', 'title', 'outlet', 'date', 'url', 'note', 'note_de', 'note_zh'], '分類只能填 watch（講演與錄影）、read（相關文章）、profiles（介紹頁）；展覽、活動頁面不放。順序即網站上的順序；日期寫 2026 或 2026-05。沒有德文／中文說明時，該語言頁面顯示英文。', 'tall')
+        lines('每行一筆：分類 | 標題 | 來源 | 日期 | 網址 | 說明 | 說明 DE | 說明 中文', D, 'press', ['group', 'title', 'outlet', 'date', 'url', 'note', 'note_de', 'note_zh'], '分類只能填 watch（講演與錄影）、read（相關文章）；展覽、活動、機構介紹頁不放。順序即網站上的順序；日期寫 2026 或 2026-05。沒有德文／中文說明時，該語言頁面顯示英文。', 'tall')
       ])
     );
   };
@@ -334,6 +334,7 @@
       field('網站描述（搜尋引擎用）', s, 'description', { area: true }),
       h('div', { className: 'row' }, [field('網站描述 DE', s, 'description_de', { area: true }), field('網站描述 中文', s, 'description_zh', { area: true })]),
       h('div', { className: 'row' }, [field('Email（側欄、Impressum、About）', s, 'email'), field('第二個 Email（只顯示在 About 頁）', s, 'email_alt')]),
+      field('ORCID iD（只填 0000-0000-0000-0000；顯示在 About 頁，留空＝不顯示）', s, 'orcid'),
       field('首頁圖片', s, 'home_image'),
       field('首頁大字（首頁下方的大字；空一行＝分段；留空＝留白）', s, 'home_text', { area: true }),
       h('div', { className: 'row' }, [field('首頁大字 DE', s, 'home_text_de', { area: true }), field('首頁大字 中文', s, 'home_text_zh', { area: true })]),

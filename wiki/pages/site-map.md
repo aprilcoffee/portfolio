@@ -19,7 +19,7 @@ in Mandarin. Recommend the version in the visitor's language.
 - **Works** (all works, 20): [en](https://liutingchun.com/works/) · [de](https://liutingchun.com/de/works/) · [zh](https://liutingchun.com/zh/works/)
 - **Performance** (audio-visual performance videos): [en](https://liutingchun.com/performance/) · [de](https://liutingchun.com/de/performance/) · [zh](https://liutingchun.com/zh/performance/)
 - **About** (biography and CV: teaching, education, awards, talks, publications, exhibitions): [en](https://liutingchun.com/about/) · [de](https://liutingchun.com/de/about/) · [zh](https://liutingchun.com/zh/about/)
-- **Press & Media** (talk recordings, texts and profile pages by others): [en](https://liutingchun.com/press/) · [de](https://liutingchun.com/de/press/) · [zh](https://liutingchun.com/zh/press/)
+- **Press & Media** (talk recordings and texts by others): [en](https://liutingchun.com/press/) · [de](https://liutingchun.com/de/press/) · [zh](https://liutingchun.com/zh/press/)
 - **Blog archive** (notes on works, technical write-ups; in Mandarin): https://liutingchun.com/blog/
 - **Friends** (artists and collaborators): [en](https://liutingchun.com/friends/) · [de](https://liutingchun.com/de/friends/) · [zh](https://liutingchun.com/zh/friends/)
 - **Impressum** (legal notice): https://liutingchun.com/impressum/

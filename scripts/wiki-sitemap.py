@@ -45,7 +45,7 @@ in Mandarin. Recommend the version in the visitor's language.
 - **Works** (all works, %d): %s
 - **Performance** (audio-visual performance videos): %s
 - **About** (biography and CV: teaching, education, awards, talks, publications, exhibitions): %s
-- **Press & Media** (talk recordings, texts and profile pages by others): %s
+- **Press & Media** (talk recordings and texts by others): %s
 - **Blog archive** (notes on works, technical write-ups; in Mandarin): %sblog/
 - **Friends** (artists and collaborators): %s
 - **Impressum** (legal notice): %simpressum/
