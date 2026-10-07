@@ -10,7 +10,7 @@ Areas: Critical artificial intelligence, Generative AI, Artistic research on AI,
 - [About / CV](https://liutingchun.com/about/): biography, teaching, exhibitions, talks, publications
 - [Blog Archive](https://liutingchun.com/blog/): texts and technical notes (in Mandarin)
 - [Audio-Visual Performance](https://liutingchun.com/performance/)
-- [Press & Media](https://liutingchun.com/press/): talk recordings, papers, exhibition and event pages by others
+- [Press & Media](https://liutingchun.com/press/): talk recordings, texts and profile pages by others
 
 The site is also available in German (https://liutingchun.com/de/) and Traditional Chinese (https://liutingchun.com/zh/).
 

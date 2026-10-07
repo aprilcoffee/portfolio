@@ -72,7 +72,7 @@
   `site.name_zh`（劉庭均）也一樣。
 - CV 行沒有翻譯時，`build.py` 會給那一行加 `lang="en"`，讓瀏覽器與搜尋引擎知道這段是英文。
 - `works[].status`（例如 In development）顯示在作品卡與作品頁的「Status」列；留空就不顯示。
-- `press[]` 的 `group` 只能是 `watch`、`read`、`events`、`profiles`；標題與來源不翻譯，沒有 `note_de/_zh` 時該語言顯示英文並標 `lang="en"`。
+- `press[]` 的 `group` 只能是 `watch`（講演與錄影）、`read`（相關文章）、`profiles`（介紹頁）；展覽、活動頁面不放；標題與來源不翻譯，沒有 `note_de/_zh` 時該語言顯示英文並標 `lang="en"`。
 - 聯絡信箱：`site.email`（側欄、Impressum、About）維持 gmail；`site.email_alt` 只顯示在 About 頁。
 - 表演影片標題、合作者（`collaborators`）、年份、網址不翻譯。
 - 新增一個要翻譯的欄位時：在 `site.json` 加 `xxx_de`/`xxx_zh`，在 `build.py` 用 `tr(obj, "xxx", L)` 讀，

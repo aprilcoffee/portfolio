@@ -238,7 +238,7 @@
     main.append(
       bar('曝光 Press & Media'),
       h('div', { className: 'form' }, [
-        lines('每行一筆：分類 | 標題 | 來源 | 日期 | 網址 | 說明 | 說明 DE | 說明 中文', D, 'press', ['group', 'title', 'outlet', 'date', 'url', 'note', 'note_de', 'note_zh'], '分類只能填 watch（錄影）、read（文章／論文）、events（展覽與活動）、profiles（機構介紹頁）。順序即網站上的順序；日期寫 2026 或 2026-05。沒有德文／中文說明時，該語言頁面顯示英文。', 'tall')
+        lines('每行一筆：分類 | 標題 | 來源 | 日期 | 網址 | 說明 | 說明 DE | 說明 中文', D, 'press', ['group', 'title', 'outlet', 'date', 'url', 'note', 'note_de', 'note_zh'], '分類只能填 watch（講演與錄影）、read（相關文章）、profiles（介紹頁）；展覽、活動頁面不放。順序即網站上的順序；日期寫 2026 或 2026-05。沒有德文／中文說明時，該語言頁面顯示英文。', 'tall')
       ])
     );
   };
