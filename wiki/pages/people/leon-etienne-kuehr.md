@@ -51,6 +51,7 @@ Computer scientist and media artist; research assistant and co-director of the A
 - [Critical AI and image models](../topics/critical-ai-and-image-models.md)
 - [External links](../external-links.md)
 - [Chaos Communication Congress](../institutions/chaos-communication-congress.md)
+- [51 Ways to Spell the Image Giraffe](../works/51-ways-to-spell-the-image-giraffe.md) and [Sixteen Tokens for a Cave](../works/sixteen-tokens-for-a-cave.md)
 
 ## Sources
 

@@ -52,3 +52,7 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 ## [2026-10-04] fix | CV from the artist
 - soundings Xtra is 2023 (KHM page, 19 October 2023); linked. KISDtalk and NTHU talk linked (links from the artist). Vienna entry reworded: Erasmus+ Staff Mobility for Teaching (not a Lehrauftrag).
 - Touched: exhibitions-and-performances, timeline, teaching-education-awards, faq.
+
+## [2026-10-07] add | works 51 Ways to Spell the Image Giraffe, Sixteen Tokens for a Cave
+- New work pages (both "In development", 2025, with Leon-Etienne Kühr), written from the artist's portfolio deck and the 39C3 recording page; site.json gained the works plus a `status` field.
+- Touched: institutions/chaos-communication-congress, topics/critical-ai-and-image-models, people/leon-etienne-kuehr, external-links (pointer to the website's new Press & Media page, /press/).

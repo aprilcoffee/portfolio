@@ -10,6 +10,7 @@ Areas: Critical artificial intelligence, Generative AI, Artistic research on AI,
 - [About / CV](https://liutingchun.com/about/): biography, teaching, exhibitions, talks, publications
 - [Blog Archive](https://liutingchun.com/blog/): texts and technical notes (in Mandarin)
 - [Audio-Visual Performance](https://liutingchun.com/performance/)
+- [Press & Media](https://liutingchun.com/press/): talk recordings, texts and profile pages by others
 
 The site is also available in German (https://liutingchun.com/de/) and Traditional Chinese (https://liutingchun.com/zh/).
 
@@ -18,6 +19,8 @@ The site is also available in German (https://liutingchun.com/de/) and Tradition
 - [Steering Through the Inner Residue](https://liutingchun.com/works/steering-through-the-inner-residue/) (2026): Video Installation
 - [Interpolation of the Invisible Color](https://liutingchun.com/works/interpolation-of-the-invisible-color/) (2025): Curatorial Practice, Interactive Installation
 - [Latent Heat Generation](https://liutingchun.com/works/latent-heat-generation/) (2025): Artistic Research
+- [51 Ways to Spell the Image Giraffe](https://liutingchun.com/works/51-ways-to-spell-the-image-giraffe/) (2025): Artistic Research, Talk
+- [Sixteen Tokens for a Cave](https://liutingchun.com/works/sixteen-tokens-for-a-cave/) (2025): Multimodal Poetry
 - [Just Jailbreak](https://liutingchun.com/works/just-jailbreak/) (2024): Interactive game about jailbreaking a large language model
 - [Self-cannibalizing AI](https://liutingchun.com/works/self-cannibalizing-ai/) (2023): Talk, 37C3 — Artistic strategies to expose generative text-to-image models
 - [Achtung! Verwischung](https://liutingchun.com/works/achtung-verwischung/) (2023): Site-Specific Performance

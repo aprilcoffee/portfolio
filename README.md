@@ -16,7 +16,7 @@ https://liutingchun.com 的原始碼：從 Wix 搬出來的個人網站，由 Gi
 
 ```
 （repo 根目錄）
-├── index.html, works/, performance/, about/, blog/, friends/, de/, zh/   ← 自動產生，不要手改
+├── index.html, works/, performance/, about/, press/, blog/, friends/, de/, zh/   ← 自動產生，不要手改
 ├── data/site.json
 ├── posts/*.md
 ├── images/wix/          圖片與影片
