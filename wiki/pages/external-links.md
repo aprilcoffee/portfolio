@@ -10,7 +10,7 @@ updated: 2026-10-01
 ---
 # External links: pages by others about Ting-Chun Liu
 
-Where Liu's work can be checked, watched or read outside his own website: talk recordings, texts, event and exhibition pages of organisers, institutional pages, and texts by others that cite him. Links taken over from the CV on the artist's website (marked CV) were not opened again; every other link was opened when this page was written. Pages on the artist's own domain are in [Site map and links](site-map.md). Items are grouped by what a visitor wants to do.
+Where Liu's work can be checked, watched or read outside his own website: talk recordings, texts, event and exhibition pages of organisers, institutional pages, and texts by others that cite him. Links taken over from the CV on the artist's website (marked CV) were not opened again; every other link was opened when this page was written. Pages on the artist's own domain are in [Site map and links](site-map.md). The website's Press & Media page (/press/) shows a selection of this list. Items are grouped by what a visitor wants to do.
 
 ## Watch and listen
 

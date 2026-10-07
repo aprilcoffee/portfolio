@@ -262,6 +262,10 @@ button.embed.lite:hover img { opacity: 1; }
 .cv-sec h2 .idx { display: block; margin-bottom: 0.25rem; }
 .cv-row { display: grid; grid-template-columns: 7.5em 1fr; gap: 1rem; padding: 0.3125rem 0; font-size: 0.9375rem; line-height: 1.55; }
 .cv-row .mono { color: var(--mut); padding-top: 2px; }
+.press-row { padding: 0.625rem 0; }
+.press-row > span:last-child { display: flex; flex-direction: column; gap: 0.1875rem; }
+.press-by { font-family: var(--mono); font-size: 0.8125rem; color: var(--mut); }
+.press-note { color: var(--mut); line-height: 1.6; max-width: 46rem; }
 
 /* ---------- blog ---------- */
 .year-group { display: grid; grid-template-columns: var(--label) 1fr; gap: 3rem; padding: 1.625rem 0; border-top: 1px solid var(--line); }

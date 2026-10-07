@@ -92,7 +92,8 @@
     ],
     "video_thumbs": {
       "324791977": "https://i.vimeocdn.com/video/768341727-28ae4536ed569138a9e71ed451783e33a427fd4915456f5eafe5ed6e194ad88b-d_1280"
-    }
+    },
+    "email_alt": "ting-chun.liu@uni-weimar.de"
   },
   "works": [
     {
@@ -222,6 +223,75 @@
           "poster": "images/video/small_latentHeat.webp"
         }
       ]
+    },
+    {
+      "slug": "51-ways-to-spell-the-image-giraffe",
+      "title": "51 Ways to Spell the Image Giraffe",
+      "title_zh": "",
+      "year": "2025",
+      "status": "In development",
+      "status_de": "In Entwicklung",
+      "status_zh": "開發中",
+      "type": "Artistic Research, Talk",
+      "type_de": "Künstlerische Forschung, Vortrag",
+      "type_zh": "藝術研究、講演",
+      "materials": "CLIP tokenizer, Stable Diffusion",
+      "collaborators": "Leon-Etienne Kühr",
+      "cover": "images/tokens/giraffe-one-token-vs-two.webp",
+      "images": [
+        "images/tokens/giraffe-51-spellings.webp",
+        "images/tokens/giraffe-one-token-vs-two.webp",
+        "images/tokens/giraffe-21-tokens.webp",
+        "images/tokens/39c3-talk.webp"
+      ],
+      "video": "",
+      "links": [
+        {
+          "label": "Talk recording, 39C3 (media.ccc.de)",
+          "url": "https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai"
+        }
+      ],
+      "credits": "Talk and research: Ting-Chun Liu, Leon-Etienne Kühr\nImages: slides from the talk, 39C3, 2025; photograph of the speakers: still from the recording, media.ccc.de, CC BY 4.0",
+      "text": "Image models do not read words, they read tokens: fragments from a fixed dictionary. The dictionary of CLIP, the text encoder behind many image models, holds about 49,000 of them, and the word “giraffe” can be spelled from it in 51 ways, from the single token giraffe to g|i|r|a|f|f|e.\n\nFed straight into the model, most of these spellings still draw a giraffe; some drift to an elephant or a horse. Before any training, the dictionary already decides what can be pictured, and some images cannot be prompted at all because the dictionary has been sanitised.\n\nThe dictionary is built by Byte Pair Encoding: the most frequent character pairs in scraped text are merged again and again. Brand names, platform slang and hashtags become single tokens, while less common or non-English words break into long chains of fragments. The research treats this hidden layer as material and, in Sixteen Tokens for a Cave, turns it into a way of writing.\n\n# Talk\n\n51 Ways to Spell the Image Giraffe: The Hidden Politics of Token Languages in Generative AI, 39th Chaos Communication Congress (39C3), Hamburg, December 2025, with Leon-Etienne Kühr. The recording is on media.ccc.de.\n\nThe research is in development.",
+      "text_de": "Bildmodelle lesen keine Wörter, sie lesen Token: Bruchstücke aus einem festen Wörterbuch. Das Wörterbuch von CLIP, dem Text-Encoder hinter vielen Bildmodellen, enthält rund 49.000 davon, und das Wort „giraffe“ lässt sich daraus auf 51 Arten buchstabieren, vom einzelnen Token giraffe bis zu g|i|r|a|f|f|e.\n\nDirekt in das Modell gegeben, zeichnen die meisten dieser Schreibweisen trotzdem eine Giraffe; einige driften zu einem Elefanten oder einem Pferd. Noch vor jedem Training entscheidet das Wörterbuch also mit, was sich abbilden lässt, und manche Bilder lassen sich gar nicht erst abrufen, weil das Wörterbuch bereinigt wurde.\n\nDas Wörterbuch entsteht durch Byte Pair Encoding: Die häufigsten Zeichenpaare in aus dem Netz gesammelten Texten werden immer wieder zusammengeführt. Markennamen, Plattform-Slang und Hashtags werden so zu einzelnen Token, während seltenere oder nicht englische Wörter in lange Ketten von Fragmenten zerfallen. Die Forschung behandelt diese verborgene Schicht als Material und macht sie in Sixteen Tokens for a Cave zu einer Form des Schreibens.\n\n# Vortrag\n\n51 Ways to Spell the Image Giraffe: The Hidden Politics of Token Languages in Generative AI, 39. Chaos Communication Congress (39C3), Hamburg, Dezember 2025, mit Leon-Etienne Kühr. Die Aufzeichnung ist auf media.ccc.de zu sehen.\n\nDie Forschung befindet sich in Entwicklung.",
+      "text_zh": "圖像模型讀的不是文字，而是 token（詞元）：來自一本固定字典的字詞碎片。許多圖像模型背後的文字編碼器 CLIP，字典裡約有 49,000 個 token，而「giraffe」這個字可以用它拼出 51 種寫法，從單一的 token giraffe，一直到 g|i|r|a|f|f|e。\n\n把這些拼法直接送進模型，多數仍然畫出長頸鹿，有些則漂向大象或馬。在任何訓練之前，字典就已經決定了什麼能被畫出來，有些圖像甚至因為字典被「清理」過而根本無法被提示出來。\n\n這本字典由 Byte Pair Encoding 建成：從網路爬取的文字中，最常出現的字元組合被一次又一次合併。品牌名稱、平台用語與主題標籤因此成為單一 token，較少見或非英文的字詞則被拆成長長一串碎片。這項研究把這個隱藏的層次當作素材，並在《Sixteen Tokens for a Cave》中把它變成一種書寫方式。\n\n# 講演\n\n《51 Ways to Spell the Image Giraffe: The Hidden Politics of Token Languages in Generative AI》，第 39 屆混沌通訊大會（39C3），漢堡，2025 年 12 月，與 Leon-Etienne Kühr 合作。錄影可在 media.ccc.de 觀看。\n\n研究開發中。",
+      "hidden": false,
+      "aliases": []
+    },
+    {
+      "slug": "sixteen-tokens-for-a-cave",
+      "title": "Sixteen Tokens for a Cave",
+      "title_zh": "",
+      "year": "2025",
+      "status": "In development",
+      "status_de": "In Entwicklung",
+      "status_zh": "開發中",
+      "type": "Multimodal Poetry",
+      "type_de": "Multimodale Poesie",
+      "type_zh": "多模態詩",
+      "materials": "Genetic algorithm, CLIP ViT-L/14, image models",
+      "materials_de": "Genetischer Algorithmus, CLIP ViT-L/14, Bildmodelle",
+      "materials_zh": "遺傳演算法、CLIP ViT-L/14、圖像模型",
+      "collaborators": "Leon-Etienne Kühr",
+      "cover": "images/tokens/cave-prompt-reconstruction.webp",
+      "images": [
+        "images/tokens/cave-prompt-reconstruction.webp",
+        "images/tokens/cave-four-models.webp",
+        "images/tokens/cave-target.webp"
+      ],
+      "video": "",
+      "links": [
+        {
+          "label": "Preliminary work in the 39C3 talk, 28:37–32:20 (media.ccc.de)",
+          "url": "https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai"
+        }
+      ],
+      "credits": "Artists and developers: Ting-Chun Liu, Leon-Etienne Kühr\nTarget photograph: Stefan Kunze / Unsplash\nFour-image grid, row by row: FLUX.1-dev, Stable Diffusion 3.5 medium, Stable Diffusion XL, Stable Diffusion 1.5",
+      "text": "CLIP, the model that links pictures and text in many image generators, reads language through a dictionary of about 49,000 tokens. Starting from a stock photograph of a sea cave, a genetic algorithm bred sixteen tokens over two hundred generations (population 2048), keeping whatever CLIP scored closer to the picture.\n\nemail, defeats, wallart, cave, impacting, pi, peoplesvote, blames, mcclure, 👣, croati, desk, zazzle, numerous, mediter, eleng\n\nFragments like croati and mediter never finish their words, yet image models that took no part in the search draw a cave from them. The token IDs are passed to each model directly, skipping the step where a written prompt would be cut into tokens. The work reads such sequences as poetry written for a machine: we are not the addressee, we only overhear.\n\n# How close does a description come to the photograph?\n\nCLIP similarity between the target photograph and five descriptions:\n(lazy) human, “a photo of a cave and the ocean”: 0.272\nthe sixteen tokens: 0.433\nChatGPT: 0.258\nJoyCaption Beta One: 0.271\nGemini: 0.273\n\nBecause this score is what the algorithm maximised, the transfer to the other models is the part that counts.\n\n# Status\n\nPreliminary work, first shown as “Prompt Reconstruction” in the talk 51 Ways to Spell the Image Giraffe at 39C3, Hamburg, 2025. The work is in development.",
+      "text_de": "CLIP, das Modell, das in vielen Bildgeneratoren Bilder und Text verbindet, liest Sprache über ein Wörterbuch von rund 49.000 Token. Ausgehend von einem Stockfoto einer Meereshöhle hat ein genetischer Algorithmus über zweihundert Generationen (Population 2048) sechzehn Token gezüchtet und dabei behalten, was CLIP näher am Bild bewertete.\n\nemail, defeats, wallart, cave, impacting, pi, peoplesvote, blames, mcclure, 👣, croati, desk, zazzle, numerous, mediter, eleng\n\nFragmente wie croati und mediter beenden ihre Wörter nie, und doch zeichnen Bildmodelle, die an der Suche nicht beteiligt waren, daraus eine Höhle. Die Token-IDs werden jedem Modell direkt übergeben, ohne den Schritt, in dem ein geschriebener Prompt in Token zerlegt würde. Die Arbeit liest solche Folgen als Poesie, die für eine Maschine geschrieben ist: Wir sind nicht die Adressat*innen, wir belauschen sie nur.\n\n# Wie nah kommt eine Beschreibung dem Foto?\n\nCLIP-Ähnlichkeit zwischen dem Zielfoto und fünf Beschreibungen:\n(fauler) Mensch, „a photo of a cave and the ocean“: 0,272\ndie sechzehn Token: 0,433\nChatGPT: 0,258\nJoyCaption Beta One: 0,271\nGemini: 0,273\n\nWeil genau dieser Wert vom Algorithmus maximiert wurde, zählt vor allem die Übertragung auf die anderen Modelle.\n\n# Stand\n\nVorarbeit, erstmals als „Prompt Reconstruction“ im Vortrag 51 Ways to Spell the Image Giraffe auf dem 39C3 in Hamburg 2025 gezeigt. Die Arbeit befindet sich in Entwicklung.",
+      "text_zh": "CLIP 是許多圖像生成器中連結圖片與文字的模型，它透過一本約 49,000 個 token 的字典來讀取語言。從一張海蝕洞的圖庫照片出發，遺傳演算法歷經兩百個世代（族群規模 2048），培育出十六個 token，每一代都保留 CLIP 評分更接近這張照片的組合。\n\nemail, defeats, wallart, cave, impacting, pi, peoplesvote, blames, mcclure, 👣, croati, desk, zazzle, numerous, mediter, eleng\n\ncroati、mediter 這類碎片永遠拼不完自己的字，然而從未參與這場搜尋的圖像模型，卻能憑它們畫出一個洞穴。token 的編號被直接送進每個模型，跳過了把文字提示切成 token 的那一步。這件作品把這樣的序列當作寫給機器的詩：我們不是收信人，只是偷聽。\n\n# 一段描述與照片有多接近？\n\n目標照片與五種描述之間的 CLIP 相似度：\n（偷懶的）人類，“a photo of a cave and the ocean”：0.272\n這十六個 token：0.433\nChatGPT：0.258\nJoyCaption Beta One：0.271\nGemini：0.273\n\n由於演算法最大化的正是這個分數，真正重要的是它在其他模型上的轉移效果。\n\n# 狀態\n\n前期工作，2025 年於漢堡 39C3 的講演《51 Ways to Spell the Image Giraffe》中首次以「Prompt Reconstruction」之名展示。作品開發中。",
+      "hidden": false,
+      "aliases": []
     },
     {
       "slug": "just-jailbreak",
@@ -1500,6 +1570,188 @@
       "excerpt": "瓶中信——與任何遲抵的彼方。關於網路、時間，以及臉書貼文本身。",
       "lang": "zh-Hant",
       "hidden": false
+    }
+  ],
+  "press": [
+    {
+      "group": "watch",
+      "title": "51 Ways to Spell the Image Giraffe: The Hidden Politics of Token Languages in Generative AI",
+      "outlet": "39C3, media.ccc.de",
+      "date": "2025-12",
+      "url": "https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai",
+      "note": "Talk with Leon-Etienne Kühr, 38 min, English with German translation, CC BY 4.0. 51 spellings of “giraffe” from tokens, and what the token dictionary decides before any training.",
+      "note_de": "Vortrag mit Leon-Etienne Kühr, 38 Min., Englisch mit deutscher Übersetzung, CC BY 4.0. 51 Schreibweisen von „giraffe“ aus Token und was das Token-Wörterbuch vor jedem Training entscheidet.",
+      "note_zh": "與 Leon-Etienne Kühr 的講演，38 分鐘，英語搭配德語翻譯，CC BY 4.0。用 token 拼出「giraffe」的 51 種寫法，以及 token 字典在任何訓練之前就已決定的事。"
+    },
+    {
+      "group": "watch",
+      "title": "Screen Walk with Leon-Etienne Kühr and Ting-Chun Liu",
+      "outlet": "The Photographers’ Gallery, London, with Fotomuseum Winterthur",
+      "date": "2025-03",
+      "url": "https://thephotographersgallery.org.uk/whats-on/watch-screen-walk-leon-etienne-kuhr-and-ting-chun-liu",
+      "note": "Live-coded session on generative AI fed with its own output: feedback as a strategy and cybernetics as a framework. Recording on the gallery’s page.",
+      "note_de": "Live-codierte Session über generative KI, die mit ihrer eigenen Ausgabe gespeist wird: Feedback als Strategie, Kybernetik als Rahmen. Aufzeichnung auf der Seite der Galerie.",
+      "note_zh": "現場寫程式的場次：讓生成式 AI 吃進自己的輸出，以回饋為策略、以控制論為框架。錄影在藝廊頁面上。"
+    },
+    {
+      "group": "watch",
+      "title": "arafed futures – An Artist Dialogue on Chip Storage and AI Accelerationism",
+      "outlet": "38C3, media.ccc.de",
+      "date": "2024-12",
+      "url": "https://media.ccc.de/v/38c3-arafed-futures-an-artist-dialogue-on-chip-storage-and-ai-accelerationism",
+      "note": "Artist dialogue with Leon-Etienne Kühr, 60 min. “arafed” is a meaningless word that spread across captions and product texts, set beside NVIDIA A100 chips made by TSMC.",
+      "note_de": "Künstlerdialog mit Leon-Etienne Kühr, 60 Min. „arafed“ ist ein bedeutungsloses Wort, das sich in Bildunterschriften und Produkttexten verbreitet hat, hier neben NVIDIA-A100-Chips von TSMC gestellt.",
+      "note_zh": "與 Leon-Etienne Kühr 的藝術家對談，60 分鐘。「arafed」是一個沒有意義、卻散布在圖說與產品文字裡的詞，在此與台積電製造的 NVIDIA A100 晶片並置。"
+    },
+    {
+      "group": "watch",
+      "title": "Self-cannibalizing AI",
+      "outlet": "37C3, media.ccc.de",
+      "date": "2023-12",
+      "url": "https://media.ccc.de/v/37c3-12125-self-cannibalizing_ai",
+      "note": "Talk with Leon-Etienne Kühr, 53 min. Feedback, misuse and hacking on text-to-image models: dataset filtering, CLIP, recursive generation.",
+      "note_de": "Vortrag mit Leon-Etienne Kühr, 53 Min. Feedback, Zweckentfremdung und Hacking an Text-zu-Bild-Modellen: Datenfilterung, CLIP, rekursive Generierung.",
+      "note_zh": "與 Leon-Etienne Kühr 的講演，53 分鐘。對文字生成圖像模型做回饋、誤用與駭入：資料集過濾、CLIP、遞迴生成。"
+    },
+    {
+      "group": "read",
+      "title": "Model Collapse: On Recursion, Noise, and Uncharted Machine Visions",
+      "outlet": "Violaine Boutet de Monvel, arXiv:2607.09705",
+      "date": "2026-06",
+      "url": "https://arxiv.org/abs/2607.09705",
+      "note": "A media-archaeology essay comparing analog video feedback with recursive AI training. It cites the 38C3 talk and the TEDA poster, and describes the feedback loops of Liu and Kühr in BLIP-2 and Stable Diffusion.",
+      "note_de": "Ein medienarchäologischer Essay, der analoges Video-Feedback mit rekursivem KI-Training vergleicht. Er zitiert den 38C3-Vortrag und das TEDA-Poster und beschreibt die Feedback-Schleifen von Liu und Kühr in BLIP-2 und Stable Diffusion.",
+      "note_zh": "一篇媒體考古學的論文，把類比錄像回饋與遞迴式 AI 訓練相比較。文中引用了 38C3 講演與 TEDA 海報，並描述 Liu 與 Kühr 在 BLIP-2 和 Stable Diffusion 上做的回饋迴圈。"
+    },
+    {
+      "group": "read",
+      "title": "Cybernetic Subjects",
+      "outlet": "Ars Electronica Festival 2025, Linz",
+      "date": "2025",
+      "url": "https://ars.electronica.art/panic/en/view/cybernetic-subjects-21338ddb450c817ab718ce48a0a628f5/",
+      "note": "Exhibition by Bauhaus-Universität Weimar and University of Arts Linz. Latent Heat Generation is one of the works.",
+      "note_de": "Ausstellung der Bauhaus-Universität Weimar und der Kunstuniversität Linz. Latent Heat Generation ist eine der gezeigten Arbeiten.",
+      "note_zh": "由威瑪包浩斯大學與林茨藝術大學策劃的展覽，《Latent Heat Generation》是參展作品之一。"
+    },
+    {
+      "group": "events",
+      "title": "AI-Worlding. Künstlerische Forschung zu KI-generierten Weltmodellen",
+      "outlet": "Museum Angewandte Kunst, Frankfurt",
+      "date": "2026-02",
+      "url": "https://www.museumangewandtekunst.de/de/besuch/ausstellungen/2026/ai-worlding-kuenstlerische-forschung-zu-ki-generierten-weltmodellen/",
+      "note": "13 February to 26 April 2026, with 17 artists. Steering Through the Inner Residue is shown with Leon-Etienne Kühr. Announcement on e-flux below.",
+      "note_de": "13. Februar bis 26. April 2026, mit 17 Künstler*innen. Steering Through the Inner Residue wird mit Leon-Etienne Kühr gezeigt. Ankündigung unten bei e-flux.",
+      "note_zh": "2026 年 2 月 13 日至 4 月 26 日，共 17 位藝術家。《Steering Through the Inner Residue》與 Leon-Etienne Kühr 共同展出。下方為 e-flux 的展覽公告。"
+    },
+    {
+      "group": "events",
+      "title": "AI-Worlding (announcement)",
+      "outlet": "e-flux",
+      "date": "2026",
+      "url": "https://www.e-flux.com/announcements/6785248/ai-worlding",
+      "note": "Announcement of the exhibition.",
+      "note_de": "Ankündigung der Ausstellung.",
+      "note_zh": "展覽公告。"
+    },
+    {
+      "group": "events",
+      "title": "Komm zu meinem Festival oder ich hacke deinen Toaster – deine KI",
+      "outlet": "Staatstheater Darmstadt",
+      "date": "2026-05",
+      "url": "https://www.staatstheater-darmstadt.de/spielplan/kifestival2026/",
+      "note": "AI-Worlding as a student-curated version in the foyers, 13 to 16 May 2026.",
+      "note_de": "AI-Worlding als studentisch kuratierte Fassung in den Foyers, 13. bis 16. Mai 2026.",
+      "note_zh": "《AI-Worlding》的學生策展版本，2026 年 5 月 13 至 16 日於劇院大廳展出。"
+    },
+    {
+      "group": "events",
+      "title": "Animism Revisited",
+      "outlet": "ACM SIGGRAPH Digital Arts Community, Sparks",
+      "date": "2026-05",
+      "url": "https://dac.siggraph.org/sparks/2026-05-29_animism-revisited/",
+      "note": "Talk with Leon-Etienne Kühr, 29 May 2026.",
+      "note_de": "Vortrag mit Leon-Etienne Kühr, 29. Mai 2026.",
+      "note_zh": "與 Leon-Etienne Kühr 的講演，2026 年 5 月 29 日。"
+    },
+    {
+      "group": "events",
+      "title": "Interpolation of Invisible Colors",
+      "outlet": "Filmwerkstatt Düsseldorf",
+      "date": "2025-11",
+      "url": "https://www.filmwerkstatt-duesseldorf.de/interpolation-of-invisible-colors/",
+      "note": "Exhibition page of the organiser. Storage Museum Düsseldorf, November 2025 to January 2026.",
+      "note_de": "Ausstellungsseite der Veranstalter*innen. Storage Museum Düsseldorf, November 2025 bis Januar 2026.",
+      "note_zh": "主辦方的展覽頁面。杜塞道夫 Storage Museum，2025 年 11 月至 2026 年 1 月。"
+    },
+    {
+      "group": "events",
+      "title": "Exhibition program",
+      "outlet": "Storage Museum Düsseldorf",
+      "date": "2025-11",
+      "url": "https://storagemuseum.org/en/program/6-ausstellung",
+      "note": "The museum’s page for the exhibition, with the participating artists.",
+      "note_de": "Die Seite des Museums zur Ausstellung, mit den beteiligten Künstler*innen.",
+      "note_zh": "美術館的展覽頁面，列有參與的藝術家。"
+    },
+    {
+      "group": "events",
+      "title": "Fotografie in der KI-Krise? Photography in AI Crisis #3",
+      "outlet": "FH Dortmund",
+      "date": "2025-06",
+      "url": "https://sugarscroll.de/lectures-posts/ting-chun-liu-leon-etienne-kuehr/",
+      "note": "Lecture with Leon-Etienne Kühr, Fachbereich Design, FH Dortmund.",
+      "note_de": "Vortrag mit Leon-Etienne Kühr, Fachbereich Design, FH Dortmund.",
+      "note_zh": "與 Leon-Etienne Kühr 的講座，多特蒙德應用科學大學設計系。"
+    },
+    {
+      "group": "events",
+      "title": "soft rotation × moers festival",
+      "outlet": "KHM Cologne, moers festival",
+      "date": "2025-06",
+      "url": "https://en.khm.de/termine/news.5963.soft-rotation-x-moers-festival/",
+      "note": "Liu is one of seven KHM student organisers and performs on 8 June.",
+      "note_de": "Liu gehört zu den sieben studentischen Organisator*innen der KHM und tritt am 8. Juni auf.",
+      "note_zh": "Liu 是七位 KHM 學生策劃者之一，並於 6 月 8 日演出。"
+    },
+    {
+      "group": "events",
+      "title": "Correlations – Forum für KI in Kunst und Design",
+      "outlet": "HfG Offenbach",
+      "date": "2024-12",
+      "url": "https://ground-zero.khm.de/correlations/",
+      "note": "Lecture On the Materiality of Artificial Intelligence, 11 to 13 December 2024.",
+      "note_de": "Vortrag On the Materiality of Artificial Intelligence, 11. bis 13. Dezember 2024.",
+      "note_zh": "講演〈On the Materiality of Artificial Intelligence〉，2024 年 12 月 11 至 13 日。"
+    },
+    {
+      "group": "profiles",
+      "title": "Digi-Lehrfellows Thüringen 2026: Ting-Chun Liu",
+      "outlet": "Stifterverband",
+      "date": "2026",
+      "url": "https://www.stifterverband.org/digital-lehrfellows-thueringen/2026/liu",
+      "note": "Fellow page. The project Lokale KI-Anwendung im Bewegtbild-Studio is a seminar on local open-source AI tools without cloud services.",
+      "note_de": "Fellow-Seite. Das Projekt Lokale KI-Anwendung im Bewegtbild-Studio ist ein Seminar zu lokalen Open-Source-KI-Werkzeugen ohne Cloud.",
+      "note_zh": "研究員頁面。計畫「Lokale KI-Anwendung im Bewegtbild-Studio」是一門使用本地開源 AI 工具、不依賴雲端的課程。"
+    },
+    {
+      "group": "profiles",
+      "title": "Ting-Chun Liu, staff page",
+      "outlet": "Bauhaus-Universität Weimar",
+      "date": "",
+      "url": "https://www.uni-weimar.de/de/kunst-und-gestaltung/struktur/lehrgebiete-personen/visuelle-kommunikation/ting-chun-liu/",
+      "note": "Artistic associate, Professur Crossmediales Bewegtbild.",
+      "note_de": "Künstlerischer Mitarbeiter, Professur Crossmediales Bewegtbild.",
+      "note_zh": "藝術助理，跨媒體動態影像教席。"
+    },
+    {
+      "group": "profiles",
+      "title": "Speaker page, arafed futures",
+      "outlet": "38C3, CCC Fahrplan",
+      "date": "2024-12",
+      "url": "https://fahrplan.events.ccc.de/congress/2024/fahrplan/speaker/FDYRKA/",
+      "note": "Speaker profile for the 38C3 talk.",
+      "note_de": "Sprecher*innenprofil zum Vortrag auf dem 38C3.",
+      "note_zh": "38C3 講演的講者介紹頁。"
     }
   ]
 }

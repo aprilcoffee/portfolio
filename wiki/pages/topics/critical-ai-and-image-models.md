@@ -36,6 +36,7 @@ and probing models such as CLIP for stereotypes.
 
 ## Related
 
+- [51 Ways to Spell the Image Giraffe](../works/51-ways-to-spell-the-image-giraffe.md) and [Sixteen Tokens for a Cave](../works/sixteen-tokens-for-a-cave.md): the token dictionary as hidden politics, and as material for writing (both in development)
 - [Recursion and feedback](recursion-and-feedback.md)
 - [The material infrastructure of AI](material-infrastructure-of-ai.md)
 - [Leon-Etienne Kühr](../people/leon-etienne-kuehr.md)

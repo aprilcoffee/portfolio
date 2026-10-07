@@ -45,11 +45,12 @@ in Mandarin. Recommend the version in the visitor's language.
 - **Works** (all works, %d): %s
 - **Performance** (audio-visual performance videos): %s
 - **About** (biography and CV: teaching, education, awards, talks, publications, exhibitions): %s
+- **Press & Media** (talk recordings, papers, exhibition and event pages by others): %s
 - **Blog archive** (notes on works, technical write-ups; in Mandarin): %sblog/
 - **Friends** (artists and collaborators): %s
 - **Impressum** (legal notice): %simpressum/
 - **Privacy policy** (Datenschutz): %sdatenschutz/
-""" % (BASE, each(""), len(works), each("works/"), each("performance/"), each("about/"),
+""" % (BASE, each(""), len(works), each("works/"), each("performance/"), each("about/"), each("press/"),
        BASE, each("friends/"), BASE, BASE)]
 
 out.append("## Works\n")

@@ -26,7 +26,7 @@ D = json.load(open(os.path.join(ROOT, "data", "site.json"), encoding="utf-8"))
 S = D["site"]
 BASE = S["base_url"].rstrip("/")
 PREFIX = urlparse(BASE).path.rstrip("/") + "/"  # "/" at liutingchun.com
-SECTIONS = ["works", "performance", "about", "blog", "friends"]
+SECTIONS = ["works", "performance", "about", "press", "blog", "friends"]
 
 esc = lambda s: html.escape(str(s or ""), quote=True)
 works = [w for w in D["works"] if not w.get("hidden")]
@@ -260,12 +260,12 @@ LANG_NAME = {"en": "EN", "de": "DE", "zh": "中文"}
 
 UI = {
     "en": {
-        "nav": {"works": "Works", "performance": "Performance", "about": "About", "blog": "Blog (archived)", "friends": "Friends"},
+        "nav": {"works": "Works", "performance": "Performance", "about": "About", "press": "Press & Media", "blog": "Blog (archived)", "friends": "Friends"},
         "menu": "Menu", "language": "Language", "privacy": "Privacy",
         "selected": "Selected works", "all_works": "All works (%d) →",
         "works_lead": "Installations, performances, internet art and artistic research, %s–%s.",
         "works_desc": "Selected works by %s, %s–%s: installations, performances, internet art and artistic research on AI.",
-        "Year": "Year", "Type": "Type", "Materials": "Materials", "With": "With", "Link": "Link",
+        "Year": "Year", "Status": "Status", "Type": "Type", "Materials": "Materials", "With": "With", "Link": "Link",
         "work_desc": "%s (%s), %s by %s.", "work": "work",
         "perf_title": "Audio-Visual Performance",
         "perf_lead": "Live audio-visual sets and performance records, 2016–2024. Each video opens on %s in a new tab.",
@@ -275,6 +275,9 @@ UI = {
         "blog_lead": "Notes on works, and technical write-ups on Raspberry Pi, Processing and Python. The posts are written in Mandarin.",
         "blog_desc": "Blog archive of %s: notes on artworks and technical write-ups on Raspberry Pi, Processing and Python.",
         "friends_lead": "Artists and collaborators.", "friends_desc": "Friends and fellow artists of %s.",
+        "press_lead": "Recordings, texts and event pages by others that show, discuss or cite the work.",
+        "press_desc": "Press and media about %s: talk recordings, papers, exhibition and event pages, institutional profiles.",
+        "press_groups": {"watch": "Watch and listen", "read": "Read", "events": "Exhibitions and events", "profiles": "Institutions and profiles"},
         "Date": "Date", "Category": "Category",
         "ask": "Ask me about my work", "ask_ph": "Ask me anything", "ask_btn": "Ask",
         "ask_note": "caution: AI may create random correlations",
@@ -284,12 +287,12 @@ UI = {
         "ask_refusal": "I can’t answer that here, but ask me anything about my work.",
     },
     "de": {
-        "nav": {"works": "Arbeiten", "performance": "Performance", "about": "Über mich", "blog": "Blog (archiviert)", "friends": "Freunde"},
+        "nav": {"works": "Arbeiten", "performance": "Performance", "about": "Über mich", "press": "Presse & Medien", "blog": "Blog (archiviert)", "friends": "Freunde"},
         "menu": "Menü", "language": "Sprache", "privacy": "Datenschutz",
         "selected": "Ausgewählte Arbeiten", "all_works": "Alle Arbeiten (%d) →",
         "works_lead": "Installationen, Performances, Netzkunst und künstlerische Forschung, %s–%s.",
         "works_desc": "Ausgewählte Arbeiten von %s, %s–%s: Installationen, Performances, Netzkunst und künstlerische Forschung zu KI.",
-        "Year": "Jahr", "Type": "Art", "Materials": "Material", "With": "Mit", "Link": "Link",
+        "Year": "Jahr", "Status": "Status", "Type": "Art", "Materials": "Material", "With": "Mit", "Link": "Link",
         "work_desc": "%s (%s), %s von %s.", "work": "Arbeit",
         "perf_title": "Audiovisuelle Performance",
         "perf_lead": "Audiovisuelle Live-Sets und Performance-Dokumentationen, 2016–2024. Jedes Video öffnet sich auf %s in einem neuen Tab.",
@@ -299,6 +302,9 @@ UI = {
         "blog_lead": "Notizen zu Arbeiten und technische Anleitungen zu Raspberry Pi, Processing und Python. Die Beiträge sind auf Chinesisch (Mandarin) verfasst.",
         "blog_desc": "Blog-Archiv von %s: Notizen zu Arbeiten und technische Anleitungen zu Raspberry Pi, Processing und Python.",
         "friends_lead": "Künstler*innen und Kooperationspartner*innen.", "friends_desc": "Freund*innen und befreundete Künstler*innen von %s.",
+        "press_lead": "Aufzeichnungen, Texte und Veranstaltungsseiten Dritter, die die Arbeit zeigen, besprechen oder zitieren.",
+        "press_desc": "Presse und Medien zu %s: Vortragsaufzeichnungen, Texte, Ausstellungs- und Veranstaltungsseiten, Profile von Institutionen.",
+        "press_groups": {"watch": "Ansehen und Anhören", "read": "Lesen", "events": "Ausstellungen und Veranstaltungen", "profiles": "Institutionen und Profile"},
         "Date": "Datum", "Category": "Kategorie",
         "ask": "Fragen Sie mich zu meiner Arbeit", "ask_ph": "Fragen Sie mich alles", "ask_btn": "Fragen",
         "ask_note": "Achtung: KI kann zufällige Zusammenhänge erzeugen · %s",
@@ -308,12 +314,12 @@ UI = {
         "ask_refusal": "Darauf kann ich hier nicht antworten. Fragen Sie mich gern zu meiner Arbeit.",
     },
     "zh": {
-        "nav": {"works": "作品", "performance": "表演", "about": "關於", "blog": "部落格（封存）", "friends": "朋友"},
+        "nav": {"works": "作品", "performance": "表演", "about": "關於", "press": "曝光", "blog": "部落格（封存）", "friends": "朋友"},
         "menu": "選單", "language": "語言", "privacy": "隱私權",
         "selected": "精選作品", "all_works": "全部作品（%d）→",
         "works_lead": "裝置、表演、網路藝術與藝術研究，%s–%s。",
         "works_desc": "%s的精選作品，%s–%s：裝置、表演、網路藝術，以及關於人工智慧的藝術研究。",
-        "Year": "年份", "Type": "類型", "Materials": "媒材", "With": "合作", "Link": "連結",
+        "Year": "年份", "Status": "狀態", "Type": "類型", "Materials": "媒材", "With": "合作", "Link": "連結",
         "work_desc": "%s（%s），%s，%s。", "work": "作品",
         "perf_title": "影音表演",
         "perf_lead": "現場影音演出與表演紀錄，2016–2024。點擊後會在新分頁開啟 %s 影片。",
@@ -323,6 +329,9 @@ UI = {
         "blog_lead": "作品筆記，以及 Raspberry Pi、Processing 與 Python 的技術文章。",
         "blog_desc": "%s的部落格文章彙整：作品筆記，以及 Raspberry Pi、Processing 與 Python 技術文章。",
         "friends_lead": "藝術家與合作夥伴。", "friends_desc": "%s的朋友、合作夥伴與藝術家夥伴，以及他們的作品網站連結。",
+        "press_lead": "他人拍攝、討論或引用這些作品的錄影、文章與活動頁面。",
+        "press_desc": "%s的曝光與報導：講演錄影、論文、展覽與活動頁面，以及機構介紹頁。",
+        "press_groups": {"watch": "觀看與聆聽", "read": "閱讀", "events": "展覽與活動", "profiles": "機構與介紹頁"},
         "Date": "日期", "Category": "分類",
         "ask": "關於我的作品，問問我", "ask_ph": "問我任何事", "ask_btn": "提問",
         "ask_note": "注意：AI 可能產生隨機的關聯性",
@@ -374,7 +383,7 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
     image = asset_abs(image or S.get("og_image") or "")
     nav = "".join('%s<a href="%s"%s><span>%s</span></a>' % (
         '<span class="gap" aria-hidden="true"></span>' if s == "blog" else "",  # Blog and Friends sit apart
-        url(LP[lang] + s + "/"), ' class="on" aria-current="page"' if s == section else "", u["nav"][s])
+        url(LP[lang] + s + "/"), ' class="on" aria-current="page"' if s == section else "", esc(u["nav"][s]))
         for s in SECTIONS)
     switch = "".join('<a href="%s" hreflang="%s" lang="%s"%s>%s</a>' % (
         url(alts[l] if alts else LP[l] + (section + "/" if section else "")), HREFLANG[l], HREFLANG[l],
@@ -483,7 +492,7 @@ def work_card(n, w, lang):
             '<span class="mono">%s</span></div></a>') % (
         url(LP[lang] + "works/%s/" % w["slug"]), img(c, 900, w["title"]) if c else '<span class="ph">%s</span>' % esc(w["title"]),
         idx(n), esc(w["title"]), '<span class="zh" lang="zh-Hant">%s</span>' % esc(w["title_zh"]) if w.get("title_zh") else "",
-        esc(w.get("year")))
+        esc(w.get("year")) + (" · " + esc(tr(w, "status", lang)) if w.get("status") else ""))
 
 
 def meta(rows):
@@ -601,7 +610,7 @@ for L in LANGS:
          section="works", lang=L, alts=each("works/"))
 
     for i, w in enumerate(works):
-        rows = [(u["Year"], esc(w.get("year"))), (u["Type"], esc(tr(w, "type", L))),
+        rows = [(u["Year"], esc(w.get("year"))), (u["Status"], esc(tr(w, "status", L))), (u["Type"], esc(tr(w, "type", L))),
                 (u["Materials"], esc(tr(w, "materials", L))), (u["With"], esc(w.get("collaborators")))]
         rows += [(u["Link"], a(l["url"], esc(l.get("label") or l["url"]))) for l in w.get("links", []) if l.get("url")]
         ims = w.get("images", [])
@@ -667,9 +676,27 @@ for L in LANGS:
     bio = tr(D["about"], "bio", L)
     page(P + "about/", u["about"], bio,
          '<div class="about-top"><h1 class="page-title">%s</h1><div><p class="bio">%s</p>'
-         '<p class="contact"><a href="mailto:%s">%s</a></p></div></div>%s' % (
-             esc(u["about"]), esc(bio), esc(S["email"]), esc(S["email"]), cv),
+         '<p class="contact">%s</p></div></div>%s' % (
+             esc(u["about"]), esc(bio),
+             "<br>".join('<a href="mailto:%s">%s</a>' % (esc(m), esc(m)) for m in (S["email"], S.get("email_alt")) if m), cv),
          ld=dict(person(L), description=bio), og_type="profile", section="about", lang=L, alts=each("about/"))
+
+    # press: recordings, texts and pages by others that show or discuss the work
+    press_html = ""
+    for g, gname in u["press_groups"].items():
+        rows = ""
+        for it in D.get("press", []):
+            if it.get("group") != g or not it.get("url"):
+                continue
+            note = tr(it, "note", L)
+            same = L != "en" and bool(note) and not it.get("note_" + L)  # not translated: mark the row as English
+            rows += ('<div class="cv-row press-row"%s><span class="mono">%s</span><span>%s<span class="press-by">%s</span>%s</span></div>' % (
+                ' lang="en"' if same else "", esc(it.get("date")), a(it["url"], esc(it["title"])),
+                esc(it.get("outlet")), '<span class="press-note">%s</span>' % esc(note) if note else ""))
+        if rows:
+            press_html += '<section class="cv-sec"><h2>%s</h2><div>%s</div></section>' % (esc(gname), rows)
+    page(P + "press/", u["nav"]["press"], u["press_desc"] % lname(L),
+         page_head(u["nav"]["press"], u["press_lead"]) + press_html, section="press", lang=L, alts=each("press/"))
 
     groups, order = {}, []
     for p in posts:
@@ -822,7 +849,8 @@ llms = ["# %s (%s)" % (S["name"], S.get("name_zh", "")), "",
         "- [Works](%s): installations, performances, internet art and artistic research" % abs_url("works/"),
         "- [About / CV](%s): biography, teaching, exhibitions, talks, publications" % abs_url("about/"),
         "- [Blog Archive](%s): texts and technical notes (in Mandarin)" % abs_url("blog/"),
-        "- [Audio-Visual Performance](%s)" % abs_url("performance/"), "",
+        "- [Audio-Visual Performance](%s)" % abs_url("performance/"),
+        "- [Press & Media](%s): talk recordings, papers, exhibition and event pages by others" % abs_url("press/"), "",
         "The site is also available in German (%s) and Traditional Chinese (%s)." % (abs_url("de/"), abs_url("zh/")), "",
         "## Works", ""]
 llms += ["- [%s](%s) (%s): %s" % (w["title"], abs_url("works/%s/" % w["slug"]), w.get("year"), w.get("type"))

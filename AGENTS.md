@@ -5,7 +5,7 @@
 
 ## 先記住的規則
 
-1. **不要手改產生出來的 HTML。** `index.html`、`works/`、`performance/`、`about/`、`blog/`、`friends/`、`de/`、`zh/`、
+1. **不要手改產生出來的 HTML。** `index.html`、`works/`、`performance/`、`about/`、`press/`、`blog/`、`friends/`、`de/`、`zh/`、
    `impressum/`、`datenschutz/`、`sitemap.xml`、`robots.txt`、`llms.txt`、`blog/feed.xml`，還有根目錄那些舊 Wix 網址的
    轉址資料夾（`cv/`、`post/`、`sun/`、`fall/`、`beneath/`…）全部由 `scripts/build.py` 產生，下一次建置就會被覆蓋。
    要改就改來源（`data/`、`posts/`、`scripts/build.py`、`assets/`）。
@@ -23,7 +23,7 @@
 
 | 想改的東西 | 檔案 |
 |---|---|
-| 作品、表演、CV、朋友、文章列表、網站名稱／描述／statement（SEO 用）／首頁大字 `home_text`／email／GA／對話框網址 | `data/site.json` |
+| 作品、表演、CV、曝光（`press`）、朋友、文章列表、網站名稱／描述／statement（SEO 用）／首頁大字 `home_text`／email／GA／對話框網址 | `data/site.json` |
 | 文章內文（中文部落格，不翻譯） | `posts/<slug>.md` |
 | 介面文字（選單、按鈕、頁面引言、對話框提示…） | `scripts/build.py` 的 `UI` 字典 |
 | 頁面結構、HTML、SEO（title、canonical、hreflang、JSON-LD、sitemap） | `scripts/build.py` |
@@ -60,7 +60,8 @@
 | `site` | `description`、`statement`、`job_title`、`home_text` | `description_de/_zh`、`statement_de/_zh`、`job_title_de/_zh`、`home_text_de/_zh` |
 
 `home_text` 是首頁下方的大字，留空時只留白不顯示（不會退回英文或 statement）；`statement` 只用在 JSON-LD、分享與 llms.txt，不顯示在首頁。
-| `works[]` | `text`、`type`、`materials` | `text_de/_zh`、`type_de/_zh`、`materials_de/_zh` |
+| `works[]` | `text`、`type`、`materials`、`status` | `text_de/_zh`、`type_de/_zh`、`materials_de/_zh`、`status_de/_zh` |
+| `press[]`（曝光頁每一筆） | `note` | `note_de/_zh` |
 | `performances[]` | `note` | `note_de/_zh` |
 | `about` | `bio` | `bio_de/_zh` |
 | `about.sections[]`（CV 區塊） | `title` | `title_de/_zh` |
@@ -70,6 +71,9 @@
 - **作品標題不翻譯。** `works[].title` 各語言都一樣；`works[].title_zh` 不是翻譯，而是作品的中文名，三種語言的頁面都會顯示在英文標題旁。
   `site.name_zh`（劉庭均）也一樣。
 - CV 行沒有翻譯時，`build.py` 會給那一行加 `lang="en"`，讓瀏覽器與搜尋引擎知道這段是英文。
+- `works[].status`（例如 In development）顯示在作品卡與作品頁的「Status」列；留空就不顯示。
+- `press[]` 的 `group` 只能是 `watch`、`read`、`events`、`profiles`；標題與來源不翻譯，沒有 `note_de/_zh` 時該語言顯示英文並標 `lang="en"`。
+- 聯絡信箱：`site.email`（側欄、Impressum、About）維持 gmail；`site.email_alt` 只顯示在 About 頁。
 - 表演影片標題、合作者（`collaborators`）、年份、網址不翻譯。
 - 新增一個要翻譯的欄位時：在 `site.json` 加 `xxx_de`/`xxx_zh`，在 `build.py` 用 `tr(obj, "xxx", L)` 讀，
   並在 `admin/admin.js` 加對應的輸入框（照 `text_de`、`type_zh` 那幾行的寫法），作者才能在後台編輯。

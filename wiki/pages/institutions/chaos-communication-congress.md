@@ -18,6 +18,7 @@ The annual congress of the Chaos Computer Club. Liu and Leon-Etienne Kühr spoke
 - **39C3 (2025), 28–29 December, 38 min:** *51 Ways to Spell the Image Giraffe: The Hidden Politics of Token Languages in Generative AI*. Tokenisation encodes political and corporate choices before training: there are 51 ways to spell "giraffe" from tokens, and some images cannot be prompted because of sanitising in the token dictionary; experiments with genetic algorithms and edge cases. https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai
 
 ## Related
+- [51 Ways to Spell the Image Giraffe](../works/51-ways-to-spell-the-image-giraffe.md) and [Sixteen Tokens for a Cave](../works/sixteen-tokens-for-a-cave.md): the 39C3 research, now work pages.
 
 - [Leon-Etienne Kühr](../people/leon-etienne-kuehr.md)
 - [Talks and writing](../talks-and-writing.md)

@@ -208,6 +208,7 @@
         field('網址代稱 slug（只用英文小寫與 -）', w, 'slug'),
         field('年份 Year', w, 'year')
       ]),
+      h('div', { className: 'row' }, [field('狀態 Status（例：In development；留空＝不顯示）', w, 'status'), field('狀態 DE', w, 'status_de'), field('狀態 中文', w, 'status_zh')]),
       h('div', { className: 'row' }, [field('形式 Type', w, 'type'), field('媒材 Materials', w, 'materials')]),
       h('div', { className: 'row' }, [field('形式（德文 DE）', w, 'type_de'), field('媒材（德文 DE）', w, 'materials_de')]),
       h('div', { className: 'row' }, [field('形式（中文）', w, 'type_zh'), field('媒材（中文）', w, 'materials_zh')]),
@@ -229,6 +230,15 @@
       bar('表演影片 Performance'),
       h('div', { className: 'form' }, [
         lines('每行一支：標題 | 說明 | Vimeo/YouTube 網址 | 縮圖（選填）| 說明 DE | 說明 中文', D, 'performances', ['title', 'note', 'video', 'thumb', 'note_de', 'note_zh'], '順序即網站上的順序。點擊會在新分頁開啟 Vimeo / YouTube。沒有縮圖時自動用 Vimeo / YouTube 的縮圖。', 'tall')
+      ])
+    );
+  };
+
+  tabs.press = function () {
+    main.append(
+      bar('曝光 Press & Media'),
+      h('div', { className: 'form' }, [
+        lines('每行一筆：分類 | 標題 | 來源 | 日期 | 網址 | 說明 | 說明 DE | 說明 中文', D, 'press', ['group', 'title', 'outlet', 'date', 'url', 'note', 'note_de', 'note_zh'], '分類只能填 watch（錄影）、read（文章／論文）、events（展覽與活動）、profiles（機構介紹頁）。順序即網站上的順序；日期寫 2026 或 2026-05。沒有德文／中文說明時，該語言頁面顯示英文。', 'tall')
       ])
     );
   };
@@ -323,7 +333,7 @@
       h('div', { className: 'row' }, [field('名字', s, 'name'), field('中文名字', s, 'name_zh')]),
       field('網站描述（搜尋引擎用）', s, 'description', { area: true }),
       h('div', { className: 'row' }, [field('網站描述 DE', s, 'description_de', { area: true }), field('網站描述 中文', s, 'description_zh', { area: true })]),
-      field('Email', s, 'email'),
+      h('div', { className: 'row' }, [field('Email（側欄、Impressum、About）', s, 'email'), field('第二個 Email（只顯示在 About 頁）', s, 'email_alt')]),
       field('首頁圖片', s, 'home_image'),
       field('首頁大字（首頁下方的大字；空一行＝分段；留空＝留白）', s, 'home_text', { area: true }),
       h('div', { className: 'row' }, [field('首頁大字 DE', s, 'home_text_de', { area: true }), field('首頁大字 中文', s, 'home_text_zh', { area: true })]),
