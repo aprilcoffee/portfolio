@@ -59,3 +59,6 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 
 ## [2026-10-08] add | external mentions of Self-cannibalizing AI
 - Cacini (APRJA 2024) and Unthinking Photography (Image Exhaust, 2025) added to external-links and works/self-cannibalizing-ai. Both found by web search; the pages themselves could not be opened from this environment.
+
+## [2026-10-08] add | Expanded Conference 2026 paper
+- DOI 10.1145/3840416.3840463 (given by the artist) added to the CV Publications on the website, to the work links of Steering Through the Inner Residue, and to external-links and works/steering-through-the-inner-residue. The ACM page could not be opened; the paper title is assumed to match the Art Track presentation.
