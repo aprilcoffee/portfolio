@@ -279,7 +279,8 @@ UI = {
         "press_desc": "Press and media about %s: talk recordings, texts that discuss or cite the work.",
         "press_groups": {"watch": "Talks and recordings", "read": "Texts about the work"},
         "Date": "Date", "Category": "Category",
-        "ask": "Ask me about my work", "ask_ph": "Ask me anything", "ask_btn": "Ask",
+        "ask": "Ask about my work", "ask_ph": "Ask me anything", "ask_btn": "Ask",
+        "ask_ex": ["What is Latent Heat Generation about?", "Why can “giraffe” be spelled in 51 ways?", "Which of your works deal with AI?", "What are you working on now?"],
         "ask_note": "caution: AI may create random correlations",
         "ask_more": "Privacy",
         "ask_err": "Sorry, that didn’t work. Please try again in a moment, or write to %s.",
@@ -306,7 +307,8 @@ UI = {
         "press_desc": "Presse und Medien zu %s: Vortragsaufzeichnungen, Texte, die die Arbeit besprechen oder zitieren.",
         "press_groups": {"watch": "Vorträge und Aufzeichnungen", "read": "Texte über die Arbeit"},
         "Date": "Datum", "Category": "Kategorie",
-        "ask": "Fragen Sie mich zu meiner Arbeit", "ask_ph": "Fragen Sie mich alles", "ask_btn": "Fragen",
+        "ask": "Fragen Sie zu meiner Arbeit", "ask_ph": "Fragen Sie mich alles", "ask_btn": "Fragen",
+        "ask_ex": ["Worum geht es in Latent Heat Generation?", "Warum lässt sich „giraffe“ auf 51 Arten schreiben?", "Welche Ihrer Arbeiten beschäftigen sich mit KI?", "Woran arbeiten Sie gerade?"],
         "ask_note": "Achtung: KI kann zufällige Zusammenhänge erzeugen · %s",
         "ask_more": "Datenschutz",
         "ask_err": "Das hat leider nicht geklappt. Bitte gleich noch einmal versuchen oder an %s schreiben.",
@@ -334,6 +336,7 @@ UI = {
         "press_groups": {"watch": "講演與錄影", "read": "相關文章"},
         "Date": "日期", "Category": "分類",
         "ask": "關於我的作品，問問我", "ask_ph": "問我任何事", "ask_btn": "提問",
+        "ask_ex": ["《Latent Heat Generation》在談什麼？", "為什麼「giraffe」可以有 51 種拼法？", "你有哪些作品跟 AI 有關？", "你現在在做什麼？"],
         "ask_note": "注意：AI 可能產生隨機的關聯性",
         "ask_more": "隱私權",
         "ask_err": "抱歉，暫時無法回答。請稍後再試，或寫信至 %s。",
@@ -570,15 +573,15 @@ def ask_box(lang):
     ts = ' data-turnstile="%s"' % esc(S["turnstile_sitekey"]) if S.get("turnstile_sitekey") else ""
     return ('<section class="ask" id="ask" aria-labelledby="ask-h" data-e="%s"%s data-msgs="%s">'
             '<pre class="ask-gpu" aria-hidden="true">' + ASK_GPU + '</pre>'
-            '<h2 id="ask-h" class="sr-only">%s</h2>'
+            '<h2 id="ask-h" class="ask-h">%s</h2>'
             '<div class="ask-log" aria-live="polite"></div>'
             '<form class="ask-form"><span class="ask-prompt" aria-hidden="true">&gt;</span>'
             '<input name="q" type="text" maxlength="600" autocomplete="off" required '
-            'placeholder="%s" aria-label="%s"><button type="submit">%s</button></form>'
+            'placeholder="%s" aria-label="%s" data-ex="%s"><button type="submit">%s</button></form>'
             '<p class="ask-note">%s</p>'
             '<script src="%s" defer></script></section>') % (
         enc, ts, esc(json.dumps(msgs, ensure_ascii=False)), esc(u["ask"]),
-        esc(u["ask_ph"]), esc(u["ask_ph"]), esc(u["ask_btn"]),
+        esc(u["ask_ph"]), esc(u["ask_ph"]), esc(json.dumps(u["ask_ex"], ensure_ascii=False)), esc(u["ask_btn"]),
         esc(u["ask_note"]).replace("%s", '<a href="%s">%s</a>' % (url("datenschutz/#chat"), esc(u["ask_more"]))),
         versioned("assets/chat.js"))
 

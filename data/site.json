@@ -1623,6 +1623,26 @@
       "note": "A media-archaeology essay comparing analog video feedback with recursive AI training. It cites the 38C3 talk and the TEDA poster, and describes the feedback loops of Liu and Kühr in BLIP-2 and Stable Diffusion.",
       "note_de": "Ein medienarchäologischer Essay, der analoges Video-Feedback mit rekursivem KI-Training vergleicht. Er zitiert den 38C3-Vortrag und das TEDA-Poster und beschreibt die Feedback-Schleifen von Liu und Kühr in BLIP-2 und Stable Diffusion.",
       "note_zh": "一篇媒體考古學的論文，把類比錄像回饋與遞迴式 AI 訓練相比較。文中引用了 38C3 講演與 TEDA 海報，並描述 Liu 與 Kühr 在 BLIP-2 和 Stable Diffusion 上做的回饋迴圈。"
+    },
+    {
+      "group": "read",
+      "title": "Self-cannibalizing AI: Artistic Strategies to expose generative text-to-image models",
+      "outlet": "Image Exhaust, Unthinking Photography (The Photographers’ Gallery)",
+      "date": "2025-01",
+      "url": "https://unthinking.photography/imgexhaust/self-cannibalizing-ai",
+      "note": "Entry on the 37C3 talk, credited to Ting-Chun Liu and Leon-Etienne Kühr: artistic methods for examining image-generation models, and how model collapse could happen through the repeated use of generated material.",
+      "note_de": "Eintrag zum 37C3-Vortrag, Ting-Chun Liu und Leon-Etienne Kühr zugeschrieben: künstlerische Methoden, Bildgeneratoren zu untersuchen, und wie ein Modellkollaps durch die wiederholte Verwendung generierten Materials entstehen könnte.",
+      "note_zh": "針對 37C3 講演的條目，署名 Ting-Chun Liu 與 Leon-Etienne Kühr：以藝術方法檢視圖像生成模型，以及重複使用生成內容可能如何導致模型崩壞。"
+    },
+    {
+      "group": "read",
+      "title": "The Autophagic Mode of Production: Hacking the Metabolism of AI",
+      "outlet": "Luca Cacini, A Peer-Reviewed Journal About (APRJA) 13(1), pp. 78–89",
+      "date": "2024-11",
+      "url": "https://doi.org/10.7146/aprja.v13i1.151233",
+      "note": "Journal article that cites the 37C3 talk and discusses Liu and Kühr’s feedback loop as an artistic strategy for investigating the latent space of machine learning.",
+      "note_de": "Zeitschriftenartikel, der den 37C3-Vortrag zitiert und die Feedback-Schleife von Liu und Kühr als künstlerische Strategie zur Erkundung des latenten Raums des maschinellen Lernens bespricht.",
+      "note_zh": "期刊論文，引用了 37C3 講演，並把 Liu 與 Kühr 的回饋迴圈視為探究機器學習潛在空間的藝術策略。"
     }
   ]
 }

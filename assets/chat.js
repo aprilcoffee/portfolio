@@ -15,6 +15,18 @@
   var form = box.querySelector('.ask-form');
   var input = form.querySelector('input');
   var btn = form.querySelector('button');
+  // The empty box offers a few example questions in turn (in its placeholder), so it is clear
+  // what can be asked. They pause while the visitor is typing or an answer is coming.
+  var ex = [];
+  try { ex = JSON.parse(input.getAttribute('data-ex') || '[]'); } catch (e) {}
+  var phBase = input.getAttribute('placeholder'), phAt = -1;
+  if (ex.length && !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+    setInterval(function () {
+      if (busy || input.value || document.activeElement === input || document.hidden) return;
+      phAt = (phAt + 1) % (ex.length + 1);
+      input.setAttribute('placeholder', phAt === ex.length ? phBase : ex[phAt]);
+    }, 3800);
+  }
   var last = null;   // the previous exchange, sent along as context: [question, answer]
   var busy = false;
 

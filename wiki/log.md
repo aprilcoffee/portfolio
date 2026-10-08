@@ -56,3 +56,6 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 ## [2026-10-07] add | works 51 Ways to Spell the Image Giraffe, Sixteen Tokens for a Cave
 - New work pages (both "In development", 2025, with Leon-Etienne Kühr), written from the artist's portfolio deck and the 39C3 recording page; site.json gained the works plus a `status` field.
 - Touched: institutions/chaos-communication-congress, topics/critical-ai-and-image-models, people/leon-etienne-kuehr, external-links (pointer to the website's new Press & Media page, /press/).
+
+## [2026-10-08] add | external mentions of Self-cannibalizing AI
+- Cacini (APRJA 2024) and Unthinking Photography (Image Exhaust, 2025) added to external-links and works/self-cannibalizing-ai. Both found by web search; the pages themselves could not be opened from this environment.

@@ -87,7 +87,7 @@
 問答框的字串也在這裡：
 - `ask`（區塊的 aria-label）、`ask_ph`（輸入框提示：Ask me anything／Fragen Sie mich alles／問我任何事）、`ask_btn`
 - `ask_note`：框下方的提醒。**只有德文版有 `· %s`**，會被換成 Datenschutz 的連結（`ask_more`）；英文、中文刻意沒有連結，不要加回去。
-- `ask_q`：三個範例問題（list）
+- `ask_ex`：範例問題（list，四個）；輸入框空著時，placeholder 會輪流顯示它們（`chat.js`），打字、focus 或在回答時暫停；減少動態效果時不輪播。區塊上方可見的標題用 `ask`
 - `ask_err`（`%s` 會填 email）、`ask_busy`、`ask_refusal`：錯誤訊息，由 `chat.js` 顯示
 - 介面用第一人稱（「問我」、「我的作品」），因為問答框代表藝術家本人。
 
