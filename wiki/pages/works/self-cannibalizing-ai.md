@@ -9,7 +9,9 @@ sources:
   - https://liutingchun.com/zh/works/self-cannibalizing-ai/
   - https://ground-zero.khm.de/artistic-research-on-recursive-dynamics-in-generative-image-models/
   - https://arxiv.org/abs/2607.09705
-updated: 2026-10-01
+  - https://unthinking.photography/imgexhaust/self-cannibalizing-ai
+  - https://doi.org/10.7146/aprja.v13i1.151233
+updated: 2026-10-08
 ---
 # Self-cannibalizing AI
 
@@ -37,6 +39,8 @@ A talk with Leon-Etienne Kühr at the 37th Chaos Communication Congress (37C3, 2
 - **Poster version:** *Artistic Research on Recursive Dynamics in Generative Image Models* (shown as "Self-Cannibalizing AI"), TEDA'24, University of Cambridge, 19–20 September 2024. Feedback loops in Stable Diffusion show emergent behaviour, systematic bias and signs of model collapse; the claim is that the algorithmic parts of the pipeline, not only the training data, shape the look of generated images. https://ground-zero.khm.de/artistic-research-on-recursive-dynamics-in-generative-image-models/
 - **Written up in the thesis:** the same feedback experiment appears as "The purple coincidence" in [Heat as (Generative) Image Making](../texts/heat-as-generative-image-making.md); the aesthetic-score and NSFW findings are developed in [Stereotype Encoding](../texts/stereotype-encoding.md).
 - **Cited by others:** Violaine Boutet de Monvel's essay on model collapse (arXiv:2607.09705) cites the TEDA poster and writes that Liu and Kühr "have created feedback loops within BLIP-2" and tested ways of collapsing Stable Diffusion "without extended retraining or even textual prompting". https://arxiv.org/abs/2607.09705
+- **Documented by Unthinking Photography:** an entry in *Image Exhaust*, the digital programme of The Photographers' Gallery, dated January 2025, credited to Liu and Kühr, on artistic strategies to expose text-to-image models and how model collapse could arise from repeated use of generated material. https://unthinking.photography/imgexhaust/self-cannibalizing-ai
+- **Cited in a journal article:** Luca Cacini (Aalborg University), "The Autophagic Mode of Production: Hacking the Metabolism of AI", *A Peer-Reviewed Journal About* (APRJA) 13(1), November 2024, pp. 78–89, cites the talk and describes Liu and Kühr's feedback loop as an artistic strategy to investigate the latent space of machine learning. https://doi.org/10.7146/aprja.v13i1.151233
 - **Later talks in the same line:** 38C3 *arafed futures* (2024) and 39C3 *51 Ways to Spell the Image Giraffe* (2025), see [Chaos Communication Congress](../institutions/chaos-communication-congress.md).
 
 ## Related
@@ -58,3 +62,5 @@ A talk with Leon-Etienne Kühr at the 37th Chaos Communication Congress (37C3, 2
 - https://liutingchun.com/zh/works/self-cannibalizing-ai/
 - https://ground-zero.khm.de/artistic-research-on-recursive-dynamics-in-generative-image-models/
 - https://arxiv.org/abs/2607.09705
+- https://unthinking.photography/imgexhaust/self-cannibalizing-ai
+- https://doi.org/10.7146/aprja.v13i1.151233

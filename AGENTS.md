@@ -72,8 +72,8 @@
   `site.name_zh`（劉庭均）也一樣。
 - CV 行沒有翻譯時，`build.py` 會給那一行加 `lang="en"`，讓瀏覽器與搜尋引擎知道這段是英文。
 - `works[].status`（例如 In development）顯示在作品卡與作品頁的「Status」列；留空就不顯示。
-- `press[]` 的 `group` 只能是 `watch`（講演與錄影）、`read`（相關文章）、`profiles`（介紹頁）；展覽、活動頁面不放；標題與來源不翻譯，沒有 `note_de/_zh` 時該語言顯示英文並標 `lang="en"`。
-- 聯絡信箱：`site.email`（側欄、Impressum、About）維持 gmail；`site.email_alt` 只顯示在 About 頁。
+- `press[]` 的 `group` 只能是 `watch`（講演與錄影）、`read`（相關文章）；展覽、活動、機構介紹頁不放；標題與來源不翻譯，沒有 `note_de/_zh` 時該語言顯示英文並標 `lang="en"`。
+- 聯絡信箱：`site.email`（側欄、Impressum、About）維持 gmail；`site.email_alt` 只顯示在 About 頁；`site.orcid`（只填 iD）顯示在 About 頁的信箱下方，留空就不顯示。
 - 表演影片標題、合作者（`collaborators`）、年份、網址不翻譯。
 - 新增一個要翻譯的欄位時：在 `site.json` 加 `xxx_de`/`xxx_zh`，在 `build.py` 用 `tr(obj, "xxx", L)` 讀，
   並在 `admin/admin.js` 加對應的輸入框（照 `text_de`、`type_zh` 那幾行的寫法），作者才能在後台編輯。
@@ -87,7 +87,7 @@
 問答框的字串也在這裡：
 - `ask`（區塊的 aria-label）、`ask_ph`（輸入框提示：Ask me anything／Fragen Sie mich alles／問我任何事）、`ask_btn`
 - `ask_note`：框下方的提醒。**只有德文版有 `· %s`**，會被換成 Datenschutz 的連結（`ask_more`）；英文、中文刻意沒有連結，不要加回去。
-- `ask_q`：三個範例問題（list）
+- `ask_ex`：範例問題（list，四個）；輸入框空著時，placeholder 會輪流顯示它們（`chat.js`），打字、focus 或在回答時暫停；減少動態效果時不輪播。區塊上方可見的標題用 `ask`
 - `ask_err`（`%s` 會填 email）、`ask_busy`、`ask_refusal`：錯誤訊息，由 `chat.js` 顯示
 - 介面用第一人稱（「問我」、「我的作品」），因為問答框代表藝術家本人。
 

@@ -275,11 +275,12 @@ UI = {
         "blog_lead": "Notes on works, and technical write-ups on Raspberry Pi, Processing and Python. The posts are written in Mandarin.",
         "blog_desc": "Blog archive of %s: notes on artworks and technical write-ups on Raspberry Pi, Processing and Python.",
         "friends_lead": "Artists and collaborators.", "friends_desc": "Friends and fellow artists of %s.",
-        "press_lead": "Recordings, texts and profile pages by others that show, discuss or cite the work.",
-        "press_desc": "Press and media about %s: talk recordings, texts that discuss or cite the work, institutional profiles.",
-        "press_groups": {"watch": "Talks and recordings", "read": "Texts about the work", "profiles": "Profiles"},
+        "press_lead": "Recordings and texts by others that show, discuss or cite the work.",
+        "press_desc": "Press and media about %s: talk recordings, texts that discuss or cite the work.",
+        "press_groups": {"watch": "Talks and recordings", "read": "Texts about the work"},
         "Date": "Date", "Category": "Category",
-        "ask": "Ask me about my work", "ask_ph": "Ask me anything", "ask_btn": "Ask",
+        "ask": "Ask about my work", "ask_ph": "Ask me anything", "ask_btn": "Ask",
+        "ask_ex": ["What is Latent Heat Generation about?", "Why can “giraffe” be spelled in 51 ways?", "Which of your works deal with AI?", "What are you working on now?"],
         "ask_note": "caution: AI may create random correlations",
         "ask_more": "Privacy",
         "ask_err": "Sorry, that didn’t work. Please try again in a moment, or write to %s.",
@@ -302,11 +303,12 @@ UI = {
         "blog_lead": "Notizen zu Arbeiten und technische Anleitungen zu Raspberry Pi, Processing und Python. Die Beiträge sind auf Chinesisch (Mandarin) verfasst.",
         "blog_desc": "Blog-Archiv von %s: Notizen zu Arbeiten und technische Anleitungen zu Raspberry Pi, Processing und Python.",
         "friends_lead": "Künstler*innen und Kooperationspartner*innen.", "friends_desc": "Freund*innen und befreundete Künstler*innen von %s.",
-        "press_lead": "Aufzeichnungen, Texte und Profilseiten Dritter, die die Arbeit zeigen, besprechen oder zitieren.",
-        "press_desc": "Presse und Medien zu %s: Vortragsaufzeichnungen, Texte, die die Arbeit besprechen oder zitieren, Profile von Institutionen.",
-        "press_groups": {"watch": "Vorträge und Aufzeichnungen", "read": "Texte über die Arbeit", "profiles": "Profile"},
+        "press_lead": "Aufzeichnungen und Texte Dritter, die die Arbeit zeigen, besprechen oder zitieren.",
+        "press_desc": "Presse und Medien zu %s: Vortragsaufzeichnungen, Texte, die die Arbeit besprechen oder zitieren.",
+        "press_groups": {"watch": "Vorträge und Aufzeichnungen", "read": "Texte über die Arbeit"},
         "Date": "Datum", "Category": "Kategorie",
-        "ask": "Fragen Sie mich zu meiner Arbeit", "ask_ph": "Fragen Sie mich alles", "ask_btn": "Fragen",
+        "ask": "Fragen Sie zu meiner Arbeit", "ask_ph": "Fragen Sie mich alles", "ask_btn": "Fragen",
+        "ask_ex": ["Worum geht es in Latent Heat Generation?", "Warum lässt sich „giraffe“ auf 51 Arten schreiben?", "Welche Ihrer Arbeiten beschäftigen sich mit KI?", "Woran arbeiten Sie gerade?"],
         "ask_note": "Achtung: KI kann zufällige Zusammenhänge erzeugen · %s",
         "ask_more": "Datenschutz",
         "ask_err": "Das hat leider nicht geklappt. Bitte gleich noch einmal versuchen oder an %s schreiben.",
@@ -329,11 +331,12 @@ UI = {
         "blog_lead": "作品筆記，以及 Raspberry Pi、Processing 與 Python 的技術文章。",
         "blog_desc": "%s的部落格文章彙整：作品筆記，以及 Raspberry Pi、Processing 與 Python 技術文章。",
         "friends_lead": "藝術家與合作夥伴。", "friends_desc": "%s的朋友、合作夥伴與藝術家夥伴，以及他們的作品網站連結。",
-        "press_lead": "他人拍攝、討論或引用這些作品的錄影、文章與介紹頁。",
-        "press_desc": "%s的曝光與報導：講演錄影、討論或引用作品的文章，以及機構介紹頁。",
-        "press_groups": {"watch": "講演與錄影", "read": "相關文章", "profiles": "介紹頁"},
+        "press_lead": "他人拍攝、討論或引用這些作品的錄影與文章。",
+        "press_desc": "%s的曝光與報導：講演錄影，以及討論或引用作品的文章。",
+        "press_groups": {"watch": "講演與錄影", "read": "相關文章"},
         "Date": "日期", "Category": "分類",
         "ask": "關於我的作品，問問我", "ask_ph": "問我任何事", "ask_btn": "提問",
+        "ask_ex": ["《Latent Heat Generation》在談什麼？", "為什麼「giraffe」可以有 51 種拼法？", "你有哪些作品跟 AI 有關？", "你現在在做什麼？"],
         "ask_note": "注意：AI 可能產生隨機的關聯性",
         "ask_more": "隱私權",
         "ask_err": "抱歉，暫時無法回答。請稍後再試，或寫信至 %s。",
@@ -467,7 +470,7 @@ def person(lang):
          "description": tr(S, "statement", lang) or tr(S, "description", lang),
          "knowsAbout": S.get("knows_about", []),
          "hasOccupation": [{"@type": "Occupation", "name": o} for o in S.get("occupations", [])],
-         "sameAs": [l["url"] for l in S.get("links", [])]}
+         "sameAs": [l["url"] for l in S.get("links", [])] + (["https://orcid.org/" + S["orcid"]] if S.get("orcid") else [])}
     p.update(S.get("person_extra", {}))
     return p
 
@@ -570,15 +573,15 @@ def ask_box(lang):
     ts = ' data-turnstile="%s"' % esc(S["turnstile_sitekey"]) if S.get("turnstile_sitekey") else ""
     return ('<section class="ask" id="ask" aria-labelledby="ask-h" data-e="%s"%s data-msgs="%s">'
             '<pre class="ask-gpu" aria-hidden="true">' + ASK_GPU + '</pre>'
-            '<h2 id="ask-h" class="sr-only">%s</h2>'
+            '<h2 id="ask-h" class="ask-h">%s</h2>'
             '<div class="ask-log" aria-live="polite"></div>'
             '<form class="ask-form"><span class="ask-prompt" aria-hidden="true">&gt;</span>'
             '<input name="q" type="text" maxlength="600" autocomplete="off" required '
-            'placeholder="%s" aria-label="%s"><button type="submit">%s</button></form>'
+            'placeholder="%s" aria-label="%s" data-ex="%s"><button type="submit">%s</button></form>'
             '<p class="ask-note">%s</p>'
             '<script src="%s" defer></script></section>') % (
         enc, ts, esc(json.dumps(msgs, ensure_ascii=False)), esc(u["ask"]),
-        esc(u["ask_ph"]), esc(u["ask_ph"]), esc(u["ask_btn"]),
+        esc(u["ask_ph"]), esc(u["ask_ph"]), esc(json.dumps(u["ask_ex"], ensure_ascii=False)), esc(u["ask_btn"]),
         esc(u["ask_note"]).replace("%s", '<a href="%s">%s</a>' % (url("datenschutz/#chat"), esc(u["ask_more"]))),
         versioned("assets/chat.js"))
 
@@ -678,7 +681,9 @@ for L in LANGS:
          '<div class="about-top"><h1 class="page-title">%s</h1><div><p class="bio">%s</p>'
          '<p class="contact">%s</p></div></div>%s' % (
              esc(u["about"]), esc(bio),
-             "<br>".join('<a href="mailto:%s">%s</a>' % (esc(m), esc(m)) for m in (S["email"], S.get("email_alt")) if m), cv),
+             "<br>".join(['<a href="mailto:%s">%s</a>' % (esc(m), esc(m)) for m in (S["email"], S.get("email_alt")) if m] +
+                         ['ORCID <a href="https://orcid.org/%s" target="_blank" rel="noopener">%s</a>' % (esc(S["orcid"]), esc(S["orcid"]))
+                          for _ in [0] if S.get("orcid")]), cv),
          ld=dict(person(L), description=bio), og_type="profile", section="about", lang=L, alts=each("about/"))
 
     # press: recordings, texts and pages by others that show or discuss the work
@@ -850,7 +855,7 @@ llms = ["# %s (%s)" % (S["name"], S.get("name_zh", "")), "",
         "- [About / CV](%s): biography, teaching, exhibitions, talks, publications" % abs_url("about/"),
         "- [Blog Archive](%s): texts and technical notes (in Mandarin)" % abs_url("blog/"),
         "- [Audio-Visual Performance](%s)" % abs_url("performance/"),
-        "- [Press & Media](%s): talk recordings, texts and profile pages by others" % abs_url("press/"), "",
+        "- [Press & Media](%s): talk recordings and texts by others" % abs_url("press/"), "",
         "The site is also available in German (%s) and Traditional Chinese (%s)." % (abs_url("de/"), abs_url("zh/")), "",
         "## Works", ""]
 llms += ["- [%s](%s) (%s): %s" % (w["title"], abs_url("works/%s/" % w["slug"]), w.get("year"), w.get("type"))

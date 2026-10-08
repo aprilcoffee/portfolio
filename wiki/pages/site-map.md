@@ -19,7 +19,7 @@ in Mandarin. Recommend the version in the visitor's language.
 - **Works** (all works, 20): [en](https://liutingchun.com/works/) · [de](https://liutingchun.com/de/works/) · [zh](https://liutingchun.com/zh/works/)
 - **Performance** (audio-visual performance videos): [en](https://liutingchun.com/performance/) · [de](https://liutingchun.com/de/performance/) · [zh](https://liutingchun.com/zh/performance/)
 - **About** (biography and CV: teaching, education, awards, talks, publications, exhibitions): [en](https://liutingchun.com/about/) · [de](https://liutingchun.com/de/about/) · [zh](https://liutingchun.com/zh/about/)
-- **Press & Media** (talk recordings, texts and profile pages by others): [en](https://liutingchun.com/press/) · [de](https://liutingchun.com/de/press/) · [zh](https://liutingchun.com/zh/press/)
+- **Press & Media** (talk recordings and texts by others): [en](https://liutingchun.com/press/) · [de](https://liutingchun.com/de/press/) · [zh](https://liutingchun.com/zh/press/)
 - **Blog archive** (notes on works, technical write-ups; in Mandarin): https://liutingchun.com/blog/
 - **Friends** (artists and collaborators): [en](https://liutingchun.com/friends/) · [de](https://liutingchun.com/de/friends/) · [zh](https://liutingchun.com/zh/friends/)
 - **Impressum** (legal notice): https://liutingchun.com/impressum/
@@ -27,7 +27,7 @@ in Mandarin. Recommend the version in the visitor's language.
 
 ## Works
 
-- **Steering Through the Inner Residue** (2026): [en](https://liutingchun.com/works/steering-through-the-inner-residue/) · [de](https://liutingchun.com/de/works/steering-through-the-inner-residue/) · [zh](https://liutingchun.com/zh/works/steering-through-the-inner-residue/)
+- **Steering Through the Inner Residue** (2026): [en](https://liutingchun.com/works/steering-through-the-inner-residue/) · [de](https://liutingchun.com/de/works/steering-through-the-inner-residue/) · [zh](https://liutingchun.com/zh/works/steering-through-the-inner-residue/) — Paper, Expanded Conference 2026 (ACM): https://doi.org/10.1145/3840416.3840463
 - **Interpolation of the Invisible Color** (2025): [en](https://liutingchun.com/works/interpolation-of-the-invisible-color/) · [de](https://liutingchun.com/de/works/interpolation-of-the-invisible-color/) · [zh](https://liutingchun.com/zh/works/interpolation-of-the-invisible-color/) — Selected artists: https://storagemuseum.org/en/program/6-ausstellung — Storage Museum archive: https://storagemuseum.org/en/database
 - **Latent Heat Generation** (2025): [en](https://liutingchun.com/works/latent-heat-generation/) · [de](https://liutingchun.com/de/works/latent-heat-generation/) · [zh](https://liutingchun.com/zh/works/latent-heat-generation/) — Research notes: https://aprilcoffee.github.io/heat_as_image/index.html
 - **51 Ways to Spell the Image Giraffe** (2025): [en](https://liutingchun.com/works/51-ways-to-spell-the-image-giraffe/) · [de](https://liutingchun.com/de/works/51-ways-to-spell-the-image-giraffe/) · [zh](https://liutingchun.com/zh/works/51-ways-to-spell-the-image-giraffe/) — Talk recording, 39C3 (media.ccc.de): https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai
@@ -126,6 +126,7 @@ Organisers', institutions' and publishers' pages for entries in the CV (About pa
 
 **Publications & Writing**
 
+- 2026 Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images, Expanded Conference 2026 (ACM), w/ Leon-Etienne Kühr: https://doi.org/10.1145/3840416.3840463
 - 2026 Heat as (Generative) Image Making, FIfF-Kommunikation 1/26, p. 64, FIfF e.V. Essay for the Weizenbaum-Studienpreis 2025: https://www.fiff.de/fiff-kommunikation/2026/1/
 - 2025 Stereotype Encoding: How AI Images Learn Cultural Bias, Latent Space, Filmwerkstatt Düsseldorf: https://www.academia.edu/165438573/Stereotype_Encoding_How_AI_Images_Learn_Cultural_Bias
 - 2025 On the Materiality of Artificial Intelligence, in: un/learn ai – integrating AI in aesthetic practices, Vol. 3, pp. 218–223, Forschungsprojekt KITeGG: https://openscience.ub.uni-mainz.de/items/7d8cb85f-0e1a-409e-b9a1-a9dac96e48a0

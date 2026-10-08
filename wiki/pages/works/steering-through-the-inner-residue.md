@@ -25,7 +25,7 @@ A video installation with Leon-Etienne Kühr in which an image model is steered 
 - **Video:** https://vimeo.com/1171767792
 - **Credits:** Artists and Developers: Ting-Chun Liu, Leon-Etienne Kühr; Photo Documentation: Jakob Dieckmann, Günzel/Rademacher, Ting-Chun Liu; Video Documentation: Ting-Chun Liu, Leon-Etienne Kühr
 - **Related exhibition:** [AI-Worlding](https://www.museumangewandtekunst.de/de/besuch/ausstellungen/2026/ai-worlding-kuenstlerische-forschung-zu-ki-generierten-weltmodellen/), Museum Angewandte Kunst, Frankfurt, 13 Feb – 26 Apr 2026; Liu and Kühr are listed among the exhibiting artists
-- **Presented:** Art Track presentation "Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images", Expanded Conference 2026 (with ACM), skyloft at the Ars Electronica Center, Linz, 9–11 September 2026: https://expanded-conf.org/
+- **Presented:** Art Track presentation "Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images", Expanded Conference 2026 (with ACM), skyloft at the Ars Electronica Center, Linz, 9–11 September 2026: https://expanded-conf.org/ · Paper in the ACM proceedings: https://doi.org/10.1145/3840416.3840463 (DOI given by the artist; the title is taken to be that of the Art Track presentation, not checked on the ACM page)
 - **Page:** [https://liutingchun.com/works/steering-through-the-inner-residue/](https://liutingchun.com/works/steering-through-the-inner-residue/) · [de](https://liutingchun.com/de/works/steering-through-the-inner-residue/) · [zh](https://liutingchun.com/zh/works/steering-through-the-inner-residue/)
 
 ## Key ideas

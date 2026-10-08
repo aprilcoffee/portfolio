@@ -93,7 +93,8 @@
     "video_thumbs": {
       "324791977": "https://i.vimeocdn.com/video/768341727-28ae4536ed569138a9e71ed451783e33a427fd4915456f5eafe5ed6e194ad88b-d_1280"
     },
-    "email_alt": "ting-chun.liu@uni-weimar.de"
+    "email_alt": "ting-chun.liu@uni-weimar.de",
+    "orcid": "0009-0009-7168-4458"
   },
   "works": [
     {
@@ -115,7 +116,12 @@
         "images/wix/4eb1dd_a1842ea4c21e49e49c74422da3a667a8~mv2.webp"
       ],
       "video": "https://vimeo.com/1171767792",
-      "links": [],
+      "links": [
+        {
+          "label": "Paper, Expanded Conference 2026 (ACM)",
+          "url": "https://doi.org/10.1145/3840416.3840463"
+        }
+      ],
       "credits": "Artists and Developers: Ting-Chun Liu, Leon-Etienne Kühr\nPhoto Documentation: Jakob Dieckmann, Günzel/Rademacher, Ting-Chun Liu\nVideo Documentation: Ting-Chun Liu, Leon-Etienne Kühr",
       "text": "What happens when a system confronts its own output? Steering through Inner Residue explores this question by reintroducing generated output as input, steering the image making process to follow its own trace.\n\nArtificial intelligence is often depicted as a black box. Despite clearly defined inputs and outputs, it remains opaque in its internal mechanisms. Image generations are normally initialized with a textual descriptions (prompt) that reflect both human intentions and expectations. Here, the conventional process is disrupted by disregarding the text completely and iteratively guiding the machine with its own image output, replacing human expectations with ones from the machine.\n\nRecursion is a term describing the process of looping, but unlike repetition, each iteration slightly deviates from the last moment, like a spiral that surpasses linear causation and ending up at unknown coordinates. The nature of feedback means that what emerges is fundamentally contingent and situational. Like placing a microphone in front of a speaker, where the piercing feedback manifests the aesthetic quality from both the reverberation of the surroundings and the mechanical touch of the electronics.\n\nIn his 1969 piece I Am Sitting in a Room, American sound artist Alvin Lucier records himself reading a short text, then plays the recording back into the room while simultaneously re-recording it. The process is repeated until the resonance of the room compounds and the speech gradually disappears. Yet the blurry hum surfacing from the couple last recording is not simply noise, it is the accumulation of reverbs, a residue of the room. The recursive process renders the underlying visible, it measures the space acoustically and reproduces it into audible form. A similar approach can be done with artificial intelligence. The feedback process navigates the system of image generation, creating a chasm revealing the interior.\n\nThe visual surfaces resemble an unfolded box, each surface carrying reverberations of the process, a landscape of distinctive patterns emerging from the procedures alone. Colors drift into oversaturated hues, forms fragment into layers of pattern, and meaning disintegrates into noise. What accumulates over time is not an image but a process: an algorithmic artifact, a residue that signifies nowhere but the process itself and the process only.",
       "hidden": false,
@@ -1056,6 +1062,12 @@
         "items": [
           {
             "year": "2026",
+            "text": "Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images, Expanded Conference 2026 (ACM), w/ Leon-Etienne Kühr",
+            "url": "https://doi.org/10.1145/3840416.3840463",
+            "text_zh": "Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images，Expanded Conference 2026（ACM），與 Leon-Etienne Kühr"
+          },
+          {
+            "year": "2026",
             "text": "Heat as (Generative) Image Making, FIfF-Kommunikation 1/26, p. 64, FIfF e.V. Essay for the Weizenbaum-Studienpreis 2025",
             "url": "https://www.fiff.de/fiff-kommunikation/2026/1/",
             "text_zh": "Heat as (Generative) Image Making，《FIfF-Kommunikation》1/26，第 64 頁，FIfF e.V.。2025 Weizenbaum 學位論文獎文章"
@@ -1624,34 +1636,24 @@
       "note_zh": "一篇媒體考古學的論文，把類比錄像回饋與遞迴式 AI 訓練相比較。文中引用了 38C3 講演與 TEDA 海報，並描述 Liu 與 Kühr 在 BLIP-2 和 Stable Diffusion 上做的回饋迴圈。"
     },
     {
-      "group": "profiles",
-      "title": "Digi-Lehrfellows Thüringen 2026: Ting-Chun Liu",
-      "outlet": "Stifterverband",
-      "date": "2026",
-      "url": "https://www.stifterverband.org/digital-lehrfellows-thueringen/2026/liu",
-      "note": "Fellow page. The project Lokale KI-Anwendung im Bewegtbild-Studio is a seminar on local open-source AI tools without cloud services.",
-      "note_de": "Fellow-Seite. Das Projekt Lokale KI-Anwendung im Bewegtbild-Studio ist ein Seminar zu lokalen Open-Source-KI-Werkzeugen ohne Cloud.",
-      "note_zh": "研究員頁面。計畫「Lokale KI-Anwendung im Bewegtbild-Studio」是一門使用本地開源 AI 工具、不依賴雲端的課程。"
+      "group": "read",
+      "title": "Self-cannibalizing AI: Artistic Strategies to expose generative text-to-image models",
+      "outlet": "Image Exhaust, Unthinking Photography (The Photographers’ Gallery)",
+      "date": "2025-01",
+      "url": "https://unthinking.photography/imgexhaust/self-cannibalizing-ai",
+      "note": "Entry on the 37C3 talk, credited to Ting-Chun Liu and Leon-Etienne Kühr: artistic methods for examining image-generation models, and how model collapse could happen through the repeated use of generated material.",
+      "note_de": "Eintrag zum 37C3-Vortrag, Ting-Chun Liu und Leon-Etienne Kühr zugeschrieben: künstlerische Methoden, Bildgeneratoren zu untersuchen, und wie ein Modellkollaps durch die wiederholte Verwendung generierten Materials entstehen könnte.",
+      "note_zh": "針對 37C3 講演的條目，署名 Ting-Chun Liu 與 Leon-Etienne Kühr：以藝術方法檢視圖像生成模型，以及重複使用生成內容可能如何導致模型崩壞。"
     },
     {
-      "group": "profiles",
-      "title": "Ting-Chun Liu, staff page",
-      "outlet": "Bauhaus-Universität Weimar",
-      "date": "",
-      "url": "https://www.uni-weimar.de/de/kunst-und-gestaltung/struktur/lehrgebiete-personen/visuelle-kommunikation/ting-chun-liu/",
-      "note": "Artistic associate, Professur Crossmediales Bewegtbild.",
-      "note_de": "Künstlerischer Mitarbeiter, Professur Crossmediales Bewegtbild.",
-      "note_zh": "藝術助理，跨媒體動態影像教席。"
-    },
-    {
-      "group": "profiles",
-      "title": "Speaker page, arafed futures",
-      "outlet": "38C3, CCC Fahrplan",
-      "date": "2024-12",
-      "url": "https://fahrplan.events.ccc.de/congress/2024/fahrplan/speaker/FDYRKA/",
-      "note": "Speaker profile for the 38C3 talk.",
-      "note_de": "Sprecher*innenprofil zum Vortrag auf dem 38C3.",
-      "note_zh": "38C3 講演的講者介紹頁。"
+      "group": "read",
+      "title": "The Autophagic Mode of Production: Hacking the Metabolism of AI",
+      "outlet": "Luca Cacini, A Peer-Reviewed Journal About (APRJA) 13(1), pp. 78–89",
+      "date": "2024-11",
+      "url": "https://doi.org/10.7146/aprja.v13i1.151233",
+      "note": "Journal article that cites the 37C3 talk and discusses Liu and Kühr’s feedback loop as an artistic strategy for investigating the latent space of machine learning.",
+      "note_de": "Zeitschriftenartikel, der den 37C3-Vortrag zitiert und die Feedback-Schleife von Liu und Kühr als künstlerische Strategie zur Erkundung des latenten Raums des maschinellen Lernens bespricht.",
+      "note_zh": "期刊論文，引用了 37C3 講演，並把 Liu 與 Kühr 的回饋迴圈視為探究機器學習潛在空間的藝術策略。"
     }
   ]
 }
