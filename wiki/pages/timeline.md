@@ -25,6 +25,7 @@ Year-by-year list of works, teaching, education, awards, talks, publications, ex
 - Lectures, Talks & Workshops: Latenz, Storage Museum Düsseldorf, w/ Leon-Etienne Kühr, Dominik Bönisch-Alpári, Prof. Dr. Ludger Schwarte
 - Publications & Writing: Heat as (Generative) Image Making, FIfF-Kommunikation 1/26, p. 64, FIfF e.V. Essay for the Weizenbaum-Studienpreis 2025
 - Exhibitions: AI-Worlding, Staatstheater Darmstadt, w/ Leon-Etienne Kühr
+- Exhibitions: WIP Arts & Technology Festival: Flows, CYENS, Nicosia, w/ Leon-Etienne Kühr ([link](https://wip.cyens.org.cy/wip-2026-flows/))
 - Exhibitions: AI-Worlding, Museum Angewandte Kunst, Frankfurt, w/ Leon-Etienne Kühr ([link](https://www.museumangewandtekunst.de/de/besuch/ausstellungen/2026/ai-worlding-kuenstlerische-forschung-zu-ki-generierten-weltmodellen/))
 
 ## 2025

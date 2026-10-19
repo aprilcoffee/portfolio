@@ -134,12 +134,24 @@ export default {
       context: messages.length > 1 ? messages[0].content : null,
       country: request.cf?.country || null,
       model: base.model, status: "ok", topic: null, links: [], tokensIn: 0, tokensOut: 0,
+      lang: String(body.lang || "").slice(0, 16),
     };
 
     const { readable, writable } = new TransformStream();
     const writer = writable.getWriter();
     const enc = new TextEncoder();
-    const send = (obj) => writer.write(enc.encode(JSON.stringify(obj) + "\n"));
+    // A visitor who leaves before the answer is finished closes the stream: writing then
+    // fails. That must not stop the log entry, so send() never throws; it notes that the
+    // visitor is gone and the loop below stops (which also stops paying for the answer).
+    let gone = false;
+    const send = async (obj) => {
+      if (gone) return;
+      try { await writer.write(enc.encode(JSON.stringify(obj) + "\n")); } catch { gone = true; }
+    };
+
+    // The question is stored the moment it is accepted (status "pending") and completed when
+    // the answer is done, so even a question whose answer never arrives is not lost.
+    const rowId = await begin(env, log);
 
     ctx.waitUntil((async () => {
       let text = "";
@@ -148,19 +160,19 @@ export default {
         // visitor is on, so link titles do not drift into another language.
         const convo = [{ role: "system", content: SYSTEM }, { role: "system", content: pageNote(body.lang) }, ...messages];
         let linksSent = false;
-        log.lang = String(body.lang || "").slice(0, 16);
         // Round 1 may end in the suggest_links call with little or no text; if so, round 2
         // asks for the written answer (tools disabled), so the visitor always gets both.
         for (let round = 0; round < 2; round++) {
           const r = await streamRound(client, { ...base, messages: convo, tool_choice: round ? "none" : "auto" },
-                                      (t) => { text += t; return send({ t }); });
+                                      async (t) => { text += t; await send({ t }); if (gone) throw new Gone(); });
           log.tokensIn += r.usage?.prompt_tokens || 0;
           log.tokensOut += r.usage?.completion_tokens || 0;
-          if (r.refused) { log.status = "refusal"; return send({ error: "refusal" }); }
+          if (r.refused) { log.status = "refusal"; await send({ error: "refusal" }); return; }
           if (!linksSent && r.calls.length) {
             log.topic = log.topic || pickTopic(r.calls);
             const links = pickLinks(r.calls, body.lang);
             if (links.length) { await send({ links }); linksSent = true; log.links = links; }
+            if (gone) throw new Gone();
           }
           if (text.trim() || !r.calls.length) break;
           convo.push({ role: "assistant", content: null, tool_calls: r.calls.map((c) => ({
@@ -169,13 +181,17 @@ export default {
         }
         if (!text.trim()) { log.status = "error"; await send({ error: "error" }); }
       } catch (err) {
-        console.error(err instanceof OpenAI.APIError ? `OpenAI API ${err.status}: ${err.message}` : String(err));
-        log.status = "error";
-        await send({ error: "error" });
+        if (err instanceof Gone) {
+          log.status = "aborted";   // the visitor left before the answer was finished
+        } else {
+          console.error(err instanceof OpenAI.APIError ? `OpenAI API ${err.status}: ${err.message}` : String(err));
+          log.status = "error";
+          await send({ error: "error" });
+        }
       } finally {
-        await writer.close();
+        try { await writer.close(); } catch {}
         log.answer = text;
-        await save(env, log);
+        await finish(env, log, rowId);
       }
     })());
 
@@ -227,21 +243,49 @@ function pickTopic(calls) {
   return null;
 }
 
-// Keeps one exchange in D1 (binding DB). Never breaks the chat: errors are only logged.
+class Gone extends Error {}
+
+// The chat log: one exchange per row in D1 (binding DB). It never breaks the chat: errors
+// are only logged.
 let tableReady = false;
-async function save(env, log) {
-  if (!env.DB) return;
+async function ensureTable(env) {
+  if (tableReady) return;
+  await env.DB.exec("CREATE TABLE IF NOT EXISTS chats (id INTEGER PRIMARY KEY AUTOINCREMENT, ts TEXT NOT NULL, lang TEXT, country TEXT, topic TEXT, status TEXT, question TEXT, answer TEXT, links TEXT, context TEXT, model TEXT, tokens_in INTEGER, tokens_out INTEGER)");
+  tableReady = true;
+}
+
+// Stores the question as soon as it arrives; returns the row id (or null without a database).
+async function begin(env, log) {
+  if (!env.DB) return null;
   try {
-    if (!tableReady) {
-      await env.DB.exec("CREATE TABLE IF NOT EXISTS chats (id INTEGER PRIMARY KEY AUTOINCREMENT, ts TEXT NOT NULL, lang TEXT, country TEXT, topic TEXT, status TEXT, question TEXT, answer TEXT, links TEXT, context TEXT, model TEXT, tokens_in INTEGER, tokens_out INTEGER)");
-      tableReady = true;
-    }
-    await env.DB.prepare("INSERT INTO chats (ts, lang, country, topic, status, question, answer, links, context, model, tokens_in, tokens_out) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")
-      .bind(new Date().toISOString(), log.lang || null, log.country, log.topic, log.status, log.question,
-            log.answer || "", JSON.stringify(log.links), log.context, log.model, log.tokensIn, log.tokensOut)
+    await ensureTable(env);
+    const r = await env.DB.prepare("INSERT INTO chats (ts, lang, country, topic, status, question, answer, links, context, model, tokens_in, tokens_out) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")
+      .bind(new Date().toISOString(), String(log.lang || ""), log.country, null, "pending", log.question,
+            "", "[]", log.context, log.model, 0, 0)
       .run();
+    return r?.meta?.last_row_id ?? null;
   } catch (err) {
-    console.error("D1: " + String(err));
+    console.error("D1 begin: " + String(err));
+    return null;
+  }
+}
+
+// Completes the row with the answer, links, topic, status and tokens (inserts it whole if begin() failed).
+async function finish(env, log, id) {
+  if (!env.DB) return;
+  const values = [log.lang || null, log.country, log.topic, log.status, log.question, log.answer || "",
+    JSON.stringify(log.links), log.context, log.model, log.tokensIn, log.tokensOut];
+  try {
+    await ensureTable(env);
+    if (id != null) {
+      await env.DB.prepare("UPDATE chats SET lang = ?, country = ?, topic = ?, status = ?, question = ?, answer = ?, links = ?, context = ?, model = ?, tokens_in = ?, tokens_out = ? WHERE id = ?")
+        .bind(...values, id).run();
+    } else {
+      await env.DB.prepare("INSERT INTO chats (ts, lang, country, topic, status, question, answer, links, context, model, tokens_in, tokens_out) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")
+        .bind(new Date().toISOString(), ...values).run();
+    }
+  } catch (err) {
+    console.error("D1 finish: " + String(err));
   }
 }
 

@@ -49,8 +49,8 @@ then run "Deploy chat worker". Requests without a valid check are refused.
 
 Every exchange is stored in the Cloudflare D1 database `liutingchun-chat-log` (table `chats`):
 time, page language, country, topic (the model sorts each question into one of `TOPICS` in
-`src/index.js`), status (ok / refusal / error), question, answer, suggested links, the previous
-question if it was a follow-up, model and tokens. No IP address. Kept without time limit; the
+`src/index.js`), status (ok / refusal / error / aborted = the visitor left before the answer was finished / pending = the answer never arrived), question, answer, suggested links, the previous
+question if it was a follow-up, model and tokens. No IP address. The question is saved the moment it arrives and completed when the answer ends, so a visitor who closes the page mid-answer still leaves an entry (status `aborted`). Kept without time limit; the
 privacy page (Datenschutz, section 7) says so.
 
 The deploy workflow finds the database by name or creates it on the first run (the Cloudflare

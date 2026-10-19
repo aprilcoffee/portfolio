@@ -62,3 +62,7 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 
 ## [2026-10-08] add | Expanded Conference 2026 paper
 - DOI 10.1145/3840416.3840463 (given by the artist) added to the CV Publications on the website, to the work links of Steering Through the Inner Residue, and to external-links and works/steering-through-the-inner-residue. The ACM page could not be opened; the paper title is assumed to match the Art Track presentation.
+
+## [2026-10-19] update | Expanded 2026 paper, WIP Festival
+- Steering Through the Inner Residue paper: title, authors and venue checked against the artist's camera-ready PDF; it is forthcoming (DOI does not resolve yet), so the DOI link was removed from the website and no URL is given in the wiki. Only bibliographic facts are recorded; the paper's content is not summarised before publication.
+- CV: WIP Arts & Technology Festival 2026 (Flows, CYENS, Nicosia, 16-25 October 2026) added under Exhibitions with Kühr, from the artist's word; role and shown work still unknown.
