@@ -116,12 +116,7 @@
         "images/wix/4eb1dd_a1842ea4c21e49e49c74422da3a667a8~mv2.webp"
       ],
       "video": "https://vimeo.com/1171767792",
-      "links": [
-        {
-          "label": "Paper, Expanded Conference 2026 (ACM)",
-          "url": "https://doi.org/10.1145/3840416.3840463"
-        }
-      ],
+      "links": [],
       "credits": "Artists and Developers: Ting-Chun Liu, Leon-Etienne Kühr\nPhoto Documentation: Jakob Dieckmann, Günzel/Rademacher, Ting-Chun Liu\nVideo Documentation: Ting-Chun Liu, Leon-Etienne Kühr",
       "text": "What happens when a system confronts its own output? Steering through Inner Residue explores this question by reintroducing generated output as input, steering the image making process to follow its own trace.\n\nArtificial intelligence is often depicted as a black box. Despite clearly defined inputs and outputs, it remains opaque in its internal mechanisms. Image generations are normally initialized with a textual descriptions (prompt) that reflect both human intentions and expectations. Here, the conventional process is disrupted by disregarding the text completely and iteratively guiding the machine with its own image output, replacing human expectations with ones from the machine.\n\nRecursion is a term describing the process of looping, but unlike repetition, each iteration slightly deviates from the last moment, like a spiral that surpasses linear causation and ending up at unknown coordinates. The nature of feedback means that what emerges is fundamentally contingent and situational. Like placing a microphone in front of a speaker, where the piercing feedback manifests the aesthetic quality from both the reverberation of the surroundings and the mechanical touch of the electronics.\n\nIn his 1969 piece I Am Sitting in a Room, American sound artist Alvin Lucier records himself reading a short text, then plays the recording back into the room while simultaneously re-recording it. The process is repeated until the resonance of the room compounds and the speech gradually disappears. Yet the blurry hum surfacing from the couple last recording is not simply noise, it is the accumulation of reverbs, a residue of the room. The recursive process renders the underlying visible, it measures the space acoustically and reproduces it into audible form. A similar approach can be done with artificial intelligence. The feedback process navigates the system of image generation, creating a chasm revealing the interior.\n\nThe visual surfaces resemble an unfolded box, each surface carrying reverberations of the process, a landscape of distinctive patterns emerging from the procedures alone. Colors drift into oversaturated hues, forms fragment into layers of pattern, and meaning disintegrates into noise. What accumulates over time is not an image but a process: an algorithmic artifact, a residue that signifies nowhere but the process itself and the process only.",
       "hidden": false,
@@ -1062,9 +1057,9 @@
         "items": [
           {
             "year": "2026",
-            "text": "Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images, Expanded Conference 2026 (ACM), w/ Leon-Etienne Kühr",
-            "url": "https://doi.org/10.1145/3840416.3840463",
-            "text_zh": "Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images，Expanded Conference 2026（ACM），與 Leon-Etienne Kühr"
+            "text": "Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images, Expanded 2026: Conference on Animation and Interactive Art, ACM, forthcoming (DOI 10.1145/3840416.3840463), w/ Leon-Etienne Kühr",
+            "url": "",
+            "text_zh": "Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images，Expanded 2026：動畫與互動藝術研討會（Conference on Animation and Interactive Art），ACM，即將出版（DOI 10.1145/3840416.3840463），與 Leon-Etienne Kühr"
           },
           {
             "year": "2026",
@@ -1115,6 +1110,12 @@
       {
         "title": "Exhibitions",
         "items": [
+          {
+            "year": "2026",
+            "text": "WIP Arts & Technology Festival: Flows, CYENS, Nicosia, w/ Leon-Etienne Kühr",
+            "url": "https://wip.cyens.org.cy/wip-2026-flows/",
+            "text_zh": "WIP 藝術與科技節「Flows」，CYENS，尼科西亞，與 Leon-Etienne Kühr"
+          },
           {
             "year": "2026",
             "text": "AI-Worlding, Staatstheater Darmstadt, w/ Leon-Etienne Kühr",
