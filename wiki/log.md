@@ -74,3 +74,9 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 - exhibitions-and-performances: WIP Festival 2026 is an exhibition (work shown still unknown).
 - works/steering-through-the-inner-residue: materials, where it was developed, funding (hessian.AI, KITeGG/BMBF), taken from the artist's camera-ready paper PDF (credits only; the paper is not summarised).
 - external-links: Artist Magazine article (page not opened, title and date unknown).
+
+## [2026-10-21] update | Artist Magazine article
+- external-links: title, author, issue and the mention of Liu (LTG, Noise Flow Practice vol.1, C-LAB) filled in from the PDF the artist supplied.
+
+## [2026-10-21] remove | Artist Magazine article
+- external-links: the 2019 Artist Magazine article (only a photo of Liu performing) taken out again at the artist's request; it is no longer on the website's Press & Media page either.
