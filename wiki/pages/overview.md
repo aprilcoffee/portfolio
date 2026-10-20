@@ -7,11 +7,12 @@ sources:
   - https://liutingchun.com/
   - https://liutingchun.com/about/
   - https://www.stifterverband.org/digital-lehrfellows-thueringen/2026/liu
-updated: 2026-10-01
+updated: 2026-10-20
 ---
 # Ting-Chun Liu (劉庭均) — overview
 
-Ting-Chun Liu (劉庭均, born in Taipei, Taiwan) is an artist and artistic researcher working at the
+Ting-Chun Liu (劉庭均, born in Taipei, Taiwan) is a research-based media artist working with critical AI
+(a critical AI artist) and an artistic researcher. His practice and research operate at the
 intersections of critical artificial intelligence, audiovisual media and network practice. In the
 artist's own words, the practice dissects "technological systems through feedback-driven
 interventions", examining "how perception, aesthetics, and power dynamics propagate through
@@ -21,6 +22,7 @@ computational processes".
 
 - **Practice:** installations, audio-visual performance, internet art, talks and artistic research,
   much of it about generative AI: image models, language models, datasets and the hardware they run on.
+- **Workshops:** Liu hosts workshops about local AI usage, embedding practice and understanding biases in AI models. Requests for workshops and lectures go by email (see Contact).
 - **Teaching:** Lecturer and Artistic Associate (Künstlerischer Mitarbeiter), Faculty of Art and Design,
   [Bauhaus University Weimar](institutions/bauhaus-university-weimar.md), since 2025.
 - **Education:** Postgraduate Diploma in Media and Fine Art with distinction,

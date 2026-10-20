@@ -5,7 +5,7 @@ tags: [faq]
 sources:
   - ../../data/site.json
   - https://liutingchun.com/
-updated: 2026-10-01
+updated: 2026-10-20
 ---
 # Frequently asked questions
 
@@ -55,8 +55,8 @@ On the website's Performance page; each record opens on Vimeo. → https://liuti
 No. The blog is an archive of posts from 2017–2022 in Mandarin, including Raspberry Pi and Processing
 tutorials. → [Blog archive](blog-archive.md)
 
-**How can I invite Liu for a talk, workshop, exhibition or collaboration?**
-By email: tingchun.liu.tw@gmail.com
+**Does Liu give workshops? How can I invite Liu for a talk, workshop, exhibition or collaboration?**
+Yes: Liu hosts workshops about local AI usage, embedding practice and understanding biases in AI models, and gives lectures and talks (see [Talks and writing](talks-and-writing.md)). Requests for workshops and lectures, and other invitations, go by email: tingchun.liu.tw@gmail.com
 
 **What does the wiki not know?**
 Anything that is not on the website or in the sources listed on each page: private life, prices,

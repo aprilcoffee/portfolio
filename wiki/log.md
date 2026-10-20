@@ -66,3 +66,11 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 ## [2026-10-19] update | Expanded 2026 paper, WIP Festival
 - Steering Through the Inner Residue paper: title, authors and venue checked against the artist's camera-ready PDF; it is forthcoming (DOI does not resolve yet), so the DOI link was removed from the website and no URL is given in the wiki. Only bibliographic facts are recorded; the paper's content is not summarised before publication.
 - CV: WIP Arts & Technology Festival 2026 (Flows, CYENS, Nicosia, 16-25 October 2026) added under Exhibitions with Kühr, from the artist's word; role and shown work still unknown.
+
+## [2026-10-20] update | positioning, workshops, Expanded talk, WIP, Artist Magazine
+- overview: first sentence now "research-based media artist working with critical AI" (the website's new wording); workshops bullet (local AI usage, embedding practice, understanding biases in AI models).
+- faq and teaching-education-awards: workshops and how to invite Liu (email; the chat keeps giving the public gmail address).
+- talks-and-writing, timeline: Expanded 2026 (Art Track, Linz) added as a talk, with the speaker page; the paper is forthcoming and has no link yet.
+- exhibitions-and-performances: WIP Festival 2026 is an exhibition (work shown still unknown).
+- works/steering-through-the-inner-residue: materials, where it was developed, funding (hessian.AI, KITeGG/BMBF), taken from the artist's camera-ready paper PDF (credits only; the paper is not summarised).
+- external-links: Artist Magazine article (page not opened, title and date unknown).

@@ -266,10 +266,10 @@ UI = {
         "selected": "Selected works", "all_works": "All works (%d) →",
         "works_lead": "Installations, performances, internet art and artistic research, %s–%s.",
         "works_desc": "Selected works by %s, %s–%s: installations, performances, internet art and artistic research on AI.",
-        "Topics": "Topics", "work_by": "%s by %s, %s.",
-        "tags": {"works": "critical AI, generative AI, artistic research, installation, internet art, audio-visual performance",
+        "Topics": "Topics", "Email": "Email", "contact_note": "I host workshops about local AI usage, embedding practice, and understanding biases in AI models. Workshop and lecture requests: please get in touch by email.", "work_by": "%s by %s, %s.",
+        "tags": {"works": "Critical AI, generative art, artistic research, cybernetics, internet art, audio-visual performance",
                  "performance": "audio-visual performance, live performance, generative AI, sound and image",
-                 "about": "research-based media artist, critical AI, artistic research, teaching, publications",
+                 "about": "Critical AI, generative art, artistic research, cybernetics, internet art, audio-visual performance",
                  "press": "talks, recordings, papers, critical AI",
                  "friends": "artists, collaborators"},
         "sitemap": "Site map", "sitemap_lead": "Every page of this website.",
@@ -277,7 +277,7 @@ UI = {
         "Year": "Year", "Status": "Status", "Type": "Type", "Materials": "Materials", "With": "With", "Link": "Link",
         "work_desc": "%s (%s), %s by %s.", "work": "work",
         "perf_title": "Audio-Visual Performance",
-        "perf_lead": "Live audio-visual sets and performance records, 2016–2024. Each video opens on %s in a new tab.",
+        "perf_lead": "Live audio-visual sets and performance records.",
         "perf_desc": "Audio-visual performance records of %s.", "watch": "Watch on %s ↗",
         "about": "About",
         "blog_title": "Blog Archive",
@@ -302,10 +302,10 @@ UI = {
         "selected": "Ausgewählte Arbeiten", "all_works": "Alle Arbeiten (%d) →",
         "works_lead": "Installationen, Performances, Netzkunst und künstlerische Forschung, %s–%s.",
         "works_desc": "Ausgewählte Arbeiten von %s, %s–%s: Installationen, Performances, Netzkunst und künstlerische Forschung zu KI.",
-        "Topics": "Themen", "work_by": "%s von %s, %s.",
-        "tags": {"works": "kritische KI, generative KI, künstlerische Forschung, Installation, Netzkunst, audiovisuelle Performance",
+        "Topics": "Themen", "Email": "E-Mail", "contact_note": "Ich gebe Workshops zu lokaler KI-Nutzung, Embedding-Praxis und zum Verständnis von Biases in KI-Modellen. Anfragen für Workshops und Vorträge bitte per E-Mail.", "work_by": "%s von %s, %s.",
+        "tags": {"works": "Kritische KI, generative Kunst, künstlerische Forschung, Kybernetik, Netzkunst, audiovisuelle Performance",
                  "performance": "audiovisuelle Performance, Live-Performance, generative KI, Klang und Bild",
-                 "about": "forschungsbasierter Medienkünstler, kritische KI, künstlerische Forschung, Lehre, Publikationen",
+                 "about": "Kritische KI, generative Kunst, künstlerische Forschung, Kybernetik, Netzkunst, audiovisuelle Performance",
                  "press": "Vorträge, Aufzeichnungen, Texte, kritische KI",
                  "friends": "Künstler*innen, Kooperationspartner*innen"},
         "sitemap": "Seitenübersicht", "sitemap_lead": "Alle Seiten dieser Website.",
@@ -313,7 +313,7 @@ UI = {
         "Year": "Jahr", "Status": "Status", "Type": "Art", "Materials": "Material", "With": "Mit", "Link": "Link",
         "work_desc": "%s (%s), %s von %s.", "work": "Arbeit",
         "perf_title": "Audiovisuelle Performance",
-        "perf_lead": "Audiovisuelle Live-Sets und Performance-Dokumentationen, 2016–2024. Jedes Video öffnet sich auf %s in einem neuen Tab.",
+        "perf_lead": "Audiovisuelle Live-Sets und Performance-Dokumentationen.",
         "perf_desc": "Audiovisuelle Performance-Dokumentationen von %s.", "watch": "Auf %s ansehen ↗",
         "about": "Über mich",
         "blog_title": "Blog-Archiv",
@@ -338,10 +338,10 @@ UI = {
         "selected": "精選作品", "all_works": "全部作品（%d）→",
         "works_lead": "裝置、表演、網路藝術與藝術研究，%s–%s。",
         "works_desc": "%s的精選作品，%s–%s：裝置、表演、網路藝術，以及關於人工智慧的藝術研究。",
-        "Topics": "主題", "work_by": "%s，%s，%s。",
-        "tags": {"works": "批判性 AI、生成式 AI、藝術研究、裝置、網路藝術、影音表演",
+        "Topics": "主題", "Email": "信箱", "contact_note": "我開設工作坊，主題包括本地端 AI 的使用、embedding 實作，以及理解 AI 模型中的偏見。工作坊與講座邀約，請來信聯繫。", "work_by": "%s，%s，%s。",
+        "tags": {"works": "批判性 AI、生成藝術、藝術研究、控制論、網路藝術、影音表演",
                  "performance": "影音表演、現場演出、生成式 AI、聲音與影像",
-                 "about": "研究型媒體藝術家、批判性 AI、藝術研究、教學、出版",
+                 "about": "批判性 AI、生成藝術、藝術研究、控制論、網路藝術、影音表演",
                  "press": "講演、錄影、論文、批判性 AI",
                  "friends": "藝術家、合作夥伴"},
         "sitemap": "網站地圖", "sitemap_lead": "這個網站的所有頁面。",
@@ -349,7 +349,7 @@ UI = {
         "Year": "年份", "Status": "狀態", "Type": "類型", "Materials": "媒材", "With": "合作", "Link": "連結",
         "work_desc": "%s（%s），%s，%s。", "work": "作品",
         "perf_title": "影音表演",
-        "perf_lead": "現場影音演出與表演紀錄，2016–2024。點擊後會在新分頁開啟 %s 影片。",
+        "perf_lead": "現場影音演出與表演紀錄。",
         "perf_desc": "%s的影音表演紀錄：現場影音演出與表演錄像，2016 年至今，影片可在 Vimeo 與 YouTube 觀看。", "watch": "在 %s 觀看 ↗",
         "about": "關於",
         "blog_title": "部落格 Blog Archive",
@@ -401,6 +401,22 @@ def idx(n):
     return ""  # numbering removed from the design; kept as a hook
 
 
+def breadcrumbs(path, title, lang):
+    """schema.org BreadcrumbList for a page: Home > section > page (none for the home page)."""
+    parts = [x for x in path.strip("/").split("/") if x]
+    if parts and parts[0] in ("de", "zh"):
+        parts = parts[1:]
+    if not parts:
+        return None
+    items = [(S["name"], abs_url(LP[lang]))]
+    for i, seg in enumerate(parts):
+        name = title if i == len(parts) - 1 else UI[lang]["nav"].get(seg, seg)
+        items.append((name, abs_url(LP[lang] + "/".join(parts[:i + 1]) + "/")))
+    return {"@context": "https://schema.org", "@type": "BreadcrumbList",
+            "itemListElement": [{"@type": "ListItem", "position": n + 1, "name": nm, "item": it}
+                                for n, (nm, it) in enumerate(items)]}
+
+
 def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld=None, full=False, section="",
            alts=None, content_lang=None):
     """lang: language of the interface; content_lang: of the page text (a Chinese post in the English frame);
@@ -421,7 +437,8 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
     if alts:
         hreflang += '<link rel="alternate" hreflang="x-default" href="%s">\n' % esc(abs_url(alts["en"]))
     links = "".join(a(l["url"], esc(l["label"])) for l in S.get("links", []))
-    ld_tag = ('<script type="application/ld+json">%s</script>' % json.dumps(ld, ensure_ascii=False)) if ld else ""
+    lds = ([ld] if isinstance(ld, dict) else list(ld or [])) + [b for b in [breadcrumbs(path, title, lang)] if b]
+    ld_tag = ('<script type="application/ld+json">%s</script>' % json.dumps(lds[0] if len(lds) == 1 else lds, ensure_ascii=False)) if lds else ""
     ga = ('<script async src="%s" data-ga="%s"></script>' % (versioned("assets/analytics.js"), esc(S["ga_id"]))
           if S.get("ga_id") else "")
     cl = content_lang or HREFLANG[lang]
@@ -469,7 +486,7 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
     <div><a href="mailto:{email}">{email}</a></div>
     <div class="links">{links}</div>
     <div>© {year} {name}</div>
-    <div class="legal"><a href="{imp}" lang="de">Impressum</a><a href="{dsg}">{privacy}</a><a href="{sm}">{sitemap_label}</a></div>
+    <div class="legal"><a href="{imp}" lang="de">Impressum</a><a href="{dsg}">{privacy}</a></div>
   </div>
 </aside>
 <main class="main{full}" id="main">
@@ -483,7 +500,7 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
            t=esc(page_title), d=esc(desc or tr(S, "description", lang)), name=esc(S["name"]), zh=esc(S.get("name_zh", "")),
            c=esc(canonical), hreflang=hreflang, ogt=og_type, img=esc(image), icon=url("assets/favicon-32.png"), ico=url("favicon.ico"), touch=url("assets/apple-touch-icon.png"), manifest=url("site.webmanifest"),
            css=versioned("assets/style.css"), fonts=versioned("assets/fonts/fonts.css"), js=versioned("assets/site.js"), fx=versioned("assets/effects.js"), feed=url("blog/feed.xml"),
-           ga=ga, ld=ld_tag, home=url(LP[lang]), imp=url("impressum/"), dsg=url("datenschutz/"), sm=url(LP[lang] + "sitemap/"), sitemap_label=esc(u["sitemap"]), nav=nav, switch=switch,
+           ga=ga, ld=ld_tag, home=url(LP[lang]), imp=url("impressum/"), dsg=url("datenschutz/"), nav=nav, switch=switch,
            menu=u["menu"], language=u["language"], privacy=u["privacy"], email=esc(S["email"]), links=links,
            year=datetime.date.today().year, full=" full" if full else "", body=body)
 
@@ -523,13 +540,22 @@ def webpage_ld(kind, path, name, desc, lang, tags):
             "about": {"@type": "Person", "name": S["name"], "url": abs_url(LP[lang])}}
 
 
-def work_card(n, w, lang):
+def work_alt(w, lang, k=0, n=0):
+    """Alt text of a work's image: what it is and who made it, plus its place among the work's images."""
+    u = UI[lang]
+    t = (u["work_desc"] % (w["title"], w.get("year"), tr(w, "type", lang) or u["work"], lname(lang))).rstrip(".。")
+    return "%s (%d/%d)" % (t, k, n) if n > 1 else t
+
+
+def work_card(n, w, lang, kw=False):
     c = cover_of(w)
+    line = tr(w, "kw", lang) if kw else ""
     return ('<a class="card" href="%s"><div class="thumb">%s</div><div class="cap">%s<span class="t">%s%s</span>'
-            '<span class="mono">%s</span></div></a>') % (
-        url(LP[lang] + "works/%s/" % w["slug"]), img(c, 900, w["title"]) if c else '<span class="ph">%s</span>' % esc(w["title"]),
+            '<span class="mono">%s</span>%s</div></a>') % (
+        url(LP[lang] + "works/%s/" % w["slug"]), img(c, 900, work_alt(w, lang)) if c else '<span class="ph">%s</span>' % esc(w["title"]),
         idx(n), esc(w["title"]), '<span class="zh" lang="zh-Hant">%s</span>' % esc(w["title_zh"]) if w.get("title_zh") else "",
-        esc(w.get("year")) + (" · " + esc(tr(w, "status", lang)) if w.get("status") else ""))
+        esc(w.get("year")) + (" · " + esc(tr(w, "status", lang)) if w.get("status") else ""),
+        '<span class="kw">%s</span>' % esc(line) if line else "")
 
 
 def meta(rows):
@@ -642,8 +668,8 @@ for L in LANGS:
          ld=person(L), full=True, lang=L, alts=each(""))
 
     page(P + "works/", u["nav"]["works"], u["works_desc"] % (lname(L), y0, y1),
-         page_head(u["nav"]["works"], u["works_lead"] % (y0, y1), u["tags"]["works"]) +
-         '<div class="grid">%s</div>' % "".join(work_card(i + 1, w, L) for i, w in enumerate(works)),
+         page_head(u["nav"]["works"]) +
+         '<div class="grid">%s</div>' % "".join(work_card(i + 1, w, L, kw=True) for i, w in enumerate(works)),
          ld=webpage_ld("CollectionPage", P + "works/", u["nav"]["works"], u["works_desc"] % (lname(L), y0, y1), L, u["tags"]["works"]),
          section="works", lang=L, alts=each("works/"))
 
@@ -657,7 +683,7 @@ for L in LANGS:
         moving = w.get("video") or w.get("clips")
         # full-width lead (video, clips or the first photo), then the rest in two masonry
         # columns so photos of different proportions leave no gaps
-        figs = ["<figure>%s</figure>" % img(im, 1600 if k == 0 else 1000, "%s — %d" % (w["title"], k + 1))
+        figs = ["<figure>%s</figure>" % img(im, 1600 if k == 0 else 1000, work_alt(w, L, k + 1, len(ims)))
                 for k, im in enumerate(ims)]
         if not moving and figs:
             plates += figs.pop(0).replace("<figure>", '<figure class="hero">', 1)
@@ -684,8 +710,18 @@ for L in LANGS:
               "image": asset_abs(cover_of(w)) if cover_of(w) else None, "description": desc,
               "keywords": ", ".join(wtags) or None,
               "creator": {"@type": "Person", "name": S["name"], "url": abs_url(P)}}
+        lds = [{k: v for k, v in ld.items() if v}]
+        vid = video_id(w.get("video"))
+        if vid and vid[0] in ("vimeo", "youtube"):
+            thumb = w.get("video_thumb") or cover_of(w)
+            lds.append({k: v for k, v in {
+                "@context": "https://schema.org", "@type": "VideoObject", "name": w["title"], "description": desc,
+                "thumbnailUrl": asset_abs(thumb) if thumb else None, "uploadDate": (w.get("year") or "")[:4] or None,
+                "embedUrl": ("https://player.vimeo.com/video/%s" % vid[1] if vid[0] == "vimeo"
+                             else "https://www.youtube-nocookie.com/embed/%s" % vid[1]),
+                "inLanguage": HREFLANG[L], "creator": {"@type": "Person", "name": S["name"], "url": abs_url(P)}}.items() if v})
         page(P + "works/%s/" % w["slug"], w["title"] + (" " + w["title_zh"] if w.get("title_zh") else ""), desc, body,
-             image=cover_of(w), og_type="article", ld={k: v for k, v in ld.items() if v}, section="works", lang=L,
+             image=cover_of(w), og_type="article", ld=lds, section="works", lang=L,
              alts=each("works/%s/" % w["slug"]))
 
     # performance: each record opens on Vimeo / YouTube in a new tab (no player on this page)
@@ -700,7 +736,7 @@ for L in LANGS:
 
     perfs = [p for p in D.get("performances", []) if not p.get("hidden") and p.get("video")]
     page(P + "performance/", u["perf_title"], u["perf_desc"] % lname(L),
-         page_head(u["perf_title"], u["perf_lead"] % " / ".join(platforms), u["tags"]["performance"]) +
+         page_head(u["perf_title"], u["perf_lead"]) +
          '<div class="perf">%s</div>' % "".join(perf_card(n + 1, p) for n, p in enumerate(perfs)),
          ld=webpage_ld("CollectionPage", P + "performance/", u["perf_title"], u["perf_desc"] % lname(L), L, u["tags"]["performance"]),
          image=(perfs or [{}])[0].get("thumb"), section="performance", lang=L, alts=each("performance/"))
@@ -715,13 +751,14 @@ for L in LANGS:
                 ' lang="en"' if same else "", esc(it.get("year")), a(it["url"], esc(text)) if it.get("url") else esc(text))
         cv += '<section class="cv-sec"><h2>%s</h2><div>%s</div></section>' % (esc(tr(sec, "title", L)), rows)
     bio = tr(D["about"], "bio", L)
+    about_mail = S.get("email_alt") or S["email"]  # the address shown on the About page (the sidebar has site.email)
     page(P + "about/", u["about"], bio,
          '<div class="about-top"><h1 class="page-title">%s</h1><div><p class="bio">%s</p>'
-         '<p class="contact">%s</p><p class="topics"><span class="mono">%s</span> %s</p></div></div>%s' % (
-             esc(u["about"]), esc(bio),
-             "<br>".join(['<a href="mailto:%s">%s</a>' % (esc(m), esc(m)) for m in (S["email"], S.get("email_alt")) if m] +
-                         ['ORCID <a href="https://orcid.org/%s" target="_blank" rel="noopener">%s</a>' % (esc(S["orcid"]), esc(S["orcid"]))
-                          for _ in [0] if S.get("orcid")]), esc(u["Topics"]), esc(u["tags"]["about"]), cv),
+         '<p class="contact"><span class="mono">%s</span><a href="mailto:%s">%s</a></p>'
+         '<p class="contact-note">%s</p>'
+         '<p class="topics"><span class="mono">%s</span> %s</p></div></div>%s' % (
+             esc(u["about"]), esc(bio), esc(u["Email"]), esc(about_mail), esc(about_mail), esc(u["contact_note"]),
+             esc(u["Topics"]), esc(u["tags"]["about"]), cv),
          ld=dict(person(L), description=bio, keywords=u["tags"]["about"]), og_type="profile", section="about", lang=L, alts=each("about/"))
 
     # press: recordings, texts and pages by others that show or discuss the work

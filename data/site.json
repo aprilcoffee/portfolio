@@ -93,7 +93,7 @@
       "324791977": "https://i.vimeocdn.com/video/768341727-28ae4536ed569138a9e71ed451783e33a427fd4915456f5eafe5ed6e194ad88b-d_1280"
     },
     "email_alt": "ting-chun.liu@uni-weimar.de",
-    "orcid": "0009-0009-7168-4458"
+    "orcid": ""
   },
   "works": [
     {
@@ -102,7 +102,7 @@
       "title_zh": "",
       "year": "2026",
       "type": "Video Installation",
-      "materials": "",
+      "materials": "LED panels, video controllers, open-weight diffusion models",
       "collaborators": "Leon-Etienne Kühr",
       "cover": "images/wix/4eb1dd_3b92c3e56ced47f4968d13c82a46d250~mv2.webp",
       "images": [
@@ -115,8 +115,13 @@
         "images/wix/4eb1dd_a1842ea4c21e49e49c74422da3a667a8~mv2.webp"
       ],
       "video": "https://vimeo.com/1171767792",
-      "links": [],
-      "credits": "Artists and Developers: Ting-Chun Liu, Leon-Etienne Kühr\nPhoto Documentation: Jakob Dieckmann, Günzel/Rademacher, Ting-Chun Liu\nVideo Documentation: Ting-Chun Liu, Leon-Etienne Kühr",
+      "links": [
+        {
+          "label": "Talk, Expanded 2026, Linz",
+          "url": "https://expanded-conf.org/speaker/ting-chun-liu-leon-etienne-kuhr/"
+        }
+      ],
+      "credits": "Artists and Developers: Ting-Chun Liu, Leon-Etienne Kühr\nPhoto Documentation: Jakob Dieckmann, Günzel/Rademacher, Ting-Chun Liu\nVideo Documentation: Ting-Chun Liu, Leon-Etienne Kühr\nDeveloped at: Experimental Informatics, Academy of Media Arts Cologne (KHM); realized with the AI Lab, Offenbach University of Art and Design (HfG Offenbach)\nFunding and computing: hessian.AI; KITeGG (funded by the German Federal Ministry of Education and Research, BMBF)",
       "text": "What happens when a system confronts its own output? Steering through Inner Residue explores this question by reintroducing generated output as input, steering the image making process to follow its own trace.\n\nArtificial intelligence is often depicted as a black box. Despite clearly defined inputs and outputs, it remains opaque in its internal mechanisms. Image generations are normally initialized with a textual descriptions (prompt) that reflect both human intentions and expectations. Here, the conventional process is disrupted by disregarding the text completely and iteratively guiding the machine with its own image output, replacing human expectations with ones from the machine.\n\nRecursion is a term describing the process of looping, but unlike repetition, each iteration slightly deviates from the last moment, like a spiral that surpasses linear causation and ending up at unknown coordinates. The nature of feedback means that what emerges is fundamentally contingent and situational. Like placing a microphone in front of a speaker, where the piercing feedback manifests the aesthetic quality from both the reverberation of the surroundings and the mechanical touch of the electronics.\n\nIn his 1969 piece I Am Sitting in a Room, American sound artist Alvin Lucier records himself reading a short text, then plays the recording back into the room while simultaneously re-recording it. The process is repeated until the resonance of the room compounds and the speech gradually disappears. Yet the blurry hum surfacing from the couple last recording is not simply noise, it is the accumulation of reverbs, a residue of the room. The recursive process renders the underlying visible, it measures the space acoustically and reproduces it into audible form. A similar approach can be done with artificial intelligence. The feedback process navigates the system of image generation, creating a chasm revealing the interior.\n\nThe visual surfaces resemble an unfolded box, each surface carrying reverberations of the process, a landscape of distinctive patterns emerging from the procedures alone. Colors drift into oversaturated hues, forms fragment into layers of pattern, and meaning disintegrates into noise. What accumulates over time is not an image but a process: an algorithmic artifact, a residue that signifies nowhere but the process itself and the process only.",
       "hidden": false,
       "aliases": [
@@ -150,7 +155,12 @@
         "模型崩壞",
         "控制論",
         "影像裝置"
-      ]
+      ],
+      "kw": "AI video installation",
+      "kw_de": "KI-Videoinstallation",
+      "kw_zh": "AI 影像裝置",
+      "materials_de": "LED-Panels, Video-Controller, Open-Weight-Diffusionsmodelle",
+      "materials_zh": "LED 面板、影像控制器、開放權重擴散模型"
     },
     {
       "slug": "interpolation-of-the-invisible-color",
@@ -222,7 +232,10 @@
         "潛在空間",
         "AI 策展",
         "互動裝置"
-      ]
+      ],
+      "kw": "AI curation, interactive installation",
+      "kw_de": "KI-Kuratieren, interaktive Installation",
+      "kw_zh": "AI 策展、互動裝置"
     },
     {
       "slug": "latent-heat-generation",
@@ -291,7 +304,10 @@
         "Stable Diffusion",
         "半導體",
         "台灣"
-      ]
+      ],
+      "kw": "Research project, installation",
+      "kw_de": "Forschungsprojekt, Installation",
+      "kw_zh": "研究計畫、裝置"
     },
     {
       "slug": "51-ways-to-spell-the-image-giraffe",
@@ -349,7 +365,10 @@
         "Byte Pair Encoding",
         "文字生成圖像",
         "AI 偏見"
-      ]
+      ],
+      "kw": "Research project, talk",
+      "kw_de": "Forschungsprojekt, Vortrag",
+      "kw_zh": "研究計畫、講演"
     },
     {
       "slug": "sixteen-tokens-for-a-cave",
@@ -408,7 +427,10 @@
         "文字生成圖像",
         "機器閱讀",
         "多模態詩"
-      ]
+      ],
+      "kw": "Research project, poetry",
+      "kw_de": "Forschungsprojekt, Poesie",
+      "kw_zh": "研究計畫、詩"
     },
     {
       "slug": "just-jailbreak",
@@ -472,7 +494,10 @@
         "乖乖",
         "台灣文化",
         "人機關係"
-      ]
+      ],
+      "kw": "Game, LLM",
+      "kw_de": "Spiel, LLM",
+      "kw_zh": "遊戲、LLM"
     },
     {
       "slug": "self-cannibalizing-ai",
@@ -524,7 +549,10 @@
         "資料集偏見",
         "Stable Diffusion",
         "37C3"
-      ]
+      ],
+      "kw": "Talk, research",
+      "kw_de": "Vortrag, Forschung",
+      "kw_zh": "講演、研究"
     },
     {
       "slug": "achtung-verwischung",
@@ -580,7 +608,10 @@
         "機構批判",
         "在地特定表演",
         "Leaky Archive"
-      ]
+      ],
+      "kw": "Site-specific performance",
+      "kw_de": "Ortsspezifische Performance",
+      "kw_zh": "在地特定表演"
     },
     {
       "slug": "imaginary-landscape",
@@ -641,7 +672,10 @@
         "影音表演",
         "社群媒體",
         "集體無意識"
-      ]
+      ],
+      "kw": "AI audio-visual performance",
+      "kw_de": "KI-audiovisuelle Performance",
+      "kw_zh": "AI 影音表演"
     },
     {
       "slug": "beneath",
@@ -690,7 +724,10 @@
         "LED",
         "海浪",
         "建築"
-      ]
+      ],
+      "kw": "Sound installation",
+      "kw_de": "Klanginstallation",
+      "kw_zh": "聲音裝置"
     },
     {
       "slug": "sun",
@@ -745,7 +782,10 @@
         "手機",
         "運算",
         "紀念"
-      ]
+      ],
+      "kw": "Internet art, web",
+      "kw_de": "Netzkunst, Web",
+      "kw_zh": "網路藝術、網頁"
     },
     {
       "slug": "bring-us-somewhere",
@@ -779,7 +819,10 @@
       "tags_zh": [
         "影像作品",
         "動態影像"
-      ]
+      ],
+      "kw": "Video",
+      "kw_de": "Video",
+      "kw_zh": "影像"
     },
     {
       "slug": "faces",
@@ -818,7 +861,10 @@
         "影像作品",
         "凝視",
         "肖像"
-      ]
+      ],
+      "kw": "Video",
+      "kw_de": "Video",
+      "kw_zh": "影像"
     },
     {
       "slug": "segmentary-moonlight",
@@ -867,7 +913,10 @@
         "燈會",
         "台南",
         "公共藝術"
-      ]
+      ],
+      "kw": "Light installation, public art",
+      "kw_de": "Lichtinstallation, öffentlicher Raum",
+      "kw_zh": "光裝置、公共藝術"
     },
     {
       "slug": "message-in-a-bottle",
@@ -921,7 +970,10 @@
         "時間",
         "網路藝術",
         "貼文"
-      ]
+      ],
+      "kw": "Social media, net art",
+      "kw_de": "Social Media, Netzkunst",
+      "kw_zh": "社群媒體、網路藝術"
     },
     {
       "slug": "i-kept-repeating-the-unfamiliar-self",
@@ -966,7 +1018,10 @@
         "手勢",
         "語言與文化",
         "布拉格"
-      ]
+      ],
+      "kw": "Video installation",
+      "kw_de": "Videoinstallation",
+      "kw_zh": "影像裝置"
     },
     {
       "slug": "light-segment",
@@ -1017,7 +1072,10 @@
         "倒數",
         "資訊流動",
         "數位時代"
-      ]
+      ],
+      "kw": "Light installation",
+      "kw_de": "Lichtinstallation",
+      "kw_zh": "光裝置"
     },
     {
       "slug": "inevitable-cross-of-the-parallel",
@@ -1066,7 +1124,10 @@
         "電腦",
         "西洋棋",
         "身體"
-      ]
+      ],
+      "kw": "Performance, computers",
+      "kw_de": "Performance, Computer",
+      "kw_zh": "表演、電腦"
     },
     {
       "slug": "take-off-the-clothes",
@@ -1108,7 +1169,10 @@
         "身體",
         "內在聲音",
         "指令"
-      ]
+      ],
+      "kw": "Performance",
+      "kw_de": "Performance",
+      "kw_zh": "表演"
     },
     {
       "slug": "hyper-link-into-image",
@@ -1156,7 +1220,10 @@
         "captive portal",
         "Raspberry Pi",
         "網頁瀏覽"
-      ]
+      ],
+      "kw": "Internet art, Raspberry Pi",
+      "kw_de": "Netzkunst, Raspberry Pi",
+      "kw_zh": "網路藝術、Raspberry Pi"
     },
     {
       "slug": "fall",
@@ -1341,6 +1408,12 @@
       {
         "title": "Lectures, Talks & Workshops",
         "items": [
+          {
+            "year": "2026",
+            "text": "Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images, Expanded 2026 (Art Track), Linz, w/ Leon-Etienne Kühr",
+            "url": "https://expanded-conf.org/speaker/ting-chun-liu-leon-etienne-kuhr/",
+            "text_zh": "Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images，Expanded 2026（藝術軌 Art Track），林茲，與 Leon-Etienne Kühr"
+          },
           {
             "year": "2026",
             "text": "Condition for Emotions, DFG network “Das Wissen der digitalen Literatur”",
@@ -2017,9 +2090,9 @@
       "outlet": "39C3, media.ccc.de",
       "date": "2025-12",
       "url": "https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai",
-      "note": "Talk with Leon-Etienne Kühr, 38 min, English with German translation, CC BY 4.0. 51 spellings of “giraffe” from tokens, and what the token dictionary decides before any training.",
-      "note_de": "Vortrag mit Leon-Etienne Kühr, 38 Min., Englisch mit deutscher Übersetzung, CC BY 4.0. 51 Schreibweisen von „giraffe“ aus Token und was das Token-Wörterbuch vor jedem Training entscheidet.",
-      "note_zh": "與 Leon-Etienne Kühr 的講演，38 分鐘，英語搭配德語翻譯，CC BY 4.0。用 token 拼出「giraffe」的 51 種寫法，以及 token 字典在任何訓練之前就已決定的事。"
+      "note": "Talk with Leon-Etienne Kühr, English with German translation, CC BY 4.0. The 51 spellings of “giraffe” from tokens, and what the token dictionary decides before any training.",
+      "note_de": "Vortrag mit Leon-Etienne Kühr, Englisch mit deutscher Übersetzung, CC BY 4.0. Die 51 Schreibweisen von „giraffe“ aus Token und was das Token-Wörterbuch vor jedem Training entscheidet.",
+      "note_zh": "與 Leon-Etienne Kühr 的講演，英語搭配德語翻譯，CC BY 4.0。用 token 拼出「giraffe」的 51 種寫法，以及 token 字典在任何訓練之前就已決定的事。"
     },
     {
       "group": "watch",
@@ -2037,9 +2110,9 @@
       "outlet": "38C3, media.ccc.de",
       "date": "2024-12",
       "url": "https://media.ccc.de/v/38c3-arafed-futures-an-artist-dialogue-on-chip-storage-and-ai-accelerationism",
-      "note": "Artist dialogue with Leon-Etienne Kühr, 60 min. “arafed” is a meaningless word that spread across captions and product texts, set beside NVIDIA A100 chips made by TSMC.",
-      "note_de": "Künstlerdialog mit Leon-Etienne Kühr, 60 Min. „arafed“ ist ein bedeutungsloses Wort, das sich in Bildunterschriften und Produkttexten verbreitet hat, hier neben NVIDIA-A100-Chips von TSMC gestellt.",
-      "note_zh": "與 Leon-Etienne Kühr 的藝術家對談，60 分鐘。「arafed」是一個沒有意義、卻散布在圖說與產品文字裡的詞，在此與台積電製造的 NVIDIA A100 晶片並置。"
+      "note": "Artist dialogue with Leon-Etienne Kühr. “arafed” is a meaningless word that spread across captions and product texts, set beside NVIDIA A100 chips made by TSMC.",
+      "note_de": "Künstlerdialog mit Leon-Etienne Kühr. „arafed“ ist ein bedeutungsloses Wort, das sich in Bildunterschriften und Produkttexten verbreitet hat, hier neben NVIDIA-A100-Chips von TSMC gestellt.",
+      "note_zh": "與 Leon-Etienne Kühr 的藝術家對談。「arafed」是一個沒有意義、卻散布在圖說與產品文字裡的詞，在此與台積電製造的 NVIDIA A100 晶片並置。"
     },
     {
       "group": "watch",
@@ -2047,9 +2120,9 @@
       "outlet": "37C3, media.ccc.de",
       "date": "2023-12",
       "url": "https://media.ccc.de/v/37c3-12125-self-cannibalizing_ai",
-      "note": "Talk with Leon-Etienne Kühr, 53 min. Feedback, misuse and hacking on text-to-image models: dataset filtering, CLIP, recursive generation.",
-      "note_de": "Vortrag mit Leon-Etienne Kühr, 53 Min. Feedback, Zweckentfremdung und Hacking an Text-zu-Bild-Modellen: Datenfilterung, CLIP, rekursive Generierung.",
-      "note_zh": "與 Leon-Etienne Kühr 的講演，53 分鐘。對文字生成圖像模型做回饋、誤用與駭入：資料集過濾、CLIP、遞迴生成。"
+      "note": "Talk with Leon-Etienne Kühr. Feedback, misuse and hacking on text-to-image models: dataset filtering, CLIP, recursive generation.",
+      "note_de": "Vortrag mit Leon-Etienne Kühr. Feedback, Zweckentfremdung und Hacking an Text-zu-Bild-Modellen: Datenfilterung, CLIP, rekursive Generierung.",
+      "note_zh": "與 Leon-Etienne Kühr 的講演。對文字生成圖像模型做回饋、誤用與駭入：資料集過濾、CLIP、遞迴生成。"
     },
     {
       "group": "read",
@@ -2080,6 +2153,16 @@
       "note": "Journal article that cites the 37C3 talk and discusses Liu and Kühr’s feedback loop as an artistic strategy for investigating the latent space of machine learning.",
       "note_de": "Zeitschriftenartikel, der den 37C3-Vortrag zitiert und die Feedback-Schleife von Liu und Kühr als künstlerische Strategie zur Erkundung des latenten Raums des maschinellen Lernens bespricht.",
       "note_zh": "期刊論文，引用了 37C3 講演，並把 Liu 與 Kühr 的回饋迴圈視為探究機器學習潛在空間的藝術策略。"
+    },
+    {
+      "group": "read",
+      "title": "Article in Artist Magazine 藝術家雜誌",
+      "outlet": "Artist Magazine, Taiwan",
+      "date": "",
+      "url": "https://artist-magazine.com/edcontent_d.php?lang=tw&tb=8&id=8105",
+      "note": "Feature in the Taiwanese magazine 《藝術家》.",
+      "note_de": "Beitrag im taiwanischen Magazin 《藝術家》 (Artist Magazine).",
+      "note_zh": "刊於台灣《藝術家》雜誌。"
     }
   ]
 }

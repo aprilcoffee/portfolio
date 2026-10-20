@@ -6,7 +6,7 @@ sources:
   - ../data/site.json
   - https://arxiv.org/abs/2607.09705
   - https://www.museumangewandtekunst.de/de/besuch/ausstellungen/2026/ai-worlding-kuenstlerische-forschung-zu-ki-generierten-weltmodellen/
-updated: 2026-10-01
+updated: 2026-10-20
 ---
 # External links: pages by others about Ting-Chun Liu
 
@@ -34,6 +34,7 @@ Where Liu's work can be checked, watched or read outside his own website: talk r
 
 ## Cited or mentioned by others
 
+- **Artist Magazine (《藝術家》), Taiwan:** an article on the magazine's website, added by the artist. The page could not be opened from here, so its title, date and author are unknown. https://artist-magazine.com/edcontent_d.php?lang=tw&tb=8&id=8105
 - **Luca Cacini, "The Autophagic Mode of Production: Hacking the Metabolism of AI"** (*A Peer-Reviewed Journal About*, APRJA 13(1), November 2024, pp. 78–89): cites the 37C3 talk *Self-cannibalizing AI* and discusses Liu and Kühr's feedback loop as an artistic strategy to investigate the latent space of machine learning. Found by search; the article text itself was not opened. https://doi.org/10.7146/aprja.v13i1.151233 → [Self-cannibalizing AI](works/self-cannibalizing-ai.md)
 - **Unthinking Photography, Image Exhaust: "Self-cannibalizing AI"** (The Photographers' Gallery, January 2025): entry on the talk, credited to Liu and Kühr. Found by search; not opened. https://unthinking.photography/imgexhaust/self-cannibalizing-ai
 - **Violaine Boutet de Monvel, "Model Collapse: On Recursion, Noise, and Uncharted Machine Visions"** (arXiv:2607.09705, a media-archaeology essay comparing analog video feedback with recursive AI training; author at LIRA/IRCAV; posted June 2026). In the conclusion she writes that Liu and Kühr "have created feedback loops within BLIP-2, an image-captioning model that generates descriptions from visual data", and "have also tested methods for collapsing Stable Diffusion without extended retraining or even textual prompting". The reference list cites *Arafed Futures* (ground zero) and the TEDA poster. Reading: the pair are placed as artists working on the same ground as the paper, recursion and noise. https://arxiv.org/abs/2607.09705 · review page: https://pith.science/paper/2607.09705
