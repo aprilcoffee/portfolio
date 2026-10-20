@@ -26,8 +26,8 @@
 <link rel="alternate" type="application/rss+xml" title="Ting-Chun Liu — Blog" href="/blog/feed.xml">
 <script async src="/assets/analytics.js?v=3eef9b37" data-ga="G-5XL9T33VG0"></script>
 <link rel="stylesheet" href="/assets/fonts/fonts.css?v=51411f72">
-<link rel="stylesheet" href="/assets/style.css?v=7a780a56">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Raspberry Pi Python 燈條控制 (ws281x 系列)", "datePublished": "2021-03-12", "inLanguage": "zh-Hant", "url": "https://liutingchun.com/blog/raspberry-pi-python-light-strip/", "image": "https://liutingchun.com/images/wix/4eb1dd_2c024145eb3340659134cb0f6d09dbda~mv2.webp", "description": "如何使用 Python 操作彩色 LED 燈條，安裝相關套件與使用規格。", "author": {"@type": "Person", "name": "Ting-Chun Liu", "url": "https://liutingchun.com/"}, "mainEntityOfPage": "https://liutingchun.com/blog/raspberry-pi-python-light-strip/"}</script>
+<link rel="stylesheet" href="/assets/style.css?v=568ca665">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Raspberry Pi Python 燈條控制 (ws281x 系列)", "datePublished": "2021-03-12", "inLanguage": "zh-Hant", "url": "https://liutingchun.com/blog/raspberry-pi-python-light-strip/", "image": "https://liutingchun.com/images/wix/4eb1dd_2c024145eb3340659134cb0f6d09dbda~mv2.webp", "description": "如何使用 Python 操作彩色 LED 燈條，安裝相關套件與使用規格。", "author": {"@type": "Person", "name": "Ting-Chun Liu", "url": "https://liutingchun.com/", "jobTitle": "Media artist"}, "mainEntityOfPage": "https://liutingchun.com/blog/raspberry-pi-python-light-strip/"}</script>
 </head>
 <body>
 <aside class="side" id="side" lang="en">
@@ -42,11 +42,11 @@
     <div><a href="mailto:tingchun.liu.tw@gmail.com">tingchun.liu.tw@gmail.com</a></div>
     <div class="links"><a href="https://www.instagram.com/liu_tingchun/" target="_blank" rel="noopener">Instagram</a><a href="https://github.com/aprilcoffee" target="_blank" rel="noopener">GitHub</a></div>
     <div>© 2026 Ting-Chun Liu</div>
-    <div class="legal"><a href="/impressum/" lang="de">Impressum</a><a href="/datenschutz/">Privacy</a></div>
+    <div class="legal"><a href="/impressum/" lang="de">Impressum</a><a href="/datenschutz/">Privacy</a><a href="/sitemap/">Site map</a></div>
   </div>
 </aside>
 <main class="main" id="main">
-<article class="post"><aside class="post-info" lang="en"><h1 lang="zh-Hant">Raspberry Pi Python 燈條控制 (ws281x 系列)</h1><dl class="meta"><dt>Date</dt><dd>2021-03-12</dd><dt>Category</dt><dd>technique</dd></dl><a class="back" href="/blog/">← Blog Archive</a></aside><div class="prose post-body"><p>這篇貼文想簡單分享一些如何使用python操作彩色LED燈條，如何安裝相關套件跟一些使用規格。原理其實跟使用Arduino搭配NeoPixel或FastLED這兩款套件相同，只是在這邊語法上會使用Raspberry Pi的GPIO與Python。如果對寫程式比較棘手，也推薦直接購買LED燈條控制器 (如 T500K) 搭配適當的軟體 (LEDEdit)，就可以直接將影片map成燈光。因為發現自己始終沒有整理好的檔案，所以決定順手寫一下部落格來做個資料的整理。</p>
+<article class="post"><aside class="post-info" lang="en"><h1 lang="zh-Hant">Raspberry Pi Python 燈條控制 (ws281x 系列)</h1><dl class="meta"><dt>Date</dt><dd>2021-03-12</dd><dt>Category</dt><dd>technique</dd><dt>Author</dt><dd><a href="https://liutingchun.com/about/">Ting-Chun Liu, media artist</a></dd></dl><a class="back" href="/blog/">← Blog Archive</a></aside><div class="prose post-body"><p>這篇貼文想簡單分享一些如何使用python操作彩色LED燈條，如何安裝相關套件跟一些使用規格。原理其實跟使用Arduino搭配NeoPixel或FastLED這兩款套件相同，只是在這邊語法上會使用Raspberry Pi的GPIO與Python。如果對寫程式比較棘手，也推薦直接購買LED燈條控制器 (如 T500K) 搭配適當的軟體 (LEDEdit)，就可以直接將影片map成燈光。因為發現自己始終沒有整理好的檔案，所以決定順手寫一下部落格來做個資料的整理。</p>
 <p>使用python的好處是，當進行與其他軟體的互動或通訊時，相容性會高很多。遠端操作上也可以直接使用<a href="/blog/raspberrypi-python-osc/">OSC進行通訊</a>，或是Websocket等等各種協定。對於只會撰寫python的朋友也會容易許多。</p>
 <p>市面上大部分的單顆可控制燈條，主要的型號分為SK系列與WS281x系列。值得注意的是WS系列雖然並不是指燈本身，而且其控制晶片的名稱。LED燈泡本身還是使用5050規格。購買LED時也可以注意購買燈泡的密度，大致上分為幾種規格，<strong>每一公尺內含30, 60, 144顆燈泡</strong>，也有的燈條控制單元是以<strong>三顆燈泡為一個單位控制</strong>，並不是每顆燈泡都可以獨立操作。</p>
 <p>這邊也稍微整理一下幾種常見型號，給大家看看各個型號的差異，在需要購買時以供參考。</p>

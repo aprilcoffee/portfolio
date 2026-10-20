@@ -10,6 +10,7 @@ under de/ and Traditional Chinese under zh/ (the blog posts are not translated).
 """
 import base64
 import datetime
+import hashlib
 import html
 import json
 import os
@@ -265,6 +266,14 @@ UI = {
         "selected": "Selected works", "all_works": "All works (%d) →",
         "works_lead": "Installations, performances, internet art and artistic research, %s–%s.",
         "works_desc": "Selected works by %s, %s–%s: installations, performances, internet art and artistic research on AI.",
+        "Topics": "Topics", "work_by": "%s by %s, %s.",
+        "tags": {"works": "critical AI, generative AI, artistic research, installation, internet art, audio-visual performance",
+                 "performance": "audio-visual performance, live performance, generative AI, sound and image",
+                 "about": "research-based media artist, critical AI, artistic research, teaching, publications",
+                 "press": "talks, recordings, papers, critical AI",
+                 "friends": "artists, collaborators"},
+        "sitemap": "Site map", "sitemap_lead": "Every page of this website.",
+        "sitemap_desc": "Site map of the website of %s: works, performance, press, about, blog.",
         "Year": "Year", "Status": "Status", "Type": "Type", "Materials": "Materials", "With": "With", "Link": "Link",
         "work_desc": "%s (%s), %s by %s.", "work": "work",
         "perf_title": "Audio-Visual Performance",
@@ -293,6 +302,14 @@ UI = {
         "selected": "Ausgewählte Arbeiten", "all_works": "Alle Arbeiten (%d) →",
         "works_lead": "Installationen, Performances, Netzkunst und künstlerische Forschung, %s–%s.",
         "works_desc": "Ausgewählte Arbeiten von %s, %s–%s: Installationen, Performances, Netzkunst und künstlerische Forschung zu KI.",
+        "Topics": "Themen", "work_by": "%s von %s, %s.",
+        "tags": {"works": "kritische KI, generative KI, künstlerische Forschung, Installation, Netzkunst, audiovisuelle Performance",
+                 "performance": "audiovisuelle Performance, Live-Performance, generative KI, Klang und Bild",
+                 "about": "forschungsbasierter Medienkünstler, kritische KI, künstlerische Forschung, Lehre, Publikationen",
+                 "press": "Vorträge, Aufzeichnungen, Texte, kritische KI",
+                 "friends": "Künstler*innen, Kooperationspartner*innen"},
+        "sitemap": "Seitenübersicht", "sitemap_lead": "Alle Seiten dieser Website.",
+        "sitemap_desc": "Seitenübersicht der Website von %s: Arbeiten, Performance, Presse, Über mich, Blog.",
         "Year": "Jahr", "Status": "Status", "Type": "Art", "Materials": "Material", "With": "Mit", "Link": "Link",
         "work_desc": "%s (%s), %s von %s.", "work": "Arbeit",
         "perf_title": "Audiovisuelle Performance",
@@ -321,6 +338,14 @@ UI = {
         "selected": "精選作品", "all_works": "全部作品（%d）→",
         "works_lead": "裝置、表演、網路藝術與藝術研究，%s–%s。",
         "works_desc": "%s的精選作品，%s–%s：裝置、表演、網路藝術，以及關於人工智慧的藝術研究。",
+        "Topics": "主題", "work_by": "%s，%s，%s。",
+        "tags": {"works": "批判性 AI、生成式 AI、藝術研究、裝置、網路藝術、影音表演",
+                 "performance": "影音表演、現場演出、生成式 AI、聲音與影像",
+                 "about": "研究型媒體藝術家、批判性 AI、藝術研究、教學、出版",
+                 "press": "講演、錄影、論文、批判性 AI",
+                 "friends": "藝術家、合作夥伴"},
+        "sitemap": "網站地圖", "sitemap_lead": "這個網站的所有頁面。",
+        "sitemap_desc": "%s網站的網站地圖：作品、表演、曝光、關於、部落格。",
         "Year": "年份", "Status": "狀態", "Type": "類型", "Materials": "媒材", "With": "合作", "Link": "連結",
         "work_desc": "%s（%s），%s，%s。", "work": "作品",
         "perf_title": "影音表演",
@@ -444,7 +469,7 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
     <div><a href="mailto:{email}">{email}</a></div>
     <div class="links">{links}</div>
     <div>© {year} {name}</div>
-    <div class="legal"><a href="{imp}" lang="de">Impressum</a><a href="{dsg}">{privacy}</a></div>
+    <div class="legal"><a href="{imp}" lang="de">Impressum</a><a href="{dsg}">{privacy}</a><a href="{sm}">{sitemap_label}</a></div>
   </div>
 </aside>
 <main class="main{full}" id="main">
@@ -458,15 +483,15 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
            t=esc(page_title), d=esc(desc or tr(S, "description", lang)), name=esc(S["name"]), zh=esc(S.get("name_zh", "")),
            c=esc(canonical), hreflang=hreflang, ogt=og_type, img=esc(image), icon=url("assets/favicon-32.png"), ico=url("favicon.ico"), touch=url("assets/apple-touch-icon.png"), manifest=url("site.webmanifest"),
            css=versioned("assets/style.css"), fonts=versioned("assets/fonts/fonts.css"), js=versioned("assets/site.js"), fx=versioned("assets/effects.js"), feed=url("blog/feed.xml"),
-           ga=ga, ld=ld_tag, home=url(LP[lang]), imp=url("impressum/"), dsg=url("datenschutz/"), nav=nav, switch=switch,
+           ga=ga, ld=ld_tag, home=url(LP[lang]), imp=url("impressum/"), dsg=url("datenschutz/"), sm=url(LP[lang] + "sitemap/"), sitemap_label=esc(u["sitemap"]), nav=nav, switch=switch,
            menu=u["menu"], language=u["language"], privacy=u["privacy"], email=esc(S["email"]), links=links,
            year=datetime.date.today().year, full=" full" if full else "", body=body)
 
 
 def person(lang):
     p = {"@context": "https://schema.org", "@type": "Person", "name": S["name"],
-         "alternateName": [S.get("name_zh", ""), "Liu Ting-Chun", "劉庭均"], "url": abs_url(LP[lang]),
-         "email": "mailto:" + S["email"], "jobTitle": tr(S, "job_title", lang) or "Artist",
+         "alternateName": [n for n in dict.fromkeys([S.get("name_zh", ""), "Liu Ting-Chun", "Ting Chun Liu", "劉庭均"]) if n], "url": abs_url(LP[lang]),
+         "email": "mailto:" + S["email"], "jobTitle": tr(S, "job_title", lang) or "Critical AI Artist",
          "description": tr(S, "statement", lang) or tr(S, "description", lang),
          "knowsAbout": S.get("knows_about", []),
          "hasOccupation": [{"@type": "Occupation", "name": o} for o in S.get("occupations", [])],
@@ -484,9 +509,18 @@ def pager(items, i, base, label, noun):
         noun, one(prev, i, "←") if prev else "<span></span>", one(nxt, i + 2, "→") if nxt else "<span></span>")
 
 
-def page_head(title, lead=""):
-    return '<header class="page-head"><h1 class="page-title">%s</h1>%s</header>' % (
-        esc(title), '<p class="lead">%s</p>' % esc(lead) if lead else "")
+def page_head(title, lead="", tags=""):
+    return '<header class="page-head"><h1 class="page-title">%s</h1>%s%s</header>' % (
+        esc(title), '<p class="lead">%s</p>' % esc(lead) if lead else "",
+        '<p class="topics"><span class="mono">%s</span> %s</p>' % (esc(UI[CUR[0]]["Topics"]), esc(tags)) if tags else "")
+
+
+def webpage_ld(kind, path, name, desc, lang, tags):
+    """A schema.org page of the given kind (CollectionPage, AboutPage...) with the page's topic tags as keywords."""
+    return {"@context": "https://schema.org", "@type": kind, "name": name, "description": desc, "url": abs_url(path),
+            "inLanguage": HREFLANG[lang], "keywords": tags,
+            "isPartOf": {"@type": "WebSite", "name": S["name"], "url": abs_url()},
+            "about": {"@type": "Person", "name": S["name"], "url": abs_url(LP[lang])}}
 
 
 def work_card(n, w, lang):
@@ -608,13 +642,15 @@ for L in LANGS:
          ld=person(L), full=True, lang=L, alts=each(""))
 
     page(P + "works/", u["nav"]["works"], u["works_desc"] % (lname(L), y0, y1),
-         page_head(u["nav"]["works"], u["works_lead"] % (y0, y1)) +
+         page_head(u["nav"]["works"], u["works_lead"] % (y0, y1), u["tags"]["works"]) +
          '<div class="grid">%s</div>' % "".join(work_card(i + 1, w, L) for i, w in enumerate(works)),
+         ld=webpage_ld("CollectionPage", P + "works/", u["nav"]["works"], u["works_desc"] % (lname(L), y0, y1), L, u["tags"]["works"]),
          section="works", lang=L, alts=each("works/"))
 
     for i, w in enumerate(works):
+        wtags = tr(w, "tags", L) or []
         rows = [(u["Year"], esc(w.get("year"))), (u["Status"], esc(tr(w, "status", L))), (u["Type"], esc(tr(w, "type", L))),
-                (u["Materials"], esc(tr(w, "materials", L))), (u["With"], esc(w.get("collaborators")))]
+                (u["Materials"], esc(tr(w, "materials", L))), (u["Topics"], esc(", ".join(wtags))), (u["With"], esc(w.get("collaborators")))]
         rows += [(u["Link"], a(l["url"], esc(l.get("label") or l["url"]))) for l in w.get("links", []) if l.get("url")]
         ims = w.get("images", [])
         plates = embed(w.get("video"), w.get("video_thumb", ""), w["title"]) + "".join(clip(c, w["title"]) for c in w.get("clips", []))
@@ -639,13 +675,14 @@ for L in LANGS:
             '<p class="credits">%s</p>' % esc(w["credits"]) if w.get("credits") else "",
             plates, pager(works, i, P + "works/%s/", "title", u["nav"]["works"]))
         generic = u["work_desc"] % (w["title"], w.get("year"), tr(w, "type", L) or u["work"], lname(L))
-        desc = summary(text) or generic
-        if len(desc) < 40:  # a one-line text alone makes a thin search snippet
-            desc = generic + ("" if L == "zh" else " ") + desc
+        # the description names the artist in full, then the work's own text
+        by = u["work_by"] % (tr(w, "type", L) or u["work"], lname(L), w.get("year"))
+        desc = (by + ("" if L == "zh" else " ") + summary(text, 130)) if text else generic
         ld = {"@context": "https://schema.org", "@type": "CreativeWork", "name": w["title"],
               "alternateName": w.get("title_zh") or None, "dateCreated": w.get("year", "")[:4],
               "genre": tr(w, "type", L) or None, "url": abs_url(P + "works/%s/" % w["slug"]), "inLanguage": HREFLANG[L],
               "image": asset_abs(cover_of(w)) if cover_of(w) else None, "description": desc,
+              "keywords": ", ".join(wtags) or None,
               "creator": {"@type": "Person", "name": S["name"], "url": abs_url(P)}}
         page(P + "works/%s/" % w["slug"], w["title"] + (" " + w["title_zh"] if w.get("title_zh") else ""), desc, body,
              image=cover_of(w), og_type="article", ld={k: v for k, v in ld.items() if v}, section="works", lang=L,
@@ -663,8 +700,9 @@ for L in LANGS:
 
     perfs = [p for p in D.get("performances", []) if not p.get("hidden") and p.get("video")]
     page(P + "performance/", u["perf_title"], u["perf_desc"] % lname(L),
-         page_head(u["perf_title"], u["perf_lead"] % " / ".join(platforms)) +
+         page_head(u["perf_title"], u["perf_lead"] % " / ".join(platforms), u["tags"]["performance"]) +
          '<div class="perf">%s</div>' % "".join(perf_card(n + 1, p) for n, p in enumerate(perfs)),
+         ld=webpage_ld("CollectionPage", P + "performance/", u["perf_title"], u["perf_desc"] % lname(L), L, u["tags"]["performance"]),
          image=(perfs or [{}])[0].get("thumb"), section="performance", lang=L, alts=each("performance/"))
 
     cv = ""
@@ -679,12 +717,12 @@ for L in LANGS:
     bio = tr(D["about"], "bio", L)
     page(P + "about/", u["about"], bio,
          '<div class="about-top"><h1 class="page-title">%s</h1><div><p class="bio">%s</p>'
-         '<p class="contact">%s</p></div></div>%s' % (
+         '<p class="contact">%s</p><p class="topics"><span class="mono">%s</span> %s</p></div></div>%s' % (
              esc(u["about"]), esc(bio),
              "<br>".join(['<a href="mailto:%s">%s</a>' % (esc(m), esc(m)) for m in (S["email"], S.get("email_alt")) if m] +
                          ['ORCID <a href="https://orcid.org/%s" target="_blank" rel="noopener">%s</a>' % (esc(S["orcid"]), esc(S["orcid"]))
-                          for _ in [0] if S.get("orcid")]), cv),
-         ld=dict(person(L), description=bio), og_type="profile", section="about", lang=L, alts=each("about/"))
+                          for _ in [0] if S.get("orcid")]), esc(u["Topics"]), esc(u["tags"]["about"]), cv),
+         ld=dict(person(L), description=bio, keywords=u["tags"]["about"]), og_type="profile", section="about", lang=L, alts=each("about/"))
 
     # press: recordings, texts and pages by others that show or discuss the work
     press_html = ""
@@ -701,7 +739,9 @@ for L in LANGS:
         if rows:
             press_html += '<section class="cv-sec"><h2>%s</h2><div>%s</div></section>' % (esc(gname), rows)
     page(P + "press/", u["nav"]["press"], u["press_desc"] % lname(L),
-         page_head(u["nav"]["press"], u["press_lead"]) + press_html, section="press", lang=L, alts=each("press/"))
+         page_head(u["nav"]["press"], u["press_lead"], u["tags"]["press"]) + press_html,
+         ld=webpage_ld("CollectionPage", P + "press/", u["nav"]["press"], u["press_desc"] % lname(L), L, u["tags"]["press"]),
+         section="press", lang=L, alts=each("press/"))
 
     groups, order = {}, []
     for p in posts:
@@ -729,9 +769,28 @@ for L in LANGS:
             esc(f["url"]), thumb, esc(f["name"]))
 
     page(P + "friends/", u["nav"]["friends"], u["friends_desc"] % lname(L),
-         page_head(u["nav"]["friends"], u["friends_lead"]) +
+         page_head(u["nav"]["friends"], u["friends_lead"], u["tags"]["friends"]) +
          '<div class="grid friends">%s</div>' % "".join(friend(f) for f in D.get("friends", [])),
+         ld=webpage_ld("CollectionPage", P + "friends/", u["nav"]["friends"], u["friends_desc"] % lname(L), L, u["tags"]["friends"]),
          section="friends", lang=L, alts=each("friends/"))
+
+    # HTML site map: every page in one list, for visitors and for crawlers
+    def smap(head, href, items=(), lang_attr=""):
+        lis = "".join('<li><a href="%s"%s>%s</a></li>' % (esc(h), lang_attr, esc(t)) for t, h in items)
+        return '<section class="cv-sec"><h2><a href="%s">%s</a></h2><div>%s</div></section>' % (
+            esc(href), esc(head), '<ul class="sitemap-list">%s</ul>' % lis if lis else "")
+    page(P + "sitemap/", u["sitemap"], u["sitemap_desc"] % lname(L),
+         page_head(u["sitemap"], u["sitemap_lead"]) +
+         smap(S["name"], url(P)) +
+         smap(u["nav"]["works"], url(P + "works/"), [(w["title"], url(P + "works/%s/" % w["slug"])) for w in works]) +
+         smap(u["perf_title"], url(P + "performance/")) +
+         smap(u["about"], url(P + "about/")) +
+         smap(u["nav"]["press"], url(P + "press/")) +
+         smap(u["nav"]["blog"], url(P + "blog/"), [(p["title"], url("blog/%s/" % p["slug"])) for p in posts],
+              ' lang="%s"' % "zh-Hant") +
+         smap(u["nav"]["friends"], url(P + "friends/")) +
+         smap("Impressum / " + u["privacy"], url("impressum/"), [("Impressum", url("impressum/")), (u["privacy"], url("datenschutz/"))]),
+         lang=L, alts=each("sitemap/"))
 
 # blog posts: one version each (not translated), in the English frame
 CUR[0] = "en"
@@ -740,12 +799,14 @@ for i, p in enumerate(posts):
     desc = p.get("excerpt") or summary(src)
     body = ('<article class="post"><aside class="post-info" lang="en"><h1 lang="%s">%s</h1>%s<a class="back" href="%s">← Blog Archive</a></aside>'
             '<div class="prose post-body">%s</div>%s</article>') % (
-        p.get("lang", "zh-Hant"), esc(p["title"]), meta([("Date", esc(p["date"])), ("Category", esc(p.get("category")))]),
+        p.get("lang", "zh-Hant"), esc(p["title"]),
+        meta([("Date", esc(p["date"])), ("Category", esc(p.get("category"))),
+              ("Author", a(abs_url("about/"), esc("%s, media artist" % S["name"])))]),
         url("blog/"), post_html(src), pager(posts, i, "blog/%s/", "title", "Posts"))
     ld = {"@context": "https://schema.org", "@type": "BlogPosting", "headline": p["title"], "datePublished": p["date"],
           "inLanguage": p.get("lang", "zh-Hant"), "url": abs_url("blog/%s/" % p["slug"]),
           "image": asset_abs(p.get("cover") or S.get("og_image")), "description": desc,
-          "author": {"@type": "Person", "name": S["name"], "url": abs_url()},
+          "author": {"@type": "Person", "name": S["name"], "url": abs_url(), "jobTitle": "Media artist"},
           "mainEntityOfPage": abs_url("blog/%s/" % p["slug"])}
     page("blog/%s/" % p["slug"], p["title"], desc, body, image=p.get("cover"), og_type="article",
          content_lang=p.get("lang", "zh-Hant"), ld=ld, section="blog")
@@ -830,7 +891,7 @@ def write(rel, text):
     open(p, "w", encoding="utf-8").write(text)
 
 
-for s in SECTIONS + ["impressum", "datenschutz", "writing"] + [LP[l].strip("/") for l in LANGS if LP[l]]:  # start clean so removed works/posts disappear
+for s in SECTIONS + ["impressum", "datenschutz", "writing", "sitemap"] + [LP[l].strip("/") for l in LANGS if LP[l]]:  # start clean so removed works/posts disappear
     shutil.rmtree(os.path.join(ROOT, s), ignore_errors=True)
 for path, text in pages.items():
     write(path + "index.html", text)
@@ -849,6 +910,7 @@ write("writing/feed.xml", feed)  # old feed address, for existing subscribers
 # llms.txt: a plain-language summary for AI assistants (llmstxt.org), linked from robots.txt
 llms = ["# %s (%s)" % (S["name"], S.get("name_zh", "")), "",
         "> " + (S.get("statement") or S.get("description", "")), "",
+        "Occupation: " + ", ".join(S.get("occupations", [])), "",
         "Areas: " + ", ".join(S.get("knows_about", [])), "",
         "## Main pages", "",
         "- [Works](%s): installations, performances, internet art and artistic research" % abs_url("works/"),
@@ -870,7 +932,27 @@ write("llms.txt", llms_txt)
 # sitemap.xml and robots.txt only count at the domain root, so when the site lives
 # in a subfolder they go to the repo root; the sitemap then also lists the other
 # project sites on the domain (site.sitemap_extra).
-dates = {"blog/%s/" % p["slug"]: p["date"] for p in posts}
+# lastmod: a page's date moves only when its HTML changes (asset hashes ignored); kept in data/lastmod.json
+LASTMOD_FILE = os.path.join(ROOT, "data", "lastmod.json")
+try:
+    _old = json.load(open(LASTMOD_FILE, encoding="utf-8"))
+except (OSError, ValueError):
+    _old = {}
+_today = datetime.date.today().isoformat()
+_new = {}
+for _p, _html in pages.items():
+    if _p in noindex:
+        continue
+    _h = hashlib.md5(re.sub(r"\?v=[0-9a-f]{8}", "", _html).encode()).hexdigest()[:12]
+    _new[_p] = {"h": _h, "d": _old[_p]["d"] if _p in _old and _old[_p]["h"] == _h else _today}
+if _new != _old:
+    try:
+        with open(LASTMOD_FILE, "w", encoding="utf-8") as f:
+            f.write("{\n" + ",\n".join("%s: %s" % (json.dumps(k, ensure_ascii=False), json.dumps(_new[k])) for k in sorted(_new)) + "\n}\n")
+    except OSError:
+        pass
+dates = {p: v["d"] for p, v in _new.items()}
+dates.update({"blog/%s/" % p["slug"]: p["date"] for p in posts})
 locs = ["  <url><loc>%s</loc>%s</url>\n" % (esc(abs_url(p)), "<lastmod>%s</lastmod>" % dates[p] if p in dates else "")
         for p in pages if p not in noindex]
 locs += ["  <url><loc>%s</loc></url>\n" % esc(u) for u in S.get("sitemap_extra", [])]

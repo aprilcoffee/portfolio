@@ -26,8 +26,8 @@
 <link rel="alternate" type="application/rss+xml" title="Ting-Chun Liu — Blog" href="/blog/feed.xml">
 <script async src="/assets/analytics.js?v=3eef9b37" data-ga="G-5XL9T33VG0"></script>
 <link rel="stylesheet" href="/assets/fonts/fonts.css?v=51411f72">
-<link rel="stylesheet" href="/assets/style.css?v=7a780a56">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Raspberry Pi 移位暫存器 (shift register) 控制 / 七段顯示器使用", "datePublished": "2019-03-17", "inLanguage": "zh-Hant", "url": "https://liutingchun.com/blog/raspberry-pi-shift-register/", "image": "https://liutingchun.com/images/wix/4eb1dd_3386eacc14aa498a9cba779f92284edc~mv2_d_4032_3024_s_4_2.webp", "description": "用 Python GPIO 控制 74HC595 / TPIC6C594 移位暫存器與七段顯示器，以及位元運算。", "author": {"@type": "Person", "name": "Ting-Chun Liu", "url": "https://liutingchun.com/"}, "mainEntityOfPage": "https://liutingchun.com/blog/raspberry-pi-shift-register/"}</script>
+<link rel="stylesheet" href="/assets/style.css?v=568ca665">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Raspberry Pi 移位暫存器 (shift register) 控制 / 七段顯示器使用", "datePublished": "2019-03-17", "inLanguage": "zh-Hant", "url": "https://liutingchun.com/blog/raspberry-pi-shift-register/", "image": "https://liutingchun.com/images/wix/4eb1dd_3386eacc14aa498a9cba779f92284edc~mv2_d_4032_3024_s_4_2.webp", "description": "用 Python GPIO 控制 74HC595 / TPIC6C594 移位暫存器與七段顯示器，以及位元運算。", "author": {"@type": "Person", "name": "Ting-Chun Liu", "url": "https://liutingchun.com/", "jobTitle": "Media artist"}, "mainEntityOfPage": "https://liutingchun.com/blog/raspberry-pi-shift-register/"}</script>
 </head>
 <body>
 <aside class="side" id="side" lang="en">
@@ -42,11 +42,11 @@
     <div><a href="mailto:tingchun.liu.tw@gmail.com">tingchun.liu.tw@gmail.com</a></div>
     <div class="links"><a href="https://www.instagram.com/liu_tingchun/" target="_blank" rel="noopener">Instagram</a><a href="https://github.com/aprilcoffee" target="_blank" rel="noopener">GitHub</a></div>
     <div>© 2026 Ting-Chun Liu</div>
-    <div class="legal"><a href="/impressum/" lang="de">Impressum</a><a href="/datenschutz/">Privacy</a></div>
+    <div class="legal"><a href="/impressum/" lang="de">Impressum</a><a href="/datenschutz/">Privacy</a><a href="/sitemap/">Site map</a></div>
   </div>
 </aside>
 <main class="main" id="main">
-<article class="post"><aside class="post-info" lang="en"><h1 lang="zh-Hant">Raspberry Pi 移位暫存器 (shift register) 控制 / 七段顯示器使用</h1><dl class="meta"><dt>Date</dt><dd>2019-03-17</dd><dt>Category</dt><dd>technique</dd></dl><a class="back" href="/blog/">← Blog Archive</a></aside><div class="prose post-body"><p>本篇來寫寫當初在月津港(現在在台北數位藝術中心展覽的數位藝術家)很猛的架結構的林瑜亮、跟負責電路板製作焊接(月薪很高小公主)李翎暄跟很廢的我，含辛茹苦的花了18萬的裝置。如何Hardcore的使用python GPIO功能控制移位暫存器，python GPIO的code部分就不多做說明，可以看前面幾篇文章轉換成Arduino，然後這篇也會稍微解釋Latch, Clock, Data三個名稱，以及很簡單很簡單的在這邊使用位元運算。我很廢在此拋磚引玉，還請大大指正。</p>
+<article class="post"><aside class="post-info" lang="en"><h1 lang="zh-Hant">Raspberry Pi 移位暫存器 (shift register) 控制 / 七段顯示器使用</h1><dl class="meta"><dt>Date</dt><dd>2019-03-17</dd><dt>Category</dt><dd>technique</dd><dt>Author</dt><dd><a href="https://liutingchun.com/about/">Ting-Chun Liu, media artist</a></dd></dl><a class="back" href="/blog/">← Blog Archive</a></aside><div class="prose post-body"><p>本篇來寫寫當初在月津港(現在在台北數位藝術中心展覽的數位藝術家)很猛的架結構的林瑜亮、跟負責電路板製作焊接(月薪很高小公主)李翎暄跟很廢的我，含辛茹苦的花了18萬的裝置。如何Hardcore的使用python GPIO功能控制移位暫存器，python GPIO的code部分就不多做說明，可以看前面幾篇文章轉換成Arduino，然後這篇也會稍微解釋Latch, Clock, Data三個名稱，以及很簡單很簡單的在這邊使用位元運算。我很廢在此拋磚引玉，還請大大指正。</p>
 <p>適用晶片是TPIC6C594，還有74HC595或各種場合燈節超級萬用的燈條WS2812也可以使用同樣方式(還有還有其他的移位暫存器晶片，例如可以控制16個輸出的STP16C596，只是我沒用過不多說)</p>
 <p>(這篇先私心問一下 Wix SEO有沒有有經驗的人會用ＱＱ 我發現在wix寫的blog，google都搜不到)</p>
 <p><a href="/works/segmentary-moonlight/">Segmentary Moonlight</a></p>

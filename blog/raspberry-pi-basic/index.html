@@ -26,8 +26,8 @@
 <link rel="alternate" type="application/rss+xml" title="Ting-Chun Liu — Blog" href="/blog/feed.xml">
 <script async src="/assets/analytics.js?v=3eef9b37" data-ga="G-5XL9T33VG0"></script>
 <link rel="stylesheet" href="/assets/fonts/fonts.css?v=51411f72">
-<link rel="stylesheet" href="/assets/style.css?v=7a780a56">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Raspberry Pi 基本使用", "datePublished": "2019-01-17", "inLanguage": "zh-Hant", "url": "https://liutingchun.com/blog/raspberry-pi-basic/", "image": "https://liutingchun.com/images/wix/4eb1dd_341b6ac20bdd4ae88c19db1de94d0391~mv2.webp", "description": "遠端操控、開機自動執行、影片播放、消除 3.5 音源雜訊等常見的 Raspberry Pi 使用經驗。", "author": {"@type": "Person", "name": "Ting-Chun Liu", "url": "https://liutingchun.com/"}, "mainEntityOfPage": "https://liutingchun.com/blog/raspberry-pi-basic/"}</script>
+<link rel="stylesheet" href="/assets/style.css?v=568ca665">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Raspberry Pi 基本使用", "datePublished": "2019-01-17", "inLanguage": "zh-Hant", "url": "https://liutingchun.com/blog/raspberry-pi-basic/", "image": "https://liutingchun.com/images/wix/4eb1dd_341b6ac20bdd4ae88c19db1de94d0391~mv2.webp", "description": "遠端操控、開機自動執行、影片播放、消除 3.5 音源雜訊等常見的 Raspberry Pi 使用經驗。", "author": {"@type": "Person", "name": "Ting-Chun Liu", "url": "https://liutingchun.com/", "jobTitle": "Media artist"}, "mainEntityOfPage": "https://liutingchun.com/blog/raspberry-pi-basic/"}</script>
 </head>
 <body>
 <aside class="side" id="side" lang="en">
@@ -42,11 +42,11 @@
     <div><a href="mailto:tingchun.liu.tw@gmail.com">tingchun.liu.tw@gmail.com</a></div>
     <div class="links"><a href="https://www.instagram.com/liu_tingchun/" target="_blank" rel="noopener">Instagram</a><a href="https://github.com/aprilcoffee" target="_blank" rel="noopener">GitHub</a></div>
     <div>© 2026 Ting-Chun Liu</div>
-    <div class="legal"><a href="/impressum/" lang="de">Impressum</a><a href="/datenschutz/">Privacy</a></div>
+    <div class="legal"><a href="/impressum/" lang="de">Impressum</a><a href="/datenschutz/">Privacy</a><a href="/sitemap/">Site map</a></div>
   </div>
 </aside>
 <main class="main" id="main">
-<article class="post"><aside class="post-info" lang="en"><h1 lang="zh-Hant">Raspberry Pi 基本使用</h1><dl class="meta"><dt>Date</dt><dd>2019-01-17</dd><dt>Category</dt><dd>technique</dd></dl><a class="back" href="/blog/">← Blog Archive</a></aside><div class="prose post-body"><p>因為近期接案使用頻繁(或是幫新銳動畫裝置藝術家<a href="https://gunter292.wixsite.com/gunter" target="_blank" rel="noopener">林瑜亮</a>於香港布展)，遂做個簡單的資料整理；包含遠端操控、開機自動執行、影片播放、3.5音源輸出消除雜音等等，做個常見的 Raspberry Pi 使用經驗分享。盼能拋磚引玉，得到更多分享與回饋。</p>
+<article class="post"><aside class="post-info" lang="en"><h1 lang="zh-Hant">Raspberry Pi 基本使用</h1><dl class="meta"><dt>Date</dt><dd>2019-01-17</dd><dt>Category</dt><dd>technique</dd><dt>Author</dt><dd><a href="https://liutingchun.com/about/">Ting-Chun Liu, media artist</a></dd></dl><a class="back" href="/blog/">← Blog Archive</a></aside><div class="prose post-body"><p>因為近期接案使用頻繁(或是幫新銳動畫裝置藝術家<a href="https://gunter292.wixsite.com/gunter" target="_blank" rel="noopener">林瑜亮</a>於香港布展)，遂做個簡單的資料整理；包含遠端操控、開機自動執行、影片播放、3.5音源輸出消除雜音等等，做個常見的 Raspberry Pi 使用經驗分享。盼能拋磚引玉，得到更多分享與回饋。</p>
 <p>隨著 Raspberry Pi 的價格逐漸親民，運算量也遠大於一代二代，第三代又內附 wifi 晶片，以Raspberry Pi 作為互動裝置的主機板門檻逐漸降低。想說整理一下最近對 Rapsberry Pi 的使用方法，以及一些十分重要的基礎。</p>
 <p>本篇文的撰寫有些操作的門檻，基本上不在 command line 的部分多做介紹。使用的皆為 Raspberry Pi 3 以上之型號，包含 Raspberry Pi 3 Model B, Raspberry Pi Model B+。</p>
 <hr />

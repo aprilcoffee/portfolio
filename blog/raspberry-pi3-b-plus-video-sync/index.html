@@ -26,8 +26,8 @@
 <link rel="alternate" type="application/rss+xml" title="Ting-Chun Liu — Blog" href="/blog/feed.xml">
 <script async src="/assets/analytics.js?v=3eef9b37" data-ga="G-5XL9T33VG0"></script>
 <link rel="stylesheet" href="/assets/fonts/fonts.css?v=51411f72">
-<link rel="stylesheet" href="/assets/style.css?v=7a780a56">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Raspberry Pi3 B+ 同步播放器", "datePublished": "2020-02-01", "inLanguage": "zh-Hant", "url": "https://liutingchun.com/blog/raspberry-pi3-b-plus-video-sync/", "image": "https://liutingchun.com/images/wix/4eb1dd_4809894287bd45c9b3430a46d97b2f2b~mv2.webp", "description": "以 omxplayer-sync 在多台 Raspberry Pi 3 B+ 上製作同步影片播放器的完整步驟。", "author": {"@type": "Person", "name": "Ting-Chun Liu", "url": "https://liutingchun.com/"}, "mainEntityOfPage": "https://liutingchun.com/blog/raspberry-pi3-b-plus-video-sync/"}</script>
+<link rel="stylesheet" href="/assets/style.css?v=568ca665">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Raspberry Pi3 B+ 同步播放器", "datePublished": "2020-02-01", "inLanguage": "zh-Hant", "url": "https://liutingchun.com/blog/raspberry-pi3-b-plus-video-sync/", "image": "https://liutingchun.com/images/wix/4eb1dd_4809894287bd45c9b3430a46d97b2f2b~mv2.webp", "description": "以 omxplayer-sync 在多台 Raspberry Pi 3 B+ 上製作同步影片播放器的完整步驟。", "author": {"@type": "Person", "name": "Ting-Chun Liu", "url": "https://liutingchun.com/", "jobTitle": "Media artist"}, "mainEntityOfPage": "https://liutingchun.com/blog/raspberry-pi3-b-plus-video-sync/"}</script>
 </head>
 <body>
 <aside class="side" id="side" lang="en">
@@ -42,11 +42,11 @@
     <div><a href="mailto:tingchun.liu.tw@gmail.com">tingchun.liu.tw@gmail.com</a></div>
     <div class="links"><a href="https://www.instagram.com/liu_tingchun/" target="_blank" rel="noopener">Instagram</a><a href="https://github.com/aprilcoffee" target="_blank" rel="noopener">GitHub</a></div>
     <div>© 2026 Ting-Chun Liu</div>
-    <div class="legal"><a href="/impressum/" lang="de">Impressum</a><a href="/datenschutz/">Privacy</a></div>
+    <div class="legal"><a href="/impressum/" lang="de">Impressum</a><a href="/datenschutz/">Privacy</a><a href="/sitemap/">Site map</a></div>
   </div>
 </aside>
 <main class="main" id="main">
-<article class="post"><aside class="post-info" lang="en"><h1 lang="zh-Hant">Raspberry Pi3 B+ 同步播放器</h1><dl class="meta"><dt>Date</dt><dd>2020-02-01</dd><dt>Category</dt><dd>technique</dd></dl><a class="back" href="/blog/">← Blog Archive</a></aside><div class="prose post-body"><p>積欠已久，接了小工作決定邊弄邊把步驟寫出來。</p>
+<article class="post"><aside class="post-info" lang="en"><h1 lang="zh-Hant">Raspberry Pi3 B+ 同步播放器</h1><dl class="meta"><dt>Date</dt><dd>2020-02-01</dd><dt>Category</dt><dd>technique</dd><dt>Author</dt><dd><a href="https://liutingchun.com/about/">Ting-Chun Liu, media artist</a></dd></dl><a class="back" href="/blog/">← Blog Archive</a></aside><div class="prose post-body"><p>積欠已久，接了小工作決定邊弄邊把步驟寫出來。</p>
 <p>同步播放器的工作方式，需要至少兩台電腦(在這邊使用Pi)在同個網域下運作。第一台作為Master，其他作為Slave。當Master在播放影片時，會在一定時間間隔不斷傳送目前播放的時間點給所有Slaves。但大家也知道，這樣的傳輸方法，會因為不同網路環境存在一定的延遲。因此，在Slaves收到訊息時，會自動Seek到對應的時間點，在把目前自己播放的時間點傳送回去給Master。</p>
 <p>大致上來說，如同大家在國高中作過的「蝙蝠回聲距離問題」，當Master收到Slave回傳的訊號時，便會確認自己目前的時間點，再和自己當初傳送出訊號的時間點相減除以二。一來一往之間，Master變可以得知連結關係中的網路延遲時差，進而把目前播放時間再加上預期傳輸時間差送給所有Slaves，達成同步。</p>
 <figure><img src="/images/wix/4eb1dd_1b03ac6f774e41ceb06bad9ea87991af~mv2.webp" alt="" loading="lazy" decoding="async" onerror="if(this.src!=='/images/wix/4eb1dd_1b03ac6f774e41ceb06bad9ea87991af~mv2.webp')this.src='/images/wix/4eb1dd_1b03ac6f774e41ceb06bad9ea87991af~mv2.webp'"></figure>
