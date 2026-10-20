@@ -77,3 +77,6 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 
 ## [2026-10-21] update | Artist Magazine article
 - external-links: title, author, issue and the mention of Liu (LTG, Noise Flow Practice vol.1, C-LAB) filled in from the PDF the artist supplied.
+
+## [2026-10-21] remove | Artist Magazine article
+- external-links: the 2019 Artist Magazine article (only a photo of Liu performing) taken out again at the artist's request; it is no longer on the website's Press & Media page either.
