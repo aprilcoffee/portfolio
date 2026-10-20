@@ -344,7 +344,7 @@
       h('div', { className: 'row' }, [field('名字', s, 'name'), field('中文名字', s, 'name_zh')]),
       field('網站描述（搜尋引擎用）', s, 'description', { area: true }),
       h('div', { className: 'row' }, [field('網站描述 DE', s, 'description_de', { area: true }), field('網站描述 中文', s, 'description_zh', { area: true })]),
-      h('div', { className: 'row' }, [field('Email（側欄、Impressum、About）', s, 'email'), field('第二個 Email（只顯示在 About 頁）', s, 'email_alt')]),
+      h('div', { className: 'row' }, [field('Email（側欄、Impressum、About）', s, 'email'), field('About 頁顯示的 Email（留空＝用左邊那個）', s, 'email_alt')]),
       field('ORCID iD（只填 0000-0000-0000-0000；顯示在 About 頁，留空＝不顯示）', s, 'orcid'),
       field('首頁圖片', s, 'home_image'),
       field('首頁大字（首頁下方的大字；空一行＝分段；留空＝留白）', s, 'home_text', { area: true }),

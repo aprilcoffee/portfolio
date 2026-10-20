@@ -266,10 +266,10 @@ UI = {
         "selected": "Selected works", "all_works": "All works (%d) →",
         "works_lead": "Installations, performances, internet art and artistic research, %s–%s.",
         "works_desc": "Selected works by %s, %s–%s: installations, performances, internet art and artistic research on AI.",
-        "Topics": "Topics", "work_by": "%s by %s, %s.",
-        "tags": {"works": "critical AI, generative AI, artistic research, installation, internet art, audio-visual performance",
+        "Topics": "Topics", "Email": "Email", "contact_note": "Workshop and lecture requests: please get in touch by email.", "work_by": "%s by %s, %s.",
+        "tags": {"works": "Critical AI, generative art, artistic research, cybernetics, internet art, audio-visual performance",
                  "performance": "audio-visual performance, live performance, generative AI, sound and image",
-                 "about": "research-based media artist, critical AI, artistic research, teaching, publications",
+                 "about": "Critical AI, generative art, artistic research, cybernetics, internet art, audio-visual performance",
                  "press": "talks, recordings, papers, critical AI",
                  "friends": "artists, collaborators"},
         "sitemap": "Site map", "sitemap_lead": "Every page of this website.",
@@ -302,10 +302,10 @@ UI = {
         "selected": "Ausgewählte Arbeiten", "all_works": "Alle Arbeiten (%d) →",
         "works_lead": "Installationen, Performances, Netzkunst und künstlerische Forschung, %s–%s.",
         "works_desc": "Ausgewählte Arbeiten von %s, %s–%s: Installationen, Performances, Netzkunst und künstlerische Forschung zu KI.",
-        "Topics": "Themen", "work_by": "%s von %s, %s.",
-        "tags": {"works": "kritische KI, generative KI, künstlerische Forschung, Installation, Netzkunst, audiovisuelle Performance",
+        "Topics": "Themen", "Email": "E-Mail", "contact_note": "Anfragen für Workshops und Vorträge bitte per E-Mail.", "work_by": "%s von %s, %s.",
+        "tags": {"works": "Kritische KI, generative Kunst, künstlerische Forschung, Kybernetik, Netzkunst, audiovisuelle Performance",
                  "performance": "audiovisuelle Performance, Live-Performance, generative KI, Klang und Bild",
-                 "about": "forschungsbasierter Medienkünstler, kritische KI, künstlerische Forschung, Lehre, Publikationen",
+                 "about": "Kritische KI, generative Kunst, künstlerische Forschung, Kybernetik, Netzkunst, audiovisuelle Performance",
                  "press": "Vorträge, Aufzeichnungen, Texte, kritische KI",
                  "friends": "Künstler*innen, Kooperationspartner*innen"},
         "sitemap": "Seitenübersicht", "sitemap_lead": "Alle Seiten dieser Website.",
@@ -338,10 +338,10 @@ UI = {
         "selected": "精選作品", "all_works": "全部作品（%d）→",
         "works_lead": "裝置、表演、網路藝術與藝術研究，%s–%s。",
         "works_desc": "%s的精選作品，%s–%s：裝置、表演、網路藝術，以及關於人工智慧的藝術研究。",
-        "Topics": "主題", "work_by": "%s，%s，%s。",
-        "tags": {"works": "批判性 AI、生成式 AI、藝術研究、裝置、網路藝術、影音表演",
+        "Topics": "主題", "Email": "信箱", "contact_note": "工作坊與講座邀約，請來信聯繫。", "work_by": "%s，%s，%s。",
+        "tags": {"works": "批判性 AI、生成藝術、藝術研究、控制論、網路藝術、影音表演",
                  "performance": "影音表演、現場演出、生成式 AI、聲音與影像",
-                 "about": "研究型媒體藝術家、批判性 AI、藝術研究、教學、出版",
+                 "about": "批判性 AI、生成藝術、藝術研究、控制論、網路藝術、影音表演",
                  "press": "講演、錄影、論文、批判性 AI",
                  "friends": "藝術家、合作夥伴"},
         "sitemap": "網站地圖", "sitemap_lead": "這個網站的所有頁面。",
@@ -469,7 +469,7 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
     <div><a href="mailto:{email}">{email}</a></div>
     <div class="links">{links}</div>
     <div>© {year} {name}</div>
-    <div class="legal"><a href="{imp}" lang="de">Impressum</a><a href="{dsg}">{privacy}</a><a href="{sm}">{sitemap_label}</a></div>
+    <div class="legal"><a href="{imp}" lang="de">Impressum</a><a href="{dsg}">{privacy}</a></div>
   </div>
 </aside>
 <main class="main{full}" id="main">
@@ -483,7 +483,7 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
            t=esc(page_title), d=esc(desc or tr(S, "description", lang)), name=esc(S["name"]), zh=esc(S.get("name_zh", "")),
            c=esc(canonical), hreflang=hreflang, ogt=og_type, img=esc(image), icon=url("assets/favicon-32.png"), ico=url("favicon.ico"), touch=url("assets/apple-touch-icon.png"), manifest=url("site.webmanifest"),
            css=versioned("assets/style.css"), fonts=versioned("assets/fonts/fonts.css"), js=versioned("assets/site.js"), fx=versioned("assets/effects.js"), feed=url("blog/feed.xml"),
-           ga=ga, ld=ld_tag, home=url(LP[lang]), imp=url("impressum/"), dsg=url("datenschutz/"), sm=url(LP[lang] + "sitemap/"), sitemap_label=esc(u["sitemap"]), nav=nav, switch=switch,
+           ga=ga, ld=ld_tag, home=url(LP[lang]), imp=url("impressum/"), dsg=url("datenschutz/"), nav=nav, switch=switch,
            menu=u["menu"], language=u["language"], privacy=u["privacy"], email=esc(S["email"]), links=links,
            year=datetime.date.today().year, full=" full" if full else "", body=body)
 
@@ -715,13 +715,14 @@ for L in LANGS:
                 ' lang="en"' if same else "", esc(it.get("year")), a(it["url"], esc(text)) if it.get("url") else esc(text))
         cv += '<section class="cv-sec"><h2>%s</h2><div>%s</div></section>' % (esc(tr(sec, "title", L)), rows)
     bio = tr(D["about"], "bio", L)
+    about_mail = S.get("email_alt") or S["email"]  # the address shown on the About page (the sidebar has site.email)
     page(P + "about/", u["about"], bio,
          '<div class="about-top"><h1 class="page-title">%s</h1><div><p class="bio">%s</p>'
-         '<p class="contact">%s</p><p class="topics"><span class="mono">%s</span> %s</p></div></div>%s' % (
-             esc(u["about"]), esc(bio),
-             "<br>".join(['<a href="mailto:%s">%s</a>' % (esc(m), esc(m)) for m in (S["email"], S.get("email_alt")) if m] +
-                         ['ORCID <a href="https://orcid.org/%s" target="_blank" rel="noopener">%s</a>' % (esc(S["orcid"]), esc(S["orcid"]))
-                          for _ in [0] if S.get("orcid")]), esc(u["Topics"]), esc(u["tags"]["about"]), cv),
+         '<p class="contact"><span class="mono">%s</span><a href="mailto:%s">%s</a></p>'
+         '<p class="contact-note">%s</p>'
+         '<p class="topics"><span class="mono">%s</span> %s</p></div></div>%s' % (
+             esc(u["about"]), esc(bio), esc(u["Email"]), esc(about_mail), esc(about_mail), esc(u["contact_note"]),
+             esc(u["Topics"]), esc(u["tags"]["about"]), cv),
          ld=dict(person(L), description=bio, keywords=u["tags"]["about"]), og_type="profile", section="about", lang=L, alts=each("about/"))
 
     # press: recordings, texts and pages by others that show or discuss the work
