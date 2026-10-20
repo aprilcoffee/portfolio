@@ -6,7 +6,7 @@ sources:
   - ../../data/site.json (about.sections)
   - https://liutingchun.com/about/
   - https://www.stifterverband.org/digital-lehrfellows-thueringen/2026/liu
-updated: 2026-10-01
+updated: 2026-10-20
 ---
 # Teaching, education and awards
 
@@ -18,6 +18,10 @@ Academic positions, studies, awards and fellowships, as listed in the CV.
 - 2026 — Erasmus+ Staff Mobility for Teaching, Digital Art, Institute of Fine Arts and Media Art, University of Applied Arts Vienna
 - 2024 — Guest Lecturer (Lehrbeauftragter), Chair of Media Environments, Faculty of Art and Design, Bauhaus University Weimar
 - 2022–2024 — Student Assistant, Experimental Informatics, Academy of Media Arts Cologne
+
+## Workshops
+
+- Liu hosts workshops about local AI usage, embedding practice and understanding biases in AI models (artist's own description on the website's About page). Requests for workshops and lectures by email. Related: the Stifterverband fellowship project on local AI in the moving-image studio (see Awards & Fellowships).
 
 ## Education
 

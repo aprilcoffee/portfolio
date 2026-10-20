@@ -4,7 +4,7 @@ Catalogue of the wiki. Read this first, then open the pages you need.
 
 ## Start here
 
-- [Ting-Chun Liu (劉庭均) — overview](pages/overview.md) — Ting-Chun Liu (劉庭均, born in Taipei, Taiwan) is an artist and artistic researcher working at the intersections of critical artificial intelligence, audiovisual media…
+- [Ting-Chun Liu (劉庭均) — overview](pages/overview.md) — Ting-Chun Liu (劉庭均, born in Taipei, Taiwan) is a research-based media artist working with critical AI (a critical AI artist) and an artistic researcher. His practice…
 - [Frequently asked questions](pages/faq.md) — Short answers to questions visitors are likely to ask. Each answer links to the page it comes from.
 - [Timeline](pages/timeline.md) — Year-by-year list of works, teaching, education, awards, talks, publications, exhibitions and performances, generated from the website data.
 

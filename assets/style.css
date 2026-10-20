@@ -371,3 +371,6 @@ button.embed.lite:hover img { opacity: 1; }
 .sitemap-list a:hover, .cv-sec h2 a:hover { text-decoration-color: var(--ink); }
 .page-head .topics { grid-column: 2; margin-top: -2rem; }
 @media (max-width: 800px) { .page-head .topics { grid-column: 1; margin-top: -0.75rem; } }
+
+/* one short line of keywords under a work's title on the works list */
+.card .cap .kw { grid-column: 1 / -1; margin-top: 0.1875rem; font-size: 0.875rem; line-height: 1.45; color: var(--mut); }

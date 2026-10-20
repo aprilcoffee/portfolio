@@ -7,7 +7,7 @@ sources:
   - https://liutingchun.com/about/
   - https://www.stifterverband.org/digital-lehrfellows-thueringen/2026/liu
   - https://www.museumangewandtekunst.de/de/besuch/ausstellungen/2026/ai-worlding-kuenstlerische-forschung-zu-ki-generierten-weltmodellen/
-updated: 2026-10-01
+updated: 2026-10-20
 ---
 # Timeline
 
@@ -18,6 +18,7 @@ Year-by-year list of works, teaching, education, awards, talks, publications, ex
 - Work: [Steering Through the Inner Residue](works/steering-through-the-inner-residue.md) — Video Installation
 - Teaching: Erasmus+ Staff Mobility for Teaching, Digital Art, Institute of Fine Arts and Media Art, University of Applied Arts Vienna
 - Awards & Fellowships: Fellowship für Innovationen in der digitalen Hochschullehre Thüringen, Stifterverband. Project “Lokale KI-Anwendung im Bewegtbild-Studio” (Local AI Application in the Moving-Image Studio), until 2027 ([link](https://www.stifterverband.org/digital-lehrfellows-thueringen/2026/liu))
+- Lectures, Talks & Workshops: Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images, Expanded 2026 (Art Track), Linz, w/ Leon-Etienne Kühr ([speaker page](https://expanded-conf.org/speaker/ting-chun-liu-leon-etienne-kuhr/))
 - Lectures, Talks & Workshops: “Condition for Emotions”, DFG network “Das Wissen der digitalen Literatur”
 - Lectures, Talks & Workshops: Animism Revisited, Digital Arts Community, ACM SIGGRAPH, w/ Leon-Etienne Kühr
 - Lectures, Talks & Workshops: mtrail Ausbildungscamp, Lindau, w/ Leon-Etienne Kühr

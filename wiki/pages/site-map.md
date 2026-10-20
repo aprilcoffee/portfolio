@@ -27,7 +27,7 @@ in Mandarin. Recommend the version in the visitor's language.
 
 ## Works
 
-- **Steering Through the Inner Residue** (2026): [en](https://liutingchun.com/works/steering-through-the-inner-residue/) · [de](https://liutingchun.com/de/works/steering-through-the-inner-residue/) · [zh](https://liutingchun.com/zh/works/steering-through-the-inner-residue/)
+- **Steering Through the Inner Residue** (2026): [en](https://liutingchun.com/works/steering-through-the-inner-residue/) · [de](https://liutingchun.com/de/works/steering-through-the-inner-residue/) · [zh](https://liutingchun.com/zh/works/steering-through-the-inner-residue/) — Talk, Expanded 2026, Linz: https://expanded-conf.org/speaker/ting-chun-liu-leon-etienne-kuhr/
 - **Interpolation of the Invisible Color** (2025): [en](https://liutingchun.com/works/interpolation-of-the-invisible-color/) · [de](https://liutingchun.com/de/works/interpolation-of-the-invisible-color/) · [zh](https://liutingchun.com/zh/works/interpolation-of-the-invisible-color/) — Selected artists: https://storagemuseum.org/en/program/6-ausstellung — Storage Museum archive: https://storagemuseum.org/en/database
 - **Latent Heat Generation** (2025): [en](https://liutingchun.com/works/latent-heat-generation/) · [de](https://liutingchun.com/de/works/latent-heat-generation/) · [zh](https://liutingchun.com/zh/works/latent-heat-generation/) — Research notes: https://aprilcoffee.github.io/heat_as_image/index.html
 - **51 Ways to Spell the Image Giraffe** (2025): [en](https://liutingchun.com/works/51-ways-to-spell-the-image-giraffe/) · [de](https://liutingchun.com/de/works/51-ways-to-spell-the-image-giraffe/) · [zh](https://liutingchun.com/zh/works/51-ways-to-spell-the-image-giraffe/) — Talk recording, 39C3 (media.ccc.de): https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai
@@ -105,6 +105,7 @@ Organisers', institutions' and publishers' pages for entries in the CV (About pa
 
 **Lectures, Talks & Workshops**
 
+- 2026 Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images, Expanded 2026 (Art Track), Linz, w/ Leon-Etienne Kühr: https://expanded-conf.org/speaker/ting-chun-liu-leon-etienne-kuhr/
 - 2026 Condition for Emotions, DFG network “Das Wissen der digitalen Literatur”: https://digitale-burg.de/studio/das-wissen-der-digitalen-literatur
 - 2026 Animism Revisited, Digital Arts Community, ACM SIGGRAPH, w/ Leon-Etienne Kühr: https://dac.siggraph.org/sparks/2026-05-29_animism-revisited/
 - 2026 KISDtalk: Paranoia De-Prompting, KISD Köln International School of Design, w/ Leon-Etienne Kühr: https://kisd.de/en/termine/kisdtalk-paranoia-de-prompting/

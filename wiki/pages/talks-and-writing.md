@@ -10,7 +10,7 @@ sources:
   - https://ground-zero.khm.de/correlations/
   - https://sugarscroll.de/lectures-posts/ting-chun-liu-leon-etienne-kuehr/
   - https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai
-updated: 2026-10-01
+updated: 2026-10-20
 ---
 # Talks and writing
 
@@ -18,6 +18,7 @@ Lectures, talks, workshops and publications, as listed in the CV on the website.
 
 ## Lectures, Talks & Workshops
 
+- 2026 — Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images, Expanded 2026 (Art Track), Linz, w/ Leon-Etienne Kühr ([speaker page](https://expanded-conf.org/speaker/ting-chun-liu-leon-etienne-kuhr/); conference 9–11 September 2026; the paper is forthcoming in the ACM proceedings; see [Steering Through the Inner Residue](works/steering-through-the-inner-residue.md))
 - 2026 — “Condition for Emotions”, DFG network “Das Wissen der digitalen Literatur” ([link](https://digitale-burg.de/studio/das-wissen-der-digitalen-literatur))
 - 2026 — Animism Revisited, Digital Arts Community, ACM SIGGRAPH, w/ Leon-Etienne Kühr
 - 2026 — mtrail Ausbildungscamp, Lindau, w/ Leon-Etienne Kühr
