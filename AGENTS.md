@@ -60,7 +60,7 @@
 | `site` | `description`、`statement`、`job_title`、`home_text` | `description_de/_zh`、`statement_de/_zh`、`job_title_de/_zh`、`home_text_de/_zh` |
 
 `home_text` 是首頁下方的大字，留空時只留白不顯示（不會退回英文或 statement）；`statement` 只用在 JSON-LD、分享與 llms.txt，不顯示在首頁。
-| `works[]` | `text`、`type`、`materials`、`status` | `text_de/_zh`、`type_de/_zh`、`materials_de/_zh`、`status_de/_zh` |
+| `works[]` | `text`、`type`、`materials`、`status`、`tags`（主題標籤，list） | `text_de/_zh`、`type_de/_zh`、`materials_de/_zh`、`status_de/_zh`、`tags_de/_zh` |
 | `press[]`（曝光頁每一筆） | `note` | `note_de/_zh` |
 | `performances[]` | `note` | `note_de/_zh` |
 | `about` | `bio` | `bio_de/_zh` |
@@ -74,6 +74,9 @@
 - `works[].status`（例如 In development）顯示在作品卡與作品頁的「Status」列；留空就不顯示。
 - `press[]` 的 `group` 只能是 `watch`（講演與錄影）、`read`（相關文章）；展覽、活動、機構介紹頁不放；標題與來源不翻譯，沒有 `note_de/_zh` 時該語言顯示英文並標 `lang="en"`。
 - 聯絡信箱：`site.email`（側欄、Impressum、About）維持 gmail；`site.email_alt` 只顯示在 About 頁；`site.orcid`（只填 iD）顯示在 About 頁的信箱下方，留空就不顯示。
+- **搜尋引擎（SEO）用語**：主要敘述是 “research-based media artist working with critical AI”（`site.description`、`statement`、About 的 bio 第一句）；看不到的地方（JSON-LD 的 `jobTitle`、`occupations`、`llms.txt`）用 “Critical AI Artist”；首頁 `<title>` 刻意只放名字。文字裡一律寫全名 Ting-Chun Liu。部落格文章的作者列寫 “Ting-Chun Liu, media artist”。
+- 主題標籤：`works[].tags`（`_de/_zh` 沒填就顯示英文）顯示在作品頁的「Topics」列，也寫進 JSON-LD 的 `keywords`；各列表頁的標籤在 `build.py` 的 `UI[...]["tags"]`。
+- `data/lastmod.json` 由 `build.py` 自動維護（每頁的內容雜湊與最後更新日），給 `sitemap.xml` 的 `<lastmod>` 用，不要手改。HTML 版網站地圖在 `/sitemap/`（`/de/sitemap/`、`/zh/sitemap/`），側欄頁尾有連結。
 - 表演影片標題、合作者（`collaborators`）、年份、網址不翻譯。
 - 新增一個要翻譯的欄位時：在 `site.json` 加 `xxx_de`/`xxx_zh`，在 `build.py` 用 `tr(obj, "xxx", L)` 讀，
   並在 `admin/admin.js` 加對應的輸入框（照 `text_de`、`type_zh` 那幾行的寫法），作者才能在後台編輯。

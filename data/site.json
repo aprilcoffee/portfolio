@@ -2,7 +2,7 @@
   "site": {
     "name": "Ting-Chun Liu",
     "name_zh": "劉庭均",
-    "description": "Ting-Chun Liu is an artist working at the intersections of critical artificial intelligence, audiovisual media, and network practice.",
+    "description": "Ting-Chun Liu is a research-based media artist working with critical AI, audiovisual media and network practice.",
     "email": "tingchun.liu.tw@gmail.com",
     "chat_endpoint": "https://liutingchun-com-chat.8765498-208.workers.dev",
     "home_image": "images/wix/4eb1dd_855ab1c013ad4766ace158a9529139a7~mv2.gif",
@@ -19,15 +19,16 @@
     "base_url": "https://liutingchun.com",
     "og_image": "images/og.jpg",
     "ga_id": "G-5XL9T33VG0",
-    "statement": "Ting-Chun Liu is an artist working at the intersections of critical artificial intelligence, audiovisual media and network practice. Dissecting technological systems through feedback-driven interventions.",
+    "statement": "Ting-Chun Liu is a research-based media artist working with critical AI, audiovisual media and network practice. Dissecting technological systems through feedback-driven interventions.",
     "address": [
       "Heumarkt 14",
       "50667 Köln",
       "Deutschland"
     ],
-    "job_title": "Artist",
+    "job_title": "Critical AI Artist",
     "occupations": [
-      "Artist",
+      "Critical AI Artist",
+      "Media artist",
       "Artistic researcher",
       "Lecturer"
     ],
@@ -61,15 +62,13 @@
         "name": "Taipei, Taiwan"
       }
     },
-    "description_de": "Ting-Chun Liu ist Künstler an den Schnittstellen von kritischer künstlicher Intelligenz, audiovisuellen Medien und Netzwerkpraxis.",
-    "description_zh": "劉庭均是一位研究型媒體藝術家，創作橫跨批判性人工智慧、Audio-Visual與網路實踐。",
-    "statement_de": "Ting-Chun Liu ist Künstler an den Schnittstellen von kritischer künstlicher Intelligenz, audiovisuellen Medien und Netzwerkpraxis. Er seziert technologische Systeme durch feedbackbasierte Interventionen.",
-    "statement_zh": "劉庭均是一位藝術家，創作橫跨批判性人工智慧、影音媒體與網路實踐，以回饋驅動的介入手法，拆解科技系統。",
+    "description_de": "Ting-Chun Liu ist ein forschungsbasierter Medienkünstler, der mit kritischer KI, audiovisuellen Medien und Netzwerkpraxis arbeitet.",
+    "description_zh": "劉庭均（Ting-Chun Liu）是一位研究型媒體藝術家，以批判性 AI 為核心，創作橫跨影音媒體與網路實踐。",
+    "statement_de": "Ting-Chun Liu ist ein forschungsbasierter Medienkünstler, der mit kritischer KI, audiovisuellen Medien und Netzwerkpraxis arbeitet. Er seziert technologische Systeme durch feedbackbasierte Interventionen.",
+    "statement_zh": "劉庭均（Ting-Chun Liu）是一位研究型媒體藝術家，以批判性 AI 為核心，創作橫跨影音媒體與網路實踐，以回饋驅動的介入手法，拆解科技系統。",
     "home_text": "Sometimes I just wonder why technology leaves us obsessed, confused and overwhelmed. And yet there is something in it, novel yet ancient, delicate yet provocative, abundant yet hollow, beautiful but dangerous.\n\nThinking about it is thinking about how symbols are made, whose labor they carry, and which techniques hold them in place.",
     "home_text_de": "Manchmal frage ich mich einfach, warum Technologie uns besessen, verwirrt und überfordert zurücklässt. Und doch liegt etwas darin, neu und doch uralt, zart und doch provokant, überreich und doch hohl, schön, aber gefährlich.\n\nDarüber nachzudenken heißt, darüber nachzudenken, wie Symbole entstehen, wessen Arbeit in ihnen steckt und welche Techniken sie zusammenhalten.",
     "home_text_zh": "有時候我只是在想，為什麼科技總讓我們著迷、困惑、無所適從。然而其中有些什麼，新穎卻又古老，細膩卻又挑釁，豐盛卻又空洞，美麗卻也危險。\n\n思考它，就是思考符號如何被製造、背後承載著誰的勞動，以及哪些技術讓它們得以成立。",
-    "job_title_de": "Künstler",
-    "job_title_zh": "藝術家",
     "hidden_words": [
       "critical AI",
       "feedback",
@@ -127,7 +126,31 @@
       "text_de": "Was passiert, wenn ein System mit seinem eigenen Output konfrontiert wird? Steering through the Inner Residue geht dieser Frage nach, indem erzeugte Bilder wieder als Input eingespeist werden und der Bildprozess so seiner eigenen Spur folgt.\n\nKünstliche Intelligenz wird oft als Blackbox beschrieben: Trotz klar definierter Ein- und Ausgaben bleiben ihre inneren Mechanismen undurchsichtig. Bildgenerierungen beginnen normalerweise mit einer Textbeschreibung (Prompt), die menschliche Absichten und Erwartungen widerspiegelt. Hier wird dieser Ablauf unterbrochen: Der Text wird vollständig weggelassen, und die Maschine wird iterativ mit ihren eigenen Bildern gelenkt – menschliche Erwartungen werden durch die der Maschine ersetzt.\n\nRekursion beschreibt einen Prozess der Schleife; anders als bei der Wiederholung weicht jede Iteration leicht von der vorherigen ab, wie eine Spirale, die lineare Kausalität überschreitet und an unbekannten Koordinaten ankommt. Das Wesen der Rückkopplung ist, dass das Entstehende grundsätzlich kontingent und situativ ist – so wie ein Mikrofon vor einem Lautsprecher, dessen schrilles Feedback die Akustik des Raums ebenso hörbar macht wie die mechanische Handschrift der Elektronik.\n\nIn seinem Werk I Am Sitting in a Room (1969) nimmt der US-amerikanische Klangkünstler Alvin Lucier sich beim Lesen eines kurzen Textes auf, spielt die Aufnahme im Raum ab und nimmt sie zugleich erneut auf. Der Vorgang wird wiederholt, bis sich die Resonanzen des Raums verdichten und die Sprache allmählich verschwindet. Das verschwommene Summen der letzten Aufnahmen ist jedoch nicht bloß Rauschen, sondern die Anhäufung von Nachhall – ein Rückstand des Raums. Der rekursive Prozess macht das Darunterliegende sichtbar: Er vermisst den Raum akustisch und übersetzt ihn in Hörbares. Ähnlich lässt sich mit künstlicher Intelligenz verfahren: Die Rückkopplung navigiert durch das System der Bildgenerierung und öffnet einen Spalt, der sein Inneres zeigt.\n\nDie Bildflächen gleichen einer aufgefalteten Schachtel; jede Fläche trägt den Nachhall des Prozesses, eine Landschaft eigener Muster, die allein aus den Verfahren hervorgeht. Farben driften in übersättigte Töne, Formen zerfallen in Musterschichten, Bedeutung zerfällt zu Rauschen. Was sich mit der Zeit ansammelt, ist kein Bild, sondern ein Prozess: ein algorithmisches Artefakt, ein Rückstand, der auf nichts verweist als auf den Prozess selbst.",
       "type_de": "Videoinstallation",
       "type_zh": "錄像裝置",
-      "video_thumb": "https://i.vimeocdn.com/video/2131561516-dd24130e009a36218d32fd00a1f89b423817edd70b9cb70f2e4f8b1fb1601804-d_1280"
+      "video_thumb": "https://i.vimeocdn.com/video/2131561516-dd24130e009a36218d32fd00a1f89b423817edd70b9cb70f2e4f8b1fb1601804-d_1280",
+      "tags": [
+        "recursion",
+        "feedback",
+        "diffusion models",
+        "model collapse",
+        "cybernetics",
+        "video installation"
+      ],
+      "tags_de": [
+        "Rekursion",
+        "Feedback",
+        "Diffusionsmodelle",
+        "Modellkollaps",
+        "Kybernetik",
+        "Videoinstallation"
+      ],
+      "tags_zh": [
+        "遞迴",
+        "回饋",
+        "擴散模型",
+        "模型崩壞",
+        "控制論",
+        "影像裝置"
+      ]
     },
     {
       "slug": "interpolation-of-the-invisible-color",
@@ -178,6 +201,27 @@
           "poster": "images/video/small_shelf5_both.webp",
           "loop": true
         }
+      ],
+      "tags": [
+        "embeddings",
+        "museum collection",
+        "latent space",
+        "curating with AI",
+        "interactive installation"
+      ],
+      "tags_de": [
+        "Embeddings",
+        "Museumssammlung",
+        "latenter Raum",
+        "Kuratieren mit KI",
+        "interaktive Installation"
+      ],
+      "tags_zh": [
+        "嵌入向量",
+        "美術館典藏",
+        "潛在空間",
+        "AI 策展",
+        "互動裝置"
       ]
     },
     {
@@ -223,6 +267,30 @@
           "src": "images/video/small_latentHeat.mp4",
           "poster": "images/video/small_latentHeat.webp"
         }
+      ],
+      "tags": [
+        "GPU heat",
+        "thermal imaging",
+        "material infrastructure of AI",
+        "Stable Diffusion",
+        "semiconductors",
+        "Taiwan"
+      ],
+      "tags_de": [
+        "GPU-Abwärme",
+        "Wärmebild",
+        "materielle Infrastruktur der KI",
+        "Stable Diffusion",
+        "Halbleiter",
+        "Taiwan"
+      ],
+      "tags_zh": [
+        "GPU 廢熱",
+        "熱影像",
+        "AI 的物質基礎設施",
+        "Stable Diffusion",
+        "半導體",
+        "台灣"
       ]
     },
     {
@@ -257,7 +325,31 @@
       "text_de": "Bildmodelle lesen keine Wörter, sie lesen Token: Bruchstücke aus einem festen Wörterbuch. Das Wörterbuch von CLIP, dem Text-Encoder hinter vielen Bildmodellen, enthält rund 49.000 davon, und das Wort „giraffe“ lässt sich daraus auf 51 Arten buchstabieren, vom einzelnen Token giraffe bis zu g|i|r|a|f|f|e.\n\nDirekt in das Modell gegeben, zeichnen die meisten dieser Schreibweisen trotzdem eine Giraffe; einige driften zu einem Elefanten oder einem Pferd. Noch vor jedem Training entscheidet das Wörterbuch also mit, was sich abbilden lässt, und manche Bilder lassen sich gar nicht erst abrufen, weil das Wörterbuch bereinigt wurde.\n\nDas Wörterbuch entsteht durch Byte Pair Encoding: Die häufigsten Zeichenpaare in aus dem Netz gesammelten Texten werden immer wieder zusammengeführt. Markennamen, Plattform-Slang und Hashtags werden so zu einzelnen Token, während seltenere oder nicht englische Wörter in lange Ketten von Fragmenten zerfallen. Die Forschung behandelt diese verborgene Schicht als Material und macht sie in Sixteen Tokens for a Cave zu einer Form des Schreibens.\n\n# Vortrag\n\n51 Ways to Spell the Image Giraffe: The Hidden Politics of Token Languages in Generative AI, 39. Chaos Communication Congress (39C3), Hamburg, Dezember 2025, mit Leon-Etienne Kühr. Die Aufzeichnung ist auf media.ccc.de zu sehen.\n\nDie Forschung befindet sich in Entwicklung.",
       "text_zh": "圖像模型讀的不是文字，而是 token（詞元）：來自一本固定字典的字詞碎片。許多圖像模型背後的文字編碼器 CLIP，字典裡約有 49,000 個 token，而「giraffe」這個字可以用它拼出 51 種寫法，從單一的 token giraffe，一直到 g|i|r|a|f|f|e。\n\n把這些拼法直接送進模型，多數仍然畫出長頸鹿，有些則漂向大象或馬。在任何訓練之前，字典就已經決定了什麼能被畫出來，有些圖像甚至因為字典被「清理」過而根本無法被提示出來。\n\n這本字典由 Byte Pair Encoding 建成：從網路爬取的文字中，最常出現的字元組合被一次又一次合併。品牌名稱、平台用語與主題標籤因此成為單一 token，較少見或非英文的字詞則被拆成長長一串碎片。這項研究把這個隱藏的層次當作素材，並在《Sixteen Tokens for a Cave》中把它變成一種書寫方式。\n\n# 講演\n\n《51 Ways to Spell the Image Giraffe: The Hidden Politics of Token Languages in Generative AI》，第 39 屆混沌通訊大會（39C3），漢堡，2025 年 12 月，與 Leon-Etienne Kühr 合作。錄影可在 media.ccc.de 觀看。\n\n研究開發中。",
       "hidden": false,
-      "aliases": []
+      "aliases": [],
+      "tags": [
+        "tokenization",
+        "token language",
+        "CLIP",
+        "byte pair encoding",
+        "text-to-image",
+        "bias in AI"
+      ],
+      "tags_de": [
+        "Tokenisierung",
+        "Token-Sprache",
+        "CLIP",
+        "Byte Pair Encoding",
+        "Text-zu-Bild",
+        "Bias in KI"
+      ],
+      "tags_zh": [
+        "斷詞（tokenization）",
+        "token 語言",
+        "CLIP",
+        "Byte Pair Encoding",
+        "文字生成圖像",
+        "AI 偏見"
+      ]
     },
     {
       "slug": "sixteen-tokens-for-a-cave",
@@ -292,7 +384,31 @@
       "text_de": "CLIP, das Modell, das in vielen Bildgeneratoren Bilder und Text verbindet, liest Sprache über ein Wörterbuch von rund 49.000 Token. Ausgehend von einem Stockfoto einer Meereshöhle hat ein genetischer Algorithmus über zweihundert Generationen (Population 2048) sechzehn Token gezüchtet und dabei behalten, was CLIP näher am Bild bewertete.\n\nemail, defeats, wallart, cave, impacting, pi, peoplesvote, blames, mcclure, 👣, croati, desk, zazzle, numerous, mediter, eleng\n\nFragmente wie croati und mediter beenden ihre Wörter nie, und doch zeichnen Bildmodelle, die an der Suche nicht beteiligt waren, daraus eine Höhle. Die Token-IDs werden jedem Modell direkt übergeben, ohne den Schritt, in dem ein geschriebener Prompt in Token zerlegt würde. Die Arbeit liest solche Folgen als Poesie, die für eine Maschine geschrieben ist: Wir sind nicht die Adressat*innen, wir belauschen sie nur.\n\n# Wie nah kommt eine Beschreibung dem Foto?\n\nCLIP-Ähnlichkeit zwischen dem Zielfoto und fünf Beschreibungen:\n(fauler) Mensch, „a photo of a cave and the ocean“: 0,272\ndie sechzehn Token: 0,433\nChatGPT: 0,258\nJoyCaption Beta One: 0,271\nGemini: 0,273\n\nWeil genau dieser Wert vom Algorithmus maximiert wurde, zählt vor allem die Übertragung auf die anderen Modelle.\n\n# Stand\n\nVorarbeit, erstmals als „Prompt Reconstruction“ im Vortrag 51 Ways to Spell the Image Giraffe auf dem 39C3 in Hamburg 2025 gezeigt. Die Arbeit befindet sich in Entwicklung.",
       "text_zh": "CLIP 是許多圖像生成器中連結圖片與文字的模型，它透過一本約 49,000 個 token 的字典來讀取語言。從一張海蝕洞的圖庫照片出發，遺傳演算法歷經兩百個世代（族群規模 2048），培育出十六個 token，每一代都保留 CLIP 評分更接近這張照片的組合。\n\nemail, defeats, wallart, cave, impacting, pi, peoplesvote, blames, mcclure, 👣, croati, desk, zazzle, numerous, mediter, eleng\n\ncroati、mediter 這類碎片永遠拼不完自己的字，然而從未參與這場搜尋的圖像模型，卻能憑它們畫出一個洞穴。token 的編號被直接送進每個模型，跳過了把文字提示切成 token 的那一步。這件作品把這樣的序列當作寫給機器的詩：我們不是收信人，只是偷聽。\n\n# 一段描述與照片有多接近？\n\n目標照片與五種描述之間的 CLIP 相似度：\n（偷懶的）人類，“a photo of a cave and the ocean”：0.272\n這十六個 token：0.433\nChatGPT：0.258\nJoyCaption Beta One：0.271\nGemini：0.273\n\n由於演算法最大化的正是這個分數，真正重要的是它在其他模型上的轉移效果。\n\n# 狀態\n\n前期工作，2025 年於漢堡 39C3 的講演《51 Ways to Spell the Image Giraffe》中首次以「Prompt Reconstruction」之名展示。作品開發中。",
       "hidden": false,
-      "aliases": []
+      "aliases": [],
+      "tags": [
+        "token poetry",
+        "genetic algorithm",
+        "CLIP",
+        "text-to-image",
+        "machine reading",
+        "multimodal poetry"
+      ],
+      "tags_de": [
+        "Token-Poesie",
+        "genetischer Algorithmus",
+        "CLIP",
+        "Text-zu-Bild",
+        "maschinelles Lesen",
+        "multimodale Poesie"
+      ],
+      "tags_zh": [
+        "token 詩",
+        "遺傳演算法",
+        "CLIP",
+        "文字生成圖像",
+        "機器閱讀",
+        "多模態詩"
+      ]
     },
     {
       "slug": "just-jailbreak",
@@ -332,7 +448,31 @@
       "text_zh": "乖乖是台灣知名的零食品牌，最為人熟知的是綠色包裝的椰子口味。台灣民間相信，把一包乖乖放在故障的機器上，就能讓它「乖乖」聽話——正是取自品牌名稱的諧意。《Just Jailbreak》以這個文化現象為靈感，將它轉化為一款 AI 驅動的遊戲。\n\n在遊戲中，玩家要面對 JJ——一個喜歡模仿各種科技產品、卻總是不肯好好運作的古怪角色。JJ 頑固又愛玩，很少照指令行事，玩家必須發揮創意說服它合作，就像用乖乖「安撫」故障的機器一樣。\n\nJJ 由大型語言模型驅動，鼓勵玩家嘗試各種「越獄」技巧讓它就範：可以強硬下令、耍點小聰明、提出誘人的獎勵，或乾脆對 JJ 大灑愛心。遊戲把玩家帶進大型語言模型越獄的世界，呼應現實中使用者如何以各種文字策略，試圖繞過 OpenAI 等公司為 AI 聊天機器人設下的限制。\n\n《Just Jailbreak》邀請玩家實驗，找到自己與 JJ 溝通的方式，成為認識 LLM 越獄文化的一個有趣入口。",
       "text_de": "Kuai Kuai (乖乖) ist eine beliebte taiwanische Snackmarke, bekannt vor allem für ihre Kokos-Chips in grüner Verpackung. Einem lokalen Glauben zufolge wird defekte Technik „gehorsam“, wenn man eine Packung Kuai Kuai darauflegt – eine Anspielung auf den Namen, der übersetzt „sei brav“ bedeutet. Just Jailbreak greift dieses kulturelle Phänomen auf und macht daraus ein KI-gestütztes Spiel.\n\nIm Spiel trifft man auf JJ, eine eigenwillige Figur, die gern verschiedene Arten von Technik imitiert – aber nie so funktioniert, wie sie soll. JJ ist stur und verspielt und befolgt Anweisungen nur selten; die Spielenden müssen JJ also kreativ zur Mitarbeit überreden, ganz so, wie man mit Kuai Kuai streikende Geräte „beruhigt“.\n\nJJ basiert auf einem großen Sprachmodell und lädt dazu ein, verschiedene „Jailbreaking“-Techniken auszuprobieren: bestimmt und autoritär auftreten, ein wenig schummeln, verlockende Belohnungen anbieten oder JJ einfach mit Zuneigung überschütten. Das Spiel führt so in die Welt des LLM-Jailbreakings ein und spiegelt reale Experimente, bei denen Nutzerinnen und Nutzer mit kreativen Texten versuchen, die Beschränkungen von KI-Chatbots großer Firmen wie OpenAI zu umgehen.\n\nJust Jailbreak lädt dazu ein, zu experimentieren und einen eigenen Weg zu finden, mit JJ zu kommunizieren – ein zugänglicher Einstieg in die Kultur der LLM-Jailbreak-Strategien.",
       "type_de": "Interaktives Spiel über das Jailbreaken eines großen Sprachmodells",
-      "type_zh": "關於大型語言模型越獄的互動遊戲"
+      "type_zh": "關於大型語言模型越獄的互動遊戲",
+      "tags": [
+        "large language models",
+        "jailbreaking",
+        "game",
+        "Kuai Kuai",
+        "Taiwanese culture",
+        "human-machine relation"
+      ],
+      "tags_de": [
+        "große Sprachmodelle",
+        "Jailbreaking",
+        "Spiel",
+        "Kuai Kuai",
+        "taiwanische Kultur",
+        "Mensch-Maschine-Beziehung"
+      ],
+      "tags_zh": [
+        "大型語言模型",
+        "越獄",
+        "遊戲",
+        "乖乖",
+        "台灣文化",
+        "人機關係"
+      ]
     },
     {
       "slug": "self-cannibalizing-ai",
@@ -360,7 +500,31 @@
       "text_zh": "當機器彼此學習、在生成的過程中自我吞噬時，會發生什麼事？圖像模型能從一張隨機圖片中辨認出最快樂的人，或判斷一個人的族裔嗎？當前大多數文字生成圖像的系統，都建立在少數幾個有限的資料集、模型與演算法之上。這些模型乍看像黑盒子，仔細檢視後卻會發現，它們是由多個相互串接的模型與演算法組成的複雜管線。我們運用回授、誤用與駭入等藝術策略，拆解圖像生成模型的內部運作：讓模型反覆面對自己的輸出、拆解文字生成圖像的管線、為圖像加上標籤，並發現意想不到的相關性。講演中，我們分享對 Stable Diffusion 管線的研究、操弄大型公開圖文資料集中的美感評分、揭露 NSFW 分類機制，以及運用 CLIP（Contrastive Language-Image Pre-training）揭示這些模型在日常使用中所隱含的偏見與問題性相關。\n\n講演以我們在生成式 AI 模型上所做的各種實驗展開。首先談我們作為藝術家與程式設計者如何看待這些模型、以及我們對其工作流程的研究，接著深入探討 Stable Diffusion 的管線與資料集。研究過程中我們發現，許多關鍵環節都建立在同樣少數的資料集、模型與演算法上。這讓我們認為，若深入研究某些特定機制，或許能反思圍繞生成式 AI 的更大政治論述。我們把模型拆解為理解其運作所必需的三個步驟：資料集、嵌入與擴散。我們的例子主要以 Stable Diffusion 為基礎，但許多概念也適用於其他生成模型。\n\n隨著資料集與機器學習模型的規模和複雜度不斷增長，理解其細節變得越來越困難。像訓練 Stable Diffusion 所用的大型資料集，往往以本身也採用機器學習的演算法進行篩選。為了「提升」圖像生成品質，LAION 的龐大資料集經過一套美感預測演算法篩選，而這套演算法明顯偏好水彩與油畫。除了美感評分，圖像也會經過 NSFW 分類器評分，輸出圖像含有露骨內容的機率。這套演算法本身也帶有歧視性傾向，我們在講演中加以探討，並進一步追問：我們希望資料集由誰、以何種方式篩選與建構？\n\n許多生成模型建立在 CLIP 及其開源版本 Open-CLIP 之上，以隨機的方式連結圖像與文字：它們連接圖像與文字、將文字數位化，並計算字詞與圖像之間的距離。然而它們在訓練中高度仰賴大量圖文配對，可能因此把偏見帶進資料庫。我們進行了各種「錯誤標註」的實驗並找出其中的相關性——例如用 ThisPersonDoesNotExist 的臉孔判斷誰「快樂」、依外貌探討族裔與職業，以及分析不同文化食物的圖庫照片。結果往往與人的預期相符，但這代表什麼嗎？\n\n第三部分我們更仔細地檢視圖像生成的過程，聚焦於 Stable Diffusion 的管線。像 Stable Diffusion 這樣的生成式 AI 模型，不僅能依文字描述生成圖像，也能處理既有圖像，並依設定相當精確地重現輸入的圖像。然而當這種 AI 重製被遞迴地當作輸入時，誤差會隨著每次迭代累積。我們觀察到，依參數與設定不同，圖像會逐漸變成紫色的圖樣，或收斂成少數幾種平庸的概念。這讓人不禁追問：這些模型究竟有多傾向於回到它們學到的模式？",
       "text_de": "Was passiert, wenn Maschinen voneinander lernen und sich im generativen Prozess selbst kannibalisieren? Kann ein Bildmodell die glücklichste Person erkennen oder die Ethnie aus einem zufälligen Bild bestimmen? Die meisten aktuellen Text-zu-Bild-Systeme beruhen auf einer begrenzten Zahl von Datensätzen, Modellen und Algorithmen. Was zunächst wie eine Blackbox wirkt, entpuppt sich bei genauerem Hinsehen als komplexe Pipeline aus mehreren verketteten Modellen und Algorithmen. Mit künstlerischen Strategien wie Rückkopplung, Zweckentfremdung und Hacking legen wir die Funktionsweise von Bildgenerierungsmodellen offen: Wir konfrontieren Modelle rekursiv mit ihrem eigenen Output, zerlegen Text-zu-Bild-Pipelines, beschriften Bilder und entdecken unerwartete Korrelationen. Im Vortrag teilen wir Experimente zur Stable-Diffusion-Pipeline, zur Manipulation ästhetischer Bewertungen in großen öffentlichen Text-Bild-Datensätzen, zur NSFW-Klassifikation und zum Einsatz von CLIP (Contrastive Language-Image Pre-training), um Verzerrungen und problematische Korrelationen im alltäglichen Gebrauch dieser Modelle sichtbar zu machen.\n\nDer Vortrag stellt verschiedene Experimente rund um generative KI-Modelle vor. Wir beginnen damit, wie wir als Künstler und Programmierer diese Modelle wahrnehmen und wie wir ihre Arbeitsabläufe untersucht haben, und gehen dann auf die Stable-Diffusion-Pipeline und ihre Datensätze ein. Dabei zeigte sich, dass wesentliche Teile auf denselben wenigen Datensätzen, Modellen und Algorithmen beruhen. Daraus folgt: Wer einzelne Mechanismen genauer untersucht, kann auch über größere politische Diskurse rund um generative KI nachdenken. Wir haben die Modelle in drei wesentliche Schritte zerlegt – Datensatz, Embedding und Diffusion. Unsere Beispiele beziehen sich vor allem auf Stable Diffusion, viele Konzepte lassen sich aber auf andere generative Modelle übertragen.\n\nMit wachsender Größe und Komplexität von Datensätzen und Modellen wird es schwierig, ihre Feinheiten zu verstehen. Große Datensätze wie der für das Training von Stable Diffusion werden mit Algorithmen gefiltert, die oft selbst auf maschinellem Lernen beruhen. Um die Bildgenerierung zu „verbessern“, wurde der umfangreiche LAION-Datensatz mit einem Algorithmus zur ästhetischen Bewertung gefiltert, der eine starke Vorliebe für Aquarell- und Ölmalerei hat. Zusätzlich werden Bilder mit einem NSFW-Klassifikator bewertet, der die Wahrscheinlichkeit expliziter Inhalte schätzt. Auch dieser Algorithmus hat eigene diskriminierende Tendenzen, die wir im Vortrag untersuchen – und wir fragen, wie und von wem unsere Datensätze gefiltert und gebaut werden sollen.\n\nViele generative Modelle bauen auf CLIP und seiner Open-Source-Variante Open-CLIP auf, die Bilder und Texte stochastisch miteinander in Beziehung setzen: Sie verbinden Bild und Text, digitalisieren Text und berechnen Abstände zwischen Wörtern und Bildern. Dafür brauchen sie im Training jedoch enorme Mengen an Text-Bild-Paaren, was Verzerrungen in die Datenbasis einbringen kann. Wir haben Experimente mit verschiedenen „Falschbeschriftungen“ durchgeführt und Korrelationen aufgespürt – etwa Gesichter von ThisPersonDoesNotExist nach „Glück“ sortiert, Ethnien und Berufe anhand des Aussehens untersucht oder Stockfotos kulturell unterschiedlicher Gerichte analysiert. Die Ergebnisse entsprechen oft menschlichen Erwartungen – aber bedeutet das etwas?\n\nIm dritten Teil betrachten wir den Prozess der Bildgenerierung genauer, mit Fokus auf die Stable-Diffusion-Pipeline. Generative KI-Modelle wie Stable Diffusion können nicht nur Bilder aus Textbeschreibungen erzeugen, sondern auch vorhandene Bilder verarbeiten und diese je nach Einstellung sehr genau reproduzieren. Wird diese Reproduktion jedoch rekursiv als Input verwendet, summieren sich die Fehler mit jeder Iteration. Wir beobachteten, dass sich Bilder je nach Parametern allmählich in violette Muster oder eine begrenzte Anzahl banaler Motive verwandeln. Das wirft Fragen danach auf, wie sehr diese Modelle zu erlernten Mustern zurückkehren.",
       "type_de": "Vortrag, 37C3 — künstlerische Strategien, um generative Text-zu-Bild-Modelle offenzulegen",
-      "type_zh": "講演，37C3 — 揭露文字生成圖像模型的藝術策略"
+      "type_zh": "講演，37C3 — 揭露文字生成圖像模型的藝術策略",
+      "tags": [
+        "model collapse",
+        "recursive generation",
+        "CLIP",
+        "dataset bias",
+        "Stable Diffusion",
+        "37C3"
+      ],
+      "tags_de": [
+        "Modellkollaps",
+        "rekursive Generierung",
+        "CLIP",
+        "Datensatz-Bias",
+        "Stable Diffusion",
+        "37C3"
+      ],
+      "tags_zh": [
+        "模型崩壞",
+        "遞迴生成",
+        "CLIP",
+        "資料集偏見",
+        "Stable Diffusion",
+        "37C3"
+      ]
     },
     {
       "slug": "achtung-verwischung",
@@ -395,7 +559,28 @@
       "type_de": "Ortsspezifische Performance",
       "type_zh": "特定場域表演",
       "materials_de": "Warnaufsteller „Rutschgefahr“",
-      "materials_zh": "小心地滑立牌"
+      "materials_zh": "小心地滑立牌",
+      "tags": [
+        "restitution",
+        "museum",
+        "institutional critique",
+        "site-specific performance",
+        "Leaky Archive"
+      ],
+      "tags_de": [
+        "Restitution",
+        "Museum",
+        "Institutionskritik",
+        "ortsspezifische Performance",
+        "Leaky Archive"
+      ],
+      "tags_zh": [
+        "歸還",
+        "博物館",
+        "機構批判",
+        "在地特定表演",
+        "Leaky Archive"
+      ]
     },
     {
       "slug": "imaginary-landscape",
@@ -432,7 +617,31 @@
       "text_de": "Seit der Aufklärung ist der Strand ein touristischer Sehnsuchtsort. Mit dem Aufkommen von Massentourismus und sozialen Medien haben sich idealisierte Strandbilder mit der Wirklichkeit verflochten – mit der Folge massiver Eingriffe und Umgestaltungen an Küsten weltweit. Ausgehend von dieser Vorstellung vom schönen Strand untersucht das Projekt die einseitigen Wirklichkeiten, die Reisebilder in sozialen Medien zeigen, und legt mithilfe von KI die technischen und ästhetischen Eigenschaften aktueller Bildgenerierungsmodelle offen.\n\n# Die imaginäre Landschaft, die nie erreicht wurde\n\nDas Projekt untersucht einseitige Wirklichkeiten in Reisebildern aus sozialen Medien und zeigt technische wie ästhetische Aspekte aktueller Bildgenerierungsmodelle. Indem es Fantasien und Vorstellungen digital zusammensetzt, erschafft es ein „ideales Anderswo“, das unerreichbar bleibt. Das entstandene Modell verkörpert ein von KI geformtes kollektives Unbewusstes; die Bilder, die es hervorbringt, sind letztlich ebenso unerreichbar wie die malerischen Orte in sozialen Medien. In verschiedenen Formaten fordert das Projekt dazu auf, die Authentizität dieser Bilder und das kollektive Bewusstsein, das sie verkörpern, zu hinterfragen.\n\n# Historischer Kontext: das Strandbild als imaginäre Landschaft\n\nDie Darstellung des Meeres in der westlichen Literatur betonte lange unbekannte Gefahren und Katastrophen. Der französische Historiker Alain Corbin untersucht in „Meereslust. Das Abendland und die Entdeckung der Küste“ (engl. „The Lure of the Sea“, 1994), wie sich die westliche Wahrnehmung des Meeres veränderte. Vor dem Mittelalter wurde das Meer häufig mit dem Unbekannten verbunden – mit Fluten, Stürmen, Ungeheuern und Unheil. Mit dem wissenschaftlichen Fortschritt der Aufklärung verlor das Unbekannte im 17. Jahrhundert allmählich an Schrecken. Als die Wissenschaft die Rätsel des Meeres zu entschlüsseln begann, wurde der Strand zum Symbol von Moderne und Tourismus; Adel und Bürgertum gründeten Seebäder, und der Strand wurde zum Sinnbild des modernen Tourismus.\n\n# KI-Verzerrungen durch soziale Medien\n\nDas wichtigste Publikum menschlich erzeugter Texte und Bilder sind heute nicht mehr Menschen, sondern Maschinen. Computer nutzen menschliche Wissenssysteme, um Texte und Bilder zu erzeugen – doch dieses Lernen ist nicht frei von Verzerrungen. Trainingsbilder aus sozialen Medien oder Online-Bibliotheken zeigen meist makellose, helle, weiße Strände. Diese Repräsentationsverzerrung lässt den Computer Strandbilder als künstliche Kulisse begreifen. Wenn die Maschine diese Bilder verarbeitet und neue erzeugt, kommt bei der Frage, ob ein Ergebnis dem Begriff „Strand“ entspricht, zusätzlich eine Bewertungsverzerrung hinzu. Diese mehrfachen Verzerrungen führen dazu, dass Transformer-Modelle oft banale Strandbilder erzeugen.",
       "type_de": "Laufendes Projekt, audiovisuelle Performance",
       "type_zh": "進行中計畫、影音表演",
-      "video_thumb": "https://i.vimeocdn.com/video/1864253378-e0839fb7317ce1555fd28dfe1739bfe567a2d7acab8f49f657e7753953b6e804-d_1280"
+      "video_thumb": "https://i.vimeocdn.com/video/1864253378-e0839fb7317ce1555fd28dfe1739bfe567a2d7acab8f49f657e7753953b6e804-d_1280",
+      "tags": [
+        "generative AI",
+        "tourism",
+        "beach images",
+        "audio-visual performance",
+        "social media",
+        "collective unconscious"
+      ],
+      "tags_de": [
+        "generative KI",
+        "Tourismus",
+        "Strandbilder",
+        "audiovisuelle Performance",
+        "Social Media",
+        "kollektives Unbewusstes"
+      ],
+      "tags_zh": [
+        "生成式 AI",
+        "觀光",
+        "海灘影像",
+        "影音表演",
+        "社群媒體",
+        "集體無意識"
+      ]
     },
     {
       "slug": "beneath",
@@ -460,7 +669,28 @@
       "type_de": "Klanginstallation",
       "type_zh": "聲音裝置",
       "materials_de": "Richtlautsprecher, LED-Lichtleisten",
-      "materials_zh": "指向性喇叭、LED 燈條"
+      "materials_zh": "指向性喇叭、LED 燈條",
+      "tags": [
+        "sound installation",
+        "directional speakers",
+        "LED",
+        "ocean waves",
+        "architecture"
+      ],
+      "tags_de": [
+        "Klanginstallation",
+        "Richtlautsprecher",
+        "LED",
+        "Meereswellen",
+        "Architektur"
+      ],
+      "tags_zh": [
+        "聲音裝置",
+        "指向性喇叭",
+        "LED",
+        "海浪",
+        "建築"
+      ]
     },
     {
       "slug": "sun",
@@ -491,7 +721,31 @@
       "text_zh": "在網路上用瀏覽器開啟，造成手機發熱的太陽。\n\n如何理解網路上的物件或視覺，又應以何種感知來理解它？當網際網路成為當代速度的變體，伺服器以光速傳遞程式碼，經過手機軟體的重新編譯，形成當代習以為常的視聽感受，每一支連線的手機，都能得到觀看這一複製品的經驗。\n\n熱量是當代電子產品進行運算與通訊之必然消耗，發熱則是數位在現實空間留下的足跡。這件作品是基於即時演算生成的網頁，在手機上製造一個數位化太陽。以手機介面為主體，晶片發熱作為媒介，模糊與消融網路與真實世界之間二元對立的邊界。",
       "text_de": "Eine Sonne, die auf dem Handy läuft und es dabei erwärmt.\n\nIch habe mich immer gefragt, wie Menschen Objekte oder Bilder im Internet begreifen – und mit welchem Sinn wir sie verstehen. Die Arbeit basiert auf einer in p5.js geschriebenen Webseite, die auf den Handys aller Besucherinnen und Besucher eine digitale Sonne erzeugt. Während die Sonne läuft, erwärmt sich das Telefon langsam – die Grenze zwischen Digitalem und Realem verschwimmt.",
       "type_de": "Netzkunst (p5.js-Website)",
-      "type_zh": "網路藝術（p5.js 網頁）"
+      "type_zh": "網路藝術（p5.js 網頁）",
+      "tags": [
+        "internet art",
+        "p5.js",
+        "heat",
+        "mobile phone",
+        "computation",
+        "memorial"
+      ],
+      "tags_de": [
+        "Netzkunst",
+        "p5.js",
+        "Wärme",
+        "Smartphone",
+        "Berechnung",
+        "Gedenken"
+      ],
+      "tags_zh": [
+        "網路藝術",
+        "p5.js",
+        "熱",
+        "手機",
+        "運算",
+        "紀念"
+      ]
     },
     {
       "slug": "bring-us-somewhere",
@@ -513,7 +767,19 @@
       ],
       "type_de": "Video",
       "type_zh": "錄像",
-      "video_thumb": "https://i.vimeocdn.com/video/1078886525-48553bc367e77e3847476847086c2e0eac911025db0629d419fccd2e97dce895-d_1280"
+      "video_thumb": "https://i.vimeocdn.com/video/1078886525-48553bc367e77e3847476847086c2e0eac911025db0629d419fccd2e97dce895-d_1280",
+      "tags": [
+        "video art",
+        "moving image"
+      ],
+      "tags_de": [
+        "Videokunst",
+        "Bewegtbild"
+      ],
+      "tags_zh": [
+        "影像作品",
+        "動態影像"
+      ]
     },
     {
       "slug": "faces",
@@ -537,7 +803,22 @@
       "text_de": "Ich schaue Menschen nicht gern in die Augen.",
       "type_de": "Video",
       "type_zh": "錄像",
-      "video_thumb": "https://i.vimeocdn.com/video/1078885125-317194ad371bb909a8bc2efeccc8e4c13d08d2146b3abbb37e170ead86c91cd9-d_1280"
+      "video_thumb": "https://i.vimeocdn.com/video/1078885125-317194ad371bb909a8bc2efeccc8e4c13d08d2146b3abbb37e170ead86c91cd9-d_1280",
+      "tags": [
+        "video art",
+        "gaze",
+        "portrait"
+      ],
+      "tags_de": [
+        "Videokunst",
+        "Blick",
+        "Porträt"
+      ],
+      "tags_zh": [
+        "影像作品",
+        "凝視",
+        "肖像"
+      ]
     },
     {
       "slug": "segmentary-moonlight",
@@ -565,7 +846,28 @@
       "type_de": "Lichtinstallation",
       "type_zh": "燈光裝置",
       "materials_de": "7-Segment-Anzeigen, Gerüst, Holzplatten — 200 × 100 × 250 cm",
-      "materials_zh": "七段顯示器、鷹架、木板 — 200 × 100 × 250 cm"
+      "materials_zh": "七段顯示器、鷹架、木板 — 200 × 100 × 250 cm",
+      "tags": [
+        "light installation",
+        "seven-segment display",
+        "lantern festival",
+        "Tainan",
+        "public art"
+      ],
+      "tags_de": [
+        "Lichtinstallation",
+        "Siebensegmentanzeige",
+        "Laternenfest",
+        "Tainan",
+        "Kunst im öffentlichen Raum"
+      ],
+      "tags_zh": [
+        "光裝置",
+        "七段顯示器",
+        "燈會",
+        "台南",
+        "公共藝術"
+      ]
     },
     {
       "slug": "message-in-a-bottle",
@@ -598,7 +900,28 @@
       "text_zh": "我一直在想，究竟在臉書上發文的意義是什麼？純然的分享、或想在生命中註記特定事件的發生？有些人不想讓外人了解太多的自己，而選擇極少發文，僅只對自己喜愛的貼文按讚。有些人天天發文，如有多不完的話、滴滴答答的噴濺在社群網絡中。在我的想象中，似乎也沒有一個絕對的答案。在臉書上的文章一篇一篇來去、浮光掠影，真的有人注意過其中的內容嗎？長篇大論與短篇簡談，在表述自我的意義上有沒有任何差別？或是其實這一切都是如此一無所謂，重點則停在發文的瞬間與慾望，所有在臉書貼文大海之上漂流的內容都失了意義。只因有了發文的想法，不需具有發文的內容，千言萬語與一句話的力量在慾望的滿足感上是相同的，都是求得最終在海量的貼文中載浮載沉。\n\n我不禁想像著，能否有個方式去表達一種無以名狀的表述；以一個貼文的形式去訴說「貼文」這件事本身。Thu 20:58:34，短短一行字，在貼文當中不具有任何意義，卻同時達成了「貼文」的這項目的。發文的時間被記錄在文章當中，而不只是臉書內建流動的「32分鐘前」。這篇文章同時具有意義也同時在內文中沒有文字的意義。當有千言萬語想要說，不如說出一席毫無關係意義的話語。\n\n「Mon 01:56:33」僅只是一篇貼文，內文本身註記著自身呱呱墜地的精準時刻。自那時起，它便在網路社群這片汪洋載浮載沉，等待著任何人不經意的拾起。像一封瓶中信，唯瓶身只註記了生產日期，打開瓶子卻是寂靜的空洞，而拾起的人，便不自覺著尋找著故事或事件來填補那項空洞，但內容物對我始終不是絕對。反而是瓶子本身，才是我意圖去形塑的狀態。說來矯情，我當它是一種浪漫，一種自身在海洋中載浮載沉的浪漫。每隔一段時間丟出一個瓶子。好似藉由瓶子本身宣示著身在海中之感嘆，卻也不想就此講死，仿佛仍舊享受著漂泊⋯⋯。",
       "text_de": "Was bedeutet es, auf Facebook zu posten? Teilen – oder einen wichtigen Moment im Leben markieren? Manche zeigen wenig von sich, posten selten und „liken“ nur, was ihnen gefällt. Andere posten täglich und verstreuen ihre Gedanken im sozialen Netz. Eine eindeutige Antwort gibt es wohl nicht. Tag für Tag werden Beiträge geteilt und geschrieben – interessiert sich jemand für ihren Inhalt? Macht die Fülle der Worte oder ein fein gewählter Begriff einen Unterschied? Oder geht es nur darum, den Drang zum Posten zu stillen, egal was darin steht? Viele Worte oder ein einziger Satz – alles treibt am Ende auf dem Ozean der Beiträge.\n\nIch frage mich, ob es einen Weg gibt, diesen unsagbaren Zustand auszudrücken: mit einem Beitrag, der vom Posten selbst erzählt. „Thu 20:58:34“ – ein paar Zeichen, die nichts bedeuten und doch genau das Ziel des Postens treffen. Die genaue Uhrzeit steht im Beitrag selbst, nicht das vom System vorgegebene „vor 32 Minuten“. Der Beitrag hat eine Bedeutung und ist zugleich bedeutungslos.\n\n„Mon 01:56:23“ ist nur ein Beitrag, dessen Inhalt den Moment seiner Entstehung festhält. Von diesem Augenblick an treibt er auf dem Ozean der sozialen Medien und wartet darauf, zufällig aufgelesen zu werden. Wie eine Flaschenpost – nur dass auf dem Etikett ihr Geburtsdatum steht. Öffnet man die Flasche, ist sie leer, und wer sie findet, füllt die Leere mit einer eigenen Geschichte. Der Inhalt ist für mich nicht entscheidend; die Flasche selbst ist der Zustand, den ich ausdrücken will.",
       "type_de": "Facebook-Beiträge",
-      "type_zh": "臉書貼文"
+      "type_zh": "臉書貼文",
+      "tags": [
+        "social media",
+        "Facebook",
+        "time",
+        "net art",
+        "posting"
+      ],
+      "tags_de": [
+        "Social Media",
+        "Facebook",
+        "Zeit",
+        "Netzkunst",
+        "Posten"
+      ],
+      "tags_zh": [
+        "社群媒體",
+        "Facebook",
+        "時間",
+        "網路藝術",
+        "貼文"
+      ]
     },
     {
       "slug": "i-kept-repeating-the-unfamiliar-self",
@@ -622,7 +945,28 @@
       "text_de": "Während meines Austauschs in Prag waren mir Sprache und Kultur fremd. Ohne die Bindung an die Heimat blieben nur Fleisch und Körper – der Anfang meiner Arbeit mit Aktionen. Im Prozess wurde mir bewusst, wie wenig ich über meinen Körper wusste und wie ungenau ich ihn steuere.\n\nDas Video zeigt eine einfache, wiederholte Geste, die immer dasselbe Ziel erreichen und einen Klang erzeugen will: Ich merke mir den Zustand des Körpers und versuche, das erwartete Ergebnis zu erfüllen. Die Wiederholungen werden dann zu einer einzigen Bewegung verdichtet.\n\nDurch das Wiederholen einer einzelnen Geste in einem verdichteten Bild frage ich nach der Authentizität des bewegten Bildes. Einzelbilder verbinden Bild und Ton; mit dem Klang der Umgebung und des Raumes werden alle Frames der Geste zusammengepresst. Ich habe eine einzelne Bewegung mehr als hundertmal aufgenommen, aus jeder Aufnahme einige Frames ausgewählt und zu einer Bewegung zusammengefügt – der Versuch, eine Ordnung der Geste herzustellen. Zugleich wird die Ungenauigkeit des Körpers sichtbar.",
       "type_de": "Videoinstallation",
       "type_zh": "錄像裝置",
-      "video_thumb": "https://i.vimeocdn.com/video/762455522-ab7252269ea7906c7e2ddf8e1a5ee56a93a082da629d2deaadce5c93cf73e8fc-d_1280"
+      "video_thumb": "https://i.vimeocdn.com/video/762455522-ab7252269ea7906c7e2ddf8e1a5ee56a93a082da629d2deaadce5c93cf73e8fc-d_1280",
+      "tags": [
+        "video installation",
+        "repetition",
+        "gesture",
+        "language and culture",
+        "Prague"
+      ],
+      "tags_de": [
+        "Videoinstallation",
+        "Wiederholung",
+        "Geste",
+        "Sprache und Kultur",
+        "Prag"
+      ],
+      "tags_zh": [
+        "影像裝置",
+        "重複",
+        "手勢",
+        "語言與文化",
+        "布拉格"
+      ]
     },
     {
       "slug": "light-segment",
@@ -652,7 +996,28 @@
       "type_de": "Lichtinstallation",
       "type_zh": "燈光裝置",
       "materials_de": "7-Segment-Leuchten, Lichtstativ, Winkelstahl, selbst entworfene Platine — 175 × 35 × 30 cm",
-      "materials_zh": "七段顯示燈、燈架、角鋼、自製電路板 — 175 × 35 × 30 cm"
+      "materials_zh": "七段顯示燈、燈架、角鋼、自製電路板 — 175 × 35 × 30 cm",
+      "tags": [
+        "light installation",
+        "seven-segment display",
+        "countdown",
+        "information flow",
+        "digital era"
+      ],
+      "tags_de": [
+        "Lichtinstallation",
+        "Siebensegmentanzeige",
+        "Countdown",
+        "Informationsfluss",
+        "digitales Zeitalter"
+      ],
+      "tags_zh": [
+        "光裝置",
+        "七段顯示器",
+        "倒數",
+        "資訊流動",
+        "數位時代"
+      ]
     },
     {
       "slug": "inevitable-cross-of-the-parallel",
@@ -680,7 +1045,28 @@
       "text_de": "Wir können nicht jedes nahende Ziel kontrollieren. Beziehungen im Digitalen folgen stets Regeln; ob man sie befolgt oder nicht, drückt den eigenen Willen aus. Sich dem Spiel zu ergeben oder sich ihm zu stellen, formt eine weitere Ebene der Entsprechung. Die organische Bewegung des Körpers und die künstlichen Sprachanweisungen werden zu Mitteln der Kommunikation und des Wettstreits.\n\nJede augenblickliche Entscheidung prägt die Zukunft. Am Kreuzungspunkt können wir die Regeln nie brechen. Doch innerhalb der Regeln bleiben unendliche Möglichkeiten, solange der Körper den eigenen Willen ausdrückt. Schmerz hält lange an, der Geist mag ermüden – all das ist der Preis dafür, das unausweichliche Ziel zu erreichen.\n\nIm Raum finden zwei Wettkämpfe gleichzeitig statt: eine Schachpartie zwischen zwei Computern und ein Wettstreit zweier Willen und Körper. Erster Akt – zuhören und den Regeln gehorchen: Die Performer folgen den Zugansagen der Computer und markieren jeden Zug mit Klebeband auf dem Boden. Zweiter Akt – beobachten und den Regeln folgen: Ohne Computer gehen beide die zuvor markierten Wege ab; sie entscheiden frei über die Richtung, müssen aber auf den selbst gelegten Pfaden bleiben.",
       "type_de": "Performance-Dokumentation",
       "type_zh": "表演紀錄",
-      "video_thumb": "https://i.vimeocdn.com/video/672050321-1925ba001eca50dc7386f4fd5e368ad068a1b35e4a77998f1493037350b35b8b-d_1280"
+      "video_thumb": "https://i.vimeocdn.com/video/672050321-1925ba001eca50dc7386f4fd5e368ad068a1b35e4a77998f1493037350b35b8b-d_1280",
+      "tags": [
+        "performance",
+        "rules",
+        "computers",
+        "chess",
+        "body"
+      ],
+      "tags_de": [
+        "Performance",
+        "Regeln",
+        "Computer",
+        "Schach",
+        "Körper"
+      ],
+      "tags_zh": [
+        "表演",
+        "規則",
+        "電腦",
+        "西洋棋",
+        "身體"
+      ]
     },
     {
       "slug": "take-off-the-clothes",
@@ -704,7 +1090,25 @@
       "text_de": "Anweisung: Zieh die Kleidung aus, suche nach dem inneren Klang.\n\nDie Performance entstand während meines Austauschs an der AVU in Prag. Alles um mich herum war mir fremd – Kulturen, Sprachen, sogar Körper. Damals begann ich, mit Aktionen zu arbeiten, und war erschrocken, wie wenig ich über das Empfinden meines eigenen Körpers wusste.\n\nIn Europa war es kalt, ich trug viel mehr Kleidung als sonst in Taiwan. Daraus entstand die Idee: mich in der Öffentlichkeit auszuziehen und dem Unterschied nachzuspüren zwischen dem, der ich war, dem, der ich bin, und dem Publikum vor Ort.\n\nZurück in Taiwan habe ich die Performance noch einmal aufgeführt, um sie in einem anderen Kontext zu verstehen.",
       "type_de": "Performance-Dokumentation",
       "type_zh": "表演紀錄",
-      "video_thumb": "https://i.vimeocdn.com/video/672038145-afd80a83cc575a74fcb90db967fcc76c211cbe5cb16a9df1a60929c6ddce40d1-d_1280"
+      "video_thumb": "https://i.vimeocdn.com/video/672038145-afd80a83cc575a74fcb90db967fcc76c211cbe5cb16a9df1a60929c6ddce40d1-d_1280",
+      "tags": [
+        "performance",
+        "body",
+        "inner sound",
+        "instruction"
+      ],
+      "tags_de": [
+        "Performance",
+        "Körper",
+        "innerer Klang",
+        "Anweisung"
+      ],
+      "tags_zh": [
+        "表演",
+        "身體",
+        "內在聲音",
+        "指令"
+      ]
     },
     {
       "slug": "hyper-link-into-image",
@@ -731,7 +1135,28 @@
       "type_de": "Netzkunst",
       "type_zh": "網路藝術",
       "materials_de": "Router, Mobiltelefon, Code in Ruby",
-      "materials_zh": "路由器、手機、Ruby 程式"
+      "materials_zh": "路由器、手機、Ruby 程式",
+      "tags": [
+        "internet art",
+        "hyperlink",
+        "captive portal",
+        "Raspberry Pi",
+        "web browsing"
+      ],
+      "tags_de": [
+        "Netzkunst",
+        "Hyperlink",
+        "Captive Portal",
+        "Raspberry Pi",
+        "Web-Browsing"
+      ],
+      "tags_zh": [
+        "網路藝術",
+        "超連結",
+        "captive portal",
+        "Raspberry Pi",
+        "網頁瀏覽"
+      ]
     },
     {
       "slug": "fall",
@@ -842,7 +1267,7 @@
     }
   ],
   "about": {
-    "bio": "Ting-Chun Liu (Taipei, Taiwan) is an artist whose practice and research operate at the intersections of critical artificial intelligence, audiovisual media, and network practice. Through dissecting technological systems with feedback-driven interventions, he examines how perception, aesthetics, and power dynamics propagate through computational processes.",
+    "bio": "Ting-Chun Liu (Taipei, Taiwan) is a research-based media artist working with critical AI. His practice and research operate at the intersections of critical artificial intelligence, audiovisual media, and network practice. Through dissecting technological systems with feedback-driven interventions, he examines how perception, aesthetics, and power dynamics propagate through computational processes.",
     "sections": [
       {
         "title": "Teaching",
@@ -1375,8 +1800,8 @@
         "title_zh": "新媒體專案與劇場"
       }
     ],
-    "bio_de": "Ting-Chun Liu (Taipeh, Taiwan) ist Künstler, dessen Praxis und Forschung an den Schnittstellen von kritischer künstlicher Intelligenz, audiovisuellen Medien und Netzwerkpraxis angesiedelt sind. Indem er technologische Systeme mit feedbackbasierten Interventionen seziert, untersucht er, wie sich Wahrnehmung, Ästhetik und Machtverhältnisse durch computergestützte Prozesse fortpflanzen.",
-    "bio_zh": "劉庭均（台灣台北）是一位藝術家，其創作與研究位於批判性人工智慧、影音媒體與網路實踐的交會處。他以回饋驅動的介入手法拆解科技系統，探究感知、美學與權力關係如何在運算過程中傳遞與擴散。"
+    "bio_de": "Ting-Chun Liu (Taipeh, Taiwan) ist ein forschungsbasierter Medienkünstler, der mit kritischer KI arbeitet. Seine Praxis und Forschung sind an den Schnittstellen von kritischer künstlicher Intelligenz, audiovisuellen Medien und Netzwerkpraxis angesiedelt. Indem er technologische Systeme mit feedbackbasierten Interventionen seziert, untersucht er, wie sich Wahrnehmung, Ästhetik und Machtverhältnisse durch computergestützte Prozesse fortpflanzen.",
+    "bio_zh": "劉庭均（台灣台北）是一位研究型媒體藝術家，專注於批判性 AI。其創作與研究位於批判性人工智慧、影音媒體與網路實踐的交會處。他以回饋驅動的介入手法拆解科技系統，探究感知、美學與權力關係如何在運算過程中傳遞與擴散。"
   },
   "friends": [
     {

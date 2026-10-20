@@ -26,8 +26,8 @@
 <link rel="alternate" type="application/rss+xml" title="Ting-Chun Liu — Blog" href="/blog/feed.xml">
 <script async src="/assets/analytics.js?v=3eef9b37" data-ga="G-5XL9T33VG0"></script>
 <link rel="stylesheet" href="/assets/fonts/fonts.css?v=51411f72">
-<link rel="stylesheet" href="/assets/style.css?v=7a780a56">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Raspberry Pi 以 Python 使用 OSC 通訊協定傳送資料", "datePublished": "2019-09-02", "inLanguage": "zh-Hant", "url": "https://liutingchun.com/blog/raspberrypi-python-osc/", "image": "https://liutingchun.com/images/wix/4eb1dd_c9bf8ebe609346249c6ff339643a8f68~mv2.webp", "description": "在 Python 中使用 OSC 通訊協定傳輸資料：Server / Client 的基本寫法。", "author": {"@type": "Person", "name": "Ting-Chun Liu", "url": "https://liutingchun.com/"}, "mainEntityOfPage": "https://liutingchun.com/blog/raspberrypi-python-osc/"}</script>
+<link rel="stylesheet" href="/assets/style.css?v=568ca665">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Raspberry Pi 以 Python 使用 OSC 通訊協定傳送資料", "datePublished": "2019-09-02", "inLanguage": "zh-Hant", "url": "https://liutingchun.com/blog/raspberrypi-python-osc/", "image": "https://liutingchun.com/images/wix/4eb1dd_c9bf8ebe609346249c6ff339643a8f68~mv2.webp", "description": "在 Python 中使用 OSC 通訊協定傳輸資料：Server / Client 的基本寫法。", "author": {"@type": "Person", "name": "Ting-Chun Liu", "url": "https://liutingchun.com/", "jobTitle": "Media artist"}, "mainEntityOfPage": "https://liutingchun.com/blog/raspberrypi-python-osc/"}</script>
 </head>
 <body>
 <aside class="side" id="side" lang="en">
@@ -42,11 +42,11 @@
     <div><a href="mailto:tingchun.liu.tw@gmail.com">tingchun.liu.tw@gmail.com</a></div>
     <div class="links"><a href="https://www.instagram.com/liu_tingchun/" target="_blank" rel="noopener">Instagram</a><a href="https://github.com/aprilcoffee" target="_blank" rel="noopener">GitHub</a></div>
     <div>© 2026 Ting-Chun Liu</div>
-    <div class="legal"><a href="/impressum/" lang="de">Impressum</a><a href="/datenschutz/">Privacy</a></div>
+    <div class="legal"><a href="/impressum/" lang="de">Impressum</a><a href="/datenschutz/">Privacy</a><a href="/sitemap/">Site map</a></div>
   </div>
 </aside>
 <main class="main" id="main">
-<article class="post"><aside class="post-info" lang="en"><h1 lang="zh-Hant">Raspberry Pi 以 Python 使用 OSC 通訊協定傳送資料</h1><dl class="meta"><dt>Date</dt><dd>2019-09-02</dd><dt>Category</dt><dd>technique</dd></dl><a class="back" href="/blog/">← Blog Archive</a></aside><div class="prose post-body"><p>這篇來寫寫如何在Python當中使用OSC通訊協定傳輸基本的數字，稍微解釋一下何為OSC還有其應用範圍，然後做一個簡單的Server/Client端的使用說明，比較複雜的用途(Broadcast、Bundle、或是如何做複雜Parsing)就先跳過, 簡單易懂為主。</p>
+<article class="post"><aside class="post-info" lang="en"><h1 lang="zh-Hant">Raspberry Pi 以 Python 使用 OSC 通訊協定傳送資料</h1><dl class="meta"><dt>Date</dt><dd>2019-09-02</dd><dt>Category</dt><dd>technique</dd><dt>Author</dt><dd><a href="https://liutingchun.com/about/">Ting-Chun Liu, media artist</a></dd></dl><a class="back" href="/blog/">← Blog Archive</a></aside><div class="prose post-body"><p>這篇來寫寫如何在Python當中使用OSC通訊協定傳輸基本的數字，稍微解釋一下何為OSC還有其應用範圍，然後做一個簡單的Server/Client端的使用說明，比較複雜的用途(Broadcast、Bundle、或是如何做複雜Parsing)就先跳過, 簡單易懂為主。</p>
 <p>這篇使用的語言主要以 Python 為主，TouchDesigner, Processing, Unity 或是 MaxMsp 的 OSC 網路教學資源很多很多就自己查吧。看完這篇再搭配之前的 python GPIO 撰寫，就可以利用自己的 Raspberry Pi 和 PureData 製作自製電子樂器了～～</p>
 <p>OSC全名為 Open Sound Control，是個基於 UDP 的通訊協定(也可以用 TCP 不過就不贅述)，被大量應用於聲音相關軟體，可以做區域網路內簡單資料的傳輸。不管是跨機器、或是跨軟體，都是傳輸資料簡單好用的工具。舉例來說，當我要將 Ableton Live 中某一軌聲音的音量視覺化，便可以傳送一個 OSC 封包給 Processing 或是TouchDesigner，得到這個參數之後，便可以做調整。或是在基於 Raspberry Pi 中以 Python 撰寫的 GPIO 收到感測器訊號時，也可以將參數傳送到 PureData 來生成聲音。一個OSC的封包主要分為兩種OSC Message或是OSC Bundle，這邊以比較簡單常用的Message為主解釋。</p>
 <p>一個 OSC 的 Message 基本上分為三個部分</p>

@@ -26,8 +26,8 @@
 <link rel="alternate" type="application/rss+xml" title="Ting-Chun Liu — Blog" href="/blog/feed.xml">
 <script async src="/assets/analytics.js?v=3eef9b37" data-ga="G-5XL9T33VG0"></script>
 <link rel="stylesheet" href="/assets/fonts/fonts.css?v=51411f72">
-<link rel="stylesheet" href="/assets/style.css?v=7a780a56">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Raspberry Pi 互動影片切換與播放", "datePublished": "2019-01-23", "inLanguage": "zh-Hant", "url": "https://liutingchun.com/blog/raspberry-pi-video-switching/", "image": "https://liutingchun.com/images/wix/4eb1dd_c8b9c468c85b427c911c6ef70fc26633~mv2_d_3360_2100_s_2.webp", "description": "以 Python GPIO 與 omxplayer 在 Raspberry Pi 上做互動影片切換播放。", "author": {"@type": "Person", "name": "Ting-Chun Liu", "url": "https://liutingchun.com/"}, "mainEntityOfPage": "https://liutingchun.com/blog/raspberry-pi-video-switching/"}</script>
+<link rel="stylesheet" href="/assets/style.css?v=568ca665">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Raspberry Pi 互動影片切換與播放", "datePublished": "2019-01-23", "inLanguage": "zh-Hant", "url": "https://liutingchun.com/blog/raspberry-pi-video-switching/", "image": "https://liutingchun.com/images/wix/4eb1dd_c8b9c468c85b427c911c6ef70fc26633~mv2_d_3360_2100_s_2.webp", "description": "以 Python GPIO 與 omxplayer 在 Raspberry Pi 上做互動影片切換播放。", "author": {"@type": "Person", "name": "Ting-Chun Liu", "url": "https://liutingchun.com/", "jobTitle": "Media artist"}, "mainEntityOfPage": "https://liutingchun.com/blog/raspberry-pi-video-switching/"}</script>
 </head>
 <body>
 <aside class="side" id="side" lang="en">
@@ -42,11 +42,11 @@
     <div><a href="mailto:tingchun.liu.tw@gmail.com">tingchun.liu.tw@gmail.com</a></div>
     <div class="links"><a href="https://www.instagram.com/liu_tingchun/" target="_blank" rel="noopener">Instagram</a><a href="https://github.com/aprilcoffee" target="_blank" rel="noopener">GitHub</a></div>
     <div>© 2026 Ting-Chun Liu</div>
-    <div class="legal"><a href="/impressum/" lang="de">Impressum</a><a href="/datenschutz/">Privacy</a></div>
+    <div class="legal"><a href="/impressum/" lang="de">Impressum</a><a href="/datenschutz/">Privacy</a><a href="/sitemap/">Site map</a></div>
   </div>
 </aside>
 <main class="main" id="main">
-<article class="post"><aside class="post-info" lang="en"><h1 lang="zh-Hant">Raspberry Pi 互動影片切換與播放</h1><dl class="meta"><dt>Date</dt><dd>2019-01-23</dd><dt>Category</dt><dd>technique</dd></dl><a class="back" href="/blog/">← Blog Archive</a></aside><div class="prose post-body"><p>這篇來談談近期如何使用 Raspberry Pi 進行互動的影片切換播放。一些用詞上如果有錯誤還請閱讀的大大見諒，並留言幫助我提出修正以分享正確資訊給更多朋友。另外附上上次忘記提及的小小功能，Raspberry Pi最討人厭的小閃電符號移除。</p>
+<article class="post"><aside class="post-info" lang="en"><h1 lang="zh-Hant">Raspberry Pi 互動影片切換與播放</h1><dl class="meta"><dt>Date</dt><dd>2019-01-23</dd><dt>Category</dt><dd>technique</dd><dt>Author</dt><dd><a href="https://liutingchun.com/about/">Ting-Chun Liu, media artist</a></dd></dl><a class="back" href="/blog/">← Blog Archive</a></aside><div class="prose post-body"><p>這篇來談談近期如何使用 Raspberry Pi 進行互動的影片切換播放。一些用詞上如果有錯誤還請閱讀的大大見諒，並留言幫助我提出修正以分享正確資訊給更多朋友。另外附上上次忘記提及的小小功能，Raspberry Pi最討人厭的小閃電符號移除。</p>
 <p>這篇文主要談談如何使用 Raspberry Pi 透過 python 來進行電子控制，以及影片播放，關於馬達運作以及GPIO輸出的部分會先跳過，主要講input，開發環境在Python 2.7 上，都是內建在RPi裏頭，我習慣的撰寫方式是使用vim，然後利用python的GPIO library進行互動的部分。透過subprocess的方式，開啟omxplayer來播放全螢幕影片。最初建立這樣的架構時是使用在<a href="https://gunter292.wixsite.com/gunter/copy-of-moonlight-segment" target="_blank" rel="noopener">林瑜亮的作品</a>上，為了方便展出不使用電腦，便利用Raspberry Pi 同時當播放器與互動的控制。作品運作技術大致上來說，便是有兩段不同的跑步小人動畫，以投影機放在線性馬達的方式隨著投影機移動，每當線性馬達抵達其中一端(以微動開關觸發)便會觸發馬達往另一個方向移動，並且切換影片，千言萬語無法形容作品，瑜亮下個月會在台北數位藝術中心展出，可以直接去看作品 &lt;3</p>
 <figure><img src="/images/wix/4eb1dd_3f8ef3988dba403bb7850d50376fe759~mv2_d_2448_3264_s_4_2.webp" alt="" loading="lazy" decoding="async" onerror="if(this.src!=='/images/wix/4eb1dd_3f8ef3988dba403bb7850d50376fe759~mv2_d_2448_3264_s_4_2.webp')this.src='/images/wix/4eb1dd_3f8ef3988dba403bb7850d50376fe759~mv2_d_2448_3264_s_4_2.webp'"></figure>
 <p>一般會談到為什麼不使用Processing或Arduino來進行簡單的互動prototype，主要的原因在於Processing在Raspberry Pi上必須使用「GL Video」這套Library來跑影片，然而執行效率實在堪憂，為了給自己一點挑戰，便嘗試把互動的部分組合影像。並使用omxplayer來代理processing播放影片的角色。</p>

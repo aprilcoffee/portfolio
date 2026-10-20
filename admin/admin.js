@@ -74,6 +74,15 @@
     return h('label', {}, [label, input]);
   }
 
+  // list of short words edited as "a, b, c"
+  function tagsField(label, obj, key) {
+    var input = h('input', { type: 'text', value: (obj[key] || []).join(', ') });
+    input.addEventListener('input', function () {
+      obj[key] = input.value.split(',').map(function (x) { return x.trim(); }).filter(Boolean); save();
+    });
+    return h('label', {}, [label, input]);
+  }
+
   // list of objects edited as "a | b | c" lines
   function lines(label, owner, key, cols, hint, cls) {
     function ser(arr) {
@@ -213,6 +222,8 @@
       h('div', { className: 'row' }, [field('形式（德文 DE）', w, 'type_de'), field('媒材（德文 DE）', w, 'materials_de')]),
       h('div', { className: 'row' }, [field('形式（中文）', w, 'type_zh'), field('媒材（中文）', w, 'materials_zh')]),
       h('div', { className: 'row' }, [field('合作 With', w, 'collaborators'), field('影片 Vimeo / YouTube 網址', w, 'video')]),
+      tagsField('主題標籤 Topics（逗號分隔；顯示在作品頁並給搜尋引擎）', w, 'tags'),
+      h('div', { className: 'row' }, [tagsField('主題標籤 DE（留空＝德文頁顯示英文）', w, 'tags_de'), tagsField('主題標籤 中文（留空＝中文頁顯示英文）', w, 'tags_zh')]),
       field('說明文字 English（空一行＝分段；以「# 」開頭＝小標題）', w, 'text', { area: true, cls: 'tall' }),
       field('說明文字 Deutsch（留空＝德文頁顯示英文）', w, 'text_de', { area: true, cls: 'tall' }),
       field('說明文字 中文（留空＝中文頁顯示英文）', w, 'text_zh', { area: true, cls: 'tall' }),
