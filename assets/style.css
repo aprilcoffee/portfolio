@@ -361,7 +361,7 @@ button.embed.lite:hover img { opacity: 1; }
 /* topic tags (a plain line of keywords) and the HTML site map */
 .topics { margin-top: 0.875rem; font-size: 0.9062rem; line-height: 1.55; color: var(--mut); max-width: 46rem; }
 .topics .mono { margin-right: 0.5rem; }
-.contact-note { margin: 0.25rem 0 0 5.5rem; font-size: 0.9062rem; line-height: 1.55; color: var(--mut); }
+.contact-note { margin: 0.25rem 0 0 5.5rem; max-width: 38rem; font-size: 0.9062rem; line-height: 1.55; color: var(--mut); }
 .contact-note + .topics { margin-top: 0.75rem; }
 .contact + .topics { margin-top: 0.5rem; }
 .about-top .topics { display: grid; grid-template-columns: 5.5rem 1fr; margin-top: 0.5rem; }
