@@ -716,7 +716,7 @@ for L in LANGS:
             thumb = w.get("video_thumb") or cover_of(w)
             lds.append({k: v for k, v in {
                 "@context": "https://schema.org", "@type": "VideoObject", "name": w["title"], "description": desc,
-                "thumbnailUrl": asset_abs(thumb) if thumb else None, "uploadDate": (w.get("year") or "")[:4] or None,
+                "thumbnailUrl": asset_abs(thumb) if thumb else None, "uploadDate": ("%s-01-01T00:00:00+00:00" % w["year"][:4]) if (w.get("year") or "")[:4].isdigit() else None,
                 "embedUrl": ("https://player.vimeo.com/video/%s" % vid[1] if vid[0] == "vimeo"
                              else "https://www.youtube-nocookie.com/embed/%s" % vid[1]),
                 "inLanguage": HREFLANG[L], "creator": {"@type": "Person", "name": S["name"], "url": abs_url(P)}}.items() if v})
