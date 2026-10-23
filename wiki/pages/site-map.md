@@ -18,6 +18,7 @@ in Mandarin. Recommend the version in the visitor's language.
 - **Home** (statement, selected works, "ask about the work"): [en](https://liutingchun.com/) · [de](https://liutingchun.com/de/) · [zh](https://liutingchun.com/zh/)
 - **Works** (all works, 20): [en](https://liutingchun.com/works/) · [de](https://liutingchun.com/de/works/) · [zh](https://liutingchun.com/zh/works/)
 - **Performance** (audio-visual performance videos): [en](https://liutingchun.com/performance/) · [de](https://liutingchun.com/de/performance/) · [zh](https://liutingchun.com/zh/performance/)
+- **Workshops** (workshops and lectures on local AI, embeddings, bias): [en](https://liutingchun.com/workshops/) · [de](https://liutingchun.com/de/workshops/) · [zh](https://liutingchun.com/zh/workshops/)
 - **About** (biography and CV: teaching, education, awards, talks, publications, exhibitions): [en](https://liutingchun.com/about/) · [de](https://liutingchun.com/de/about/) · [zh](https://liutingchun.com/zh/about/)
 - **Press & Media** (talk recordings and texts by others): [en](https://liutingchun.com/press/) · [de](https://liutingchun.com/de/press/) · [zh](https://liutingchun.com/zh/press/)
 - **Blog archive** (notes on works, technical write-ups; in Mandarin): https://liutingchun.com/blog/

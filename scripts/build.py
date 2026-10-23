@@ -27,7 +27,7 @@ D = json.load(open(os.path.join(ROOT, "data", "site.json"), encoding="utf-8"))
 S = D["site"]
 BASE = S["base_url"].rstrip("/")
 PREFIX = urlparse(BASE).path.rstrip("/") + "/"  # "/" at liutingchun.com
-SECTIONS = ["works", "performance", "about", "press", "blog", "friends"]
+SECTIONS = ["works", "performance", "workshops", "about", "press", "blog", "friends"]
 
 esc = lambda s: html.escape(str(s or ""), quote=True)
 works = [w for w in D["works"] if not w.get("hidden")]
@@ -242,12 +242,17 @@ def read_post(slug):
     return open(p, encoding="utf-8").read() if os.path.exists(p) else ""
 
 
-def summary(text, n=160):
+def summary(text, n=160, words=False):
     t = re.sub(r"!\[[^\]]*\]\([^)]*\)|```.*?```", " ", text or "", flags=re.S)
     t = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", t)
     t = re.sub(r"https?://\S+|[#>*_`]", " ", t)
     t = re.sub(r"\s+", " ", t).strip()
-    return t if len(t) <= n else t[:n - 1].rstrip() + "…"
+    if len(t) <= n:
+        return t
+    cut = t[:n - 1]
+    if words and " " in cut:  # do not end in the middle of a word
+        cut = cut.rsplit(" ", 1)[0]
+    return cut.rstrip(" ,;:-") + "…"
 
 
 # ---------- languages ----------
@@ -261,7 +266,7 @@ LANG_NAME = {"en": "EN", "de": "DE", "zh": "中文"}
 
 UI = {
     "en": {
-        "nav": {"works": "Works", "performance": "Performance", "about": "About", "press": "Press & Media", "blog": "Blog (archived)", "friends": "Friends"},
+        "nav": {"works": "Works", "performance": "Performance", "workshops": "Workshops", "about": "About", "press": "Press & Media", "blog": "Blog (archived)", "friends": "Friends"},
         "menu": "Menu", "language": "Language", "privacy": "Privacy",
         "selected": "Selected works", "all_works": "All works (%d) →",
         "works_lead": "Installations, performances, internet art and artistic research, %s–%s.",
@@ -271,9 +276,9 @@ UI = {
                  "performance": "audio-visual performance, live performance, generative AI, sound and image",
                  "about": "Critical AI, generative art, artistic research, cybernetics, internet art, audio-visual performance",
                  "press": "talks, recordings, papers, critical AI",
-                 "friends": "artists, collaborators"},
+                 "workshops": "local AI, embedding practice, AI bias, workshops, lectures"},
         "sitemap": "Site map", "sitemap_lead": "Every page of this website.",
-        "sitemap_desc": "Site map of the website of %s: works, performance, press, about, blog.",
+        "sitemap_desc": "Site map of the website of %s: works, performance, workshops, press, about, blog.",
         "Year": "Year", "Status": "Status", "Type": "Type", "Materials": "Materials", "With": "With", "Link": "Link",
         "work_desc": "%s (%s), %s by %s.", "work": "work",
         "perf_title": "Audio-Visual Performance",
@@ -283,7 +288,10 @@ UI = {
         "blog_title": "Blog Archive",
         "blog_lead": "Notes on works, and technical write-ups on Raspberry Pi, Processing and Python. The posts are written in Mandarin.",
         "blog_desc": "Blog archive of %s: notes on artworks and technical write-ups on Raspberry Pi, Processing and Python.",
-        "friends_lead": "Artists and collaborators.", "friends_desc": "Friends and fellow artists of %s.",
+        "friends_desc": "Friends and fellow artists of %s.",
+        "workshops_lead": "Workshops and lectures on local AI usage, embedding practice, and understanding biases in AI models.",
+        "workshops_desc": "Workshops and lectures by %s on local AI usage, embedding practice, and biases in AI models.",
+        "workshops_ask": "Workshop and lecture requests: please get in touch by email.",
         "press_lead": "Recordings and texts by others that show, discuss or cite the work.",
         "press_desc": "Press and media about %s: talk recordings, texts that discuss or cite the work.",
         "press_groups": {"watch": "Talks and recordings", "read": "Texts about the work"},
@@ -297,7 +305,7 @@ UI = {
         "ask_refusal": "I can’t answer that here, but ask me anything about my work.",
     },
     "de": {
-        "nav": {"works": "Arbeiten", "performance": "Performance", "about": "Über mich", "press": "Presse & Medien", "blog": "Blog (archiviert)", "friends": "Freunde"},
+        "nav": {"works": "Arbeiten", "performance": "Performance", "workshops": "Workshops", "about": "Über mich", "press": "Presse & Medien", "blog": "Blog (archiviert)", "friends": "Freunde"},
         "menu": "Menü", "language": "Sprache", "privacy": "Datenschutz",
         "selected": "Ausgewählte Arbeiten", "all_works": "Alle Arbeiten (%d) →",
         "works_lead": "Installationen, Performances, Netzkunst und künstlerische Forschung, %s–%s.",
@@ -307,9 +315,9 @@ UI = {
                  "performance": "audiovisuelle Performance, Live-Performance, generative KI, Klang und Bild",
                  "about": "Kritische KI, generative Kunst, künstlerische Forschung, Kybernetik, Netzkunst, audiovisuelle Performance",
                  "press": "Vorträge, Aufzeichnungen, Texte, kritische KI",
-                 "friends": "Künstler*innen, Kooperationspartner*innen"},
+                 "workshops": "lokale KI, Embedding-Praxis, KI-Bias, Workshops, Vorträge"},
         "sitemap": "Seitenübersicht", "sitemap_lead": "Alle Seiten dieser Website.",
-        "sitemap_desc": "Seitenübersicht der Website von %s: Arbeiten, Performance, Presse, Über mich, Blog.",
+        "sitemap_desc": "Seitenübersicht der Website von %s: Arbeiten, Performance, Workshops, Presse, Über mich, Blog.",
         "Year": "Jahr", "Status": "Status", "Type": "Art", "Materials": "Material", "With": "Mit", "Link": "Link",
         "work_desc": "%s (%s), %s von %s.", "work": "Arbeit",
         "perf_title": "Audiovisuelle Performance",
@@ -319,7 +327,10 @@ UI = {
         "blog_title": "Blog-Archiv",
         "blog_lead": "Notizen zu Arbeiten und technische Anleitungen zu Raspberry Pi, Processing und Python. Die Beiträge sind auf Chinesisch (Mandarin) verfasst.",
         "blog_desc": "Blog-Archiv von %s: Notizen zu Arbeiten und technische Anleitungen zu Raspberry Pi, Processing und Python.",
-        "friends_lead": "Künstler*innen und Kooperationspartner*innen.", "friends_desc": "Freund*innen und befreundete Künstler*innen von %s.",
+        "friends_desc": "Freund*innen und befreundete Künstler*innen von %s.",
+        "workshops_lead": "Workshops und Vorträge zu lokaler KI-Anwendung, Embedding-Praxis und zum Verständnis von Biases in KI-Modellen.",
+        "workshops_desc": "Workshops und Vorträge von %s zu lokaler KI-Anwendung, Embedding-Praxis und Biases in KI-Modellen.",
+        "workshops_ask": "Anfragen für Workshops und Vorträge richten Sie bitte per E-Mail an mich.",
         "press_lead": "Aufzeichnungen und Texte Dritter, die die Arbeit zeigen, besprechen oder zitieren.",
         "press_desc": "Presse und Medien zu %s: Vortragsaufzeichnungen, Texte, die die Arbeit besprechen oder zitieren.",
         "press_groups": {"watch": "Vorträge und Aufzeichnungen", "read": "Texte über die Arbeit"},
@@ -333,7 +344,7 @@ UI = {
         "ask_refusal": "Darauf kann ich hier nicht antworten. Fragen Sie mich gern zu meiner Arbeit.",
     },
     "zh": {
-        "nav": {"works": "作品", "performance": "表演", "about": "關於", "press": "曝光", "blog": "部落格（封存）", "friends": "朋友"},
+        "nav": {"works": "創作計畫", "performance": "表演", "workshops": "工作坊", "about": "關於", "press": "媒體與曝光", "blog": "部落格（封存）", "friends": "朋友"},
         "menu": "選單", "language": "語言", "privacy": "隱私權",
         "selected": "精選作品", "all_works": "全部作品（%d）→",
         "works_lead": "裝置、表演、網路藝術與藝術研究，%s–%s。",
@@ -343,9 +354,9 @@ UI = {
                  "performance": "影音表演、現場演出、生成式 AI、聲音與影像",
                  "about": "批判性 AI、生成藝術、藝術研究、控制論、網路藝術、影音表演",
                  "press": "講演、錄影、論文、批判性 AI",
-                 "friends": "藝術家、合作夥伴"},
+                 "workshops": "本地端 AI、embedding 實作、AI 偏見、工作坊、講座"},
         "sitemap": "網站地圖", "sitemap_lead": "這個網站的所有頁面。",
-        "sitemap_desc": "%s網站的網站地圖：作品、表演、曝光、關於、部落格。",
+        "sitemap_desc": "%s網站的網站地圖：創作計畫、表演、工作坊、媒體與曝光、關於、部落格。",
         "Year": "年份", "Status": "狀態", "Type": "類型", "Materials": "媒材", "With": "合作", "Link": "連結",
         "work_desc": "%s（%s），%s，%s。", "work": "作品",
         "perf_title": "影音表演",
@@ -355,7 +366,10 @@ UI = {
         "blog_title": "部落格 Blog Archive",
         "blog_lead": "作品筆記，以及 Raspberry Pi、Processing 與 Python 的技術文章。",
         "blog_desc": "%s的部落格文章彙整：作品筆記，以及 Raspberry Pi、Processing 與 Python 技術文章。",
-        "friends_lead": "藝術家與合作夥伴。", "friends_desc": "%s的朋友、合作夥伴與藝術家夥伴，以及他們的作品網站連結。",
+        "friends_desc": "%s的朋友、合作夥伴與藝術家夥伴，以及他們的作品網站連結。",
+        "workshops_lead": "關於本地端 AI 的使用、embedding 實作，以及理解 AI 模型中偏見的工作坊與講座。",
+        "workshops_desc": "%s的工作坊與講座：本地端 AI 的使用、embedding 實作，以及 AI 模型中的偏見。",
+        "workshops_ask": "工作坊與講座邀約，請來信聯繫。",
         "press_lead": "他人拍攝、討論或引用這些作品的錄影與文章。",
         "press_desc": "%s的曝光與報導：講演錄影，以及討論或引用作品的文章。",
         "press_groups": {"watch": "講演與錄影", "read": "相關文章"},
@@ -705,7 +719,8 @@ for L in LANGS:
         by = u["work_by"] % (tr(w, "type", L) or u["work"], lname(L), w.get("year"))
         # an optional "summary" (+ _de/_zh) replaces the opening of the text, e.g. when a work opens with a poem
         lead = tr(w, "summary", L) or text
-        desc = (by + ("" if L == "zh" else " ") + summary(lead, 130)) if lead else generic
+        room = (100 if L == "zh" else 155) - len(by) - 1  # keep the whole description within what a result shows
+        desc = (by + ("" if L == "zh" else " ") + summary(lead, max(room, 40), words=L != "zh")) if lead else generic
         ld = {"@context": "https://schema.org", "@type": "CreativeWork", "name": w["title"],
               "alternateName": w.get("title_zh") or None, "dateCreated": w.get("year", "")[:4],
               "genre": tr(w, "type", L) or None, "url": abs_url(P + "works/%s/" % w["slug"]), "inLanguage": HREFLANG[L],
@@ -763,6 +778,25 @@ for L in LANGS:
              esc(u["Topics"]), esc(u["tags"]["about"]), cv),
          ld=dict(person(L), description=bio, keywords=u["tags"]["about"]), og_type="profile", section="about", lang=L, alts=each("about/"))
 
+    # workshops: entries come from site.json "workshops" (images in images/workshops/); the page works without any
+    shops = ""
+    for ws in D.get("workshops", []):
+        if ws.get("hidden"):
+            continue
+        meta_line = " · ".join(x for x in (ws.get("year"), tr(ws, "place", L), tr(ws, "host", L)) if x)
+        pics = "".join('<figure>%s</figure>' % img(i["src"] if isinstance(i, dict) else i, 1200,
+                                                    (i.get("alt") if isinstance(i, dict) else "") or ws["title"])
+                       for i in ws.get("images", []))
+        shops += ('<section class="cv-sec workshop"><h2>%s</h2><div>%s<div class="prose">%s</div>%s</div></section>' % (
+            esc(tr(ws, "title", L)), '<p class="mono">%s</p>' % esc(meta_line) if meta_line else "",
+            prose(tr(ws, "text", L)), '<div class="workshop-pics">%s</div>' % pics if pics else ""))
+    page(P + "workshops/", u["nav"]["workshops"], u["workshops_desc"] % lname(L),
+         page_head(u["nav"]["workshops"], u["workshops_lead"]) + shops +
+         '<p class="contact"><span class="mono">%s</span><a href="mailto:%s">%s</a></p><p class="contact-note">%s</p>' % (
+             esc(u["Email"]), esc(S.get("email_alt") or S["email"]), esc(S.get("email_alt") or S["email"]), esc(u["workshops_ask"])),
+         ld=webpage_ld("CollectionPage", P + "workshops/", u["nav"]["workshops"], u["workshops_desc"] % lname(L), L, u["tags"]["workshops"]),
+         section="workshops", lang=L, alts=each("workshops/"))
+
     # press: recordings, texts and pages by others that show or discuss the work
     press_html = ""
     for g, gname in u["press_groups"].items():
@@ -808,9 +842,9 @@ for L in LANGS:
             esc(f["url"]), thumb, esc(f["name"]))
 
     page(P + "friends/", u["nav"]["friends"], u["friends_desc"] % lname(L),
-         page_head(u["nav"]["friends"], u["friends_lead"], u["tags"]["friends"]) +
+         page_head(u["nav"]["friends"]) +
          '<div class="grid friends">%s</div>' % "".join(friend(f) for f in D.get("friends", [])),
-         ld=webpage_ld("CollectionPage", P + "friends/", u["nav"]["friends"], u["friends_desc"] % lname(L), L, u["tags"]["friends"]),
+         ld=webpage_ld("CollectionPage", P + "friends/", u["nav"]["friends"], u["friends_desc"] % lname(L), L, ""),
          section="friends", lang=L, alts=each("friends/"))
 
     # HTML site map: every page in one list, for visitors and for crawlers
@@ -823,6 +857,7 @@ for L in LANGS:
          smap(S["name"], url(P)) +
          smap(u["nav"]["works"], url(P + "works/"), [(w["title"], url(P + "works/%s/" % w["slug"])) for w in works]) +
          smap(u["perf_title"], url(P + "performance/")) +
+         smap(u["nav"]["workshops"], url(P + "workshops/")) +
          smap(u["about"], url(P + "about/")) +
          smap(u["nav"]["press"], url(P + "press/")) +
          smap(u["nav"]["blog"], url(P + "blog/"), [(p["title"], url("blog/%s/" % p["slug"])) for p in posts],
