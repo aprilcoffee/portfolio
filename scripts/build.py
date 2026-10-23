@@ -703,7 +703,9 @@ for L in LANGS:
         generic = u["work_desc"] % (w["title"], w.get("year"), tr(w, "type", L) or u["work"], lname(L))
         # the description names the artist in full, then the work's own text
         by = u["work_by"] % (tr(w, "type", L) or u["work"], lname(L), w.get("year"))
-        desc = (by + ("" if L == "zh" else " ") + summary(text, 130)) if text else generic
+        # an optional "summary" (+ _de/_zh) replaces the opening of the text, e.g. when a work opens with a poem
+        lead = tr(w, "summary", L) or text
+        desc = (by + ("" if L == "zh" else " ") + summary(lead, 130)) if lead else generic
         ld = {"@context": "https://schema.org", "@type": "CreativeWork", "name": w["title"],
               "alternateName": w.get("title_zh") or None, "dateCreated": w.get("year", "")[:4],
               "genre": tr(w, "type", L) or None, "url": abs_url(P + "works/%s/" % w["slug"]), "inLanguage": HREFLANG[L],

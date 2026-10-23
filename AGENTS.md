@@ -71,6 +71,7 @@
 - **作品標題不翻譯。** `works[].title` 各語言都一樣；`works[].title_zh` 不是翻譯，而是作品的中文名，三種語言的頁面都會顯示在英文標題旁。
   `site.name_zh`（劉庭均）也一樣。
 - CV 行沒有翻譯時，`build.py` 會給那一行加 `lang="en"`，讓瀏覽器與搜尋引擎知道這段是英文。
+- `works[].summary`（選填，+ `_de/_zh`）：搜尋結果與分享用的描述。只有作品文字開頭不適合當描述時才填（例如 Sixteen Tokens for a Cave 以 token 詩開頭）；沒填就用文字開頭。
 - `works[].status`（例如 In development）顯示在作品卡與作品頁的「Status」列；留空就不顯示。
 - `press[]` 的 `group` 只能是 `watch`（講演與錄影）、`read`（相關文章）；展覽、活動、機構介紹頁不放；標題與來源不翻譯，沒有 `note_de/_zh` 時該語言顯示英文並標 `lang="en"`。
 - 聯絡信箱：`site.email`（側欄、Impressum、About）維持 gmail；`site.email_alt`（Weimar 信箱）是 About 頁顯示的聯絡信箱（沒填就用 `site.email`）；`site.orcid`（只填 iD）有填才會在 About 頁出現，目前留空。頁尾沒有 HTML 網站地圖的連結（`/sitemap/` 仍在 `sitemap.xml` 裡）。
