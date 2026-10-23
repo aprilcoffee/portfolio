@@ -19,13 +19,38 @@
   // what can be asked. They pause while the visitor is typing or an answer is coming.
   var ex = [];
   try { ex = JSON.parse(input.getAttribute('data-ex') || '[]'); } catch (e) {}
-  var phBase = input.getAttribute('placeholder'), phAt = -1;
+  var phBase = input.getAttribute('placeholder'), phAt = -1, phRaf = 0;
+  var noise = '.:-=+*#%@/\\|<>_~';
+  // The new prompt settles into place: each character flickers through ASCII noise and
+  // resolves left to right (ease-out), in about 0.7 s.
+  function swapPlaceholder(to) {
+    var from = input.getAttribute('placeholder') || '', t0 = null, dur = 700;
+    cancelAnimationFrame(phRaf);
+    function frame(now) {
+      if (busy || input.value || document.activeElement === input) { input.setAttribute('placeholder', to); return; }
+      if (t0 === null) t0 = now;
+      var k = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - k, 3), n = Math.max(from.length, to.length), out = '';
+      for (var i = 0; i < n; i++) {
+        var settle = (i + 1) / n * 0.75;           // character i resolves once e passes this
+        if (e >= settle + 0.25 * (1 - settle)) out += to.charAt(i);
+        else if (to.charAt(i) === ' ' && e > settle) out += ' ';
+        else out += noise.charAt(Math.floor(Math.random() * noise.length));
+      }
+      input.setAttribute('placeholder', k < 1 ? out.replace(/\s+$/, '') || '.' : to);
+      if (k < 1) phRaf = requestAnimationFrame(frame);
+    }
+    phRaf = requestAnimationFrame(frame);
+  }
   if (ex.length && !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
     setInterval(function () {
       if (busy || input.value || document.activeElement === input || document.hidden) return;
       phAt = (phAt + 1) % (ex.length + 1);
-      input.setAttribute('placeholder', phAt === ex.length ? phBase : ex[phAt]);
+      swapPlaceholder(phAt === ex.length ? phBase : ex[phAt]);
     }, 3800);
+    input.addEventListener('focus', function () {
+      cancelAnimationFrame(phRaf);
+      input.setAttribute('placeholder', phAt < 0 || phAt === ex.length ? phBase : ex[phAt]);
+    });
   }
   var last = null;   // the previous exchange, sent along as context: [question, answer]
   var busy = false;
