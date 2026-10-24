@@ -96,6 +96,16 @@ in Mandarin. Recommend the version in the visitor's language.
 
 Organisers', institutions' and publishers' pages for entries in the CV (About page).
 
+**Teaching**
+
+- 2025– Lecturer and Artistic Associate (Künstlerischer Mitarbeiter), Faculty of Art and Design, Bauhaus University Weimar: https://www.uni-weimar.de/de/kunst-und-gestaltung/struktur/lehrgebiete-personen/visuelle-kommunikation/ting-chun-liu/
+- 2022–2024 Student Assistant, Experimental Informatics, Academy of Media Arts Cologne: https://ground-zero.khm.de/about/
+
+**Awards & Fellowships**
+
+- 2026 Fellowship für Innovationen in der digitalen Hochschullehre Thüringen, Stifterverband. Project “Lokale KI-Anwendung im Bewegtbild-Studio” (Local AI Application in the Moving-Image Studio), until 2027: https://www.stifterverband.org/digital-lehrfellows-thueringen/2026/liu
+- 2025 Weizenbaum-Studienpreis, FIfF e.V. (Forum InformatikerInnen für Frieden und gesellschaftliche Verantwortung). Postgraduate thesis: Heat as Generative Image Making: https://www.fiff.de/weizenbaum-preise/studienpreis/
+
 **Exhibitions**
 
 - 2026 WIP Arts & Technology Festival: Flows, CYENS, Nicosia, w/ Leon-Etienne Kühr: https://wip.cyens.org.cy/wip-2026-flows/
@@ -146,16 +156,6 @@ Organisers', institutions' and publishers' pages for entries in the CV (About pa
 - 2024 Positioning – A Prerequisite for Immersion, Digiarts, National Taiwan Museum of Fine Arts: https://www.digiarts.org.tw/DigiArts/DataBasePage/4_236170297334000/Chi
 - 2022 Poetic Materialization – Regarding Midjourney, [ ] ground zero – poetics of technics and cognition: https://ground-zero.khm.de/portfolio/disruptive-news-22-english/#poet
 - 2021 The Rule Becomes the Author!, [ ] ground zero – poetics of technics and cognition: https://ground-zero.khm.de/portfolio/_ell_-worl_-the-rule-becomes-the-author/
-
-**Awards & Fellowships**
-
-- 2026 Fellowship für Innovationen in der digitalen Hochschullehre Thüringen, Stifterverband. Project “Lokale KI-Anwendung im Bewegtbild-Studio” (Local AI Application in the Moving-Image Studio), until 2027: https://www.stifterverband.org/digital-lehrfellows-thueringen/2026/liu
-- 2025 Weizenbaum-Studienpreis, FIfF e.V. (Forum InformatikerInnen für Frieden und gesellschaftliche Verantwortung). Postgraduate thesis: Heat as Generative Image Making: https://www.fiff.de/weizenbaum-preise/studienpreis/
-
-**Teaching**
-
-- 2025– Lecturer and Artistic Associate (Künstlerischer Mitarbeiter), Faculty of Art and Design, Bauhaus University Weimar: https://www.uni-weimar.de/de/kunst-und-gestaltung/struktur/lehrgebiete-personen/visuelle-kommunikation/ting-chun-liu/
-- 2022–2024 Student Assistant, Experimental Informatics, Academy of Media Arts Cologne: https://ground-zero.khm.de/about/
 
 **Education**
 

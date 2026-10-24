@@ -1471,6 +1471,61 @@
     "bio": "Ting-Chun Liu (Taipei, Taiwan) is a research-based media artist working with critical AI. His practice and research operate at the intersections of critical artificial intelligence, audiovisual media, and network practice. Through dissecting technological systems with feedback-driven interventions, he examines how perception, aesthetics, and power dynamics propagate through computational processes.",
     "sections": [
       {
+        "title": "Teaching",
+        "items": [
+          {
+            "year": "2025–",
+            "text": "Lecturer and Artistic Associate (Künstlerischer Mitarbeiter), Faculty of Art and Design, Bauhaus University Weimar",
+            "url": "https://www.uni-weimar.de/de/kunst-und-gestaltung/struktur/lehrgebiete-personen/visuelle-kommunikation/ting-chun-liu/",
+            "text_zh": "講師暨藝術研究員（Künstlerischer Mitarbeiter），威瑪包浩斯大學藝術與設計學院"
+          },
+          {
+            "year": "2026",
+            "text": "Erasmus+ Staff Mobility for Teaching, Digital Art, Institute of Fine Arts and Media Art, University of Applied Arts Vienna",
+            "url": "",
+            "text_zh": "Erasmus+ 教學人員交流（Staff Mobility for Teaching），維也納應用藝術大學 美術與媒體藝術研究所 數位藝術系"
+          },
+          {
+            "year": "2024",
+            "text": "Guest Lecturer (Lehrbeauftragter), Chair of Media Environments, Faculty of Art and Design, Bauhaus University Weimar",
+            "url": "",
+            "text_zh": "客座講師（Lehrbeauftragter），威瑪包浩斯大學藝術與設計學院 媒體環境組（Chair of Media Environments）"
+          },
+          {
+            "year": "2022–2024",
+            "text": "Student Assistant, Experimental Informatics, Academy of Media Arts Cologne",
+            "url": "https://ground-zero.khm.de/about/",
+            "text_zh": "學生助理，科隆媒體藝術學院 實驗資訊學（Experimental Informatics）"
+          }
+        ],
+        "title_de": "Lehre",
+        "title_zh": "教學"
+      },
+      {
+        "title": "Awards & Fellowships",
+        "items": [
+          {
+            "year": "2026",
+            "text": "Overseas exhibition grant, National Culture and Arts Foundation (NCAF, Taiwan), for Steering Through the Inner Residue at WIP Arts & Technology Festival, Nicosia",
+            "text_zh": "國家文化藝術基金會（國藝會）海外展出補助，《Steering Through the Inner Residue》於尼科西亞 WIP 藝術與科技節展出"
+          },
+          {
+            "year": "2026",
+            "text": "Fellowship für Innovationen in der digitalen Hochschullehre Thüringen, Stifterverband. Project “Lokale KI-Anwendung im Bewegtbild-Studio” (Local AI Application in the Moving-Image Studio), until 2027",
+            "url": "https://www.stifterverband.org/digital-lehrfellows-thueringen/2026/liu",
+            "text_zh": "圖林根邦數位高教創新獎助（Fellowship für Innovationen in der digitalen Hochschullehre Thüringen），德國科學捐助者協會（Stifterverband）。計畫「Lokale KI-Anwendung im Bewegtbild-Studio」（動態影像工作室中的本地人工智慧應用），至 2027 年"
+          },
+          {
+            "year": "2025",
+            "text": "Weizenbaum-Studienpreis, FIfF e.V. (Forum InformatikerInnen für Frieden und gesellschaftliche Verantwortung). Postgraduate thesis: Heat as Generative Image Making",
+            "url": "https://www.fiff.de/weizenbaum-preise/studienpreis/",
+            "text_zh": "Weizenbaum 學位論文獎（Weizenbaum-Studienpreis），FIfF e.V.（資訊工作者和平與社會責任論壇）。研究所論文：Heat as Generative Image Making"
+          }
+        ],
+        "title_de": "Auszeichnungen & Fellowships",
+        "title_zh": "獎項與獎助"
+      },
+      {
         "title": "Exhibitions",
         "items": [
           {
@@ -1796,61 +1851,6 @@
         ],
         "title_de": "Publikationen & Texte",
         "title_zh": "出版與寫作"
-      },
-      {
-        "title": "Awards & Fellowships",
-        "items": [
-          {
-            "year": "2026",
-            "text": "Overseas exhibition grant, National Culture and Arts Foundation (NCAF, Taiwan), for Steering Through the Inner Residue at WIP Arts & Technology Festival, Nicosia",
-            "text_zh": "國家文化藝術基金會（國藝會）海外展出補助，《Steering Through the Inner Residue》於尼科西亞 WIP 藝術與科技節展出"
-          },
-          {
-            "year": "2026",
-            "text": "Fellowship für Innovationen in der digitalen Hochschullehre Thüringen, Stifterverband. Project “Lokale KI-Anwendung im Bewegtbild-Studio” (Local AI Application in the Moving-Image Studio), until 2027",
-            "url": "https://www.stifterverband.org/digital-lehrfellows-thueringen/2026/liu",
-            "text_zh": "圖林根邦數位高教創新獎助（Fellowship für Innovationen in der digitalen Hochschullehre Thüringen），德國科學捐助者協會（Stifterverband）。計畫「Lokale KI-Anwendung im Bewegtbild-Studio」（動態影像工作室中的本地人工智慧應用），至 2027 年"
-          },
-          {
-            "year": "2025",
-            "text": "Weizenbaum-Studienpreis, FIfF e.V. (Forum InformatikerInnen für Frieden und gesellschaftliche Verantwortung). Postgraduate thesis: Heat as Generative Image Making",
-            "url": "https://www.fiff.de/weizenbaum-preise/studienpreis/",
-            "text_zh": "Weizenbaum 學位論文獎（Weizenbaum-Studienpreis），FIfF e.V.（資訊工作者和平與社會責任論壇）。研究所論文：Heat as Generative Image Making"
-          }
-        ],
-        "title_de": "Auszeichnungen & Fellowships",
-        "title_zh": "獎項與獎助"
-      },
-      {
-        "title": "Teaching",
-        "items": [
-          {
-            "year": "2025–",
-            "text": "Lecturer and Artistic Associate (Künstlerischer Mitarbeiter), Faculty of Art and Design, Bauhaus University Weimar",
-            "url": "https://www.uni-weimar.de/de/kunst-und-gestaltung/struktur/lehrgebiete-personen/visuelle-kommunikation/ting-chun-liu/",
-            "text_zh": "講師暨藝術研究員（Künstlerischer Mitarbeiter），威瑪包浩斯大學藝術與設計學院"
-          },
-          {
-            "year": "2026",
-            "text": "Erasmus+ Staff Mobility for Teaching, Digital Art, Institute of Fine Arts and Media Art, University of Applied Arts Vienna",
-            "url": "",
-            "text_zh": "Erasmus+ 教學人員交流（Staff Mobility for Teaching），維也納應用藝術大學 美術與媒體藝術研究所 數位藝術系"
-          },
-          {
-            "year": "2024",
-            "text": "Guest Lecturer (Lehrbeauftragter), Chair of Media Environments, Faculty of Art and Design, Bauhaus University Weimar",
-            "url": "",
-            "text_zh": "客座講師（Lehrbeauftragter），威瑪包浩斯大學藝術與設計學院 媒體環境組（Chair of Media Environments）"
-          },
-          {
-            "year": "2022–2024",
-            "text": "Student Assistant, Experimental Informatics, Academy of Media Arts Cologne",
-            "url": "https://ground-zero.khm.de/about/",
-            "text_zh": "學生助理，科隆媒體藝術學院 實驗資訊學（Experimental Informatics）"
-          }
-        ],
-        "title_de": "Lehre",
-        "title_zh": "教學"
       },
       {
         "title": "Education",
