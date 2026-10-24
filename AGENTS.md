@@ -71,7 +71,7 @@
 | `performances[]`（作品頁下方的表演紀錄） | `note`、`title`（只在需要區分時，例如 Imaginary Landscape（表演版）） | `note_de/_zh`、`title_de/_zh` |
 | `workshops[]` | `title`、`summary`、`text`、`held` | `_de/_zh` |
 | `about` | `bio`（短，也是頁面描述與 JSON-LD）、`text`（較長的介紹，顯示在 bio 下方，空一行分段） | `bio_de/_zh`、`text_de/_zh` |
-| `about.sections[]`（CV 區塊，順序即頁面順序：教學、獎項與獎助、展覽、講座、出版、學歷、表演、新媒體專案；頁首有跳轉列，超過 10 筆的區塊只先顯示 8 筆，其餘收進「顯示全部」） | `title` | `title_de/_zh` |
+| `about.sections[]`（CV 區塊，順序即頁面順序：教學、獎項與獎助、展覽、講座、出版、學歷、表演、新媒體專案；頁首有跳轉列，標題放在列表上方、條目佔滿寬度；相鄰的短區塊（5 筆以內，例如教學與獎項）並排成兩欄（`build.py` 的 `CV_SHORT`）；超過 10 筆的區塊只先顯示 8 筆，其餘收進「顯示全部」） | `title` | `title_de/_zh` |
 | `about.sections[].items[]`（CV 每一行） | `text` | `text_de/_zh`（目前多數只有 `_zh`） |
 
 注意：

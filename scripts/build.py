@@ -865,7 +865,8 @@ for L in LANGS:
         return "cv-" + re.sub(r"[^a-z]+", "-", title.lower()).strip("-")  # prefixed: #performances is the works page's band
 
     CV_SHOW = 8
-    cv, jumps = "", []
+    CV_SHORT = 5  # neighbouring sections with this many rows or fewer sit side by side
+    secs, jumps = [], []  # (row count, html)
     texts = press_rows("read")
     for sec in D["about"]["sections"]:
         rows = []
@@ -878,10 +879,22 @@ for L in LANGS:
             esc(u["show_all"] % len(rows)), "".join(rows[CV_SHOW:])) if len(rows) > CV_SHOW + 2 else "".join(rows[CV_SHOW:]))
         sid = cv_id(sec["title"])
         jumps.append((sid, tr(sec, "title", L)))
-        cv += '<section class="cv-sec" id="%s"><h2>%s</h2><div>%s</div></section>' % (sid, esc(tr(sec, "title", L)), body)
+        secs.append((len(rows), '<section class="cv-sec" id="%s"><h2>%s</h2><div>%s</div></section>' % (sid, esc(tr(sec, "title", L)), body)))
         if sec["title"] == "Publications & Writing" and texts:  # texts by others follow the own texts
             jumps.append(("texts", u["press_groups"]["read"]))
-            cv += '<section class="cv-sec" id="texts"><h2>%s</h2><div>%s</div></section>' % (esc(u["press_groups"]["read"]), texts)
+            secs.append((texts.count('class="cv-row'), '<section class="cv-sec" id="texts"><h2>%s</h2><div>%s</div></section>' % (esc(u["press_groups"]["read"]), texts)))
+    cv, i = "", 0
+    while i < len(secs):
+        j = i
+        while j < len(secs) and secs[j][0] <= CV_SHORT:
+            j += 1
+        if j - i >= 2:
+            cv += '<div class="cv-pair">%s</div>' % "".join(h for _, h in secs[i:j])
+            i = j
+        else:
+            cv += secs[i][1]
+            i += 1
+    cv = '<div class="cv">%s</div>' % cv
     cv_nav = '<nav class="cv-nav mono" aria-label="CV">%s</nav>' % "".join('<a href="#%s">%s</a>' % (i, esc(t)) for i, t in jumps)
 
     bio = tr(D["about"], "bio", L)

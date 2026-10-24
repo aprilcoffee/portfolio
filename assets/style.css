@@ -467,3 +467,11 @@ html:lang(zh) .prose strong { font-family: var(--display); }
 .cv-more summary::before { content: "+ "; }
 .cv-more[open] summary { display: none; }
 @media (max-width: 800px) { .cv-nav { margin: -1.5rem 0 2rem; } }
+/* the CV itself: headings above the lists, rows across the full width, short sections side by side */
+.cv { max-width: 62rem; }
+.cv .cv-sec { display: block; margin-right: 0; padding: 1.25rem 0 1.5rem; }
+.cv .cv-sec h2 { font-size: 0.9375rem; margin-bottom: 0.5rem; }
+.cv .cv-row { grid-template-columns: 5.5em 1fr; gap: 0.75rem; padding: 0.15rem 0; line-height: 1.5; }
+.cv-pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); gap: 0 3rem; border-top: 1px solid var(--line); }
+.cv-pair .cv-sec { border-top: 0; }
+.about-top + .cv-nav, .cv-nav { margin-left: 0; }
