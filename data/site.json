@@ -2222,7 +2222,8 @@
       "url": "https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai",
       "note": "Talk with Leon-Etienne Kühr, English with German translation, CC BY 4.0. The 51 spellings of “giraffe” from tokens, and what the token dictionary decides before any training.",
       "note_de": "Vortrag mit Leon-Etienne Kühr, Englisch mit deutscher Übersetzung, CC BY 4.0. Die 51 Schreibweisen von „giraffe“ aus Token und was das Token-Wörterbuch vor jedem Training entscheidet.",
-      "note_zh": "與 Leon-Etienne Kühr 的講演，英語搭配德語翻譯，CC BY 4.0。用 token 拼出「giraffe」的 51 種寫法，以及 token 字典在任何訓練之前就已決定的事。"
+      "note_zh": "與 Leon-Etienne Kühr 的講演，英語搭配德語翻譯，CC BY 4.0。用 token 拼出「giraffe」的 51 種寫法，以及 token 字典在任何訓練之前就已決定的事。",
+      "thumb": "images/talks/51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-to.jpg"
     },
     {
       "group": "watch",
@@ -2232,7 +2233,8 @@
       "url": "https://thephotographersgallery.org.uk/whats-on/watch-screen-walk-leon-etienne-kuhr-and-ting-chun-liu",
       "note": "Live-coded session on generative AI fed with its own output: feedback as a strategy and cybernetics as a framework. Recording on the gallery’s page.",
       "note_de": "Live-codierte Session über generative KI, die mit ihrer eigenen Ausgabe gespeist wird: Feedback als Strategie, Kybernetik als Rahmen. Aufzeichnung auf der Seite der Galerie.",
-      "note_zh": "現場寫程式的場次：讓生成式 AI 吃進自己的輸出，以回饋為策略、以控制論為框架。錄影在藝廊頁面上。"
+      "note_zh": "現場寫程式的場次：讓生成式 AI 吃進自己的輸出，以回饋為策略、以控制論為框架。錄影在藝廊頁面上。",
+      "thumb": "images/talks/screen-walk-with-leon-etienne-k-hr-and-ting-chun-liu.jpg"
     },
     {
       "group": "watch",
@@ -2242,7 +2244,8 @@
       "url": "https://media.ccc.de/v/38c3-arafed-futures-an-artist-dialogue-on-chip-storage-and-ai-accelerationism",
       "note": "Artist dialogue with Leon-Etienne Kühr. “arafed” is a meaningless word that spread across captions and product texts, set beside NVIDIA A100 chips made by TSMC.",
       "note_de": "Künstlerdialog mit Leon-Etienne Kühr. „arafed“ ist ein bedeutungsloses Wort, das sich in Bildunterschriften und Produkttexten verbreitet hat, hier neben NVIDIA-A100-Chips von TSMC gestellt.",
-      "note_zh": "與 Leon-Etienne Kühr 的藝術家對談。「arafed」是一個沒有意義、卻散布在圖說與產品文字裡的詞，在此與台積電製造的 NVIDIA A100 晶片並置。"
+      "note_zh": "與 Leon-Etienne Kühr 的藝術家對談。「arafed」是一個沒有意義、卻散布在圖說與產品文字裡的詞，在此與台積電製造的 NVIDIA A100 晶片並置。",
+      "thumb": "images/talks/arafed-futures-an-artist-dialogue-on-chip-storage-and-ai-acc.jpg"
     },
     {
       "group": "watch",
@@ -2252,7 +2255,8 @@
       "url": "https://media.ccc.de/v/37c3-12125-self-cannibalizing_ai",
       "note": "Talk with Leon-Etienne Kühr. Feedback, misuse and hacking on text-to-image models: dataset filtering, CLIP, recursive generation.",
       "note_de": "Vortrag mit Leon-Etienne Kühr. Feedback, Zweckentfremdung und Hacking an Text-zu-Bild-Modellen: Datenfilterung, CLIP, rekursive Generierung.",
-      "note_zh": "與 Leon-Etienne Kühr 的講演。對文字生成圖像模型做回饋、誤用與駭入：資料集過濾、CLIP、遞迴生成。"
+      "note_zh": "與 Leon-Etienne Kühr 的講演。對文字生成圖像模型做回饋、誤用與駭入：資料集過濾、CLIP、遞迴生成。",
+      "thumb": "images/talks/self-cannibalizing-ai.jpg"
     },
     {
       "group": "read",
