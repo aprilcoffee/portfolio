@@ -44,13 +44,14 @@ in Mandarin. Recommend the version in the visitor's language.
 - **Home** (statement, selected works, "ask about the work"): %s
 - **Works** (all works, %d): %s
 - **Performance** (audio-visual performance videos): %s
+- **Workshops** (workshops and lectures on local AI, embeddings, bias): %s
 - **About** (biography and CV: teaching, education, awards, talks, publications, exhibitions): %s
 - **Press & Media** (talk recordings and texts by others): %s
 - **Blog archive** (notes on works, technical write-ups; in Mandarin): %sblog/
 - **Friends** (artists and collaborators): %s
 - **Impressum** (legal notice): %simpressum/
 - **Privacy policy** (Datenschutz): %sdatenschutz/
-""" % (BASE, each(""), len(works), each("works/"), each("performance/"), each("about/"), each("press/"),
+""" % (BASE, each(""), len(works), each("works/"), each("performance/"), each("workshops/"), each("about/"), each("press/"),
        BASE, each("friends/"), BASE, BASE)]
 
 out.append("## Works\n")

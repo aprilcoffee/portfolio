@@ -10,6 +10,7 @@
   var tab = 'works';
   var sel = 0;           // selected work index
   var psel = 0;          // selected post index
+  var wsel = 0;          // selected workshop index
 
   // ---------- storage ----------
   function save() {
@@ -233,6 +234,122 @@
       field('封面圖（留空＝用第一張圖）', w, 'cover', { after: drawThumbs }),
       h('label', {}, ['圖片（每行一個網址或 images/… 路徑）', imagesTa]),
       h('div', { className: 'actions' }, [btn('上傳圖片到 GitHub…', function () { upload.click(); }, 'sm'), upStatus, upload]),
+      thumbs
+    ]);
+  }
+
+  // photos are scaled down (long side 2400 px) and saved as JPEG before they go to GitHub, like scripts/compress-images.py
+  function shrinkImage(file) {
+    var plain = readB64(file).then(function (b64) { return { b64: b64, name: file.name.toLowerCase().replace(/[^a-z0-9._-]+/g, '-') }; });
+    if (!/^image\/(jpeg|png|webp)$/.test(file.type)) return plain;  // gif, svg, heic…: upload as they are
+    return new Promise(function (res) {
+      var url = URL.createObjectURL(file), im = new Image();
+      im.onload = function () {
+        var k = Math.min(1, 2400 / Math.max(im.naturalWidth, im.naturalHeight));
+        var c = document.createElement('canvas');
+        c.width = Math.round(im.naturalWidth * k); c.height = Math.round(im.naturalHeight * k);
+        var g = c.getContext('2d'); g.fillStyle = '#fff'; g.fillRect(0, 0, c.width, c.height); g.drawImage(im, 0, 0, c.width, c.height);
+        URL.revokeObjectURL(url);
+        c.toBlob(function (b) {
+          if (!b || b.size >= file.size && k === 1) return res(plain);
+          readB64(b).then(function (b64) {
+            res({ b64: b64, name: file.name.toLowerCase().replace(/\.[^.]*$/, '').replace(/[^a-z0-9._-]+/g, '-') + '.jpg' });
+          });
+        }, 'image/jpeg', 0.82);
+      };
+      im.onerror = function () { URL.revokeObjectURL(url); res(plain); };
+      im.src = url;
+    }).then(function (r) { return r; }, function () { return plain; });
+  }
+
+  tabs.workshops = function () {
+    var shops = D.workshops = D.workshops || [];
+    if (wsel >= shops.length) wsel = shops.length - 1;
+    var list = h('div', { className: 'items' }, shops.map(function (x, i) {
+      return h('div', {
+        className: 'item' + (i === wsel ? ' on' : '') + (x.hidden ? ' off' : ''),
+        on: { click: function () { wsel = i; render(); } }
+      }, [h('span', { text: x.title || '(untitled)' }), h('span', { className: 'y', text: x.year || '' })]);
+    }));
+    var x = shops[wsel];
+    main.append(
+      bar('工作坊 Workshops', [
+        btn('+ 新增工作坊', function () {
+          shops.unshift({ slug: 'workshop-' + Date.now().toString(36), title: 'New workshop', year: String(new Date().getFullYear()), place: '', host: '', text: '', images: [], hidden: true });
+          wsel = 0; save(); render();
+        }, 'primary')
+      ]),
+      h('div', { className: 'split' }, [list, x ? workshopForm(x) : h('p', { text: '還沒有工作坊。按「新增工作坊」。' })])
+    );
+  };
+
+  function workshopForm(x) {
+    var i = D.workshops.indexOf(x);
+    var thumbs = h('div', { className: 'thumbs' });
+    function drawThumbs() {
+      thumbs.innerHTML = '';
+      (x.images || []).map(function (m) { return typeof m === 'string' ? m : m.src; }).filter(Boolean).forEach(function (u) {
+        thumbs.appendChild(h('img', { src: resolve(u), loading: 'lazy' }));
+      });
+    }
+    drawThumbs();
+    var imagesTa = h('textarea', { className: 'lines', value: (x.images || []).map(function (m) { return typeof m === 'string' ? m : m.src; }).join('\n') });
+    imagesTa.addEventListener('input', function () {
+      x.images = imagesTa.value.split('\n').map(function (t) { return t.trim(); }).filter(Boolean); save(); drawThumbs();
+    });
+    var upload = h('input', { type: 'file', accept: 'image/*', multiple: true, style: 'display:none' });
+    var upStatus = h('span', { className: 'status' });
+    upload.addEventListener('change', function () {
+      var files = Array.prototype.slice.call(upload.files);
+      if (!files.length) return;
+      var c = gh();
+      if (!c.token) { alert('請先到「發佈」頁填入 GitHub token。'); return; }
+      var done = 0;
+      upStatus.textContent = '壓縮並上傳中…';
+      files.reduce(function (p, f) {
+        return p.then(function () {
+          return shrinkImage(f).then(function (r) {
+            var rel = 'images/workshops/' + (x.slug || 'misc') + '/' + r.name;
+            return putFile(c, repoPath(c, rel), r.b64, 'Upload image ' + rel).then(function () {
+              x.images = (x.images || []).concat(rel);
+              imagesTa.value = x.images.map(function (m) { return typeof m === 'string' ? m : m.src; }).join('\n');
+              done++; upStatus.textContent = '已上傳 ' + done + '/' + files.length;
+              save(); drawThumbs();
+            });
+          });
+        });
+      }, Promise.resolve()).catch(function (e) { upStatus.textContent = '上傳失敗：' + e.message; });
+      upload.value = '';
+    });
+    var hidden = h('input', { type: 'checkbox', checked: !!x.hidden });
+    hidden.addEventListener('change', function () { x.hidden = hidden.checked; save(); render(); });
+    function move(d) {
+      var j = i + d;
+      if (j < 0 || j >= D.workshops.length) return;
+      D.workshops.splice(j, 0, D.workshops.splice(i, 1)[0]);
+      wsel = j; save(); render();
+    }
+    return h('div', { className: 'form' }, [
+      h('div', { className: 'actions' }, [
+        btn('↑ 上移', function () { move(-1); }, 'sm'),
+        btn('↓ 下移', function () { move(1); }, 'sm'),
+        btn('刪除', function () {
+          if (confirm('刪除「' + x.title + '」？')) { D.workshops.splice(i, 1); save(); render(); }
+        }, 'sm danger'),
+        h('label', { className: 'check', style: 'margin-left:auto' }, [hidden, '隱藏（不顯示在網站）'])
+      ]),
+      h('div', { className: 'row' }, [
+        field('標題 Title', x, 'title', { after: function () { document.querySelector('.item.on span').textContent = x.title; } }),
+        field('標題 DE', x, 'title_de'), field('標題 中文', x, 'title_zh')
+      ]),
+      h('div', { className: 'row' }, [field('資料夾代稱 slug（上傳的圖片放在 images/workshops/<slug>/；只用英文小寫與 -）', x, 'slug'), field('年份 Year', x, 'year')]),
+      h('div', { className: 'row' }, [field('地點 Place', x, 'place'), field('地點 DE', x, 'place_de'), field('地點 中文', x, 'place_zh')]),
+      h('div', { className: 'row' }, [field('主辦 Host', x, 'host'), field('主辦 DE', x, 'host_de'), field('主辦 中文', x, 'host_zh')]),
+      field('說明文字 English（空一行＝分段；以「# 」開頭＝小標題）', x, 'text', { area: true, cls: 'tall' }),
+      field('說明文字 Deutsch（留空＝德文頁顯示英文）', x, 'text_de', { area: true, cls: 'tall' }),
+      field('說明文字 中文（留空＝中文頁顯示英文）', x, 'text_zh', { area: true, cls: 'tall' }),
+      h('label', {}, ['圖片（每行一個 images/… 路徑）', imagesTa]),
+      h('div', { className: 'actions' }, [btn('上傳圖片到 GitHub…（自動縮到長邊 2400px、轉 JPEG）', function () { upload.click(); }, 'sm'), upStatus, upload]),
       thumbs
     ]);
   }

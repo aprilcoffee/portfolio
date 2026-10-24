@@ -40,6 +40,8 @@
 | `llms.txt` 最後的彩蛋（ASCII 顯卡、給 agent 的話、藝術家介紹） | `data/llms-extra.md`（原樣接在後面） |
 | 圖示、分享圖 | `favicon.ico`、`assets/favicon-32.png`、`assets/apple-touch-icon.png`、`assets/icon-192/512.png`、`site.webmanifest`、`images/og.jpg`（`site.og_image`） |
 | 圖片與影片檔 | `images/wix/`（新的 Wix 圖用 `scripts/download-images.sh` 下載） |
+| 工作坊頁（`/workshops/`） | 內容寫在 `data/site.json` 的 `workshops[]`（`title`、`year`、`place`、`host`、`text`、`images`，除年份外都有 `_de/_zh`），圖片放 `images/workshops/`（說明見該資料夾的 `README.md`）；`workshops[]` 空的時候頁面只顯示引言與聯絡信箱 |
+| 圖片壓縮／轉檔 | `python3 scripts/compress-images.py [資料夾或檔案]`（預設 `images/workshops/`；需要 Pillow；長邊 2400px、JPEG 品質 82、移除 EXIF／GPS，PNG／HEIC 照片轉成 `.jpg`） |
 | 後台 | `admin/index.html`、`admin/admin.js`；草稿預覽 `preview.html`（在瀏覽器用 Pyodide 跑同一個 `build.py`） |
 | 自動化 | `.github/workflows/`：`build.yml`（重建網站）、`deploy-chat.yml`（部署問答 Worker）、`check-links.yml`（每月檢查連結）、`download-wix-images.yml` |
 
@@ -74,7 +76,8 @@
 - `works[].summary`（選填，+ `_de/_zh`）：搜尋結果與分享用的描述。只有作品文字開頭不適合當描述時才填（例如 Sixteen Tokens for a Cave 以 token 詩開頭）；沒填就用文字開頭。
 - `works[].status`（例如 In development）顯示在作品卡與作品頁的「Status」列；留空就不顯示。
 - `press[]` 的 `group` 只能是 `watch`（講演與錄影）、`read`（相關文章）；展覽、活動、機構介紹頁不放；標題與來源不翻譯，沒有 `note_de/_zh` 時該語言顯示英文並標 `lang="en"`。
-- 聯絡信箱：`site.email`（側欄、Impressum、About）維持 gmail；`site.email_alt`（Weimar 信箱）是 About 頁顯示的聯絡信箱（沒填就用 `site.email`）；`site.orcid`（只填 iD）有填才會在 About 頁出現，目前留空。頁尾沒有 HTML 網站地圖的連結（`/sitemap/` 仍在 `sitemap.xml` 裡）。
+- 側邊欄選單的中文名稱：作品＝「創作計畫」、曝光＝「媒體與曝光」（`UI["zh"]["nav"]`）；中文側邊欄用標題字體（`assets/style.css` 的 `html:lang(zh) .nav a`）。
+- 聯絡信箱：`site.email`（側欄、Impressum、About）維持 gmail；`site.email_alt`（Weimar 信箱）是 About 頁顯示的聯絡信箱（沒填就用 `site.email`）；`site.orcid`（只填 iD）有填才會在 About 頁出現，目前留空。`friends/` 頁刻意只有標題與卡片（沒有引言和主題）。頁尾沒有 HTML 網站地圖的連結（`/sitemap/` 仍在 `sitemap.xml` 裡）。
 - **搜尋引擎（SEO）用語**：主要敘述是 “research-based media artist working with critical AI”（`site.description`、`statement`、About 的 bio 第一句）；看不到的地方（JSON-LD 的 `jobTitle`、`occupations`、`llms.txt`）用 “Critical AI Artist”；首頁 `<title>` 刻意只放名字。文字裡一律寫全名 Ting-Chun Liu。部落格文章的作者列寫 “Ting-Chun Liu, media artist”。
 - 主題標籤：`works[].tags`（`_de/_zh` 沒填就顯示英文）顯示在作品頁的「Topics」列，也寫進 JSON-LD 的 `keywords`；各列表頁的標籤在 `build.py` 的 `UI[...]["tags"]`。
 - `data/lastmod.json` 由 `build.py` 自動維護（每頁的內容雜湊與最後更新日），給 `sitemap.xml` 的 `<lastmod>` 用，不要手改。HTML 版網站地圖在 `/sitemap/`（`/de/sitemap/`、`/zh/sitemap/`），側欄頁尾有連結。

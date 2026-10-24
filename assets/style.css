@@ -80,6 +80,7 @@ button { font: inherit; color: inherit; }
 .nav { margin-top: 4rem; display: flex; flex-direction: column; gap: 0.625rem; }
 .nav a { display: flex; align-items: baseline; font-size: 1.25rem; color: var(--mut); width: fit-content; transition: color .15s; }
 .nav .gap { height: 1.1em; }
+html:lang(zh) .nav a { font-family: var(--display); font-synthesis: none; }
 .nav a:hover, .nav a.on { color: var(--ink); }
 
 .side-foot { margin-top: auto; font-family: var(--mono); font-size: 0.8125rem; color: var(--mut); line-height: 1.9; }
@@ -374,3 +375,9 @@ button.embed.lite:hover img { opacity: 1; }
 
 /* one short line of keywords under a work's title on the works list */
 .card .cap .kw { grid-column: 1 / -1; margin-top: 0.1875rem; font-size: 0.875rem; line-height: 1.45; color: var(--mut); }
+
+/* workshops */
+.workshop .mono { color: var(--mut); margin: 0 0 0.75rem; }
+.workshop-pics { display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+.workshop-pics figure { margin: 0; }
+.workshop-pics img { width: 100%; height: auto; display: block; }
