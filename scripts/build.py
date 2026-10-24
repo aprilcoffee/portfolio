@@ -331,7 +331,7 @@ def summary(text, n=160, words=False):
 LANGS = ["en", "de", "zh"]
 # languages that are built but not shown: every page of theirs forwards to the English one, and they are left out of
 # the language switch, hreflang and the sitemap (German is hidden until its translation has been reviewed)
-HIDDEN_LANGS = {"de"}
+HIDDEN_LANGS = set()
 SHOWN_LANGS = [l for l in LANGS if l not in HIDDEN_LANGS]
 LP = {"en": "", "de": "de/", "zh": "zh/"}
 HREFLANG = {"en": "en", "de": "de", "zh": "zh-Hant"}
@@ -369,6 +369,8 @@ UI = {
         "ask_ex": ["What is Latent Heat Generation about?", "Why can “giraffe” be spelled in 51 ways?", "Which of your works deal with AI?", "What are you working on now?"],
         "ask_note": "caution: AI may create random correlations",
         "ask_more": "Privacy",
+        "mt_note": "Parts of the German translation were made with AI and may contain errors.",
+        "mt_ok": "OK",
         "ask_err": "Sorry, that didn’t work. Please try again in a moment, or write to %s.",
         "ask_busy": "Too many questions right now. Please wait a minute.",
         "ask_refusal": "I can’t answer that here, but ask me anything about my work.",
@@ -403,6 +405,8 @@ UI = {
         "ask_ex": ["Worum geht es in Latent Heat Generation?", "Warum lässt sich „giraffe“ auf 51 Arten schreiben?", "Welche Ihrer Arbeiten beschäftigen sich mit KI?", "Woran arbeiten Sie gerade?"],
         "ask_note": "Achtung: KI kann zufällige Zusammenhänge erzeugen · %s",
         "ask_more": "Datenschutz",
+        "mt_note": "Bitte beachten Sie: Teile der deutschen Übersetzung wurden mit KI erstellt und können Fehler enthalten.",
+        "mt_ok": "Verstanden",
         "ask_err": "Das hat leider nicht geklappt. Bitte gleich noch einmal versuchen oder an %s schreiben.",
         "ask_busy": "Gerade kommen zu viele Fragen. Bitte eine Minute warten.",
         "ask_refusal": "Darauf kann ich hier nicht antworten. Fragen Sie mich gern zu meiner Arbeit.",
@@ -437,6 +441,8 @@ UI = {
         "ask_ex": ["《Latent Heat Generation》在談什麼？", "為什麼「giraffe」可以有 51 種拼法？", "你有哪些作品跟人工智慧有關？", "你現在在做什麼？"],
         "ask_note": "注意：人工智慧可能產生隨機的關聯性",
         "ask_more": "隱私權",
+        "mt_note": "請注意：部分德文為人工智慧翻譯，可能會有錯誤。",
+        "mt_ok": "知道了",
         "ask_err": "抱歉，暫時無法回答。請稍後再試，或寫信至 %s。",
         "ask_busy": "目前提問太多，請稍候一分鐘。",
         "ask_refusal": "這個問題我沒辦法在這裡回答，歡迎問我作品相關的問題。",
@@ -570,6 +576,7 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
 <main class="main{full}" id="main">
 {body}
 </main>
+{mt}
 <script src="{js}" data-p5="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js" data-effects="{fx}" defer></script>
 </body>
 </html>
@@ -580,7 +587,10 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
            css=versioned("assets/style.css"), fonts=versioned("assets/fonts/fonts.css"), fonts_g=versioned("assets/fonts/fonts-google.css"), font_r=url("assets/fonts/Minipax-Regular.woff2"), font_b=url("assets/fonts/Minipax-Bold.woff2"), js=versioned("assets/site.js"), fx=versioned("assets/effects.js"), feed=url("blog/feed.xml"),
            ga=ga, ld=ld_tag, home=url(LP[lang]), imp=url("impressum/"), dsg=url("datenschutz/"), nav=nav, foot_nav=foot_nav, more=u["more"], switch=switch,
            menu=u["menu"], language=u["language"], privacy=u["privacy"], email=esc(S["email"]), links=links,
-           year=datetime.date.today().year, full=" full" if full else "", body=body)
+           year=datetime.date.today().year, full=" full" if full else "", body=body,
+           # German pages: a one-time notice that parts of the translation were made with AI (assets/site.js shows it)
+           mt='<div class="mt-note" id="mtNote" role="status" hidden><p>%s<span lang="en">%s</span></p><button type="button">%s</button></div>' % (
+               esc(u["mt_note"]), esc(UI["en"]["mt_note"]), esc(u["mt_ok"])) if lang == "de" else "")
 
 
 def person(lang):

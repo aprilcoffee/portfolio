@@ -18,6 +18,20 @@
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
 
+  // German pages: the first time, say that parts of the German were translated with AI.
+  var mt = document.getElementById('mtNote');
+  if (mt) {
+    var seen = false;
+    try { seen = localStorage.getItem('mt-note') === 'seen'; } catch (e) {}
+    if (!seen) {
+      mt.hidden = false;
+      mt.querySelector('button').addEventListener('click', function () {
+        mt.hidden = true;
+        try { localStorage.setItem('mt-note', 'seen'); } catch (e) {}
+      });
+    }
+  }
+
   // Video thumbnails turn into the player on click.
   document.addEventListener('click', function (e) {
     var el = e.target.closest && e.target.closest('.embed.lite');

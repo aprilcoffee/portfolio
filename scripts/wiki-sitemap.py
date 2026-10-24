@@ -12,7 +12,7 @@ S = D["site"]
 BASE = S["base_url"].rstrip("/") + "/"
 # Sun and Heat as Image live on the GitHub Pages domain whichever domain the site uses.
 PROJECTS = "https://aprilcoffee.github.io/"
-LANGS = [("en", ""), ("zh", "zh/")]  # German ("de/") is hidden for now: its pages forward to English
+LANGS = [("en", ""), ("de", "de/"), ("zh", "zh/")]
 
 
 def each(path):

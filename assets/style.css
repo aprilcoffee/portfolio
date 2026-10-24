@@ -385,8 +385,9 @@ button.embed.lite:hover img { opacity: 1; }
 
 
 /* sidebar: secondary pages under the signal line */
-.side-foot .foot-nav { display: flex; gap: 0.875rem; margin-bottom: 0.625rem; font-size: 0.875rem; }
+.side-foot .foot-nav { display: flex; flex-wrap: wrap; gap: 0.25rem 0.875rem; margin-bottom: 0.625rem; font-size: 0.875rem; }
 .side-foot .foot-nav a.on { color: var(--ink); }
+.side-foot .foot-nav a { white-space: nowrap; }
 
 /* a second block on a list page (performances under works, talks under workshops) */
 .sub-sec { margin-top: 6rem; }
@@ -478,3 +479,12 @@ html:lang(zh) .prose strong { font-family: var(--display); }
 .cv-pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); gap: 0 3rem; border-top: 1px solid var(--line); }
 .cv-pair .cv-sec { border-top: 0; }
 .about-top + .cv-nav, .cv-nav { margin-left: 0; }
+
+/* German pages: one-time notice about the AI-assisted translation (assets/site.js) */
+.mt-note { position: fixed; z-index: 50; right: 1.25rem; bottom: 1.25rem; max-width: 26rem; display: flex; gap: 1rem; align-items: flex-start;
+  padding: 1rem 1.125rem; background: var(--bg); border: 1px solid var(--ink); font-size: 0.875rem; line-height: 1.5; }
+.mt-note[hidden] { display: none; }
+.mt-note p { margin: 0; }
+.mt-note p span { display: block; margin-top: 0.35rem; color: var(--mut); }
+.mt-note button { flex: none; font: inherit; background: var(--ink); color: var(--bg); border: 0; padding: 0.35rem 0.75rem; cursor: pointer; }
+@media (max-width: 800px) { .mt-note { left: 1rem; right: 1rem; bottom: 1rem; max-width: none; } }
