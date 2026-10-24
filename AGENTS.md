@@ -89,7 +89,7 @@
 - 表演影片標題（除了上面說的區分用 `title_zh`）、合作者（`collaborators`）、年份、網址不翻譯。
 - 新增一個要翻譯的欄位時：在 `site.json` 加 `xxx_de`/`xxx_zh`，在 `build.py` 用 `tr(obj, "xxx", L)` 讀，
   並在 `admin/admin.js` 加對應的輸入框（照 `text_de`、`type_zh` 那幾行的寫法），作者才能在後台編輯。
-- 翻譯風格：德文用 Sie、性別中立寫法（`Künstler*innen`）；中文用繁體、台灣用語、全形標點，作品名用《》；中文裡能不用英文就不用：AI 寫「人工智慧」、token 寫「詞元」、embedding 寫「嵌入向量」、prompt 寫「提示詞」、LLM 寫「大型語言模型」；不加英文括號註解（不寫「創意程式設計（creative coding）」「科隆媒體藝術學院（KHM）」）。保留英文的只有：作品與文章標題、人名、機構與活動的專有名稱、軟體與模型名稱（Stable Diffusion、CLIP、ChatGPT）、實驗裡實際輸入的英文字（giraffe、happy）。
+- 翻譯風格：德文用 Sie、性別中立寫法（`Künstler*innen`）；中文用繁體、台灣用語、全形標點，作品名用《》；中文裡能不用英文就不用：AI 一律寫「人工智慧」；技術詞用中文，長文裡第一次出現時括號附英文：回授（Feedback）、詞元（Token）、嵌入向量（Embedding）、強制登入頁面（captive portal），之後只寫中文。其他固定譯法：cybernetics 寫「模控論」、operational image 寫「操作性影像」、audiovisual performance 寫「音像演出」、prompt 寫「提示詞」。職稱、機構、活動保留原文括號，例如「講師暨藝術研究員（Künstlerischer Mitarbeiter）」「科隆媒體藝術學院（KHM）」「（39C3）」，但 TNUA 不加；博物館等不音譯，寫原文全名再括號附中文意思，例如 Rautenstrauch-Joest-Museum – Kulturen der Welt（科隆世界文化民族學博物館，RJM）。Storage Museum、Transformer 保留英文。保留英文的還有：作品與文章標題、人名、軟體與模型名稱（Stable Diffusion、CLIP、ChatGPT）、實驗裡實際輸入的英文字（giraffe、happy）。
 
 ### 2. 介面文字：`scripts/build.py` 的 `UI` 字典
 
