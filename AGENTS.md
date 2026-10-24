@@ -28,7 +28,7 @@
 | 介面文字（選單、按鈕、頁面引言、對話框提示…） | `scripts/build.py` 的 `UI` 字典 |
 | 頁面結構、HTML、SEO（title、canonical、hreflang、JSON-LD、sitemap） | `scripts/build.py` |
 | Impressum、Datenschutz（只有德文） | `scripts/build.py` 裡 `page("impressum/"…)`、`page("datenschutz/"…)`、`CHAT_PRIVACY` |
-| 字型 | `assets/fonts/`（`fonts.css` 與字型檔都由 `scripts/build-fonts.py` 產生，不要手改；授權在 `assets/fonts/LICENSES/`，出處標示在 Impressum 的「Schriften」段落）。CSS 變數 `--text`（內文：Minipax＋中文 GenKi Min2／源起明體）、`--display`（標題與選單：Minipax Bold＋中文 LTC Round／粉圓，只有一種字重）、`--mono`。2026-10 試過對調（內文用粉圓），作者認為無法閱讀，已改回，不要再對調。中文小字（卡片關鍵字、說明）在 `style.css` 最後有放大加深的規則 |
+| 字型 | `assets/fonts/`（`fonts.css` 與字型檔都由 `scripts/build-fonts.py` 產生，不要手改；授權在 `assets/fonts/LICENSES/`，出處標示在 Impressum 的「Schriften」段落）。CSS 變數 `--text`（內文：Minipax＋中文 GenKi Min2／源起明體）、`--display`（標題與選單：Minipax Bold＋中文 LTC Round／粉圓，只有一種字重）、`--mono`。2026-10 試過對調（內文用粉圓），作者認為無法閱讀，已改回，不要再對調。中文小字（卡片關鍵字、說明）在 `style.css` 最後有放大加深的規則；首頁大字 `home_text` 的中文用粉圓（`html:lang(zh) .home-statement`） |
 | 樣式 | `assets/style.css`（全部用 rem；桌機 `html{font-size:80%}`，≤800px 回到 100%；斷點 1024px、800px） |
 | 選單、語言切換等前端行為 | `assets/site.js` |
 | p5.js 背景特效（首頁字元場、側欄訊號線） | `assets/effects.js` |
@@ -89,7 +89,7 @@
 - 表演影片標題（除了上面說的區分用 `title_zh`）、合作者（`collaborators`）、年份、網址不翻譯。
 - 新增一個要翻譯的欄位時：在 `site.json` 加 `xxx_de`/`xxx_zh`，在 `build.py` 用 `tr(obj, "xxx", L)` 讀，
   並在 `admin/admin.js` 加對應的輸入框（照 `text_de`、`type_zh` 那幾行的寫法），作者才能在後台編輯。
-- 翻譯風格：德文用 Sie、性別中立寫法（`Künstler*innen`）；中文用繁體、台灣用語、全形標點，作品名用《》。
+- 翻譯風格：德文用 Sie、性別中立寫法（`Künstler*innen`）；中文用繁體、台灣用語、全形標點，作品名用《》；中文內文的 AI 寫「人工智慧」（SEO 用的 `description_zh`／`statement_zh` 保留「AI」），中文裡不加英文括號（不寫「創意程式設計（creative coding）」）。
 
 ### 2. 介面文字：`scripts/build.py` 的 `UI` 字典
 

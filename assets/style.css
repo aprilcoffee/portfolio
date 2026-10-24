@@ -123,6 +123,7 @@ html:lang(zh) .nav a { font-family: var(--display); font-synthesis: none; }
   position: relative; z-index: 1; align-self: stretch; margin: auto var(--pad) 4.5rem 0; padding-top: 3rem;
   max-width: 51.25rem; font-size: clamp(1.125rem, 1.75vw, 1.625rem); line-height: 1.45; font-weight: 700; font-synthesis: none; letter-spacing: -0.015em;
 }
+html:lang(zh) .home-statement { font-family: var(--display); font-weight: 400; letter-spacing: 0.02em; line-height: 1.6; }
 .home-statement.empty::before { content: ""; display: block; height: 2.6em; }
 .home-statement span { background: var(--bg); box-decoration-break: clone; -webkit-box-decoration-break: clone; padding: 0 .12em; }
 .home-selected { padding: 6rem var(--pad) 7.5rem 0; }
