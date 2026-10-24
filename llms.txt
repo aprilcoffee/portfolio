@@ -27,7 +27,7 @@ The site is also available in Traditional Chinese (https://liutingchun.com/zh/).
 - [Just Jailbreak](https://liutingchun.com/works/just-jailbreak/) (2024): Interactive game about jailbreaking a large language model
 - [Self-cannibalizing AI](https://liutingchun.com/works/self-cannibalizing-ai/) (2023): Talk, 37C3 — Artistic strategies to expose generative text-to-image models
 - [Achtung! Verwischung](https://liutingchun.com/works/achtung-verwischung/) (2023): Site-Specific Performance
-- [Imaginary Landscape](https://liutingchun.com/works/imaginary-landscape/) (2022–23): Ongoing Project, Audio-Visual Performance
+- [Imaginary Landscape](https://liutingchun.com/works/imaginary-landscape/) (2022–2024): Project, Audio-Visual Performance
 - [Beneath](https://liutingchun.com/works/beneath/) (2022): Sound Installation
 - [Sun](https://liutingchun.com/works/sun/) (2020): Internet Art (p5.js website)
 - [Bring Us Somewhere](https://liutingchun.com/works/bring-us-somewhere/) (2020): Video
@@ -42,7 +42,7 @@ The site is also available in Traditional Chinese (https://liutingchun.com/zh/).
 
 ## Contact
 
-- Email: tingchun.liu.tw@gmail.com
+- Email (talks, workshops, collaborations): ting-chun.liu@uni-weimar.de
 - Instagram: https://www.instagram.com/liu_tingchun/
 - GitHub: https://github.com/aprilcoffee
 

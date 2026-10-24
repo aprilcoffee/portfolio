@@ -340,7 +340,7 @@ UI = {
         "sitemap": "Site map", "sitemap_lead": "Every page of this website.",
         "sitemap_desc": "Site map of the website of %s: works and performances, talks and workshops, about, blog.",
         "Year": "Year", "Status": "Status", "Type": "Type", "Materials": "Materials", "With": "With", "Link": "Link",
-        "work_desc": "%s (%s), %s by %s.", "work": "work", "work_with": "with %s", "held": "Sessions", "workshop": "Workshop",
+        "work_desc": "%s (%s), %s by %s.", "work": "work", "work_with": "with %s", "event": "Event page", "held": "Sessions", "workshop": "Workshop",
         "perf_title": "Performance archive",
         "perf_lead": "Recordings of live audio-visual sets and noise performances, 2016–2024, on stage, at festivals, on the radio and at exhibition openings. They open on Vimeo.",
         "watch": "Watch on %s ↗",
@@ -349,7 +349,7 @@ UI = {
         "blog_lead": "Notes on works, and technical write-ups on Raspberry Pi, Processing and Python. The posts are written in Mandarin.",
         "blog_desc": "Blog archive of %s: notes on artworks and technical write-ups on Raspberry Pi, Processing and Python.",
         "friends_desc": "Friends and fellow artists of %s.",
-        "workshops_lead": "Workshops I offer: using AI locally on your own computer, working hands-on with embeddings, and seeing the biases inside AI models. Talk recordings below.",
+        "workshops_lead": "Workshops I offer: using AI locally on your own computer, working hands-on with embeddings, and seeing the biases inside AI models. They work for anyone, from people who have never written code to artists, companies and scholars. Talk recordings below.",
         "workshops_desc": "Workshops and talks by %s on local AI usage, embedding practice and biases in AI models, with talk recordings.",
         "workshops_ask": "Workshop and lecture requests: please get in touch by email.",
         "press_groups": {"watch": "Talk recordings", "read": "Written about the work"},
@@ -375,7 +375,7 @@ UI = {
         "sitemap": "Seitenübersicht", "sitemap_lead": "Alle Seiten dieser Website.",
         "sitemap_desc": "Seitenübersicht der Website von %s: Arbeiten und Performances, Vorträge und Workshops, Über mich, Blog.",
         "Year": "Jahr", "Status": "Status", "Type": "Art", "Materials": "Material", "With": "Mit", "Link": "Link",
-        "work_desc": "%s (%s), %s von %s.", "work": "Arbeit", "work_with": "mit %s", "held": "Termine", "workshop": "Workshop",
+        "work_desc": "%s (%s), %s von %s.", "work": "Arbeit", "work_with": "mit %s", "event": "Veranstaltung", "held": "Termine", "workshop": "Workshop",
         "perf_title": "Performance-Archiv",
         "perf_lead": "Aufzeichnungen audiovisueller Live-Sets und Noise-Performances, 2016–2024, auf der Bühne, bei Festivals, im Radio und bei Ausstellungseröffnungen. Sie öffnen sich auf Vimeo.",
         "watch": "Auf %s ansehen ↗",
@@ -384,7 +384,7 @@ UI = {
         "blog_lead": "Notizen zu Arbeiten und technische Anleitungen zu Raspberry Pi, Processing und Python. Die Beiträge sind auf Chinesisch (Mandarin) verfasst.",
         "blog_desc": "Blog-Archiv von %s: Notizen zu Arbeiten und technische Anleitungen zu Raspberry Pi, Processing und Python.",
         "friends_desc": "Freund*innen und befreundete Künstler*innen von %s.",
-        "workshops_lead": "Workshops, die ich anbiete: KI lokal auf dem eigenen Rechner nutzen, praktisch mit Embeddings arbeiten und die Biases in KI-Modellen sichtbar machen. Darunter Aufzeichnungen von Vorträgen.",
+        "workshops_lead": "Workshops, die ich anbiete: KI lokal auf dem eigenen Rechner nutzen, praktisch mit Embeddings arbeiten und die Biases in KI-Modellen sichtbar machen. Sie eignen sich für alle, von Menschen ohne Programmiererfahrung bis zu Künstler*innen, Unternehmen und Wissenschaftler*innen. Darunter Aufzeichnungen von Vorträgen.",
         "workshops_desc": "Workshops und Vorträge von %s zu lokaler KI-Anwendung, Embedding-Praxis und Biases in KI-Modellen, mit Vortragsaufzeichnungen.",
         "workshops_ask": "Anfragen für Workshops und Vorträge richten Sie bitte per E-Mail an mich.",
         "press_groups": {"watch": "Vortragsaufzeichnungen", "read": "Texte über die Arbeit"},
@@ -410,7 +410,7 @@ UI = {
         "sitemap": "網站地圖", "sitemap_lead": "這個網站的所有頁面。",
         "sitemap_desc": "%s網站的網站地圖：創作計畫與表演、講座與工作坊、關於、部落格。",
         "Year": "年份", "Status": "狀態", "Type": "類型", "Materials": "媒材", "With": "合作", "Link": "連結",
-        "work_desc": "%s（%s），%s，%s。", "work": "作品", "work_with": "與 %s 合作", "held": "場次", "workshop": "工作坊",
+        "work_desc": "%s（%s），%s，%s。", "work": "作品", "work_with": "與 %s 合作", "event": "活動頁面", "held": "場次", "workshop": "工作坊",
         "perf_title": "表演紀錄",
         "perf_lead": "2016 至 2024 年間現場影音演出與噪音演出的錄影，演出場合包括表演場地、藝術節、電台節目與展覽開幕。點選即可在 Vimeo 觀看。",
         "watch": "在 %s 觀看 ↗",
@@ -419,7 +419,7 @@ UI = {
         "blog_lead": "作品筆記，以及 Raspberry Pi、Processing 與 Python 的技術文章。",
         "blog_desc": "%s的部落格文章彙整：作品筆記，以及 Raspberry Pi、Processing 與 Python 技術文章。",
         "friends_desc": "%s的朋友、合作夥伴與藝術家夥伴，以及他們的作品網站連結。",
-        "workshops_lead": "我開設的工作坊：在自己的電腦上使用 AI、動手操作 embedding，以及看見 AI 模型裡的偏見。頁面下方是講座錄影。",
+        "workshops_lead": "我開設的工作坊：在自己的電腦上使用 AI、動手操作 embedding，以及看見 AI 模型裡的偏見。從沒寫過程式的人、藝術家、企業到研究者都能參加。頁面下方是講座錄影。",
         "workshops_desc": "%s的講座與工作坊：講座錄影，以及在自己的電腦上使用 AI、embedding 實作與 AI 模型偏見的工作坊。",
         "workshops_ask": "工作坊與講座邀約，歡迎來信。",
         "press_groups": {"watch": "講座錄影", "read": "相關評論與研究"},
@@ -708,7 +708,7 @@ def ask_box(lang):
     if not S.get("chat_endpoint"):
         return ""
     u = UI[lang]
-    msgs = {k: u[k] % (S["email"],) if k == "ask_err" else u[k] for k in ("ask_err", "ask_busy", "ask_refusal")}
+    msgs = {k: u[k] % (S.get("email_alt") or S["email"],) if k == "ask_err" else u[k] for k in ("ask_err", "ask_busy", "ask_refusal")}
     # the endpoint is written reversed + base64 so it is not a plain URL in the page source
     enc = base64.b64encode(S["chat_endpoint"].encode()).decode()[::-1]
     ts = ' data-turnstile="%s"' % esc(S["turnstile_sitekey"]) if S.get("turnstile_sitekey") else ""
@@ -760,19 +760,21 @@ for L in LANGS:
 
     SHORT_HOST = {"thephotographersgallery.org.uk": "The Photographers’ Gallery"}
     # each performance record and talk recording opens on Vimeo / YouTube / the host's site in a new tab
-    def watch_card(href, thumb, title, sub, note, title_lang="", ph=""):
+    def watch_card(href, thumb, title, sub, note, title_lang="", ph="", more=""):
         v = video_id(href)
         where = "YouTube" if v and v[0] == "youtube" else "Vimeo" if v else urlparse(href).netloc.replace("www.", "")
         where = SHORT_HOST.get(where, where)
         pic = img(thumb, 1100, title) if thumb else '<span class="ph">%s</span>' % esc(ph or title)
-        return ('<a class="perf-card" href="%s" target="_blank" rel="noopener"><div class="thumb">%s'
+        return ('<div class="perf-item"><a class="perf-card" href="%s" target="_blank" rel="noopener"><div class="thumb">%s'
                 '<span class="watch">%s</span></div><div class="cap"><h3%s>%s</h3>%s%s</div></a>') % (
             esc(href), pic, esc(u["watch"] % where), title_lang, esc(title),
-            '<p class="by mono">%s</p>' % esc(sub) if sub else "", '<p>%s</p>' % esc(note) if note else "")
+            '<p class="by mono">%s</p>' % esc(sub) if sub else "", '<p>%s</p>' % esc(note) if note else "") + (
+            # an event page next to the recording (a link can't sit inside the card's own link)
+            '<a class="perf-more mono" href="%s" target="_blank" rel="noopener">%s ↗</a>' % (esc(more), esc(u["event"])) if more else "") + "</div>"
 
     perfs = [p for p in D.get("performances", []) if not p.get("hidden") and p.get("video")]
     perf_html = "".join(watch_card(p["video"], p.get("thumb") or cover_of({"video": p.get("video")}), tr(p, "title", L),
-                                   p.get("year", ""), tr(p, "note", L)) for p in perfs)
+                                   p.get("year", ""), tr(p, "note", L), more=p.get("link", "")) for p in perfs)
     page(P + "works/", u["nav"]["works"], u["works_desc"] % (lname(L), y0, y1),
          '<header class="page-head"><h1 class="page-title">%s</h1>%s</header>' % (
              esc(u["nav"]["works"]), '<p class="lead jump"><a href="#performances">%s ↓</a></p>' % esc(u["perf_title"]) if perfs else "") +
@@ -1103,7 +1105,7 @@ llms = ["# %s (%s)" % (S["name"], S.get("name_zh", "")), "",
         "## Works", ""]
 llms += ["- [%s](%s) (%s): %s" % (w["title"], abs_url("works/%s/" % w["slug"]), w.get("year"), w.get("type"))
          for w in works]
-llms += ["", "## Contact", "", "- Email: " + S["email"]] + ["- %s: %s" % (l["label"], l["url"]) for l in S.get("links", [])]
+llms += ["", "## Contact", "", "- Email (talks, workshops, collaborations): " + (S.get("email_alt") or S["email"])] + ["- %s: %s" % (l["label"], l["url"]) for l in S.get("links", [])]
 extra = os.path.join(ROOT, "data", "llms-extra.md")  # free text appended as is (edit it on GitHub)
 if os.path.exists(extra):
     llms += ["", open(extra, encoding="utf-8").read().strip()]

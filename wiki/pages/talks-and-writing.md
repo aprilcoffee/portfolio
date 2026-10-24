@@ -12,7 +12,7 @@ sources:
   - https://ground-zero.khm.de/correlations/
   - https://sugarscroll.de/lectures-posts/ting-chun-liu-leon-etienne-kuehr/
   - https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai
-updated: 2026-10-20
+updated: 2026-10-24
 ---
 # Talks and writing
 
@@ -40,7 +40,7 @@ Lectures, talks, workshops and publications, as listed in the CV on the website.
 - 2024 — Künstliche Intelligenz – Heilsbringer oder Apokalypse, Alfred Toepfer Stiftung, Siggen, w/ Leon-Etienne Kühr
 - 2024 — Artistic Research on Recursive Dynamics in Generative Image Models, TEDA’24: The Magic Machine, University of Cambridge, w/ Leon-Etienne Kühr ([poster page](https://ground-zero.khm.de/artistic-research-on-recursive-dynamics-in-generative-image-models/), 19–20 September 2024)
 - 2024 — Chip Shortage, Acceleration and Taiwan’s Dilemma, Magic Wand, [ ] ground zero, Cologne ([link](https://ground-zero.khm.de/portfolio/magic-wand/))
-- 2024 — Fotografie in der KI-Krise? Lecture Series Photographic Studies, Fachhochschule Dortmund ([organiser's page](https://sugarscroll.de/lectures-posts/ting-chun-liu-leon-etienne-kuehr/) dates the talk 12 June 2025, lecture series "Photography in AI Crisis #3")
+- 2024 — Fotografie in der KI-Krise? Lecture Series Photographic Studies, Fachhochschule Dortmund ([organiser's page](https://sugarscroll.de/lectures-posts/ting-chun-liu-leon-etienne-kuehr/) dates a 12 June 2025 talk, lecture series "Photography in AI Crisis #3"; the artist confirms the CV year 2024 and explains the 2025 page as a continuation of the series)
 - 2024 — Kulturelle Bildung in postdigitalen Lebenswelten, jfc Medienzentrum, Cologne, w/ Benita Martis
 - 2023 — Self-cannibalizing AI – Artistic Strategies to Expose Generative Text-to-Image Models, 37th Chaos Communication Congress, Hamburg, w/ Leon-Etienne Kühr ([link](https://media.ccc.de/v/37c3-12125-self-cannibalizing_ai))
 - 2023 — Aesthetic Approaches to Cyber Peace Work, FIfFKon 2023, Berlin, w/ Christian Heck, Benita Martis, Anton Linus Jehle, Lisa Reutelsterz, Naoto Hieda, Bidisha Das, Kjell Wistoff, Conrad Weise, Pedro A. Ramirez, Leon-Etienne Kühr ([link](https://media.ccc.de/v/fiffkon23-47-aesthetic-approaches-to-cyber-peace-work))
@@ -57,7 +57,7 @@ Lectures, talks, workshops and publications, as listed in the CV on the website.
 
 ## Open questions
 
-- The Dortmund lecture carries 2024 in the CV, but the organiser's page dates it 2025. Kept as written; the CV may need a correction.
+- (Resolved: the artist confirms 2024 for the Dortmund lecture; the organiser's 2025 page belongs to a continuation of the series.)
 
 ## Related
 

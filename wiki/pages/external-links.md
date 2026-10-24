@@ -6,7 +6,7 @@ sources:
   - ../data/site.json
   - https://arxiv.org/abs/2607.09705
   - https://www.museumangewandtekunst.de/de/besuch/ausstellungen/2026/ai-worlding-kuenstlerische-forschung-zu-ki-generierten-weltmodellen/
-updated: 2026-10-21
+updated: 2026-10-24
 ---
 # External links: pages by others about Ting-Chun Liu
 
@@ -24,7 +24,7 @@ Where Liu's work can be checked, watched or read outside his own website: talk r
 
 - **Thesis: [Heat as (Generative) Image Making](texts/heat-as-generative-image-making.md)**: https://aprilcoffee.github.io/heat_as_image/index.html (code: https://github.com/aprilcoffee/heat_as_image)
 - **[Stereotype Encoding: How AI Images Learn Cultural Bias](texts/stereotype-encoding.md)** (with Kühr, *LATENT SPACE – LATENZ*, Filmwerkstatt Düsseldorf, 2025): https://www.academia.edu/165438573/Stereotype_Encoding_How_AI_Images_Learn_Cultural_Bias
-- **[On the Materiality of Artificial Intelligence](texts/on-the-materiality-of-artificial-intelligence.md)** (*un/learn ai* vol. 3, pp. 218–223, 2025): https://unlearn.gestaltung.ai/de/article/gpm91yc8?chunks=gpm91yc8 · volume: https://openscience.ub.uni-mainz.de/items/7d8cb85f-0e1a-409e-b9a1-a9dac96e48a0
+- **[On the Materiality of Artificial Intelligence](texts/on-the-materiality-of-artificial-intelligence.md)** (*un/learn ai* vol. 3, pp. 218–223, 2025): https://unlearn.gestaltung.ai/de/article/gpm91yc8?chunks=gpm91yc8 · volume: https://openscience.ub.uni-mainz.de/items/7d8cb85f-0e1a-409e-b9a1-a9dac96e48a0 · KITeGG publications: https://gestaltung.ai/en#publications
 - ***Heat as (Generative) Image Making*** (essay, FIfF-Kommunikation 1/26, p. 64): https://www.fiff.de/fiff-kommunikation/2026/1/
 - **[Poetic Materialization – Regarding Midjourney](texts/poetic-materialization-regarding-midjourney.md)** (2022, ground zero, KHM): https://ground-zero.khm.de/portfolio/disruptive-news-22-english/
 - ***The Rule Becomes the Author!*** (2021, ground zero; CV): https://dev.ground-zero.khm.de/ell-worl-paper/1rule-author.html
@@ -68,8 +68,8 @@ Where Liu's work can be checked, watched or read outside his own website: talk r
 
 ## Open questions
 
-- **A date that differs between the CV and the organiser's own page:** the Dortmund lecture (CV: 2024; organiser's page: 12 June 2025).
-- **Not yet read:** *The Rule Becomes the Author!* (2021), *Positioning – A Prerequisite for Immersion* (2024), the MOCA Taipei catalogue text.
+- (Resolved: the Dortmund lecture is 2024, as in the CV; the artist says the organiser's 2025 page is a continuation.)
+- **Not yet read:** *The Rule Becomes the Author!* (2021). (*Positioning*, the MOCA Taipei catalogue text and *On the Materiality of AI* now have their own pages under texts/.)
 - **Not found:** a 2025 prize-winners page at FIfF naming Liu, an independent news or press article about Liu, and a public page for the Digi-Lehrfellows seminar's student exhibition.
 
 ## Related

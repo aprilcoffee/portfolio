@@ -13,7 +13,7 @@ sources:
   - https://aprilcoffee.github.io/heat_as_image/bibliography.html
   - https://github.com/aprilcoffee/heat_as_image
   - https://www.fiff.de/fiff-kommunikation/2026/1/
-updated: 2026-10-01
+updated: 2026-10-24
 ---
 # Heat as (Generative) Image Making (diploma thesis)
 
@@ -26,7 +26,8 @@ Liu's diploma thesis at the Academy of Media Arts Cologne (KHM) is a web-based t
 - **Code:** https://github.com/aprilcoffee/heat_as_image (MIT licence). GPU temperature is read, sent over OSC to StreamDiffusion in TouchDesigner, the image goes by NDI to a Processing visualisation, and Parler TTS adds a voice that speaks back. Needs an NVIDIA RTX card, Windows 10/11, Python 3.8+, TouchDesigner 2023+, Processing 4, CUDA 12.1.
 - **Essay version:** *Heat as (Generative) Image Making*, FIfF-Kommunikation 1/26, p. 64 (essay for the Weizenbaum-Studienpreis).
 - **Bibliography:** 43 entries, from Wiener and Turing to *Chip War* and *Atlas of AI*.
-- **Date:** the site's title block shows "2024-03-27"; see Open questions.
+- **Date:** the site's title block shows "2024-03-27"; Liu graduated with the thesis in June 2025.
+- **Supervisors:** Prof. Dr. Georg Trogemann, Prof. Dr. Lilian Haberer, Sam Hopkins, Ph.D.
 
 ## What the thesis says, chapter by chapter
 
@@ -82,8 +83,7 @@ Starts from the 2025 wave of Studio Ghibli-style image generation and Miyazaki's
 
 ## Open questions
 
-- The site's title block gives 2024-03-27 as publication date, while the diploma is dated 2025 elsewhere on the wiki. Which is the date of the thesis, and which of the web version?
-- Supervisors and acknowledgements are not named on the site.
+- (Resolved by the artist, October 2026: graduation in June 2025; supervisors Georg Trogemann, Lilian Haberer and Sam Hopkins. The 2024-03-27 on the web version's title block is not explained.)
 
 ## Related
 
@@ -97,3 +97,4 @@ Starts from the 2025 wave of Studio Ghibli-style image generation and Miyazaki's
 - https://aprilcoffee.github.io/heat_as_image/ (all chapters: prologue, introduction, loss-function, optimized-noise, materiality, outlook, bibliography)
 - https://github.com/aprilcoffee/heat_as_image
 - https://www.fiff.de/fiff-kommunikation/2026/1/
+- wiki/raw/questionnaire-2026-10-answers.md (the artist's answers, October 2026)

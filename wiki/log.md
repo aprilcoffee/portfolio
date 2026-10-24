@@ -101,3 +101,14 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 
 ## [2026-10-25] update | German hidden
 - The German site is hidden (pages forward to English); German links removed from wiki pages and the site map. Questionnaire for the artist added: raw/questionnaire-2026-10.md.
+
+## [2026-10-24] ingest | raw/questionnaire-2026-10-answers.md and three of the artist's texts
+- New: topics/medium-specificity-and-practice (the practice in the artist's own words), texts/positioning-a-prerequisite-for-immersion, texts/hello-human; texts/on-the-materiality-of-artificial-intelligence rewritten from the full text.
+- Updated: overview, faq, topics/workshops (dates, audience, AI literacy, Paranoia origin), works/bring-us-somewhere, works/imaginary-landscape (ended 2024), works/just-jailbreak (Fabian Mosele, Kaohsiung), works/steering-through-the-inner-residue (NCAF), people/lll (one-time), people/leon-etienne-kuehr (met at KHM), teaching-education-awards (courses, NCAF grant), texts/heat-as-generative-image-making (June 2025, supervisors), topics/audio-visual-performance, talks-and-writing and external-links (Dortmund 2024 confirmed).
+- Website: Fall and Let the drone fly hidden; chat calls the artist "Ting-Chun" and gives the Weimar email.
+
+
+## [2026-10-24] update | Just Jailbreak and Bring Us Somewhere sources
+- works/just-jailbreak: TTXC Taiwan Technology and Culture Expo (Pier-2 Art Center, Kaohsiung, 12–27 Oct 2024), residency by Pier-2 and Hello World; CV exhibition added.
+- works/bring-us-somewhere: 城市轉藝器 dates, organiser, curator (ARTouch).
+- external-links, texts/on-the-materiality: KITeGG publications page. Chat rules: link own texts and workshop pages for questions about ideas.
