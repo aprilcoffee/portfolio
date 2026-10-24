@@ -60,11 +60,14 @@ button { font: inherit; color: inherit; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 /* underlined links inside running text */
-.prose a, .meta a, .cv-row a, .contact a {
+.prose a, .meta a, .contact a {
   text-decoration: underline; text-decoration-thickness: 1px;
   text-underline-offset: 0.1875rem; text-decoration-color: var(--dim);
 }
-.prose a:hover, .meta a:hover, .cv-row a:hover, .contact a:hover { text-decoration-color: var(--ink); }
+.prose a:hover, .meta a:hover, .contact a:hover { text-decoration-color: var(--ink); }
+/* CV rows and the CV jump list: no underlines (too many lines), underline only on hover */
+.cv-row a { text-decoration: none; }
+.cv-row a:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.1875rem; }
 
 /* ---------- sidebar ---------- */
 .side {
@@ -459,8 +462,8 @@ html:lang(zh) .prose strong { font-family: var(--display); }
 .about-text p + p { margin-top: 0.9em; }
 .about-top .about-text + .contact { margin-top: 2.25rem; }
 .cv-nav { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; margin: -2.5rem 0 3rem calc(var(--label) + 3rem); font-size: 0.8125rem; color: var(--mut); }
-.cv-nav a { border-bottom: 1px solid var(--line); }
-.cv-nav a:hover { color: var(--ink); border-color: var(--ink); }
+.cv-nav a { border-bottom: 0; }
+.cv-nav a:hover { color: var(--ink); }
 .cv-sec { scroll-margin-top: 1.5rem; }
 .cv-more summary { cursor: pointer; margin: 0.75rem 0 0.25rem; font-size: 0.8125rem; color: var(--mut); list-style: none; }
 .cv-more summary::-webkit-details-marker { display: none; }
