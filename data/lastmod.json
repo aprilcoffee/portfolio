@@ -1,6 +1,6 @@
 {
 "": {"h": "5eddad1fd5cf", "d": "2026-10-24"},
-"about/": {"h": "03f6e31f3d17", "d": "2026-10-24"},
+"about/": {"h": "4893e22cb781", "d": "2026-10-24"},
 "blog/": {"h": "627a426110b9", "d": "2026-10-24"},
 "blog/body-as-the-reflection-on-site/": {"h": "5acfe8efd70f", "d": "2026-10-24"},
 "blog/lift-off/": {"h": "a841fd52cc38", "d": "2026-10-24"},
@@ -17,7 +17,7 @@
 "datenschutz/": {"h": "97e52af31216", "d": "2026-10-24"},
 "friends/": {"h": "62b4a4eb0c27", "d": "2026-10-24"},
 "impressum/": {"h": "2eb08b239407", "d": "2026-10-24"},
-"sitemap/": {"h": "5e8518fbfbdd", "d": "2026-10-24"},
+"sitemap/": {"h": "eeb49e93dd08", "d": "2026-10-24"},
 "works/": {"h": "66c421286688", "d": "2026-10-24"},
 "works/51-ways-to-spell-the-image-giraffe/": {"h": "dce283c63ae4", "d": "2026-10-24"},
 "works/achtung-verwischung/": {"h": "ae2a8edb888b", "d": "2026-10-24"},
@@ -44,10 +44,10 @@
 "workshops/paranoia-de-prompting/": {"h": "069afc4d3880", "d": "2026-10-24"},
 "workshops/the-given-image/": {"h": "faa2a0d1f126", "d": "2026-10-24"},
 "zh/": {"h": "61c4380a2858", "d": "2026-10-24"},
-"zh/about/": {"h": "0f70adb48a75", "d": "2026-10-24"},
+"zh/about/": {"h": "e2753e7f64da", "d": "2026-10-24"},
 "zh/blog/": {"h": "55405c84255d", "d": "2026-10-24"},
 "zh/friends/": {"h": "89e672dc9e0c", "d": "2026-10-24"},
-"zh/sitemap/": {"h": "16501cc8a39b", "d": "2026-10-24"},
+"zh/sitemap/": {"h": "66495a09031a", "d": "2026-10-24"},
 "zh/works/": {"h": "6e63dd33f445", "d": "2026-10-24"},
 "zh/works/51-ways-to-spell-the-image-giraffe/": {"h": "8956835f8765", "d": "2026-10-24"},
 "zh/works/achtung-verwischung/": {"h": "6e9856357a48", "d": "2026-10-24"},
@@ -69,8 +69,8 @@
 "zh/works/steering-through-the-inner-residue/": {"h": "78ea35b671bb", "d": "2026-10-24"},
 "zh/works/sun/": {"h": "ced1195d82cf", "d": "2026-10-24"},
 "zh/works/take-off-the-clothes/": {"h": "9ae079294774", "d": "2026-10-24"},
-"zh/workshops/": {"h": "8bb821dedcc1", "d": "2026-10-24"},
-"zh/workshops/conditions-for-emotions/": {"h": "1ad2c79c7c1e", "d": "2026-10-24"},
-"zh/workshops/paranoia-de-prompting/": {"h": "549352d4240d", "d": "2026-10-24"},
-"zh/workshops/the-given-image/": {"h": "811631a4af85", "d": "2026-10-24"}
+"zh/workshops/": {"h": "89ba811f494d", "d": "2026-10-24"},
+"zh/workshops/conditions-for-emotions/": {"h": "d28dd48f3ff8", "d": "2026-10-24"},
+"zh/workshops/paranoia-de-prompting/": {"h": "814f4ebf82af", "d": "2026-10-24"},
+"zh/workshops/the-given-image/": {"h": "ed83337d6140", "d": "2026-10-24"}
 }

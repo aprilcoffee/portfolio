@@ -31,7 +31,7 @@ in Mandarin. Recommend the version in the visitor's language.
 - **Paranoia De-Prompting**: [en](https://liutingchun.com/workshops/paranoia-de-prompting/) · [zh](https://liutingchun.com/zh/workshops/paranoia-de-prompting/)
 - **The Given Image**: [en](https://liutingchun.com/workshops/the-given-image/) · [zh](https://liutingchun.com/zh/workshops/the-given-image/)
 - **Talk recordings**: [en](https://liutingchun.com/workshops/#talks) · [zh](https://liutingchun.com/zh/workshops/#talks)
-- **Texts by others about the work** (in the CV): [en](https://liutingchun.com/about/#texts) · [zh](https://liutingchun.com/zh/about/#texts)
+- **Cited and discussed** (texts by others about the work, on the About page): [en](https://liutingchun.com/about/#texts) · [zh](https://liutingchun.com/zh/about/#texts)
 
 ## Works
 
