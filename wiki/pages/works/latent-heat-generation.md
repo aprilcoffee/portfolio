@@ -5,7 +5,6 @@ tags: [artistic-research, material-infrastructure-of-ai, recursion-and-feedback]
 sources:
   - ../../../data/site.json (works → latent-heat-generation)
   - https://liutingchun.com/works/latent-heat-generation/
-  - https://liutingchun.com/de/works/latent-heat-generation/
   - https://liutingchun.com/zh/works/latent-heat-generation/
   - https://aprilcoffee.github.io/heat_as_image/index.html
   - https://github.com/aprilcoffee/heat_as_image
@@ -25,7 +24,7 @@ An artistic research project that makes the material side of AI visible. Thermal
 - **Materials:** Computer, Graphics Cards, UV Wafer, Website
 - **Link:** [Research notes](https://aprilcoffee.github.io/heat_as_image/index.html)
 - **Clips:** 1 video file(s) on the work page
-- **Page:** [https://liutingchun.com/works/latent-heat-generation/](https://liutingchun.com/works/latent-heat-generation/) · [de](https://liutingchun.com/de/works/latent-heat-generation/) · [zh](https://liutingchun.com/zh/works/latent-heat-generation/)
+- **Page:** [https://liutingchun.com/works/latent-heat-generation/](https://liutingchun.com/works/latent-heat-generation/) · [zh](https://liutingchun.com/zh/works/latent-heat-generation/)
 
 ## Key ideas
 
@@ -53,7 +52,6 @@ An artistic research project that makes the material side of AI visible. Thermal
 
 - ../../../data/site.json (works → latent-heat-generation)
 - https://liutingchun.com/works/latent-heat-generation/
-- https://liutingchun.com/de/works/latent-heat-generation/
 - https://liutingchun.com/zh/works/latent-heat-generation/
 - https://aprilcoffee.github.io/heat_as_image/index.html
 - https://github.com/aprilcoffee/heat_as_image

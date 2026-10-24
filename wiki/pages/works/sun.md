@@ -5,7 +5,6 @@ tags: [internet-art-p-js-website, internet-and-network-art, material-infrastruct
 sources:
   - ../../../data/site.json (works → sun)
   - https://liutingchun.com/works/sun/
-  - https://liutingchun.com/de/works/sun/
   - https://liutingchun.com/zh/works/sun/
 updated: 2026-10-01
 ---
@@ -21,7 +20,7 @@ A piece of internet art: a p5.js web page that shows a sun on a mobile phone whi
 - **Type (zh):** 網路藝術（p5.js 網頁）
 - **Credits:** In memory of Ying Wen, Wang
 - **Link:** [Open the work (mobile browser)](https://aprilcoffee.github.io/sun/)
-- **Page:** [https://liutingchun.com/works/sun/](https://liutingchun.com/works/sun/) · [de](https://liutingchun.com/de/works/sun/) · [zh](https://liutingchun.com/zh/works/sun/)
+- **Page:** [https://liutingchun.com/works/sun/](https://liutingchun.com/works/sun/) · [zh](https://liutingchun.com/zh/works/sun/)
 
 ## Key ideas
 
@@ -39,5 +38,4 @@ A piece of internet art: a p5.js web page that shows a sun on a mobile phone whi
 
 - ../../../data/site.json (works → sun)
 - https://liutingchun.com/works/sun/
-- https://liutingchun.com/de/works/sun/
 - https://liutingchun.com/zh/works/sun/

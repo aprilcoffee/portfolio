@@ -5,7 +5,6 @@ tags: [performance-record, body-and-action]
 sources:
   - ../../../data/site.json (works → inevitable-cross-of-the-parallel)
   - https://liutingchun.com/works/inevitable-cross-of-the-parallel/
-  - https://liutingchun.com/de/works/inevitable-cross-of-the-parallel/
   - https://liutingchun.com/zh/works/inevitable-cross-of-the-parallel/
 updated: 2026-10-01
 ---
@@ -22,7 +21,7 @@ A performance (2017) with Yu-Wei He. Two computers play a game whose moves are v
 - **With:** Yu-Wei He
 - **Video:** https://vimeo.com/246924651
 - **Credits:** Performer: Ting-Chun Liu, Yu-Wei He
-- **Page:** [https://liutingchun.com/works/inevitable-cross-of-the-parallel/](https://liutingchun.com/works/inevitable-cross-of-the-parallel/) · [de](https://liutingchun.com/de/works/inevitable-cross-of-the-parallel/) · [zh](https://liutingchun.com/zh/works/inevitable-cross-of-the-parallel/)
+- **Page:** [https://liutingchun.com/works/inevitable-cross-of-the-parallel/](https://liutingchun.com/works/inevitable-cross-of-the-parallel/) · [zh](https://liutingchun.com/zh/works/inevitable-cross-of-the-parallel/)
 
 ## Key ideas
 
@@ -39,5 +38,4 @@ A performance (2017) with Yu-Wei He. Two computers play a game whose moves are v
 
 - ../../../data/site.json (works → inevitable-cross-of-the-parallel)
 - https://liutingchun.com/works/inevitable-cross-of-the-parallel/
-- https://liutingchun.com/de/works/inevitable-cross-of-the-parallel/
 - https://liutingchun.com/zh/works/inevitable-cross-of-the-parallel/

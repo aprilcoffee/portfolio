@@ -5,7 +5,6 @@ tags: [multimodal-poetry, critical-ai-and-image-models, tokens, genetic-algorith
 sources:
   - ../../../data/site.json (works → sixteen-tokens-for-a-cave)
   - https://liutingchun.com/works/sixteen-tokens-for-a-cave/
-  - https://liutingchun.com/de/works/sixteen-tokens-for-a-cave/
   - https://liutingchun.com/zh/works/sixteen-tokens-for-a-cave/
   - https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai
 updated: 2026-10-07
@@ -24,7 +23,7 @@ Multimodal poetry in token language, with Leon-Etienne Kühr, in development. St
 - **Materials:** Genetic algorithm, CLIP ViT-L/14, image models
 - **With:** Leon-Etienne Kühr
 - **Link:** [Preliminary work in the 39C3 talk, 28:37–32:20 (media.ccc.de)](https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai)
-- **Page:** [https://liutingchun.com/works/sixteen-tokens-for-a-cave/](https://liutingchun.com/works/sixteen-tokens-for-a-cave/) · [de](https://liutingchun.com/de/works/sixteen-tokens-for-a-cave/) · [zh](https://liutingchun.com/zh/works/sixteen-tokens-for-a-cave/)
+- **Page:** [https://liutingchun.com/works/sixteen-tokens-for-a-cave/](https://liutingchun.com/works/sixteen-tokens-for-a-cave/) · [zh](https://liutingchun.com/zh/works/sixteen-tokens-for-a-cave/)
 
 ## Key ideas
 
@@ -46,6 +45,5 @@ Multimodal poetry in token language, with Leon-Etienne Kühr, in development. St
 
 - ../../../data/site.json (works → sixteen-tokens-for-a-cave)
 - https://liutingchun.com/works/sixteen-tokens-for-a-cave/
-- https://liutingchun.com/de/works/sixteen-tokens-for-a-cave/
 - https://liutingchun.com/zh/works/sixteen-tokens-for-a-cave/
 - https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai

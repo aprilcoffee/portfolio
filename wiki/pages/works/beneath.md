@@ -5,7 +5,6 @@ tags: [sound-installation, light-numbers-and-time]
 sources:
   - ../../../data/site.json (works → beneath)
   - https://liutingchun.com/works/beneath/
-  - https://liutingchun.com/de/works/beneath/
   - https://liutingchun.com/zh/works/beneath/
 updated: 2026-10-01
 ---
@@ -20,7 +19,7 @@ A sound installation with directional speakers and LED strips. The sound of ocea
 - **Type (de):** Klanginstallation
 - **Type (zh):** 聲音裝置
 - **Materials:** Directional Speaker, LED Light strips
-- **Page:** [https://liutingchun.com/works/beneath/](https://liutingchun.com/works/beneath/) · [de](https://liutingchun.com/de/works/beneath/) · [zh](https://liutingchun.com/zh/works/beneath/)
+- **Page:** [https://liutingchun.com/works/beneath/](https://liutingchun.com/works/beneath/) · [zh](https://liutingchun.com/zh/works/beneath/)
 
 ## Key ideas
 
@@ -35,5 +34,4 @@ A sound installation with directional speakers and LED strips. The sound of ocea
 
 - ../../../data/site.json (works → beneath)
 - https://liutingchun.com/works/beneath/
-- https://liutingchun.com/de/works/beneath/
 - https://liutingchun.com/zh/works/beneath/

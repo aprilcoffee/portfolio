@@ -5,7 +5,6 @@ tags: [video-installation, body-and-action]
 sources:
   - ../../../data/site.json (works → i-kept-repeating-the-unfamiliar-self)
   - https://liutingchun.com/works/i-kept-repeating-the-unfamiliar-self/
-  - https://liutingchun.com/de/works/i-kept-repeating-the-unfamiliar-self/
   - https://liutingchun.com/zh/works/i-kept-repeating-the-unfamiliar-self/
   - https://liutingchun.com/blog/body-as-the-reflection-on-site/
 updated: 2026-10-01
@@ -21,7 +20,7 @@ A video installation made during an exchange in Prague (2017). One simple gestur
 - **Type (de):** Videoinstallation
 - **Type (zh):** 錄像裝置
 - **Video:** https://vimeo.com/320003075
-- **Page:** [https://liutingchun.com/works/i-kept-repeating-the-unfamiliar-self/](https://liutingchun.com/works/i-kept-repeating-the-unfamiliar-self/) · [de](https://liutingchun.com/de/works/i-kept-repeating-the-unfamiliar-self/) · [zh](https://liutingchun.com/zh/works/i-kept-repeating-the-unfamiliar-self/)
+- **Page:** [https://liutingchun.com/works/i-kept-repeating-the-unfamiliar-self/](https://liutingchun.com/works/i-kept-repeating-the-unfamiliar-self/) · [zh](https://liutingchun.com/zh/works/i-kept-repeating-the-unfamiliar-self/)
 
 ## Key ideas
 
@@ -38,6 +37,5 @@ A video installation made during an exchange in Prague (2017). One simple gestur
 
 - ../../../data/site.json (works → i-kept-repeating-the-unfamiliar-self)
 - https://liutingchun.com/works/i-kept-repeating-the-unfamiliar-self/
-- https://liutingchun.com/de/works/i-kept-repeating-the-unfamiliar-self/
 - https://liutingchun.com/zh/works/i-kept-repeating-the-unfamiliar-self/
 - https://liutingchun.com/blog/body-as-the-reflection-on-site/

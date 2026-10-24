@@ -5,7 +5,6 @@ tags: [site-specific-performance, archives-and-institutions, body-and-action]
 sources:
   - ../../../data/site.json (works → achtung-verwischung)
   - https://liutingchun.com/works/achtung-verwischung/
-  - https://liutingchun.com/de/works/achtung-verwischung/
   - https://liutingchun.com/zh/works/achtung-verwischung/
 updated: 2026-10-01
 ---
@@ -21,7 +20,7 @@ A site-specific performance made during the 'Leaky Archive' seminar (2023) for a
 - **Type (zh):** 特定場域表演
 - **Materials:** Wet floor stand
 - **Credits:** Photo: @joshua_karan_singh, @juanfrocu
-- **Page:** [https://liutingchun.com/works/achtung-verwischung/](https://liutingchun.com/works/achtung-verwischung/) · [de](https://liutingchun.com/de/works/achtung-verwischung/) · [zh](https://liutingchun.com/zh/works/achtung-verwischung/)
+- **Page:** [https://liutingchun.com/works/achtung-verwischung/](https://liutingchun.com/works/achtung-verwischung/) · [zh](https://liutingchun.com/zh/works/achtung-verwischung/)
 
 ## Key ideas
 
@@ -39,5 +38,4 @@ A site-specific performance made during the 'Leaky Archive' seminar (2023) for a
 
 - ../../../data/site.json (works → achtung-verwischung)
 - https://liutingchun.com/works/achtung-verwischung/
-- https://liutingchun.com/de/works/achtung-verwischung/
 - https://liutingchun.com/zh/works/achtung-verwischung/

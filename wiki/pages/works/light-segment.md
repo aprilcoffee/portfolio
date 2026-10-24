@@ -5,7 +5,6 @@ tags: [light-installation, light-numbers-and-time]
 sources:
   - ../../../data/site.json (works → light-segment)
   - https://liutingchun.com/works/light-segment/
-  - https://liutingchun.com/de/works/light-segment/
   - https://liutingchun.com/zh/works/light-segment/
   - https://liutingchun.com/blog/raspberry-pi-shift-register/
 updated: 2026-10-01
@@ -22,7 +21,7 @@ A light installation by LLL (2017) made of seven-segment displays on a custom PC
 - **Type (zh):** 燈光裝置
 - **Materials:** 7 segment light, light stand, angle steel, self-designed PCB board — 175 × 35 × 30 cm
 - **With:** LLL (林瑜亮 Lin Yu-Liang, 李翎暄 Li Ling-Syuan)
-- **Page:** [https://liutingchun.com/works/light-segment/](https://liutingchun.com/works/light-segment/) · [de](https://liutingchun.com/de/works/light-segment/) · [zh](https://liutingchun.com/zh/works/light-segment/)
+- **Page:** [https://liutingchun.com/works/light-segment/](https://liutingchun.com/works/light-segment/) · [zh](https://liutingchun.com/zh/works/light-segment/)
 
 ## Key ideas
 
@@ -39,6 +38,5 @@ A light installation by LLL (2017) made of seven-segment displays on a custom PC
 
 - ../../../data/site.json (works → light-segment)
 - https://liutingchun.com/works/light-segment/
-- https://liutingchun.com/de/works/light-segment/
 - https://liutingchun.com/zh/works/light-segment/
 - https://liutingchun.com/blog/raspberry-pi-shift-register/

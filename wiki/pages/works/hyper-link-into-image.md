@@ -5,7 +5,6 @@ tags: [internet-art, internet-and-network-art]
 sources:
   - ../../../data/site.json (works → hyper-link-into-image)
   - https://liutingchun.com/works/hyper-link-into-image/
-  - https://liutingchun.com/de/works/hyper-link-into-image/
   - https://liutingchun.com/zh/works/hyper-link-into-image/
 updated: 2026-10-01
 ---
@@ -20,7 +19,7 @@ An internet-art installation (2016). A Wi-Fi router in the space, running a Ruby
 - **Type (de):** Netzkunst
 - **Type (zh):** 網路藝術
 - **Materials:** Router, Mobile, code with programming language Ruby
-- **Page:** [https://liutingchun.com/works/hyper-link-into-image/](https://liutingchun.com/works/hyper-link-into-image/) · [de](https://liutingchun.com/de/works/hyper-link-into-image/) · [zh](https://liutingchun.com/zh/works/hyper-link-into-image/)
+- **Page:** [https://liutingchun.com/works/hyper-link-into-image/](https://liutingchun.com/works/hyper-link-into-image/) · [zh](https://liutingchun.com/zh/works/hyper-link-into-image/)
 
 ## Key ideas
 
@@ -36,5 +35,4 @@ An internet-art installation (2016). A Wi-Fi router in the space, running a Ruby
 
 - ../../../data/site.json (works → hyper-link-into-image)
 - https://liutingchun.com/works/hyper-link-into-image/
-- https://liutingchun.com/de/works/hyper-link-into-image/
 - https://liutingchun.com/zh/works/hyper-link-into-image/

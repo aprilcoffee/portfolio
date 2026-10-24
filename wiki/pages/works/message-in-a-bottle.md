@@ -5,7 +5,6 @@ tags: [facebook-posts, internet-and-network-art]
 sources:
   - ../../../data/site.json (works → message-in-a-bottle)
   - https://liutingchun.com/works/message-in-a-bottle/
-  - https://liutingchun.com/de/works/message-in-a-bottle/
   - https://liutingchun.com/zh/works/message-in-a-bottle/
   - https://liutingchun.com/blog/messageinthebottle/
 updated: 2026-10-01
@@ -20,7 +19,7 @@ A series of Facebook posts (2017) whose only content is the exact time of postin
 - **Type:** Facebook Posts
 - **Type (de):** Facebook-Beiträge
 - **Type (zh):** 臉書貼文
-- **Page:** [https://liutingchun.com/works/message-in-a-bottle/](https://liutingchun.com/works/message-in-a-bottle/) · [de](https://liutingchun.com/de/works/message-in-a-bottle/) · [zh](https://liutingchun.com/zh/works/message-in-a-bottle/)
+- **Page:** [https://liutingchun.com/works/message-in-a-bottle/](https://liutingchun.com/works/message-in-a-bottle/) · [zh](https://liutingchun.com/zh/works/message-in-a-bottle/)
 
 ## Key ideas
 
@@ -37,6 +36,5 @@ A series of Facebook posts (2017) whose only content is the exact time of postin
 
 - ../../../data/site.json (works → message-in-a-bottle)
 - https://liutingchun.com/works/message-in-a-bottle/
-- https://liutingchun.com/de/works/message-in-a-bottle/
 - https://liutingchun.com/zh/works/message-in-a-bottle/
 - https://liutingchun.com/blog/messageinthebottle/

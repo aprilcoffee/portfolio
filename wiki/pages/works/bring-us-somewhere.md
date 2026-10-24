@@ -5,7 +5,6 @@ tags: [video, body-and-action]
 sources:
   - ../../../data/site.json (works → bring-us-somewhere)
   - https://liutingchun.com/works/bring-us-somewhere/
-  - https://liutingchun.com/de/works/bring-us-somewhere/
   - https://liutingchun.com/zh/works/bring-us-somewhere/
 updated: 2026-10-01
 ---
@@ -20,7 +19,7 @@ A video work from 2020 (帶我去一個地方). The website shows the video only
 - **Type (de):** Video
 - **Type (zh):** 錄像
 - **Video:** https://vimeo.com/520890044
-- **Page:** [https://liutingchun.com/works/bring-us-somewhere/](https://liutingchun.com/works/bring-us-somewhere/) · [de](https://liutingchun.com/de/works/bring-us-somewhere/) · [zh](https://liutingchun.com/zh/works/bring-us-somewhere/)
+- **Page:** [https://liutingchun.com/works/bring-us-somewhere/](https://liutingchun.com/works/bring-us-somewhere/) · [zh](https://liutingchun.com/zh/works/bring-us-somewhere/)
 
 ## Open questions
 
@@ -35,5 +34,4 @@ A video work from 2020 (帶我去一個地方). The website shows the video only
 
 - ../../../data/site.json (works → bring-us-somewhere)
 - https://liutingchun.com/works/bring-us-somewhere/
-- https://liutingchun.com/de/works/bring-us-somewhere/
 - https://liutingchun.com/zh/works/bring-us-somewhere/

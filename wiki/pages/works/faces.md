@@ -5,7 +5,6 @@ tags: [video, body-and-action]
 sources:
   - ../../../data/site.json (works → faces)
   - https://liutingchun.com/works/faces/
-  - https://liutingchun.com/de/works/faces/
   - https://liutingchun.com/zh/works/faces/
 updated: 2026-10-01
 ---
@@ -20,7 +19,7 @@ A short video work from 2020, introduced only by the line "I don't like looking 
 - **Type (de):** Video
 - **Type (zh):** 錄像
 - **Video:** https://vimeo.com/520889691
-- **Page:** [https://liutingchun.com/works/faces/](https://liutingchun.com/works/faces/) · [de](https://liutingchun.com/de/works/faces/) · [zh](https://liutingchun.com/zh/works/faces/)
+- **Page:** [https://liutingchun.com/works/faces/](https://liutingchun.com/works/faces/) · [zh](https://liutingchun.com/zh/works/faces/)
 
 ## Open questions
 
@@ -35,5 +34,4 @@ A short video work from 2020, introduced only by the line "I don't like looking 
 
 - ../../../data/site.json (works → faces)
 - https://liutingchun.com/works/faces/
-- https://liutingchun.com/de/works/faces/
 - https://liutingchun.com/zh/works/faces/

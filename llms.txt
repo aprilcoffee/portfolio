@@ -15,7 +15,7 @@ Areas: Critical artificial intelligence, Generative AI, Artistic research on AI,
 - [Talks & Workshops](https://liutingchun.com/workshops/): talk recordings, and workshops on local AI, embeddings and AI bias
 - [Written about the work](https://liutingchun.com/about/#texts): texts by others, in the CV
 
-The site is also available in German (https://liutingchun.com/de/) and Traditional Chinese (https://liutingchun.com/zh/).
+The site is also available in Traditional Chinese (https://liutingchun.com/zh/).
 
 ## Works
 

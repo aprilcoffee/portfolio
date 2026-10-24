@@ -12,7 +12,7 @@ S = D["site"]
 BASE = S["base_url"].rstrip("/") + "/"
 # Sun and Heat as Image live on the GitHub Pages domain whichever domain the site uses.
 PROJECTS = "https://aprilcoffee.github.io/"
-LANGS = [("en", ""), ("de", "de/"), ("zh", "zh/")]
+LANGS = [("en", ""), ("zh", "zh/")]  # German ("de/") is hidden for now: its pages forward to English
 
 
 def each(path):
@@ -36,7 +36,7 @@ updated: generated
 # Site map and links
 
 Every page of the website and every external link it points to, generated from the site data.
-Each page exists in English, German (de) and Traditional Chinese (zh); blog posts exist once,
+Each page exists in English and Traditional Chinese (zh); blog posts exist once,
 in Mandarin. Recommend the version in the visitor's language.
 
 ## Main sections

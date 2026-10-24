@@ -5,7 +5,6 @@ tags: [curatorial-practice, archives-and-institutions, critical-ai-and-image-mod
 sources:
   - ../../../data/site.json (works → interpolation-of-the-invisible-color)
   - https://liutingchun.com/works/interpolation-of-the-invisible-color/
-  - https://liutingchun.com/de/works/interpolation-of-the-invisible-color/
   - https://liutingchun.com/zh/works/interpolation-of-the-invisible-color/
   - https://www.filmwerkstatt-duesseldorf.de/interpolation-of-invisible-colors/
   - https://www.filmwerkstatt-duesseldorf.de/latenz/
@@ -26,7 +25,7 @@ A curatorial project and interactive installation with Leon-Etienne Kühr, commi
 - **Link:** [Selected artists](https://storagemuseum.org/en/program/6-ausstellung)
 - **Link:** [Storage Museum archive](https://storagemuseum.org/en/database)
 - **Clips:** 2 video file(s) on the work page
-- **Page:** [https://liutingchun.com/works/interpolation-of-the-invisible-color/](https://liutingchun.com/works/interpolation-of-the-invisible-color/) · [de](https://liutingchun.com/de/works/interpolation-of-the-invisible-color/) · [zh](https://liutingchun.com/zh/works/interpolation-of-the-invisible-color/)
+- **Page:** [https://liutingchun.com/works/interpolation-of-the-invisible-color/](https://liutingchun.com/works/interpolation-of-the-invisible-color/) · [zh](https://liutingchun.com/zh/works/interpolation-of-the-invisible-color/)
 
 ## Key ideas
 
@@ -57,7 +56,6 @@ A curatorial project and interactive installation with Leon-Etienne Kühr, commi
 
 - ../../../data/site.json (works → interpolation-of-the-invisible-color)
 - https://liutingchun.com/works/interpolation-of-the-invisible-color/
-- https://liutingchun.com/de/works/interpolation-of-the-invisible-color/
 - https://liutingchun.com/zh/works/interpolation-of-the-invisible-color/
 - https://www.filmwerkstatt-duesseldorf.de/interpolation-of-invisible-colors/
 - https://www.filmwerkstatt-duesseldorf.de/latenz/
