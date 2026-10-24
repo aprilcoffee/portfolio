@@ -18,9 +18,9 @@ A curatorial project and interactive installation with Leon-Etienne Kühr, commi
 ## Facts
 
 - **Year:** 2025
-- **Type:** Curatorial Practice, Interactive Installation
-- **Type (de):** Kuratorische Praxis, interaktive Installation
-- **Type (zh):** 策展實踐、互動裝置
+- **Type:** Curatorial Project, Interactive Installation
+- **Type (de):** Kuratorisches Projekt, interaktive Installation
+- **Type (zh):** 策展計畫、互動裝置
 - **With:** Leon-Etienne Kühr; commissioned by Storage Museum Düsseldorf
 - **Link:** [Selected artists](https://storagemuseum.org/en/program/6-ausstellung)
 - **Link:** [Storage Museum archive](https://storagemuseum.org/en/database)

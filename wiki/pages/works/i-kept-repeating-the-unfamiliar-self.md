@@ -18,7 +18,7 @@ A video installation made during an exchange in Prague (2017). One simple gestur
 - **Year:** 2017
 - **Type:** Video Installation
 - **Type (de):** Videoinstallation
-- **Type (zh):** 錄像裝置
+- **Type (zh):** 影像裝置
 - **Video:** https://vimeo.com/320003075
 - **Page:** [https://liutingchun.com/works/i-kept-repeating-the-unfamiliar-self/](https://liutingchun.com/works/i-kept-repeating-the-unfamiliar-self/) · [zh](https://liutingchun.com/zh/works/i-kept-repeating-the-unfamiliar-self/)
 

@@ -227,7 +227,19 @@ def cover_of(w):
 URL_RE = re.compile(r"https?://[A-Za-z0-9\-._~:/?#\[\]@!$&'()*+,;=%]+")
 
 
+MD_LINK = re.compile(r"\[([^\]]+)\]\((https?://[^)\s]+)\)")
+
+
 def linkify(text):
+    """Bare URLs and Markdown links [label](url) in running text become links."""
+    if MD_LINK.search(text or ""):
+        out, last = [], 0
+        for m in MD_LINK.finditer(text):
+            out.append(linkify(text[last:m.start()]))
+            out.append(a(m.group(2), esc(m.group(1))))
+            last = m.end()
+        out.append(linkify(text[last:]))
+        return "".join(out)
     out, last = [], 0
     for m in URL_RE.finditer(text):
         u = m.group(0).rstrip(".,;:!?)")
@@ -342,7 +354,6 @@ UI = {
         "Year": "Year", "Status": "Status", "Type": "Type", "Materials": "Materials", "With": "With", "Link": "Link",
         "work_desc": "%s (%s), %s by %s.", "work": "work", "work_with": "with %s", "event": "Event page", "held": "Sessions", "workshop": "Workshop",
         "perf_title": "Performance archive",
-        "perf_lead": "Recordings of live audio-visual sets and noise performances, 2016–2024, on stage, at festivals, on the radio and at exhibition openings. They open on Vimeo.",
         "watch": "Watch on %s ↗",
         "about": "About",
         "blog_title": "Blog Archive",
@@ -377,7 +388,6 @@ UI = {
         "Year": "Jahr", "Status": "Status", "Type": "Art", "Materials": "Material", "With": "Mit", "Link": "Link",
         "work_desc": "%s (%s), %s von %s.", "work": "Arbeit", "work_with": "mit %s", "event": "Veranstaltung", "held": "Termine", "workshop": "Workshop",
         "perf_title": "Performance-Archiv",
-        "perf_lead": "Aufzeichnungen audiovisueller Live-Sets und Noise-Performances, 2016–2024, auf der Bühne, bei Festivals, im Radio und bei Ausstellungseröffnungen. Sie öffnen sich auf Vimeo.",
         "watch": "Auf %s ansehen ↗",
         "about": "Über mich",
         "blog_title": "Blog-Archiv",
@@ -404,15 +414,14 @@ UI = {
         "works_lead": "裝置、表演、網路藝術與藝術研究，%s–%s。",
         "works_desc": "%s的精選作品，%s–%s：裝置、表演、網路藝術，以及關於人工智慧的藝術研究。",
         "Topics": "主題", "Email": "信箱", "contact_note": "我開設工作坊，主題包括在自己的電腦上使用 AI、embedding 實作，以及辨識 AI 模型中的偏見。工作坊與講座邀約，歡迎來信。", "work_by": "%s，%s，%s。",
-        "tags": {"works": "批判性 AI、生成藝術、藝術研究、控制論、網路藝術、影音表演",
-                 "about": "批判性 AI、生成藝術、藝術研究、控制論、網路藝術、影音表演",
+        "tags": {"works": "批判性 AI、生成藝術、藝術研究、控制論、網路藝術、音像演出",
+                 "about": "批判性 AI、生成藝術、藝術研究、控制論、網路藝術、音像演出",
                  "workshops": "本地端 AI、embedding 實作、AI 偏見、工作坊、講座、講座錄影"},
         "sitemap": "網站地圖", "sitemap_lead": "這個網站的所有頁面。",
         "sitemap_desc": "%s網站的網站地圖：創作計畫與表演、講座與工作坊、關於、部落格。",
         "Year": "年份", "Status": "狀態", "Type": "類型", "Materials": "媒材", "With": "合作", "Link": "連結",
         "work_desc": "%s（%s），%s，%s。", "work": "作品", "work_with": "與 %s 合作", "event": "活動頁面", "held": "場次", "workshop": "工作坊",
         "perf_title": "表演紀錄",
-        "perf_lead": "2016 至 2024 年間現場影音演出與噪音演出的錄影，演出場合包括表演場地、藝術節、電台節目與展覽開幕。點選即可在 Vimeo 觀看。",
         "watch": "在 %s 觀看 ↗",
         "about": "關於",
         "blog_title": "部落格 Blog Archive",
@@ -779,8 +788,8 @@ for L in LANGS:
          '<header class="page-head"><h1 class="page-title">%s</h1>%s</header>' % (
              esc(u["nav"]["works"]), '<p class="lead jump"><a href="#performances">%s ↓</a></p>' % esc(u["perf_title"]) if perfs else "") +
          '<div class="grid">%s</div>' % "".join(work_card(i + 1, w, L, kw=True) for i, w in enumerate(works)) +
-         ('<section class="sub-sec" id="performances"><header class="sub-head"><h2>%s</h2><p class="lead">%s</p></header>'
-          '<div class="perf">%s</div></section>' % (esc(u["perf_title"]), esc(u["perf_lead"]), perf_html) if perfs else ""),
+         ('<section class="sub-sec" id="performances"><header class="sub-head"><h2>%s</h2></header>'
+          '<div class="perf">%s</div></section>' % (esc(u["perf_title"]), perf_html) if perfs else ""),
          ld=webpage_ld("CollectionPage", P + "works/", u["nav"]["works"], u["works_desc"] % (lname(L), y0, y1), L, u["tags"]["works"]),
          section="works", lang=L, alts=each("works/"))
 
@@ -859,9 +868,7 @@ for L in LANGS:
             rows += '<div class="cv-row"%s><span class="mono">%s</span><span>%s</span></div>' % (
                 ' lang="en"' if same else "", esc(it.get("year")), a(it["url"], esc(text)) if it.get("url") else esc(text))
         cv += '<section class="cv-sec"><h2>%s</h2><div>%s</div></section>' % (esc(tr(sec, "title", L)), rows)
-        if sec.get("title") == "Publications & Writing" and press_rows("read"):  # texts by others follow the own texts
-            cv += '<section class="cv-sec" id="texts"><h2>%s</h2><div>%s</div></section>' % (
-                esc(u["press_groups"]["read"]), press_rows("read"))
+
     bio = tr(D["about"], "bio", L)
     about_mail = S.get("email_alt") or S["email"]  # the address shown on the About page (the sidebar has site.email)
     page(P + "about/", u["about"], bio,
@@ -870,7 +877,10 @@ for L in LANGS:
          '<p class="contact-note">%s</p>'
          '<p class="topics"><span class="mono">%s</span> %s</p></div></div>%s' % (
              esc(u["about"]), esc(bio), esc(u["Email"]), esc(about_mail), esc(about_mail), esc(u["contact_note"]),
-             esc(u["Topics"]), esc(u["tags"]["about"]), cv),
+             esc(u["Topics"]), esc(u["tags"]["about"]),
+             # texts by others about the work come first, before the CV
+             ('<section class="cv-sec" id="texts"><h2>%s</h2><div>%s</div></section>' % (esc(u["press_groups"]["read"]), press_rows("read"))
+              if press_rows("read") else "") + cv),
          ld=dict(person(L), description=bio, keywords=u["tags"]["about"]), og_type="profile", section="about", lang=L, alts=each("about/"))
 
     # workshops: what a workshop can be, one page each (site.json "workshops", images in images/workshops/),
@@ -907,11 +917,7 @@ for L in LANGS:
         alts = [(i.get("alt_" + L) or i.get("alt")) if isinstance(i, dict) else None for i in x.get("images", [])]
         figs = ["<figure>%s</figure>" % img(im, 1600 if k == 0 else 1000, alts[k] or "%s (%d/%d)" % (tr(x, "title", L), k + 1, len(pics)))
                 for k, im in enumerate(pics)]
-        plates = figs.pop(0).replace("<figure>", '<figure class="hero">', 1) if figs else ""
-        if len(figs) == 1:
-            plates += figs[0].replace("<figure>", '<figure class="hero">', 1)
-        elif figs:
-            plates += '<div class="cols">%s</div>' % "".join(figs)
+        plates = "".join(f.replace("<figure>", '<figure class="hero">', 1) for f in figs)  # screenshots: each at full width
         text, held = tr(x, "text", L), tr(x, "held", L)
         tl = HREFLANG[L] if L == "en" or x.get("text_" + L) else "en"
         body = ('<article class="work"><aside class="work-info"><p class="kicker mono"><a href="%s">%s</a></p><h1>%s</h1>%s<p class="shop-sum">%s</p><div class="prose"%s>%s</div>'

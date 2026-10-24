@@ -19,7 +19,7 @@ An artistic research project and talk with Leon-Etienne Kühr, in development, o
 - **Status:** In development (de: In Entwicklung; zh: 開發中)
 - **Type:** Artistic Research, Talk
 - **Type (de):** Künstlerische Forschung, Vortrag
-- **Type (zh):** 藝術研究、講演
+- **Type (zh):** 藝術研究、講座
 - **Materials:** CLIP tokenizer, Stable Diffusion
 - **With:** Leon-Etienne Kühr
 - **Link:** [Talk recording, 39C3 (media.ccc.de)](https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai) (38 min, English with German translation, CC BY 4.0)

@@ -19,9 +19,9 @@ An interactive game around a large language model. Players have to talk JJ, a st
 ## Facts
 
 - **Year:** 2024
-- **Type:** Interactive game about jailbreaking a large language model
-- **Type (de):** Interaktives Spiel über das Jailbreaken eines großen Sprachmodells
-- **Type (zh):** 關於大型語言模型越獄的互動遊戲
+- **Type:** Interactive Game, LLM
+- **Type (de):** Interaktives Spiel, LLM
+- **Type (zh):** 互動遊戲、大型語言模型
 - **With:** Fabian Mosele (the artist confirms the collaboration; Synthiola is Fabian Mosele's project)
 - **Made during:** an artist residency organised by Pier-2 Art Center and Hello World in Kaohsiung (the artists' description). The Pier-2 residency had a technology theme in 2024; press reports name Synthiola (Fabian Mosele's project) among its guests and describe the game as starting from the green Kuai Kuai snack.
 - **Shown at:** TTXC, Taiwan Technology and Culture Expo (臺灣文化科技大會), Pier-2 Art Center, Kaohsiung, 12–27 October 2024, co-organised by Taiwan's Ministry of Culture and the Kaohsiung City Government

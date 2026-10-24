@@ -18,9 +18,9 @@ An artistic research project that makes the material side of AI visible. Thermal
 ## Facts
 
 - **Year:** 2025
-- **Type:** Artistic Research
-- **Type (de):** Künstlerische Forschung
-- **Type (zh):** 藝術研究
+- **Type:** Artistic Research, Video Installation
+- **Type (de):** Künstlerische Forschung, Videoinstallation
+- **Type (zh):** 藝術研究、影像裝置
 - **Materials:** Computer, Graphics Cards, UV Wafer, Website
 - **Link:** [Research notes](https://aprilcoffee.github.io/heat_as_image/index.html)
 - **Clips:** 1 video file(s) on the work page

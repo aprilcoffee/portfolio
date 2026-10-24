@@ -80,8 +80,8 @@
 - CV 行沒有翻譯時，`build.py` 會給那一行加 `lang="en"`，讓瀏覽器與搜尋引擎知道這段是英文。
 - `works[].summary`（選填，+ `_de/_zh`）：搜尋結果與分享用的描述。只有作品文字開頭不適合當描述時才填（例如 Sixteen Tokens for a Cave 以 token 詩開頭）；沒填就用文字開頭。
 - `works[].status`（例如 In development）顯示在作品卡與作品頁的「Status」列；留空就不顯示。
-- `press[]` 的 `group` 只能是 `watch`（講座錄影，顯示在工作坊與講座頁）、`read`（他人寫的評論與研究，顯示在 About 的 CV「Publications & Writing」之後，`#texts`）；展覽、活動、機構介紹頁不放；標題與來源不翻譯，沒有 `note_de/_zh` 時該語言顯示英文並標 `lang="en"`。
-- 側邊欄：主選單只有 `NAV`（創作計畫、講座與工作坊、關於），部落格與朋友在側欄下方的小字（`FOOT`），都在 `build.py` 開頭。表演沒有獨立頁，是作品頁最下方深色的「表演紀錄」區塊（`#performances`）；舊的 `/performance/`、`/press/` 轉址到新位置。中文名稱在 `UI["zh"]["nav"]`；中文側邊欄用標題字體（`assets/style.css` 的 `html:lang(zh) .nav a`）。
+- `press[]` 的 `group` 只能是 `watch`（講座錄影，顯示在工作坊與講座頁）、`read`（他人寫的評論與研究，顯示在 About 頁簡介下方、CV 之前，`#texts`）；展覽、活動、機構介紹頁不放；標題與來源不翻譯，沒有 `note_de/_zh` 時該語言顯示英文並標 `lang="en"`。
+- 側邊欄：主選單只有 `NAV`（創作計畫、講座與工作坊、關於），部落格與朋友在側欄下方的小字（`FOOT`），都在 `build.py` 開頭。表演沒有獨立頁，是作品頁最下方深色的「表演紀錄」區塊（`#performances`），沒有引言；中文寫「音像演出」不寫「影音表演」。作品的 `type` 與卡片小字 `kw` 用同一套詞（兩者保持一致）；影像裝置中文寫「影像裝置」；舊的 `/performance/`、`/press/` 轉址到新位置。中文名稱在 `UI["zh"]["nav"]`；中文側邊欄用標題字體（`assets/style.css` 的 `html:lang(zh) .nav a`）。
 - 聯絡信箱：邀約（工作坊、講座、合作、委託）一律給 Weimar 信箱：問答框（`worker/src/index.js` 的 `RULES`）、錯誤訊息 `ask_err`、`llms.txt`、wiki 都用 `site.email_alt`。`site.email`（側欄、Impressum、JSON-LD）維持 gmail；`site.email_alt`（Weimar 信箱）是 About 頁顯示的聯絡信箱（沒填就用 `site.email`）；`site.orcid`（只填 iD）有填才會在 About 頁出現，目前留空。`friends/` 頁刻意只有標題與卡片（沒有引言和主題）。頁尾沒有 HTML 網站地圖的連結（`/sitemap/` 仍在 `sitemap.xml` 裡）。
 - **搜尋引擎（SEO）用語**：主要敘述是 “research-based media artist working with critical AI”（`site.description`、`statement`、About 的 bio 第一句）；看不到的地方（JSON-LD 的 `jobTitle`、`occupations`、`llms.txt`）用 “Critical AI Artist”；首頁 `<title>` 刻意只放名字。文字裡一律寫全名 Ting-Chun Liu。部落格文章的作者列寫 “Ting-Chun Liu, media artist”。
 - 主題標籤：`works[].tags`（`_de/_zh` 沒填就顯示英文）顯示在作品頁的「Topics」列，也寫進 JSON-LD 的 `keywords`；各列表頁的標籤在 `build.py` 的 `UI[...]["tags"]`。

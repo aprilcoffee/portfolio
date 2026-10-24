@@ -19,26 +19,26 @@ The site is also available in Traditional Chinese (https://liutingchun.com/zh/).
 
 ## Works
 
-- [Steering Through the Inner Residue](https://liutingchun.com/works/steering-through-the-inner-residue/) (2026): Video Installation
-- [Interpolation of the Invisible Color](https://liutingchun.com/works/interpolation-of-the-invisible-color/) (2025): Curatorial Practice, Interactive Installation
-- [Latent Heat Generation](https://liutingchun.com/works/latent-heat-generation/) (2025): Artistic Research
+- [Steering Through the Inner Residue](https://liutingchun.com/works/steering-through-the-inner-residue/) (2026): AI Video Installation
+- [Interpolation of the Invisible Color](https://liutingchun.com/works/interpolation-of-the-invisible-color/) (2025): Curatorial Project, Interactive Installation
+- [Latent Heat Generation](https://liutingchun.com/works/latent-heat-generation/) (2025): Artistic Research, Video Installation
 - [51 Ways to Spell the Image Giraffe](https://liutingchun.com/works/51-ways-to-spell-the-image-giraffe/) (2025): Artistic Research, Talk
-- [Sixteen Tokens for a Cave](https://liutingchun.com/works/sixteen-tokens-for-a-cave/) (2025): Multimodal Poetry
-- [Just Jailbreak](https://liutingchun.com/works/just-jailbreak/) (2024): Interactive game about jailbreaking a large language model
-- [Self-cannibalizing AI](https://liutingchun.com/works/self-cannibalizing-ai/) (2023): Talk, 37C3 — Artistic strategies to expose generative text-to-image models
-- [Achtung! Verwischung](https://liutingchun.com/works/achtung-verwischung/) (2023): Site-Specific Performance
-- [Imaginary Landscape](https://liutingchun.com/works/imaginary-landscape/) (2022–2024): Project, Audio-Visual Performance
+- [Sixteen Tokens for a Cave](https://liutingchun.com/works/sixteen-tokens-for-a-cave/) (2025): Artistic Research, Multimodal Poetry
+- [Just Jailbreak](https://liutingchun.com/works/just-jailbreak/) (2024): Interactive Game, LLM
+- [Self-cannibalizing AI](https://liutingchun.com/works/self-cannibalizing-ai/) (2023): Talk, Artistic Research
+- [Achtung! Verwischung](https://liutingchun.com/works/achtung-verwischung/) (2023): On-site Performance
+- [Imaginary Landscape](https://liutingchun.com/works/imaginary-landscape/) (2022–2024): AI Audio-Visual Performance
 - [Beneath](https://liutingchun.com/works/beneath/) (2022): Sound Installation
-- [Sun](https://liutingchun.com/works/sun/) (2020): Internet Art (p5.js website)
-- [Bring Us Somewhere](https://liutingchun.com/works/bring-us-somewhere/) (2020): Video
+- [Sun](https://liutingchun.com/works/sun/) (2020): Internet Art
+- [Bring Us Somewhere](https://liutingchun.com/works/bring-us-somewhere/) (2020): Video, Commission
 - [Faces](https://liutingchun.com/works/faces/) (2020): Video
-- [Segmentary Moonlight](https://liutingchun.com/works/segmentary-moonlight/) (2018): Light Installation
-- [Message in a Bottle](https://liutingchun.com/works/message-in-a-bottle/) (2017): Facebook Posts
+- [Segmentary Moonlight](https://liutingchun.com/works/segmentary-moonlight/) (2018): Light Installation, Public Art
+- [Message in a Bottle](https://liutingchun.com/works/message-in-a-bottle/) (2017): Internet Art, Social Media
 - [I kept repeating the unfamiliar self](https://liutingchun.com/works/i-kept-repeating-the-unfamiliar-self/) (2017): Video Installation
 - [Light Segment](https://liutingchun.com/works/light-segment/) (2017): Light Installation
-- [Inevitable Cross of The Parallel](https://liutingchun.com/works/inevitable-cross-of-the-parallel/) (2017): Performance Record
-- [Take Off the Clothes](https://liutingchun.com/works/take-off-the-clothes/) (2017): Performance Record
-- [Hyper-Link into Image](https://liutingchun.com/works/hyper-link-into-image/) (2016): Internet Art
+- [Inevitable Cross of The Parallel](https://liutingchun.com/works/inevitable-cross-of-the-parallel/) (2017): Performance
+- [Take Off the Clothes](https://liutingchun.com/works/take-off-the-clothes/) (2017): Performance
+- [Hyper-Link into Image](https://liutingchun.com/works/hyper-link-into-image/) (2016): Internet Art, Installation
 
 ## Contact
 

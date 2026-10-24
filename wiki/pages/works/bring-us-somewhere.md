@@ -17,7 +17,7 @@ Hsinchu, Taiwan. According to the artist, the work is about what a city is. The 
 ## Facts
 
 - **Year:** 2020
-- **Type:** Video, commission
+- **Type:** Video, Commission
 - **Exhibition:** Urban Interpreter Online (城市轉藝器), 241 Art Gallery, Hsinchu (listed in the CV under Exhibitions, 2020)
 - **Video:** https://vimeo.com/520890044
 - **Page:** [https://liutingchun.com/works/bring-us-somewhere/](https://liutingchun.com/works/bring-us-somewhere/) · [zh](https://liutingchun.com/zh/works/bring-us-somewhere/)

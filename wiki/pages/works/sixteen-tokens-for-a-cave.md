@@ -17,9 +17,9 @@ Multimodal poetry in token language, with Leon-Etienne Kühr, in development. St
 
 - **Year:** 2025
 - **Status:** In development (de: In Entwicklung; zh: 開發中)
-- **Type:** Multimodal Poetry
-- **Type (de):** Multimodale Poesie
-- **Type (zh):** 多模態詩
+- **Type:** Artistic Research, Multimodal Poetry
+- **Type (de):** Künstlerische Forschung, multimodale Poesie
+- **Type (zh):** 藝術研究、多模態詩
 - **Materials:** Genetic algorithm, CLIP ViT-L/14, image models
 - **With:** Leon-Etienne Kühr
 - **Link:** [Preliminary work in the 39C3 talk, 28:37–32:20 (media.ccc.de)](https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai)

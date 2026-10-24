@@ -16,9 +16,9 @@ A project (2022–2024, ended in 2024) about the idealised beach images of touri
 ## Facts
 
 - **Year:** 2022–2024 (the artist: the project ended in 2024)
-- **Type:** Project, Audio-Visual Performance
-- **Type (de):** Laufendes Projekt, audiovisuelle Performance
-- **Type (zh):** 進行中計畫、影音表演
+- **Type:** AI Audio-Visual Performance
+- **Type (de):** KI-audiovisuelle Performance
+- **Type (zh):** AI 音像演出
 - **Video:** https://vimeo.com/953746255
 - **Credits:** Performer: Ting-Chun Liu
 - **Page:** [https://liutingchun.com/works/imaginary-landscape/](https://liutingchun.com/works/imaginary-landscape/) · [zh](https://liutingchun.com/zh/works/imaginary-landscape/)

@@ -19,9 +19,9 @@ A talk with Leon-Etienne Kühr at the 37th Chaos Communication Congress (37C3, 2
 ## Facts
 
 - **Year:** 2023
-- **Type:** Talk, 37C3 — Artistic strategies to expose generative text-to-image models
-- **Type (de):** Vortrag, 37C3 — künstlerische Strategien, um generative Text-zu-Bild-Modelle offenzulegen
-- **Type (zh):** 講演，37C3 — 揭露文字生成圖像模型的藝術策略
+- **Type:** Talk, Artistic Research
+- **Type (de):** Vortrag, künstlerische Forschung
+- **Type (zh):** 講座、藝術研究
 - **With:** Leon-Etienne Kühr
 - **Link:** [Talk recording (media.ccc.de)](https://media.ccc.de/v/37c3-12125-self-cannibalizing_ai)
 - **Page:** [https://liutingchun.com/works/self-cannibalizing-ai/](https://liutingchun.com/works/self-cannibalizing-ai/) · [zh](https://liutingchun.com/zh/works/self-cannibalizing-ai/)

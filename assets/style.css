@@ -441,3 +441,5 @@ html:lang(zh) .card .cap .kw { font-size: 0.9688rem; line-height: 1.6; }
 html:lang(zh) .perf p, html:lang(zh) .perf.talks p, html:lang(zh) #performances .perf p { font-size: 0.9688rem; line-height: 1.65; }
 html:lang(zh) #performances .perf p, html:lang(zh) #performances .sub-head .lead { color: #c4c4c4; }
 html:lang(zh) .contact-note { font-size: 0.9688rem; }
+/* workshop cards: show the whole screenshot, no cropping */
+.shop-card .thumb img { object-fit: contain; }
