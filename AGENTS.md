@@ -28,7 +28,7 @@
 | 介面文字（選單、按鈕、頁面引言、對話框提示…） | `scripts/build.py` 的 `UI` 字典 |
 | 頁面結構、HTML、SEO（title、canonical、hreflang、JSON-LD、sitemap） | `scripts/build.py` |
 | Impressum、Datenschutz（只有德文） | `scripts/build.py` 裡 `page("impressum/"…)`、`page("datenschutz/"…)`、`CHAT_PRIVACY` |
-| 字型 | `assets/fonts/`（`fonts.css` 與字型檔都由 `scripts/build-fonts.py` 產生，不要手改；授權在 `assets/fonts/LICENSES/`，出處標示在 Impressum 的「Schriften」段落）。CSS 變數 `--text`（內文：Minipax＋中文 LTC Round／粉圓，小字也好讀）、`--display`（標題：Minipax Bold＋中文 GenKi Min2／源起明體）、`--mono`；粉圓只有一種字重，內文的粗體中文要用 `--display`。中文小字（卡片關鍵字、說明）在 `style.css` 最後有放大加深的規則 |
+| 字型 | `assets/fonts/`（`fonts.css` 與字型檔都由 `scripts/build-fonts.py` 產生，不要手改；授權在 `assets/fonts/LICENSES/`，出處標示在 Impressum 的「Schriften」段落）。CSS 變數 `--text`（內文：Minipax＋中文 GenKi Min2／源起明體）、`--display`（標題與選單：Minipax Bold＋中文 LTC Round／粉圓，只有一種字重）、`--mono`。2026-10 試過對調（內文用粉圓），作者認為無法閱讀，已改回，不要再對調。中文小字（卡片關鍵字、說明）在 `style.css` 最後有放大加深的規則 |
 | 樣式 | `assets/style.css`（全部用 rem；桌機 `html{font-size:80%}`，≤800px 回到 100%；斷點 1024px、800px） |
 | 選單、語言切換等前端行為 | `assets/site.js` |
 | p5.js 背景特效（首頁字元場、側欄訊號線） | `assets/effects.js` |

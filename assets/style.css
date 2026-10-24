@@ -24,10 +24,10 @@ html { font-size: 80%; }
   --label: 21.25rem;       /* heading column on list pages */
 
   /* Self-hosted open fonts (assets/fonts/, licences in assets/fonts/LICENSES/):
-     text: Minipax (Latin) + LTC Round (Chinese, from jf open 粉圓: a rounded sans that stays legible at small sizes);
-     display: Minipax Bold (Latin) + GenKi Min2 TW (Chinese, from 源樣/源起明體, Regular and Bold). */
-  --text: "Minipax", "LTC Round", "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
-  --display: "Minipax", "GenKi Min2 TW", "Songti TC", "Noto Serif TC", "PMingLiU", serif;
+     text: Minipax (Latin) + GenKi Min2 TW (Chinese, from 源樣/源起明體);
+     display: Minipax Bold (Latin) + LTC Round (Chinese, from jf open 粉圓, one weight: no faux bold). */
+  --text: "Minipax", "GenKi Min2 TW", "Songti TC", "Noto Serif TC", "PMingLiU", serif;
+  --display: "Minipax", "LTC Round", "Helvetica Neue", Arial, "PingFang TC", "Microsoft JhengHei", sans-serif;
   --sans: var(--text);
   --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, "Courier New", monospace;
 
@@ -428,7 +428,7 @@ button.embed.lite:hover img { opacity: 1; }
 .prose ul.dots { list-style: none; padding: 0; margin: 0.6em 0 0; }
 .prose ul.dots li { position: relative; padding-left: 1.1em; margin-top: 0.35em; }
 .prose ul.dots li::before { content: "·"; position: absolute; left: 0.2em; color: var(--mut); }
-.prose ul.dots strong { font-family: var(--display); font-weight: 700; font-synthesis: none; }
+.prose ul.dots strong { font-weight: 700; font-synthesis: none; }
 .perf-more { display: inline-block; margin-top: 0.5rem; font-size: 0.8125rem; color: var(--mut); border-bottom: 1px solid var(--line); }
 .perf-more:hover { color: var(--ink); }
 #performances .perf-more { color: #a9a9a9; border-color: #444; }
