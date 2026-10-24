@@ -273,9 +273,9 @@
     }));
     var x = shops[wsel];
     main.append(
-      bar('工作坊 Workshops', [
+      bar('工作坊 Workshops（講座錄影在「講座錄影／評論」分頁）', [
         btn('+ 新增工作坊', function () {
-          shops.unshift({ slug: 'workshop-' + Date.now().toString(36), title: 'New workshop', year: String(new Date().getFullYear()), place: '', host: '', text: '', images: [], hidden: true });
+          shops.unshift({ slug: 'workshop-' + Date.now().toString(36), title: 'New workshop', year: String(new Date().getFullYear()), summary: '', text: '', held: '', images: [], hidden: true });
           wsel = 0; save(); render();
         }, 'primary')
       ]),
@@ -343,12 +343,13 @@
         field('標題 DE', x, 'title_de'), field('標題 中文', x, 'title_zh')
       ]),
       h('div', { className: 'row' }, [field('資料夾代稱 slug（上傳的圖片放在 images/workshops/<slug>/；只用英文小寫與 -）', x, 'slug'), field('年份 Year', x, 'year')]),
-      h('div', { className: 'row' }, [field('地點 Place', x, 'place'), field('地點 DE', x, 'place_de'), field('地點 中文', x, 'place_zh')]),
-      h('div', { className: 'row' }, [field('主辦 Host', x, 'host'), field('主辦 DE', x, 'host_de'), field('主辦 中文', x, 'host_zh')]),
+      field('合作 With（例：Leon-Etienne Kühr；留空＝不顯示）', x, 'with'),
+      h('div', { className: 'row' }, [field('一句話介紹 Summary（列表卡片與頁首大字）', x, 'summary', { area: true }), field('一句話 DE', x, 'summary_de', { area: true }), field('一句話 中文', x, 'summary_zh', { area: true })]),
       field('說明文字 English（空一行＝分段；以「# 」開頭＝小標題）', x, 'text', { area: true, cls: 'tall' }),
       field('說明文字 Deutsch（留空＝德文頁顯示英文）', x, 'text_de', { area: true, cls: 'tall' }),
       field('說明文字 中文（留空＝中文頁顯示英文）', x, 'text_zh', { area: true, cls: 'tall' }),
-      h('label', {}, ['圖片（每行一個 images/… 路徑）', imagesTa]),
+      h('div', { className: 'row' }, [field('場次 Sessions（每行一場：日期 · 地點／主辦；顯示在頁面最下方）', x, 'held', { area: true }), field('場次 DE', x, 'held_de', { area: true }), field('場次 中文', x, 'held_zh', { area: true })]),
+      h('label', {}, ['圖片（每行一個 images/… 路徑；第一張是封面）', imagesTa]),
       h('div', { className: 'actions' }, [btn('上傳圖片到 GitHub…（自動縮到長邊 2400px、轉 JPEG）', function () { upload.click(); }, 'sm'), upStatus, upload]),
       thumbs
     ]);
@@ -356,18 +357,18 @@
 
   tabs.performances = function () {
     main.append(
-      bar('表演影片 Performance'),
+      bar('表演紀錄 Performance archive'),
       h('div', { className: 'form' }, [
-        lines('每行一支：標題 | 說明 | Vimeo/YouTube 網址 | 縮圖（選填）| 說明 DE | 說明 中文', D, 'performances', ['title', 'note', 'video', 'thumb', 'note_de', 'note_zh'], '順序即網站上的順序。點擊會在新分頁開啟 Vimeo / YouTube。沒有縮圖時自動用 Vimeo / YouTube 的縮圖。', 'tall')
+        lines('每行一支：標題 | 說明 | Vimeo/YouTube 網址 | 縮圖（選填）| 說明 DE | 說明 中文 | 年份 | 標題 DE | 標題 中文', D, 'performances', ['title', 'note', 'video', 'thumb', 'note_de', 'note_zh', 'year', 'title_de', 'title_zh'], '顯示在「作品」頁最下方的深色區塊，順序即網站上的順序。點擊會在新分頁開啟 Vimeo / YouTube。沒有縮圖時自動用 Vimeo / YouTube 的縮圖。標題通常不翻譯；只有需要區分時才填（例：Imaginary Landscape（表演版））。', 'tall')
       ])
     );
   };
 
   tabs.press = function () {
     main.append(
-      bar('曝光 Press & Media'),
+      bar('講座錄影／評論 Talks & texts'),
       h('div', { className: 'form' }, [
-        lines('每行一筆：分類 | 標題 | 來源 | 日期 | 網址 | 說明 | 說明 DE | 說明 中文', D, 'press', ['group', 'title', 'outlet', 'date', 'url', 'note', 'note_de', 'note_zh'], '分類只能填 watch（講演與錄影）、read（相關文章）；展覽、活動、機構介紹頁不放。順序即網站上的順序；日期寫 2026 或 2026-05。沒有德文／中文說明時，該語言頁面顯示英文。', 'tall')
+        lines('每行一筆：分類 | 標題 | 來源 | 日期 | 網址 | 說明 | 說明 DE | 說明 中文 | 截圖', D, 'press', ['group', 'title', 'outlet', 'date', 'url', 'note', 'note_de', 'note_zh', 'thumb'], '分類：watch＝講座錄影（顯示在「工作坊與講座」頁），read＝他人寫的評論與研究（顯示在「關於」的 CV 裡）。順序即網站上的順序；日期寫 2026 或 2026-05。截圖留空時，發佈後 GitHub 會自動抓錄影頁的預覽圖存到 images/talks/；要用自己的截圖就填 images/… 路徑。', 'tall')
       ])
     );
   };

@@ -5,7 +5,7 @@
 
 ## 先記住的規則
 
-1. **不要手改產生出來的 HTML。** `index.html`、`works/`、`performance/`、`about/`、`press/`、`blog/`、`friends/`、`de/`、`zh/`、
+1. **不要手改產生出來的 HTML。** `index.html`、`works/`、`workshops/`、`about/`、`blog/`、`performance/` 與 `press/`（現在只是轉址）、`friends/`、`de/`、`zh/`、
    `impressum/`、`datenschutz/`、`sitemap.xml`、`robots.txt`、`llms.txt`、`blog/feed.xml`，還有根目錄那些舊 Wix 網址的
    轉址資料夾（`cv/`、`post/`、`sun/`、`fall/`、`beneath/`…）全部由 `scripts/build.py` 產生，下一次建置就會被覆蓋。
    要改就改來源（`data/`、`posts/`、`scripts/build.py`、`assets/`）。
@@ -23,7 +23,7 @@
 
 | 想改的東西 | 檔案 |
 |---|---|
-| 作品、表演、CV、曝光（`press`）、朋友、文章列表、網站名稱／描述／statement（SEO 用）／首頁大字 `home_text`／email／GA／對話框網址 | `data/site.json` |
+| 作品、表演紀錄、工作坊、CV、講座錄影與他人評論（`press`）、朋友、文章列表、網站名稱／描述／statement（SEO 用）／首頁大字 `home_text`／email／GA／對話框網址 | `data/site.json` |
 | 文章內文（中文部落格，不翻譯） | `posts/<slug>.md` |
 | 介面文字（選單、按鈕、頁面引言、對話框提示…） | `scripts/build.py` 的 `UI` 字典 |
 | 頁面結構、HTML、SEO（title、canonical、hreflang、JSON-LD、sitemap） | `scripts/build.py` |
@@ -40,7 +40,8 @@
 | `llms.txt` 最後的彩蛋（ASCII 顯卡、給 agent 的話、藝術家介紹） | `data/llms-extra.md`（原樣接在後面） |
 | 圖示、分享圖 | `favicon.ico`、`assets/favicon-32.png`、`assets/apple-touch-icon.png`、`assets/icon-192/512.png`、`site.webmanifest`、`images/og.jpg`（`site.og_image`） |
 | 圖片與影片檔 | `images/wix/`（新的 Wix 圖用 `scripts/download-images.sh` 下載） |
-| 工作坊頁（`/workshops/`） | 內容寫在 `data/site.json` 的 `workshops[]`（`title`、`year`、`place`、`host`、`text`、`images`，除年份外都有 `_de/_zh`），圖片放 `images/workshops/`（說明見該資料夾的 `README.md`）；`workshops[]` 空的時候頁面只顯示引言與聯絡信箱 |
+| 工作坊與講座頁（`/workshops/`，每個工作坊另有 `/workshops/<slug>/`） | `data/site.json` 的 `workshops[]`：`slug`、`title`、`summary`（卡片與頁首的一句話）、`text`（用 `# ` 分小標，`· ` 開頭的行當清單）、`with`、`held`（場次，每行一場，放在頁面最下方）、`images`（第一張是封面），除 `slug`／`with`／`images` 外都有 `_de/_zh`。這頁是在介紹「可以辦哪些工作坊」，辦在哪裡只放在 `held`。圖片放 `images/workshops/<slug>/`（見該資料夾 `README.md`）。下方的「講座錄影」來自 `press[]` 的 `group: watch` |
+| 講座錄影截圖 | `press[].thumb`；留空時 `build.yml` 會先跑 `scripts/fetch-talk-thumbs.py`，抓錄影頁的預覽圖（og:image）存到 `images/talks/` 並寫回 `site.json` |
 | 圖片壓縮／轉檔 | `python3 scripts/compress-images.py [資料夾或檔案]`（預設 `images/workshops/`；需要 Pillow；長邊 2400px、JPEG 品質 82、移除 EXIF／GPS，PNG／HEIC 照片轉成 `.jpg`） |
 | 後台 | `admin/index.html`、`admin/admin.js`；草稿預覽 `preview.html`（在瀏覽器用 Pyodide 跑同一個 `build.py`） |
 | 自動化 | `.github/workflows/`：`build.yml`（重建網站）、`deploy-chat.yml`（部署問答 Worker）、`check-links.yml`（每月檢查連結）、`download-wix-images.yml` |
@@ -63,8 +64,9 @@
 
 `home_text` 是首頁下方的大字，留空時只留白不顯示（不會退回英文或 statement）；`statement` 只用在 JSON-LD、分享與 llms.txt，不顯示在首頁。
 | `works[]` | `text`、`type`、`materials`、`status`、`tags`（主題標籤，list） | `text_de/_zh`、`type_de/_zh`、`materials_de/_zh`、`status_de/_zh`、`tags_de/_zh` |
-| `press[]`（曝光頁每一筆） | `note` | `note_de/_zh` |
-| `performances[]` | `note` | `note_de/_zh` |
+| `press[]`（講座錄影與他人評論） | `note` | `note_de/_zh` |
+| `performances[]`（作品頁下方的表演紀錄） | `note`、`title`（只在需要區分時，例如 Imaginary Landscape（表演版）） | `note_de/_zh`、`title_de/_zh` |
+| `workshops[]` | `title`、`summary`、`text`、`held` | `_de/_zh` |
 | `about` | `bio` | `bio_de/_zh` |
 | `about.sections[]`（CV 區塊） | `title` | `title_de/_zh` |
 | `about.sections[].items[]`（CV 每一行） | `text` | `text_de/_zh`（目前多數只有 `_zh`） |
@@ -75,13 +77,13 @@
 - CV 行沒有翻譯時，`build.py` 會給那一行加 `lang="en"`，讓瀏覽器與搜尋引擎知道這段是英文。
 - `works[].summary`（選填，+ `_de/_zh`）：搜尋結果與分享用的描述。只有作品文字開頭不適合當描述時才填（例如 Sixteen Tokens for a Cave 以 token 詩開頭）；沒填就用文字開頭。
 - `works[].status`（例如 In development）顯示在作品卡與作品頁的「Status」列；留空就不顯示。
-- `press[]` 的 `group` 只能是 `watch`（講演與錄影）、`read`（相關文章）；展覽、活動、機構介紹頁不放；標題與來源不翻譯，沒有 `note_de/_zh` 時該語言顯示英文並標 `lang="en"`。
-- 側邊欄選單的中文名稱：作品＝「創作計畫」、曝光＝「媒體與曝光」（`UI["zh"]["nav"]`）；中文側邊欄用標題字體（`assets/style.css` 的 `html:lang(zh) .nav a`）。
+- `press[]` 的 `group` 只能是 `watch`（講座錄影，顯示在工作坊與講座頁）、`read`（他人寫的評論與研究，顯示在 About 的 CV「Publications & Writing」之後，`#texts`）；展覽、活動、機構介紹頁不放；標題與來源不翻譯，沒有 `note_de/_zh` 時該語言顯示英文並標 `lang="en"`。
+- 側邊欄：主選單只有 `NAV`（創作計畫、工作坊與講座、關於），部落格與朋友在側欄下方的小字（`FOOT`），都在 `build.py` 開頭。表演沒有獨立頁，是作品頁最下方深色的「表演紀錄」區塊（`#performances`）；舊的 `/performance/`、`/press/` 轉址到新位置。中文名稱在 `UI["zh"]["nav"]`；中文側邊欄用標題字體（`assets/style.css` 的 `html:lang(zh) .nav a`）。
 - 聯絡信箱：`site.email`（側欄、Impressum、About）維持 gmail；`site.email_alt`（Weimar 信箱）是 About 頁顯示的聯絡信箱（沒填就用 `site.email`）；`site.orcid`（只填 iD）有填才會在 About 頁出現，目前留空。`friends/` 頁刻意只有標題與卡片（沒有引言和主題）。頁尾沒有 HTML 網站地圖的連結（`/sitemap/` 仍在 `sitemap.xml` 裡）。
 - **搜尋引擎（SEO）用語**：主要敘述是 “research-based media artist working with critical AI”（`site.description`、`statement`、About 的 bio 第一句）；看不到的地方（JSON-LD 的 `jobTitle`、`occupations`、`llms.txt`）用 “Critical AI Artist”；首頁 `<title>` 刻意只放名字。文字裡一律寫全名 Ting-Chun Liu。部落格文章的作者列寫 “Ting-Chun Liu, media artist”。
 - 主題標籤：`works[].tags`（`_de/_zh` 沒填就顯示英文）顯示在作品頁的「Topics」列，也寫進 JSON-LD 的 `keywords`；各列表頁的標籤在 `build.py` 的 `UI[...]["tags"]`。
 - `data/lastmod.json` 由 `build.py` 自動維護（每頁的內容雜湊與最後更新日），給 `sitemap.xml` 的 `<lastmod>` 用，不要手改。HTML 版網站地圖在 `/sitemap/`（`/de/sitemap/`、`/zh/sitemap/`），側欄頁尾有連結。
-- 表演影片標題、合作者（`collaborators`）、年份、網址不翻譯。
+- 表演影片標題（除了上面說的區分用 `title_zh`）、合作者（`collaborators`）、年份、網址不翻譯。
 - 新增一個要翻譯的欄位時：在 `site.json` 加 `xxx_de`/`xxx_zh`，在 `build.py` 用 `tr(obj, "xxx", L)` 讀，
   並在 `admin/admin.js` 加對應的輸入框（照 `text_de`、`type_zh` 那幾行的寫法），作者才能在後台編輯。
 - 翻譯風格：德文用 Sie、性別中立寫法（`Künstler*innen`）；中文用繁體、台灣用語、全形標點，作品名用《》。

@@ -244,14 +244,15 @@ button.embed.lite:hover img { opacity: 1; }
 /* ---------- performance ---------- */
 .perf { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4rem var(--gap); }
 .perf-card { display: block; }
-.perf-card .thumb { position: relative; aspect-ratio: 16 / 9; background: var(--tint); overflow: hidden; }
+.perf-card .thumb { position: relative; aspect-ratio: 16 / 9; background: var(--tint); overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.perf-card .ph { padding: 1.5rem; text-align: center; color: var(--mut); font-family: var(--display); font-weight: 700; font-synthesis: none; font-size: 1.125rem; line-height: 1.35; }
 .perf-card .thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
 .perf-card:hover .thumb img { transform: scale(1.025); }
 .perf-card .watch { position: absolute; left: 1rem; bottom: 0.875rem; font-family: var(--mono); font-size: 0.8125rem; color: #fff; background: rgba(0,0,0,.62); padding: 0.375rem 0.625rem; }
 .perf-card:hover .watch { background: var(--red); }
 .perf .cap { margin-top: 0.875rem; }
-.perf h2 { font-size: 1.1875rem; line-height: 1.35; }
-.perf-card:hover h2 { text-decoration: underline; text-underline-offset: 0.25rem; text-decoration-thickness: 1px; }
+.perf h3 { font-size: 1.1875rem; line-height: 1.35; }
+.perf-card:hover h3 { text-decoration: underline; text-underline-offset: 0.25rem; text-decoration-thickness: 1px; }
 .perf p { font-size: 0.9688rem; color: var(--mut); margin-top: 0.25rem; }
 
 /* ---------- about / cv ---------- */
@@ -376,8 +377,51 @@ button.embed.lite:hover img { opacity: 1; }
 /* one short line of keywords under a work's title on the works list */
 .card .cap .kw { grid-column: 1 / -1; margin-top: 0.1875rem; font-size: 0.875rem; line-height: 1.45; color: var(--mut); }
 
+
+/* sidebar: secondary pages under the signal line */
+.side-foot .foot-nav { display: flex; gap: 0.875rem; margin-bottom: 0.625rem; font-size: 0.875rem; }
+.side-foot .foot-nav a.on { color: var(--ink); }
+
+/* a second block on a list page (performances under works, talks under workshops) */
+.sub-sec { margin-top: 6rem; }
+.sub-head { display: grid; grid-template-columns: var(--label) 1fr; gap: 3rem; align-items: end; padding-top: 1.75rem; border-top: 1px solid var(--line); margin-bottom: 2.5rem; }
+.sub-head h2 { font-size: clamp(1.5rem, 2.2vw, 2rem); line-height: 1.2; }
+.sub-head .lead { color: var(--mut); max-width: 47.5rem; }
+.perf .by { font-size: 0.8125rem; color: var(--mut); margin-top: 0.25rem; }
+.perf-card .thumb::after { content: "▶"; position: absolute; right: 1rem; top: 0.875rem; font-size: 0.875rem; color: #fff; opacity: .85; }
+
+/* performances: an archive of recordings, set apart from the works in a dark band with smaller frames */
+#performances { background: var(--ink); color: #f2f2f2; padding: 2.5rem 2.5rem 3rem; }
+#performances .sub-head { border-top: 0; padding-top: 0; }
+#performances .sub-head .lead, #performances .perf p, #performances .perf .by { color: #a9a9a9; }
+#performances .perf { grid-template-columns: repeat(3, 1fr); gap: 2.5rem var(--gap); }
+#performances .perf h3 { font-size: 1.0625rem; }
+#performances .perf p { font-size: 0.875rem; line-height: 1.5; }
+#performances .perf-card .thumb { background: #262626; }
+#performances .perf-card .thumb img { opacity: .9; }
+
 /* workshops */
-.workshop .mono { color: var(--mut); margin: 0 0 0.75rem; }
-.workshop-pics { display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: 1rem; margin-top: 1.5rem; }
-.workshop-pics figure { margin: 0; }
-.workshop-pics img { width: 100%; height: auto; display: block; }
+.shop-card .cap .mono { grid-column: 1 / -1; }
+.shop-sum { margin-top: 1.75rem; font-size: 1.3125rem; line-height: 1.5; }
+.held { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line); }
+.held h2 { font-weight: 400; color: var(--mut); margin-bottom: 0.5rem; }
+.held p { font-size: 0.9688rem; line-height: 1.7; }
+.work-info .contact { font-size: 0.9688rem; }
+.work-info .contact-note { margin-left: 5.5rem; }
+@media (max-width: 1024px) { #performances .perf { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 800px) {
+  .sub-head { grid-template-columns: 1fr; gap: 0.75rem; }
+  .sub-sec { margin-top: 4rem; }
+  #performances { padding: 1.75rem 1.25rem 2.25rem; }
+  #performances .perf { grid-template-columns: 1fr; }
+}
+.page-head .jump a { font-family: var(--mono); font-size: var(--fs-meta); color: var(--mut); border-bottom: 1px solid var(--line); }
+.page-head .jump a:hover { color: var(--ink); border-color: var(--ink); }
+.perf.talks { grid-template-columns: repeat(3, 1fr); gap: 2.5rem var(--gap); }
+.perf.talks h3 { font-size: 1.0625rem; }
+.perf.talks p { font-size: 0.875rem; line-height: 1.5; }
+.perf.talks .ph { font-family: var(--mono); font-weight: 400; font-size: 1.5rem; color: var(--dim); }
+.work-info .kicker { margin-bottom: 0.875rem; color: var(--mut); }
+.work-info .kicker a:hover { color: var(--ink); }
+@media (max-width: 1024px) { .perf.talks { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 800px) { .perf.talks { grid-template-columns: 1fr; } }

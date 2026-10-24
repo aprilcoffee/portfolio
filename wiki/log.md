@@ -84,3 +84,6 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 ## [2026-10-24] ingest | Workshops page, Bonn talk
 - topics/workshops: new page (Condition for Emotions, Paranoia De-Prompting, The Given Image); Walter-Lübcke-Schule and Dawid Liftinger checked against the programme's website.
 - talks-and-writing: added the 16 July 2026 talk at the University of Bonn (Junge GI Hochschulgruppe Bonn), checked on the organiser's pages.
+
+## [2026-10-25] update | Site restructure
+- Performance page merged into Works ("Performance archive"); Press & Media split: talk recordings on "Workshops & Talks", texts by others in the About CV. faq and topics/audio-visual-performance point to the new URLs; site-map regenerated.
