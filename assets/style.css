@@ -24,11 +24,11 @@ html { font-size: 80%; }
   --label: 21.25rem;       /* heading column on list pages */
 
   /* Self-hosted open fonts (assets/fonts/, licences in assets/fonts/LICENSES/):
-     text: Minipax (Latin) + Cactus Classical Serif (Chinese, 仙人掌明體, one weight);
+     text: Minipax (Latin) + Noto Serif TC Medium (Chinese, 思源宋體; Regular and 仙人掌明體 were too thin on white);
      display: Minipax Bold (Latin) + LTC Round (Chinese, from jf open 粉圓, one weight: no faux bold);
      note: Minipax (Latin) + Iansui (Chinese, 芫荽) for Chinese small print, captions and the chat. */
-  --text: "Minipax", "Cactus Classical Serif", "Songti TC", "Noto Serif TC", "PMingLiU", serif;
-  --note: "Minipax", "Iansui", "Cactus Classical Serif", serif;
+  --text: "Minipax", "Noto Serif TC", "Songti TC", "PMingLiU", serif;
+  --note: "Minipax", "Iansui", "Noto Serif TC", serif;
   --display: "Minipax", "LTC Round", "Helvetica Neue", Arial, "PingFang TC", "Microsoft JhengHei", sans-serif;
   --sans: var(--text);
   --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, "Courier New", "Iansui", monospace;
@@ -448,7 +448,7 @@ html:lang(zh) .card .cap .kw { font-size: 0.9688rem; line-height: 1.6; }
 html:lang(zh) .perf p, html:lang(zh) .perf.talks p, html:lang(zh) #performances .perf p { font-size: 0.9688rem; line-height: 1.65; }
 html:lang(zh) #performances .perf p, html:lang(zh) #performances .sub-head .lead { color: #c4c4c4; }
 html:lang(zh) .contact-note { font-size: 0.9688rem; }
-/* Chinese roles: 仙人掌明體 for reading (--text), 粉圓 for headings (--display), 芫荽 for small print, notes and
+/* Chinese roles: 思源宋體 Medium for reading (--text), 粉圓 for headings (--display), 芫荽 for small print, notes and
    the chat (--note; the chat is in --mono, which falls back to Iansui for Chinese). Neither Chinese text font
    has a bold: bold terms in running text use the heading font. */
 html:lang(zh) .card .cap .kw, html:lang(zh) .perf p, html:lang(zh) .press-note, html:lang(zh) .contact-note,
@@ -488,3 +488,18 @@ html:lang(zh) .prose strong { font-family: var(--display); }
 .mt-note p span { display: block; margin-top: 0.35rem; color: var(--mut); }
 .mt-note button { flex: none; font: inherit; background: var(--ink); color: var(--bg); border: 0; padding: 0.35rem 0.75rem; cursor: pointer; }
 @media (max-width: 800px) { .mt-note { left: 1rem; right: 1rem; bottom: 1rem; max-width: none; } }
+
+/* click-to-enlarge images (assets/site.js) */
+img.zoomable { cursor: zoom-in; }
+.zoom { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center;
+  padding: calc(2.5rem + env(safe-area-inset-top, 0px)) calc(3.5rem + env(safe-area-inset-right, 0px)) calc(2.5rem + env(safe-area-inset-bottom, 0px)) calc(3.5rem + env(safe-area-inset-left, 0px));
+  background: rgba(10, 10, 10, 0.94); cursor: zoom-out; }
+.zoom[hidden] { display: none; }
+.zoom img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
+.zoom button { position: absolute; background: none; border: 0; color: #fff; font: 2rem/1 var(--mono); padding: 0.75rem 1rem; cursor: pointer; opacity: 0.8; }
+.zoom button:hover, .zoom button:focus-visible { opacity: 1; }
+.zoom-x { top: env(safe-area-inset-top, 0px); right: env(safe-area-inset-right, 0px); }
+.zoom-prev { left: env(safe-area-inset-left, 0px); top: 50%; transform: translateY(-50%); }
+.zoom-next { right: env(safe-area-inset-right, 0px); top: 50%; transform: translateY(-50%); }
+html.zoomed { overflow: hidden; }
+@media (max-width: 800px) { .zoom { padding-left: 0.5rem; padding-right: 0.5rem; } .zoom-prev, .zoom-next { top: auto; bottom: env(safe-area-inset-bottom, 0px); transform: none; } }
