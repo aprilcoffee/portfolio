@@ -5,7 +5,6 @@ tags: [performance-record, body-and-action]
 sources:
   - ../../../data/site.json (works → take-off-the-clothes)
   - https://liutingchun.com/works/take-off-the-clothes/
-  - https://liutingchun.com/de/works/take-off-the-clothes/
   - https://liutingchun.com/zh/works/take-off-the-clothes/
   - https://liutingchun.com/blog/body-as-the-reflection-on-site/
 updated: 2026-10-01
@@ -22,7 +21,7 @@ A performance first made at AVU in Prague and later repeated in Taiwan. The inst
 - **Type (zh):** 表演紀錄
 - **Video:** https://vimeo.com/246931383
 - **Credits:** Performer: Ting-Chun Liu
-- **Page:** [https://liutingchun.com/works/take-off-the-clothes/](https://liutingchun.com/works/take-off-the-clothes/) · [de](https://liutingchun.com/de/works/take-off-the-clothes/) · [zh](https://liutingchun.com/zh/works/take-off-the-clothes/)
+- **Page:** [https://liutingchun.com/works/take-off-the-clothes/](https://liutingchun.com/works/take-off-the-clothes/) · [zh](https://liutingchun.com/zh/works/take-off-the-clothes/)
 
 ## Key ideas
 
@@ -38,6 +37,5 @@ A performance first made at AVU in Prague and later repeated in Taiwan. The inst
 
 - ../../../data/site.json (works → take-off-the-clothes)
 - https://liutingchun.com/works/take-off-the-clothes/
-- https://liutingchun.com/de/works/take-off-the-clothes/
 - https://liutingchun.com/zh/works/take-off-the-clothes/
 - https://liutingchun.com/blog/body-as-the-reflection-on-site/

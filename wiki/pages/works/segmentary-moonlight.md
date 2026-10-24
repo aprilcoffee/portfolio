@@ -5,7 +5,6 @@ tags: [light-installation, light-numbers-and-time]
 sources:
   - ../../../data/site.json (works → segmentary-moonlight)
   - https://liutingchun.com/works/segmentary-moonlight/
-  - https://liutingchun.com/de/works/segmentary-moonlight/
   - https://liutingchun.com/zh/works/segmentary-moonlight/
   - https://liutingchun.com/blog/raspberry-pi-shift-register/
 updated: 2026-10-01
@@ -22,7 +21,7 @@ A light installation by the collective LLL for the Yue-Jin Lantern Festival in Y
 - **Type (zh):** 燈光裝置
 - **Materials:** 7 segment, scaffolding, wood board — 200 × 100 × 250 cm
 - **With:** LLL (林瑜亮 Lin Yu-Liang, 李翎暄 Li Ling-Syuan)
-- **Page:** [https://liutingchun.com/works/segmentary-moonlight/](https://liutingchun.com/works/segmentary-moonlight/) · [de](https://liutingchun.com/de/works/segmentary-moonlight/) · [zh](https://liutingchun.com/zh/works/segmentary-moonlight/)
+- **Page:** [https://liutingchun.com/works/segmentary-moonlight/](https://liutingchun.com/works/segmentary-moonlight/) · [zh](https://liutingchun.com/zh/works/segmentary-moonlight/)
 
 ## Key ideas
 
@@ -39,6 +38,5 @@ A light installation by the collective LLL for the Yue-Jin Lantern Festival in Y
 
 - ../../../data/site.json (works → segmentary-moonlight)
 - https://liutingchun.com/works/segmentary-moonlight/
-- https://liutingchun.com/de/works/segmentary-moonlight/
 - https://liutingchun.com/zh/works/segmentary-moonlight/
 - https://liutingchun.com/blog/raspberry-pi-shift-register/

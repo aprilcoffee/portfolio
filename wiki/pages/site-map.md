@@ -10,51 +10,51 @@ updated: generated
 # Site map and links
 
 Every page of the website and every external link it points to, generated from the site data.
-Each page exists in English, German (de) and Traditional Chinese (zh); blog posts exist once,
+Each page exists in English and Traditional Chinese (zh); blog posts exist once,
 in Mandarin. Recommend the version in the visitor's language.
 
 ## Main sections
 
-- **Home** (statement, selected works, "ask about the work"): [en](https://liutingchun.com/) · [de](https://liutingchun.com/de/) · [zh](https://liutingchun.com/zh/)
-- **Works** (all works, 20): [en](https://liutingchun.com/works/) · [de](https://liutingchun.com/de/works/) · [zh](https://liutingchun.com/zh/works/)
-- **Performances** (recordings of live audio-visual sets, 2016–2024, at the bottom of the works page): [en](https://liutingchun.com/works/#performances) · [de](https://liutingchun.com/de/works/#performances) · [zh](https://liutingchun.com/zh/works/#performances)
-- **Talks & Workshops** (talk recordings, and workshops on local AI, embeddings and AI bias, one page each): [en](https://liutingchun.com/workshops/) · [de](https://liutingchun.com/de/workshops/) · [zh](https://liutingchun.com/zh/workshops/)
-- **About** (biography and CV: teaching, education, awards, talks, publications, texts by others, exhibitions): [en](https://liutingchun.com/about/) · [de](https://liutingchun.com/de/about/) · [zh](https://liutingchun.com/zh/about/)
+- **Home** (statement, selected works, "ask about the work"): [en](https://liutingchun.com/) · [zh](https://liutingchun.com/zh/)
+- **Works** (all works, 20): [en](https://liutingchun.com/works/) · [zh](https://liutingchun.com/zh/works/)
+- **Performances** (recordings of live audio-visual sets, 2016–2024, at the bottom of the works page): [en](https://liutingchun.com/works/#performances) · [zh](https://liutingchun.com/zh/works/#performances)
+- **Talks & Workshops** (talk recordings, and workshops on local AI, embeddings and AI bias, one page each): [en](https://liutingchun.com/workshops/) · [zh](https://liutingchun.com/zh/workshops/)
+- **About** (biography and CV: teaching, education, awards, talks, publications, texts by others, exhibitions): [en](https://liutingchun.com/about/) · [zh](https://liutingchun.com/zh/about/)
 - **Blog archive** (notes on works, technical write-ups; in Mandarin): https://liutingchun.com/blog/
-- **Friends** (artists and collaborators): [en](https://liutingchun.com/friends/) · [de](https://liutingchun.com/de/friends/) · [zh](https://liutingchun.com/zh/friends/)
+- **Friends** (artists and collaborators): [en](https://liutingchun.com/friends/) · [zh](https://liutingchun.com/zh/friends/)
 - **Impressum** (legal notice): https://liutingchun.com/impressum/
 - **Privacy policy** (Datenschutz): https://liutingchun.com/datenschutz/
 
 ## Workshops
 
-- **Conditions for Emotions**: [en](https://liutingchun.com/workshops/conditions-for-emotions/) · [de](https://liutingchun.com/de/workshops/conditions-for-emotions/) · [zh](https://liutingchun.com/zh/workshops/conditions-for-emotions/)
-- **Paranoia De-Prompting**: [en](https://liutingchun.com/workshops/paranoia-de-prompting/) · [de](https://liutingchun.com/de/workshops/paranoia-de-prompting/) · [zh](https://liutingchun.com/zh/workshops/paranoia-de-prompting/)
-- **The Given Image**: [en](https://liutingchun.com/workshops/the-given-image/) · [de](https://liutingchun.com/de/workshops/the-given-image/) · [zh](https://liutingchun.com/zh/workshops/the-given-image/)
-- **Talk recordings**: [en](https://liutingchun.com/workshops/#talks) · [de](https://liutingchun.com/de/workshops/#talks) · [zh](https://liutingchun.com/zh/workshops/#talks)
-- **Texts by others about the work** (in the CV): [en](https://liutingchun.com/about/#texts) · [de](https://liutingchun.com/de/about/#texts) · [zh](https://liutingchun.com/zh/about/#texts)
+- **Conditions for Emotions**: [en](https://liutingchun.com/workshops/conditions-for-emotions/) · [zh](https://liutingchun.com/zh/workshops/conditions-for-emotions/)
+- **Paranoia De-Prompting**: [en](https://liutingchun.com/workshops/paranoia-de-prompting/) · [zh](https://liutingchun.com/zh/workshops/paranoia-de-prompting/)
+- **The Given Image**: [en](https://liutingchun.com/workshops/the-given-image/) · [zh](https://liutingchun.com/zh/workshops/the-given-image/)
+- **Talk recordings**: [en](https://liutingchun.com/workshops/#talks) · [zh](https://liutingchun.com/zh/workshops/#talks)
+- **Texts by others about the work** (in the CV): [en](https://liutingchun.com/about/#texts) · [zh](https://liutingchun.com/zh/about/#texts)
 
 ## Works
 
-- **Steering Through the Inner Residue** (2026): [en](https://liutingchun.com/works/steering-through-the-inner-residue/) · [de](https://liutingchun.com/de/works/steering-through-the-inner-residue/) · [zh](https://liutingchun.com/zh/works/steering-through-the-inner-residue/) — Talk, Expanded 2026, Linz: https://expanded-conf.org/speaker/ting-chun-liu-leon-etienne-kuhr/
-- **Interpolation of the Invisible Color** (2025): [en](https://liutingchun.com/works/interpolation-of-the-invisible-color/) · [de](https://liutingchun.com/de/works/interpolation-of-the-invisible-color/) · [zh](https://liutingchun.com/zh/works/interpolation-of-the-invisible-color/) — Selected artists: https://storagemuseum.org/en/program/6-ausstellung — Storage Museum archive: https://storagemuseum.org/en/database
-- **Latent Heat Generation** (2025): [en](https://liutingchun.com/works/latent-heat-generation/) · [de](https://liutingchun.com/de/works/latent-heat-generation/) · [zh](https://liutingchun.com/zh/works/latent-heat-generation/) — Research notes: https://aprilcoffee.github.io/heat_as_image/index.html
-- **51 Ways to Spell the Image Giraffe** (2025): [en](https://liutingchun.com/works/51-ways-to-spell-the-image-giraffe/) · [de](https://liutingchun.com/de/works/51-ways-to-spell-the-image-giraffe/) · [zh](https://liutingchun.com/zh/works/51-ways-to-spell-the-image-giraffe/) — Talk recording, 39C3 (media.ccc.de): https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai
-- **Sixteen Tokens for a Cave** (2025): [en](https://liutingchun.com/works/sixteen-tokens-for-a-cave/) · [de](https://liutingchun.com/de/works/sixteen-tokens-for-a-cave/) · [zh](https://liutingchun.com/zh/works/sixteen-tokens-for-a-cave/) — Preliminary work in the 39C3 talk, 28:37–32:20 (media.ccc.de): https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai
-- **Just Jailbreak** (2024): [en](https://liutingchun.com/works/just-jailbreak/) · [de](https://liutingchun.com/de/works/just-jailbreak/) · [zh](https://liutingchun.com/zh/works/just-jailbreak/) — Kuai Kuai culture: https://en.wikipedia.org/wiki/Kuai_Kuai_culture — Synthiola (Fabian Mosele): https://www.fabianmosele.com/synthiola
-- **Self-cannibalizing AI** (2023): [en](https://liutingchun.com/works/self-cannibalizing-ai/) · [de](https://liutingchun.com/de/works/self-cannibalizing-ai/) · [zh](https://liutingchun.com/zh/works/self-cannibalizing-ai/) — Talk recording (media.ccc.de): https://media.ccc.de/v/37c3-12125-self-cannibalizing_ai
-- **Achtung! Verwischung** (2023): [en](https://liutingchun.com/works/achtung-verwischung/) · [de](https://liutingchun.com/de/works/achtung-verwischung/) · [zh](https://liutingchun.com/zh/works/achtung-verwischung/)
-- **Imaginary Landscape** (2022–23): [en](https://liutingchun.com/works/imaginary-landscape/) · [de](https://liutingchun.com/de/works/imaginary-landscape/) · [zh](https://liutingchun.com/zh/works/imaginary-landscape/)
-- **Beneath** (2022): [en](https://liutingchun.com/works/beneath/) · [de](https://liutingchun.com/de/works/beneath/) · [zh](https://liutingchun.com/zh/works/beneath/)
-- **Sun** 太陽 (2020): [en](https://liutingchun.com/works/sun/) · [de](https://liutingchun.com/de/works/sun/) · [zh](https://liutingchun.com/zh/works/sun/) — Open the work (mobile browser): https://aprilcoffee.github.io/sun/
-- **Bring Us Somewhere** 帶我去一個地方 (2020): [en](https://liutingchun.com/works/bring-us-somewhere/) · [de](https://liutingchun.com/de/works/bring-us-somewhere/) · [zh](https://liutingchun.com/zh/works/bring-us-somewhere/)
-- **Faces** (2020): [en](https://liutingchun.com/works/faces/) · [de](https://liutingchun.com/de/works/faces/) · [zh](https://liutingchun.com/zh/works/faces/)
-- **Segmentary Moonlight** 月光・段 (2018): [en](https://liutingchun.com/works/segmentary-moonlight/) · [de](https://liutingchun.com/de/works/segmentary-moonlight/) · [zh](https://liutingchun.com/zh/works/segmentary-moonlight/)
-- **Message in a Bottle** 瓶中信 (2017): [en](https://liutingchun.com/works/message-in-a-bottle/) · [de](https://liutingchun.com/de/works/message-in-a-bottle/) · [zh](https://liutingchun.com/zh/works/message-in-a-bottle/)
-- **I kept repeating the unfamiliar self** 我不斷重複不認識的自己 (2017): [en](https://liutingchun.com/works/i-kept-repeating-the-unfamiliar-self/) · [de](https://liutingchun.com/de/works/i-kept-repeating-the-unfamiliar-self/) · [zh](https://liutingchun.com/zh/works/i-kept-repeating-the-unfamiliar-self/)
-- **Light Segment** 光段 (2017): [en](https://liutingchun.com/works/light-segment/) · [de](https://liutingchun.com/de/works/light-segment/) · [zh](https://liutingchun.com/zh/works/light-segment/)
-- **Inevitable Cross of The Parallel** 無法避免—平行線的交錯 (2017): [en](https://liutingchun.com/works/inevitable-cross-of-the-parallel/) · [de](https://liutingchun.com/de/works/inevitable-cross-of-the-parallel/) · [zh](https://liutingchun.com/zh/works/inevitable-cross-of-the-parallel/)
-- **Take Off the Clothes** 脫衣服 (2017): [en](https://liutingchun.com/works/take-off-the-clothes/) · [de](https://liutingchun.com/de/works/take-off-the-clothes/) · [zh](https://liutingchun.com/zh/works/take-off-the-clothes/)
-- **Hyper-Link into Image** 把超連結轉換成圖片 (2016): [en](https://liutingchun.com/works/hyper-link-into-image/) · [de](https://liutingchun.com/de/works/hyper-link-into-image/) · [zh](https://liutingchun.com/zh/works/hyper-link-into-image/)
+- **Steering Through the Inner Residue** (2026): [en](https://liutingchun.com/works/steering-through-the-inner-residue/) · [zh](https://liutingchun.com/zh/works/steering-through-the-inner-residue/) — Talk, Expanded 2026, Linz: https://expanded-conf.org/speaker/ting-chun-liu-leon-etienne-kuhr/
+- **Interpolation of the Invisible Color** (2025): [en](https://liutingchun.com/works/interpolation-of-the-invisible-color/) · [zh](https://liutingchun.com/zh/works/interpolation-of-the-invisible-color/) — Selected artists: https://storagemuseum.org/en/program/6-ausstellung — Storage Museum archive: https://storagemuseum.org/en/database
+- **Latent Heat Generation** (2025): [en](https://liutingchun.com/works/latent-heat-generation/) · [zh](https://liutingchun.com/zh/works/latent-heat-generation/) — Research notes: https://aprilcoffee.github.io/heat_as_image/index.html
+- **51 Ways to Spell the Image Giraffe** (2025): [en](https://liutingchun.com/works/51-ways-to-spell-the-image-giraffe/) · [zh](https://liutingchun.com/zh/works/51-ways-to-spell-the-image-giraffe/) — Talk recording, 39C3 (media.ccc.de): https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai
+- **Sixteen Tokens for a Cave** (2025): [en](https://liutingchun.com/works/sixteen-tokens-for-a-cave/) · [zh](https://liutingchun.com/zh/works/sixteen-tokens-for-a-cave/) — Preliminary work in the 39C3 talk, 28:37–32:20 (media.ccc.de): https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai
+- **Just Jailbreak** (2024): [en](https://liutingchun.com/works/just-jailbreak/) · [zh](https://liutingchun.com/zh/works/just-jailbreak/) — Kuai Kuai culture: https://en.wikipedia.org/wiki/Kuai_Kuai_culture — Synthiola (Fabian Mosele): https://www.fabianmosele.com/synthiola
+- **Self-cannibalizing AI** (2023): [en](https://liutingchun.com/works/self-cannibalizing-ai/) · [zh](https://liutingchun.com/zh/works/self-cannibalizing-ai/) — Talk recording (media.ccc.de): https://media.ccc.de/v/37c3-12125-self-cannibalizing_ai
+- **Achtung! Verwischung** (2023): [en](https://liutingchun.com/works/achtung-verwischung/) · [zh](https://liutingchun.com/zh/works/achtung-verwischung/)
+- **Imaginary Landscape** (2022–23): [en](https://liutingchun.com/works/imaginary-landscape/) · [zh](https://liutingchun.com/zh/works/imaginary-landscape/)
+- **Beneath** (2022): [en](https://liutingchun.com/works/beneath/) · [zh](https://liutingchun.com/zh/works/beneath/)
+- **Sun** 太陽 (2020): [en](https://liutingchun.com/works/sun/) · [zh](https://liutingchun.com/zh/works/sun/) — Open the work (mobile browser): https://aprilcoffee.github.io/sun/
+- **Bring Us Somewhere** 帶我去一個地方 (2020): [en](https://liutingchun.com/works/bring-us-somewhere/) · [zh](https://liutingchun.com/zh/works/bring-us-somewhere/)
+- **Faces** (2020): [en](https://liutingchun.com/works/faces/) · [zh](https://liutingchun.com/zh/works/faces/)
+- **Segmentary Moonlight** 月光・段 (2018): [en](https://liutingchun.com/works/segmentary-moonlight/) · [zh](https://liutingchun.com/zh/works/segmentary-moonlight/)
+- **Message in a Bottle** 瓶中信 (2017): [en](https://liutingchun.com/works/message-in-a-bottle/) · [zh](https://liutingchun.com/zh/works/message-in-a-bottle/)
+- **I kept repeating the unfamiliar self** 我不斷重複不認識的自己 (2017): [en](https://liutingchun.com/works/i-kept-repeating-the-unfamiliar-self/) · [zh](https://liutingchun.com/zh/works/i-kept-repeating-the-unfamiliar-self/)
+- **Light Segment** 光段 (2017): [en](https://liutingchun.com/works/light-segment/) · [zh](https://liutingchun.com/zh/works/light-segment/)
+- **Inevitable Cross of The Parallel** 無法避免—平行線的交錯 (2017): [en](https://liutingchun.com/works/inevitable-cross-of-the-parallel/) · [zh](https://liutingchun.com/zh/works/inevitable-cross-of-the-parallel/)
+- **Take Off the Clothes** 脫衣服 (2017): [en](https://liutingchun.com/works/take-off-the-clothes/) · [zh](https://liutingchun.com/zh/works/take-off-the-clothes/)
+- **Hyper-Link into Image** 把超連結轉換成圖片 (2016): [en](https://liutingchun.com/works/hyper-link-into-image/) · [zh](https://liutingchun.com/zh/works/hyper-link-into-image/)
 
 ## Performance videos (listed on the works page)
 

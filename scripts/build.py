@@ -317,6 +317,10 @@ def summary(text, n=160, words=False):
 # English at the site root, German under de/, Traditional Chinese under zh/.
 # The blog posts themselves are not translated: they live once under blog/<slug>/.
 LANGS = ["en", "de", "zh"]
+# languages that are built but not shown: every page of theirs forwards to the English one, and they are left out of
+# the language switch, hreflang and the sitemap (German is hidden until its translation has been reviewed)
+HIDDEN_LANGS = {"de"}
+SHOWN_LANGS = [l for l in LANGS if l not in HIDDEN_LANGS]
 LP = {"en": "", "de": "de/", "zh": "zh/"}
 HREFLANG = {"en": "en", "de": "de", "zh": "zh-Hant"}
 LOCALE = {"en": "en_US", "de": "de_DE", "zh": "zh_TW"}
@@ -492,7 +496,7 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
         url(LP[lang] + s + "/"), ' class="on" aria-current="page"' if s == section else "", esc(u["nav"][s])) for s in FOOT)
     switch = "".join('<a href="%s" hreflang="%s" lang="%s"%s>%s</a>' % (
         url(alts[l] if alts else LP[l] + (section + "/" if section else "")), HREFLANG[l], HREFLANG[l],
-        ' class="on" aria-current="true"' if l == lang else "", LANG_NAME[l]) for l in LANGS)
+        ' class="on" aria-current="true"' if l == lang else "", LANG_NAME[l]) for l in SHOWN_LANGS)
     hreflang = "".join('<link rel="alternate" hreflang="%s" href="%s">\n' % (HREFLANG[l], esc(abs_url(p)))
                        for l, p in (alts or {}).items())
     if alts:
@@ -635,13 +639,26 @@ for l in LANGS:
 TITLES.update({url("blog/%s/" % p["slug"]): p["title"] for p in posts})
 
 
+def hidden_to_en(path):
+    """de/works/x/ -> works/x/ while German is hidden; other paths stay as they are."""
+    for l in HIDDEN_LANGS:
+        if LP[l] and path.startswith(LP[l]):
+            return path[len(LP[l]):]
+    return path
+
+
 def page(path, *args, **kw):
+    if hidden_to_en(path) != path:
+        redirect(path, hidden_to_en(path))
+        return
+    if path in ("impressum/", "datenschutz/"):  # German by law; framed in German, or in English while German is hidden
+        kw.update(lang="en", content_lang="de") if "de" in HIDDEN_LANGS else kw.update(lang="de")
     pages[path] = layout(path, *args, **kw)
 
 
 def each(path):
     """The same page in every language."""
-    return {l: LP[l] + path for l in LANGS}
+    return {l: LP[l] + path for l in SHOWN_LANGS}
 
 
 # The chat's header: the GPU from "This is also a GPU", drawn in text. chat.js spins the
@@ -717,6 +734,7 @@ platforms = sorted({"Vimeo" if "vimeo" in (p.get("video") or "") else "YouTube"
 
 def redirect(old, new):
     """A tiny page that forwards an old URL (e.g. writing/ -> blog/)."""
+    new = hidden_to_en(new)
     pages[old] = ('<!doctype html><html lang="en"><meta charset="utf-8"><title>Moved</title>'
                   '<link rel="canonical" href="%s"><meta name="robots" content="noindex">'
                   '<meta http-equiv="refresh" content="0; url=%s"><a href="%s">%s</a></html>\n' % (
@@ -990,7 +1008,7 @@ for p in posts:
 addr = S.get("address") or []
 addr_html = "<br>".join(esc(x) for x in addr) if addr else \
     '<span class="todo">[Postanschrift fehlt — in site.json → site.address eintragen]</span>'
-page("impressum/", "Impressum", "Impressum / legal notice of %s." % S["name"], lang="de", body="""
+page("impressum/", "Impressum", "Impressum / legal notice of %s." % S["name"], body="""
 <div class="legal-page">
 <h1 class="page-title">Impressum</h1>
 <h2>Angaben gemäß § 5 DDG</h2>
@@ -1022,7 +1040,7 @@ CHAT_PRIVACY = CHAT_PRIVACY.replace("{turnstile}", (
     "prüft, ob die Anfrage von einem Menschen stammt (Art. 6 Abs. 1 lit. f DSGVO)."
 ) if S.get("turnstile_sitekey") else "")
 
-page("datenschutz/", "Datenschutz", "Privacy policy (Datenschutzerklärung) of %s." % S["name"], lang="de", body="""
+page("datenschutz/", "Datenschutz", "Privacy policy (Datenschutzerklärung) of %s." % S["name"], body="""
 <div class="legal-page">
 <h1 class="page-title">Datenschutz&shy;erklärung</h1>
 <h2>1. Verantwortlicher</h2>
@@ -1081,7 +1099,7 @@ llms = ["# %s (%s)" % (S["name"], S.get("name_zh", "")), "",
         "- [Performances](%s): recordings of live audio-visual sets, 2016–2024 (on the works page)" % abs_url("works/#performances"),
         "- [Talks & Workshops](%s): talk recordings, and workshops on local AI, embeddings and AI bias" % abs_url("workshops/"),
         "- [Written about the work](%s): texts by others, in the CV" % abs_url("about/#texts"), "",
-        "The site is also available in German (%s) and Traditional Chinese (%s)." % (abs_url("de/"), abs_url("zh/")), "",
+        "The site is also available in Traditional Chinese (%s)." % abs_url("zh/"), "",
         "## Works", ""]
 llms += ["- [%s](%s) (%s): %s" % (w["title"], abs_url("works/%s/" % w["slug"]), w.get("year"), w.get("type"))
          for w in works]

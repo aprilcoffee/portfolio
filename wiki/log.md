@@ -98,3 +98,6 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 
 ## [2026-10-25] update | Talks & Workshops
 - Page renamed "Talks & Workshops" / 講座與工作坊; stereotype-encoding open question resolved (CV already lists the symposium under 2025).
+
+## [2026-10-25] update | German hidden
+- The German site is hidden (pages forward to English); German links removed from wiki pages and the site map. Questionnaire for the artist added: raw/questionnaire-2026-10.md.

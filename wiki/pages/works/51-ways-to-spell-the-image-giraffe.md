@@ -5,7 +5,6 @@ tags: [artistic-research, talk, critical-ai-and-image-models, tokens]
 sources:
   - ../../../data/site.json (works → 51-ways-to-spell-the-image-giraffe)
   - https://liutingchun.com/works/51-ways-to-spell-the-image-giraffe/
-  - https://liutingchun.com/de/works/51-ways-to-spell-the-image-giraffe/
   - https://liutingchun.com/zh/works/51-ways-to-spell-the-image-giraffe/
   - https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai
 updated: 2026-10-07
@@ -24,7 +23,7 @@ An artistic research project and talk with Leon-Etienne Kühr, in development, o
 - **Materials:** CLIP tokenizer, Stable Diffusion
 - **With:** Leon-Etienne Kühr
 - **Link:** [Talk recording, 39C3 (media.ccc.de)](https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai) (38 min, English with German translation, CC BY 4.0)
-- **Page:** [https://liutingchun.com/works/51-ways-to-spell-the-image-giraffe/](https://liutingchun.com/works/51-ways-to-spell-the-image-giraffe/) · [de](https://liutingchun.com/de/works/51-ways-to-spell-the-image-giraffe/) · [zh](https://liutingchun.com/zh/works/51-ways-to-spell-the-image-giraffe/)
+- **Page:** [https://liutingchun.com/works/51-ways-to-spell-the-image-giraffe/](https://liutingchun.com/works/51-ways-to-spell-the-image-giraffe/) · [zh](https://liutingchun.com/zh/works/51-ways-to-spell-the-image-giraffe/)
 
 ## Key ideas
 
@@ -46,6 +45,5 @@ An artistic research project and talk with Leon-Etienne Kühr, in development, o
 
 - ../../../data/site.json (works → 51-ways-to-spell-the-image-giraffe)
 - https://liutingchun.com/works/51-ways-to-spell-the-image-giraffe/
-- https://liutingchun.com/de/works/51-ways-to-spell-the-image-giraffe/
 - https://liutingchun.com/zh/works/51-ways-to-spell-the-image-giraffe/
 - https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai

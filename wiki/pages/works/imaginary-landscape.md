@@ -5,7 +5,6 @@ tags: [ongoing-project, critical-ai-and-image-models, audio-visual-performance]
 sources:
   - ../../../data/site.json (works → imaginary-landscape)
   - https://liutingchun.com/works/imaginary-landscape/
-  - https://liutingchun.com/de/works/imaginary-landscape/
   - https://liutingchun.com/zh/works/imaginary-landscape/
   - https://liutingchun.com/blog/xanadu-travel-agency/
 updated: 2026-10-01
@@ -22,7 +21,7 @@ An ongoing project (2022–23) about the idealised beach images of tourism and s
 - **Type (zh):** 進行中計畫、影音表演
 - **Video:** https://vimeo.com/953746255
 - **Credits:** Performer: Ting-Chun Liu
-- **Page:** [https://liutingchun.com/works/imaginary-landscape/](https://liutingchun.com/works/imaginary-landscape/) · [de](https://liutingchun.com/de/works/imaginary-landscape/) · [zh](https://liutingchun.com/zh/works/imaginary-landscape/)
+- **Page:** [https://liutingchun.com/works/imaginary-landscape/](https://liutingchun.com/works/imaginary-landscape/) · [zh](https://liutingchun.com/zh/works/imaginary-landscape/)
 
 ## Key ideas
 
@@ -40,6 +39,5 @@ An ongoing project (2022–23) about the idealised beach images of tourism and s
 
 - ../../../data/site.json (works → imaginary-landscape)
 - https://liutingchun.com/works/imaginary-landscape/
-- https://liutingchun.com/de/works/imaginary-landscape/
 - https://liutingchun.com/zh/works/imaginary-landscape/
 - https://liutingchun.com/blog/xanadu-travel-agency/

@@ -5,7 +5,6 @@ tags: [talk, critical-ai-and-image-models, recursion-and-feedback]
 sources:
   - ../../../data/site.json (works → self-cannibalizing-ai)
   - https://liutingchun.com/works/self-cannibalizing-ai/
-  - https://liutingchun.com/de/works/self-cannibalizing-ai/
   - https://liutingchun.com/zh/works/self-cannibalizing-ai/
   - https://ground-zero.khm.de/artistic-research-on-recursive-dynamics-in-generative-image-models/
   - https://arxiv.org/abs/2607.09705
@@ -25,7 +24,7 @@ A talk with Leon-Etienne Kühr at the 37th Chaos Communication Congress (37C3, 2
 - **Type (zh):** 講演，37C3 — 揭露文字生成圖像模型的藝術策略
 - **With:** Leon-Etienne Kühr
 - **Link:** [Talk recording (media.ccc.de)](https://media.ccc.de/v/37c3-12125-self-cannibalizing_ai)
-- **Page:** [https://liutingchun.com/works/self-cannibalizing-ai/](https://liutingchun.com/works/self-cannibalizing-ai/) · [de](https://liutingchun.com/de/works/self-cannibalizing-ai/) · [zh](https://liutingchun.com/zh/works/self-cannibalizing-ai/)
+- **Page:** [https://liutingchun.com/works/self-cannibalizing-ai/](https://liutingchun.com/works/self-cannibalizing-ai/) · [zh](https://liutingchun.com/zh/works/self-cannibalizing-ai/)
 
 ## Key ideas
 
@@ -58,7 +57,6 @@ A talk with Leon-Etienne Kühr at the 37th Chaos Communication Congress (37C3, 2
 
 - ../../../data/site.json (works → self-cannibalizing-ai)
 - https://liutingchun.com/works/self-cannibalizing-ai/
-- https://liutingchun.com/de/works/self-cannibalizing-ai/
 - https://liutingchun.com/zh/works/self-cannibalizing-ai/
 - https://ground-zero.khm.de/artistic-research-on-recursive-dynamics-in-generative-image-models/
 - https://arxiv.org/abs/2607.09705
