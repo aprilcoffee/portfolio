@@ -330,7 +330,7 @@ def summary(text, n=160, words=False):
 # The blog posts themselves are not translated: they live once under blog/<slug>/.
 LANGS = ["en", "de", "zh"]
 # languages that are built but not shown: every page of theirs forwards to the English one, and they are left out of
-# the language switch, hreflang and the sitemap (German is hidden until its translation has been reviewed)
+# the language switch, hreflang and the sitemap (empty now; German was hidden until October 2026)
 HIDDEN_LANGS = set()
 SHOWN_LANGS = [l for l in LANGS if l not in HIDDEN_LANGS]
 LP = {"en": "", "de": "de/", "zh": "zh/"}
@@ -660,7 +660,7 @@ TITLES.update({url("blog/%s/" % p["slug"]): p["title"] for p in posts})
 
 
 def hidden_to_en(path):
-    """de/works/x/ -> works/x/ while German is hidden; other paths stay as they are."""
+    """de/works/x/ -> works/x/ for a language in HIDDEN_LANGS; other paths stay as they are."""
     for l in HIDDEN_LANGS:
         if LP[l] and path.startswith(LP[l]):
             return path[len(LP[l]):]
@@ -671,7 +671,7 @@ def page(path, *args, **kw):
     if hidden_to_en(path) != path:
         redirect(path, hidden_to_en(path))
         return
-    if path in ("impressum/", "datenschutz/"):  # German by law; framed in German, or in English while German is hidden
+    if path in ("impressum/", "datenschutz/"):  # German by law; framed in German, or in English while German is hidden (HIDDEN_LANGS)
         kw.update(lang="en", content_lang="de") if "de" in HIDDEN_LANGS else kw.update(lang="de")
     pages[path] = layout(path, *args, **kw)
 

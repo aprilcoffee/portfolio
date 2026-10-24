@@ -10,7 +10,7 @@ updated: generated
 # Site map and links
 
 Every page of the website and every external link it points to, generated from the site data.
-Each page exists in English and Traditional Chinese (zh); blog posts exist once,
+Each page exists in English, German (de) and Traditional Chinese (zh); blog posts exist once,
 in Mandarin. Recommend the version in the visitor's language.
 
 ## Main sections
@@ -20,10 +20,11 @@ in Mandarin. Recommend the version in the visitor's language.
 - **Performances** (recordings of live audio-visual sets, 2016–2024, at the bottom of the works page): [en](https://liutingchun.com/works/#performances) · [de](https://liutingchun.com/de/works/#performances) · [zh](https://liutingchun.com/zh/works/#performances)
 - **Talks & Workshops** (talk recordings, and workshops on local AI, embeddings and AI bias, one page each): [en](https://liutingchun.com/workshops/) · [de](https://liutingchun.com/de/workshops/) · [zh](https://liutingchun.com/zh/workshops/)
 - **About** (biography and CV: teaching, education, awards, talks, publications, texts by others, exhibitions): [en](https://liutingchun.com/about/) · [de](https://liutingchun.com/de/about/) · [zh](https://liutingchun.com/zh/about/)
-- **Blog archive** (notes on works, technical write-ups; in Mandarin): https://liutingchun.com/blog/
+- **Blog archive** (notes on works, technical write-ups; the posts are in Mandarin): [en](https://liutingchun.com/blog/) · [de](https://liutingchun.com/de/blog/) · [zh](https://liutingchun.com/zh/blog/)
 - **Friends** (artists and collaborators): [en](https://liutingchun.com/friends/) · [de](https://liutingchun.com/de/friends/) · [zh](https://liutingchun.com/zh/friends/)
 - **Impressum** (legal notice): https://liutingchun.com/impressum/
 - **Privacy policy** (Datenschutz): https://liutingchun.com/datenschutz/
+- **Site map** (every page, as a list): [en](https://liutingchun.com/sitemap/) · [de](https://liutingchun.com/de/sitemap/) · [zh](https://liutingchun.com/zh/sitemap/)
 
 ## Workshops
 

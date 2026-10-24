@@ -66,7 +66,7 @@ and also in Mandarin.
 
 ## Online
 
-- Website (English, 中文): https://liutingchun.com/
+- Website (English, Deutsch, 中文): https://liutingchun.com/
 - Instagram: https://www.instagram.com/liu_tingchun/ · GitHub: https://github.com/aprilcoffee
 - Pages by others (talk recordings, texts, exhibitions, citations): [External links](external-links.md)
 - Contact (talks, workshops, collaborations, commissions): ting-chun.liu@uni-weimar.de

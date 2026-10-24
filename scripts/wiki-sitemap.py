@@ -36,7 +36,7 @@ updated: generated
 # Site map and links
 
 Every page of the website and every external link it points to, generated from the site data.
-Each page exists in English and Traditional Chinese (zh); blog posts exist once,
+Each page exists in English, German (de) and Traditional Chinese (zh); blog posts exist once,
 in Mandarin. Recommend the version in the visitor's language.
 
 ## Main sections
@@ -46,12 +46,13 @@ in Mandarin. Recommend the version in the visitor's language.
 - **Performances** (recordings of live audio-visual sets, 2016–2024, at the bottom of the works page): %s
 - **Talks & Workshops** (talk recordings, and workshops on local AI, embeddings and AI bias, one page each): %s
 - **About** (biography and CV: teaching, education, awards, talks, publications, texts by others, exhibitions): %s
-- **Blog archive** (notes on works, technical write-ups; in Mandarin): %sblog/
+- **Blog archive** (notes on works, technical write-ups; the posts are in Mandarin): %s
 - **Friends** (artists and collaborators): %s
 - **Impressum** (legal notice): %simpressum/
 - **Privacy policy** (Datenschutz): %sdatenschutz/
+- **Site map** (every page, as a list): %s
 """ % (BASE, each(""), len(works), each("works/"), each("works/#performances"), each("workshops/"), each("about/"),
-       BASE, each("friends/"), BASE, BASE)]
+       each("blog/"), each("friends/"), BASE, BASE, each("sitemap/"))]
 
 out.append("## Workshops\n")
 for x in [x for x in D.get("workshops", []) if not x.get("hidden")]:
