@@ -90,3 +90,8 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 
 ## [2026-10-25] update | Workshop texts
 - Workshop pages rewritten to describe the exercises concretely (from the workshop screenshots): local models such as Gemma 3 / EmbeddingGemma, the distance/axis/token/next-token/name-swap/image exercises, Magritte pipe, face search scores. Chinese texts rewritten for clarity.
+
+## [2026-10-25] ingest | Instagram posts (screenshots from the artist)
+- topics/workshops: Conditions for Emotions (plural, the correct title) described from Liu's own post: Ollama, 2D embedding map, Searle's Chinese Room, invited by Jenni Bohn, moderated by Mattis Kuhn, Center for Literature.
+- works/interpolation-of-the-invisible-color: Storage Museum's announcement (6th exhibition, opening 15 Nov 2025, with Filmwerkstatt Düsseldorf, 17 artists from the collection).
+

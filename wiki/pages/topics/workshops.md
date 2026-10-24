@@ -10,15 +10,17 @@ sources:
   - https://walter-luebcke-schule.de/kuenstlerische-arbeit-nahbar-machen/
   - https://digitale-burg.de/studio/das-wissen-der-digitalen-literatur
   - https://kisd.de/en/termine/kisdtalk-paranoia-de-prompting/
-updated: 2026-10-24
+updated: 2026-10-25
 ---
 # Workshops
 
 Liu's workshops are about using AI locally, working with embeddings by hand, and seeing the biases inside AI models. Requests go to ting-chun.liu@uni-weimar.de. Three workshops are described on the website's Workshops page (https://liutingchun.com/workshops/).
 
-## Condition for Emotions (2026)
+## Conditions for Emotions (2026)
 
-Participants install small AI models on their own laptops and ask them questions such as "How icecream is the word red compared to blue?" Embeddings turn words, sentences and images into positions in a space, and distances in that space become the machine's answers. A small web tool built for the workshop measures the distance between sentences, places words on a line between two opposite words, compares token counts across languages, follows a model as it continues a sentence, swaps one name in a sentence to show bias, and asks a vision model about an image. Held on 13 June 2026 in Münster for the DFG network "Das Wissen der digitalen Literatur", in the context of Alphabete der Automatisierung. Announced: 13 November 2026 at KHM, 17 December 2026 at TH Köln (Code & Context).
+Liu's own description (Instagram, July 2026): "How icecream is the word red, compared to blue? How far is the word fascism from the sentence 'a library that screams snow'? While absurd, the machine answers these questions with full confidence." The workshop foregrounds the gap between the deterministic choices the machine makes and the meaning we read into them. It is built for people who have never opened a terminal: participants install small language models (Gemma 3 and EmbeddingGemma) on a local platform (Ollama) and examine the questions on their own computers. Exercises, inspired by classical sentiment analysis: watching tokenization; a map that projects sentences from 768-dimensional embeddings down to 2D; scoring the similarity between "I am feeling sad today" and emotions such as joy or anger; a semantic-differential axis (e.g. "condition" vs "emotion"); the model's next-token log-probabilities; swapping one name in a sentence (Alice, Mohammed, Mei, Jürgen) to show bias; asking a vision model about an image. "The machine brings its own conditions for emotions: correlation, geometry, probability." The aim is not to anthropomorphise the apparatus but, with artistic strategies "like glimpsing into Searle's Chinese Room", to see the absurd process underneath and how our own sense-making projects meaning onto the machine.
+
+Held on 13 June 2026 for the DFG network "Das Wissen der digitalen Literatur" (The Knowledge of Digital Literature) at the Center for Literature, invited by Jenni Bohn and moderated by Mattis Kuhn. Announced: 13 November 2026 at KHM, 17 December 2026 at TH Köln (Code & Context). The title is "Conditions for Emotions" (plural), as in Liu's post and the workshop tool.
 
 ## Paranoia De-Prompting (2026, with Leon-Etienne Kühr)
 

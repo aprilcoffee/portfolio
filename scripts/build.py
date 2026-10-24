@@ -833,7 +833,8 @@ for L in LANGS:
 
     for i, x in enumerate(shops):
         pics = shop_pics(x)
-        figs = ["<figure>%s</figure>" % img(im, 1600 if k == 0 else 1000, "%s (%d/%d)" % (tr(x, "title", L), k + 1, len(pics)))
+        alts = [(i.get("alt_" + L) or i.get("alt")) if isinstance(i, dict) else None for i in x.get("images", [])]
+        figs = ["<figure>%s</figure>" % img(im, 1600 if k == 0 else 1000, alts[k] or "%s (%d/%d)" % (tr(x, "title", L), k + 1, len(pics)))
                 for k, im in enumerate(pics)]
         plates = figs.pop(0).replace("<figure>", '<figure class="hero">', 1) if figs else ""
         if len(figs) == 1:
@@ -859,6 +860,7 @@ for L in LANGS:
     # the former pages for performances and for press now live on the works, workshops and about pages
     redirect(P + "performance/", P + "works/#performances")
     redirect(P + "press/", P + "workshops/#talks")
+    redirect(P + "workshops/condition-for-emotions/", P + "workshops/conditions-for-emotions/")  # renamed 2026-10
 
     groups, order = {}, []
     for p in posts:
