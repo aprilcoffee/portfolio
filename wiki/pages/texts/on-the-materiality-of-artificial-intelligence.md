@@ -80,6 +80,8 @@ Sam Altman (tweet, 2023), Langdon Winner, Simon Penny, Alex Krizhevsky and AlexN
 
 ## Sources
 
+- https://gestaltung.ai/en#publications (KITeGG publications, where the un/learn ai volumes are listed)
+
 - data/site.json, about.sections: Publications & Writing (2025) and Talks (2024)
 - https://unlearn.gestaltung.ai/de/article/gpm91yc8?chunks=gpm91yc8
 - https://openscience.ub.uni-mainz.de/items/7d8cb85f-0e1a-409e-b9a1-a9dac96e48a0

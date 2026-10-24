@@ -107,3 +107,8 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 - Updated: overview, faq, topics/workshops (dates, audience, AI literacy, Paranoia origin), works/bring-us-somewhere, works/imaginary-landscape (ended 2024), works/just-jailbreak (Fabian Mosele, Kaohsiung), works/steering-through-the-inner-residue (NCAF), people/lll (one-time), people/leon-etienne-kuehr (met at KHM), teaching-education-awards (courses, NCAF grant), texts/heat-as-generative-image-making (June 2025, supervisors), topics/audio-visual-performance, talks-and-writing and external-links (Dortmund 2024 confirmed).
 - Website: Fall and Let the drone fly hidden; chat calls the artist "Ting-Chun" and gives the Weimar email.
 
+
+## [2026-10-24] update | Just Jailbreak and Bring Us Somewhere sources
+- works/just-jailbreak: TTXC Taiwan Technology and Culture Expo (Pier-2 Art Center, Kaohsiung, 12–27 Oct 2024), residency by Pier-2 and Hello World; CV exhibition added.
+- works/bring-us-somewhere: 城市轉藝器 dates, organiser, curator (ARTouch).
+- external-links, texts/on-the-materiality: KITeGG publications page. Chat rules: link own texts and workshop pages for questions about ideas.

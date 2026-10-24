@@ -40,7 +40,7 @@ in Mandarin. Recommend the version in the visitor's language.
 - **Latent Heat Generation** (2025): [en](https://liutingchun.com/works/latent-heat-generation/) · [zh](https://liutingchun.com/zh/works/latent-heat-generation/) — Research notes: https://aprilcoffee.github.io/heat_as_image/index.html
 - **51 Ways to Spell the Image Giraffe** (2025): [en](https://liutingchun.com/works/51-ways-to-spell-the-image-giraffe/) · [zh](https://liutingchun.com/zh/works/51-ways-to-spell-the-image-giraffe/) — Talk recording, 39C3 (media.ccc.de): https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai
 - **Sixteen Tokens for a Cave** (2025): [en](https://liutingchun.com/works/sixteen-tokens-for-a-cave/) · [zh](https://liutingchun.com/zh/works/sixteen-tokens-for-a-cave/) — Preliminary work in the 39C3 talk, 28:37–32:20 (media.ccc.de): https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai
-- **Just Jailbreak** (2024): [en](https://liutingchun.com/works/just-jailbreak/) · [zh](https://liutingchun.com/zh/works/just-jailbreak/) — Kuai Kuai culture: https://en.wikipedia.org/wiki/Kuai_Kuai_culture — Fabian Mosele: Just Jailbreak: https://www.fabianmosele.com/just-jailbreak
+- **Just Jailbreak** (2024): [en](https://liutingchun.com/works/just-jailbreak/) · [zh](https://liutingchun.com/zh/works/just-jailbreak/) — Kuai Kuai culture: https://en.wikipedia.org/wiki/Kuai_Kuai_culture — Fabian Mosele: Just Jailbreak: https://www.fabianmosele.com/just-jailbreak — TTXC 2024 (Ministry of Culture): https://www.moc.gov.tw/News_Content.aspx?n=105&s=225280
 - **Self-cannibalizing AI** (2023): [en](https://liutingchun.com/works/self-cannibalizing-ai/) · [zh](https://liutingchun.com/zh/works/self-cannibalizing-ai/) — Talk recording (media.ccc.de): https://media.ccc.de/v/37c3-12125-self-cannibalizing_ai
 - **Achtung! Verwischung** (2023): [en](https://liutingchun.com/works/achtung-verwischung/) · [zh](https://liutingchun.com/zh/works/achtung-verwischung/)
 - **Imaginary Landscape** (2022–2024): [en](https://liutingchun.com/works/imaginary-landscape/) · [zh](https://liutingchun.com/zh/works/imaginary-landscape/)
@@ -152,6 +152,7 @@ Organisers', institutions' and publishers' pages for entries in the CV (About pa
 - 2025 Interpolation of the Invisible Color, Storage Museum, Düsseldorf, w/ Leon-Etienne Kühr: https://www.filmwerkstatt-duesseldorf.de/interpolation-of-invisible-colors/
 - 2025 Art Cologne, Messe, Cologne: https://en.khm.de/termine/news.5651.khm-auf-der-art-cologne-2023/
 - 2025 Ars Electronica Campus, Linz: https://ars.electronica.art/panic/en/view/cybernetic-subjects-21338ddb450c817ab718ce48a0a628f5/
+- 2024 TTXC Taiwan Technology and Culture Expo, Pier-2 Art Center, Kaohsiung, w/ Fabian Mosele: https://www.moc.gov.tw/News_Content.aspx?n=105&s=225280
 - 2023 Ephemeral Connections, Glasmoog, Cologne: https://en.khm.de/glasmoog_programmarchiv/news.5642.glasmoog-zeigt-ephemeral-connections/
 - 2023 Ghosts at the Feast, Weltkunstzimmer, Düsseldorf: https://weltkunstzimmer.de/en/ghosts-at-the-feast/
 - 2023 Kölner Kongress ’23, Deutschlandfunk, Cologne: https://en.khm.de/termine/news.5463.koelner-kongress-2023-auserzaehlt--divvon-krisen-und-neuerfindungen-des-erzaehlens-div/
