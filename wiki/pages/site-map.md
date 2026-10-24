@@ -107,6 +107,7 @@ Organisers', institutions' and publishers' pages for entries in the CV (About pa
 **Lectures, Talks & Workshops**
 
 - 2026 Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images, Expanded 2026 (Art Track), Linz, w/ Leon-Etienne Kühr: https://expanded-conf.org/speaker/ting-chun-liu-leon-etienne-kuhr/
+- 2026 Paranoia De-Prompting: Artistic Experiments on Generative Image, University of Bonn, invited by Junge GI Hochschulgruppe Bonn, w/ Leon-Etienne Kühr: https://junge.gi.de/veranstaltung/paranoia-de-prompting-artistic-experiments-on-generative-image-vortrag-hsg-bonn
 - 2026 Condition for Emotions, DFG network “Das Wissen der digitalen Literatur”: https://digitale-burg.de/studio/das-wissen-der-digitalen-literatur
 - 2026 Animism Revisited, Digital Arts Community, ACM SIGGRAPH, w/ Leon-Etienne Kühr: https://dac.siggraph.org/sparks/2026-05-29_animism-revisited/
 - 2026 KISDtalk: Paranoia De-Prompting, KISD Köln International School of Design, w/ Leon-Etienne Kühr: https://kisd.de/en/termine/kisdtalk-paranoia-de-prompting/

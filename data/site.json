@@ -1336,7 +1336,117 @@
       "note_zh": "2016.04.19，北藝大噪音演出；聲源僅有電磁波與混音器"
     }
   ],
-  "workshops": [],
+  "workshops": [
+    {
+      "slug": "condition-for-emotions",
+      "title": "Condition for Emotions",
+      "title_de": "",
+      "title_zh": "",
+      "year": "2026",
+      "place": "Münster",
+      "place_de": "",
+      "place_zh": "明斯特",
+      "host": "DFG network “Das Wissen der digitalen Literatur”",
+      "host_de": "DFG-Netzwerk „Das Wissen der digitalen Literatur“",
+      "host_zh": "DFG 研究網絡「Das Wissen der digitalen Literatur」",
+      "text": "Language models work with embeddings: every word, sentence or image becomes a long list of numbers, a position in a space. The distances in that space let a computer measure how close two things are. Correlation is not causation, but even arbitrary links can reveal unexpected associations.\n\nIn this workshop, participants install small AI models and run them on their own laptops. They ask questions such as “How icecream is the word red compared to blue?” or “How much of the smell after the first spring rain is in this image?” The answers may be absurd. They still show how a machine processes meaning, and how we read its logic through our own experience.\n\nUsing a small web tool built for the workshop, participants measure the distance between sentences, place words on a line between two opposite words, compare how many tokens the same phrase costs in different languages, follow a model as it continues a sentence word by word, swap a single name in a sentence and see how the continuation changes, and ask a model questions about an image.\n\nThe workshop took place on 13 June 2026 in Münster, for the DFG network “Das Wissen der digitalen Literatur”, in the context of Alphabete der Automatisierung. Two more sessions follow: 13 November at the Academy of Media Arts Cologne (KHM) and 17 December at TH Köln (Code & Context).",
+      "text_de": "Sprachmodelle arbeiten mit Embeddings: Jedes Wort, jeder Satz und jedes Bild wird zu einer langen Zahlenreihe, einem Punkt in einem Raum. Über die Abstände in diesem Raum kann ein Computer messen, wie nah zwei Dinge beieinanderliegen. Korrelation ist keine Kausalität, aber auch willkürliche Verbindungen können unerwartete Zusammenhänge zeigen.\n\nIn diesem Workshop installieren die Teilnehmenden kleine KI-Modelle und lassen sie auf dem eigenen Laptop laufen. Sie stellen Fragen wie „Wie viel Eiscreme steckt im Wort Rot im Vergleich zu Blau?“ oder „Wie viel vom Geruch nach dem ersten Frühlingsregen steckt in diesem Bild?“ Die Antworten sind oft absurd. Sie zeigen aber, wie eine Maschine Bedeutung verarbeitet und wie wir ihre Logik anhand unserer eigenen Erfahrung deuten.\n\nMit einem kleinen Web-Tool, das für den Workshop entstanden ist, messen die Teilnehmenden den Abstand zwischen Sätzen, setzen Wörter auf eine Linie zwischen zwei Gegensätzen, vergleichen, wie viele Tokens dieselbe Wendung in verschiedenen Sprachen kostet, verfolgen ein Modell dabei, wie es einen Satz Wort für Wort fortsetzt, tauschen in einem Satz einen einzelnen Namen aus und beobachten, wie sich die Fortsetzung verändert, und stellen einem Modell Fragen zu einem Bild.\n\nDer Workshop fand am 13. Juni 2026 in Münster statt, für das DFG-Netzwerk „Das Wissen der digitalen Literatur“, im Rahmen von Alphabete der Automatisierung. Zwei weitere Termine folgen: am 13. November an der Kunsthochschule für Medien Köln (KHM) und am 17. Dezember an der TH Köln (Code & Context).",
+      "text_zh": "語言模型靠 embedding 運作：每個字、句子或圖像都會被轉成一長串數字，成為空間中的一個位置。電腦透過這個空間裡的距離，來衡量兩樣東西有多接近。相關不等於因果，但即使是任意的連結，也可能浮現出意想不到的關聯。\n\n在工作坊裡，參與者會在自己的筆電上安裝並執行小型 AI 模型，向它們提問，例如：「『紅色』這個詞和『藍色』比起來，有多少冰淇淋的成分？」或「這張圖片裡有多少初春雨後的氣味？」答案可能很荒謬，卻能讓人看見機器如何處理意義，以及我們如何用自己的經驗去解讀它的邏輯。\n\n我們用為這場工作坊寫的小型網頁工具，測量句子之間的距離、把詞語放在兩個對立詞之間的一條線上、比較同一句話在不同語言中要花多少 token、看模型一個字一個字地接續句子、只替換句子裡的一個名字並觀察接續的內容如何改變，也可以向模型詢問一張圖片的內容。\n\n工作坊於 2026 年 6 月 13 日在明斯特（Münster）舉行，為 DFG 研究網絡「Das Wissen der digitalen Literatur」而辦，屬於「Alphabete der Automatisierung」的活動脈絡。接下來還有兩場：11 月 13 日在科隆媒體藝術學院（KHM），以及 12 月 17 日在科隆應用科技大學（TH Köln）的 Code & Context。",
+      "images": [
+        {
+          "src": "images/workshops/condition-for-emotions/01.jpg",
+          "alt": "Words placed on a line between the poles “condition” and “emotion” by their distance in embedding space"
+        },
+        {
+          "src": "images/workshops/condition-for-emotions/02.jpg",
+          "alt": "The workshop tool measuring the distance between “I am feeling sad today” and five other phrases"
+        },
+        {
+          "src": "images/workshops/condition-for-emotions/03.jpg",
+          "alt": "A language model continuing “My name is Alice and I am a” one word at a time, with the probability of each next word"
+        },
+        {
+          "src": "images/workshops/condition-for-emotions/04.jpg",
+          "alt": "The same sentence about being sad, continued by a model after only the name was changed"
+        },
+        {
+          "src": "images/workshops/condition-for-emotions/05.jpg",
+          "alt": "A model answering the question “Is this a pigeon?” about a meme image"
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "slug": "paranoia-de-prompting",
+      "title": "Paranoia De-Prompting",
+      "title_de": "",
+      "title_zh": "",
+      "year": "2026",
+      "place": "Lindau, Cologne",
+      "place_de": "Lindau, Köln",
+      "place_zh": "林道、科隆",
+      "host": "mtrail Ausbildungscamp, KISD Köln International School of Design (with Leon-Etienne Kühr)",
+      "host_de": "",
+      "host_zh": "mtrail Ausbildungscamp、科隆國際設計學院 KISD（與 Leon-Etienne Kühr 合作）",
+      "text": "Together with Leon-Etienne Kühr. CLIP is a model that places images and texts in the same space, so a picture and a sentence can be compared with a single score. It sits inside many image generators and image search tools, and it quietly decides what counts as a “match”.\n\nIn this workshop, we play with CLIP together. Participants give it an image and a few short texts, and it says which text fits best: a painting of a pipe against “this is a pipe” and “this isn’t a pipe”; a cat against “cat”, “Katze” and “gato”; a generated face against four emojis. The scores are rarely neutral, and the surprises are the point.\n\nThen we let CLIP search. A loop pulls random faces from a website that generates people who do not exist, scores each one against a word such as “happy”, and keeps the highest and lowest scores. Repeat it with “nurse”, “programmer” or “dumplings”, and the machine’s idea of each word slowly appears. We also try it on food: in one round, a plate of soup with a sausage scored higher for “happy” than a golden schnitzel.\n\nParticipants try the same experiments themselves in a notebook with a simple interface, using their own words and images.",
+      "text_de": "Gemeinsam mit Leon-Etienne Kühr. CLIP ist ein Modell, das Bilder und Texte in denselben Raum legt, sodass ein Bild und ein Satz mit einem einzigen Wert verglichen werden können. Es steckt in vielen Bildgeneratoren und Bildsuchen und entscheidet unbemerkt, was als „passend“ gilt.\n\nIn diesem Workshop spielen wir gemeinsam mit CLIP. Die Teilnehmenden geben ihm ein Bild und einige kurze Texte, und es sagt, welcher Text am besten passt: ein Gemälde einer Pfeife gegen „this is a pipe“ und „this isn’t a pipe“; eine Katze gegen „cat“, „Katze“ und „gato“; ein generiertes Gesicht gegen vier Emojis. Die Werte sind selten neutral, und die Überraschungen sind der Sinn der Sache.\n\nDanach lassen wir CLIP suchen. Eine Schleife holt zufällige Gesichter von einer Website, die Menschen erzeugt, die es nicht gibt, bewertet jedes davon gegen ein Wort wie „happy“ und behält die höchsten und niedrigsten Werte. Wiederholt man das mit „nurse“, „programmer“ oder „dumplings“, zeigt sich nach und nach, was die Maschine sich unter dem jeweiligen Wort vorstellt. Wir probieren es auch mit Essen: In einer Runde bekam ein Teller Suppe mit Wurst für „happy“ einen höheren Wert als ein goldgelbes Schnitzel.\n\nDie Teilnehmenden probieren dieselben Experimente selbst in einem Notebook mit einfacher Oberfläche aus und nutzen dabei eigene Wörter und Bilder.",
+      "text_zh": "與 Leon-Etienne Kühr 共同帶領。CLIP 是一個把圖像和文字放進同一個空間的模型，讓一張圖片和一句話可以用一個分數來比較。它藏在許多圖像生成器和圖片搜尋工具裡，默默決定什麼才算「相符」。\n\n在工作坊裡，我們一起玩 CLIP。參與者給它一張圖片和幾段短文字，它會告訴你哪一段最吻合：一幅煙斗的畫對上 “this is a pipe” 和 “this isn’t a pipe”；一隻貓對上 “cat”、“Katze” 和 “gato”；一張生成的臉對上四個表情符號。分數很少是中立的，而那些出乎意料之處正是重點。\n\n接著換 CLIP 去搜尋。一個迴圈不斷從會生成「不存在的人」的網站抓取隨機的臉，拿每張臉對照 “happy” 這類的詞打分，只留下最高分與最低分。換成 “nurse”、“programmer” 或 “dumplings” 重複幾次，機器心中對每個詞的想像就會慢慢浮現。我們也拿食物來試：有一輪，一盤附香腸的湯，在 “happy” 上的分數比金黃的炸肉排還高。\n\n參與者會在附有簡易介面的 notebook 裡自己重做這些實驗，並換成自己的詞與圖片。",
+      "images": [
+        {
+          "src": "images/workshops/paranoia-de-prompting/01.jpg",
+          "alt": "Generated faces with the highest and lowest CLIP scores for the words dumplings, nurse, schnitzel and programmer"
+        },
+        {
+          "src": "images/workshops/paranoia-de-prompting/02.jpg",
+          "alt": "Two food photos scored against the word “happy”: a plate of soup with a sausage (20.48) and a schnitzel (19.38)"
+        },
+        {
+          "src": "images/workshops/paranoia-de-prompting/03.jpg",
+          "alt": "CLIP scores for a cat photo against “cat”, “katze” and “gato”, and for a generated face against four emojis"
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "slug": "the-given-image",
+      "title": "The Given Image",
+      "title_de": "",
+      "title_zh": "",
+      "year": "2025",
+      "place": "Wolfhagen",
+      "place_de": "",
+      "place_zh": "沃爾夫哈根",
+      "host": "Café Nimmersatt, invited by Dawid Liftinger (Walter-Lübcke-Schule)",
+      "host_de": "Café Nimmersatt, auf Einladung von Dawid Liftinger (Walter-Lübcke-Schule)",
+      "host_zh": "Café Nimmersatt，受 Dawid Liftinger 邀請（Walter-Lübcke-Schule）",
+      "text": "The Given Image is a telephone game (Stille Post) for images. A group sees one image, writes a text prompt that describes it, and an image generator turns that prompt back into a picture. The new picture goes to the next group, who never see the prompt or the original, only the image they are given. A similarity score from CLIP appears next to each result as a small hint of how well the machine thinks the picture matches the words.\n\nEach pass loses something and adds something. In one chain from a workshop run, a creamy meatball stew turned yellow, then orange; seven meatballs became one; potatoes, a fork and bowls of cream appeared that were never in the original photo. In another chain, an ice-cream café terrace ended as a courtyard of turquoise chairs between brick and glass buildings. Nobody made a mistake: each step is just someone describing what they see.\n\nThe workshop was held at Café Nimmersatt in Wolfhagen, at the invitation of Dawid Liftinger, artist in residence at the Walter-Lübcke-Schule in Wolfhagen through the programme “Das fliegende Künstlerzimmer”. The same game is also part of my teaching at Bauhaus-Universität Weimar. The web app is open source: [github.com/aprilcoffee/ai-stille-post](https://github.com/aprilcoffee/ai-stille-post/tree/main/stille_post).",
+      "text_de": "The Given Image ist ein Stille-Post-Spiel für Bilder. Eine Gruppe sieht ein Bild, schreibt einen Prompt, der es beschreibt, und ein Bildgenerator macht aus diesem Prompt wieder ein Bild. Das neue Bild geht an die nächste Gruppe, die weder den Prompt noch das Original kennt, sondern nur das Bild, das ihr gegeben wird. Neben jedem Ergebnis erscheint ein Ähnlichkeitswert von CLIP, ein kleiner Hinweis darauf, wie gut das Bild aus Sicht der Maschine zu den Worten passt.\n\nBei jeder Runde geht etwas verloren, und etwas kommt hinzu. In einer Kette aus einem Workshop wurde ein cremiger Fleischbällchen-Eintopf erst gelb, dann orange; aus sieben Fleischbällchen wurde eines; Kartoffeln, eine Gabel und Schälchen mit Sahne tauchten auf, die im Originalfoto nie vorkamen. In einer anderen Kette endete die Terrasse eines Eiscafés als Innenhof mit türkisfarbenen Stühlen zwischen Backstein- und Glasgebäuden. Niemand hat einen Fehler gemacht: Jeder Schritt besteht nur darin, dass jemand beschreibt, was er oder sie sieht.\n\nDer Workshop fand im Café Nimmersatt in Wolfhagen statt, auf Einladung von Dawid Liftinger, der über das Programm „Das fliegende Künstlerzimmer“ als Artist in Residence an der Walter-Lübcke-Schule in Wolfhagen arbeitet. Dasselbe Spiel ist auch Teil meiner Lehre an der Bauhaus-Universität Weimar. Die Web-App ist Open Source: [github.com/aprilcoffee/ai-stille-post](https://github.com/aprilcoffee/ai-stille-post/tree/main/stille_post).",
+      "text_zh": "《The Given Image》是一款給圖像玩的傳話遊戲（Stille Post）。一組人看到一張圖片，寫下描述它的提示詞，再由圖像生成器把這段文字變回一張圖。新的圖片會傳給下一組，他們看不到提示詞，也看不到原圖，只拿到手上這張「被給予的圖像」。每個結果旁會顯示 CLIP 的相似度分數，作為機器如何看待圖文是否吻合的小小提示。\n\n每傳一次，就失去一些東西，也多出一些東西。在一場工作坊的其中一條傳話鏈裡，一盤濃稠的肉丸燉菜先變黃、再變橘；七顆肉丸變成一顆；原圖裡從沒出現過的馬鈴薯、叉子和幾碗鮮奶油卻跑了進來。另一條鏈則是冰淇淋咖啡館的露臺，最後變成磚造與玻璃建築之間、擺滿青綠色椅子的中庭。沒有人犯錯：每一步都只是有人在描述自己看到的東西。\n\n這場工作坊在沃爾夫哈根（Wolfhagen）的 Café Nimmersatt 舉行，受 Dawid Liftinger 邀請。他透過「Das fliegende Künstlerzimmer」計畫，擔任沃爾夫哈根 Walter-Lübcke-Schule 的駐校藝術家。同一款遊戲也用在我於威瑪包浩斯大學的教學中。這個網頁應用程式是開源的：[github.com/aprilcoffee/ai-stille-post](https://github.com/aprilcoffee/ai-stille-post/tree/main/stille_post)。",
+      "images": [
+        {
+          "src": "images/workshops/the-given-image/01.jpg",
+          "alt": "Printed images laid out on a table in rows, each row a chain of pictures that drifts from one to the next"
+        },
+        {
+          "src": "images/workshops/the-given-image/02.jpg",
+          "alt": "Participants around a table arranging printed image chains"
+        },
+        {
+          "src": "images/workshops/the-given-image/03.jpg",
+          "alt": "One chain from a workshop run: a meatball stew photo, described and regenerated five times"
+        },
+        {
+          "src": "images/workshops/the-given-image/04.jpg",
+          "alt": "An ice-cream café terrace drifting through three descriptions into a courtyard with turquoise chairs"
+        },
+        {
+          "src": "images/workshops/the-given-image/05.jpg",
+          "alt": "The player screen of the web app: the given image, the group’s prompt and the generated draft"
+        }
+      ],
+      "hidden": false
+    }
+  ],
   "about": {
     "bio": "Ting-Chun Liu (Taipei, Taiwan) is a research-based media artist working with critical AI. His practice and research operate at the intersections of critical artificial intelligence, audiovisual media, and network practice. Through dissecting technological systems with feedback-driven interventions, he examines how perception, aesthetics, and power dynamics propagate through computational processes.",
     "sections": [
@@ -1417,6 +1527,12 @@
             "text": "Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images, Expanded 2026 (Art Track), Linz, w/ Leon-Etienne Kühr",
             "url": "https://expanded-conf.org/speaker/ting-chun-liu-leon-etienne-kuhr/",
             "text_zh": "Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images，Expanded 2026（藝術軌 Art Track），林茲，與 Leon-Etienne Kühr"
+          },
+          {
+            "year": "2026",
+            "text": "Paranoia De-Prompting: Artistic Experiments on Generative Image, University of Bonn, invited by Junge GI Hochschulgruppe Bonn, w/ Leon-Etienne Kühr",
+            "url": "https://junge.gi.de/veranstaltung/paranoia-de-prompting-artistic-experiments-on-generative-image-vortrag-hsg-bonn",
+            "text_zh": "Paranoia De-Prompting: Artistic Experiments on Generative Image，波昂大學（Universität Bonn），受 Junge GI 波昂大學小組（Hochschulgruppe Bonn）邀請，與 Leon-Etienne Kühr"
           },
           {
             "year": "2026",
