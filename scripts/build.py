@@ -352,7 +352,7 @@ UI = {
         "sitemap": "Site map", "sitemap_lead": "Every page of this website.",
         "sitemap_desc": "Site map of the website of %s: works and performances, talks and workshops, about, blog.",
         "Year": "Year", "Status": "Status", "Type": "Type", "Materials": "Materials", "With": "With", "Link": "Link",
-        "work_desc": "%s (%s), %s by %s.", "work": "work", "work_with": "with %s", "event": "Event page", "held": "Sessions", "workshop": "Workshop",
+        "work_desc": "%s (%s), %s by %s.", "work": "work", "work_with": "with %s", "show_all": "Show all (%d)", "event": "Event page", "held": "Sessions", "workshop": "Workshop",
         "perf_title": "Performance archive",
         "watch": "Watch on %s ↗",
         "about": "About",
@@ -386,7 +386,7 @@ UI = {
         "sitemap": "Seitenübersicht", "sitemap_lead": "Alle Seiten dieser Website.",
         "sitemap_desc": "Seitenübersicht der Website von %s: Arbeiten und Performances, Vorträge und Workshops, Über mich, Blog.",
         "Year": "Jahr", "Status": "Status", "Type": "Art", "Materials": "Material", "With": "Mit", "Link": "Link",
-        "work_desc": "%s (%s), %s von %s.", "work": "Arbeit", "work_with": "mit %s", "event": "Veranstaltung", "held": "Termine", "workshop": "Workshop",
+        "work_desc": "%s (%s), %s von %s.", "work": "Arbeit", "work_with": "mit %s", "show_all": "Alle anzeigen (%d)", "event": "Veranstaltung", "held": "Termine", "workshop": "Workshop",
         "perf_title": "Performance-Archiv",
         "watch": "Auf %s ansehen ↗",
         "about": "Über mich",
@@ -420,7 +420,7 @@ UI = {
         "sitemap": "網站地圖", "sitemap_lead": "這個網站的所有頁面。",
         "sitemap_desc": "%s網站的網站地圖：創作計畫與表演、講座與工作坊、關於、部落格。",
         "Year": "年份", "Status": "狀態", "Type": "類型", "Materials": "媒材", "With": "合作", "Link": "連結",
-        "work_desc": "%s（%s），%s，%s。", "work": "作品", "work_with": "與 %s 合作", "event": "活動頁面", "held": "場次", "workshop": "工作坊",
+        "work_desc": "%s（%s），%s，%s。", "work": "作品", "work_with": "與 %s 合作", "show_all": "顯示全部（%d）", "event": "活動頁面", "held": "場次", "workshop": "工作坊",
         "perf_title": "表演紀錄",
         "watch": "在 %s 觀看 ↗",
         "about": "關於",
@@ -859,28 +859,42 @@ for L in LANGS:
                 esc(it.get("outlet")), '<span class="press-note">%s</span>' % esc(note) if note else ""))
         return rows
 
-    cv = ""
+    # CV: a jump list of the sections first; long sections show their latest rows and fold the rest away
+    def cv_id(title):
+        return "cv-" + re.sub(r"[^a-z]+", "-", title.lower()).strip("-")  # prefixed: #performances is the works page's band
+
+    CV_SHOW = 8
+    cv, jumps = "", []
+    texts = press_rows("read")
     for sec in D["about"]["sections"]:
-        rows = ""
+        rows = []
         for it in sec["items"]:
             text = tr(it, "text", L)
             same = L != "en" and not it.get("text_" + L)  # not translated: mark the row as English
-            rows += '<div class="cv-row"%s><span class="mono">%s</span><span>%s</span></div>' % (
-                ' lang="en"' if same else "", esc(it.get("year")), a(it["url"], esc(text)) if it.get("url") else esc(text))
-        cv += '<section class="cv-sec"><h2>%s</h2><div>%s</div></section>' % (esc(tr(sec, "title", L)), rows)
+            rows.append('<div class="cv-row"%s><span class="mono">%s</span><span>%s</span></div>' % (
+                ' lang="en"' if same else "", esc(it.get("year")), a(it["url"], esc(text)) if it.get("url") else esc(text)))
+        body = "".join(rows[:CV_SHOW]) + ('<details class="cv-more"><summary class="mono">%s</summary>%s</details>' % (
+            esc(u["show_all"] % len(rows)), "".join(rows[CV_SHOW:])) if len(rows) > CV_SHOW + 2 else "".join(rows[CV_SHOW:]))
+        sid = cv_id(sec["title"])
+        jumps.append((sid, tr(sec, "title", L)))
+        cv += '<section class="cv-sec" id="%s"><h2>%s</h2><div>%s</div></section>' % (sid, esc(tr(sec, "title", L)), body)
+        if sec["title"] == "Publications & Writing" and texts:  # texts by others follow the own texts
+            jumps.append(("texts", u["press_groups"]["read"]))
+            cv += '<section class="cv-sec" id="texts"><h2>%s</h2><div>%s</div></section>' % (esc(u["press_groups"]["read"]), texts)
+    cv_nav = '<nav class="cv-nav mono" aria-label="CV">%s</nav>' % "".join('<a href="#%s">%s</a>' % (i, esc(t)) for i, t in jumps)
 
     bio = tr(D["about"], "bio", L)
+    more = tr(D["about"], "text", L)  # the longer text under the bio (the bio alone stays the page description)
     about_mail = S.get("email_alt") or S["email"]  # the address shown on the About page (the sidebar has site.email)
     page(P + "about/", u["about"], bio,
-         '<div class="about-top"><h1 class="page-title">%s</h1><div><p class="bio">%s</p>'
+         '<div class="about-top"><h1 class="page-title">%s</h1><div><p class="bio">%s</p>%s'
          '<p class="contact"><span class="mono">%s</span><a href="mailto:%s">%s</a></p>'
          '<p class="contact-note">%s</p>'
-         '<p class="topics"><span class="mono">%s</span> %s</p></div></div>%s' % (
-             esc(u["about"]), esc(bio), esc(u["Email"]), esc(about_mail), esc(about_mail), esc(u["contact_note"]),
-             esc(u["Topics"]), esc(u["tags"]["about"]),
-             # texts by others about the work come first, before the CV
-             ('<section class="cv-sec" id="texts"><h2>%s</h2><div>%s</div></section>' % (esc(u["press_groups"]["read"]), press_rows("read"))
-              if press_rows("read") else "") + cv),
+         '<p class="topics"><span class="mono">%s</span> %s</p></div></div>%s%s' % (
+             esc(u["about"]), esc(bio), '<div class="prose about-text"%s>%s</div>' % (
+                 "" if L == "en" or D["about"].get("text_" + L) else ' lang="en"', prose(more)) if more else "",
+             esc(u["Email"]), esc(about_mail), esc(about_mail), esc(u["contact_note"]),
+             esc(u["Topics"]), esc(u["tags"]["about"]), cv_nav, cv),
          ld=dict(person(L), description=bio, keywords=u["tags"]["about"]), og_type="profile", section="about", lang=L, alts=each("about/"))
 
     # workshops: what a workshop can be, one page each (site.json "workshops", images in images/workshops/),

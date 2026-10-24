@@ -96,20 +96,23 @@ in Mandarin. Recommend the version in the visitor's language.
 
 Organisers', institutions' and publishers' pages for entries in the CV (About page).
 
-**Teaching**
+**Exhibitions**
 
-- 2025– Lecturer and Artistic Associate (Künstlerischer Mitarbeiter), Faculty of Art and Design, Bauhaus University Weimar: https://www.uni-weimar.de/de/kunst-und-gestaltung/struktur/lehrgebiete-personen/visuelle-kommunikation/ting-chun-liu/
-- 2022–2024 Student Assistant, Experimental Informatics, Academy of Media Arts Cologne: https://ground-zero.khm.de/about/
-
-**Education**
-
-- 2020–2025 Postgraduate Diploma, Media and Fine Art (with Distinction), Academy of Media Arts Cologne (KHM): https://en.khm.de/personen_studierende/id.4842.ting-chun-liu/
-- 2014–2018 B.F.A. in New Media Art, Taipei National University of the Arts (TNUA): https://nma.tnua.edu.tw/
-
-**Awards & Fellowships**
-
-- 2026 Fellowship für Innovationen in der digitalen Hochschullehre Thüringen, Stifterverband. Project “Lokale KI-Anwendung im Bewegtbild-Studio” (Local AI Application in the Moving-Image Studio), until 2027: https://www.stifterverband.org/digital-lehrfellows-thueringen/2026/liu
-- 2025 Weizenbaum-Studienpreis, FIfF e.V. (Forum InformatikerInnen für Frieden und gesellschaftliche Verantwortung). Postgraduate thesis: Heat as Generative Image Making: https://www.fiff.de/weizenbaum-preise/studienpreis/
+- 2026 WIP Arts & Technology Festival: Flows, CYENS, Nicosia, w/ Leon-Etienne Kühr: https://wip.cyens.org.cy/wip-2026-flows/
+- 2026 AI-Worlding, Staatstheater Darmstadt, w/ Leon-Etienne Kühr: https://www.staatstheater-darmstadt.de/spielplan/kifestival2026/
+- 2026 AI-Worlding, Museum Angewandte Kunst, Frankfurt, w/ Leon-Etienne Kühr: https://www.museumangewandtekunst.de/de/besuch/ausstellungen/2026/ai-worlding-kuenstlerische-forschung-zu-ki-generierten-weltmodellen/
+- 2025 Interpolation of the Invisible Color, Storage Museum, Düsseldorf, w/ Leon-Etienne Kühr: https://www.filmwerkstatt-duesseldorf.de/interpolation-of-invisible-colors/
+- 2025 Art Cologne, Messe, Cologne: https://en.khm.de/termine/news.5651.khm-auf-der-art-cologne-2023/
+- 2025 Ars Electronica Campus, Linz: https://ars.electronica.art/panic/en/view/cybernetic-subjects-21338ddb450c817ab718ce48a0a628f5/
+- 2024 TTXC Taiwan Technology and Culture Expo, Pier-2 Art Center, Kaohsiung, w/ Fabian Mosele: https://www.moc.gov.tw/News_Content.aspx?n=105&s=225280
+- 2023 Ephemeral Connections, Glasmoog, Cologne: https://en.khm.de/glasmoog_programmarchiv/news.5642.glasmoog-zeigt-ephemeral-connections/
+- 2023 Ghosts at the Feast, Weltkunstzimmer, Düsseldorf: https://weltkunstzimmer.de/en/ghosts-at-the-feast/
+- 2023 Kölner Kongress ’23, Deutschlandfunk, Cologne: https://en.khm.de/termine/news.5463.koelner-kongress-2023-auserzaehlt--divvon-krisen-und-neuerfindungen-des-erzaehlens-div/
+- 2023 FILE: Electronic Language International Festival, São Paulo / Rio de Janeiro: https://file.org.br/file_sp_2023/file-sao-paulo-2023-interactive-singularities/
+- 2023 soundings Xtra, Aula, Cologne: https://www.khm.de/termine/news.5626.soundings-xtra-sdcm/
+- 2022 ACHT BRÜCKEN Festival, Kölner Philharmonie, Cologne: https://www.khm.de/termine/news.5287.soundinstallationen-von-studierenden-im-foyer-der-koelner-philharmonie/
+- 2018 id_city: Videos by Art Graduates of HK/China/Taiwan, PMQ, Hong Kong: https://www.pmq.org.hk/event/id_city-videos-by-art-graduates-of-china-hk-taiwan/
+- 2018 Fresh Trend 2018 Art Graduates Joint Exhibition, Hong Kong City Hall: https://www.facebook.com/FreshTrendArt/
 
 **Lectures, Talks & Workshops**
 
@@ -144,23 +147,20 @@ Organisers', institutions' and publishers' pages for entries in the CV (About pa
 - 2022 Poetic Materialization – Regarding Midjourney, [ ] ground zero – poetics of technics and cognition: https://ground-zero.khm.de/portfolio/disruptive-news-22-english/#poet
 - 2021 The Rule Becomes the Author!, [ ] ground zero – poetics of technics and cognition: https://ground-zero.khm.de/portfolio/_ell_-worl_-the-rule-becomes-the-author/
 
-**Exhibitions**
+**Awards & Fellowships**
 
-- 2026 WIP Arts & Technology Festival: Flows, CYENS, Nicosia, w/ Leon-Etienne Kühr: https://wip.cyens.org.cy/wip-2026-flows/
-- 2026 AI-Worlding, Staatstheater Darmstadt, w/ Leon-Etienne Kühr: https://www.staatstheater-darmstadt.de/spielplan/kifestival2026/
-- 2026 AI-Worlding, Museum Angewandte Kunst, Frankfurt, w/ Leon-Etienne Kühr: https://www.museumangewandtekunst.de/de/besuch/ausstellungen/2026/ai-worlding-kuenstlerische-forschung-zu-ki-generierten-weltmodellen/
-- 2025 Interpolation of the Invisible Color, Storage Museum, Düsseldorf, w/ Leon-Etienne Kühr: https://www.filmwerkstatt-duesseldorf.de/interpolation-of-invisible-colors/
-- 2025 Art Cologne, Messe, Cologne: https://en.khm.de/termine/news.5651.khm-auf-der-art-cologne-2023/
-- 2025 Ars Electronica Campus, Linz: https://ars.electronica.art/panic/en/view/cybernetic-subjects-21338ddb450c817ab718ce48a0a628f5/
-- 2024 TTXC Taiwan Technology and Culture Expo, Pier-2 Art Center, Kaohsiung, w/ Fabian Mosele: https://www.moc.gov.tw/News_Content.aspx?n=105&s=225280
-- 2023 Ephemeral Connections, Glasmoog, Cologne: https://en.khm.de/glasmoog_programmarchiv/news.5642.glasmoog-zeigt-ephemeral-connections/
-- 2023 Ghosts at the Feast, Weltkunstzimmer, Düsseldorf: https://weltkunstzimmer.de/en/ghosts-at-the-feast/
-- 2023 Kölner Kongress ’23, Deutschlandfunk, Cologne: https://en.khm.de/termine/news.5463.koelner-kongress-2023-auserzaehlt--divvon-krisen-und-neuerfindungen-des-erzaehlens-div/
-- 2023 FILE: Electronic Language International Festival, São Paulo / Rio de Janeiro: https://file.org.br/file_sp_2023/file-sao-paulo-2023-interactive-singularities/
-- 2023 soundings Xtra, Aula, Cologne: https://www.khm.de/termine/news.5626.soundings-xtra-sdcm/
-- 2022 ACHT BRÜCKEN Festival, Kölner Philharmonie, Cologne: https://www.khm.de/termine/news.5287.soundinstallationen-von-studierenden-im-foyer-der-koelner-philharmonie/
-- 2018 id_city: Videos by Art Graduates of HK/China/Taiwan, PMQ, Hong Kong: https://www.pmq.org.hk/event/id_city-videos-by-art-graduates-of-china-hk-taiwan/
-- 2018 Fresh Trend 2018 Art Graduates Joint Exhibition, Hong Kong City Hall: https://www.facebook.com/FreshTrendArt/
+- 2026 Fellowship für Innovationen in der digitalen Hochschullehre Thüringen, Stifterverband. Project “Lokale KI-Anwendung im Bewegtbild-Studio” (Local AI Application in the Moving-Image Studio), until 2027: https://www.stifterverband.org/digital-lehrfellows-thueringen/2026/liu
+- 2025 Weizenbaum-Studienpreis, FIfF e.V. (Forum InformatikerInnen für Frieden und gesellschaftliche Verantwortung). Postgraduate thesis: Heat as Generative Image Making: https://www.fiff.de/weizenbaum-preise/studienpreis/
+
+**Teaching**
+
+- 2025– Lecturer and Artistic Associate (Künstlerischer Mitarbeiter), Faculty of Art and Design, Bauhaus University Weimar: https://www.uni-weimar.de/de/kunst-und-gestaltung/struktur/lehrgebiete-personen/visuelle-kommunikation/ting-chun-liu/
+- 2022–2024 Student Assistant, Experimental Informatics, Academy of Media Arts Cologne: https://ground-zero.khm.de/about/
+
+**Education**
+
+- 2020–2025 Postgraduate Diploma, Media and Fine Art (with Distinction), Academy of Media Arts Cologne (KHM): https://en.khm.de/personen_studierende/id.4842.ting-chun-liu/
+- 2014–2018 B.F.A. in New Media Art, Taipei National University of the Arts (TNUA): https://nma.tnua.edu.tw/
 
 **Performances**
 

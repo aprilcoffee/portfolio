@@ -70,8 +70,8 @@
 | `press[]`（講座錄影與他人評論） | `note` | `note_de/_zh` |
 | `performances[]`（作品頁下方的表演紀錄） | `note`、`title`（只在需要區分時，例如 Imaginary Landscape（表演版）） | `note_de/_zh`、`title_de/_zh` |
 | `workshops[]` | `title`、`summary`、`text`、`held` | `_de/_zh` |
-| `about` | `bio` | `bio_de/_zh` |
-| `about.sections[]`（CV 區塊） | `title` | `title_de/_zh` |
+| `about` | `bio`（短，也是頁面描述與 JSON-LD）、`text`（較長的介紹，顯示在 bio 下方，空一行分段） | `bio_de/_zh`、`text_de/_zh` |
+| `about.sections[]`（CV 區塊，順序即頁面順序：展覽、講座、出版、獎項、教學、學歷、表演、新媒體專案；頁首有跳轉列，超過 10 筆的區塊只先顯示 8 筆，其餘收進「顯示全部」） | `title` | `title_de/_zh` |
 | `about.sections[].items[]`（CV 每一行） | `text` | `text_de/_zh`（目前多數只有 `_zh`） |
 
 注意：

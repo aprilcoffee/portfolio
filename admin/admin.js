@@ -390,7 +390,9 @@
   tabs.about = function () {
     var a = D.about;
     var box = h('div', { className: 'form' }, [field('簡介 Bio (English)', a, 'bio', { area: true }),
-      field('簡介 Bio (Deutsch)', a, 'bio_de', { area: true }), field('簡介 Bio（中文）', a, 'bio_zh', { area: true })]);
+      field('簡介 Bio (Deutsch)', a, 'bio_de', { area: true }), field('簡介 Bio（中文）', a, 'bio_zh', { area: true }),
+      field('較長的介紹 About text (English；空一行＝分段；顯示在簡介下方)', a, 'text', { area: true, cls: 'tall' }),
+      field('較長的介紹 DE', a, 'text_de', { area: true, cls: 'tall' }), field('較長的介紹 中文', a, 'text_zh', { area: true, cls: 'tall' })]);
     a.sections.forEach(function (sec, i) {
       box.appendChild(h('div', { className: 'card stack', style: 'gap:12px' }, [
         h('div', { className: 'actions' }, [

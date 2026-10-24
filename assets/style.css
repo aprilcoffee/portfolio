@@ -443,3 +443,17 @@ html:lang(zh) #performances .perf p, html:lang(zh) #performances .sub-head .lead
 html:lang(zh) .contact-note { font-size: 0.9688rem; }
 /* workshop cards: show the whole screenshot, no cropping */
 .shop-card .thumb img { object-fit: contain; }
+
+/* About: longer text under the bio, a jump list of the CV sections, long sections folded */
+.about-text { margin-top: 1.75rem; max-width: 46rem; font-size: 1.0625rem; line-height: 1.75; }
+.about-text p + p { margin-top: 0.9em; }
+.about-top .about-text + .contact { margin-top: 2.25rem; }
+.cv-nav { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; margin: -2.5rem 0 3rem calc(var(--label) + 3rem); font-size: 0.8125rem; color: var(--mut); }
+.cv-nav a { border-bottom: 1px solid var(--line); }
+.cv-nav a:hover { color: var(--ink); border-color: var(--ink); }
+.cv-sec { scroll-margin-top: 1.5rem; }
+.cv-more summary { cursor: pointer; margin: 0.75rem 0 0.25rem; font-size: 0.8125rem; color: var(--mut); list-style: none; }
+.cv-more summary::-webkit-details-marker { display: none; }
+.cv-more summary::before { content: "+ "; }
+.cv-more[open] summary { display: none; }
+@media (max-width: 800px) { .cv-nav { margin: -1.5rem 0 2rem; } }

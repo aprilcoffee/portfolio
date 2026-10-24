@@ -1471,78 +1471,125 @@
     "bio": "Ting-Chun Liu (Taipei, Taiwan) is a research-based media artist working with critical AI. His practice and research operate at the intersections of critical artificial intelligence, audiovisual media, and network practice. Through dissecting technological systems with feedback-driven interventions, he examines how perception, aesthetics, and power dynamics propagate through computational processes.",
     "sections": [
       {
-        "title": "Teaching",
-        "items": [
-          {
-            "year": "2025–",
-            "text": "Lecturer and Artistic Associate (Künstlerischer Mitarbeiter), Faculty of Art and Design, Bauhaus University Weimar",
-            "url": "https://www.uni-weimar.de/de/kunst-und-gestaltung/struktur/lehrgebiete-personen/visuelle-kommunikation/ting-chun-liu/",
-            "text_zh": "講師暨藝術研究員（Künstlerischer Mitarbeiter），威瑪包浩斯大學藝術與設計學院"
-          },
-          {
-            "year": "2026",
-            "text": "Erasmus+ Staff Mobility for Teaching, Digital Art, Institute of Fine Arts and Media Art, University of Applied Arts Vienna",
-            "url": "",
-            "text_zh": "Erasmus+ 教學人員交流（Staff Mobility for Teaching），維也納應用藝術大學 美術與媒體藝術研究所 數位藝術系"
-          },
-          {
-            "year": "2024",
-            "text": "Guest Lecturer (Lehrbeauftragter), Chair of Media Environments, Faculty of Art and Design, Bauhaus University Weimar",
-            "url": "",
-            "text_zh": "客座講師（Lehrbeauftragter），威瑪包浩斯大學藝術與設計學院 媒體環境教席（Chair of Media Environments）"
-          },
-          {
-            "year": "2022–2024",
-            "text": "Student Assistant, Experimental Informatics, Academy of Media Arts Cologne",
-            "url": "https://ground-zero.khm.de/about/",
-            "text_zh": "學生助理，科隆媒體藝術學院 實驗資訊學（Experimental Informatics）"
-          }
-        ],
-        "title_de": "Lehre",
-        "title_zh": "教學"
-      },
-      {
-        "title": "Education",
-        "items": [
-          {
-            "year": "2020–2025",
-            "text": "Postgraduate Diploma, Media and Fine Art (with Distinction), Academy of Media Arts Cologne (KHM)",
-            "url": "https://en.khm.de/personen_studierende/id.4842.ting-chun-liu/",
-            "text_zh": "科隆媒體藝術學院（KHM）媒體與藝術研究所文憑（Postgraduate Diploma），優等畢業"
-          },
-          {
-            "year": "2014–2018",
-            "text": "B.F.A. in New Media Art, Taipei National University of the Arts (TNUA)",
-            "url": "https://nma.tnua.edu.tw/",
-            "text_zh": "國立臺北藝術大學（TNUA）新媒體藝術學系 學士"
-          }
-        ],
-        "title_de": "Ausbildung",
-        "title_zh": "學歷"
-      },
-      {
-        "title": "Awards & Fellowships",
+        "title": "Exhibitions",
         "items": [
           {
             "year": "2026",
-            "text": "Overseas exhibition grant, National Culture and Arts Foundation (NCAF, Taiwan), for Steering Through the Inner Residue at WIP Arts & Technology Festival, Nicosia",
-            "text_zh": "國家文化藝術基金會（國藝會）海外展出補助，《Steering Through the Inner Residue》於尼科西亞 WIP 藝術與科技節展出"
+            "text": "WIP Arts & Technology Festival: Flows, CYENS, Nicosia, w/ Leon-Etienne Kühr",
+            "url": "https://wip.cyens.org.cy/wip-2026-flows/",
+            "text_zh": "WIP 藝術與科技節「Flows」，CYENS，尼科西亞，與 Leon-Etienne Kühr"
           },
           {
             "year": "2026",
-            "text": "Fellowship für Innovationen in der digitalen Hochschullehre Thüringen, Stifterverband. Project “Lokale KI-Anwendung im Bewegtbild-Studio” (Local AI Application in the Moving-Image Studio), until 2027",
-            "url": "https://www.stifterverband.org/digital-lehrfellows-thueringen/2026/liu",
-            "text_zh": "圖林根邦數位高教創新獎助（Fellowship für Innovationen in der digitalen Hochschullehre Thüringen），德國科學捐助者協會（Stifterverband）。計畫「Lokale KI-Anwendung im Bewegtbild-Studio」（動態影像工作室中的本地 AI 應用），至 2027 年"
+            "text": "AI-Worlding, Staatstheater Darmstadt, w/ Leon-Etienne Kühr",
+            "url": "https://www.staatstheater-darmstadt.de/spielplan/kifestival2026/",
+            "text_zh": "AI-Worlding，達姆施塔特國家劇院，與 Leon-Etienne Kühr"
+          },
+          {
+            "year": "2026",
+            "text": "AI-Worlding, Museum Angewandte Kunst, Frankfurt, w/ Leon-Etienne Kühr",
+            "url": "https://www.museumangewandtekunst.de/de/besuch/ausstellungen/2026/ai-worlding-kuenstlerische-forschung-zu-ki-generierten-weltmodellen/",
+            "text_zh": "AI-Worlding，法蘭克福應用藝術博物館，與 Leon-Etienne Kühr"
           },
           {
             "year": "2025",
-            "text": "Weizenbaum-Studienpreis, FIfF e.V. (Forum InformatikerInnen für Frieden und gesellschaftliche Verantwortung). Postgraduate thesis: Heat as Generative Image Making",
-            "url": "https://www.fiff.de/weizenbaum-preise/studienpreis/",
-            "text_zh": "Weizenbaum 學位論文獎（Weizenbaum-Studienpreis），FIfF e.V.（資訊工作者和平與社會責任論壇）。研究所論文：Heat as Generative Image Making"
+            "text": "Interpolation of the Invisible Color, Storage Museum, Düsseldorf, w/ Leon-Etienne Kühr",
+            "url": "https://www.filmwerkstatt-duesseldorf.de/interpolation-of-invisible-colors/",
+            "text_zh": "Interpolation of the Invisible Color，杜塞道夫 Storage Museum，與 Leon-Etienne Kühr"
+          },
+          {
+            "year": "2025",
+            "text": "Art Cologne, Messe, Cologne",
+            "url": "https://en.khm.de/termine/news.5651.khm-auf-der-art-cologne-2023/",
+            "text_zh": "Art Cologne，科隆展覽中心"
+          },
+          {
+            "year": "2025",
+            "text": "Ars Electronica Campus, Linz",
+            "url": "https://ars.electronica.art/panic/en/view/cybernetic-subjects-21338ddb450c817ab718ce48a0a628f5/",
+            "text_zh": "Ars Electronica Campus，林茲"
+          },
+          {
+            "year": "2025",
+            "text": "Ausstellung Kreisläufen, Café Nimmersatt, Wolfhagen",
+            "url": "",
+            "text_zh": "Ausstellung Kreisläufen，Café Nimmersatt，沃爾夫哈根"
+          },
+          {
+            "year": "2024",
+            "text": "TTXC Taiwan Technology and Culture Expo, Pier-2 Art Center, Kaohsiung, w/ Fabian Mosele",
+            "url": "https://www.moc.gov.tw/News_Content.aspx?n=105&s=225280",
+            "text_zh": "TTXC 臺灣文化科技大會，駁二藝術特區，高雄，與 Fabian Mosele"
+          },
+          {
+            "year": "2023",
+            "text": "Ephemeral Connections, Glasmoog, Cologne",
+            "url": "https://en.khm.de/glasmoog_programmarchiv/news.5642.glasmoog-zeigt-ephemeral-connections/",
+            "text_zh": "Ephemeral Connections，Glasmoog，科隆"
+          },
+          {
+            "year": "2023",
+            "text": "Ghosts at the Feast, Weltkunstzimmer, Düsseldorf",
+            "url": "https://weltkunstzimmer.de/en/ghosts-at-the-feast/",
+            "text_zh": "Ghosts at the Feast，Weltkunstzimmer，杜塞道夫"
+          },
+          {
+            "year": "2023",
+            "text": "Kölner Kongress ’23, Deutschlandfunk, Cologne",
+            "url": "https://en.khm.de/termine/news.5463.koelner-kongress-2023-auserzaehlt--divvon-krisen-und-neuerfindungen-des-erzaehlens-div/",
+            "text_zh": "Kölner Kongress ’23，德國廣播電台（Deutschlandfunk），科隆"
+          },
+          {
+            "year": "2023",
+            "text": "FILE: Electronic Language International Festival, São Paulo / Rio de Janeiro",
+            "url": "https://file.org.br/file_sp_2023/file-sao-paulo-2023-interactive-singularities/",
+            "text_zh": "FILE：國際電子語言藝術節，聖保羅／里約熱內盧"
+          },
+          {
+            "year": "2023",
+            "text": "soundings Xtra, Aula, Cologne",
+            "url": "https://www.khm.de/termine/news.5626.soundings-xtra-sdcm/",
+            "text_zh": "soundings Xtra，Aula，科隆"
+          },
+          {
+            "year": "2022",
+            "text": "ACHT BRÜCKEN Festival, Kölner Philharmonie, Cologne",
+            "url": "https://www.khm.de/termine/news.5287.soundinstallationen-von-studierenden-im-foyer-der-koelner-philharmonie/",
+            "text_zh": "ACHT BRÜCKEN 音樂節，科隆愛樂廳"
+          },
+          {
+            "year": "2020",
+            "text": "Urban Interpreter Online, 241 Art Gallery, Hsinchu",
+            "url": "",
+            "text_zh": "城市轉藝器（Urban Interpreter Online），241 藝術空間，新竹"
+          },
+          {
+            "year": "2020",
+            "text": "Ars Electronica .ART Global Gallery, online",
+            "url": "",
+            "text_zh": "Ars Electronica .ART 全球藝廊，線上"
+          },
+          {
+            "year": "2018",
+            "text": "id_city: Videos by Art Graduates of HK/China/Taiwan, PMQ, Hong Kong",
+            "url": "https://www.pmq.org.hk/event/id_city-videos-by-art-graduates-of-china-hk-taiwan/",
+            "text_zh": "id_city：港陸台藝術畢業生錄像展，元創方（PMQ），香港"
+          },
+          {
+            "year": "2018",
+            "text": "Fresh Trend 2018 Art Graduates Joint Exhibition, Hong Kong City Hall",
+            "url": "https://www.facebook.com/FreshTrendArt/",
+            "text_zh": "Fresh Trend 2018 藝術畢業生聯展，香港大會堂"
+          },
+          {
+            "year": "2017",
+            "text": "Shell Arrows Land On Unique Notes, Šaloun, Prague",
+            "url": "",
+            "text_zh": "Shell Arrows Land On Unique Notes，Šaloun，布拉格"
           }
         ],
-        "title_de": "Auszeichnungen & Fellowships",
-        "title_zh": "獎項與獎助"
+        "title_de": "Ausstellungen",
+        "title_zh": "展覽"
       },
       {
         "title": "Lectures, Talks & Workshops",
@@ -1751,125 +1798,78 @@
         "title_zh": "出版與寫作"
       },
       {
-        "title": "Exhibitions",
+        "title": "Awards & Fellowships",
         "items": [
           {
             "year": "2026",
-            "text": "WIP Arts & Technology Festival: Flows, CYENS, Nicosia, w/ Leon-Etienne Kühr",
-            "url": "https://wip.cyens.org.cy/wip-2026-flows/",
-            "text_zh": "WIP 藝術與科技節「Flows」，CYENS，尼科西亞，與 Leon-Etienne Kühr"
+            "text": "Overseas exhibition grant, National Culture and Arts Foundation (NCAF, Taiwan), for Steering Through the Inner Residue at WIP Arts & Technology Festival, Nicosia",
+            "text_zh": "國家文化藝術基金會（國藝會）海外展出補助，《Steering Through the Inner Residue》於尼科西亞 WIP 藝術與科技節展出"
           },
           {
             "year": "2026",
-            "text": "AI-Worlding, Staatstheater Darmstadt, w/ Leon-Etienne Kühr",
-            "url": "https://www.staatstheater-darmstadt.de/spielplan/kifestival2026/",
-            "text_zh": "AI-Worlding，達姆施塔特國家劇院，與 Leon-Etienne Kühr"
+            "text": "Fellowship für Innovationen in der digitalen Hochschullehre Thüringen, Stifterverband. Project “Lokale KI-Anwendung im Bewegtbild-Studio” (Local AI Application in the Moving-Image Studio), until 2027",
+            "url": "https://www.stifterverband.org/digital-lehrfellows-thueringen/2026/liu",
+            "text_zh": "圖林根邦數位高教創新獎助（Fellowship für Innovationen in der digitalen Hochschullehre Thüringen），德國科學捐助者協會（Stifterverband）。計畫「Lokale KI-Anwendung im Bewegtbild-Studio」（動態影像工作室中的本地 AI 應用），至 2027 年"
+          },
+          {
+            "year": "2025",
+            "text": "Weizenbaum-Studienpreis, FIfF e.V. (Forum InformatikerInnen für Frieden und gesellschaftliche Verantwortung). Postgraduate thesis: Heat as Generative Image Making",
+            "url": "https://www.fiff.de/weizenbaum-preise/studienpreis/",
+            "text_zh": "Weizenbaum 學位論文獎（Weizenbaum-Studienpreis），FIfF e.V.（資訊工作者和平與社會責任論壇）。研究所論文：Heat as Generative Image Making"
+          }
+        ],
+        "title_de": "Auszeichnungen & Fellowships",
+        "title_zh": "獎項與獎助"
+      },
+      {
+        "title": "Teaching",
+        "items": [
+          {
+            "year": "2025–",
+            "text": "Lecturer and Artistic Associate (Künstlerischer Mitarbeiter), Faculty of Art and Design, Bauhaus University Weimar",
+            "url": "https://www.uni-weimar.de/de/kunst-und-gestaltung/struktur/lehrgebiete-personen/visuelle-kommunikation/ting-chun-liu/",
+            "text_zh": "講師暨藝術研究員（Künstlerischer Mitarbeiter），威瑪包浩斯大學藝術與設計學院"
           },
           {
             "year": "2026",
-            "text": "AI-Worlding, Museum Angewandte Kunst, Frankfurt, w/ Leon-Etienne Kühr",
-            "url": "https://www.museumangewandtekunst.de/de/besuch/ausstellungen/2026/ai-worlding-kuenstlerische-forschung-zu-ki-generierten-weltmodellen/",
-            "text_zh": "AI-Worlding，法蘭克福應用藝術博物館，與 Leon-Etienne Kühr"
-          },
-          {
-            "year": "2025",
-            "text": "Interpolation of the Invisible Color, Storage Museum, Düsseldorf, w/ Leon-Etienne Kühr",
-            "url": "https://www.filmwerkstatt-duesseldorf.de/interpolation-of-invisible-colors/",
-            "text_zh": "Interpolation of the Invisible Color，杜塞道夫 Storage Museum，與 Leon-Etienne Kühr"
-          },
-          {
-            "year": "2025",
-            "text": "Art Cologne, Messe, Cologne",
-            "url": "https://en.khm.de/termine/news.5651.khm-auf-der-art-cologne-2023/",
-            "text_zh": "Art Cologne，科隆展覽中心"
-          },
-          {
-            "year": "2025",
-            "text": "Ars Electronica Campus, Linz",
-            "url": "https://ars.electronica.art/panic/en/view/cybernetic-subjects-21338ddb450c817ab718ce48a0a628f5/",
-            "text_zh": "Ars Electronica Campus，林茲"
-          },
-          {
-            "year": "2025",
-            "text": "Ausstellung Kreisläufen, Café Nimmersatt, Wolfhagen",
+            "text": "Erasmus+ Staff Mobility for Teaching, Digital Art, Institute of Fine Arts and Media Art, University of Applied Arts Vienna",
             "url": "",
-            "text_zh": "Ausstellung Kreisläufen，Café Nimmersatt，沃爾夫哈根"
+            "text_zh": "Erasmus+ 教學人員交流（Staff Mobility for Teaching），維也納應用藝術大學 美術與媒體藝術研究所 數位藝術系"
           },
           {
             "year": "2024",
-            "text": "TTXC Taiwan Technology and Culture Expo, Pier-2 Art Center, Kaohsiung, w/ Fabian Mosele",
-            "url": "https://www.moc.gov.tw/News_Content.aspx?n=105&s=225280",
-            "text_zh": "TTXC 臺灣文化科技大會，駁二藝術特區，高雄，與 Fabian Mosele"
-          },
-          {
-            "year": "2023",
-            "text": "Ephemeral Connections, Glasmoog, Cologne",
-            "url": "https://en.khm.de/glasmoog_programmarchiv/news.5642.glasmoog-zeigt-ephemeral-connections/",
-            "text_zh": "Ephemeral Connections，Glasmoog，科隆"
-          },
-          {
-            "year": "2023",
-            "text": "Ghosts at the Feast, Weltkunstzimmer, Düsseldorf",
-            "url": "https://weltkunstzimmer.de/en/ghosts-at-the-feast/",
-            "text_zh": "Ghosts at the Feast，Weltkunstzimmer，杜塞道夫"
-          },
-          {
-            "year": "2023",
-            "text": "Kölner Kongress ’23, Deutschlandfunk, Cologne",
-            "url": "https://en.khm.de/termine/news.5463.koelner-kongress-2023-auserzaehlt--divvon-krisen-und-neuerfindungen-des-erzaehlens-div/",
-            "text_zh": "Kölner Kongress ’23，德國廣播電台（Deutschlandfunk），科隆"
-          },
-          {
-            "year": "2023",
-            "text": "FILE: Electronic Language International Festival, São Paulo / Rio de Janeiro",
-            "url": "https://file.org.br/file_sp_2023/file-sao-paulo-2023-interactive-singularities/",
-            "text_zh": "FILE：國際電子語言藝術節，聖保羅／里約熱內盧"
-          },
-          {
-            "year": "2023",
-            "text": "soundings Xtra, Aula, Cologne",
-            "url": "https://www.khm.de/termine/news.5626.soundings-xtra-sdcm/",
-            "text_zh": "soundings Xtra，Aula，科隆"
-          },
-          {
-            "year": "2022",
-            "text": "ACHT BRÜCKEN Festival, Kölner Philharmonie, Cologne",
-            "url": "https://www.khm.de/termine/news.5287.soundinstallationen-von-studierenden-im-foyer-der-koelner-philharmonie/",
-            "text_zh": "ACHT BRÜCKEN 音樂節，科隆愛樂廳"
-          },
-          {
-            "year": "2020",
-            "text": "Urban Interpreter Online, 241 Art Gallery, Hsinchu",
+            "text": "Guest Lecturer (Lehrbeauftragter), Chair of Media Environments, Faculty of Art and Design, Bauhaus University Weimar",
             "url": "",
-            "text_zh": "城市轉藝器（Urban Interpreter Online），241 藝術空間，新竹"
+            "text_zh": "客座講師（Lehrbeauftragter），威瑪包浩斯大學藝術與設計學院 媒體環境教席（Chair of Media Environments）"
           },
           {
-            "year": "2020",
-            "text": "Ars Electronica .ART Global Gallery, online",
-            "url": "",
-            "text_zh": "Ars Electronica .ART 全球藝廊，線上"
-          },
-          {
-            "year": "2018",
-            "text": "id_city: Videos by Art Graduates of HK/China/Taiwan, PMQ, Hong Kong",
-            "url": "https://www.pmq.org.hk/event/id_city-videos-by-art-graduates-of-china-hk-taiwan/",
-            "text_zh": "id_city：港陸台藝術畢業生錄像展，元創方（PMQ），香港"
-          },
-          {
-            "year": "2018",
-            "text": "Fresh Trend 2018 Art Graduates Joint Exhibition, Hong Kong City Hall",
-            "url": "https://www.facebook.com/FreshTrendArt/",
-            "text_zh": "Fresh Trend 2018 藝術畢業生聯展，香港大會堂"
-          },
-          {
-            "year": "2017",
-            "text": "Shell Arrows Land On Unique Notes, Šaloun, Prague",
-            "url": "",
-            "text_zh": "Shell Arrows Land On Unique Notes，Šaloun，布拉格"
+            "year": "2022–2024",
+            "text": "Student Assistant, Experimental Informatics, Academy of Media Arts Cologne",
+            "url": "https://ground-zero.khm.de/about/",
+            "text_zh": "學生助理，科隆媒體藝術學院 實驗資訊學（Experimental Informatics）"
           }
         ],
-        "title_de": "Ausstellungen",
-        "title_zh": "展覽"
+        "title_de": "Lehre",
+        "title_zh": "教學"
+      },
+      {
+        "title": "Education",
+        "items": [
+          {
+            "year": "2020–2025",
+            "text": "Postgraduate Diploma, Media and Fine Art (with Distinction), Academy of Media Arts Cologne (KHM)",
+            "url": "https://en.khm.de/personen_studierende/id.4842.ting-chun-liu/",
+            "text_zh": "科隆媒體藝術學院（KHM）媒體與藝術研究所文憑（Postgraduate Diploma），優等畢業"
+          },
+          {
+            "year": "2014–2018",
+            "text": "B.F.A. in New Media Art, Taipei National University of the Arts (TNUA)",
+            "url": "https://nma.tnua.edu.tw/",
+            "text_zh": "國立臺北藝術大學（TNUA）新媒體藝術學系 學士"
+          }
+        ],
+        "title_de": "Ausbildung",
+        "title_zh": "學歷"
       },
       {
         "title": "Performances",
@@ -2025,7 +2025,10 @@
       }
     ],
     "bio_de": "Ting-Chun Liu (Taipeh, Taiwan) ist ein forschungsbasierter Medienkünstler, der mit kritischer KI arbeitet. Seine Praxis und Forschung sind an den Schnittstellen von kritischer künstlicher Intelligenz, audiovisuellen Medien und Netzwerkpraxis angesiedelt. Indem er technologische Systeme mit feedbackbasierten Interventionen seziert, untersucht er, wie sich Wahrnehmung, Ästhetik und Machtverhältnisse durch computergestützte Prozesse fortpflanzen.",
-    "bio_zh": "劉庭均（台灣台北）是一位研究型媒體藝術家，專注於批判性 AI。其創作與研究位於批判性人工智慧、音像媒體與網路實踐的交會處。他以回饋驅動的介入手法拆解科技系統，探究感知、美學與權力關係如何在運算過程中傳遞與擴散。"
+    "bio_zh": "劉庭均（台灣台北）是一位研究型媒體藝術家，專注於批判性 AI。其創作與研究位於批判性人工智慧、音像媒體與網路實踐的交會處。他以回饋驅動的介入手法拆解科技系統，探究感知、美學與權力關係如何在運算過程中傳遞與擴散。",
+    "text": "Ting-Chun Liu’s work follows a question media art has always asked: the question of medium specificity, of what is particular to each medium. Applied to artificial intelligence, it means going beyond prompting. Debates on AI art often circle around who the author is, the person who writes the prompt or the machine; his works start elsewhere. In Steering Through the Inner Residue, made with Leon-Etienne Kühr, an image model receives no prompt at all and is fed its own output, the way Alvin Lucier re-recorded his voice in I Am Sitting in a Room until only the resonance of the room remained. What appears is the model’s own visual fingerprint, an aesthetic nobody designed.\n\nFrom the medium, the questions lead outward: to geopolitics, data politics and the operational image. AI looks immaterial, but it runs on graphics cards, electricity and semiconductor supply chains, many of which lead back to Taiwan, where he grew up. Latent Heat Generation turns the waste heat of working GPUs into images; 51 Ways to Spell the Image Giraffe looks at the token dictionary that decides what a model can see before any training begins. In his writing, from the catalogue essay for Hello, Human! (MOCA Taipei, 2024) to On the Materiality of AI (un/learn ai, 2025), feedback and cybernetics are a way to think about how meaning, perception and power move through machines.\n\nSince they met at the Academy of Media Arts Cologne (KHM), he has worked closely with Leon-Etienne Kühr on installations, curatorial projects and talks, among them three at the Chaos Communication Congress. He teaches creative coding, critical AI and interactive video installation at the Bauhaus University Weimar, and gives workshops on running AI locally, working with embeddings and seeing the biases inside AI models, for anyone from people who have never written code to artists, companies and scholars.\n\nBorn in Taipei, he studied New Media Art at Taipei National University of the Arts (B.F.A., 2018), came to Germany in 2019 and completed a Postgraduate Diploma in Media and Fine Art with distinction at KHM (2020–2025). His thesis Heat as (Generative) Image Making received the Weizenbaum-Studienpreis 2025. He works in Cologne and Weimar.",
+    "text_de": "Die Arbeit von Ting-Chun Liu folgt einer Frage, die die Medienkunst immer gestellt hat: der Frage nach der Medienspezifik, nach dem, was einem Medium eigen ist. Auf künstliche Intelligenz übertragen heißt das, über das Prompten hinauszugehen. Debatten über KI-Kunst kreisen oft um die Frage, wer der Autor ist, die Person, die den Prompt schreibt, oder die Maschine; seine Arbeiten setzen woanders an. In Steering Through the Inner Residue, entstanden mit Leon-Etienne Kühr, erhält ein Bildmodell gar keinen Prompt, sondern seine eigene Ausgabe, so wie Alvin Lucier in I Am Sitting in a Room seine Stimme immer wieder neu aufnahm, bis nur der Klang des Raumes blieb. Was erscheint, ist der eigene visuelle Fingerabdruck des Modells, eine Ästhetik, die niemand entworfen hat.\n\nVom Medium aus führen die Fragen weiter: zu Geopolitik, Datenpolitik und dem operativen Bild. KI wirkt immateriell, läuft aber auf Grafikkarten, Strom und Halbleiter-Lieferketten, von denen viele nach Taiwan führen, wo er aufgewachsen ist. Latent Heat Generation macht aus der Abwärme arbeitender GPUs Bilder; 51 Ways to Spell the Image Giraffe untersucht das Token-Wörterbuch, das festlegt, was ein Modell sehen kann, bevor das Training beginnt. In seinen Texten, vom Katalogessay zu Hello, Human! (MOCA Taipei, 2024) bis zu On the Materiality of AI (un/learn ai, 2025), sind Feedback und Kybernetik eine Art, darüber nachzudenken, wie Bedeutung, Wahrnehmung und Macht durch Maschinen wandern.\n\nSeit sie sich an der Kunsthochschule für Medien Köln (KHM) kennengelernt haben, arbeitet er eng mit Leon-Etienne Kühr an Installationen, kuratorischen Projekten und Vorträgen, darunter drei auf dem Chaos Communication Congress. An der Bauhaus-Universität Weimar unterrichtet er Creative Coding, kritische KI und interaktive Videoinstallation; seine Workshops zu lokaler KI, zur Arbeit mit Embeddings und zu den Biases in KI-Modellen richten sich an alle, von Menschen ohne Programmiererfahrung bis zu Künstler*innen, Unternehmen und Wissenschaftler*innen.\n\nGeboren in Taipeh, studierte er New Media Art an der Taipei National University of the Arts (B.F.A., 2018), kam 2019 nach Deutschland und schloss an der KHM das Postgraduale Diplom Medien und Kunst mit Auszeichnung ab (2020–2025). Seine Abschlussarbeit Heat as (Generative) Image Making erhielt den Weizenbaum-Studienpreis 2025. Er arbeitet in Köln und Weimar.",
+    "text_zh": "劉庭均的創作沿著媒體藝術一直在追問的問題前進：媒介特異性，也就是每種媒體獨有的性質是什麼。放到人工智慧上，這意味著超越單純的下提示詞。談到 AI 藝術，大家常爭論作者是誰：是寫提示詞的人，還是機器？他的作品從完全不同的角度切入。與 Leon-Etienne Kühr 合作的《Steering Through the Inner Residue》完全不給提示詞，而是把圖像模型生成的圖直接丟回輸入，就像 Alvin Lucier 在《I Am Sitting in a Room》中一次又一次重錄自己的聲音，直到只剩下房間本身的共鳴。浮現出來的，是每個模型獨有、無人設計的視覺指紋。\n\n從媒介出發，提問也延伸到地緣政治、資料政治與操作影像（operational image）。AI 看似無形，卻運行在顯示卡、電力與半導體供應鏈之上，其中許多環節都通往他成長的台灣。《Latent Heat Generation》把運算中顯示卡的廢熱轉為影像；《51 Ways to Spell the Image Giraffe》檢視在訓練開始之前，就已決定模型能看見什麼的 token 字典。在他的文字中，從台北當代藝術館《你好，人類！》的專文（2024）到〈On the Materiality of AI〉（un/learn ai，2025），回饋與模控論是思考意義、感知與權力如何在機器中流動的方法。\n\n自在科隆媒體藝術學院（KHM）結識以來，他與 Leon-Etienne Kühr 長期合作裝置、策展計畫與講座，其中包括三度在混沌通訊大會（Chaos Communication Congress）發表。他在威瑪包浩斯大學教授創意程式設計（creative coding）、批判性 AI 與互動影像裝置，並開設工作坊，內容包含在自己的電腦上使用 AI、動手操作 embedding，以及辨識 AI 模型中的偏見，對象從沒有寫程式經驗的人到藝術家、企業與研究者。\n\n劉庭均生於台北，畢業於國立臺北藝術大學新媒體藝術學系（2018），2019 年來到德國，2020 至 2025 年在科隆媒體藝術學院取得媒體與藝術研究所文憑（優等）。論文《Heat as (Generative) Image Making》獲 2025 年 Weizenbaum 學位論文獎。現於科隆與威瑪工作。"
   },
   "friends": [
     {
