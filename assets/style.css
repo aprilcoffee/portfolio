@@ -502,3 +502,9 @@ img.zoomable { cursor: zoom-in; }
 .zoom-next { right: env(safe-area-inset-right, 0px); top: 50%; transform: translateY(-50%); }
 html.zoomed { overflow: hidden; }
 @media (max-width: 800px) { .zoom { padding-left: 0.5rem; padding-right: 0.5rem; } .zoom-prev, .zoom-next { top: auto; bottom: env(safe-area-inset-bottom, 0px); transform: none; } }
+/* About: one left edge for everything — title above the bio, bio and CV share the same column */
+.about-top { display: block; max-width: 62rem; margin-right: 0; margin-bottom: 4.5rem; }
+.about-top > .page-title { margin-bottom: 1.75rem; }
+.cv .cv-row { grid-template-columns: 5.5rem 1fr; gap: 0.75rem; }
+.about-top .contact, .about-top .topics { grid-template-columns: 6.25rem 1fr; }
+.about-top .contact-note { margin-left: 6.25rem; }
