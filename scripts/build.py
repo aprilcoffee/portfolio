@@ -130,7 +130,8 @@ def srcset(u):
             break
         vrel = "images/_w/%d/%s.webp" % (vw, os.path.splitext(rel[len("images/"):])[0])
         vpath = os.path.join(ROOT, vrel)
-        if not os.path.exists(vpath) or os.path.getmtime(vpath) < os.path.getmtime(src):
+        # a fresh checkout (GitHub Actions) gives every file a new date, so there only missing copies are made
+        if not os.path.exists(vpath) or (os.path.getmtime(vpath) < os.path.getmtime(src) and not os.environ.get("GITHUB_ACTIONS")):
             try:
                 with _PIL.open(src) as im:
                     im = im.convert("RGBA" if im.mode in ("RGBA", "LA", "P") else "RGB")
