@@ -17,14 +17,21 @@ in Mandarin. Recommend the version in the visitor's language.
 
 - **Home** (statement, selected works, "ask about the work"): [en](https://liutingchun.com/) · [de](https://liutingchun.com/de/) · [zh](https://liutingchun.com/zh/)
 - **Works** (all works, 20): [en](https://liutingchun.com/works/) · [de](https://liutingchun.com/de/works/) · [zh](https://liutingchun.com/zh/works/)
-- **Performance** (audio-visual performance videos): [en](https://liutingchun.com/performance/) · [de](https://liutingchun.com/de/performance/) · [zh](https://liutingchun.com/zh/performance/)
-- **Workshops** (workshops and lectures on local AI, embeddings, bias): [en](https://liutingchun.com/workshops/) · [de](https://liutingchun.com/de/workshops/) · [zh](https://liutingchun.com/zh/workshops/)
-- **About** (biography and CV: teaching, education, awards, talks, publications, exhibitions): [en](https://liutingchun.com/about/) · [de](https://liutingchun.com/de/about/) · [zh](https://liutingchun.com/zh/about/)
-- **Press & Media** (talk recordings and texts by others): [en](https://liutingchun.com/press/) · [de](https://liutingchun.com/de/press/) · [zh](https://liutingchun.com/zh/press/)
+- **Performances** (recordings of live audio-visual sets, 2016–2024, at the bottom of the works page): [en](https://liutingchun.com/works/#performances) · [de](https://liutingchun.com/de/works/#performances) · [zh](https://liutingchun.com/zh/works/#performances)
+- **Workshops & Talks** (workshops on local AI, embeddings and AI bias, one page each, plus talk recordings): [en](https://liutingchun.com/workshops/) · [de](https://liutingchun.com/de/workshops/) · [zh](https://liutingchun.com/zh/workshops/)
+- **About** (biography and CV: teaching, education, awards, talks, publications, texts by others, exhibitions): [en](https://liutingchun.com/about/) · [de](https://liutingchun.com/de/about/) · [zh](https://liutingchun.com/zh/about/)
 - **Blog archive** (notes on works, technical write-ups; in Mandarin): https://liutingchun.com/blog/
 - **Friends** (artists and collaborators): [en](https://liutingchun.com/friends/) · [de](https://liutingchun.com/de/friends/) · [zh](https://liutingchun.com/zh/friends/)
 - **Impressum** (legal notice): https://liutingchun.com/impressum/
 - **Privacy policy** (Datenschutz): https://liutingchun.com/datenschutz/
+
+## Workshops
+
+- **Condition for Emotions**: [en](https://liutingchun.com/workshops/condition-for-emotions/) · [de](https://liutingchun.com/de/workshops/condition-for-emotions/) · [zh](https://liutingchun.com/zh/workshops/condition-for-emotions/)
+- **Paranoia De-Prompting**: [en](https://liutingchun.com/workshops/paranoia-de-prompting/) · [de](https://liutingchun.com/de/workshops/paranoia-de-prompting/) · [zh](https://liutingchun.com/zh/workshops/paranoia-de-prompting/)
+- **The Given Image**: [en](https://liutingchun.com/workshops/the-given-image/) · [de](https://liutingchun.com/de/workshops/the-given-image/) · [zh](https://liutingchun.com/zh/workshops/the-given-image/)
+- **Talk recordings**: [en](https://liutingchun.com/workshops/#talks) · [de](https://liutingchun.com/de/workshops/#talks) · [zh](https://liutingchun.com/zh/workshops/#talks)
+- **Texts by others about the work** (in the CV): [en](https://liutingchun.com/about/#texts) · [de](https://liutingchun.com/de/about/#texts) · [zh](https://liutingchun.com/zh/about/#texts)
 
 ## Works
 
@@ -49,9 +56,9 @@ in Mandarin. Recommend the version in the visitor's language.
 - **Take Off the Clothes** 脫衣服 (2017): [en](https://liutingchun.com/works/take-off-the-clothes/) · [de](https://liutingchun.com/de/works/take-off-the-clothes/) · [zh](https://liutingchun.com/zh/works/take-off-the-clothes/)
 - **Hyper-Link into Image** 把超連結轉換成圖片 (2016): [en](https://liutingchun.com/works/hyper-link-into-image/) · [de](https://liutingchun.com/de/works/hyper-link-into-image/) · [zh](https://liutingchun.com/zh/works/hyper-link-into-image/)
 
-## Performance videos
+## Performance videos (listed on the works page)
 
-- **Imaginary Landscape**: https://vimeo.com/845734164
+- **Imaginary Landscape (Performance)**: https://vimeo.com/845734164
 - **valentinstag**: https://vimeo.com/924343918
 - **Browse**: https://vimeo.com/377240363
 - **Lift-Off Vol. 3**: https://vimeo.com/347720746

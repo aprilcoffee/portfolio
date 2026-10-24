@@ -27,7 +27,9 @@ D = json.load(open(os.path.join(ROOT, "data", "site.json"), encoding="utf-8"))
 S = D["site"]
 BASE = S["base_url"].rstrip("/")
 PREFIX = urlparse(BASE).path.rstrip("/") + "/"  # "/" at liutingchun.com
-SECTIONS = ["works", "performance", "workshops", "about", "press", "blog", "friends"]
+NAV = ["works", "workshops", "about"]  # main menu
+FOOT = ["blog", "friends"]  # small links at the bottom of the sidebar
+SECTIONS = NAV + FOOT + ["performance", "press"]  # performance/ and press/ are now redirects
 
 esc = lambda s: html.escape(str(s or ""), quote=True)
 works = [w for w in D["works"] if not w.get("hidden")]
@@ -53,7 +55,7 @@ def asset_abs(u):
 
 
 # old liutingchun.com (Wix) paths -> new pages
-OLD = {"": "", "/": "", "/cv": "about/", "/video-records": "performance/", "/friends": "friends/",
+OLD = {"": "", "/": "", "/cv": "about/", "/video-records": "works/#performances", "/friends": "friends/",
        "/blog": "blog/", "/works": "works/", "/blog/categories/works": "blog/",
        "/blog/categories/technique": "blog/"}
 for w in D["works"]:
@@ -266,35 +268,31 @@ LANG_NAME = {"en": "EN", "de": "DE", "zh": "中文"}
 
 UI = {
     "en": {
-        "nav": {"works": "Works", "performance": "Performance", "workshops": "Workshops", "about": "About", "press": "Press & Media", "blog": "Blog (archived)", "friends": "Friends"},
-        "menu": "Menu", "language": "Language", "privacy": "Privacy",
+        "nav": {"works": "Works", "workshops": "Workshops & Talks", "about": "About", "blog": "Blog (archived)", "friends": "Friends"},
+        "menu": "Menu", "more": "More", "language": "Language", "privacy": "Privacy",
         "selected": "Selected works", "all_works": "All works (%d) →",
         "works_lead": "Installations, performances, internet art and artistic research, %s–%s.",
         "works_desc": "Selected works by %s, %s–%s: installations, performances, internet art and artistic research on AI.",
         "Topics": "Topics", "Email": "Email", "contact_note": "I host workshops about local AI usage, embedding practice, and understanding biases in AI models. Workshop and lecture requests: please get in touch by email.", "work_by": "%s by %s, %s.",
         "tags": {"works": "Critical AI, generative art, artistic research, cybernetics, internet art, audio-visual performance",
-                 "performance": "audio-visual performance, live performance, generative AI, sound and image",
                  "about": "Critical AI, generative art, artistic research, cybernetics, internet art, audio-visual performance",
-                 "press": "talks, recordings, papers, critical AI",
-                 "workshops": "local AI, embedding practice, AI bias, workshops, lectures"},
+                 "workshops": "local AI, embedding practice, AI bias, workshops, talks, talk recordings"},
         "sitemap": "Site map", "sitemap_lead": "Every page of this website.",
-        "sitemap_desc": "Site map of the website of %s: works, performance, workshops, press, about, blog.",
+        "sitemap_desc": "Site map of the website of %s: works and performances, workshops and talks, about, blog.",
         "Year": "Year", "Status": "Status", "Type": "Type", "Materials": "Materials", "With": "With", "Link": "Link",
-        "work_desc": "%s (%s), %s by %s.", "work": "work",
-        "perf_title": "Audio-Visual Performance",
-        "perf_lead": "Live audio-visual sets and performance records.",
-        "perf_desc": "Audio-visual performance records of %s.", "watch": "Watch on %s ↗",
+        "work_desc": "%s (%s), %s by %s.", "work": "work", "work_with": "with %s", "held": "Sessions", "workshop": "Workshop",
+        "perf_title": "Performance archive",
+        "perf_lead": "Recordings of live audio-visual sets and noise performances, 2016–2024, on stage, at festivals, on the radio and at exhibition openings. They open on Vimeo.",
+        "watch": "Watch on %s ↗",
         "about": "About",
         "blog_title": "Blog Archive",
         "blog_lead": "Notes on works, and technical write-ups on Raspberry Pi, Processing and Python. The posts are written in Mandarin.",
         "blog_desc": "Blog archive of %s: notes on artworks and technical write-ups on Raspberry Pi, Processing and Python.",
         "friends_desc": "Friends and fellow artists of %s.",
-        "workshops_lead": "Workshops and lectures on local AI usage, embedding practice, and understanding biases in AI models.",
-        "workshops_desc": "Workshops and lectures by %s on local AI usage, embedding practice, and biases in AI models.",
+        "workshops_lead": "Workshops on local AI usage, embedding practice and understanding biases in AI models, and recordings of talks.",
+        "workshops_desc": "Workshops and talks by %s on local AI usage, embedding practice and biases in AI models, with talk recordings.",
         "workshops_ask": "Workshop and lecture requests: please get in touch by email.",
-        "press_lead": "Recordings and texts by others that show, discuss or cite the work.",
-        "press_desc": "Press and media about %s: talk recordings, texts that discuss or cite the work.",
-        "press_groups": {"watch": "Talks and recordings", "read": "Texts about the work"},
+        "press_groups": {"watch": "Talk recordings", "read": "Written about the work"},
         "Date": "Date", "Category": "Category",
         "ask": "Ask about my work", "ask_ph": "Ask me anything", "ask_btn": "Ask",
         "ask_ex": ["What is Latent Heat Generation about?", "Why can “giraffe” be spelled in 51 ways?", "Which of your works deal with AI?", "What are you working on now?"],
@@ -305,35 +303,31 @@ UI = {
         "ask_refusal": "I can’t answer that here, but ask me anything about my work.",
     },
     "de": {
-        "nav": {"works": "Arbeiten", "performance": "Performance", "workshops": "Workshops", "about": "Über mich", "press": "Presse & Medien", "blog": "Blog (archiviert)", "friends": "Freunde"},
-        "menu": "Menü", "language": "Sprache", "privacy": "Datenschutz",
+        "nav": {"works": "Arbeiten", "workshops": "Workshops & Vorträge", "about": "Über mich", "blog": "Blog (archiviert)", "friends": "Freunde"},
+        "menu": "Menü", "more": "Mehr", "language": "Sprache", "privacy": "Datenschutz",
         "selected": "Ausgewählte Arbeiten", "all_works": "Alle Arbeiten (%d) →",
         "works_lead": "Installationen, Performances, Netzkunst und künstlerische Forschung, %s–%s.",
         "works_desc": "Ausgewählte Arbeiten von %s, %s–%s: Installationen, Performances, Netzkunst und künstlerische Forschung zu KI.",
         "Topics": "Themen", "Email": "E-Mail", "contact_note": "Ich gebe Workshops zu lokaler KI-Nutzung, Embedding-Praxis und zum Verständnis von Biases in KI-Modellen. Anfragen für Workshops und Vorträge bitte per E-Mail.", "work_by": "%s von %s, %s.",
         "tags": {"works": "Kritische KI, generative Kunst, künstlerische Forschung, Kybernetik, Netzkunst, audiovisuelle Performance",
-                 "performance": "audiovisuelle Performance, Live-Performance, generative KI, Klang und Bild",
                  "about": "Kritische KI, generative Kunst, künstlerische Forschung, Kybernetik, Netzkunst, audiovisuelle Performance",
-                 "press": "Vorträge, Aufzeichnungen, Texte, kritische KI",
-                 "workshops": "lokale KI, Embedding-Praxis, KI-Bias, Workshops, Vorträge"},
+                 "workshops": "lokale KI, Embedding-Praxis, KI-Bias, Workshops, Vorträge, Vortragsaufzeichnungen"},
         "sitemap": "Seitenübersicht", "sitemap_lead": "Alle Seiten dieser Website.",
-        "sitemap_desc": "Seitenübersicht der Website von %s: Arbeiten, Performance, Workshops, Presse, Über mich, Blog.",
+        "sitemap_desc": "Seitenübersicht der Website von %s: Arbeiten und Performances, Workshops und Vorträge, Über mich, Blog.",
         "Year": "Jahr", "Status": "Status", "Type": "Art", "Materials": "Material", "With": "Mit", "Link": "Link",
-        "work_desc": "%s (%s), %s von %s.", "work": "Arbeit",
-        "perf_title": "Audiovisuelle Performance",
-        "perf_lead": "Audiovisuelle Live-Sets und Performance-Dokumentationen.",
-        "perf_desc": "Audiovisuelle Performance-Dokumentationen von %s.", "watch": "Auf %s ansehen ↗",
+        "work_desc": "%s (%s), %s von %s.", "work": "Arbeit", "work_with": "mit %s", "held": "Termine", "workshop": "Workshop",
+        "perf_title": "Performance-Archiv",
+        "perf_lead": "Aufzeichnungen audiovisueller Live-Sets und Noise-Performances, 2016–2024, auf der Bühne, bei Festivals, im Radio und bei Ausstellungseröffnungen. Sie öffnen sich auf Vimeo.",
+        "watch": "Auf %s ansehen ↗",
         "about": "Über mich",
         "blog_title": "Blog-Archiv",
         "blog_lead": "Notizen zu Arbeiten und technische Anleitungen zu Raspberry Pi, Processing und Python. Die Beiträge sind auf Chinesisch (Mandarin) verfasst.",
         "blog_desc": "Blog-Archiv von %s: Notizen zu Arbeiten und technische Anleitungen zu Raspberry Pi, Processing und Python.",
         "friends_desc": "Freund*innen und befreundete Künstler*innen von %s.",
-        "workshops_lead": "Workshops und Vorträge zu lokaler KI-Anwendung, Embedding-Praxis und zum Verständnis von Biases in KI-Modellen.",
-        "workshops_desc": "Workshops und Vorträge von %s zu lokaler KI-Anwendung, Embedding-Praxis und Biases in KI-Modellen.",
+        "workshops_lead": "Workshops zu lokaler KI-Anwendung, Embedding-Praxis und zum Verständnis von Biases in KI-Modellen sowie Aufzeichnungen von Vorträgen.",
+        "workshops_desc": "Workshops und Vorträge von %s zu lokaler KI-Anwendung, Embedding-Praxis und Biases in KI-Modellen, mit Vortragsaufzeichnungen.",
         "workshops_ask": "Anfragen für Workshops und Vorträge richten Sie bitte per E-Mail an mich.",
-        "press_lead": "Aufzeichnungen und Texte Dritter, die die Arbeit zeigen, besprechen oder zitieren.",
-        "press_desc": "Presse und Medien zu %s: Vortragsaufzeichnungen, Texte, die die Arbeit besprechen oder zitieren.",
-        "press_groups": {"watch": "Vorträge und Aufzeichnungen", "read": "Texte über die Arbeit"},
+        "press_groups": {"watch": "Vortragsaufzeichnungen", "read": "Texte über die Arbeit"},
         "Date": "Datum", "Category": "Kategorie",
         "ask": "Fragen Sie zu meiner Arbeit", "ask_ph": "Fragen Sie mich alles", "ask_btn": "Fragen",
         "ask_ex": ["Worum geht es in Latent Heat Generation?", "Warum lässt sich „giraffe“ auf 51 Arten schreiben?", "Welche Ihrer Arbeiten beschäftigen sich mit KI?", "Woran arbeiten Sie gerade?"],
@@ -344,35 +338,31 @@ UI = {
         "ask_refusal": "Darauf kann ich hier nicht antworten. Fragen Sie mich gern zu meiner Arbeit.",
     },
     "zh": {
-        "nav": {"works": "創作計畫", "performance": "表演", "workshops": "工作坊", "about": "關於", "press": "媒體與曝光", "blog": "部落格（封存）", "friends": "朋友"},
-        "menu": "選單", "language": "語言", "privacy": "隱私權",
+        "nav": {"works": "創作計畫", "workshops": "工作坊與講座", "about": "關於", "blog": "部落格（封存）", "friends": "朋友"},
+        "menu": "選單", "more": "更多", "language": "語言", "privacy": "隱私權",
         "selected": "精選作品", "all_works": "全部作品（%d）→",
         "works_lead": "裝置、表演、網路藝術與藝術研究，%s–%s。",
         "works_desc": "%s的精選作品，%s–%s：裝置、表演、網路藝術，以及關於人工智慧的藝術研究。",
         "Topics": "主題", "Email": "信箱", "contact_note": "我開設工作坊，主題包括本地端 AI 的使用、embedding 實作，以及理解 AI 模型中的偏見。工作坊與講座邀約，請來信聯繫。", "work_by": "%s，%s，%s。",
         "tags": {"works": "批判性 AI、生成藝術、藝術研究、控制論、網路藝術、影音表演",
-                 "performance": "影音表演、現場演出、生成式 AI、聲音與影像",
                  "about": "批判性 AI、生成藝術、藝術研究、控制論、網路藝術、影音表演",
-                 "press": "講演、錄影、論文、批判性 AI",
-                 "workshops": "本地端 AI、embedding 實作、AI 偏見、工作坊、講座"},
+                 "workshops": "本地端 AI、embedding 實作、AI 偏見、工作坊、講座、講座錄影"},
         "sitemap": "網站地圖", "sitemap_lead": "這個網站的所有頁面。",
-        "sitemap_desc": "%s網站的網站地圖：創作計畫、表演、工作坊、媒體與曝光、關於、部落格。",
+        "sitemap_desc": "%s網站的網站地圖：創作計畫與表演、工作坊與講座、關於、部落格。",
         "Year": "年份", "Status": "狀態", "Type": "類型", "Materials": "媒材", "With": "合作", "Link": "連結",
-        "work_desc": "%s（%s），%s，%s。", "work": "作品",
-        "perf_title": "影音表演",
-        "perf_lead": "現場影音演出與表演紀錄。",
-        "perf_desc": "%s的影音表演紀錄：現場影音演出與表演錄像，2016 年至今，影片可在 Vimeo 與 YouTube 觀看。", "watch": "在 %s 觀看 ↗",
+        "work_desc": "%s（%s），%s，%s。", "work": "作品", "work_with": "與 %s 合作", "held": "場次", "workshop": "工作坊",
+        "perf_title": "表演紀錄",
+        "perf_lead": "2016 至 2024 年的現場影音演出與噪音演出紀錄，場合包括舞台、藝術節、電台與展覽開幕。點選後在 Vimeo 觀看。",
+        "watch": "在 %s 觀看 ↗",
         "about": "關於",
         "blog_title": "部落格 Blog Archive",
         "blog_lead": "作品筆記，以及 Raspberry Pi、Processing 與 Python 的技術文章。",
         "blog_desc": "%s的部落格文章彙整：作品筆記，以及 Raspberry Pi、Processing 與 Python 技術文章。",
         "friends_desc": "%s的朋友、合作夥伴與藝術家夥伴，以及他們的作品網站連結。",
-        "workshops_lead": "關於本地端 AI 的使用、embedding 實作，以及理解 AI 模型中偏見的工作坊與講座。",
-        "workshops_desc": "%s的工作坊與講座：本地端 AI 的使用、embedding 實作，以及 AI 模型中的偏見。",
+        "workshops_lead": "以本地端 AI 的使用、embedding 實作與理解 AI 模型中的偏見為主題的工作坊，以及講座錄影。",
+        "workshops_desc": "%s的工作坊與講座：本地端 AI 的使用、embedding 實作與 AI 模型中的偏見，並收錄講座錄影。",
         "workshops_ask": "工作坊與講座邀約，請來信聯繫。",
-        "press_lead": "他人拍攝、討論或引用這些作品的錄影與文章。",
-        "press_desc": "%s的曝光與報導：講演錄影，以及討論或引用作品的文章。",
-        "press_groups": {"watch": "講演與錄影", "read": "相關文章"},
+        "press_groups": {"watch": "講座錄影", "read": "相關評論與研究"},
         "Date": "日期", "Category": "分類",
         "ask": "關於我的作品，問問我", "ask_ph": "問我任何事", "ask_btn": "提問",
         "ask_ex": ["《Latent Heat Generation》在談什麼？", "為什麼「giraffe」可以有 51 種拼法？", "你有哪些作品跟 AI 有關？", "你現在在做什麼？"],
@@ -439,10 +429,11 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
     page_title = "%s — %s" % (title, S["name"]) if title else "%s %s" % (S["name"], S.get("name_zh", ""))
     canonical = abs_url(path)
     image = asset_abs(image or S.get("og_image") or "")
-    nav = "".join('%s<a href="%s"%s><span>%s</span></a>' % (
-        '<span class="gap" aria-hidden="true"></span>' if s == "blog" else "",  # Blog and Friends sit apart
+    nav = "".join('<a href="%s"%s><span>%s</span></a>' % (
         url(LP[lang] + s + "/"), ' class="on" aria-current="page"' if s == section else "", esc(u["nav"][s]))
-        for s in SECTIONS)
+        for s in NAV)
+    foot_nav = "".join('<a href="%s"%s>%s</a>' % (
+        url(LP[lang] + s + "/"), ' class="on" aria-current="page"' if s == section else "", esc(u["nav"][s])) for s in FOOT)
     switch = "".join('<a href="%s" hreflang="%s" lang="%s"%s>%s</a>' % (
         url(alts[l] if alts else LP[l] + (section + "/" if section else "")), HREFLANG[l], HREFLANG[l],
         ' class="on" aria-current="true"' if l == lang else "", LANG_NAME[l]) for l in LANGS)
@@ -497,6 +488,7 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
   <nav class="langs" aria-label="{language}">{switch}</nav>
   <div class="side-foot">
     <div class="signal" data-effect="signal" aria-hidden="true"></div>
+    <nav class="foot-nav" aria-label="{more}">{foot_nav}</nav>
     <div><a href="mailto:{email}">{email}</a></div>
     <div class="links">{links}</div>
     <div>© {year} {name}</div>
@@ -514,7 +506,7 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
            t=esc(page_title), d=esc(desc or tr(S, "description", lang)), name=esc(S["name"]), zh=esc(S.get("name_zh", "")),
            c=esc(canonical), hreflang=hreflang, ogt=og_type, img=esc(image), icon=url("assets/favicon-32.png"), ico=url("favicon.ico"), touch=url("assets/apple-touch-icon.png"), manifest=url("site.webmanifest"),
            css=versioned("assets/style.css"), fonts=versioned("assets/fonts/fonts.css"), js=versioned("assets/site.js"), fx=versioned("assets/effects.js"), feed=url("blog/feed.xml"),
-           ga=ga, ld=ld_tag, home=url(LP[lang]), imp=url("impressum/"), dsg=url("datenschutz/"), nav=nav, switch=switch,
+           ga=ga, ld=ld_tag, home=url(LP[lang]), imp=url("impressum/"), dsg=url("datenschutz/"), nav=nav, foot_nav=foot_nav, more=u["more"], switch=switch,
            menu=u["menu"], language=u["language"], privacy=u["privacy"], email=esc(S["email"]), links=links,
            year=datetime.date.today().year, full=" full" if full else "", body=body)
 
@@ -581,7 +573,7 @@ pages = {}  # path -> html
 noindex = set()  # redirect stubs: kept out of the sitemap
 for l in LANGS:
     TITLES.update({url(LP[l] + "works/%s/" % w["slug"]): w["title"] for w in works})
-    TITLES.update({url(LP[l] + s + "/"): UI[l]["nav"][s] for s in SECTIONS})
+    TITLES.update({url(LP[l] + s + "/"): UI[l]["nav"][s] for s in NAV + FOOT})
 TITLES.update({url("blog/%s/" % p["slug"]): p["title"] for p in posts})
 
 
@@ -665,6 +657,15 @@ y0, y1 = (years[0], years[-1]) if years else ("", "")
 platforms = sorted({"Vimeo" if "vimeo" in (p.get("video") or "") else "YouTube"
                     for p in D.get("performances", []) if not p.get("hidden")})
 
+def redirect(old, new):
+    """A tiny page that forwards an old URL (e.g. writing/ -> blog/)."""
+    pages[old] = ('<!doctype html><html lang="en"><meta charset="utf-8"><title>Moved</title>'
+                  '<link rel="canonical" href="%s"><meta name="robots" content="noindex">'
+                  '<meta http-equiv="refresh" content="0; url=%s"><a href="%s">%s</a></html>\n' % (
+                      esc(abs_url(new.split("#")[0])), esc(url(new)), esc(url(new)), esc(abs_url(new))))
+    noindex.add(old)
+
+
 for L in LANGS:
     CUR[0] = L
     u, P = UI[L], LP[L]
@@ -681,9 +682,25 @@ for L in LANGS:
              "".join(work_card(i + 1, w, L) for i, w in enumerate(works[:3])), url(P + "works/"), esc(u["all_works"] % len(works))),
          ld=person(L), full=True, lang=L, alts=each(""))
 
+    # each performance record and talk recording opens on Vimeo / YouTube / the host's site in a new tab
+    def watch_card(href, thumb, title, sub, note, title_lang="", ph=""):
+        v = video_id(href)
+        where = "YouTube" if v and v[0] == "youtube" else "Vimeo" if v else urlparse(href).netloc.replace("www.", "")
+        pic = img(thumb, 1100, title) if thumb else '<span class="ph">%s</span>' % esc(ph or title)
+        return ('<a class="perf-card" href="%s" target="_blank" rel="noopener"><div class="thumb">%s'
+                '<span class="watch">%s</span></div><div class="cap"><h3%s>%s</h3>%s%s</div></a>') % (
+            esc(href), pic, esc(u["watch"] % where), title_lang, esc(title),
+            '<p class="by mono">%s</p>' % esc(sub) if sub else "", '<p>%s</p>' % esc(note) if note else "")
+
+    perfs = [p for p in D.get("performances", []) if not p.get("hidden") and p.get("video")]
+    perf_html = "".join(watch_card(p["video"], p.get("thumb") or cover_of({"video": p.get("video")}), tr(p, "title", L),
+                                   p.get("year", ""), tr(p, "note", L)) for p in perfs)
     page(P + "works/", u["nav"]["works"], u["works_desc"] % (lname(L), y0, y1),
-         page_head(u["nav"]["works"]) +
-         '<div class="grid">%s</div>' % "".join(work_card(i + 1, w, L, kw=True) for i, w in enumerate(works)),
+         '<header class="page-head"><h1 class="page-title">%s</h1>%s</header>' % (
+             esc(u["nav"]["works"]), '<p class="lead jump"><a href="#performances">%s ↓</a></p>' % esc(u["perf_title"]) if perfs else "") +
+         '<div class="grid">%s</div>' % "".join(work_card(i + 1, w, L, kw=True) for i, w in enumerate(works)) +
+         ('<section class="sub-sec" id="performances"><header class="sub-head"><h2>%s</h2><p class="lead">%s</p></header>'
+          '<div class="perf">%s</div></section>' % (esc(u["perf_title"]), esc(u["perf_lead"]), perf_html) if perfs else ""),
          ld=webpage_ld("CollectionPage", P + "works/", u["nav"]["works"], u["works_desc"] % (lname(L), y0, y1), L, u["tags"]["works"]),
          section="works", lang=L, alts=each("works/"))
 
@@ -741,22 +758,17 @@ for L in LANGS:
              image=cover_of(w), og_type="article", ld=lds, section="works", lang=L,
              alts=each("works/%s/" % w["slug"]))
 
-    # performance: each record opens on Vimeo / YouTube in a new tab (no player on this page)
-    def perf_card(n, p):
-        v = video_id(p.get("video"))
-        where = "YouTube" if v and v[0] == "youtube" else "Vimeo"
-        thumb = p.get("thumb") or cover_of({"video": p.get("video")})
-        return ('<a class="perf-card" href="%s" target="_blank" rel="noopener"><div class="thumb">%s'
-                '<span class="watch">%s</span></div><div class="cap">%s<h2>%s</h2><p>%s</p></div></a>') % (
-            esc(p["video"]), img(thumb, 1100, p["title"]) if thumb else "", esc(u["watch"] % where), idx(n),
-            esc(p["title"]), esc(tr(p, "note", L)))
-
-    perfs = [p for p in D.get("performances", []) if not p.get("hidden") and p.get("video")]
-    page(P + "performance/", u["perf_title"], u["perf_desc"] % lname(L),
-         page_head(u["perf_title"], u["perf_lead"]) +
-         '<div class="perf">%s</div>' % "".join(perf_card(n + 1, p) for n, p in enumerate(perfs)),
-         ld=webpage_ld("CollectionPage", P + "performance/", u["perf_title"], u["perf_desc"] % lname(L), L, u["tags"]["performance"]),
-         image=(perfs or [{}])[0].get("thumb"), section="performance", lang=L, alts=each("performance/"))
+    def press_rows(group):
+        rows = ""
+        for it in D.get("press", []):
+            if it.get("group") != group or not it.get("url"):
+                continue
+            note = tr(it, "note", L)
+            same = L != "en" and bool(note) and not it.get("note_" + L)  # not translated: mark the row as English
+            rows += ('<div class="cv-row press-row"%s><span class="mono">%s</span><span>%s<span class="press-by">%s</span>%s</span></div>' % (
+                ' lang="en"' if same else "", esc((it.get("date") or "")[:4]), a(it["url"], esc(it["title"])),
+                esc(it.get("outlet")), '<span class="press-note">%s</span>' % esc(note) if note else ""))
+        return rows
 
     cv = ""
     for sec in D["about"]["sections"]:
@@ -767,6 +779,9 @@ for L in LANGS:
             rows += '<div class="cv-row"%s><span class="mono">%s</span><span>%s</span></div>' % (
                 ' lang="en"' if same else "", esc(it.get("year")), a(it["url"], esc(text)) if it.get("url") else esc(text))
         cv += '<section class="cv-sec"><h2>%s</h2><div>%s</div></section>' % (esc(tr(sec, "title", L)), rows)
+        if sec.get("title") == "Publications & Writing" and press_rows("read"):  # texts by others follow the own texts
+            cv += '<section class="cv-sec" id="texts"><h2>%s</h2><div>%s</div></section>' % (
+                esc(u["press_groups"]["read"]), press_rows("read"))
     bio = tr(D["about"], "bio", L)
     about_mail = S.get("email_alt") or S["email"]  # the address shown on the About page (the sidebar has site.email)
     page(P + "about/", u["about"], bio,
@@ -778,43 +793,63 @@ for L in LANGS:
              esc(u["Topics"]), esc(u["tags"]["about"]), cv),
          ld=dict(person(L), description=bio, keywords=u["tags"]["about"]), og_type="profile", section="about", lang=L, alts=each("about/"))
 
-    # workshops: entries come from site.json "workshops" (images in images/workshops/); the page works without any
-    shops = ""
-    for ws in D.get("workshops", []):
-        if ws.get("hidden"):
-            continue
-        meta_line = " · ".join(x for x in (ws.get("year"), tr(ws, "place", L), tr(ws, "host", L)) if x)
-        pics = "".join('<figure>%s</figure>' % img(i["src"] if isinstance(i, dict) else i, 1200,
-                                                    (i.get("alt") if isinstance(i, dict) else "") or ws["title"])
-                       for i in ws.get("images", []))
-        shops += ('<section class="cv-sec workshop"><h2>%s</h2><div>%s<div class="prose">%s</div>%s</div></section>' % (
-            esc(tr(ws, "title", L)), '<p class="mono">%s</p>' % esc(meta_line) if meta_line else "",
-            prose(tr(ws, "text", L)), '<div class="workshop-pics">%s</div>' % pics if pics else ""))
+    # workshops: what a workshop can be, one page each (site.json "workshops", images in images/workshops/),
+    # then the talk recordings (site.json "press", group "watch")
+    shops = [x for x in D.get("workshops", []) if not x.get("hidden")]
+    mail = S.get("email_alt") or S["email"]
+    contact = '<p class="contact"><span class="mono">%s</span><a href="mailto:%s">%s</a></p><p class="contact-note">%s</p>' % (
+        esc(u["Email"]), esc(mail), esc(mail), esc(u["workshops_ask"]))
+
+    def shop_pics(x):
+        return [i["src"] if isinstance(i, dict) else i for i in x.get("images", [])]
+
+    def shop_card(x):
+        pics = shop_pics(x)
+        return ('<a class="card shop-card" href="%s"><div class="thumb">%s</div><div class="cap"><span class="t">%s</span>'
+                '<span class="mono">%s</span><span class="kw">%s</span></div></a>') % (
+            url(P + "workshops/%s/" % x["slug"]), img(pics[0], 900, tr(x, "title", L)) if pics else '<span class="ph">%s</span>' % esc(x["title"]),
+            esc(tr(x, "title", L)), esc(x.get("with") and u["work_with"] % x["with"] or ""), esc(tr(x, "summary", L)))
+
+    talks = [it for it in D.get("press", []) if it.get("group") == "watch" and it.get("url")]
+    talk_html = "".join(watch_card(it["url"], it.get("thumb"), it["title"], " · ".join(x for x in (it.get("outlet"), (it.get("date") or "")[:4]) if x),
+                                   tr(it, "note", L), ' lang="en"' if L != "en" else "", (it.get("outlet") or "").split(",")[0]) for it in talks)
     page(P + "workshops/", u["nav"]["workshops"], u["workshops_desc"] % lname(L),
-         page_head(u["nav"]["workshops"], u["workshops_lead"]) + shops +
-         '<p class="contact"><span class="mono">%s</span><a href="mailto:%s">%s</a></p><p class="contact-note">%s</p>' % (
-             esc(u["Email"]), esc(S.get("email_alt") or S["email"]), esc(S.get("email_alt") or S["email"]), esc(u["workshops_ask"])),
+         page_head(u["nav"]["workshops"], u["workshops_lead"]) +
+         ('<div class="grid">%s</div>' % "".join(shop_card(x) for x in shops) if shops else "") +
+         ('<section class="sub-sec" id="talks"><header class="sub-head"><h2>%s</h2></header><div class="perf talks">%s</div></section>' % (
+             esc(u["press_groups"]["watch"]), talk_html) if talks else "") +
+         '<div class="sub-sec">%s</div>' % contact,
          ld=webpage_ld("CollectionPage", P + "workshops/", u["nav"]["workshops"], u["workshops_desc"] % lname(L), L, u["tags"]["workshops"]),
          section="workshops", lang=L, alts=each("workshops/"))
 
-    # press: recordings, texts and pages by others that show or discuss the work
-    press_html = ""
-    for g, gname in u["press_groups"].items():
-        rows = ""
-        for it in D.get("press", []):
-            if it.get("group") != g or not it.get("url"):
-                continue
-            note = tr(it, "note", L)
-            same = L != "en" and bool(note) and not it.get("note_" + L)  # not translated: mark the row as English
-            rows += ('<div class="cv-row press-row"%s><span class="mono">%s</span><span>%s<span class="press-by">%s</span>%s</span></div>' % (
-                ' lang="en"' if same else "", esc(it.get("date")), a(it["url"], esc(it["title"])),
-                esc(it.get("outlet")), '<span class="press-note">%s</span>' % esc(note) if note else ""))
-        if rows:
-            press_html += '<section class="cv-sec"><h2>%s</h2><div>%s</div></section>' % (esc(gname), rows)
-    page(P + "press/", u["nav"]["press"], u["press_desc"] % lname(L),
-         page_head(u["nav"]["press"], u["press_lead"], u["tags"]["press"]) + press_html,
-         ld=webpage_ld("CollectionPage", P + "press/", u["nav"]["press"], u["press_desc"] % lname(L), L, u["tags"]["press"]),
-         section="press", lang=L, alts=each("press/"))
+    for i, x in enumerate(shops):
+        pics = shop_pics(x)
+        figs = ["<figure>%s</figure>" % img(im, 1600 if k == 0 else 1000, "%s (%d/%d)" % (tr(x, "title", L), k + 1, len(pics)))
+                for k, im in enumerate(pics)]
+        plates = figs.pop(0).replace("<figure>", '<figure class="hero">', 1) if figs else ""
+        if len(figs) == 1:
+            plates += figs[0].replace("<figure>", '<figure class="hero">', 1)
+        elif figs:
+            plates += '<div class="cols">%s</div>' % "".join(figs)
+        text, held = tr(x, "text", L), tr(x, "held", L)
+        tl = HREFLANG[L] if L == "en" or x.get("text_" + L) else "en"
+        body = ('<article class="work"><aside class="work-info"><p class="kicker mono"><a href="%s">%s</a></p><h1>%s</h1>%s<p class="shop-sum">%s</p><div class="prose"%s>%s</div>'
+                '%s%s</aside><div class="plates">%s</div>%s</article>') % (
+            url(P + "workshops/"), esc(u["workshop"]), esc(tr(x, "title", L)), meta([(u["With"], esc(x.get("with")))]), esc(tr(x, "summary", L)),
+            ' lang="%s"' % tl if tl != HREFLANG[L] else "", prose(text),
+            '<div class="held"><h2 class="mono">%s</h2><p>%s</p></div>' % (esc(u["held"]), "<br>".join(linkify(h) for h in held.split("\n") if h.strip())) if held else "",
+            contact, plates, pager(shops, i, P + "workshops/%s/", "title", u["nav"]["workshops"]))
+        desc = summary(tr(x, "summary", L) or text, 100 if L == "zh" else 155, words=L != "zh")
+        page(P + "workshops/%s/" % x["slug"], tr(x, "title", L), desc, body, image=pics[0] if pics else None, og_type="article",
+             ld={k: v for k, v in {"@context": "https://schema.org", "@type": "CreativeWork", "genre": "Workshop", "name": tr(x, "title", L),
+                 "description": desc, "url": abs_url(P + "workshops/%s/" % x["slug"]), "inLanguage": HREFLANG[L],
+                 "image": asset_abs(pics[0]) if pics else None,
+                 "creator": {"@type": "Person", "name": S["name"], "url": abs_url(P + "about/")}}.items() if v},
+             section="workshops", lang=L, alts=each("workshops/%s/" % x["slug"]))
+
+    # the former pages for performances and for press now live on the works, workshops and about pages
+    redirect(P + "performance/", P + "works/#performances")
+    redirect(P + "press/", P + "workshops/#talks")
 
     groups, order = {}, []
     for p in posts:
@@ -856,10 +891,10 @@ for L in LANGS:
          page_head(u["sitemap"], u["sitemap_lead"]) +
          smap(S["name"], url(P)) +
          smap(u["nav"]["works"], url(P + "works/"), [(w["title"], url(P + "works/%s/" % w["slug"])) for w in works]) +
-         smap(u["perf_title"], url(P + "performance/")) +
-         smap(u["nav"]["workshops"], url(P + "workshops/")) +
-         smap(u["about"], url(P + "about/")) +
-         smap(u["nav"]["press"], url(P + "press/")) +
+         smap(u["perf_title"], url(P + "works/#performances"), [(tr(p, "title", L), p["video"]) for p in perfs]) +
+         smap(u["nav"]["workshops"], url(P + "workshops/"), [(tr(x, "title", L), url(P + "workshops/%s/" % x["slug"])) for x in shops] +
+              [(u["press_groups"]["watch"], url(P + "workshops/#talks"))]) +
+         smap(u["about"], url(P + "about/"), [(u["press_groups"]["read"], url(P + "about/#texts"))]) +
          smap(u["nav"]["blog"], url(P + "blog/"), [(p["title"], url("blog/%s/" % p["slug"])) for p in posts],
               ' lang="%s"' % "zh-Hant") +
          smap(u["nav"]["friends"], url(P + "friends/")) +
@@ -884,15 +919,6 @@ for i, p in enumerate(posts):
           "mainEntityOfPage": abs_url("blog/%s/" % p["slug"])}
     page("blog/%s/" % p["slug"], p["title"], desc, body, image=p.get("cover"), og_type="article",
          content_lang=p.get("lang", "zh-Hant"), ld=ld, section="blog")
-
-
-def redirect(old, new):
-    """A tiny page that forwards an old URL (e.g. writing/ -> blog/)."""
-    pages[old] = ('<!doctype html><html lang="en"><meta charset="utf-8"><title>Moved</title>'
-                  '<link rel="canonical" href="%s"><meta name="robots" content="noindex">'
-                  '<meta http-equiv="refresh" content="0; url=%s"><a href="%s">%s</a></html>\n' % (
-                      esc(abs_url(new)), esc(url(new)), esc(url(new)), esc(abs_url(new))))
-    noindex.add(old)
 
 
 redirect("writing/", "blog/")
@@ -988,10 +1014,11 @@ llms = ["# %s (%s)" % (S["name"], S.get("name_zh", "")), "",
         "Areas: " + ", ".join(S.get("knows_about", [])), "",
         "## Main pages", "",
         "- [Works](%s): installations, performances, internet art and artistic research" % abs_url("works/"),
-        "- [About / CV](%s): biography, teaching, exhibitions, talks, publications" % abs_url("about/"),
+        "- [About / CV](%s): biography, teaching, exhibitions, talks, publications, texts by others" % abs_url("about/"),
         "- [Blog Archive](%s): texts and technical notes (in Mandarin)" % abs_url("blog/"),
-        "- [Audio-Visual Performance](%s)" % abs_url("performance/"),
-        "- [Press & Media](%s): talk recordings and texts by others" % abs_url("press/"), "",
+        "- [Performances](%s): recordings of live audio-visual sets, 2016–2024 (on the works page)" % abs_url("works/#performances"),
+        "- [Workshops & Talks](%s): workshops on local AI, embeddings and AI bias, and talk recordings" % abs_url("workshops/"),
+        "- [Written about the work](%s): texts by others, in the CV" % abs_url("about/#texts"), "",
         "The site is also available in German (%s) and Traditional Chinese (%s)." % (abs_url("de/"), abs_url("zh/")), "",
         "## Works", ""]
 llms += ["- [%s](%s) (%s): %s" % (w["title"], abs_url("works/%s/" % w["slug"]), w.get("year"), w.get("type"))

@@ -43,16 +43,21 @@ in Mandarin. Recommend the version in the visitor's language.
 
 - **Home** (statement, selected works, "ask about the work"): %s
 - **Works** (all works, %d): %s
-- **Performance** (audio-visual performance videos): %s
-- **Workshops** (workshops and lectures on local AI, embeddings, bias): %s
-- **About** (biography and CV: teaching, education, awards, talks, publications, exhibitions): %s
-- **Press & Media** (talk recordings and texts by others): %s
+- **Performances** (recordings of live audio-visual sets, 2016–2024, at the bottom of the works page): %s
+- **Workshops & Talks** (workshops on local AI, embeddings and AI bias, one page each, plus talk recordings): %s
+- **About** (biography and CV: teaching, education, awards, talks, publications, texts by others, exhibitions): %s
 - **Blog archive** (notes on works, technical write-ups; in Mandarin): %sblog/
 - **Friends** (artists and collaborators): %s
 - **Impressum** (legal notice): %simpressum/
 - **Privacy policy** (Datenschutz): %sdatenschutz/
-""" % (BASE, each(""), len(works), each("works/"), each("performance/"), each("workshops/"), each("about/"), each("press/"),
+""" % (BASE, each(""), len(works), each("works/"), each("works/#performances"), each("workshops/"), each("about/"),
        BASE, each("friends/"), BASE, BASE)]
+
+out.append("## Workshops\n")
+for x in [x for x in D.get("workshops", []) if not x.get("hidden")]:
+    out.append("- **%s**: %s" % (x["title"], each("workshops/%s/" % x["slug"])))
+out.append("- **Talk recordings**: %s" % each("workshops/#talks"))
+out.append("- **Texts by others about the work** (in the CV): %s\n" % each("about/#texts"))
 
 out.append("## Works\n")
 for w in works:
@@ -63,7 +68,7 @@ for w in works:
             line += " — %s: %s" % (l.get("label") or "link", l["url"])
     out.append(line)
 
-out.append("\n## Performance videos\n")
+out.append("\n## Performance videos (listed on the works page)\n")
 for p in perfs:
     out.append("- **%s**: %s" % (p["title"], p["video"]))
 

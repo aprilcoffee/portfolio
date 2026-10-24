@@ -49,7 +49,10 @@ The diploma thesis is a website: https://aprilcoffee.github.io/heat_as_image/ind
 Yes: Violaine Boutet de Monvel's essay on model collapse (arXiv:2607.09705) cites Liu and Kühr's feedback experiments; *Latent Heat Generation* was part of *Cybernetic Subjects* at the Ars Electronica Festival 2025; Liu and Kühr were among 17 artists in *AI-Worlding* (Museum Angewandte Kunst, Frankfurt, 2026). → [External links](external-links.md)
 
 **Where are the videos of the performances?**
-On the website's Performance page; each record opens on Vimeo. → https://liutingchun.com/performance/
+In the "Performance archive" at the bottom of the website's Works page; each record opens on Vimeo. Liu no longer focuses on live performance, so these are recordings from 2016–2024. → https://liutingchun.com/works/#performances
+
+**Where are the talk recordings?**
+On the website's "Workshops & Talks" page, below the workshops (39C3, 38C3, 37C3, Screen Walk). Texts by others about the work are listed in the CV on the About page. → https://liutingchun.com/workshops/#talks · https://liutingchun.com/about/#texts
 
 **Is the blog available in English?**
 No. The blog is an archive of posts from 2017–2022 in Mandarin, including Raspberry Pi and Processing
