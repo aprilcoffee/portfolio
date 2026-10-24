@@ -115,3 +115,7 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 
 ## [2026-10-24] update | Types, exhibitions, texts
 - Work types aligned with the card keywords (wiki Type lines refreshed); 音像演出 for audio-visual; Steering: AI-Worlding Frankfurt and Darmstadt, WIP Nicosia (NCAF only for Nicosia).
+
+## [2026-10-24] lint | German back on the site
+- site-map.md (generated) lists German pages again, plus the blog index and HTML site map in every language
+- overview.md, index.md: website languages include German
