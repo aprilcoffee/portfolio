@@ -190,14 +190,21 @@ def linkify(text):
 
 
 def prose(text):
-    """Work descriptions: blank line = paragraph, '# ' = heading."""
+    """Work descriptions: blank line = paragraph, '# ' = heading, lines starting with '· ' = list."""
     parts = []
     for p in re.split(r"\n\s*\n", text or ""):
         p = p.strip()
         if not p:
             continue
+        lines = p.split("\n")
+        items = [l[2:].strip() for l in lines if l.startswith("· ")]
         if p.startswith("# "):
             parts.append("<h3>%s</h3>" % esc(p[2:]))
+        elif items and len(items) == len([l for l in lines if l.startswith("· ")]) and lines[-1].startswith("· "):
+            # lines starting with "· " are a list; a term before the first colon is set in bold
+            intro = "\n".join(l for l in lines if not l.startswith("· "))
+            lis = "".join("<li>%s</li>" % (re.sub(r"^([^:：]{1,24}[:：])", r"<strong>\1</strong>", linkify(i))) for i in items)
+            parts.append(("<p>%s</p>" % linkify(intro).replace("\n", "<br>") if intro else "") + '<ul class="dots">%s</ul>' % lis)
         else:
             parts.append("<p>%s</p>" % linkify(p).replace("\n", "<br>"))
     return "".join(parts)
@@ -289,7 +296,7 @@ UI = {
         "blog_lead": "Notes on works, and technical write-ups on Raspberry Pi, Processing and Python. The posts are written in Mandarin.",
         "blog_desc": "Blog archive of %s: notes on artworks and technical write-ups on Raspberry Pi, Processing and Python.",
         "friends_desc": "Friends and fellow artists of %s.",
-        "workshops_lead": "Workshops on local AI usage, embedding practice and understanding biases in AI models, and recordings of talks.",
+        "workshops_lead": "Workshops I offer: using AI locally on your own computer, working hands-on with embeddings, and seeing the biases inside AI models. Talk recordings below.",
         "workshops_desc": "Workshops and talks by %s on local AI usage, embedding practice and biases in AI models, with talk recordings.",
         "workshops_ask": "Workshop and lecture requests: please get in touch by email.",
         "press_groups": {"watch": "Talk recordings", "read": "Written about the work"},
@@ -324,7 +331,7 @@ UI = {
         "blog_lead": "Notizen zu Arbeiten und technische Anleitungen zu Raspberry Pi, Processing und Python. Die Beiträge sind auf Chinesisch (Mandarin) verfasst.",
         "blog_desc": "Blog-Archiv von %s: Notizen zu Arbeiten und technische Anleitungen zu Raspberry Pi, Processing und Python.",
         "friends_desc": "Freund*innen und befreundete Künstler*innen von %s.",
-        "workshops_lead": "Workshops zu lokaler KI-Anwendung, Embedding-Praxis und zum Verständnis von Biases in KI-Modellen sowie Aufzeichnungen von Vorträgen.",
+        "workshops_lead": "Workshops, die ich anbiete: KI lokal auf dem eigenen Rechner nutzen, praktisch mit Embeddings arbeiten und die Biases in KI-Modellen sichtbar machen. Darunter Aufzeichnungen von Vorträgen.",
         "workshops_desc": "Workshops und Vorträge von %s zu lokaler KI-Anwendung, Embedding-Praxis und Biases in KI-Modellen, mit Vortragsaufzeichnungen.",
         "workshops_ask": "Anfragen für Workshops und Vorträge richten Sie bitte per E-Mail an mich.",
         "press_groups": {"watch": "Vortragsaufzeichnungen", "read": "Texte über die Arbeit"},
@@ -343,7 +350,7 @@ UI = {
         "selected": "精選作品", "all_works": "全部作品（%d）→",
         "works_lead": "裝置、表演、網路藝術與藝術研究，%s–%s。",
         "works_desc": "%s的精選作品，%s–%s：裝置、表演、網路藝術，以及關於人工智慧的藝術研究。",
-        "Topics": "主題", "Email": "信箱", "contact_note": "我開設工作坊，主題包括本地端 AI 的使用、embedding 實作，以及理解 AI 模型中的偏見。工作坊與講座邀約，請來信聯繫。", "work_by": "%s，%s，%s。",
+        "Topics": "主題", "Email": "信箱", "contact_note": "我開設工作坊，主題包括在自己的電腦上使用 AI、embedding 實作，以及辨識 AI 模型中的偏見。工作坊與講座邀約，歡迎來信。", "work_by": "%s，%s，%s。",
         "tags": {"works": "批判性 AI、生成藝術、藝術研究、控制論、網路藝術、影音表演",
                  "about": "批判性 AI、生成藝術、藝術研究、控制論、網路藝術、影音表演",
                  "workshops": "本地端 AI、embedding 實作、AI 偏見、工作坊、講座、講座錄影"},
@@ -352,16 +359,16 @@ UI = {
         "Year": "年份", "Status": "狀態", "Type": "類型", "Materials": "媒材", "With": "合作", "Link": "連結",
         "work_desc": "%s（%s），%s，%s。", "work": "作品", "work_with": "與 %s 合作", "held": "場次", "workshop": "工作坊",
         "perf_title": "表演紀錄",
-        "perf_lead": "2016 至 2024 年的現場影音演出與噪音演出紀錄，場合包括舞台、藝術節、電台與展覽開幕。點選後在 Vimeo 觀看。",
+        "perf_lead": "2016 至 2024 年間現場影音演出與噪音演出的錄影，演出場合包括表演場地、藝術節、電台節目與展覽開幕。點選即可在 Vimeo 觀看。",
         "watch": "在 %s 觀看 ↗",
         "about": "關於",
         "blog_title": "部落格 Blog Archive",
         "blog_lead": "作品筆記，以及 Raspberry Pi、Processing 與 Python 的技術文章。",
         "blog_desc": "%s的部落格文章彙整：作品筆記，以及 Raspberry Pi、Processing 與 Python 技術文章。",
         "friends_desc": "%s的朋友、合作夥伴與藝術家夥伴，以及他們的作品網站連結。",
-        "workshops_lead": "以本地端 AI 的使用、embedding 實作與理解 AI 模型中的偏見為主題的工作坊，以及講座錄影。",
-        "workshops_desc": "%s的工作坊與講座：本地端 AI 的使用、embedding 實作與 AI 模型中的偏見，並收錄講座錄影。",
-        "workshops_ask": "工作坊與講座邀約，請來信聯繫。",
+        "workshops_lead": "我開設的工作坊：在自己的電腦上使用 AI、動手操作 embedding，以及看見 AI 模型裡的偏見。頁面下方是講座錄影。",
+        "workshops_desc": "%s的工作坊與講座：在自己的電腦上使用 AI、embedding 實作，以及 AI 模型中的偏見；並收錄講座錄影。",
+        "workshops_ask": "工作坊與講座邀約，歡迎來信。",
         "press_groups": {"watch": "講座錄影", "read": "相關評論與研究"},
         "Date": "日期", "Category": "分類",
         "ask": "關於我的作品，問問我", "ask_ph": "問我任何事", "ask_btn": "提問",
@@ -682,10 +689,12 @@ for L in LANGS:
              "".join(work_card(i + 1, w, L) for i, w in enumerate(works[:3])), url(P + "works/"), esc(u["all_works"] % len(works))),
          ld=person(L), full=True, lang=L, alts=each(""))
 
+    SHORT_HOST = {"thephotographersgallery.org.uk": "The Photographers’ Gallery"}
     # each performance record and talk recording opens on Vimeo / YouTube / the host's site in a new tab
     def watch_card(href, thumb, title, sub, note, title_lang="", ph=""):
         v = video_id(href)
         where = "YouTube" if v and v[0] == "youtube" else "Vimeo" if v else urlparse(href).netloc.replace("www.", "")
+        where = SHORT_HOST.get(where, where)
         pic = img(thumb, 1100, title) if thumb else '<span class="ph">%s</span>' % esc(ph or title)
         return ('<a class="perf-card" href="%s" target="_blank" rel="noopener"><div class="thumb">%s'
                 '<span class="watch">%s</span></div><div class="cap"><h3%s>%s</h3>%s%s</div></a>') % (

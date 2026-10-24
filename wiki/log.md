@@ -87,3 +87,6 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 
 ## [2026-10-25] update | Site restructure
 - Performance page merged into Works ("Performance archive"); Press & Media split: talk recordings on "Workshops & Talks", texts by others in the About CV. faq and topics/audio-visual-performance point to the new URLs; site-map regenerated.
+
+## [2026-10-25] update | Workshop texts
+- Workshop pages rewritten to describe the exercises concretely (from the workshop screenshots): local models such as Gemma 3 / EmbeddingGemma, the distance/axis/token/next-token/name-swap/image exercises, Magritte pipe, face search scores. Chinese texts rewritten for clarity.
