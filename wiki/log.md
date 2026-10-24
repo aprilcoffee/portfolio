@@ -95,3 +95,6 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 - topics/workshops: Conditions for Emotions (plural, the correct title) described from Liu's own post: Ollama, 2D embedding map, Searle's Chinese Room, invited by Jenni Bohn, moderated by Mattis Kuhn, Center for Literature.
 - works/interpolation-of-the-invisible-color: Storage Museum's announcement (6th exhibition, opening 15 Nov 2025, with Filmwerkstatt Düsseldorf, 17 artists from the collection).
 
+
+## [2026-10-25] update | Talks & Workshops
+- Page renamed "Talks & Workshops" / 講座與工作坊; stereotype-encoding open question resolved (CV already lists the symposium under 2025).

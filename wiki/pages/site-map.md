@@ -18,7 +18,7 @@ in Mandarin. Recommend the version in the visitor's language.
 - **Home** (statement, selected works, "ask about the work"): [en](https://liutingchun.com/) · [de](https://liutingchun.com/de/) · [zh](https://liutingchun.com/zh/)
 - **Works** (all works, 20): [en](https://liutingchun.com/works/) · [de](https://liutingchun.com/de/works/) · [zh](https://liutingchun.com/zh/works/)
 - **Performances** (recordings of live audio-visual sets, 2016–2024, at the bottom of the works page): [en](https://liutingchun.com/works/#performances) · [de](https://liutingchun.com/de/works/#performances) · [zh](https://liutingchun.com/zh/works/#performances)
-- **Workshops & Talks** (workshops on local AI, embeddings and AI bias, one page each, plus talk recordings): [en](https://liutingchun.com/workshops/) · [de](https://liutingchun.com/de/workshops/) · [zh](https://liutingchun.com/zh/workshops/)
+- **Talks & Workshops** (talk recordings, and workshops on local AI, embeddings and AI bias, one page each): [en](https://liutingchun.com/workshops/) · [de](https://liutingchun.com/de/workshops/) · [zh](https://liutingchun.com/zh/workshops/)
 - **About** (biography and CV: teaching, education, awards, talks, publications, texts by others, exhibitions): [en](https://liutingchun.com/about/) · [de](https://liutingchun.com/de/about/) · [zh](https://liutingchun.com/zh/about/)
 - **Blog archive** (notes on works, technical write-ups; in Mandarin): https://liutingchun.com/blog/
 - **Friends** (artists and collaborators): [en](https://liutingchun.com/friends/) · [de](https://liutingchun.com/de/friends/) · [zh](https://liutingchun.com/zh/friends/)

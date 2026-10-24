@@ -9,7 +9,7 @@
    `impressum/`、`datenschutz/`、`sitemap.xml`、`robots.txt`、`llms.txt`、`blog/feed.xml`，還有根目錄那些舊 Wix 網址的
    轉址資料夾（`cv/`、`post/`、`sun/`、`fall/`、`beneath/`…）全部由 `scripts/build.py` 產生，下一次建置就會被覆蓋。
    要改就改來源（`data/`、`posts/`、`scripts/build.py`、`assets/`）。
-2. **改完要重建。** `pip install markdown && python3 scripts/build.py`。產生的檔案可以一起 commit；
+2. **改完要重建。** `pip install markdown pillow && python3 scripts/build.py`（沒有 Pillow 也能建，但圖片就不會有 `srcset` 小圖，頁面會跟著變）。產生的檔案可以一起 commit；
    就算沒有，push 到 main 之後 `.github/workflows/build.yml` 也會重建並自己 commit「Rebuild pages」。
 3. **三種語言要一起改。** 新增或修改任何顯示在網頁上的文字，英文、德文、繁體中文都要處理（見下面〈翻譯〉）。
 4. **另一個 repo 的東西不要動。** `aprilcoffee.github.io` 上的 `sun/` 和 `heat_as_image/` 是獨立作品，絕對不要改；
@@ -40,7 +40,9 @@
 | `llms.txt` 最後的彩蛋（ASCII 顯卡、給 agent 的話、藝術家介紹） | `data/llms-extra.md`（原樣接在後面） |
 | 圖示、分享圖 | `favicon.ico`、`assets/favicon-32.png`、`assets/apple-touch-icon.png`、`assets/icon-192/512.png`、`site.webmanifest`、`images/og.jpg`（`site.og_image`） |
 | 圖片與影片檔 | `images/wix/`（新的 Wix 圖用 `scripts/download-images.sh` 下載） |
-| 工作坊與講座頁（`/workshops/`，每個工作坊另有 `/workshops/<slug>/`） | `data/site.json` 的 `workshops[]`：`slug`、`title`、`summary`（卡片與頁首的一句話）、`text`（用 `# ` 分小標，`· ` 開頭的行當清單）、`with`、`held`（場次，每行一場，放在頁面最下方）、`images`（第一張是封面），除 `slug`／`with`／`images` 外都有 `_de/_zh`。這頁是在介紹「可以辦哪些工作坊」，辦在哪裡只放在 `held`。圖片放 `images/workshops/<slug>/`（見該資料夾 `README.md`）。下方的「講座錄影」來自 `press[]` 的 `group: watch` |
+| 響應式小圖 | `images/_w/<寬度>/…webp`（480、960），由 `build.py` 的 `srcset()` 用 Pillow 自動產生並一起 commit，不要手改；原圖換了會自動重做 |
+| GA 語言分組與問答事件 | `assets/analytics.js` 把頁面語言設成 `content_group`；`assets/chat.js` 的 `track()` 送 `chat_question`（不含問題文字）與 `chat_link`。改了要同步 Datenschutz 的 GA 段落 |
+| 講座與工作坊頁（`/workshops/`，每個工作坊另有 `/workshops/<slug>/`） | `data/site.json` 的 `workshops[]`：`slug`、`title`、`summary`（卡片與頁首的一句話）、`text`（用 `# ` 分小標，`· ` 開頭的行當清單）、`with`、`held`（場次，每行一場，放在頁面最下方）、`images`（第一張是封面；可以是路徑字串，或 `{"src", "alt", "alt_de", "alt_zh"}`，後台一行寫成「路徑 | 說明 | DE | 中文」），除 `slug`／`with`／`images` 外都有 `_de/_zh`。這頁是在介紹「可以辦哪些工作坊」，辦在哪裡只放在 `held`。圖片放 `images/workshops/<slug>/`（見該資料夾 `README.md`）。下方的「講座錄影」來自 `press[]` 的 `group: watch` |
 | 講座錄影截圖 | `press[].thumb`；留空時 `build.yml` 會先跑 `scripts/fetch-talk-thumbs.py`，抓錄影頁的預覽圖（og:image）存到 `images/talks/` 並寫回 `site.json` |
 | 圖片壓縮／轉檔 | `python3 scripts/compress-images.py [資料夾或檔案]`（預設 `images/workshops/`；需要 Pillow；長邊 2400px、JPEG 品質 82、移除 EXIF／GPS，PNG／HEIC 照片轉成 `.jpg`） |
 | 後台 | `admin/index.html`、`admin/admin.js`；草稿預覽 `preview.html`（在瀏覽器用 Pyodide 跑同一個 `build.py`） |
@@ -78,7 +80,7 @@
 - `works[].summary`（選填，+ `_de/_zh`）：搜尋結果與分享用的描述。只有作品文字開頭不適合當描述時才填（例如 Sixteen Tokens for a Cave 以 token 詩開頭）；沒填就用文字開頭。
 - `works[].status`（例如 In development）顯示在作品卡與作品頁的「Status」列；留空就不顯示。
 - `press[]` 的 `group` 只能是 `watch`（講座錄影，顯示在工作坊與講座頁）、`read`（他人寫的評論與研究，顯示在 About 的 CV「Publications & Writing」之後，`#texts`）；展覽、活動、機構介紹頁不放；標題與來源不翻譯，沒有 `note_de/_zh` 時該語言顯示英文並標 `lang="en"`。
-- 側邊欄：主選單只有 `NAV`（創作計畫、工作坊與講座、關於），部落格與朋友在側欄下方的小字（`FOOT`），都在 `build.py` 開頭。表演沒有獨立頁，是作品頁最下方深色的「表演紀錄」區塊（`#performances`）；舊的 `/performance/`、`/press/` 轉址到新位置。中文名稱在 `UI["zh"]["nav"]`；中文側邊欄用標題字體（`assets/style.css` 的 `html:lang(zh) .nav a`）。
+- 側邊欄：主選單只有 `NAV`（創作計畫、講座與工作坊、關於），部落格與朋友在側欄下方的小字（`FOOT`），都在 `build.py` 開頭。表演沒有獨立頁，是作品頁最下方深色的「表演紀錄」區塊（`#performances`）；舊的 `/performance/`、`/press/` 轉址到新位置。中文名稱在 `UI["zh"]["nav"]`；中文側邊欄用標題字體（`assets/style.css` 的 `html:lang(zh) .nav a`）。
 - 聯絡信箱：`site.email`（側欄、Impressum、About）維持 gmail；`site.email_alt`（Weimar 信箱）是 About 頁顯示的聯絡信箱（沒填就用 `site.email`）；`site.orcid`（只填 iD）有填才會在 About 頁出現，目前留空。`friends/` 頁刻意只有標題與卡片（沒有引言和主題）。頁尾沒有 HTML 網站地圖的連結（`/sitemap/` 仍在 `sitemap.xml` 裡）。
 - **搜尋引擎（SEO）用語**：主要敘述是 “research-based media artist working with critical AI”（`site.description`、`statement`、About 的 bio 第一句）；看不到的地方（JSON-LD 的 `jobTitle`、`occupations`、`llms.txt`）用 “Critical AI Artist”；首頁 `<title>` 刻意只放名字。文字裡一律寫全名 Ting-Chun Liu。部落格文章的作者列寫 “Ting-Chun Liu, media artist”。
 - 主題標籤：`works[].tags`（`_de/_zh` 沒填就顯示英文）顯示在作品頁的「Topics」列，也寫進 JSON-LD 的 `keywords`；各列表頁的標籤在 `build.py` 的 `UI[...]["tags"]`。

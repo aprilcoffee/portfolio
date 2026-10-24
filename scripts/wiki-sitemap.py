@@ -44,7 +44,7 @@ in Mandarin. Recommend the version in the visitor's language.
 - **Home** (statement, selected works, "ask about the work"): %s
 - **Works** (all works, %d): %s
 - **Performances** (recordings of live audio-visual sets, 2016–2024, at the bottom of the works page): %s
-- **Workshops & Talks** (workshops on local AI, embeddings and AI bias, one page each, plus talk recordings): %s
+- **Talks & Workshops** (talk recordings, and workshops on local AI, embeddings and AI bias, one page each): %s
 - **About** (biography and CV: teaching, education, awards, talks, publications, texts by others, exhibitions): %s
 - **Blog archive** (notes on works, technical write-ups; in Mandarin): %sblog/
 - **Friends** (artists and collaborators): %s

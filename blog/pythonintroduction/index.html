@@ -24,8 +24,10 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="alternate" type="application/rss+xml" title="Ting-Chun Liu — Blog" href="/blog/feed.xml">
-<script async src="/assets/analytics.js?v=3eef9b37" data-ga="G-5XL9T33VG0"></script>
-<link rel="stylesheet" href="/assets/fonts/fonts.css?v=51411f72">
+<script async src="/assets/analytics.js?v=605f92d3" data-ga="G-5XL9T33VG0"></script>
+<link rel="preload" href="/assets/fonts/Minipax-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/Minipax-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts/fonts.css?v=51411f72" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="/assets/fonts/fonts.css?v=51411f72"></noscript>
 <link rel="stylesheet" href="/assets/style.css?v=4e08ccd5">
 <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "藝術學院的基礎爬說分享（待完善）", "datePublished": "2022-12-05", "inLanguage": "zh-Hant", "url": "https://liutingchun.com/blog/pythonintroduction/", "image": "https://liutingchun.com/images/wix/4eb1dd_52c491c8438c43fea253894252aa5a6e~mv2.webp", "description": "這學期算是比較正式接了助教，想説寫給自己整理也分享這學期的課程大綱，還有一些自己的雜談與碎念。", "author": {"@type": "Person", "name": "Ting-Chun Liu", "url": "https://liutingchun.com/", "jobTitle": "Media artist"}, "mainEntityOfPage": "https://liutingchun.com/blog/pythonintroduction/"}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Ting-Chun Liu", "item": "https://liutingchun.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog (archived)", "item": "https://liutingchun.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "藝術學院的基礎爬說分享（待完善）", "item": "https://liutingchun.com/blog/pythonintroduction/"}]}]</script>
 </head>
@@ -35,7 +37,7 @@
     <a class="brand" href="/"><span class="brand-en">Ting-Chun Liu</span><span class="brand-zh" lang="zh-Hant">劉庭均</span></a>
     <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">Menu</button>
   </div>
-  <nav class="nav" id="nav" aria-label="Main"><a href="/works/"><span>Works</span></a><a href="/workshops/"><span>Workshops &amp; Talks</span></a><a href="/about/"><span>About</span></a></nav>
+  <nav class="nav" id="nav" aria-label="Main"><a href="/works/"><span>Works</span></a><a href="/workshops/"><span>Talks &amp; Workshops</span></a><a href="/about/"><span>About</span></a></nav>
   <nav class="langs" aria-label="Language"><a href="/blog/" hreflang="en" lang="en" class="on" aria-current="true">EN</a><a href="/de/blog/" hreflang="de" lang="de">DE</a><a href="/zh/blog/" hreflang="zh-Hant" lang="zh-Hant">中文</a></nav>
   <div class="side-foot">
     <div class="signal" data-effect="signal" aria-hidden="true"></div>
@@ -47,7 +49,7 @@
   </div>
 </aside>
 <main class="main" id="main">
-<article class="post"><aside class="post-info" lang="en"><h1 lang="zh-Hant">藝術學院的基礎爬說分享（待完善）</h1><dl class="meta"><dt>Date</dt><dd>2022-12-05</dd><dt>Category</dt><dd>technique</dd><dt>Author</dt><dd><a href="https://liutingchun.com/about/">Ting-Chun Liu, media artist</a></dd></dl><a class="back" href="/blog/">← Blog Archive</a></aside><div class="prose post-body"><figure><img src="/images/wix/4eb1dd_52c491c8438c43fea253894252aa5a6e~mv2.webp" alt="" loading="lazy" decoding="async" onerror="if(this.src!=='/images/wix/4eb1dd_52c491c8438c43fea253894252aa5a6e~mv2.webp')this.src='/images/wix/4eb1dd_52c491c8438c43fea253894252aa5a6e~mv2.webp'"></figure>
+<article class="post"><aside class="post-info" lang="en"><h1 lang="zh-Hant">藝術學院的基礎爬說分享（待完善）</h1><dl class="meta"><dt>Date</dt><dd>2022-12-05</dd><dt>Category</dt><dd>technique</dd><dt>Author</dt><dd><a href="https://liutingchun.com/about/">Ting-Chun Liu, media artist</a></dd></dl><a class="back" href="/blog/">← Blog Archive</a></aside><div class="prose post-body"><figure><img src="/images/wix/4eb1dd_52c491c8438c43fea253894252aa5a6e~mv2.webp" srcset="/images/_w/480/wix/4eb1dd_52c491c8438c43fea253894252aa5a6e~mv2.webp 480w, /images/_w/960/wix/4eb1dd_52c491c8438c43fea253894252aa5a6e~mv2.webp 960w, /images/wix/4eb1dd_52c491c8438c43fea253894252aa5a6e~mv2.webp 2000w" sizes="(max-width: 800px) 100vw, 55vw" alt="" loading="lazy" decoding="async" onerror="if(this.src!=='/images/wix/4eb1dd_52c491c8438c43fea253894252aa5a6e~mv2.webp')this.src='/images/wix/4eb1dd_52c491c8438c43fea253894252aa5a6e~mv2.webp'"></figure>
 <p>這學期算是比較正式接了助教，想説寫給自己整理也分享這學期的課程大綱，還有一些自己的雜談與碎念。</p>
 <p><a href="https://ground-zero.khm.de/" target="_blank" rel="noopener">工作室</a>開的課程，無論是實務課程或理論課程一直以來都是以電腦文學和自然語言處理作為討論基礎。在這邊對於電腦文學的討論，源自於希臘哲學中的 <em>Poiesis</em>，意指為創造的過程與行為，在詞源上也與詩 Poetry 同源。因此導向了無論是程式語言本身作為詩的表現形式、亦或是以程式語言生產與分析文學的方向。往年也試著開過LSTM、<a href="https://github.com/experimental-informatics/hands-on-text-generators" target="_blank" rel="noopener">馬可夫鏈</a>、<a href="https://github.com/experimental-informatics/hands-on-artificial-neural-networks" target="_blank" rel="noopener">基礎神經網絡</a>、<a href="https://github.com/experimental-informatics/codichte_experiments-with-cognitive-systems" target="_blank" rel="noopener">認知系統與電腦詩</a>等課程。從 GPT-2 延伸的 aitextgen, ai dungeon、Dall-E 1等等都曾經被納入討論。這學期是這幾年來第一次花一整學期走完程式設計基礎的課程。</p>
 <p>教授很喜歡以1941年阿根廷作家 Jorge Luis Borges 的《<a href="https://www.libraryofbabel.info/" target="_blank" rel="noopener">巴別塔圖書館</a>》(Library of Babel)作為課程的起點，想像一種基於無限遞迴的結構便能窮盡宇宙中所有基於拉丁文字的詩。以此開啟關於程式語言的想像。無論是 Joseph Weizenbaum 的 Eiza 和 Hans Magnus Enzensberger 的 Landsberger Poesieautomat (詩的販賣機) <a href="https://www.youtube.com/watch?v=vj1buZhKKko" target="_blank" rel="noopener">2006年重現的裝置版</a>，作為德文一脈關於自然語言處理以降的彙整與推進，也算是老教授在退休前希望著重的方向吧。</p>
