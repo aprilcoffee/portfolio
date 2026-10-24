@@ -15,7 +15,6 @@ OUT = os.path.join(ROOT, "assets", "fonts")
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
 # (CSS family, Google Fonts family, file prefix)
 FAMILIES = [
-    ("Noto Serif TC", "Noto+Serif+TC:wght@500", "noto-serif-tc-500"),  # 思源宋體 Medium: Regular is too thin on white
     ("Iansui", "Iansui", "iansui"),
 ]
 

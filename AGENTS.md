@@ -28,7 +28,7 @@
 | 介面文字（選單、按鈕、頁面引言、對話框提示…） | `scripts/build.py` 的 `UI` 字典 |
 | 頁面結構、HTML、SEO（title、canonical、hreflang、JSON-LD、sitemap） | `scripts/build.py` |
 | Impressum、Datenschutz（只有德文） | `scripts/build.py` 裡 `page("impressum/"…)`、`page("datenschutz/"…)`、`CHAT_PRIVACY` |
-| 字型 | `assets/fonts/`（都是 SIL OFL 開源字型，放在自己的伺服器；`fonts.css`、Minipax、粉圓由 `scripts/build-fonts.py` 產生，`fonts-google.css` 與思源宋體 Medium、芫荽的切片由 `scripts/fetch-google-fonts.py` 從 Google Fonts 下載一次，都不要手改；授權在 `assets/fonts/LICENSES/`，出處標示在 Impressum 的「Schriften」段落）。中文的分工：`--text` 內文（Minipax＋思源宋體 Noto Serif TC Medium：作品文字、About、工作坊、CV）；`--display` 標題、選單、卡片標題、首頁大字（Minipax Bold＋LTC Round／粉圓）；`--note` 中文小字與說明（Minipax＋芫荽 Iansui：卡片關鍵字、頁首引言、表演與講座說明、CV 跳轉列、圖說）；問答框用 `--mono`，中文落到芫荽。兩套中文內文字都沒有粗體，內文裡的粗體用標題字。2026-10 試過內文用粉圓，無法閱讀，不要再用粉圓排內文；源起明體小字太細、仙人掌明體在白底上太細，都已換掉，內文要用有 Medium 字重的字 |
+| 字型 | `assets/fonts/`（都是 SIL OFL 開源字型，放在自己的伺服器；`fonts.css`、Minipax、粉圓由 `scripts/build-fonts.py` 產生，`fonts-google.css` 與芫荽的切片由 `scripts/fetch-google-fonts.py` 從 Google Fonts 下載一次，都不要手改；授權在 `assets/fonts/LICENSES/`，出處標示在 Impressum 的「Schriften」段落）。中文的分工：`--text` 內文（Minipax＋讀者裝置的系統黑體，跟臉書一樣：蘋果是蘋方、Windows 是微軟正黑體、Android 是 Noto Sans CJK；作品文字、About、工作坊、CV）；`--display` 標題、選單、卡片標題、首頁大字（Minipax Bold＋LTC Round／粉圓）；`--note` 中文小字與說明（Minipax＋芫荽 Iansui：卡片關鍵字、頁首引言、表演與講座說明、CV 跳轉列、圖說）；問答框用 `--mono`，中文落到芫荽。2026-10 試過內文用粉圓，無法閱讀，不要再用粉圓排內文；源起明體、仙人掌明體、思源宋體 Medium 都試過，作者不喜歡，內文改用系統黑體 |
 | 樣式 | `assets/style.css`（全部用 rem；桌機 `html{font-size:80%}`，≤800px 回到 100%；斷點 1024px、800px） |
 | 選單、語言切換等前端行為 | `assets/site.js` |
 | p5.js 背景特效（首頁字元場、側欄訊號線） | `assets/effects.js` |
