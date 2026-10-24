@@ -80,3 +80,7 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 
 ## [2026-10-21] remove | Artist Magazine article
 - external-links: the 2019 Artist Magazine article (only a photo of Liu performing) taken out again at the artist's request; it is no longer on the website's Press & Media page either.
+
+## [2026-10-24] ingest | Workshops page, Bonn talk
+- topics/workshops: new page (Condition for Emotions, Paranoia De-Prompting, The Given Image); Walter-Lübcke-Schule and Dawid Liftinger checked against the programme's website.
+- talks-and-writing: added the 16 July 2026 talk at the University of Bonn (Junge GI Hochschulgruppe Bonn), checked on the organiser's pages.

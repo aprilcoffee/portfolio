@@ -1,6 +1,6 @@
 {
 "": {"h": "6086a9d23d76", "d": "2026-10-23"},
-"about/": {"h": "f6fa685aac07", "d": "2026-10-23"},
+"about/": {"h": "3949a82fdb08", "d": "2026-10-24"},
 "blog/": {"h": "b3685777bc84", "d": "2026-10-23"},
 "blog/body-as-the-reflection-on-site/": {"h": "a20cc81e3001", "d": "2026-10-23"},
 "blog/lift-off/": {"h": "80ae28fbaf41", "d": "2026-10-23"},
@@ -16,7 +16,7 @@
 "blog/xanadu-travel-agency/": {"h": "fe951655899f", "d": "2026-10-23"},
 "datenschutz/": {"h": "db6197884c8d", "d": "2026-10-23"},
 "de/": {"h": "3447307a3dec", "d": "2026-10-23"},
-"de/about/": {"h": "ca4bf3fae82b", "d": "2026-10-23"},
+"de/about/": {"h": "70c6fcca2015", "d": "2026-10-24"},
 "de/blog/": {"h": "5dd8c425cf03", "d": "2026-10-23"},
 "de/friends/": {"h": "92a2d4e96841", "d": "2026-10-23"},
 "de/performance/": {"h": "985942aeb34d", "d": "2026-10-23"},
@@ -43,7 +43,7 @@
 "de/works/steering-through-the-inner-residue/": {"h": "4e28eaabefe0", "d": "2026-10-23"},
 "de/works/sun/": {"h": "e4b1ae80c721", "d": "2026-10-23"},
 "de/works/take-off-the-clothes/": {"h": "4dde01c18391", "d": "2026-10-23"},
-"de/workshops/": {"h": "8945f91cce91", "d": "2026-10-23"},
+"de/workshops/": {"h": "ea0d52d1f063", "d": "2026-10-24"},
 "friends/": {"h": "578bcf66cd95", "d": "2026-10-23"},
 "impressum/": {"h": "cb7926761c21", "d": "2026-10-23"},
 "performance/": {"h": "312af5744ee3", "d": "2026-10-23"},
@@ -70,9 +70,9 @@
 "works/steering-through-the-inner-residue/": {"h": "6ec501a86f08", "d": "2026-10-23"},
 "works/sun/": {"h": "b7265c03f4ce", "d": "2026-10-23"},
 "works/take-off-the-clothes/": {"h": "a8874bc8317c", "d": "2026-10-23"},
-"workshops/": {"h": "8092b9d29929", "d": "2026-10-23"},
+"workshops/": {"h": "3a527b0f0e27", "d": "2026-10-24"},
 "zh/": {"h": "f384ea1d5565", "d": "2026-10-23"},
-"zh/about/": {"h": "77c7b5399442", "d": "2026-10-23"},
+"zh/about/": {"h": "b258e5f54cef", "d": "2026-10-24"},
 "zh/blog/": {"h": "1d6afb017a0b", "d": "2026-10-23"},
 "zh/friends/": {"h": "d9fae1443399", "d": "2026-10-23"},
 "zh/performance/": {"h": "e9fbe068ca69", "d": "2026-10-23"},
@@ -99,5 +99,5 @@
 "zh/works/steering-through-the-inner-residue/": {"h": "a599b085c6ad", "d": "2026-10-23"},
 "zh/works/sun/": {"h": "da40b014bfa1", "d": "2026-10-23"},
 "zh/works/take-off-the-clothes/": {"h": "4d44aa7cf86a", "d": "2026-10-23"},
-"zh/workshops/": {"h": "481747fe96c2", "d": "2026-10-23"}
+"zh/workshops/": {"h": "cd47126595d2", "d": "2026-10-24"}
 }
