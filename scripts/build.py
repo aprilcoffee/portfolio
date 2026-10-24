@@ -413,10 +413,10 @@ UI = {
         "selected": "精選作品", "all_works": "全部作品（%d）→",
         "works_lead": "裝置、表演、網路藝術與藝術研究，%s–%s。",
         "works_desc": "%s的精選作品，%s–%s：裝置、表演、網路藝術，以及關於人工智慧的藝術研究。",
-        "Topics": "主題", "Email": "信箱", "contact_note": "工作坊主題包含：在自己的電腦上使用 AI、embedding 實作，以及辨識 AI 模型中的偏見。工作坊與講座邀約，歡迎來信。", "work_by": "%s，%s，%s。",
-        "tags": {"works": "批判性 AI、生成藝術、藝術研究、控制論、網路藝術、音像演出",
-                 "about": "批判性 AI、生成藝術、藝術研究、控制論、網路藝術、音像演出",
-                 "workshops": "本地端 AI、embedding 實作、AI 偏見、工作坊、講座、講座錄影"},
+        "Topics": "主題", "Email": "信箱", "contact_note": "工作坊主題包含：在自己的電腦上使用人工智慧、嵌入向量實作，以及辨識人工智慧模型中的偏見。工作坊與講座邀約，歡迎來信。", "work_by": "%s，%s，%s。",
+        "tags": {"works": "批判性人工智慧、生成藝術、藝術研究、模控論、網路藝術、音像演出",
+                 "about": "批判性人工智慧、生成藝術、藝術研究、模控論、網路藝術、音像演出",
+                 "workshops": "本地端人工智慧、嵌入向量實作、人工智慧偏見、工作坊、講座、講座錄影"},
         "sitemap": "網站地圖", "sitemap_lead": "這個網站的所有頁面。",
         "sitemap_desc": "%s網站的網站地圖：創作計畫與表演、講座與工作坊、關於、部落格。",
         "Year": "年份", "Status": "狀態", "Type": "類型", "Materials": "媒材", "With": "合作", "Link": "連結",
@@ -424,18 +424,18 @@ UI = {
         "perf_title": "表演紀錄",
         "watch": "在 %s 觀看 ↗",
         "about": "關於",
-        "blog_title": "部落格 Blog Archive",
+        "blog_title": "部落格封存",
         "blog_lead": "作品筆記，以及 Raspberry Pi、Processing 與 Python 的技術文章。",
         "blog_desc": "%s的部落格文章彙整：作品筆記，以及 Raspberry Pi、Processing 與 Python 技術文章。",
         "friends_desc": "%s的朋友、合作夥伴與藝術家夥伴，以及他們的作品網站連結。",
-        "workshops_lead": "工作坊內容包含：在自己的電腦上使用 AI、動手操作 embedding，以及辨識 AI 模型中的偏見。沒有寫程式經驗的人、藝術家、企業與研究者皆可參加。頁面下方為講座錄影。",
-        "workshops_desc": "%s的講座與工作坊：講座錄影，以及在自己的電腦上使用 AI、embedding 實作與 AI 模型偏見的工作坊。",
+        "workshops_lead": "工作坊內容包含：在自己的電腦上使用人工智慧、動手操作嵌入向量，以及辨識人工智慧模型中的偏見。沒有寫程式經驗的人、藝術家、企業與研究者皆可參加。頁面下方為講座錄影。",
+        "workshops_desc": "%s的講座與工作坊：講座錄影，以及在自己的電腦上使用人工智慧、嵌入向量實作與人工智慧模型偏見的工作坊。",
         "workshops_ask": "工作坊與講座邀約，歡迎來信。",
         "press_groups": {"watch": "講座錄影", "read": "引用與討論"},
         "Date": "日期", "Category": "分類",
         "ask": "關於我的作品，問問我", "ask_ph": "問我任何事", "ask_btn": "提問",
-        "ask_ex": ["《Latent Heat Generation》在談什麼？", "為什麼「giraffe」可以有 51 種拼法？", "你有哪些作品跟 AI 有關？", "你現在在做什麼？"],
-        "ask_note": "注意：AI 可能產生隨機的關聯性",
+        "ask_ex": ["《Latent Heat Generation》在談什麼？", "為什麼「giraffe」可以有 51 種拼法？", "你有哪些作品跟人工智慧有關？", "你現在在做什麼？"],
+        "ask_note": "注意：人工智慧可能產生隨機的關聯性",
         "ask_more": "隱私權",
         "ask_err": "抱歉，暫時無法回答。請稍後再試，或寫信至 %s。",
         "ask_busy": "目前提問太多，請稍候一分鐘。",
@@ -546,6 +546,7 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
 <link rel="preload" href="{font_r}" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{font_b}" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{fonts}" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="{fonts}"></noscript>
+<link rel="stylesheet" href="{fonts_g}" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="{fonts_g}"></noscript>
 <link rel="stylesheet" href="{css}">
 {ld}
 </head>
@@ -576,7 +577,7 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
            locale=LOCALE[lang] if not content_lang else ("zh_TW" if content_lang.startswith("zh") else LOCALE[lang]),
            t=esc(page_title), d=esc(desc or tr(S, "description", lang)), name=esc(S["name"]), zh=esc(S.get("name_zh", "")),
            c=esc(canonical), hreflang=hreflang, ogt=og_type, img=esc(image), icon=url("assets/favicon-32.png"), ico=url("favicon.ico"), touch=url("assets/apple-touch-icon.png"), manifest=url("site.webmanifest"),
-           css=versioned("assets/style.css"), fonts=versioned("assets/fonts/fonts.css"), font_r=url("assets/fonts/Minipax-Regular.woff2"), font_b=url("assets/fonts/Minipax-Bold.woff2"), js=versioned("assets/site.js"), fx=versioned("assets/effects.js"), feed=url("blog/feed.xml"),
+           css=versioned("assets/style.css"), fonts=versioned("assets/fonts/fonts.css"), fonts_g=versioned("assets/fonts/fonts-google.css"), font_r=url("assets/fonts/Minipax-Regular.woff2"), font_b=url("assets/fonts/Minipax-Bold.woff2"), js=versioned("assets/site.js"), fx=versioned("assets/effects.js"), feed=url("blog/feed.xml"),
            ga=ga, ld=ld_tag, home=url(LP[lang]), imp=url("impressum/"), dsg=url("datenschutz/"), nav=nav, foot_nav=foot_nav, more=u["more"], switch=switch,
            menu=u["menu"], language=u["language"], privacy=u["privacy"], email=esc(S["email"]), links=links,
            year=datetime.date.today().year, full=" full" if full else "", body=body)
@@ -864,7 +865,8 @@ for L in LANGS:
         return "cv-" + re.sub(r"[^a-z]+", "-", title.lower()).strip("-")  # prefixed: #performances is the works page's band
 
     CV_SHOW = 8
-    cv, jumps = "", []
+    CV_SHORT = 5  # neighbouring sections with this many rows or fewer sit side by side
+    secs, jumps = [], []  # (row count, html)
     texts = press_rows("read")
     for sec in D["about"]["sections"]:
         rows = []
@@ -877,10 +879,22 @@ for L in LANGS:
             esc(u["show_all"] % len(rows)), "".join(rows[CV_SHOW:])) if len(rows) > CV_SHOW + 2 else "".join(rows[CV_SHOW:]))
         sid = cv_id(sec["title"])
         jumps.append((sid, tr(sec, "title", L)))
-        cv += '<section class="cv-sec" id="%s"><h2>%s</h2><div>%s</div></section>' % (sid, esc(tr(sec, "title", L)), body)
+        secs.append((len(rows), '<section class="cv-sec" id="%s"><h2>%s</h2><div>%s</div></section>' % (sid, esc(tr(sec, "title", L)), body)))
         if sec["title"] == "Publications & Writing" and texts:  # texts by others follow the own texts
             jumps.append(("texts", u["press_groups"]["read"]))
-            cv += '<section class="cv-sec" id="texts"><h2>%s</h2><div>%s</div></section>' % (esc(u["press_groups"]["read"]), texts)
+            secs.append((texts.count('class="cv-row'), '<section class="cv-sec" id="texts"><h2>%s</h2><div>%s</div></section>' % (esc(u["press_groups"]["read"]), texts)))
+    cv, i = "", 0
+    while i < len(secs):
+        j = i
+        while j < len(secs) and secs[j][0] <= CV_SHORT:
+            j += 1
+        if j - i >= 2:
+            cv += '<div class="cv-pair">%s</div>' % "".join(h for _, h in secs[i:j])
+            i = j
+        else:
+            cv += secs[i][1]
+            i += 1
+    cv = '<div class="cv">%s</div>' % cv
     cv_nav = '<nav class="cv-nav mono" aria-label="CV">%s</nav>' % "".join('<a href="#%s">%s</a>' % (i, esc(t)) for i, t in jumps)
 
     bio = tr(D["about"], "bio", L)
@@ -1047,7 +1061,8 @@ page("impressum/", "Impressum", "Impressum / legal notice of %s." % S["name"], b
 <p>Diese Website verwendet freie Schriften unter der <a href="https://openfontlicense.org/">SIL Open Font License 1.1</a>; die Schriftdateien liegen auf diesem Server, die Lizenztexte sind jeweils verlinkt. / This site uses open-source typefaces under the SIL Open Font License 1.1, served from this server.</p>
 <ul class="font-credits">
 <li><b>Minipax</b> von Raphaël Ronot (Text und Überschriften Latein / text and headings, Latin): <a href="https://github.com/ronotypo/Minipax">github.com/ronotypo/Minipax</a>, Lizenz: <a href="{fonts}LICENSES/Minipax-OFL.txt">OFL</a></li>
-<li><b>源起明體 GenKi Min2 TW</b> (Regular, Bold) von ButTaiwan, auf Basis von Source Han Serif (Adobe) (Fließtext Chinesisch / body text, Chinese): <a href="https://github.com/ButTaiwan/genyo-font">github.com/ButTaiwan/genyo-font</a>, Lizenz: <a href="{fonts}LICENSES/GenYo-GenKi-OFL.txt">OFL</a>. Für das Web in Teilmengen zerlegt (GenKi Min2 TW Web).</li>
+<li><b>仙人掌明體 Cactus Classical Serif</b> von Tian Haidong und Moonlit Owen (Fließtext Chinesisch / body text, Chinese): <a href="https://github.com/MoonlitOwen/CactusSerif">github.com/MoonlitOwen/CactusSerif</a>, Lizenz: <a href="{fonts}LICENSES/Cactus-Classical-Serif-OFL.txt">OFL</a>. Teilmengen von Google Fonts, auf diesem Server.</li>
+<li><b>芫荽 Iansui</b> von ButTaiwan, auf Basis von Klee One (Fontworks) (Anmerkungen, Bildunterschriften und Chat, Chinesisch / notes, captions and chat, Chinese): <a href="https://github.com/ButTaiwan/iansui">github.com/ButTaiwan/iansui</a>, Lizenz: <a href="{fonts}LICENSES/Iansui-OFL.txt">OFL</a>. Teilmengen von Google Fonts, auf diesem Server.</li>
 <li><b>jf open 粉圓 (jf open huninn)</b> von justfont (Überschriften Chinesisch / headings, Chinese): <a href="https://github.com/justfont/open-huninn-font">github.com/justfont/open-huninn-font</a>, Lizenz: <a href="{fonts}LICENSES/jf-open-huninn-OFL.txt">OFL</a>. Für das Web in Teilmengen zerlegt und daher umbenannt (LTC Round), wie es die Lizenz für den reservierten Namen verlangt.</li>
 </ul>
 <p class="en">Legal notice for this personal artist website. Contact: {email}.</p>

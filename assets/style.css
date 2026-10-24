@@ -24,12 +24,14 @@ html { font-size: 80%; }
   --label: 21.25rem;       /* heading column on list pages */
 
   /* Self-hosted open fonts (assets/fonts/, licences in assets/fonts/LICENSES/):
-     text: Minipax (Latin) + GenKi Min2 TW (Chinese, from 源樣/源起明體);
-     display: Minipax Bold (Latin) + LTC Round (Chinese, from jf open 粉圓, one weight: no faux bold). */
-  --text: "Minipax", "GenKi Min2 TW", "Songti TC", "Noto Serif TC", "PMingLiU", serif;
+     text: Minipax (Latin) + Cactus Classical Serif (Chinese, 仙人掌明體, one weight);
+     display: Minipax Bold (Latin) + LTC Round (Chinese, from jf open 粉圓, one weight: no faux bold);
+     note: Minipax (Latin) + Iansui (Chinese, 芫荽) for Chinese small print, captions and the chat. */
+  --text: "Minipax", "Cactus Classical Serif", "Songti TC", "Noto Serif TC", "PMingLiU", serif;
+  --note: "Minipax", "Iansui", "Cactus Classical Serif", serif;
   --display: "Minipax", "LTC Round", "Helvetica Neue", Arial, "PingFang TC", "Microsoft JhengHei", sans-serif;
   --sans: var(--text);
-  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, "Courier New", monospace;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, "Courier New", "Iansui", monospace;
 
   --fs-body: 1.1562rem;
   --fs-meta: 0.875rem;
@@ -58,11 +60,14 @@ button { font: inherit; color: inherit; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 /* underlined links inside running text */
-.prose a, .meta a, .cv-row a, .contact a {
+.prose a, .meta a, .contact a {
   text-decoration: underline; text-decoration-thickness: 1px;
   text-underline-offset: 0.1875rem; text-decoration-color: var(--dim);
 }
-.prose a:hover, .meta a:hover, .cv-row a:hover, .contact a:hover { text-decoration-color: var(--ink); }
+.prose a:hover, .meta a:hover, .contact a:hover { text-decoration-color: var(--ink); }
+/* CV rows and the CV jump list: no underlines (too many lines), underline only on hover */
+.cv-row a { text-decoration: none; }
+.cv-row a:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.1875rem; }
 
 /* ---------- sidebar ---------- */
 .side {
@@ -123,6 +128,7 @@ html:lang(zh) .nav a { font-family: var(--display); font-synthesis: none; }
   position: relative; z-index: 1; align-self: stretch; margin: auto var(--pad) 4.5rem 0; padding-top: 3rem;
   max-width: 51.25rem; font-size: clamp(1.125rem, 1.75vw, 1.625rem); line-height: 1.45; font-weight: 700; font-synthesis: none; letter-spacing: -0.015em;
 }
+html:lang(zh) .home-statement { font-family: var(--display); font-weight: 400; letter-spacing: 0.02em; line-height: 1.6; }
 .home-statement.empty::before { content: ""; display: block; height: 2.6em; }
 .home-statement span { background: var(--bg); box-decoration-break: clone; -webkit-box-decoration-break: clone; padding: 0 .12em; }
 .home-selected { padding: 6rem var(--pad) 7.5rem 0; }
@@ -441,6 +447,13 @@ html:lang(zh) .card .cap .kw { font-size: 0.9688rem; line-height: 1.6; }
 html:lang(zh) .perf p, html:lang(zh) .perf.talks p, html:lang(zh) #performances .perf p { font-size: 0.9688rem; line-height: 1.65; }
 html:lang(zh) #performances .perf p, html:lang(zh) #performances .sub-head .lead { color: #c4c4c4; }
 html:lang(zh) .contact-note { font-size: 0.9688rem; }
+/* Chinese roles: 仙人掌明體 for reading (--text), 粉圓 for headings (--display), 芫荽 for small print, notes and
+   the chat (--note; the chat is in --mono, which falls back to Iansui for Chinese). Neither Chinese text font
+   has a bold: bold terms in running text use the heading font. */
+html:lang(zh) .card .cap .kw, html:lang(zh) .perf p, html:lang(zh) .press-note, html:lang(zh) .contact-note,
+html:lang(zh) .page-head .lead, html:lang(zh) .sub-head .lead, html:lang(zh) .cv-nav, html:lang(zh) .cv-more summary,
+html:lang(zh) .perf-more, html:lang(zh) .post-body figcaption { font-family: var(--note); }
+html:lang(zh) .prose strong { font-family: var(--display); }
 /* workshop cards: show the whole screenshot, no cropping */
 .shop-card .thumb img { object-fit: contain; }
 
@@ -449,11 +462,19 @@ html:lang(zh) .contact-note { font-size: 0.9688rem; }
 .about-text p + p { margin-top: 0.9em; }
 .about-top .about-text + .contact { margin-top: 2.25rem; }
 .cv-nav { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; margin: -2.5rem 0 3rem calc(var(--label) + 3rem); font-size: 0.8125rem; color: var(--mut); }
-.cv-nav a { border-bottom: 1px solid var(--line); }
-.cv-nav a:hover { color: var(--ink); border-color: var(--ink); }
+.cv-nav a { border-bottom: 0; }
+.cv-nav a:hover { color: var(--ink); }
 .cv-sec { scroll-margin-top: 1.5rem; }
 .cv-more summary { cursor: pointer; margin: 0.75rem 0 0.25rem; font-size: 0.8125rem; color: var(--mut); list-style: none; }
 .cv-more summary::-webkit-details-marker { display: none; }
 .cv-more summary::before { content: "+ "; }
 .cv-more[open] summary { display: none; }
 @media (max-width: 800px) { .cv-nav { margin: -1.5rem 0 2rem; } }
+/* the CV itself: headings above the lists, rows across the full width, short sections side by side */
+.cv { max-width: 62rem; }
+.cv .cv-sec { display: block; margin-right: 0; padding: 1.25rem 0 1.5rem; }
+.cv .cv-sec h2 { font-size: 0.9375rem; margin-bottom: 0.5rem; }
+.cv .cv-row { grid-template-columns: 5.5em 1fr; gap: 0.75rem; padding: 0.15rem 0; line-height: 1.5; }
+.cv-pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); gap: 0 3rem; border-top: 1px solid var(--line); }
+.cv-pair .cv-sec { border-top: 0; }
+.about-top + .cv-nav, .cv-nav { margin-left: 0; }

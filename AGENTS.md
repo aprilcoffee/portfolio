@@ -28,7 +28,7 @@
 | 介面文字（選單、按鈕、頁面引言、對話框提示…） | `scripts/build.py` 的 `UI` 字典 |
 | 頁面結構、HTML、SEO（title、canonical、hreflang、JSON-LD、sitemap） | `scripts/build.py` |
 | Impressum、Datenschutz（只有德文） | `scripts/build.py` 裡 `page("impressum/"…)`、`page("datenschutz/"…)`、`CHAT_PRIVACY` |
-| 字型 | `assets/fonts/`（`fonts.css` 與字型檔都由 `scripts/build-fonts.py` 產生，不要手改；授權在 `assets/fonts/LICENSES/`，出處標示在 Impressum 的「Schriften」段落）。CSS 變數 `--text`（內文：Minipax＋中文 GenKi Min2／源起明體）、`--display`（標題與選單：Minipax Bold＋中文 LTC Round／粉圓，只有一種字重）、`--mono`。2026-10 試過對調（內文用粉圓），作者認為無法閱讀，已改回，不要再對調。中文小字（卡片關鍵字、說明）在 `style.css` 最後有放大加深的規則 |
+| 字型 | `assets/fonts/`（都是 SIL OFL 開源字型，放在自己的伺服器；`fonts.css`、Minipax、粉圓由 `scripts/build-fonts.py` 產生，`fonts-google.css` 與仙人掌明體、芫荽的切片由 `scripts/fetch-google-fonts.py` 從 Google Fonts 下載一次，都不要手改；授權在 `assets/fonts/LICENSES/`，出處標示在 Impressum 的「Schriften」段落）。中文的分工：`--text` 內文（Minipax＋仙人掌明體 Cactus Classical Serif：作品文字、About、工作坊、CV）；`--display` 標題、選單、卡片標題、首頁大字（Minipax Bold＋LTC Round／粉圓）；`--note` 中文小字與說明（Minipax＋芫荽 Iansui：卡片關鍵字、頁首引言、表演與講座說明、CV 跳轉列、圖說）；問答框用 `--mono`，中文落到芫荽。兩套中文內文字都沒有粗體，內文裡的粗體用標題字。2026-10 試過內文用粉圓，無法閱讀，不要再用粉圓排內文；源起明體小字太細，已換掉 |
 | 樣式 | `assets/style.css`（全部用 rem；桌機 `html{font-size:80%}`，≤800px 回到 100%；斷點 1024px、800px） |
 | 選單、語言切換等前端行為 | `assets/site.js` |
 | p5.js 背景特效（首頁字元場、側欄訊號線） | `assets/effects.js` |
@@ -71,7 +71,7 @@
 | `performances[]`（作品頁下方的表演紀錄） | `note`、`title`（只在需要區分時，例如 Imaginary Landscape（表演版）） | `note_de/_zh`、`title_de/_zh` |
 | `workshops[]` | `title`、`summary`、`text`、`held` | `_de/_zh` |
 | `about` | `bio`（短，也是頁面描述與 JSON-LD）、`text`（較長的介紹，顯示在 bio 下方，空一行分段） | `bio_de/_zh`、`text_de/_zh` |
-| `about.sections[]`（CV 區塊，順序即頁面順序：展覽、講座、出版、獎項、教學、學歷、表演、新媒體專案；頁首有跳轉列，超過 10 筆的區塊只先顯示 8 筆，其餘收進「顯示全部」） | `title` | `title_de/_zh` |
+| `about.sections[]`（CV 區塊，順序即頁面順序：教學、獎項與獎助、展覽、講座、出版、學歷、表演、新媒體專案；頁首有跳轉列，標題放在列表上方、條目佔滿寬度；相鄰的短區塊（5 筆以內，例如教學與獎項）並排成兩欄（`build.py` 的 `CV_SHORT`）；超過 10 筆的區塊只先顯示 8 筆，其餘收進「顯示全部」） | `title` | `title_de/_zh` |
 | `about.sections[].items[]`（CV 每一行） | `text` | `text_de/_zh`（目前多數只有 `_zh`） |
 
 注意：
@@ -89,7 +89,7 @@
 - 表演影片標題（除了上面說的區分用 `title_zh`）、合作者（`collaborators`）、年份、網址不翻譯。
 - 新增一個要翻譯的欄位時：在 `site.json` 加 `xxx_de`/`xxx_zh`，在 `build.py` 用 `tr(obj, "xxx", L)` 讀，
   並在 `admin/admin.js` 加對應的輸入框（照 `text_de`、`type_zh` 那幾行的寫法），作者才能在後台編輯。
-- 翻譯風格：德文用 Sie、性別中立寫法（`Künstler*innen`）；中文用繁體、台灣用語、全形標點，作品名用《》。
+- 翻譯風格：德文用 Sie、性別中立寫法（`Künstler*innen`）；中文用繁體、台灣用語、全形標點，作品名用《》；中文裡能不用英文就不用：AI 一律寫「人工智慧」；技術詞用中文，長文裡第一次出現時括號附英文：回授（Feedback）、詞元（Token）、嵌入向量（Embedding）、強制登入頁面（captive portal），之後只寫中文。其他固定譯法：cybernetics 寫「模控論」、operational image 寫「操作性影像」、audiovisual performance 寫「音像演出」、prompt 寫「提示詞」。職稱、機構、活動保留原文括號，例如「講師暨藝術研究員（Künstlerischer Mitarbeiter）」「科隆媒體藝術學院（KHM）」「（39C3）」，但 TNUA 不加；博物館等不音譯，寫原文全名再括號附中文意思，例如 Rautenstrauch-Joest-Museum – Kulturen der Welt（科隆世界文化民族學博物館，RJM）。Storage Museum、Transformer 保留英文。保留英文的還有：作品與文章標題、人名、軟體與模型名稱（Stable Diffusion、CLIP、ChatGPT）、實驗裡實際輸入的英文字（giraffe、happy）。
 
 ### 2. 介面文字：`scripts/build.py` 的 `UI` 字典
 
