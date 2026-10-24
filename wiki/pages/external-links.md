@@ -69,7 +69,7 @@ Where Liu's work can be checked, watched or read outside his own website: talk r
 ## Open questions
 
 - (Resolved: the Dortmund lecture is 2024, as in the CV; the artist says the organiser's 2025 page is a continuation.)
-- **Not yet read:** *The Rule Becomes the Author!* (2021), *Positioning – A Prerequisite for Immersion* (2024), the MOCA Taipei catalogue text.
+- **Not yet read:** *The Rule Becomes the Author!* (2021). (*Positioning*, the MOCA Taipei catalogue text and *On the Materiality of AI* now have their own pages under texts/.)
 - **Not found:** a 2025 prize-winners page at FIfF naming Liu, an independent news or press article about Liu, and a public page for the Digi-Lehrfellows seminar's student exhibition.
 
 ## Related
