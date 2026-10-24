@@ -24,12 +24,14 @@ html { font-size: 80%; }
   --label: 21.25rem;       /* heading column on list pages */
 
   /* Self-hosted open fonts (assets/fonts/, licences in assets/fonts/LICENSES/):
-     text: Minipax (Latin) + GenKi Min2 TW (Chinese, from 源樣/源起明體);
-     display: Minipax Bold (Latin) + LTC Round (Chinese, from jf open 粉圓, one weight: no faux bold). */
-  --text: "Minipax", "GenKi Min2 TW", "Songti TC", "Noto Serif TC", "PMingLiU", serif;
+     text: Minipax (Latin) + Cactus Classical Serif (Chinese, 仙人掌明體, one weight);
+     display: Minipax Bold (Latin) + LTC Round (Chinese, from jf open 粉圓, one weight: no faux bold);
+     note: Minipax (Latin) + Iansui (Chinese, 芫荽) for Chinese small print, captions and the chat. */
+  --text: "Minipax", "Cactus Classical Serif", "Songti TC", "Noto Serif TC", "PMingLiU", serif;
+  --note: "Minipax", "Iansui", "Cactus Classical Serif", serif;
   --display: "Minipax", "LTC Round", "Helvetica Neue", Arial, "PingFang TC", "Microsoft JhengHei", sans-serif;
   --sans: var(--text);
-  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, "Courier New", monospace;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, "Courier New", "Iansui", monospace;
 
   --fs-body: 1.1562rem;
   --fs-meta: 0.875rem;
@@ -442,6 +444,13 @@ html:lang(zh) .card .cap .kw { font-size: 0.9688rem; line-height: 1.6; }
 html:lang(zh) .perf p, html:lang(zh) .perf.talks p, html:lang(zh) #performances .perf p { font-size: 0.9688rem; line-height: 1.65; }
 html:lang(zh) #performances .perf p, html:lang(zh) #performances .sub-head .lead { color: #c4c4c4; }
 html:lang(zh) .contact-note { font-size: 0.9688rem; }
+/* Chinese roles: 仙人掌明體 for reading (--text), 粉圓 for headings (--display), 芫荽 for small print, notes and
+   the chat (--note; the chat is in --mono, which falls back to Iansui for Chinese). Neither Chinese text font
+   has a bold: bold terms in running text use the heading font. */
+html:lang(zh) .card .cap .kw, html:lang(zh) .perf p, html:lang(zh) .press-note, html:lang(zh) .contact-note,
+html:lang(zh) .page-head .lead, html:lang(zh) .sub-head .lead, html:lang(zh) .cv-nav, html:lang(zh) .cv-more summary,
+html:lang(zh) .perf-more, html:lang(zh) .post-body figcaption { font-family: var(--note); }
+html:lang(zh) .prose strong { font-family: var(--display); }
 /* workshop cards: show the whole screenshot, no cropping */
 .shop-card .thumb img { object-fit: contain; }
 

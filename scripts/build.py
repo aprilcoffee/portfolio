@@ -546,6 +546,7 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
 <link rel="preload" href="{font_r}" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{font_b}" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{fonts}" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="{fonts}"></noscript>
+<link rel="stylesheet" href="{fonts_g}" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="{fonts_g}"></noscript>
 <link rel="stylesheet" href="{css}">
 {ld}
 </head>
@@ -576,7 +577,7 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
            locale=LOCALE[lang] if not content_lang else ("zh_TW" if content_lang.startswith("zh") else LOCALE[lang]),
            t=esc(page_title), d=esc(desc or tr(S, "description", lang)), name=esc(S["name"]), zh=esc(S.get("name_zh", "")),
            c=esc(canonical), hreflang=hreflang, ogt=og_type, img=esc(image), icon=url("assets/favicon-32.png"), ico=url("favicon.ico"), touch=url("assets/apple-touch-icon.png"), manifest=url("site.webmanifest"),
-           css=versioned("assets/style.css"), fonts=versioned("assets/fonts/fonts.css"), font_r=url("assets/fonts/Minipax-Regular.woff2"), font_b=url("assets/fonts/Minipax-Bold.woff2"), js=versioned("assets/site.js"), fx=versioned("assets/effects.js"), feed=url("blog/feed.xml"),
+           css=versioned("assets/style.css"), fonts=versioned("assets/fonts/fonts.css"), fonts_g=versioned("assets/fonts/fonts-google.css"), font_r=url("assets/fonts/Minipax-Regular.woff2"), font_b=url("assets/fonts/Minipax-Bold.woff2"), js=versioned("assets/site.js"), fx=versioned("assets/effects.js"), feed=url("blog/feed.xml"),
            ga=ga, ld=ld_tag, home=url(LP[lang]), imp=url("impressum/"), dsg=url("datenschutz/"), nav=nav, foot_nav=foot_nav, more=u["more"], switch=switch,
            menu=u["menu"], language=u["language"], privacy=u["privacy"], email=esc(S["email"]), links=links,
            year=datetime.date.today().year, full=" full" if full else "", body=body)
@@ -1047,7 +1048,8 @@ page("impressum/", "Impressum", "Impressum / legal notice of %s." % S["name"], b
 <p>Diese Website verwendet freie Schriften unter der <a href="https://openfontlicense.org/">SIL Open Font License 1.1</a>; die Schriftdateien liegen auf diesem Server, die Lizenztexte sind jeweils verlinkt. / This site uses open-source typefaces under the SIL Open Font License 1.1, served from this server.</p>
 <ul class="font-credits">
 <li><b>Minipax</b> von Raphaël Ronot (Text und Überschriften Latein / text and headings, Latin): <a href="https://github.com/ronotypo/Minipax">github.com/ronotypo/Minipax</a>, Lizenz: <a href="{fonts}LICENSES/Minipax-OFL.txt">OFL</a></li>
-<li><b>源起明體 GenKi Min2 TW</b> (Regular, Bold) von ButTaiwan, auf Basis von Source Han Serif (Adobe) (Fließtext Chinesisch / body text, Chinese): <a href="https://github.com/ButTaiwan/genyo-font">github.com/ButTaiwan/genyo-font</a>, Lizenz: <a href="{fonts}LICENSES/GenYo-GenKi-OFL.txt">OFL</a>. Für das Web in Teilmengen zerlegt (GenKi Min2 TW Web).</li>
+<li><b>仙人掌明體 Cactus Classical Serif</b> von Tian Haidong und Moonlit Owen (Fließtext Chinesisch / body text, Chinese): <a href="https://github.com/MoonlitOwen/CactusSerif">github.com/MoonlitOwen/CactusSerif</a>, Lizenz: <a href="{fonts}LICENSES/Cactus-Classical-Serif-OFL.txt">OFL</a>. Teilmengen von Google Fonts, auf diesem Server.</li>
+<li><b>芫荽 Iansui</b> von ButTaiwan, auf Basis von Klee One (Fontworks) (Anmerkungen, Bildunterschriften und Chat, Chinesisch / notes, captions and chat, Chinese): <a href="https://github.com/ButTaiwan/iansui">github.com/ButTaiwan/iansui</a>, Lizenz: <a href="{fonts}LICENSES/Iansui-OFL.txt">OFL</a>. Teilmengen von Google Fonts, auf diesem Server.</li>
 <li><b>jf open 粉圓 (jf open huninn)</b> von justfont (Überschriften Chinesisch / headings, Chinese): <a href="https://github.com/justfont/open-huninn-font">github.com/justfont/open-huninn-font</a>, Lizenz: <a href="{fonts}LICENSES/jf-open-huninn-OFL.txt">OFL</a>. Für das Web in Teilmengen zerlegt und daher umbenannt (LTC Round), wie es die Lizenz für den reservierten Namen verlangt.</li>
 </ul>
 <p class="en">Legal notice for this personal artist website. Contact: {email}.</p>

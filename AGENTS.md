@@ -28,7 +28,7 @@
 | 介面文字（選單、按鈕、頁面引言、對話框提示…） | `scripts/build.py` 的 `UI` 字典 |
 | 頁面結構、HTML、SEO（title、canonical、hreflang、JSON-LD、sitemap） | `scripts/build.py` |
 | Impressum、Datenschutz（只有德文） | `scripts/build.py` 裡 `page("impressum/"…)`、`page("datenschutz/"…)`、`CHAT_PRIVACY` |
-| 字型 | `assets/fonts/`（`fonts.css` 與字型檔都由 `scripts/build-fonts.py` 產生，不要手改；授權在 `assets/fonts/LICENSES/`，出處標示在 Impressum 的「Schriften」段落）。CSS 變數 `--text`（內文：Minipax＋中文 GenKi Min2／源起明體）、`--display`（標題與選單：Minipax Bold＋中文 LTC Round／粉圓，只有一種字重）、`--mono`。2026-10 試過對調（內文用粉圓），作者認為無法閱讀，已改回，不要再對調。中文小字（卡片關鍵字、說明）在 `style.css` 最後有放大加深的規則；首頁大字 `home_text` 的中文用粉圓（`html:lang(zh) .home-statement`） |
+| 字型 | `assets/fonts/`（都是 SIL OFL 開源字型，放在自己的伺服器；`fonts.css`、Minipax、粉圓由 `scripts/build-fonts.py` 產生，`fonts-google.css` 與仙人掌明體、芫荽的切片由 `scripts/fetch-google-fonts.py` 從 Google Fonts 下載一次，都不要手改；授權在 `assets/fonts/LICENSES/`，出處標示在 Impressum 的「Schriften」段落）。中文的分工：`--text` 內文（Minipax＋仙人掌明體 Cactus Classical Serif：作品文字、About、工作坊、CV）；`--display` 標題、選單、卡片標題、首頁大字（Minipax Bold＋LTC Round／粉圓）；`--note` 中文小字與說明（Minipax＋芫荽 Iansui：卡片關鍵字、頁首引言、表演與講座說明、CV 跳轉列、圖說）；問答框用 `--mono`，中文落到芫荽。兩套中文內文字都沒有粗體，內文裡的粗體用標題字。2026-10 試過內文用粉圓，無法閱讀，不要再用粉圓排內文；源起明體小字太細，已換掉 |
 | 樣式 | `assets/style.css`（全部用 rem；桌機 `html{font-size:80%}`，≤800px 回到 100%；斷點 1024px、800px） |
 | 選單、語言切換等前端行為 | `assets/site.js` |
 | p5.js 背景特效（首頁字元場、側欄訊號線） | `assets/effects.js` |
