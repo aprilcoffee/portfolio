@@ -508,3 +508,19 @@ html.zoomed { overflow: hidden; }
 .cv .cv-row { grid-template-columns: 5.5rem 1fr; gap: 0.75rem; }
 .about-top .contact, .about-top .topics { grid-template-columns: 6.25rem 1fr; }
 .about-top .contact-note { margin-left: 6.25rem; }
+/* the CV uses the whole width; running text keeps a readable line length */
+.cv, .about-top { max-width: none; }
+.about-top .bio { max-width: 54rem; }
+.about-top .about-text { max-width: 46rem; }
+/* wide screens: CV sections side by side in two columns, so the page uses its width */
+@media (min-width: 1400px) {
+  .cv { display: grid; grid-template-columns: 1fr 1fr; column-gap: 3rem; align-items: start; }
+  .cv-pair { grid-column: 1 / -1; }
+}
+/* CV type a little larger */
+.cv .cv-row { font-size: 1.0625rem; grid-template-columns: 6rem 1fr; }
+.cv .cv-row .mono { font-size: 0.875rem; }
+.cv .cv-sec h2 { font-size: 1.0625rem; }
+.cv-nav { font-size: 0.875rem; }
+.about-top .contact, .about-top .topics { grid-template-columns: 6.75rem 1fr; }
+.about-top .contact-note { margin-left: 6.75rem; }
