@@ -24,11 +24,12 @@ html { font-size: 80%; }
   --label: 21.25rem;       /* heading column on list pages */
 
   /* Self-hosted open fonts (assets/fonts/, licences in assets/fonts/LICENSES/):
-     text: Minipax (Latin) + Noto Serif TC Medium (Chinese, 思源宋體; Regular and 仙人掌明體 were too thin on white);
+     text: Minipax (Latin) + the reader's own system sans for Chinese, as on Facebook (PingFang TC on Apple,
+       Microsoft JhengHei on Windows, Noto Sans CJK on Android); the serif fonts tried were too thin;
      display: Minipax Bold (Latin) + LTC Round (Chinese, from jf open 粉圓, one weight: no faux bold);
      note: Minipax (Latin) + Iansui (Chinese, 芫荽) for Chinese small print, captions and the chat. */
-  --text: "Minipax", "Noto Serif TC", "Songti TC", "PMingLiU", serif;
-  --note: "Minipax", "Iansui", "Noto Serif TC", serif;
+  --text: "Minipax", "PingFang TC", "Heiti TC", "Microsoft JhengHei", "Noto Sans TC", "Noto Sans CJK TC", sans-serif;
+  --note: "Minipax", "Iansui", "PingFang TC", "Microsoft JhengHei", sans-serif;
   --display: "Minipax", "LTC Round", "Helvetica Neue", Arial, "PingFang TC", "Microsoft JhengHei", sans-serif;
   --sans: var(--text);
   --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, "Courier New", "Iansui", monospace;
@@ -448,13 +449,11 @@ html:lang(zh) .card .cap .kw { font-size: 0.9688rem; line-height: 1.6; }
 html:lang(zh) .perf p, html:lang(zh) .perf.talks p, html:lang(zh) #performances .perf p { font-size: 0.9688rem; line-height: 1.65; }
 html:lang(zh) #performances .perf p, html:lang(zh) #performances .sub-head .lead { color: #c4c4c4; }
 html:lang(zh) .contact-note { font-size: 0.9688rem; }
-/* Chinese roles: 思源宋體 Medium for reading (--text), 粉圓 for headings (--display), 芫荽 for small print, notes and
-   the chat (--note; the chat is in --mono, which falls back to Iansui for Chinese). Neither Chinese text font
-   has a bold: bold terms in running text use the heading font. */
+/* Chinese roles: the system sans for reading (--text), 粉圓 for headings (--display), 芫荽 for small print, notes and
+   the chat (--note; the chat is in --mono, which falls back to Iansui for Chinese). */
 html:lang(zh) .card .cap .kw, html:lang(zh) .perf p, html:lang(zh) .press-note, html:lang(zh) .contact-note,
 html:lang(zh) .page-head .lead, html:lang(zh) .sub-head .lead, html:lang(zh) .cv-nav, html:lang(zh) .cv-more summary,
 html:lang(zh) .perf-more, html:lang(zh) .post-body figcaption { font-family: var(--note); }
-html:lang(zh) .prose strong { font-family: var(--display); }
 /* workshop cards: show the whole screenshot, no cropping */
 .shop-card .thumb img { object-fit: contain; }
 

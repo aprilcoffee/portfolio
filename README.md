@@ -70,7 +70,7 @@ https://liutingchun.com 的原始碼：從 Wix 搬出來的個人網站，由 Gi
 ## 設計
 
 - 版面依作品集設計系統：白底、左側資訊欄＋右側圖版（plates）、等寬字的中繼資料、極少量的紅色 `#E4032E`。
-- 字型：開源字型，放在自己的伺服器（`assets/fonts/`，不從 Google 載入，德國法院曾對遠端 Google Fonts 判罰）。內文：Minipax（拉丁）＋思源宋體 Noto Serif TC Medium（中文）；標題：Minipax Bold（拉丁）＋ jf open 粉圓（中文，子集後改名 LTC Round）；中文小字、說明與問答框：芫荽 Iansui。等寬字仍用系統字。粉圓用 `scripts/build-fonts.py` 切成多個 unicode-range 小檔（第一包是網站用到的字，網站新增大量新字時重跑）；思源宋體 Medium 與芫荽用 `scripts/fetch-google-fonts.py` 下載 Google Fonts 已切好的小檔，存在自己的伺服器。授權與出處標示在 Impressum。
+- 字型：開源字型，放在自己的伺服器（`assets/fonts/`，不從 Google 載入，德國法院曾對遠端 Google Fonts 判罰）。內文：Minipax（拉丁）＋系統黑體（中文，跟臉書一樣，不另外下載）；標題：Minipax Bold（拉丁）＋ jf open 粉圓（中文，子集後改名 LTC Round）；中文小字、說明與問答框：芫荽 Iansui。等寬字仍用系統字。粉圓用 `scripts/build-fonts.py` 切成多個 unicode-range 小檔（第一包是網站用到的字，網站新增大量新字時重跑）；芫荽用 `scripts/fetch-google-fonts.py` 下載 Google Fonts 已切好的小檔，存在自己的伺服器。授權與出處標示在 Impressum。
 - p5.js 特效在 `assets/effects.js`：首頁字元場（字元依〈Processing 蒙地卡羅演算法做文字動畫〉算出的密度排序）、側欄訊號線。p5.js 在頁面載入完成後才載入；使用者設定「減少動態」時只畫靜態一格。
 
 ## Google Analytics 與法律頁
