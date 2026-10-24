@@ -14,7 +14,7 @@ holding characters on the page. The first chunk holds every Chinese character th
 the rest cover the Big5 character set (for blog posts and chat answers). Subsetting makes them
 modified versions under the SIL OFL, so they get new names: "jf open huninn" is a Reserved Font
 Name. Writes assets/fonts/fonts.css and copies the licences to assets/fonts/LICENSES/.
-The body and note fonts (Cactus Classical Serif, Iansui) come from scripts/fetch-google-fonts.py."""
+The body and note fonts (Noto Serif TC Medium, Iansui) come from scripts/fetch-google-fonts.py."""
 import glob, os, re, shutil, sys
 from fontTools.ttLib import TTFont
 from fontTools import subset

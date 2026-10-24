@@ -47,6 +47,62 @@
     el.replaceWith(wrap);
   });
 
+  // Images on work, workshop and blog pages open large on click; arrows / Esc to move and close.
+  var pics = Array.prototype.filter.call(
+    document.querySelectorAll('.plates figure img, .post-body figure img, .post-body p > img'),
+    function (img) { return !img.closest('a'); });
+  if (pics.length) {
+    var box = document.createElement('div'), big = document.createElement('img'), at = 0, back = null;
+    box.className = 'zoom';
+    box.hidden = true;
+    box.setAttribute('role', 'dialog');
+    box.setAttribute('aria-modal', 'true');
+    box.tabIndex = -1;
+    box.innerHTML = '<button type="button" class="zoom-x" aria-label="Close">×</button>' +
+      (pics.length > 1 ? '<button type="button" class="zoom-prev" aria-label="Previous">‹</button>' +
+        '<button type="button" class="zoom-next" aria-label="Next">›</button>' : '');
+    box.appendChild(big);
+    document.body.appendChild(box);
+    var show = function (i) {
+      at = (i + pics.length) % pics.length;
+      var img = pics[at];
+      big.src = img.getAttribute('src');  // src is the full-size file; srcset only holds smaller copies
+      big.alt = img.alt;
+    };
+    var close = function () {
+      box.hidden = true;
+      document.documentElement.classList.remove('zoomed');
+      if (back) back.focus();
+    };
+    pics.forEach(function (img, i) {
+      img.classList.add('zoomable');
+      img.tabIndex = 0;
+      var open = function () {
+        back = img;
+        show(i);
+        box.hidden = false;
+        document.documentElement.classList.add('zoomed');
+        box.focus();
+      };
+      img.addEventListener('click', open);
+      img.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+      });
+    });
+    box.addEventListener('click', function (e) {
+      var t = e.target;
+      if (t.classList.contains('zoom-prev')) show(at - 1);
+      else if (t.classList.contains('zoom-next')) show(at + 1);
+      else close();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (box.hidden) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowLeft' && pics.length > 1) show(at - 1);
+      else if (e.key === 'ArrowRight' && pics.length > 1) show(at + 1);
+    });
+  }
+
   // p5.js effects: loaded only when a page has one, after everything else is done,
   // so they never compete with the content for bandwidth.
   if (!me || !document.querySelector('[data-effect]')) return;
