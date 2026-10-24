@@ -425,3 +425,7 @@ button.embed.lite:hover img { opacity: 1; }
 .work-info .kicker a:hover { color: var(--ink); }
 @media (max-width: 1024px) { .perf.talks { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 800px) { .perf.talks { grid-template-columns: 1fr; } }
+.prose ul.dots { list-style: none; padding: 0; margin: 0.6em 0 0; }
+.prose ul.dots li { position: relative; padding-left: 1.1em; margin-top: 0.35em; }
+.prose ul.dots li::before { content: "·"; position: absolute; left: 0.2em; color: var(--mut); }
+.prose ul.dots strong { font-weight: 700; font-synthesis: none; }

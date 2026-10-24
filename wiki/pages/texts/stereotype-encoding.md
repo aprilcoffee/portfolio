@@ -52,7 +52,7 @@ CLIP, ZeroCap, Stable Diffusion 1.2–1.5, LAION-Aesthetics, AVA, ThisPersonDoes
 
 ## Open questions
 
-- The CV lists the text under 2025 publications, and lists the symposium talk under 2026; the organiser's page dates the symposium 29 November 2025.
+- (Resolved October 2026: the CV now lists the symposium talk under 2025, as on the organiser's page, 29 November 2025.)
 
 ## Related
 

@@ -24,9 +24,11 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="alternate" type="application/rss+xml" title="Ting-Chun Liu — Blog" href="/blog/feed.xml">
-<script async src="/assets/analytics.js?v=3eef9b37" data-ga="G-5XL9T33VG0"></script>
-<link rel="stylesheet" href="/assets/fonts/fonts.css?v=51411f72">
-<link rel="stylesheet" href="/assets/style.css?v=3ca88f8a">
+<script async src="/assets/analytics.js?v=605f92d3" data-ga="G-5XL9T33VG0"></script>
+<link rel="preload" href="/assets/fonts/Minipax-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/Minipax-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts/fonts.css?v=51411f72" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="/assets/fonts/fonts.css?v=51411f72"></noscript>
+<link rel="stylesheet" href="/assets/style.css?v=4e08ccd5">
 <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Raspberry Pi 移位暫存器 (shift register) 控制 / 七段顯示器使用", "datePublished": "2019-03-17", "inLanguage": "zh-Hant", "url": "https://liutingchun.com/blog/raspberry-pi-shift-register/", "image": "https://liutingchun.com/images/wix/4eb1dd_3386eacc14aa498a9cba779f92284edc~mv2_d_4032_3024_s_4_2.webp", "description": "用 Python GPIO 控制 74HC595 / TPIC6C594 移位暫存器與七段顯示器，以及位元運算。", "author": {"@type": "Person", "name": "Ting-Chun Liu", "url": "https://liutingchun.com/", "jobTitle": "Media artist"}, "mainEntityOfPage": "https://liutingchun.com/blog/raspberry-pi-shift-register/"}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Ting-Chun Liu", "item": "https://liutingchun.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog (archived)", "item": "https://liutingchun.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Raspberry Pi 移位暫存器 (shift register) 控制 / 七段顯示器使用", "item": "https://liutingchun.com/blog/raspberry-pi-shift-register/"}]}]</script>
 </head>
 <body>
@@ -35,7 +37,7 @@
     <a class="brand" href="/"><span class="brand-en">Ting-Chun Liu</span><span class="brand-zh" lang="zh-Hant">劉庭均</span></a>
     <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">Menu</button>
   </div>
-  <nav class="nav" id="nav" aria-label="Main"><a href="/works/"><span>Works</span></a><a href="/workshops/"><span>Workshops &amp; Talks</span></a><a href="/about/"><span>About</span></a></nav>
+  <nav class="nav" id="nav" aria-label="Main"><a href="/works/"><span>Works</span></a><a href="/workshops/"><span>Talks &amp; Workshops</span></a><a href="/about/"><span>About</span></a></nav>
   <nav class="langs" aria-label="Language"><a href="/blog/" hreflang="en" lang="en" class="on" aria-current="true">EN</a><a href="/de/blog/" hreflang="de" lang="de">DE</a><a href="/zh/blog/" hreflang="zh-Hant" lang="zh-Hant">中文</a></nav>
   <div class="side-foot">
     <div class="signal" data-effect="signal" aria-hidden="true"></div>
@@ -51,11 +53,11 @@
 <p>適用晶片是TPIC6C594，還有74HC595或各種場合燈節超級萬用的燈條WS2812也可以使用同樣方式(還有還有其他的移位暫存器晶片，例如可以控制16個輸出的STP16C596，只是我沒用過不多說)</p>
 <p>(這篇先私心問一下 Wix SEO有沒有有經驗的人會用ＱＱ 我發現在wix寫的blog，google都搜不到)</p>
 <p><a href="/works/segmentary-moonlight/">Segmentary Moonlight</a></p>
-<figure><img src="/images/wix/4eb1dd_3386eacc14aa498a9cba779f92284edc~mv2_d_4032_3024_s_4_2.webp" alt="" loading="lazy" decoding="async" onerror="if(this.src!=='/images/wix/4eb1dd_3386eacc14aa498a9cba779f92284edc~mv2_d_4032_3024_s_4_2.webp')this.src='/images/wix/4eb1dd_3386eacc14aa498a9cba779f92284edc~mv2_d_4032_3024_s_4_2.webp'"></figure>
+<figure><img src="/images/wix/4eb1dd_3386eacc14aa498a9cba779f92284edc~mv2_d_4032_3024_s_4_2.webp" srcset="/images/_w/480/wix/4eb1dd_3386eacc14aa498a9cba779f92284edc~mv2_d_4032_3024_s_4_2.webp 480w, /images/_w/960/wix/4eb1dd_3386eacc14aa498a9cba779f92284edc~mv2_d_4032_3024_s_4_2.webp 960w, /images/wix/4eb1dd_3386eacc14aa498a9cba779f92284edc~mv2_d_4032_3024_s_4_2.webp 2000w" sizes="(max-width: 800px) 100vw, 55vw" alt="" loading="lazy" decoding="async" onerror="if(this.src!=='/images/wix/4eb1dd_3386eacc14aa498a9cba779f92284edc~mv2_d_4032_3024_s_4_2.webp')this.src='/images/wix/4eb1dd_3386eacc14aa498a9cba779f92284edc~mv2_d_4032_3024_s_4_2.webp'"></figure>
 <p>直接控制移位暫存器的好處，是如果沒有適當library(如Arduino的FastLED或Adafruit_NeoPixel)才需要使用。另外如果使用arduino firmata的話也可以用這種方式控制。就可以直接在processing呼叫arduino使用ws2812做mapping唷～～</p>
 <p>TPIC6C594非常類似74HC595，只是當需要驅動LED的電壓高於5V，就可以使用這片晶片。邏輯電路的部分我就跳過啦(因為我也看不懂)，直接說明code的部分。因為TPIC6C594非常類似74HC595除了可以供更高壓的電流外，我也忘記差別，希望大大指證，所以下面就以74HC595代稱並說明。使用74HC595這種晶片，可以簡單的使用3個pin腳便可以控制八個燈光/元件，當然進行串聯之後便可以控制更多的元件。</p>
 <h3>Pin腳們的說明</h3>
-<figure><img src="/images/wix/4eb1dd_7b25c618bce2424999bbc24786271a16~mv2.webp" alt="" loading="lazy" decoding="async" onerror="if(this.src!=='/images/wix/4eb1dd_7b25c618bce2424999bbc24786271a16~mv2.webp')this.src='/images/wix/4eb1dd_7b25c618bce2424999bbc24786271a16~mv2.webp'"></figure>
+<figure><img src="/images/wix/4eb1dd_7b25c618bce2424999bbc24786271a16~mv2.webp" srcset="/images/_w/480/wix/4eb1dd_7b25c618bce2424999bbc24786271a16~mv2.webp 480w, /images/_w/960/wix/4eb1dd_7b25c618bce2424999bbc24786271a16~mv2.webp 960w, /images/wix/4eb1dd_7b25c618bce2424999bbc24786271a16~mv2.webp 2000w" sizes="(max-width: 800px) 100vw, 55vw" alt="" loading="lazy" decoding="async" onerror="if(this.src!=='/images/wix/4eb1dd_7b25c618bce2424999bbc24786271a16~mv2.webp')this.src='/images/wix/4eb1dd_7b25c618bce2424999bbc24786271a16~mv2.webp'"></figure>
 <p>74HC595基本上上頭有16個腳位，分別是DS、SH_CP、ST_CP、Q0-Q7、Q7' ，還有 VCC、GND、OE跟MR。</p>
 <p>DS是Serial data input，就是負責給予Data的腳位。</p>
 <p>SH_CP是Shift register clock pin，也就是Clock Pin。</p>
@@ -75,7 +77,7 @@ segmentClock = 24
 segmentData = 25
 </code></pre>
 <p>將所有想要輸出的數字做編號以及建成變數，基本上七段顯示器每顆燈的編號如下。</p>
-<figure><img src="/images/wix/4eb1dd_ec30c34a1b724964b37876e9fda6c675~mv2.webp" alt="" loading="lazy" decoding="async" onerror="if(this.src!=='/images/wix/4eb1dd_ec30c34a1b724964b37876e9fda6c675~mv2.webp')this.src='/images/wix/4eb1dd_ec30c34a1b724964b37876e9fda6c675~mv2.webp'"></figure>
+<figure><img src="/images/wix/4eb1dd_ec30c34a1b724964b37876e9fda6c675~mv2.webp" srcset="/images/_w/480/wix/4eb1dd_ec30c34a1b724964b37876e9fda6c675~mv2.webp 480w, /images/_w/960/wix/4eb1dd_ec30c34a1b724964b37876e9fda6c675~mv2.webp 960w, /images/wix/4eb1dd_ec30c34a1b724964b37876e9fda6c675~mv2.webp 2000w" sizes="(max-width: 800px) 100vw, 55vw" alt="" loading="lazy" decoding="async" onerror="if(this.src!=='/images/wix/4eb1dd_ec30c34a1b724964b37876e9fda6c675~mv2.webp')this.src='/images/wix/4eb1dd_ec30c34a1b724964b37876e9fda6c675~mv2.webp'"></figure>
 <p>我們可以看到對應的英文，便可以由此建立變數。為了方便我們使用移位暫存器時同時將一卡車位元(一顆七段顯示)送進去，我們要將這些英文對應成正確的位元組。</p>
 <p>舉例來說數字1便是B+C，數字7便是A+B+C</p>
 <pre><code>a = 1 &lt;&lt; 0
@@ -184,8 +186,8 @@ GPIO.output(segmentLatch, GPIO.LOW)
 <p>附個很隨便的影片</p>
 <p><button class="embed lite" type="button" data-src="https://player.vimeo.com/video/324791977?dnt=1&amp;autoplay=1" aria-label="Play video"><img src="https://i.vimeocdn.com/video/768341727-28ae4536ed569138a9e71ed451783e33a427fd4915456f5eafe5ed6e194ad88b-d_1280" alt="" loading="lazy" decoding="async" onerror="if(this.src!=='https://i.vimeocdn.com/video/768341727-28ae4536ed569138a9e71ed451783e33a427fd4915456f5eafe5ed6e194ad88b-d_1280')this.src='https://i.vimeocdn.com/video/768341727-28ae4536ed569138a9e71ed451783e33a427fd4915456f5eafe5ed6e194ad88b-d_1280'"><span class="play" aria-hidden="true"></span></button></p>
 <p>(紅色小光段版本是用Arduino Mega硬幹的，因為很酷所以想放一下，但是code完全不一樣)</p>
-<figure><img src="/images/wix/4eb1dd_6f5c193c2808446bb77995688f32161b~mv2_d_3888_2592_s_4_2.webp" alt="" loading="lazy" decoding="async" onerror="if(this.src!=='/images/wix/4eb1dd_6f5c193c2808446bb77995688f32161b~mv2_d_3888_2592_s_4_2.webp')this.src='/images/wix/4eb1dd_6f5c193c2808446bb77995688f32161b~mv2_d_3888_2592_s_4_2.webp'"></figure>
-<figure><img src="/images/wix/4eb1dd_8f2574ee3a384d79a224cb20f25692a2~mv2.webp" alt="" loading="lazy" decoding="async" onerror="if(this.src!=='/images/wix/4eb1dd_8f2574ee3a384d79a224cb20f25692a2~mv2.webp')this.src='/images/wix/4eb1dd_8f2574ee3a384d79a224cb20f25692a2~mv2.webp'"></figure></div><nav class="pager" aria-label="Posts"><a href="/blog/lift-off/"><span class="mono">←</span><span class="t">Audio-Visual 作品 Lift-Off</span></a><a href="/blog/raspberry-pi-video-switching/"><span class="mono">→</span><span class="t">Raspberry Pi 互動影片切換與播放</span></a></nav></article>
+<figure><img src="/images/wix/4eb1dd_6f5c193c2808446bb77995688f32161b~mv2_d_3888_2592_s_4_2.webp" srcset="/images/_w/480/wix/4eb1dd_6f5c193c2808446bb77995688f32161b~mv2_d_3888_2592_s_4_2.webp 480w, /images/_w/960/wix/4eb1dd_6f5c193c2808446bb77995688f32161b~mv2_d_3888_2592_s_4_2.webp 960w, /images/wix/4eb1dd_6f5c193c2808446bb77995688f32161b~mv2_d_3888_2592_s_4_2.webp 2000w" sizes="(max-width: 800px) 100vw, 55vw" alt="" loading="lazy" decoding="async" onerror="if(this.src!=='/images/wix/4eb1dd_6f5c193c2808446bb77995688f32161b~mv2_d_3888_2592_s_4_2.webp')this.src='/images/wix/4eb1dd_6f5c193c2808446bb77995688f32161b~mv2_d_3888_2592_s_4_2.webp'"></figure>
+<figure><img src="/images/wix/4eb1dd_8f2574ee3a384d79a224cb20f25692a2~mv2.webp" srcset="/images/_w/480/wix/4eb1dd_8f2574ee3a384d79a224cb20f25692a2~mv2.webp 480w, /images/_w/960/wix/4eb1dd_8f2574ee3a384d79a224cb20f25692a2~mv2.webp 960w, /images/wix/4eb1dd_8f2574ee3a384d79a224cb20f25692a2~mv2.webp 1920w" sizes="(max-width: 800px) 100vw, 55vw" alt="" loading="lazy" decoding="async" onerror="if(this.src!=='/images/wix/4eb1dd_8f2574ee3a384d79a224cb20f25692a2~mv2.webp')this.src='/images/wix/4eb1dd_8f2574ee3a384d79a224cb20f25692a2~mv2.webp'"></figure></div><nav class="pager" aria-label="Posts"><a href="/blog/lift-off/"><span class="mono">←</span><span class="t">Audio-Visual 作品 Lift-Off</span></a><a href="/blog/raspberry-pi-video-switching/"><span class="mono">→</span><span class="t">Raspberry Pi 互動影片切換與播放</span></a></nav></article>
 </main>
 <script src="/assets/site.js?v=23cd7a32" data-p5="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js" data-effects="/assets/effects.js?v=b945cd44" defer></script>
 </body>

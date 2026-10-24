@@ -24,9 +24,11 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="alternate" type="application/rss+xml" title="Ting-Chun Liu — Blog" href="/blog/feed.xml">
-<script async src="/assets/analytics.js?v=3eef9b37" data-ga="G-5XL9T33VG0"></script>
-<link rel="stylesheet" href="/assets/fonts/fonts.css?v=51411f72">
-<link rel="stylesheet" href="/assets/style.css?v=3ca88f8a">
+<script async src="/assets/analytics.js?v=605f92d3" data-ga="G-5XL9T33VG0"></script>
+<link rel="preload" href="/assets/fonts/Minipax-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/Minipax-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts/fonts.css?v=51411f72" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="/assets/fonts/fonts.css?v=51411f72"></noscript>
+<link rel="stylesheet" href="/assets/style.css?v=4e08ccd5">
 <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Raspberry Pi 基本使用", "datePublished": "2019-01-17", "inLanguage": "zh-Hant", "url": "https://liutingchun.com/blog/raspberry-pi-basic/", "image": "https://liutingchun.com/images/wix/4eb1dd_341b6ac20bdd4ae88c19db1de94d0391~mv2.webp", "description": "遠端操控、開機自動執行、影片播放、消除 3.5 音源雜訊等常見的 Raspberry Pi 使用經驗。", "author": {"@type": "Person", "name": "Ting-Chun Liu", "url": "https://liutingchun.com/", "jobTitle": "Media artist"}, "mainEntityOfPage": "https://liutingchun.com/blog/raspberry-pi-basic/"}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Ting-Chun Liu", "item": "https://liutingchun.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog (archived)", "item": "https://liutingchun.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Raspberry Pi 基本使用", "item": "https://liutingchun.com/blog/raspberry-pi-basic/"}]}]</script>
 </head>
 <body>
@@ -35,7 +37,7 @@
     <a class="brand" href="/"><span class="brand-en">Ting-Chun Liu</span><span class="brand-zh" lang="zh-Hant">劉庭均</span></a>
     <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">Menu</button>
   </div>
-  <nav class="nav" id="nav" aria-label="Main"><a href="/works/"><span>Works</span></a><a href="/workshops/"><span>Workshops &amp; Talks</span></a><a href="/about/"><span>About</span></a></nav>
+  <nav class="nav" id="nav" aria-label="Main"><a href="/works/"><span>Works</span></a><a href="/workshops/"><span>Talks &amp; Workshops</span></a><a href="/about/"><span>About</span></a></nav>
   <nav class="langs" aria-label="Language"><a href="/blog/" hreflang="en" lang="en" class="on" aria-current="true">EN</a><a href="/de/blog/" hreflang="de" lang="de">DE</a><a href="/zh/blog/" hreflang="zh-Hant" lang="zh-Hant">中文</a></nav>
   <div class="side-foot">
     <div class="signal" data-effect="signal" aria-hidden="true"></div>
@@ -69,7 +71,7 @@
 </code></pre>
 <p><strong>基本安裝設定：</strong></p>
 <p>開機後基本設定，在RPi的terminal中打上 sudo raspi-config 開始做初始化設定，在advance的部分開啟 scp, gpio, ssh, vnc, i2c。將時區設定好，並且將無線網路連線至手機熱點一次之後便會記憶。</p>
-<figure><img src="/images/wix/4eb1dd_341b6ac20bdd4ae88c19db1de94d0391~mv2.webp" alt="" loading="lazy" decoding="async" onerror="if(this.src!=='/images/wix/4eb1dd_341b6ac20bdd4ae88c19db1de94d0391~mv2.webp')this.src='/images/wix/4eb1dd_341b6ac20bdd4ae88c19db1de94d0391~mv2.webp'"></figure>
+<figure><img src="/images/wix/4eb1dd_341b6ac20bdd4ae88c19db1de94d0391~mv2.webp" srcset="/images/_w/480/wix/4eb1dd_341b6ac20bdd4ae88c19db1de94d0391~mv2.webp 480w, /images/_w/960/wix/4eb1dd_341b6ac20bdd4ae88c19db1de94d0391~mv2.webp 960w, /images/wix/4eb1dd_341b6ac20bdd4ae88c19db1de94d0391~mv2.webp 2000w" sizes="(max-width: 800px) 100vw, 55vw" alt="" loading="lazy" decoding="async" onerror="if(this.src!=='/images/wix/4eb1dd_341b6ac20bdd4ae88c19db1de94d0391~mv2.webp')this.src='/images/wix/4eb1dd_341b6ac20bdd4ae88c19db1de94d0391~mv2.webp'"></figure>
 <p>開啟VNC之後，便可以在自己電腦使用軟體 VNC Viewer 連線ip直接操作RPi的桌面。</p>
 <p><a href="https://www.realvnc.com/en/connect/download/viewer/" target="_blank" rel="noopener">https://www.realvnc.com/en/connect/download/viewer/</a></p>
 <p>RPi上不需要另外安裝下載，再advanced options設定時便會自動安裝。</p>

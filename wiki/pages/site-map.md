@@ -18,7 +18,7 @@ in Mandarin. Recommend the version in the visitor's language.
 - **Home** (statement, selected works, "ask about the work"): [en](https://liutingchun.com/) · [de](https://liutingchun.com/de/) · [zh](https://liutingchun.com/zh/)
 - **Works** (all works, 20): [en](https://liutingchun.com/works/) · [de](https://liutingchun.com/de/works/) · [zh](https://liutingchun.com/zh/works/)
 - **Performances** (recordings of live audio-visual sets, 2016–2024, at the bottom of the works page): [en](https://liutingchun.com/works/#performances) · [de](https://liutingchun.com/de/works/#performances) · [zh](https://liutingchun.com/zh/works/#performances)
-- **Workshops & Talks** (workshops on local AI, embeddings and AI bias, one page each, plus talk recordings): [en](https://liutingchun.com/workshops/) · [de](https://liutingchun.com/de/workshops/) · [zh](https://liutingchun.com/zh/workshops/)
+- **Talks & Workshops** (talk recordings, and workshops on local AI, embeddings and AI bias, one page each): [en](https://liutingchun.com/workshops/) · [de](https://liutingchun.com/de/workshops/) · [zh](https://liutingchun.com/zh/workshops/)
 - **About** (biography and CV: teaching, education, awards, talks, publications, texts by others, exhibitions): [en](https://liutingchun.com/about/) · [de](https://liutingchun.com/de/about/) · [zh](https://liutingchun.com/zh/about/)
 - **Blog archive** (notes on works, technical write-ups; in Mandarin): https://liutingchun.com/blog/
 - **Friends** (artists and collaborators): [en](https://liutingchun.com/friends/) · [de](https://liutingchun.com/de/friends/) · [zh](https://liutingchun.com/zh/friends/)
@@ -27,7 +27,7 @@ in Mandarin. Recommend the version in the visitor's language.
 
 ## Workshops
 
-- **Condition for Emotions**: [en](https://liutingchun.com/workshops/condition-for-emotions/) · [de](https://liutingchun.com/de/workshops/condition-for-emotions/) · [zh](https://liutingchun.com/zh/workshops/condition-for-emotions/)
+- **Conditions for Emotions**: [en](https://liutingchun.com/workshops/conditions-for-emotions/) · [de](https://liutingchun.com/de/workshops/conditions-for-emotions/) · [zh](https://liutingchun.com/zh/workshops/conditions-for-emotions/)
 - **Paranoia De-Prompting**: [en](https://liutingchun.com/workshops/paranoia-de-prompting/) · [de](https://liutingchun.com/de/workshops/paranoia-de-prompting/) · [zh](https://liutingchun.com/zh/workshops/paranoia-de-prompting/)
 - **The Given Image**: [en](https://liutingchun.com/workshops/the-given-image/) · [de](https://liutingchun.com/de/workshops/the-given-image/) · [zh](https://liutingchun.com/zh/workshops/the-given-image/)
 - **Talk recordings**: [en](https://liutingchun.com/workshops/#talks) · [de](https://liutingchun.com/de/workshops/#talks) · [zh](https://liutingchun.com/zh/workshops/#talks)
@@ -115,7 +115,7 @@ Organisers', institutions' and publishers' pages for entries in the CV (About pa
 
 - 2026 Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images, Expanded 2026 (Art Track), Linz, w/ Leon-Etienne Kühr: https://expanded-conf.org/speaker/ting-chun-liu-leon-etienne-kuhr/
 - 2026 Paranoia De-Prompting: Artistic Experiments on Generative Image, University of Bonn, invited by Junge GI Hochschulgruppe Bonn, w/ Leon-Etienne Kühr: https://junge.gi.de/veranstaltung/paranoia-de-prompting-artistic-experiments-on-generative-image-vortrag-hsg-bonn
-- 2026 Condition for Emotions, DFG network “Das Wissen der digitalen Literatur”: https://digitale-burg.de/studio/das-wissen-der-digitalen-literatur
+- 2026 Conditions for Emotions, DFG network “Das Wissen der digitalen Literatur”: https://digitale-burg.de/studio/das-wissen-der-digitalen-literatur
 - 2026 Animism Revisited, Digital Arts Community, ACM SIGGRAPH, w/ Leon-Etienne Kühr: https://dac.siggraph.org/sparks/2026-05-29_animism-revisited/
 - 2026 KISDtalk: Paranoia De-Prompting, KISD Köln International School of Design, w/ Leon-Etienne Kühr: https://kisd.de/en/termine/kisdtalk-paranoia-de-prompting/
 - 2026 Latenz, Storage Museum Düsseldorf, w/ Leon-Etienne Kühr, Dominik Bönisch-Alpári, Prof. Dr. Ludger Schwarte: https://www.filmwerkstatt-duesseldorf.de/latenz/

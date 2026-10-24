@@ -293,9 +293,23 @@
       });
     }
     drawThumbs();
-    var imagesTa = h('textarea', { className: 'lines', value: (x.images || []).map(function (m) { return typeof m === 'string' ? m : m.src; }).join('\n') });
+    // one line per image: path | alt | alt DE | alt 中文 (a bare path keeps the image without a description)
+    function imgLine(m) {
+      if (typeof m === 'string') return m;
+      return [m.src, m.alt || '', m.alt_de || '', m.alt_zh || ''].join(' | ').replace(/( \| )+$/, '');
+    }
+    function parseImg(t) {
+      var p = t.split(' | ').map(function (v) { return v.trim(); });
+      if (p.length === 1) return p[0];
+      var o = { src: p[0] };
+      if (p[1]) o.alt = p[1];
+      if (p[2]) o.alt_de = p[2];
+      if (p[3]) o.alt_zh = p[3];
+      return o;
+    }
+    var imagesTa = h('textarea', { className: 'lines tall', value: (x.images || []).map(imgLine).join('\n') });
     imagesTa.addEventListener('input', function () {
-      x.images = imagesTa.value.split('\n').map(function (t) { return t.trim(); }).filter(Boolean); save(); drawThumbs();
+      x.images = imagesTa.value.split('\n').map(function (t) { return t.trim(); }).filter(Boolean).map(parseImg); save(); drawThumbs();
     });
     var upload = h('input', { type: 'file', accept: 'image/*', multiple: true, style: 'display:none' });
     var upStatus = h('span', { className: 'status' });
@@ -312,7 +326,7 @@
             var rel = 'images/workshops/' + (x.slug || 'misc') + '/' + r.name;
             return putFile(c, repoPath(c, rel), r.b64, 'Upload image ' + rel).then(function () {
               x.images = (x.images || []).concat(rel);
-              imagesTa.value = x.images.map(function (m) { return typeof m === 'string' ? m : m.src; }).join('\n');
+              imagesTa.value = x.images.map(imgLine).join('\n');
               done++; upStatus.textContent = '已上傳 ' + done + '/' + files.length;
               save(); drawThumbs();
             });
@@ -349,7 +363,7 @@
       field('說明文字 Deutsch（留空＝德文頁顯示英文）', x, 'text_de', { area: true, cls: 'tall' }),
       field('說明文字 中文（留空＝中文頁顯示英文）', x, 'text_zh', { area: true, cls: 'tall' }),
       h('div', { className: 'row' }, [field('場次 Sessions（每行一場：日期 · 地點／主辦；顯示在頁面最下方）', x, 'held', { area: true }), field('場次 DE', x, 'held_de', { area: true }), field('場次 中文', x, 'held_zh', { area: true })]),
-      h('label', {}, ['圖片（每行一個 images/… 路徑；第一張是封面）', imagesTa]),
+      h('label', {}, ['圖片（每行一張：路徑 | 圖片說明 | 說明 DE | 說明 中文；第一張是封面。圖片說明給看不到圖的人與搜尋引擎，描述畫面上有什麼）', imagesTa]),
       h('div', { className: 'actions' }, [btn('上傳圖片到 GitHub…（自動縮到長邊 2400px、轉 JPEG）', function () { upload.click(); }, 'sm'), upStatus, upload]),
       thumbs
     ]);

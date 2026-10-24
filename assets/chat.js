@@ -125,11 +125,17 @@
       .replace(/[:：]([.。])/g, '$1');
   }
 
+  // Google Analytics events (assets/analytics.js defines gtag unless the visitor opted out)
+  function track(name, params) {
+    try { if (window.gtag) window.gtag('event', name, params || {}); } catch (e) {}
+  }
+
   function link(href, label) {
     var a = document.createElement('a');
     a.href = href;
     a.textContent = label;
     if (a.protocol === 'https:' && a.hostname !== location.hostname) { a.target = '_blank'; a.rel = 'noopener'; }
+    a.addEventListener('click', function () { track('chat_link', { link_url: a.href }); });
     return a;
   }
 
@@ -250,6 +256,7 @@
     e.preventDefault();
     var q = input.value;
     input.value = '';
+    if (q.trim()) track('chat_question', { language: document.documentElement.lang });  // only that a question was asked, never its text
     ask(q);
   });
 })();

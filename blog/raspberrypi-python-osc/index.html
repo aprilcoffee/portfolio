@@ -24,9 +24,11 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="alternate" type="application/rss+xml" title="Ting-Chun Liu — Blog" href="/blog/feed.xml">
-<script async src="/assets/analytics.js?v=3eef9b37" data-ga="G-5XL9T33VG0"></script>
-<link rel="stylesheet" href="/assets/fonts/fonts.css?v=51411f72">
-<link rel="stylesheet" href="/assets/style.css?v=3ca88f8a">
+<script async src="/assets/analytics.js?v=605f92d3" data-ga="G-5XL9T33VG0"></script>
+<link rel="preload" href="/assets/fonts/Minipax-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/Minipax-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts/fonts.css?v=51411f72" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="/assets/fonts/fonts.css?v=51411f72"></noscript>
+<link rel="stylesheet" href="/assets/style.css?v=4e08ccd5">
 <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Raspberry Pi 以 Python 使用 OSC 通訊協定傳送資料", "datePublished": "2019-09-02", "inLanguage": "zh-Hant", "url": "https://liutingchun.com/blog/raspberrypi-python-osc/", "image": "https://liutingchun.com/images/wix/4eb1dd_c9bf8ebe609346249c6ff339643a8f68~mv2.webp", "description": "在 Python 中使用 OSC 通訊協定傳輸資料：Server / Client 的基本寫法。", "author": {"@type": "Person", "name": "Ting-Chun Liu", "url": "https://liutingchun.com/", "jobTitle": "Media artist"}, "mainEntityOfPage": "https://liutingchun.com/blog/raspberrypi-python-osc/"}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Ting-Chun Liu", "item": "https://liutingchun.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog (archived)", "item": "https://liutingchun.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Raspberry Pi 以 Python 使用 OSC 通訊協定傳送資料", "item": "https://liutingchun.com/blog/raspberrypi-python-osc/"}]}]</script>
 </head>
 <body>
@@ -35,7 +37,7 @@
     <a class="brand" href="/"><span class="brand-en">Ting-Chun Liu</span><span class="brand-zh" lang="zh-Hant">劉庭均</span></a>
     <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">Menu</button>
   </div>
-  <nav class="nav" id="nav" aria-label="Main"><a href="/works/"><span>Works</span></a><a href="/workshops/"><span>Workshops &amp; Talks</span></a><a href="/about/"><span>About</span></a></nav>
+  <nav class="nav" id="nav" aria-label="Main"><a href="/works/"><span>Works</span></a><a href="/workshops/"><span>Talks &amp; Workshops</span></a><a href="/about/"><span>About</span></a></nav>
   <nav class="langs" aria-label="Language"><a href="/blog/" hreflang="en" lang="en" class="on" aria-current="true">EN</a><a href="/de/blog/" hreflang="de" lang="de">DE</a><a href="/zh/blog/" hreflang="zh-Hant" lang="zh-Hant">中文</a></nav>
   <div class="side-foot">
     <div class="signal" data-effect="signal" aria-hidden="true"></div>
@@ -56,7 +58,7 @@
 <p>OSC Arguments ： 是為實際傳輸的資料內容，可以是零個也可以是多個字串或數字。</p>
 <p>一個基本的OSC訊號傳輸時，可以只傳送兩個部分，Address Pattern還有Arguments</p>
 <p>假定我們在Max/Msp時用一個message框起來 就會長這樣</p>
-<figure><img src="/images/wix/4eb1dd_c9bf8ebe609346249c6ff339643a8f68~mv2.webp" alt="" loading="lazy" decoding="async" onerror="if(this.src!=='/images/wix/4eb1dd_c9bf8ebe609346249c6ff339643a8f68~mv2.webp')this.src='/images/wix/4eb1dd_c9bf8ebe609346249c6ff339643a8f68~mv2.webp'"></figure>
+<figure><img src="/images/wix/4eb1dd_c9bf8ebe609346249c6ff339643a8f68~mv2.webp" srcset="/images/_w/480/wix/4eb1dd_c9bf8ebe609346249c6ff339643a8f68~mv2.webp 480w, /images/_w/960/wix/4eb1dd_c9bf8ebe609346249c6ff339643a8f68~mv2.webp 960w, /images/wix/4eb1dd_c9bf8ebe609346249c6ff339643a8f68~mv2.webp 2000w" sizes="(max-width: 800px) 100vw, 55vw" alt="" loading="lazy" decoding="async" onerror="if(this.src!=='/images/wix/4eb1dd_c9bf8ebe609346249c6ff339643a8f68~mv2.webp')this.src='/images/wix/4eb1dd_c9bf8ebe609346249c6ff339643a8f68~mv2.webp'"></figure>
 <p>這裡是指Address Pattern為/msg 而 Arguments 也就是資料為 0 和 1 兩個</p>
 <p>題外話一下，Max/Msp的 udpSend , udpReceive都不是真的udp，而是指osc。</p>
 <p>在使用 OSC 時分為Client和Server兩端。我自己習慣上 Server 通常作為接收端，而Client通常作為發送端 (Boardcast時另當別論)。需要注意的是通常需要在Server端軟體開啟的情況下，Client再開啟會比較安全唷～～</p>

@@ -37,7 +37,9 @@
     analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied'
   });
   window.gtag('js', new Date());
-  window.gtag('config', id);
+  // the page language (en, de, zh-Hant) as content group: GA → Reports → Engagement → Pages and screens → Content group
+  var lang = document.documentElement.lang || 'en';
+  window.gtag('config', id, { content_group: lang, page_language: lang });
   var s = document.createElement('script');
   s.async = true;
   s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(id);

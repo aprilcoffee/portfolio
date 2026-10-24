@@ -19,7 +19,7 @@ Year-by-year list of works, teaching, education, awards, talks, publications, ex
 - Teaching: Erasmus+ Staff Mobility for Teaching, Digital Art, Institute of Fine Arts and Media Art, University of Applied Arts Vienna
 - Awards & Fellowships: Fellowship für Innovationen in der digitalen Hochschullehre Thüringen, Stifterverband. Project “Lokale KI-Anwendung im Bewegtbild-Studio” (Local AI Application in the Moving-Image Studio), until 2027 ([link](https://www.stifterverband.org/digital-lehrfellows-thueringen/2026/liu))
 - Lectures, Talks & Workshops: Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images, Expanded 2026 (Art Track), Linz, w/ Leon-Etienne Kühr ([speaker page](https://expanded-conf.org/speaker/ting-chun-liu-leon-etienne-kuhr/))
-- Lectures, Talks & Workshops: “Condition for Emotions”, DFG network “Das Wissen der digitalen Literatur”
+- Lectures, Talks & Workshops: “Conditions for Emotions”, DFG network “Das Wissen der digitalen Literatur”
 - Lectures, Talks & Workshops: Animism Revisited, Digital Arts Community, ACM SIGGRAPH, w/ Leon-Etienne Kühr
 - Lectures, Talks & Workshops: mtrail Ausbildungscamp, Lindau, w/ Leon-Etienne Kühr
 - Lectures, Talks & Workshops: KISDtalk: Paranoia De-Prompting, KISD Köln International School of Design, w/ Leon-Etienne Kühr

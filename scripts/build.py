@@ -102,11 +102,59 @@ def img_src(u, w):
     return "%s/v1/fit/w_%d,h_%d,q_85,enc_auto/%s" % (u, w, w, m.group(1))
 
 
-def img(u, w, alt="", cls="", lazy=True):
+# smaller copies of local photos (images/_w/<width>/…webp), made once with Pillow and kept in the repo,
+# so phones and grids load an image of about the size they show; without Pillow the page uses the original only
+RESP_W = (480, 960)
+try:
+    from PIL import Image as _PIL
+except ImportError:
+    _PIL = None
+_sizes = {}
+
+
+def srcset(u):
+    rel = (u or "").lstrip("/")
+    if _PIL is None or not re.match(r"^images/(?!_w/).+\.(jpe?g|png|webp)$", rel, re.I):
+        return ""
+    src = os.path.join(ROOT, rel)
+    if rel not in _sizes:
+        try:
+            with _PIL.open(src) as im:
+                _sizes[rel] = im.size[0]
+        except OSError:
+            _sizes[rel] = 0
+    full = _sizes[rel]
+    out = []
+    for vw in RESP_W:
+        if vw >= full * 0.85:
+            break
+        vrel = "images/_w/%d/%s.webp" % (vw, os.path.splitext(rel[len("images/"):])[0])
+        vpath = os.path.join(ROOT, vrel)
+        if not os.path.exists(vpath) or os.path.getmtime(vpath) < os.path.getmtime(src):
+            try:
+                with _PIL.open(src) as im:
+                    im = im.convert("RGBA" if im.mode in ("RGBA", "LA", "P") else "RGB")
+                    im.thumbnail((vw, vw * 4), _PIL.LANCZOS)
+                    os.makedirs(os.path.dirname(vpath), exist_ok=True)
+                    im.save(vpath, "WEBP", quality=78, method=6)
+            except OSError:
+                break
+        if os.path.getsize(vpath) > os.path.getsize(src) * 0.7:  # the original is already small: no gain
+            continue
+        out.append("%s %dw" % (url(vrel), vw))
+    return ", ".join(out + ["%s %dw" % (url(rel), full)]) if out else ""
+
+
+def img(u, w, alt="", cls="", lazy=True, sizes=None):
     fb = asset(u)
-    return ('<img src="%s" alt="%s" loading="%s" decoding="async"%s '
+    ss = srcset(u)
+    if ss and not sizes:  # how wide the image is shown: grid cards, half the plates, or a full plate
+        sizes = ("(max-width: 800px) 100vw, 55vw" if w >= 1400 else "(max-width: 800px) 100vw, 30vw" if w >= 1000
+                 else "(max-width: 800px) 100vw, (max-width: 1024px) 45vw, 30vw")
+    return ('<img src="%s"%s alt="%s" loading="%s" decoding="async"%s '
             'onerror="if(this.src!==\'%s\')this.src=\'%s\'">') % (
-        esc(img_src(u, w)), esc(alt), "lazy" if lazy else "eager", ' class="%s"' % cls if cls else "", esc(fb), esc(fb))
+        esc(img_src(u, w)), ' srcset="%s" sizes="%s"' % (esc(ss), sizes) if ss else "", esc(alt), "lazy" if lazy else "eager",
+        ' class="%s"' % cls if cls else "", esc(fb), esc(fb))
 
 
 def video_id(u):
@@ -190,14 +238,21 @@ def linkify(text):
 
 
 def prose(text):
-    """Work descriptions: blank line = paragraph, '# ' = heading."""
+    """Work descriptions: blank line = paragraph, '# ' = heading, lines starting with '· ' = list."""
     parts = []
     for p in re.split(r"\n\s*\n", text or ""):
         p = p.strip()
         if not p:
             continue
+        lines = p.split("\n")
+        items = [l[2:].strip() for l in lines if l.startswith("· ")]
         if p.startswith("# "):
             parts.append("<h3>%s</h3>" % esc(p[2:]))
+        elif items and len(items) == len([l for l in lines if l.startswith("· ")]) and lines[-1].startswith("· "):
+            # lines starting with "· " are a list; a term before the first colon is set in bold
+            intro = "\n".join(l for l in lines if not l.startswith("· "))
+            lis = "".join("<li>%s</li>" % (re.sub(r"^([^:：]{1,24}[:：])", r"<strong>\1</strong>", linkify(i))) for i in items)
+            parts.append(("<p>%s</p>" % linkify(intro).replace("\n", "<br>") if intro else "") + '<ul class="dots">%s</ul>' % lis)
         else:
             parts.append("<p>%s</p>" % linkify(p).replace("\n", "<br>"))
     return "".join(parts)
@@ -268,7 +323,7 @@ LANG_NAME = {"en": "EN", "de": "DE", "zh": "中文"}
 
 UI = {
     "en": {
-        "nav": {"works": "Works", "workshops": "Workshops & Talks", "about": "About", "blog": "Blog (archived)", "friends": "Friends"},
+        "nav": {"works": "Works", "workshops": "Talks & Workshops", "about": "About", "blog": "Blog (archived)", "friends": "Friends"},
         "menu": "Menu", "more": "More", "language": "Language", "privacy": "Privacy",
         "selected": "Selected works", "all_works": "All works (%d) →",
         "works_lead": "Installations, performances, internet art and artistic research, %s–%s.",
@@ -278,7 +333,7 @@ UI = {
                  "about": "Critical AI, generative art, artistic research, cybernetics, internet art, audio-visual performance",
                  "workshops": "local AI, embedding practice, AI bias, workshops, talks, talk recordings"},
         "sitemap": "Site map", "sitemap_lead": "Every page of this website.",
-        "sitemap_desc": "Site map of the website of %s: works and performances, workshops and talks, about, blog.",
+        "sitemap_desc": "Site map of the website of %s: works and performances, talks and workshops, about, blog.",
         "Year": "Year", "Status": "Status", "Type": "Type", "Materials": "Materials", "With": "With", "Link": "Link",
         "work_desc": "%s (%s), %s by %s.", "work": "work", "work_with": "with %s", "held": "Sessions", "workshop": "Workshop",
         "perf_title": "Performance archive",
@@ -289,7 +344,7 @@ UI = {
         "blog_lead": "Notes on works, and technical write-ups on Raspberry Pi, Processing and Python. The posts are written in Mandarin.",
         "blog_desc": "Blog archive of %s: notes on artworks and technical write-ups on Raspberry Pi, Processing and Python.",
         "friends_desc": "Friends and fellow artists of %s.",
-        "workshops_lead": "Workshops on local AI usage, embedding practice and understanding biases in AI models, and recordings of talks.",
+        "workshops_lead": "Workshops I offer: using AI locally on your own computer, working hands-on with embeddings, and seeing the biases inside AI models. Talk recordings below.",
         "workshops_desc": "Workshops and talks by %s on local AI usage, embedding practice and biases in AI models, with talk recordings.",
         "workshops_ask": "Workshop and lecture requests: please get in touch by email.",
         "press_groups": {"watch": "Talk recordings", "read": "Written about the work"},
@@ -303,7 +358,7 @@ UI = {
         "ask_refusal": "I can’t answer that here, but ask me anything about my work.",
     },
     "de": {
-        "nav": {"works": "Arbeiten", "workshops": "Workshops & Vorträge", "about": "Über mich", "blog": "Blog (archiviert)", "friends": "Freunde"},
+        "nav": {"works": "Arbeiten", "workshops": "Vorträge & Workshops", "about": "Über mich", "blog": "Blog (archiviert)", "friends": "Freunde"},
         "menu": "Menü", "more": "Mehr", "language": "Sprache", "privacy": "Datenschutz",
         "selected": "Ausgewählte Arbeiten", "all_works": "Alle Arbeiten (%d) →",
         "works_lead": "Installationen, Performances, Netzkunst und künstlerische Forschung, %s–%s.",
@@ -313,7 +368,7 @@ UI = {
                  "about": "Kritische KI, generative Kunst, künstlerische Forschung, Kybernetik, Netzkunst, audiovisuelle Performance",
                  "workshops": "lokale KI, Embedding-Praxis, KI-Bias, Workshops, Vorträge, Vortragsaufzeichnungen"},
         "sitemap": "Seitenübersicht", "sitemap_lead": "Alle Seiten dieser Website.",
-        "sitemap_desc": "Seitenübersicht der Website von %s: Arbeiten und Performances, Workshops und Vorträge, Über mich, Blog.",
+        "sitemap_desc": "Seitenübersicht der Website von %s: Arbeiten und Performances, Vorträge und Workshops, Über mich, Blog.",
         "Year": "Jahr", "Status": "Status", "Type": "Art", "Materials": "Material", "With": "Mit", "Link": "Link",
         "work_desc": "%s (%s), %s von %s.", "work": "Arbeit", "work_with": "mit %s", "held": "Termine", "workshop": "Workshop",
         "perf_title": "Performance-Archiv",
@@ -324,7 +379,7 @@ UI = {
         "blog_lead": "Notizen zu Arbeiten und technische Anleitungen zu Raspberry Pi, Processing und Python. Die Beiträge sind auf Chinesisch (Mandarin) verfasst.",
         "blog_desc": "Blog-Archiv von %s: Notizen zu Arbeiten und technische Anleitungen zu Raspberry Pi, Processing und Python.",
         "friends_desc": "Freund*innen und befreundete Künstler*innen von %s.",
-        "workshops_lead": "Workshops zu lokaler KI-Anwendung, Embedding-Praxis und zum Verständnis von Biases in KI-Modellen sowie Aufzeichnungen von Vorträgen.",
+        "workshops_lead": "Workshops, die ich anbiete: KI lokal auf dem eigenen Rechner nutzen, praktisch mit Embeddings arbeiten und die Biases in KI-Modellen sichtbar machen. Darunter Aufzeichnungen von Vorträgen.",
         "workshops_desc": "Workshops und Vorträge von %s zu lokaler KI-Anwendung, Embedding-Praxis und Biases in KI-Modellen, mit Vortragsaufzeichnungen.",
         "workshops_ask": "Anfragen für Workshops und Vorträge richten Sie bitte per E-Mail an mich.",
         "press_groups": {"watch": "Vortragsaufzeichnungen", "read": "Texte über die Arbeit"},
@@ -338,30 +393,30 @@ UI = {
         "ask_refusal": "Darauf kann ich hier nicht antworten. Fragen Sie mich gern zu meiner Arbeit.",
     },
     "zh": {
-        "nav": {"works": "創作計畫", "workshops": "工作坊與講座", "about": "關於", "blog": "部落格（封存）", "friends": "朋友"},
+        "nav": {"works": "創作計畫", "workshops": "講座與工作坊", "about": "關於", "blog": "部落格（封存）", "friends": "朋友"},
         "menu": "選單", "more": "更多", "language": "語言", "privacy": "隱私權",
         "selected": "精選作品", "all_works": "全部作品（%d）→",
         "works_lead": "裝置、表演、網路藝術與藝術研究，%s–%s。",
         "works_desc": "%s的精選作品，%s–%s：裝置、表演、網路藝術，以及關於人工智慧的藝術研究。",
-        "Topics": "主題", "Email": "信箱", "contact_note": "我開設工作坊，主題包括本地端 AI 的使用、embedding 實作，以及理解 AI 模型中的偏見。工作坊與講座邀約，請來信聯繫。", "work_by": "%s，%s，%s。",
+        "Topics": "主題", "Email": "信箱", "contact_note": "我開設工作坊，主題包括在自己的電腦上使用 AI、embedding 實作，以及辨識 AI 模型中的偏見。工作坊與講座邀約，歡迎來信。", "work_by": "%s，%s，%s。",
         "tags": {"works": "批判性 AI、生成藝術、藝術研究、控制論、網路藝術、影音表演",
                  "about": "批判性 AI、生成藝術、藝術研究、控制論、網路藝術、影音表演",
                  "workshops": "本地端 AI、embedding 實作、AI 偏見、工作坊、講座、講座錄影"},
         "sitemap": "網站地圖", "sitemap_lead": "這個網站的所有頁面。",
-        "sitemap_desc": "%s網站的網站地圖：創作計畫與表演、工作坊與講座、關於、部落格。",
+        "sitemap_desc": "%s網站的網站地圖：創作計畫與表演、講座與工作坊、關於、部落格。",
         "Year": "年份", "Status": "狀態", "Type": "類型", "Materials": "媒材", "With": "合作", "Link": "連結",
         "work_desc": "%s（%s），%s，%s。", "work": "作品", "work_with": "與 %s 合作", "held": "場次", "workshop": "工作坊",
         "perf_title": "表演紀錄",
-        "perf_lead": "2016 至 2024 年的現場影音演出與噪音演出紀錄，場合包括舞台、藝術節、電台與展覽開幕。點選後在 Vimeo 觀看。",
+        "perf_lead": "2016 至 2024 年間現場影音演出與噪音演出的錄影，演出場合包括表演場地、藝術節、電台節目與展覽開幕。點選即可在 Vimeo 觀看。",
         "watch": "在 %s 觀看 ↗",
         "about": "關於",
         "blog_title": "部落格 Blog Archive",
         "blog_lead": "作品筆記，以及 Raspberry Pi、Processing 與 Python 的技術文章。",
         "blog_desc": "%s的部落格文章彙整：作品筆記，以及 Raspberry Pi、Processing 與 Python 技術文章。",
         "friends_desc": "%s的朋友、合作夥伴與藝術家夥伴，以及他們的作品網站連結。",
-        "workshops_lead": "以本地端 AI 的使用、embedding 實作與理解 AI 模型中的偏見為主題的工作坊，以及講座錄影。",
-        "workshops_desc": "%s的工作坊與講座：本地端 AI 的使用、embedding 實作與 AI 模型中的偏見，並收錄講座錄影。",
-        "workshops_ask": "工作坊與講座邀約，請來信聯繫。",
+        "workshops_lead": "我開設的工作坊：在自己的電腦上使用 AI、動手操作 embedding，以及看見 AI 模型裡的偏見。頁面下方是講座錄影。",
+        "workshops_desc": "%s的講座與工作坊：講座錄影，以及在自己的電腦上使用 AI、embedding 實作與 AI 模型偏見的工作坊。",
+        "workshops_ask": "工作坊與講座邀約，歡迎來信。",
         "press_groups": {"watch": "講座錄影", "read": "相關評論與研究"},
         "Date": "日期", "Category": "分類",
         "ask": "關於我的作品，問問我", "ask_ph": "問我任何事", "ask_btn": "提問",
@@ -474,7 +529,9 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
 <link rel="manifest" href="{manifest}">
 <link rel="alternate" type="application/rss+xml" title="{name} — Blog" href="{feed}">
 {ga}
-<link rel="stylesheet" href="{fonts}">
+<link rel="preload" href="{font_r}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{font_b}" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{fonts}" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="{fonts}"></noscript>
 <link rel="stylesheet" href="{css}">
 {ld}
 </head>
@@ -505,7 +562,7 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
            locale=LOCALE[lang] if not content_lang else ("zh_TW" if content_lang.startswith("zh") else LOCALE[lang]),
            t=esc(page_title), d=esc(desc or tr(S, "description", lang)), name=esc(S["name"]), zh=esc(S.get("name_zh", "")),
            c=esc(canonical), hreflang=hreflang, ogt=og_type, img=esc(image), icon=url("assets/favicon-32.png"), ico=url("favicon.ico"), touch=url("assets/apple-touch-icon.png"), manifest=url("site.webmanifest"),
-           css=versioned("assets/style.css"), fonts=versioned("assets/fonts/fonts.css"), js=versioned("assets/site.js"), fx=versioned("assets/effects.js"), feed=url("blog/feed.xml"),
+           css=versioned("assets/style.css"), fonts=versioned("assets/fonts/fonts.css"), font_r=url("assets/fonts/Minipax-Regular.woff2"), font_b=url("assets/fonts/Minipax-Bold.woff2"), js=versioned("assets/site.js"), fx=versioned("assets/effects.js"), feed=url("blog/feed.xml"),
            ga=ga, ld=ld_tag, home=url(LP[lang]), imp=url("impressum/"), dsg=url("datenschutz/"), nav=nav, foot_nav=foot_nav, more=u["more"], switch=switch,
            menu=u["menu"], language=u["language"], privacy=u["privacy"], email=esc(S["email"]), links=links,
            year=datetime.date.today().year, full=" full" if full else "", body=body)
@@ -682,10 +739,12 @@ for L in LANGS:
              "".join(work_card(i + 1, w, L) for i, w in enumerate(works[:3])), url(P + "works/"), esc(u["all_works"] % len(works))),
          ld=person(L), full=True, lang=L, alts=each(""))
 
+    SHORT_HOST = {"thephotographersgallery.org.uk": "The Photographers’ Gallery"}
     # each performance record and talk recording opens on Vimeo / YouTube / the host's site in a new tab
     def watch_card(href, thumb, title, sub, note, title_lang="", ph=""):
         v = video_id(href)
         where = "YouTube" if v and v[0] == "youtube" else "Vimeo" if v else urlparse(href).netloc.replace("www.", "")
+        where = SHORT_HOST.get(where, where)
         pic = img(thumb, 1100, title) if thumb else '<span class="ph">%s</span>' % esc(ph or title)
         return ('<a class="perf-card" href="%s" target="_blank" rel="noopener"><div class="thumb">%s'
                 '<span class="watch">%s</span></div><div class="cap"><h3%s>%s</h3>%s%s</div></a>') % (
@@ -824,7 +883,8 @@ for L in LANGS:
 
     for i, x in enumerate(shops):
         pics = shop_pics(x)
-        figs = ["<figure>%s</figure>" % img(im, 1600 if k == 0 else 1000, "%s (%d/%d)" % (tr(x, "title", L), k + 1, len(pics)))
+        alts = [(i.get("alt_" + L) or i.get("alt")) if isinstance(i, dict) else None for i in x.get("images", [])]
+        figs = ["<figure>%s</figure>" % img(im, 1600 if k == 0 else 1000, alts[k] or "%s (%d/%d)" % (tr(x, "title", L), k + 1, len(pics)))
                 for k, im in enumerate(pics)]
         plates = figs.pop(0).replace("<figure>", '<figure class="hero">', 1) if figs else ""
         if len(figs) == 1:
@@ -850,6 +910,7 @@ for L in LANGS:
     # the former pages for performances and for press now live on the works, workshops and about pages
     redirect(P + "performance/", P + "works/#performances")
     redirect(P + "press/", P + "workshops/#talks")
+    redirect(P + "workshops/condition-for-emotions/", P + "workshops/conditions-for-emotions/")  # renamed 2026-10
 
     groups, order = {}, []
     for p in posts:
@@ -968,7 +1029,7 @@ page("datenschutz/", "Datenschutz", "Privacy policy (Datenschutzerklärung) of %
 <h2>2. Hosting</h2>
 <p>Diese Website wird bei GitHub Pages (GitHub Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA) gehostet. Beim Aufruf verarbeitet GitHub technisch notwendige Daten wie IP-Adresse, Zeitpunkt und aufgerufene Seite in Server-Logfiles, um die Website auszuliefern und abzusichern. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer sicheren und funktionsfähigen Website). Die Übermittlung in die USA erfolgt auf Grundlage des EU-US Data Privacy Framework.</p>
 <h2>3. Google Analytics</h2>
-<p>Diese Website verwendet Google Analytics 4 (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland), um die Nutzung statistisch auszuwerten. Beim Aufruf einer Seite setzt Google Analytics Cookies und erfasst pseudonymisierte Nutzungsdaten (z.&nbsp;B. aufgerufene Seiten, Verweildauer, ungefährer Standort, Gerät). IP-Adressen werden von Google Analytics 4 nicht gespeichert. Werbefunktionen sind deaktiviert. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer Reichweitenmessung dieser Website). Eine Übermittlung in die USA ist möglich; Google ist unter dem EU-US Data Privacy Framework zertifiziert.</p>
+<p>Diese Website verwendet Google Analytics 4 (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland), um die Nutzung statistisch auszuwerten. Beim Aufruf einer Seite setzt Google Analytics Cookies und erfasst pseudonymisierte Nutzungsdaten (z.&nbsp;B. aufgerufene Seiten, Sprache der Seite, Verweildauer, ungefährer Standort, Gerät, und ob im Fragefeld eine Frage gestellt oder ein vorgeschlagener Link angeklickt wurde – ohne den Text der Frage). IP-Adressen werden von Google Analytics 4 nicht gespeichert. Werbefunktionen sind deaktiviert. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer Reichweitenmessung dieser Website). Eine Übermittlung in die USA ist möglich; Google ist unter dem EU-US Data Privacy Framework zertifiziert.</p>
 <p>Sie können der Erfassung jederzeit für diesen Browser widersprechen: <button type="button" data-ga-optout data-off="Google Analytics deaktivieren / Turn off analytics" data-on="Google Analytics wieder aktivieren / Turn analytics back on">Google Analytics deaktivieren / Turn off analytics</button> Alternativ können Sie Cookies in Ihrem Browser blockieren.</p>
 <h2>4. Eingebettete Videos (Vimeo, YouTube)</h2>
 <p>Videos werden erst geladen, wenn Sie auf das Vorschaubild klicken. Erst dann werden Daten (u.&nbsp;a. IP-Adresse) an Vimeo (Vimeo.com Inc., New York, USA) bzw. YouTube (Google Ireland Limited) übertragen; YouTube wird im erweiterten Datenschutzmodus (youtube-nocookie.com) eingebunden. Vorschaubilder einiger Vimeo-Videos werden über vumbnail.com geladen.</p>
@@ -1017,7 +1078,7 @@ llms = ["# %s (%s)" % (S["name"], S.get("name_zh", "")), "",
         "- [About / CV](%s): biography, teaching, exhibitions, talks, publications, texts by others" % abs_url("about/"),
         "- [Blog Archive](%s): texts and technical notes (in Mandarin)" % abs_url("blog/"),
         "- [Performances](%s): recordings of live audio-visual sets, 2016–2024 (on the works page)" % abs_url("works/#performances"),
-        "- [Workshops & Talks](%s): workshops on local AI, embeddings and AI bias, and talk recordings" % abs_url("workshops/"),
+        "- [Talks & Workshops](%s): talk recordings, and workshops on local AI, embeddings and AI bias" % abs_url("workshops/"),
         "- [Written about the work](%s): texts by others, in the CV" % abs_url("about/#texts"), "",
         "The site is also available in German (%s) and Traditional Chinese (%s)." % (abs_url("de/"), abs_url("zh/")), "",
         "## Works", ""]
