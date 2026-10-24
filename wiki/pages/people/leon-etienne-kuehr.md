@@ -11,7 +11,7 @@ sources:
   - https://thephotographersgallery.org.uk/whats-on/watch-screen-walk-leon-etienne-kuhr-and-ting-chun-liu
   - https://arxiv.org/abs/2607.09705
   - https://ground-zero.khm.de/artistic-research-on-recursive-dynamics-in-generative-image-models/
-updated: 2026-10-01
+updated: 2026-10-24
 ---
 # Leon-Etienne Kühr
 
@@ -24,7 +24,7 @@ projects and many talks about generative AI.
 
 ## Background (from organisers' pages)
 
-Computer scientist and media artist; research assistant and co-director of the AI Lab at the Hochschule für Gestaltung Offenbach; studied Media Arts at KHM Cologne and Media Informatics at Bauhaus-Universität Weimar. Co-curator of *AI-Worlding* (Museum Angewandte Kunst, Frankfurt, 2026).
+Liu and Kühr met at the Academy of Media Arts Cologne (KHM), where their collaboration began. Computer scientist and media artist; research assistant and co-director of the AI Lab at the Hochschule für Gestaltung Offenbach; studied Media Arts at KHM Cologne and Media Informatics at Bauhaus-Universität Weimar. Co-curator of *AI-Worlding* (Museum Angewandte Kunst, Frankfurt, 2026).
 
 ## Joint texts and pages by others
 
@@ -63,3 +63,4 @@ Computer scientist and media artist; research assistant and co-director of the A
 - https://thephotographersgallery.org.uk/whats-on/watch-screen-walk-leon-etienne-kuhr-and-ting-chun-liu
 - https://arxiv.org/abs/2607.09705
 - https://ground-zero.khm.de/artistic-research-on-recursive-dynamics-in-generative-image-models/
+- wiki/raw/questionnaire-2026-10-answers.md (the artist's answers, October 2026)

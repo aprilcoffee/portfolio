@@ -7,7 +7,8 @@ sources:
   - https://liutingchun.com/works/just-jailbreak/
   - https://liutingchun.com/zh/works/just-jailbreak/
   - https://www.fabianmosele.com/synthiola
-updated: 2026-10-01
+  - https://www.fabianmosele.com/just-jailbreak
+updated: 2026-10-24
 ---
 # Just Jailbreak
 
@@ -19,9 +20,11 @@ An interactive game around a large language model. Players have to talk JJ, a st
 - **Type:** Interactive game about jailbreaking a large language model
 - **Type (de):** Interaktives Spiel über das Jailbreaken eines großen Sprachmodells
 - **Type (zh):** 關於大型語言模型越獄的互動遊戲
-- **With:** Synthiola
+- **With:** Fabian Mosele (the artist confirms the collaboration; Synthiola is Fabian Mosele's project)
+- **Shown at:** 高雄科技節, Kaohsiung (the festival's English name and dates are not in the sources)
 - **Credits:** Photo: Kito Li
 - **Link:** [Kuai Kuai culture](https://en.wikipedia.org/wiki/Kuai_Kuai_culture)
+- **Link:** [Fabian Mosele: Just Jailbreak](https://www.fabianmosele.com/just-jailbreak)
 - **Link:** [Synthiola (Fabian Mosele)](https://www.fabianmosele.com/synthiola)
 - **Page:** [https://liutingchun.com/works/just-jailbreak/](https://liutingchun.com/works/just-jailbreak/) · [zh](https://liutingchun.com/zh/works/just-jailbreak/)
 
@@ -41,3 +44,4 @@ An interactive game around a large language model. Players have to talk JJ, a st
 - https://liutingchun.com/works/just-jailbreak/
 - https://liutingchun.com/zh/works/just-jailbreak/
 - https://www.fabianmosele.com/synthiola
+- wiki/raw/questionnaire-2026-10-answers.md (the artist's answers, October 2026)

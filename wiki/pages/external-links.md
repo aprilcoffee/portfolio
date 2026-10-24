@@ -6,7 +6,7 @@ sources:
   - ../data/site.json
   - https://arxiv.org/abs/2607.09705
   - https://www.museumangewandtekunst.de/de/besuch/ausstellungen/2026/ai-worlding-kuenstlerische-forschung-zu-ki-generierten-weltmodellen/
-updated: 2026-10-21
+updated: 2026-10-24
 ---
 # External links: pages by others about Ting-Chun Liu
 
@@ -68,7 +68,7 @@ Where Liu's work can be checked, watched or read outside his own website: talk r
 
 ## Open questions
 
-- **A date that differs between the CV and the organiser's own page:** the Dortmund lecture (CV: 2024; organiser's page: 12 June 2025).
+- (Resolved: the Dortmund lecture is 2024, as in the CV; the artist says the organiser's 2025 page is a continuation.)
 - **Not yet read:** *The Rule Becomes the Author!* (2021), *Positioning – A Prerequisite for Immersion* (2024), the MOCA Taipei catalogue text.
 - **Not found:** a 2025 prize-winners page at FIfF naming Liu, an independent news or press article about Liu, and a public page for the Digi-Lehrfellows seminar's student exhibition.
 

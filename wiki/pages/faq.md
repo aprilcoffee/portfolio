@@ -52,17 +52,26 @@ Yes: Violaine Boutet de Monvel's essay on model collapse (arXiv:2607.09705) cite
 In the "Performance archive" at the bottom of the website's Works page; each record opens on Vimeo. Liu no longer focuses on live performance, so these are recordings from 2016–2024. → https://liutingchun.com/works/#performances
 
 **Where are the talk recordings?**
-On the website's "Workshops & Talks" page, below the workshops (39C3, 38C3, 37C3, Screen Walk). Texts by others about the work are listed in the CV on the About page. → https://liutingchun.com/workshops/#talks · https://liutingchun.com/about/#texts
+On the website's "Talks & Workshops" page, below the workshops (39C3, 38C3, 37C3, Screen Walk). Texts by others about the work are listed in the CV on the About page. → https://liutingchun.com/workshops/#talks · https://liutingchun.com/about/#texts
 
 **Is the blog available in English?**
 No. The blog is an archive of posts from 2017–2022 in Mandarin, including Raspberry Pi and Processing
 tutorials. → [Blog archive](blog-archive.md)
 
 **Does Liu give workshops? How can I invite Liu for a talk, workshop, exhibition or collaboration?**
-Yes: Liu hosts workshops about local AI usage, embedding practice and understanding biases in AI models, and gives lectures and talks (see [Talks and writing](talks-and-writing.md)). Requests for workshops and lectures, and other invitations, go by email: tingchun.liu.tw@gmail.com
+Yes: Liu hosts workshops about local AI usage, embedding practice and understanding biases in AI models, and gives lectures and talks (see [Talks and writing](talks-and-writing.md) and [Workshops](topics/workshops.md)). The workshops are flexible: they work for people who have never written code, artists, creators, companies or literary scholars, and what participants take away is mainly AI literacy. New topics can be discussed, for example anything around tokens. Requests for workshops, talks, collaborations and commissions go by email to ting-chun.liu@uni-weimar.de; Liu is open to them. Prices and availability are not in the wiki.
+
+**What is Liu's practice about, in his own words?**
+He approaches AI art along media art's question of medium specificity and asks how to go beyond simply prompting: for example by making images with no prompt at all, feeding a model's output back into itself the way Alvin Lucier re-recorded his voice in a room. From there the questions extend to geopolitics, data politics and the operational image. → [Medium specificity](topics/medium-specificity-and-practice.md)
+
+**Where does Liu live and work? Which languages?**
+He works in Cologne and Weimar, mainly in English and also in Mandarin. He came to Germany in 2019. → [Overview](overview.md)
+
+**Will AI replace artists?**
+Liu's answer is no: artists use AI to interact with the technical objects around them. → [Medium specificity](topics/medium-specificity-and-practice.md)
 
 **What does the wiki not know?**
-Anything that is not on the website or in the sources listed on each page: private life, prices,
+Anything that is not on the website or in the sources listed on each page: private life (which Liu keeps private), prices,
 availability, unpublished projects. The chat should say so instead of guessing.
 
 ## Related

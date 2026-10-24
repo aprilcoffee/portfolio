@@ -1,22 +1,22 @@
 ---
 title: "Imaginary Landscape"
 type: work
-tags: [ongoing-project, critical-ai-and-image-models, audio-visual-performance]
+tags: [project, critical-ai-and-image-models, audio-visual-performance]
 sources:
   - ../../../data/site.json (works → imaginary-landscape)
   - https://liutingchun.com/works/imaginary-landscape/
   - https://liutingchun.com/zh/works/imaginary-landscape/
   - https://liutingchun.com/blog/xanadu-travel-agency/
-updated: 2026-10-01
+updated: 2026-10-24
 ---
 # Imaginary Landscape
 
-An ongoing project (2022–23) about the idealised beach images of tourism and social media, developed with image-generation models and presented as audio-visual performances. Collectively imagined 'perfect beaches' are pieced together by AI into an unreachable 'ideal other side'.
+A project (2022–2024, ended in 2024) about the idealised beach images of tourism and social media, developed with image-generation models and presented as audio-visual performances. Collectively imagined 'perfect beaches' are pieced together by AI into an unreachable 'ideal other side'.
 
 ## Facts
 
-- **Year:** 2022–23
-- **Type:** Ongoing Project, Audio-Visual Performance
+- **Year:** 2022–2024 (the artist: the project ended in 2024)
+- **Type:** Project, Audio-Visual Performance
 - **Type (de):** Laufendes Projekt, audiovisuelle Performance
 - **Type (zh):** 進行中計畫、影音表演
 - **Video:** https://vimeo.com/953746255
@@ -41,3 +41,4 @@ An ongoing project (2022–23) about the idealised beach images of tourism and s
 - https://liutingchun.com/works/imaginary-landscape/
 - https://liutingchun.com/zh/works/imaginary-landscape/
 - https://liutingchun.com/blog/xanadu-travel-agency/
+- wiki/raw/questionnaire-2026-10-answers.md (the artist's answers, October 2026)

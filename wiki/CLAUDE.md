@@ -24,12 +24,14 @@ This file is the **schema**: read it before touching anything in `wiki/`.
 2. **Cite.** Each page ends with `## Sources`; each source is a repo path or a public URL.
 3. **Nothing private.** No home address, phone number, private email threads, health,
    family or finances, even if a raw source contains them. Contact = the public email
-   tingchun.liu.tw@gmail.com only. Material in `raw/private/` is never used.
+   ting-chun.liu@uni-weimar.de (for talks, workshops and collaborations; the site footer also shows
+   tingchun.liu.tw@gmail.com) only. Material in `raw/private/` is never used.
 4. **The artist's own wording wins.** When the site text and a later source disagree, keep
    both, flag it under `## Open questions`, and add a line to `log.md`.
 5. **English** is the wiki language; keep original titles (German, Chinese) next to the
    English ones. The chat answers in the visitor's language.
-6. **Pronouns:** the artist's own bio uses "he". Prefer the name ("Liu") in running text.
+6. **Pronouns:** the artist's own bio uses "he". Prefer the name ("Liu") in running text; the chat itself
+   calls the artist "Ting-Chun" (rule in worker/src/index.js).
 
 ## Page format
 

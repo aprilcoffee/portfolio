@@ -82,7 +82,7 @@
 - `works[].status`（例如 In development）顯示在作品卡與作品頁的「Status」列；留空就不顯示。
 - `press[]` 的 `group` 只能是 `watch`（講座錄影，顯示在工作坊與講座頁）、`read`（他人寫的評論與研究，顯示在 About 的 CV「Publications & Writing」之後，`#texts`）；展覽、活動、機構介紹頁不放；標題與來源不翻譯，沒有 `note_de/_zh` 時該語言顯示英文並標 `lang="en"`。
 - 側邊欄：主選單只有 `NAV`（創作計畫、講座與工作坊、關於），部落格與朋友在側欄下方的小字（`FOOT`），都在 `build.py` 開頭。表演沒有獨立頁，是作品頁最下方深色的「表演紀錄」區塊（`#performances`）；舊的 `/performance/`、`/press/` 轉址到新位置。中文名稱在 `UI["zh"]["nav"]`；中文側邊欄用標題字體（`assets/style.css` 的 `html:lang(zh) .nav a`）。
-- 聯絡信箱：`site.email`（側欄、Impressum、About）維持 gmail；`site.email_alt`（Weimar 信箱）是 About 頁顯示的聯絡信箱（沒填就用 `site.email`）；`site.orcid`（只填 iD）有填才會在 About 頁出現，目前留空。`friends/` 頁刻意只有標題與卡片（沒有引言和主題）。頁尾沒有 HTML 網站地圖的連結（`/sitemap/` 仍在 `sitemap.xml` 裡）。
+- 聯絡信箱：邀約（工作坊、講座、合作、委託）一律給 Weimar 信箱：問答框（`worker/src/index.js` 的 `RULES`）、錯誤訊息 `ask_err`、`llms.txt`、wiki 都用 `site.email_alt`。`site.email`（側欄、Impressum、JSON-LD）維持 gmail；`site.email_alt`（Weimar 信箱）是 About 頁顯示的聯絡信箱（沒填就用 `site.email`）；`site.orcid`（只填 iD）有填才會在 About 頁出現，目前留空。`friends/` 頁刻意只有標題與卡片（沒有引言和主題）。頁尾沒有 HTML 網站地圖的連結（`/sitemap/` 仍在 `sitemap.xml` 裡）。
 - **搜尋引擎（SEO）用語**：主要敘述是 “research-based media artist working with critical AI”（`site.description`、`statement`、About 的 bio 第一句）；看不到的地方（JSON-LD 的 `jobTitle`、`occupations`、`llms.txt`）用 “Critical AI Artist”；首頁 `<title>` 刻意只放名字。文字裡一律寫全名 Ting-Chun Liu。部落格文章的作者列寫 “Ting-Chun Liu, media artist”。
 - 主題標籤：`works[].tags`（`_de/_zh` 沒填就顯示英文）顯示在作品頁的「Topics」列，也寫進 JSON-LD 的 `keywords`；各列表頁的標籤在 `build.py` 的 `UI[...]["tags"]`。
 - `data/lastmod.json` 由 `build.py` 自動維護（每頁的內容雜湊與最後更新日），給 `sitemap.xml` 的 `<lastmod>` 用，不要手改。HTML 版網站地圖在 `/sitemap/`（`/de/sitemap/`、`/zh/sitemap/`），側欄頁尾有連結。
@@ -102,6 +102,7 @@
 - `ask_ex`：範例問題（list，四個）；輸入框空著時，placeholder 會輪流顯示它們（`chat.js`），打字、focus 或在回答時暫停；減少動態效果時不輪播。區塊上方可見的標題用 `ask`
 - `ask_err`（`%s` 會填 email）、`ask_busy`、`ask_refusal`：錯誤訊息，由 `chat.js` 顯示
 - 介面用第一人稱（「問我」、「我的作品」），因為問答框代表藝術家本人。
+- 問答框的回答用「Ting-Chun」稱呼藝術家（中文用「庭均」或「劉庭均」），不要單獨用「Liu」；wiki 內文仍寫 Liu，規則在 `RULES`。不談個人隱私。
 
 ### 3. 不翻譯、只有一種語言的部分
 

@@ -40,10 +40,10 @@ in Mandarin. Recommend the version in the visitor's language.
 - **Latent Heat Generation** (2025): [en](https://liutingchun.com/works/latent-heat-generation/) · [zh](https://liutingchun.com/zh/works/latent-heat-generation/) — Research notes: https://aprilcoffee.github.io/heat_as_image/index.html
 - **51 Ways to Spell the Image Giraffe** (2025): [en](https://liutingchun.com/works/51-ways-to-spell-the-image-giraffe/) · [zh](https://liutingchun.com/zh/works/51-ways-to-spell-the-image-giraffe/) — Talk recording, 39C3 (media.ccc.de): https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai
 - **Sixteen Tokens for a Cave** (2025): [en](https://liutingchun.com/works/sixteen-tokens-for-a-cave/) · [zh](https://liutingchun.com/zh/works/sixteen-tokens-for-a-cave/) — Preliminary work in the 39C3 talk, 28:37–32:20 (media.ccc.de): https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai
-- **Just Jailbreak** (2024): [en](https://liutingchun.com/works/just-jailbreak/) · [zh](https://liutingchun.com/zh/works/just-jailbreak/) — Kuai Kuai culture: https://en.wikipedia.org/wiki/Kuai_Kuai_culture — Synthiola (Fabian Mosele): https://www.fabianmosele.com/synthiola
+- **Just Jailbreak** (2024): [en](https://liutingchun.com/works/just-jailbreak/) · [zh](https://liutingchun.com/zh/works/just-jailbreak/) — Kuai Kuai culture: https://en.wikipedia.org/wiki/Kuai_Kuai_culture — Fabian Mosele: Just Jailbreak: https://www.fabianmosele.com/just-jailbreak
 - **Self-cannibalizing AI** (2023): [en](https://liutingchun.com/works/self-cannibalizing-ai/) · [zh](https://liutingchun.com/zh/works/self-cannibalizing-ai/) — Talk recording (media.ccc.de): https://media.ccc.de/v/37c3-12125-self-cannibalizing_ai
 - **Achtung! Verwischung** (2023): [en](https://liutingchun.com/works/achtung-verwischung/) · [zh](https://liutingchun.com/zh/works/achtung-verwischung/)
-- **Imaginary Landscape** (2022–23): [en](https://liutingchun.com/works/imaginary-landscape/) · [zh](https://liutingchun.com/zh/works/imaginary-landscape/)
+- **Imaginary Landscape** (2022–2024): [en](https://liutingchun.com/works/imaginary-landscape/) · [zh](https://liutingchun.com/zh/works/imaginary-landscape/)
 - **Beneath** (2022): [en](https://liutingchun.com/works/beneath/) · [zh](https://liutingchun.com/zh/works/beneath/)
 - **Sun** 太陽 (2020): [en](https://liutingchun.com/works/sun/) · [zh](https://liutingchun.com/zh/works/sun/) — Open the work (mobile browser): https://aprilcoffee.github.io/sun/
 - **Bring Us Somewhere** 帶我去一個地方 (2020): [en](https://liutingchun.com/works/bring-us-somewhere/) · [zh](https://liutingchun.com/zh/works/bring-us-somewhere/)
@@ -139,10 +139,10 @@ Organisers', institutions' and publishers' pages for entries in the CV (About pa
 - 2026 Heat as (Generative) Image Making, FIfF-Kommunikation 1/26, p. 64, FIfF e.V. Essay for the Weizenbaum-Studienpreis 2025: https://www.fiff.de/fiff-kommunikation/2026/1/
 - 2025 Stereotype Encoding: How AI Images Learn Cultural Bias, Latent Space, Filmwerkstatt Düsseldorf: https://www.academia.edu/165438573/Stereotype_Encoding_How_AI_Images_Learn_Cultural_Bias
 - 2025 On the Materiality of Artificial Intelligence, in: un/learn ai – integrating AI in aesthetic practices, Vol. 3, pp. 218–223, Forschungsprojekt KITeGG: https://openscience.ub.uni-mainz.de/items/7d8cb85f-0e1a-409e-b9a1-a9dac96e48a0
-- 2024 Hello, hello, hello, hello? Hello? Hello! Human! Exhibition catalogue “Hello, Human!”, Museum of Contemporary Art Taipei (Mandarin/English): https://www.mocataipei.org.tw/tw/ExhibitionAndEvent/Info/你好，人類！Hello,*Human!
+- 2024 Hello, hello, hello, hello? Hello? Hello! Human! Exhibition catalogue “Hello, Human!”, Museum of Contemporary Art Taipei (Mandarin/English; English translation by 吳中平): https://www.mocataipei.org.tw/tw/ExhibitionAndEvent/Info/你好，人類！Hello,*Human!
 - 2024 Positioning – A Prerequisite for Immersion, Digiarts, National Taiwan Museum of Fine Arts: https://www.digiarts.org.tw/DigiArts/DataBasePage/4_236170297334000/Chi
 - 2022 Poetic Materialization – Regarding Midjourney, [ ] ground zero – poetics of technics and cognition: https://ground-zero.khm.de/portfolio/disruptive-news-22-english/#poet
-- 2021 The Rule Becomes the Author!, [ ] ground zero – poetics of technics and cognition: https://dev.ground-zero.khm.de/ell-worl-paper/1rule-author.html
+- 2021 The Rule Becomes the Author!, [ ] ground zero – poetics of technics and cognition: https://ground-zero.khm.de/portfolio/_ell_-worl_-the-rule-becomes-the-author/
 
 **Exhibitions**
 
