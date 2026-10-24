@@ -227,7 +227,19 @@ def cover_of(w):
 URL_RE = re.compile(r"https?://[A-Za-z0-9\-._~:/?#\[\]@!$&'()*+,;=%]+")
 
 
+MD_LINK = re.compile(r"\[([^\]]+)\]\((https?://[^)\s]+)\)")
+
+
 def linkify(text):
+    """Bare URLs and Markdown links [label](url) in running text become links."""
+    if MD_LINK.search(text or ""):
+        out, last = [], 0
+        for m in MD_LINK.finditer(text):
+            out.append(linkify(text[last:m.start()]))
+            out.append(a(m.group(2), esc(m.group(1))))
+            last = m.end()
+        out.append(linkify(text[last:]))
+        return "".join(out)
     out, last = [], 0
     for m in URL_RE.finditer(text):
         u = m.group(0).rstrip(".,;:!?)")
@@ -340,9 +352,8 @@ UI = {
         "sitemap": "Site map", "sitemap_lead": "Every page of this website.",
         "sitemap_desc": "Site map of the website of %s: works and performances, talks and workshops, about, blog.",
         "Year": "Year", "Status": "Status", "Type": "Type", "Materials": "Materials", "With": "With", "Link": "Link",
-        "work_desc": "%s (%s), %s by %s.", "work": "work", "work_with": "with %s", "event": "Event page", "held": "Sessions", "workshop": "Workshop",
+        "work_desc": "%s (%s), %s by %s.", "work": "work", "work_with": "with %s", "show_all": "Show all (%d)", "event": "Event page", "held": "Sessions", "workshop": "Workshop",
         "perf_title": "Performance archive",
-        "perf_lead": "Recordings of live audio-visual sets and noise performances, 2016–2024, on stage, at festivals, on the radio and at exhibition openings. They open on Vimeo.",
         "watch": "Watch on %s ↗",
         "about": "About",
         "blog_title": "Blog Archive",
@@ -352,7 +363,7 @@ UI = {
         "workshops_lead": "Workshops I offer: using AI locally on your own computer, working hands-on with embeddings, and seeing the biases inside AI models. They work for anyone, from people who have never written code to artists, companies and scholars. Talk recordings below.",
         "workshops_desc": "Workshops and talks by %s on local AI usage, embedding practice and biases in AI models, with talk recordings.",
         "workshops_ask": "Workshop and lecture requests: please get in touch by email.",
-        "press_groups": {"watch": "Talk recordings", "read": "Written about the work"},
+        "press_groups": {"watch": "Talk recordings", "read": "Cited and discussed"},
         "Date": "Date", "Category": "Category",
         "ask": "Ask about my work", "ask_ph": "Ask me anything", "ask_btn": "Ask",
         "ask_ex": ["What is Latent Heat Generation about?", "Why can “giraffe” be spelled in 51 ways?", "Which of your works deal with AI?", "What are you working on now?"],
@@ -375,9 +386,8 @@ UI = {
         "sitemap": "Seitenübersicht", "sitemap_lead": "Alle Seiten dieser Website.",
         "sitemap_desc": "Seitenübersicht der Website von %s: Arbeiten und Performances, Vorträge und Workshops, Über mich, Blog.",
         "Year": "Jahr", "Status": "Status", "Type": "Art", "Materials": "Material", "With": "Mit", "Link": "Link",
-        "work_desc": "%s (%s), %s von %s.", "work": "Arbeit", "work_with": "mit %s", "event": "Veranstaltung", "held": "Termine", "workshop": "Workshop",
+        "work_desc": "%s (%s), %s von %s.", "work": "Arbeit", "work_with": "mit %s", "show_all": "Alle anzeigen (%d)", "event": "Veranstaltung", "held": "Termine", "workshop": "Workshop",
         "perf_title": "Performance-Archiv",
-        "perf_lead": "Aufzeichnungen audiovisueller Live-Sets und Noise-Performances, 2016–2024, auf der Bühne, bei Festivals, im Radio und bei Ausstellungseröffnungen. Sie öffnen sich auf Vimeo.",
         "watch": "Auf %s ansehen ↗",
         "about": "Über mich",
         "blog_title": "Blog-Archiv",
@@ -387,7 +397,7 @@ UI = {
         "workshops_lead": "Workshops, die ich anbiete: KI lokal auf dem eigenen Rechner nutzen, praktisch mit Embeddings arbeiten und die Biases in KI-Modellen sichtbar machen. Sie eignen sich für alle, von Menschen ohne Programmiererfahrung bis zu Künstler*innen, Unternehmen und Wissenschaftler*innen. Darunter Aufzeichnungen von Vorträgen.",
         "workshops_desc": "Workshops und Vorträge von %s zu lokaler KI-Anwendung, Embedding-Praxis und Biases in KI-Modellen, mit Vortragsaufzeichnungen.",
         "workshops_ask": "Anfragen für Workshops und Vorträge richten Sie bitte per E-Mail an mich.",
-        "press_groups": {"watch": "Vortragsaufzeichnungen", "read": "Texte über die Arbeit"},
+        "press_groups": {"watch": "Vortragsaufzeichnungen", "read": "Zitiert und besprochen"},
         "Date": "Datum", "Category": "Kategorie",
         "ask": "Fragen Sie zu meiner Arbeit", "ask_ph": "Fragen Sie mich alles", "ask_btn": "Fragen",
         "ask_ex": ["Worum geht es in Latent Heat Generation?", "Warum lässt sich „giraffe“ auf 51 Arten schreiben?", "Welche Ihrer Arbeiten beschäftigen sich mit KI?", "Woran arbeiten Sie gerade?"],
@@ -403,26 +413,25 @@ UI = {
         "selected": "精選作品", "all_works": "全部作品（%d）→",
         "works_lead": "裝置、表演、網路藝術與藝術研究，%s–%s。",
         "works_desc": "%s的精選作品，%s–%s：裝置、表演、網路藝術，以及關於人工智慧的藝術研究。",
-        "Topics": "主題", "Email": "信箱", "contact_note": "我開設工作坊，主題包括在自己的電腦上使用 AI、embedding 實作，以及辨識 AI 模型中的偏見。工作坊與講座邀約，歡迎來信。", "work_by": "%s，%s，%s。",
-        "tags": {"works": "批判性 AI、生成藝術、藝術研究、控制論、網路藝術、影音表演",
-                 "about": "批判性 AI、生成藝術、藝術研究、控制論、網路藝術、影音表演",
+        "Topics": "主題", "Email": "信箱", "contact_note": "工作坊主題包含：在自己的電腦上使用 AI、embedding 實作，以及辨識 AI 模型中的偏見。工作坊與講座邀約，歡迎來信。", "work_by": "%s，%s，%s。",
+        "tags": {"works": "批判性 AI、生成藝術、藝術研究、控制論、網路藝術、音像演出",
+                 "about": "批判性 AI、生成藝術、藝術研究、控制論、網路藝術、音像演出",
                  "workshops": "本地端 AI、embedding 實作、AI 偏見、工作坊、講座、講座錄影"},
         "sitemap": "網站地圖", "sitemap_lead": "這個網站的所有頁面。",
         "sitemap_desc": "%s網站的網站地圖：創作計畫與表演、講座與工作坊、關於、部落格。",
         "Year": "年份", "Status": "狀態", "Type": "類型", "Materials": "媒材", "With": "合作", "Link": "連結",
-        "work_desc": "%s（%s），%s，%s。", "work": "作品", "work_with": "與 %s 合作", "event": "活動頁面", "held": "場次", "workshop": "工作坊",
+        "work_desc": "%s（%s），%s，%s。", "work": "作品", "work_with": "與 %s 合作", "show_all": "顯示全部（%d）", "event": "活動頁面", "held": "場次", "workshop": "工作坊",
         "perf_title": "表演紀錄",
-        "perf_lead": "2016 至 2024 年間現場影音演出與噪音演出的錄影，演出場合包括表演場地、藝術節、電台節目與展覽開幕。點選即可在 Vimeo 觀看。",
         "watch": "在 %s 觀看 ↗",
         "about": "關於",
         "blog_title": "部落格 Blog Archive",
         "blog_lead": "作品筆記，以及 Raspberry Pi、Processing 與 Python 的技術文章。",
         "blog_desc": "%s的部落格文章彙整：作品筆記，以及 Raspberry Pi、Processing 與 Python 技術文章。",
         "friends_desc": "%s的朋友、合作夥伴與藝術家夥伴，以及他們的作品網站連結。",
-        "workshops_lead": "我開設的工作坊：在自己的電腦上使用 AI、動手操作 embedding，以及看見 AI 模型裡的偏見。從沒寫過程式的人、藝術家、企業到研究者都能參加。頁面下方是講座錄影。",
+        "workshops_lead": "工作坊內容包含：在自己的電腦上使用 AI、動手操作 embedding，以及辨識 AI 模型中的偏見。沒有寫程式經驗的人、藝術家、企業與研究者皆可參加。頁面下方為講座錄影。",
         "workshops_desc": "%s的講座與工作坊：講座錄影，以及在自己的電腦上使用 AI、embedding 實作與 AI 模型偏見的工作坊。",
         "workshops_ask": "工作坊與講座邀約，歡迎來信。",
-        "press_groups": {"watch": "講座錄影", "read": "相關評論與研究"},
+        "press_groups": {"watch": "講座錄影", "read": "引用與討論"},
         "Date": "日期", "Category": "分類",
         "ask": "關於我的作品，問問我", "ask_ph": "問我任何事", "ask_btn": "提問",
         "ask_ex": ["《Latent Heat Generation》在談什麼？", "為什麼「giraffe」可以有 51 種拼法？", "你有哪些作品跟 AI 有關？", "你現在在做什麼？"],
@@ -779,8 +788,8 @@ for L in LANGS:
          '<header class="page-head"><h1 class="page-title">%s</h1>%s</header>' % (
              esc(u["nav"]["works"]), '<p class="lead jump"><a href="#performances">%s ↓</a></p>' % esc(u["perf_title"]) if perfs else "") +
          '<div class="grid">%s</div>' % "".join(work_card(i + 1, w, L, kw=True) for i, w in enumerate(works)) +
-         ('<section class="sub-sec" id="performances"><header class="sub-head"><h2>%s</h2><p class="lead">%s</p></header>'
-          '<div class="perf">%s</div></section>' % (esc(u["perf_title"]), esc(u["perf_lead"]), perf_html) if perfs else ""),
+         ('<section class="sub-sec" id="performances"><header class="sub-head"><h2>%s</h2></header>'
+          '<div class="perf">%s</div></section>' % (esc(u["perf_title"]), perf_html) if perfs else ""),
          ld=webpage_ld("CollectionPage", P + "works/", u["nav"]["works"], u["works_desc"] % (lname(L), y0, y1), L, u["tags"]["works"]),
          section="works", lang=L, alts=each("works/"))
 
@@ -850,27 +859,42 @@ for L in LANGS:
                 esc(it.get("outlet")), '<span class="press-note">%s</span>' % esc(note) if note else ""))
         return rows
 
-    cv = ""
+    # CV: a jump list of the sections first; long sections show their latest rows and fold the rest away
+    def cv_id(title):
+        return "cv-" + re.sub(r"[^a-z]+", "-", title.lower()).strip("-")  # prefixed: #performances is the works page's band
+
+    CV_SHOW = 8
+    cv, jumps = "", []
+    texts = press_rows("read")
     for sec in D["about"]["sections"]:
-        rows = ""
+        rows = []
         for it in sec["items"]:
             text = tr(it, "text", L)
             same = L != "en" and not it.get("text_" + L)  # not translated: mark the row as English
-            rows += '<div class="cv-row"%s><span class="mono">%s</span><span>%s</span></div>' % (
-                ' lang="en"' if same else "", esc(it.get("year")), a(it["url"], esc(text)) if it.get("url") else esc(text))
-        cv += '<section class="cv-sec"><h2>%s</h2><div>%s</div></section>' % (esc(tr(sec, "title", L)), rows)
-        if sec.get("title") == "Publications & Writing" and press_rows("read"):  # texts by others follow the own texts
-            cv += '<section class="cv-sec" id="texts"><h2>%s</h2><div>%s</div></section>' % (
-                esc(u["press_groups"]["read"]), press_rows("read"))
+            rows.append('<div class="cv-row"%s><span class="mono">%s</span><span>%s</span></div>' % (
+                ' lang="en"' if same else "", esc(it.get("year")), a(it["url"], esc(text)) if it.get("url") else esc(text)))
+        body = "".join(rows[:CV_SHOW]) + ('<details class="cv-more"><summary class="mono">%s</summary>%s</details>' % (
+            esc(u["show_all"] % len(rows)), "".join(rows[CV_SHOW:])) if len(rows) > CV_SHOW + 2 else "".join(rows[CV_SHOW:]))
+        sid = cv_id(sec["title"])
+        jumps.append((sid, tr(sec, "title", L)))
+        cv += '<section class="cv-sec" id="%s"><h2>%s</h2><div>%s</div></section>' % (sid, esc(tr(sec, "title", L)), body)
+        if sec["title"] == "Publications & Writing" and texts:  # texts by others follow the own texts
+            jumps.append(("texts", u["press_groups"]["read"]))
+            cv += '<section class="cv-sec" id="texts"><h2>%s</h2><div>%s</div></section>' % (esc(u["press_groups"]["read"]), texts)
+    cv_nav = '<nav class="cv-nav mono" aria-label="CV">%s</nav>' % "".join('<a href="#%s">%s</a>' % (i, esc(t)) for i, t in jumps)
+
     bio = tr(D["about"], "bio", L)
+    more = tr(D["about"], "text", L)  # the longer text under the bio (the bio alone stays the page description)
     about_mail = S.get("email_alt") or S["email"]  # the address shown on the About page (the sidebar has site.email)
     page(P + "about/", u["about"], bio,
-         '<div class="about-top"><h1 class="page-title">%s</h1><div><p class="bio">%s</p>'
+         '<div class="about-top"><h1 class="page-title">%s</h1><div><p class="bio">%s</p>%s'
          '<p class="contact"><span class="mono">%s</span><a href="mailto:%s">%s</a></p>'
          '<p class="contact-note">%s</p>'
-         '<p class="topics"><span class="mono">%s</span> %s</p></div></div>%s' % (
-             esc(u["about"]), esc(bio), esc(u["Email"]), esc(about_mail), esc(about_mail), esc(u["contact_note"]),
-             esc(u["Topics"]), esc(u["tags"]["about"]), cv),
+         '<p class="topics"><span class="mono">%s</span> %s</p></div></div>%s%s' % (
+             esc(u["about"]), esc(bio), '<div class="prose about-text"%s>%s</div>' % (
+                 "" if L == "en" or D["about"].get("text_" + L) else ' lang="en"', prose(more)) if more else "",
+             esc(u["Email"]), esc(about_mail), esc(about_mail), esc(u["contact_note"]),
+             esc(u["Topics"]), esc(u["tags"]["about"]), cv_nav, cv),
          ld=dict(person(L), description=bio, keywords=u["tags"]["about"]), og_type="profile", section="about", lang=L, alts=each("about/"))
 
     # workshops: what a workshop can be, one page each (site.json "workshops", images in images/workshops/),
@@ -907,11 +931,7 @@ for L in LANGS:
         alts = [(i.get("alt_" + L) or i.get("alt")) if isinstance(i, dict) else None for i in x.get("images", [])]
         figs = ["<figure>%s</figure>" % img(im, 1600 if k == 0 else 1000, alts[k] or "%s (%d/%d)" % (tr(x, "title", L), k + 1, len(pics)))
                 for k, im in enumerate(pics)]
-        plates = figs.pop(0).replace("<figure>", '<figure class="hero">', 1) if figs else ""
-        if len(figs) == 1:
-            plates += figs[0].replace("<figure>", '<figure class="hero">', 1)
-        elif figs:
-            plates += '<div class="cols">%s</div>' % "".join(figs)
+        plates = "".join(f.replace("<figure>", '<figure class="hero">', 1) for f in figs)  # screenshots: each at full width
         text, held = tr(x, "text", L), tr(x, "held", L)
         tl = HREFLANG[L] if L == "en" or x.get("text_" + L) else "en"
         body = ('<article class="work"><aside class="work-info"><p class="kicker mono"><a href="%s">%s</a></p><h1>%s</h1>%s<p class="shop-sum">%s</p><div class="prose"%s>%s</div>'
@@ -1027,8 +1047,8 @@ page("impressum/", "Impressum", "Impressum / legal notice of %s." % S["name"], b
 <p>Diese Website verwendet freie Schriften unter der <a href="https://openfontlicense.org/">SIL Open Font License 1.1</a>; die Schriftdateien liegen auf diesem Server, die Lizenztexte sind jeweils verlinkt. / This site uses open-source typefaces under the SIL Open Font License 1.1, served from this server.</p>
 <ul class="font-credits">
 <li><b>Minipax</b> von Raphaël Ronot (Text und Überschriften Latein / text and headings, Latin): <a href="https://github.com/ronotypo/Minipax">github.com/ronotypo/Minipax</a>, Lizenz: <a href="{fonts}LICENSES/Minipax-OFL.txt">OFL</a></li>
-<li><b>源起明體 GenKi Min2 TW</b> (Regular, Bold) von ButTaiwan, auf Basis von Source Han Serif (Adobe) (Fließtext Chinesisch / body text, Chinese): <a href="https://github.com/ButTaiwan/genyo-font">github.com/ButTaiwan/genyo-font</a>, Lizenz: <a href="{fonts}LICENSES/GenYo-GenKi-OFL.txt">OFL</a>. Für das Web in Teilmengen zerlegt (GenKi Min2 TW Web).</li>
-<li><b>jf open 粉圓 (jf open huninn)</b> von justfont (Überschriften Chinesisch / headings, Chinese): <a href="https://github.com/justfont/open-huninn-font">github.com/justfont/open-huninn-font</a>, Lizenz: <a href="{fonts}LICENSES/jf-open-huninn-OFL.txt">OFL</a>. Für das Web in Teilmengen zerlegt und daher umbenannt (LTC Round), wie es die Lizenz für den reservierten Namen verlangt.</li>
+<li><b>源起明體 GenKi Min2 TW</b> (Regular, Bold) von ButTaiwan, auf Basis von Source Han Serif (Adobe) (Überschriften Chinesisch / headings, Chinese): <a href="https://github.com/ButTaiwan/genyo-font">github.com/ButTaiwan/genyo-font</a>, Lizenz: <a href="{fonts}LICENSES/GenYo-GenKi-OFL.txt">OFL</a>. Für das Web in Teilmengen zerlegt (GenKi Min2 TW Web).</li>
+<li><b>jf open 粉圓 (jf open huninn)</b> von justfont (Fließtext Chinesisch / body text, Chinese): <a href="https://github.com/justfont/open-huninn-font">github.com/justfont/open-huninn-font</a>, Lizenz: <a href="{fonts}LICENSES/jf-open-huninn-OFL.txt">OFL</a>. Für das Web in Teilmengen zerlegt und daher umbenannt (LTC Round), wie es die Lizenz für den reservierten Namen verlangt.</li>
 </ul>
 <p class="en">Legal notice for this personal artist website. Contact: {email}.</p>
 </div>""".format(name=esc(S["name"]), addr=addr_html, email=esc(S["email"]), fonts=url("assets/fonts/")))
@@ -1100,7 +1120,7 @@ llms = ["# %s (%s)" % (S["name"], S.get("name_zh", "")), "",
         "- [Blog Archive](%s): texts and technical notes (in Mandarin)" % abs_url("blog/"),
         "- [Performances](%s): recordings of live audio-visual sets, 2016–2024 (on the works page)" % abs_url("works/#performances"),
         "- [Talks & Workshops](%s): talk recordings, and workshops on local AI, embeddings and AI bias" % abs_url("workshops/"),
-        "- [Written about the work](%s): texts by others, in the CV" % abs_url("about/#texts"), "",
+        "- [Cited and discussed](%s): texts by others that cite or discuss the work, on the About page" % abs_url("about/#texts"), "",
         "The site is also available in Traditional Chinese (%s)." % abs_url("zh/"), "",
         "## Works", ""]
 llms += ["- [%s](%s) (%s): %s" % (w["title"], abs_url("works/%s/" % w["slug"]), w.get("year"), w.get("type"))

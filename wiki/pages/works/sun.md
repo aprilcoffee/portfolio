@@ -15,9 +15,9 @@ A piece of internet art: a p5.js web page that shows a sun on a mobile phone whi
 ## Facts
 
 - **Year:** 2020
-- **Type:** Internet Art (p5.js website)
-- **Type (de):** Netzkunst (p5.js-Website)
-- **Type (zh):** 網路藝術（p5.js 網頁）
+- **Type:** Internet Art
+- **Type (de):** Netzkunst
+- **Type (zh):** 網路藝術
 - **Credits:** In memory of Ying Wen, Wang
 - **Link:** [Open the work (mobile browser)](https://aprilcoffee.github.io/sun/)
 - **Page:** [https://liutingchun.com/works/sun/](https://liutingchun.com/works/sun/) · [zh](https://liutingchun.com/zh/works/sun/)

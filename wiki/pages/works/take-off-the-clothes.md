@@ -16,9 +16,9 @@ A performance first made at AVU in Prague and later repeated in Taiwan. The inst
 ## Facts
 
 - **Year:** 2017
-- **Type:** Performance Record
-- **Type (de):** Performance-Dokumentation
-- **Type (zh):** 表演紀錄
+- **Type:** Performance
+- **Type (de):** Performance
+- **Type (zh):** 表演
 - **Video:** https://vimeo.com/246931383
 - **Credits:** Performer: Ting-Chun Liu
 - **Page:** [https://liutingchun.com/works/take-off-the-clothes/](https://liutingchun.com/works/take-off-the-clothes/) · [zh](https://liutingchun.com/zh/works/take-off-the-clothes/)

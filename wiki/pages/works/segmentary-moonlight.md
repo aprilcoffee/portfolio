@@ -16,9 +16,9 @@ A light installation by the collective LLL for the Yue-Jin Lantern Festival in Y
 ## Facts
 
 - **Year:** 2018
-- **Type:** Light Installation
-- **Type (de):** Lichtinstallation
-- **Type (zh):** 燈光裝置
+- **Type:** Light Installation, Public Art
+- **Type (de):** Lichtinstallation, Kunst im öffentlichen Raum
+- **Type (zh):** 燈光裝置、公共藝術
 - **Materials:** 7 segment, scaffolding, wood board — 200 × 100 × 250 cm
 - **With:** LLL (林瑜亮 Lin Yu-Liang, 李翎暄 Li Ling-Syuan)
 - **Page:** [https://liutingchun.com/works/segmentary-moonlight/](https://liutingchun.com/works/segmentary-moonlight/) · [zh](https://liutingchun.com/zh/works/segmentary-moonlight/)

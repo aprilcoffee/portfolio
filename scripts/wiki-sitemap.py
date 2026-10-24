@@ -57,7 +57,7 @@ out.append("## Workshops\n")
 for x in [x for x in D.get("workshops", []) if not x.get("hidden")]:
     out.append("- **%s**: %s" % (x["title"], each("workshops/%s/" % x["slug"])))
 out.append("- **Talk recordings**: %s" % each("workshops/#talks"))
-out.append("- **Texts by others about the work** (in the CV): %s\n" % each("about/#texts"))
+out.append("- **Cited and discussed** (texts by others about the work, on the About page): %s\n" % each("about/#texts"))
 
 out.append("## Works\n")
 for w in works:

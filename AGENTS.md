@@ -28,7 +28,7 @@
 | 介面文字（選單、按鈕、頁面引言、對話框提示…） | `scripts/build.py` 的 `UI` 字典 |
 | 頁面結構、HTML、SEO（title、canonical、hreflang、JSON-LD、sitemap） | `scripts/build.py` |
 | Impressum、Datenschutz（只有德文） | `scripts/build.py` 裡 `page("impressum/"…)`、`page("datenschutz/"…)`、`CHAT_PRIVACY` |
-| 字型 | `assets/fonts/`（`fonts.css` 與字型檔都由 `scripts/build-fonts.py` 產生，不要手改；授權在 `assets/fonts/LICENSES/`，出處標示在 Impressum 的「Schriften」段落）。CSS 變數 `--text`（內文）、`--display`（標題）、`--mono` |
+| 字型 | `assets/fonts/`（`fonts.css` 與字型檔都由 `scripts/build-fonts.py` 產生，不要手改；授權在 `assets/fonts/LICENSES/`，出處標示在 Impressum 的「Schriften」段落）。CSS 變數 `--text`（內文：Minipax＋中文 LTC Round／粉圓，小字也好讀）、`--display`（標題：Minipax Bold＋中文 GenKi Min2／源起明體）、`--mono`；粉圓只有一種字重，內文的粗體中文要用 `--display`。中文小字（卡片關鍵字、說明）在 `style.css` 最後有放大加深的規則 |
 | 樣式 | `assets/style.css`（全部用 rem；桌機 `html{font-size:80%}`，≤800px 回到 100%；斷點 1024px、800px） |
 | 選單、語言切換等前端行為 | `assets/site.js` |
 | p5.js 背景特效（首頁字元場、側欄訊號線） | `assets/effects.js` |
@@ -70,8 +70,8 @@
 | `press[]`（講座錄影與他人評論） | `note` | `note_de/_zh` |
 | `performances[]`（作品頁下方的表演紀錄） | `note`、`title`（只在需要區分時，例如 Imaginary Landscape（表演版）） | `note_de/_zh`、`title_de/_zh` |
 | `workshops[]` | `title`、`summary`、`text`、`held` | `_de/_zh` |
-| `about` | `bio` | `bio_de/_zh` |
-| `about.sections[]`（CV 區塊） | `title` | `title_de/_zh` |
+| `about` | `bio`（短，也是頁面描述與 JSON-LD）、`text`（較長的介紹，顯示在 bio 下方，空一行分段） | `bio_de/_zh`、`text_de/_zh` |
+| `about.sections[]`（CV 區塊，順序即頁面順序：展覽、講座、出版、獎項、教學、學歷、表演、新媒體專案；頁首有跳轉列，超過 10 筆的區塊只先顯示 8 筆，其餘收進「顯示全部」） | `title` | `title_de/_zh` |
 | `about.sections[].items[]`（CV 每一行） | `text` | `text_de/_zh`（目前多數只有 `_zh`） |
 
 注意：
@@ -80,8 +80,8 @@
 - CV 行沒有翻譯時，`build.py` 會給那一行加 `lang="en"`，讓瀏覽器與搜尋引擎知道這段是英文。
 - `works[].summary`（選填，+ `_de/_zh`）：搜尋結果與分享用的描述。只有作品文字開頭不適合當描述時才填（例如 Sixteen Tokens for a Cave 以 token 詩開頭）；沒填就用文字開頭。
 - `works[].status`（例如 In development）顯示在作品卡與作品頁的「Status」列；留空就不顯示。
-- `press[]` 的 `group` 只能是 `watch`（講座錄影，顯示在工作坊與講座頁）、`read`（他人寫的評論與研究，顯示在 About 的 CV「Publications & Writing」之後，`#texts`）；展覽、活動、機構介紹頁不放；標題與來源不翻譯，沒有 `note_de/_zh` 時該語言顯示英文並標 `lang="en"`。
-- 側邊欄：主選單只有 `NAV`（創作計畫、講座與工作坊、關於），部落格與朋友在側欄下方的小字（`FOOT`），都在 `build.py` 開頭。表演沒有獨立頁，是作品頁最下方深色的「表演紀錄」區塊（`#performances`）；舊的 `/performance/`、`/press/` 轉址到新位置。中文名稱在 `UI["zh"]["nav"]`；中文側邊欄用標題字體（`assets/style.css` 的 `html:lang(zh) .nav a`）。
+- `press[]` 的 `group` 只能是 `watch`（講座錄影，顯示在工作坊與講座頁）、`read`（他人引用或討論作品的文字，About 頁簡介下方、CV 之前的「引用與討論」／Cited and discussed，`#texts`）；展覽、活動、機構介紹頁不放；標題與來源不翻譯，沒有 `note_de/_zh` 時該語言顯示英文並標 `lang="en"`。
+- 側邊欄：主選單只有 `NAV`（創作計畫、講座與工作坊、關於），部落格與朋友在側欄下方的小字（`FOOT`），都在 `build.py` 開頭。表演沒有獨立頁，是作品頁最下方深色的「表演紀錄」區塊（`#performances`），沒有引言；中文寫「音像演出」不寫「影音表演」。作品的 `type` 與卡片小字 `kw` 用同一套詞（兩者保持一致）；影像裝置中文寫「影像裝置」；舊的 `/performance/`、`/press/` 轉址到新位置。中文名稱在 `UI["zh"]["nav"]`；中文側邊欄用標題字體（`assets/style.css` 的 `html:lang(zh) .nav a`）。
 - 聯絡信箱：邀約（工作坊、講座、合作、委託）一律給 Weimar 信箱：問答框（`worker/src/index.js` 的 `RULES`）、錯誤訊息 `ask_err`、`llms.txt`、wiki 都用 `site.email_alt`。`site.email`（側欄、Impressum、JSON-LD）維持 gmail；`site.email_alt`（Weimar 信箱）是 About 頁顯示的聯絡信箱（沒填就用 `site.email`）；`site.orcid`（只填 iD）有填才會在 About 頁出現，目前留空。`friends/` 頁刻意只有標題與卡片（沒有引言和主題）。頁尾沒有 HTML 網站地圖的連結（`/sitemap/` 仍在 `sitemap.xml` 裡）。
 - **搜尋引擎（SEO）用語**：主要敘述是 “research-based media artist working with critical AI”（`site.description`、`statement`、About 的 bio 第一句）；看不到的地方（JSON-LD 的 `jobTitle`、`occupations`、`llms.txt`）用 “Critical AI Artist”；首頁 `<title>` 刻意只放名字。文字裡一律寫全名 Ting-Chun Liu。部落格文章的作者列寫 “Ting-Chun Liu, media artist”。
 - 主題標籤：`works[].tags`（`_de/_zh` 沒填就顯示英文）顯示在作品頁的「Topics」列，也寫進 JSON-LD 的 `keywords`；各列表頁的標籤在 `build.py` 的 `UI[...]["tags"]`。
@@ -102,6 +102,7 @@
 - `ask_ex`：範例問題（list，四個）；輸入框空著時，placeholder 會輪流顯示它們（`chat.js`），打字、focus 或在回答時暫停；減少動態效果時不輪播。區塊上方可見的標題用 `ask`
 - `ask_err`（`%s` 會填 email）、`ask_busy`、`ask_refusal`：錯誤訊息，由 `chat.js` 顯示
 - 介面用第一人稱（「問我」、「我的作品」），因為問答框代表藝術家本人。
+- 問答框以外的中文介面文字與翻譯，少用第一人稱：寫「工作坊內容包含：……」，不寫「我開設的工作坊……」。
 - 問答框的回答用「Ting-Chun」稱呼藝術家（中文用「庭均」或「劉庭均」），不要單獨用「Liu」；wiki 內文仍寫 Liu，規則在 `RULES`。不談個人隱私。
 
 ### 3. 不翻譯、只有一種語言的部分

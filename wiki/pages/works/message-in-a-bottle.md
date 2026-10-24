@@ -16,9 +16,9 @@ A series of Facebook posts (2017) whose only content is the exact time of postin
 ## Facts
 
 - **Year:** 2017
-- **Type:** Facebook Posts
-- **Type (de):** Facebook-Beiträge
-- **Type (zh):** 臉書貼文
+- **Type:** Internet Art, Social Media
+- **Type (de):** Netzkunst, soziale Medien
+- **Type (zh):** 網路藝術、社群媒體
 - **Page:** [https://liutingchun.com/works/message-in-a-bottle/](https://liutingchun.com/works/message-in-a-bottle/) · [zh](https://liutingchun.com/zh/works/message-in-a-bottle/)
 
 ## Key ideas

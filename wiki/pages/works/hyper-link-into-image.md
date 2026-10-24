@@ -15,9 +15,9 @@ An internet-art installation (2016). A Wi-Fi router in the space, running a Ruby
 ## Facts
 
 - **Year:** 2016
-- **Type:** Internet Art
-- **Type (de):** Netzkunst
-- **Type (zh):** 網路藝術
+- **Type:** Internet Art, Installation
+- **Type (de):** Netzkunst, Installation
+- **Type (zh):** 網路藝術、裝置
 - **Materials:** Router, Mobile, code with programming language Ruby
 - **Page:** [https://liutingchun.com/works/hyper-link-into-image/](https://liutingchun.com/works/hyper-link-into-image/) · [zh](https://liutingchun.com/zh/works/hyper-link-into-image/)
 

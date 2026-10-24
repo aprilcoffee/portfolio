@@ -15,9 +15,9 @@ A site-specific performance made during the 'Leaky Archive' seminar (2023) for a
 ## Facts
 
 - **Year:** 2023
-- **Type:** Site-Specific Performance
-- **Type (de):** Ortsspezifische Performance
-- **Type (zh):** 特定場域表演
+- **Type:** On-site Performance
+- **Type (de):** Performance vor Ort
+- **Type (zh):** 現地行為
 - **Materials:** Wet floor stand
 - **Credits:** Photo: @joshua_karan_singh, @juanfrocu
 - **Page:** [https://liutingchun.com/works/achtung-verwischung/](https://liutingchun.com/works/achtung-verwischung/) · [zh](https://liutingchun.com/zh/works/achtung-verwischung/)

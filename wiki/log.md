@@ -112,3 +112,6 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 - works/just-jailbreak: TTXC Taiwan Technology and Culture Expo (Pier-2 Art Center, Kaohsiung, 12–27 Oct 2024), residency by Pier-2 and Hello World; CV exhibition added.
 - works/bring-us-somewhere: 城市轉藝器 dates, organiser, curator (ARTouch).
 - external-links, texts/on-the-materiality: KITeGG publications page. Chat rules: link own texts and workshop pages for questions about ideas.
+
+## [2026-10-24] update | Types, exhibitions, texts
+- Work types aligned with the card keywords (wiki Type lines refreshed); 音像演出 for audio-visual; Steering: AI-Worlding Frankfurt and Darmstadt, WIP Nicosia (NCAF only for Nicosia).

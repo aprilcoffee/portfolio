@@ -15,9 +15,9 @@ A performance (2017) with Yu-Wei He. Two computers play a game whose moves are v
 ## Facts
 
 - **Year:** 2017
-- **Type:** Performance Record
-- **Type (de):** Performance-Dokumentation
-- **Type (zh):** 表演紀錄
+- **Type:** Performance
+- **Type (de):** Performance
+- **Type (zh):** 表演
 - **With:** Yu-Wei He
 - **Video:** https://vimeo.com/246924651
 - **Credits:** Performer: Ting-Chun Liu, Yu-Wei He
