@@ -541,3 +541,13 @@ html.zoomed { overflow: hidden; }
 .text-row:hover .t { text-decoration: underline; text-underline-offset: 0.2rem; text-decoration-thickness: 1px; }
 @media (max-width: 800px) { .text-list { grid-template-columns: 1fr; } .text-row { grid-template-columns: 5rem 1fr; } }
 .text-row .credit { display: block; margin-top: 0.2rem; font-size: 0.75rem; }
+/* Talks, Workshops & Writing (2): a jump bar under the heading, one-column text list */
+.jump-bar { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; margin: -1rem 0 2.5rem; font-size: 0.8125rem; color: var(--mut); }
+.jump-bar a { white-space: nowrap; }
+.jump-bar a:hover { color: var(--ink); }
+#upcoming { margin-top: 0; }
+.text-list { display: flex; flex-direction: column; gap: 1.1rem; max-width: 52rem; }
+.text-row { display: grid; grid-template-columns: 7rem 1fr; grid-template-rows: none; column-gap: 1.25rem; align-items: start; }
+.text-row .pic { grid-row: auto; }
+.text-row .body { display: flex; flex-direction: column; min-width: 0; }
+@media (max-width: 800px) { .text-row { grid-template-columns: 5rem 1fr; } }
