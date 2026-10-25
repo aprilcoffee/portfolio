@@ -713,7 +713,7 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
 """.format(lang=cl, side_lang=' lang="%s"' % HREFLANG[lang] if cl != HREFLANG[lang] else "",
            locale=LOCALE[lang] if not content_lang else ("zh_TW" if content_lang.startswith("zh") else LOCALE[lang]),
            t=esc(page_title), d=esc(desc or tr(S, "description", lang)), name=esc(S["name"]), zh=esc(S.get("name_zh", "")),
-           c=esc(canonical), hreflang=hreflang, ogt=og_type, img=esc(image), icon=url("assets/favicon-32.png"), ico=url("favicon.ico"), touch=url("assets/apple-touch-icon.png"), manifest=url("site.webmanifest"),
+           c=esc(canonical), hreflang=hreflang, ogt=og_type, img=esc(image), icon=versioned("assets/favicon-32.png"), ico=versioned("favicon.ico"), touch=versioned("assets/apple-touch-icon.png"), manifest=url("site.webmanifest"),
            css=versioned("assets/style.css"), fonts=versioned("assets/fonts/fonts.css"), fonts_g=versioned("assets/fonts/fonts-google.css"), font_r=url("assets/fonts/Minipax-Regular.woff2"), font_b=url("assets/fonts/Minipax-Bold.woff2"), js=versioned("assets/site.js"), fx=versioned("assets/effects.js"), feed=url("blog/feed.xml"),
            img_meta=('<meta property="og:image:width" content="%d">\n<meta property="og:image:height" content="%d">\n' % (img_w, img_h)) if img_w else "",
            locale_alt="".join('<meta property="og:locale:alternate" content="%s">\n' % LOCALE[l] for l in (alts or {}) if l != lang),
