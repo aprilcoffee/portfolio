@@ -143,3 +143,6 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 ## [2026-10-25] ingest | home text, bio and workshop summaries edited by the artist
 - overview.md: current bio wording (cybernetics, operational images), share title, the home page text
 - topics/workshops.md: each workshop's one-line summary in the artist's wording
+
+## [2026-10-25] edit | share title (artist)
+- overview.md: share title now "Media Art, Critical AI, Artistic Research"
