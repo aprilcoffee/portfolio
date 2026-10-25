@@ -1739,7 +1739,8 @@
             "year": "2025",
             "text": "Generating for the Archive, Storage Museum Düsseldorf, w/ Leon-Etienne Kühr",
             "url": "https://www.filmwerkstatt-duesseldorf.de/generating-for-the-archive/",
-            "text_zh": "Generating for the Archive，杜塞道夫 Storage Museum，與 Leon-Etienne Kühr"
+            "text_zh": "Generating for the Archive，杜塞道夫 Storage Museum，與 Leon-Etienne Kühr",
+            "kind": "workshop"
           },
           {
             "year": "2025",
@@ -1780,7 +1781,8 @@
             "year": "2025",
             "text": "Feedback in Generative Art, Café Nimmersatt, Wolfhagen",
             "url": "",
-            "text_zh": "Feedback in Generative Art，Café Nimmersatt，沃爾夫哈根"
+            "text_zh": "Feedback in Generative Art，Café Nimmersatt，沃爾夫哈根",
+            "kind": "talk"
           },
           {
             "year": "2024",
@@ -1800,7 +1802,8 @@
             "year": "2024",
             "text": "Künstliche Intelligenz – Heilsbringer oder Apokalypse, Alfred Toepfer Stiftung, Siggen, w/ Leon-Etienne Kühr",
             "url": "",
-            "text_zh": "Künstliche Intelligenz – Heilsbringer oder Apokalypse，Alfred Toepfer 基金會，西根，與 Leon-Etienne Kühr"
+            "text_zh": "Künstliche Intelligenz – Heilsbringer oder Apokalypse，Alfred Toepfer 基金會，西根，與 Leon-Etienne Kühr",
+            "kind": "talk"
           },
           {
             "year": "2024",
@@ -1827,7 +1830,8 @@
             "year": "2024",
             "text": "Kulturelle Bildung in postdigitalen Lebenswelten, jfc Medienzentrum, Cologne, w/ Benita Martis",
             "url": "https://www.wuppertal.de/microsite/kulturbuero/20240125_Programm_Fachtag_KulturelleBildung_postdigitale_Lebenswelten.pdf",
-            "text_zh": "Kulturelle Bildung in postdigitalen Lebenswelten，jfc 媒體中心，科隆，與 Benita Martis"
+            "text_zh": "Kulturelle Bildung in postdigitalen Lebenswelten，jfc 媒體中心，科隆，與 Benita Martis",
+            "kind": "talk"
           },
           {
             "year": "2023",
