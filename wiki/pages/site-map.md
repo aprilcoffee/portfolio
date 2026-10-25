@@ -29,7 +29,8 @@ in Mandarin. Recommend the version in the visitor's language.
 ## Workshops
 
 - **Conditions for Emotions**: [en](https://liutingchun.com/workshops/conditions-for-emotions/) · [de](https://liutingchun.com/de/workshops/conditions-for-emotions/) · [zh](https://liutingchun.com/zh/workshops/conditions-for-emotions/)
-- **Paranoia De-Prompting**: [en](https://liutingchun.com/workshops/paranoia-de-prompting/) · [de](https://liutingchun.com/de/workshops/paranoia-de-prompting/) · [zh](https://liutingchun.com/zh/workshops/paranoia-de-prompting/)
+- **51 Ways to Spell the Image Giraffe**: [en](https://liutingchun.com/workshops/51-ways-to-spell-the-image-giraffe/) · [de](https://liutingchun.com/de/workshops/51-ways-to-spell-the-image-giraffe/) · [zh](https://liutingchun.com/zh/workshops/51-ways-to-spell-the-image-giraffe/)
+- **Stereotype Encoding**: [en](https://liutingchun.com/workshops/stereotype-encoding/) · [de](https://liutingchun.com/de/workshops/stereotype-encoding/) · [zh](https://liutingchun.com/zh/workshops/stereotype-encoding/)
 - **The Given Image**: [en](https://liutingchun.com/workshops/the-given-image/) · [de](https://liutingchun.com/de/workshops/the-given-image/) · [zh](https://liutingchun.com/zh/workshops/the-given-image/)
 - **Talk recordings**: [en](https://liutingchun.com/workshops/#talks) · [de](https://liutingchun.com/de/workshops/#talks) · [zh](https://liutingchun.com/zh/workshops/#talks)
 - **Cited and discussed** (texts by others about the work, on the About page): [en](https://liutingchun.com/about/#texts) · [de](https://liutingchun.com/de/about/#texts) · [zh](https://liutingchun.com/zh/about/#texts)

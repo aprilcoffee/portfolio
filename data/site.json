@@ -1400,8 +1400,64 @@
       "hidden": false
     },
     {
-      "slug": "paranoia-de-prompting",
-      "title": "Paranoia De-Prompting",
+      "slug": "51-ways-to-spell-the-image-giraffe",
+      "title": "51 Ways to Spell the Image Giraffe",
+      "title_de": "",
+      "title_zh": "",
+      "year": "2026",
+      "with": "Leon-Etienne Kühr",
+      "summary": "What does an image generator actually read? Look up words in its token dictionary, type prompts as numbers, and rebuild an image from tokens alone.",
+      "summary_de": "Was liest ein Bildgenerator eigentlich? Wörter im Token-Wörterbuch nachschlagen, Prompts als Zahlen eingeben und ein Bild allein aus Tokens wieder aufbauen.",
+      "summary_zh": "圖像生成器到底讀到了什麼？在它的詞元字典裡查字，用數字寫提示詞，再只用詞元把一張圖重建出來。",
+      "text": "An image generator never reads the words of a prompt. A tokenizer first cuts them into tokens, pieces from a fixed dictionary of about 49,000 entries, and the model receives only their numbers: “what is tokenization?” arrives as 49406, 768, 533, 32634, 10847, 286, 49407. Each number then stands for a list of 768 values, an embedding, and only that list reaches the model.\n\nThe workshop follows the talk 51 Ways to Spell the Image Giraffe (39C3) and opens this layer with a small toolkit in the browser. No programming experience is needed.\n\n# What is a token?\n\nParticipants type sentences and watch them fall apart. Common English words, brand names and hashtags are single entries; “schnitzel” takes two pieces, “Kaffee” three, a Chinese name nine raw bytes. Many emojis have no entry of their own and are spelled from byte fragments as well. Who the dictionary was written for shows in what each language costs.\n\n# The token dictionary\n\nThe whole dictionary can be searched. Inside “giraffe” hide many pieces that are entries of their own, from gira and ffe down to single letters, and they can be put together in 51 different ways. Normally the tokenizer always picks the same one.\n\n# Prompting with numbers\n\nWith an image generator patched to accept token IDs directly (SDXL Turbo), participants skip the tokenizer and choose the cut themselves: giraffe as one token, as gira + ffe, or as gi + ra + ff + e, each a prompt of its own. Most spellings still give a giraffe; some give an animal that does not exist.\n\n# Rebuilding an image\n\nThe last exercise goes the other way: starting from a photo, a genetic algorithm breeds sequences of 16 tokens until CLIP finds them close to the picture. The result reads like noise, yet an image generator can paint the photo back from it. What comes out shows what the machine kept, and what it never had a word for.",
+      "text_de": "Ein Bildgenerator liest die Wörter eines Prompts nie. Ein Tokenizer zerlegt sie zuerst in Tokens, Stücke aus einem festen Wörterbuch mit rund 49.000 Einträgen, und das Modell bekommt nur deren Nummern: „what is tokenization?“ kommt als 49406, 768, 533, 32634, 10847, 286, 49407 an. Jede Nummer steht dann für eine Liste aus 768 Werten, ein Embedding, und nur diese Liste erreicht das Modell.\n\nDer Workshop schließt an den Vortrag 51 Ways to Spell the Image Giraffe (39C3) an und öffnet diese Schicht mit einem kleinen Toolkit im Browser. Programmiererfahrung ist nicht nötig.\n\n# Was ist ein Token?\n\nDie Teilnehmenden tippen Sätze ein und sehen zu, wie sie zerfallen. Gängige englische Wörter, Markennamen und Hashtags sind einzelne Einträge; „Schnitzel“ braucht zwei Stücke, „Kaffee“ drei, ein chinesischer Name neun rohe Bytes. Viele Emojis haben keinen eigenen Eintrag und werden ebenfalls aus Byte-Fragmenten zusammengesetzt. Für wen das Wörterbuch geschrieben wurde, zeigt sich daran, was jede Sprache kostet.\n\n# Das Token-Wörterbuch\n\nDas ganze Wörterbuch lässt sich durchsuchen. In „giraffe“ stecken viele Stücke, die eigene Einträge sind, von gira und ffe bis zu einzelnen Buchstaben, und sie lassen sich auf 51 verschiedene Arten zusammensetzen. Normalerweise wählt der Tokenizer immer dieselbe.\n\n# Prompten mit Zahlen\n\nMit einem Bildgenerator, der so angepasst ist, dass er Token-IDs direkt annimmt (SDXL Turbo), überspringen die Teilnehmenden den Tokenizer und wählen den Schnitt selbst: giraffe als ein Token, als gira + ffe oder als gi + ra + ff + e, jede Schreibweise ein eigener Prompt. Die meisten ergeben noch eine Giraffe, manche ein Tier, das es nicht gibt.\n\n# Ein Bild wieder aufbauen\n\nDie letzte Übung geht den umgekehrten Weg: Ausgehend von einem Foto züchtet ein genetischer Algorithmus Folgen aus 16 Tokens, bis CLIP sie nah am Bild findet. Das Ergebnis liest sich wie Rauschen, und doch kann ein Bildgenerator das Foto daraus zurückmalen. Was herauskommt, zeigt, was die Maschine behalten hat und wofür sie nie ein Wort hatte.",
+      "text_zh": "圖像生成器從來不讀提示詞裡的字。分詞器會先把字切成詞元（Token），也就是一本約 49,000 個條目的固定字典裡的碎片，模型只收到它們的編號：「what is tokenization?」送進去時是 49406、768、533、32634、10847、286、49407。每個編號再對應到一串 768 個數值的嵌入向量（Embedding），真正進到模型裡的只有這串數值。\n\n這個工作坊延續在 39C3 發表的講座《51 Ways to Spell the Image Giraffe》，用一套在瀏覽器裡操作的小工具打開這一層。不需要寫程式的經驗。\n\n# 什麼是詞元\n\n參與者輸入句子，看它們被拆開。常見的英文字、品牌名稱和主題標籤都是單一條目；「schnitzel（炸肉排）」要兩塊，「Kaffee（咖啡）」要三塊，一個中文名字則被拆成九個原始位元組。許多表情符號也沒有自己的條目，同樣由位元組碎片拼成。這本字典是為誰寫的，從每種語言要付出多少詞元就看得出來。\n\n# 詞元字典\n\n整本字典都能搜尋。「giraffe」裡藏著許多本身就是條目的碎片，從 gira、ffe 一直到單一字母，能拼出 51 種不同的組合。平常分詞器永遠只選同一種。\n\n# 用數字寫提示詞\n\n工作坊使用一個改寫過的圖像生成器（SDXL Turbo），讓它直接接收詞元編號。參與者跳過分詞器，自己決定怎麼切：一整個 giraffe、gira + ffe，或 gi + ra + ff + e，每一種都是一個獨立的提示詞。多數拼法仍然畫出長頸鹿，有些卻畫出世上不存在的動物。\n\n# 重建一張圖\n\n最後一個練習反過來做：從一張照片出發，用遺傳演算法培育 16 個詞元長的序列，直到 CLIP 認為它們和照片夠接近。結果讀起來像雜訊，圖像生成器卻能從中把照片畫回來。畫出來的東西，顯示了機器留下了什麼，又有什麼是它從來沒有字可以說的。",
+      "held": "6 January 2026 · KISDtalk, KISD Köln International School of Design, Cologne\n7 May 2026 · mtrail Ausbildungscamp, Lindau",
+      "held_de": "6. Januar 2026 · KISDtalk, KISD Köln International School of Design, Köln\n7. Mai 2026 · mtrail Ausbildungscamp, Lindau",
+      "held_zh": "2026 年 1 月 6 日 · KISDtalk，科隆國際設計學院（KISD），科隆\n2026 年 5 月 7 日 · mtrail Ausbildungscamp，林道",
+      "images": [
+        {
+          "src": "images/workshops/51-ways-to-spell-the-image-giraffe/01.webp",
+          "alt": "The word giraffe with every dictionary entry that fits inside it and its token ID: 51 possible spellings",
+          "alt_de": "Das Wort giraffe mit allen Wörterbucheinträgen, die hineinpassen, und ihren Token-IDs: 51 mögliche Schreibweisen",
+          "alt_zh": "giraffe 這個字，以及字典裡所有能放進它的條目與詞元編號：51 種可能的拼法"
+        },
+        {
+          "src": "images/workshops/51-ways-to-spell-the-image-giraffe/02.webp",
+          "alt": "How many tokens a word costs: instagram, programmer, dumplings and nurse are one token each, schnitzel two, Kaffee and Weimar three, a Chinese name nine",
+          "alt_de": "Wie viele Tokens ein Wort kostet: instagram, programmer, dumplings und nurse je eines, Schnitzel zwei, Kaffee und Weimar drei, ein chinesischer Name neun",
+          "alt_zh": "一個字要花多少詞元：instagram、programmer、dumplings、nurse 各一個，schnitzel 兩個，Kaffee 與 Weimar 三個，一個中文名字九個"
+        },
+        {
+          "src": "images/workshops/51-ways-to-spell-the-image-giraffe/03.webp",
+          "alt": "Tokenization of “what is tokenization?” into token IDs, each ID mapped to a list of 768 numbers",
+          "alt_de": "Tokenisierung von „what is tokenization?“ in Token-IDs; jede ID wird zu einer Liste aus 768 Zahlen",
+          "alt_zh": "「what is tokenization?」被切成詞元編號，每個編號對應到一串 768 個數字"
+        },
+        {
+          "src": "images/workshops/51-ways-to-spell-the-image-giraffe/04.webp",
+          "alt": "Emojis without their own entry in the token dictionary; the nauseated face is spelled from two byte fragments",
+          "alt_de": "Emojis ohne eigenen Eintrag im Token-Wörterbuch; das Gesicht mit Übelkeit wird aus zwei Byte-Fragmenten zusammengesetzt",
+          "alt_zh": "在詞元字典裡沒有自己條目的表情符號；噁心的臉由兩個位元組碎片拼成"
+        },
+        {
+          "src": "images/tokens/giraffe-four-tokens.webp",
+          "alt": "Images generated from giraffe as one token (22826) and as gi + ra + ff + e",
+          "alt_de": "Bilder aus giraffe als ein Token (22826) und als gi + ra + ff + e",
+          "alt_zh": "以一整個 giraffe（22826）與 gi + ra + ff + e 生成的圖"
+        },
+        {
+          "src": "images/tokens/cave-prompt-reconstruction.webp",
+          "alt": "A photo of a sea cave rebuilt from a sequence of 16 tokens found by a genetic algorithm",
+          "alt_de": "Ein Foto einer Meereshöhle, aus einer Folge von 16 Tokens wieder aufgebaut, die ein genetischer Algorithmus gefunden hat",
+          "alt_zh": "用遺傳演算法找到的 16 個詞元序列，重建一張海蝕洞照片"
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "slug": "stereotype-encoding",
+      "title": "Stereotype Encoding",
       "title_de": "",
       "title_zh": "",
       "year": "2026",
@@ -1412,20 +1468,20 @@
       "text": "It began with our own question: why does this particular image come out of a generator? Looking for an answer led us to CLIP, and to tools such as CLIP Interrogator, which guesses the prompt behind an image.\n\nCLIP puts images and texts in the same space and gives a single score for how well they match. Many image generators and image search tools use it to decide whether a picture fits a description, a step their users rarely see.\n\n# Matching\n\nParticipants give CLIP an image and a few short texts and see which one it finds most fitting: Magritte’s painting of a pipe against “this is a pipe” and “this isn’t a pipe”; a photo of a cat against “cat”, “Katze” and “gato”; an AI-generated face against four emojis with different expressions. The scores are hardly ever neutral, and the surprises are what the exercise is about.\n\n# Searching\n\nThen CLIP goes looking. A loop keeps pulling random faces from a website that generates people who do not exist, scores each one against a word such as “happy”, and keeps the highest and the lowest so far. Swap the word for “nurse”, “programmer” or “dumplings”, and the machine’s stereotype of each word slowly appears. Food is just as strange: in one round for “happy”, a plate of soup with a sausage scored 20.48, higher than a golden schnitzel at 19.38.",
       "text_de": "Am Anfang stand unsere eigene Frage: Warum kommt genau dieses Bild aus einem Generator? Die Suche nach einer Antwort führte uns zu CLIP und zu Werkzeugen wie dem CLIP Interrogator, der den Prompt hinter einem Bild errät.\n\nCLIP legt Bilder und Texte in denselben Raum und gibt mit einem einzigen Wert an, wie gut sie zusammenpassen. Viele Bildgeneratoren und Bildsuchen entscheiden damit, ob ein Bild zu einer Beschreibung passt – ein Schritt, den ihre Nutzer*innen selten sehen.\n\n# Zuordnen\n\nDie Teilnehmenden geben CLIP ein Bild und einige kurze Texte und sehen, welchen es für den passendsten hält: Magrittes Gemälde einer Pfeife gegen „this is a pipe“ und „this isn’t a pipe“; das Foto einer Katze gegen „cat“, „Katze“ und „gato“; ein KI-generiertes Gesicht gegen vier Emojis mit unterschiedlichem Ausdruck. Die Werte sind fast nie neutral, und genau um die Überraschungen geht es.\n\n# Suchen\n\nDann sucht CLIP selbst. Eine Schleife holt immer wieder zufällige Gesichter von einer Website, die Menschen erzeugt, die es nicht gibt, bewertet jedes gegen ein Wort wie „happy“ und behält den bisher höchsten und niedrigsten Wert. Tauscht man das Wort gegen „nurse“, „programmer“ oder „dumplings“, zeigt sich nach und nach das Stereotyp, das die Maschine mit dem Wort verbindet. Mit Essen wird es ebenso seltsam: In einer Runde für „happy“ bekam ein Teller Suppe mit Wurst 20,48 Punkte, mehr als ein goldgelbes Schnitzel mit 19,38.",
       "text_zh": "工作坊的起點是一個疑問：為什麼生成器會生出這一張圖？為了找答案，研究從 CLIP，以及 CLIP Interrogator 這類能從圖片反推提示詞的工具開始。\n\nCLIP 會把圖片和文字放進同一個空間，再用一個分數表示兩者有多相符。許多圖像生成器和圖片搜尋工具，都靠它判斷「這張圖是不是符合這段描述」，只是使用者通常看不到這個步驟。\n\n# 配對\n\n參與者給 CLIP 一張圖和幾段短文字，看它覺得哪一段最貼切：馬格利特（René Magritte）畫的那支煙斗，對上「this is a pipe」和「this isn’t a pipe」；一張貓的照片，對上英文「cat」、德文「Katze」和西班牙文「gato」；一張人工智慧生成的人臉，對上四個不同表情的表情符號。分數幾乎從來不是中立的，而這些出乎意料的結果，正是這個練習想讓大家看到的。\n\n# 搜尋\n\n接著反過來，讓 CLIP 去找圖。程式不斷從一個專門生成「不存在的人」的網站抓取隨機人臉，每一張都拿去跟一個詞（例如「happy」）比對打分，只留下目前分數最高和最低的那兩張。把詞換成「nurse（護理師）」、「programmer（程式設計師）」或「dumplings（餃子）」再跑一次，機器對這些詞的刻板印象就會一點一點浮現。拿食物來試也一樣奇怪：有一輪測「happy」，一盤配香腸的湯拿到 20.48 分，比一盤金黃的炸肉排（19.38 分）還高。",
-      "held": "6 January 2026 · KISDtalk, KISD Köln International School of Design, Cologne\n7 May 2026 · mtrail Ausbildungscamp, Lindau",
-      "held_de": "6. Januar 2026 · KISDtalk, KISD Köln International School of Design, Köln\n7. Mai 2026 · mtrail Ausbildungscamp, Lindau",
-      "held_zh": "2026 年 1 月 6 日 · KISDtalk，科隆國際設計學院（KISD），科隆\n2026 年 5 月 7 日 · mtrail Ausbildungscamp，林道",
+      "held": "2025 · Generating for the Archive, Storage Museum Düsseldorf\n6 January 2026 · KISDtalk, KISD Köln International School of Design, Cologne\n7 May 2026 · mtrail Ausbildungscamp, Lindau",
+      "held_de": "2025 · Generating for the Archive, Storage Museum Düsseldorf\n6. Januar 2026 · KISDtalk, KISD Köln International School of Design, Köln\n7. Mai 2026 · mtrail Ausbildungscamp, Lindau",
+      "held_zh": "2025 年 · Generating for the Archive，杜塞道夫 Storage Museum\n2026 年 1 月 6 日 · KISDtalk，科隆國際設计學院（KISD），科隆\n2026 年 5 月 7 日 · mtrail Ausbildungscamp，林道",
       "images": [
         {
-          "src": "images/workshops/paranoia-de-prompting/01.jpg",
+          "src": "images/workshops/stereotype-encoding/01.jpg",
           "alt": "Generated faces with the highest and lowest CLIP scores for the words dumplings, nurse, schnitzel and programmer"
         },
         {
-          "src": "images/workshops/paranoia-de-prompting/02.jpg",
+          "src": "images/workshops/stereotype-encoding/02.jpg",
           "alt": "Two food photos scored against the word “happy”: a plate of soup with a sausage (20.48) and a schnitzel (19.38)"
         },
         {
-          "src": "images/workshops/paranoia-de-prompting/03.jpg",
+          "src": "images/workshops/stereotype-encoding/03.jpg",
           "alt": "CLIP scores for a cat photo against “cat”, “katze” and “gato”, and for a generated face against four emojis"
         }
       ],

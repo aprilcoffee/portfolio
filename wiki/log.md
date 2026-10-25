@@ -129,3 +129,6 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 ## [2026-10-25] ingest | token slides, GA notebook (artist)
 - works/51-ways-to-spell-the-image-giraffe.md: the pipeline hijack, CLIP / Vision Transformer
 - works/sixteen-tokens-for-a-cave.md: genetic algorithm method, prompt reconstruction, adversarial poetry
+
+## [2026-10-25] ingest | workshops renamed and added (artist, token notebooks)
+- topics/workshops.md: Paranoia De-Prompting renamed Stereotype Encoding (+ Generating for the Archive session); new workshop 51 Ways to Spell the Image Giraffe

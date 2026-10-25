@@ -1174,6 +1174,7 @@ for L in LANGS:
     redirect(P + "performance/", P + "works/#performances")
     redirect(P + "press/", P + "workshops/#talks")
     redirect(P + "workshops/condition-for-emotions/", P + "workshops/conditions-for-emotions/")  # renamed 2026-10
+    redirect(P + "workshops/paranoia-de-prompting/", P + "workshops/stereotype-encoding/")  # renamed 2026-10
 
     groups, order = {}, []
     for p in posts:
