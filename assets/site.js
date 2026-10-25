@@ -18,16 +18,18 @@
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
 
-  // German pages: the first time, say that parts of the German were translated with AI.
+  // German and Chinese pages: the first time, say that the site is written in English and parts were translated with AI
+  // (one flag per language; German keeps its original key so earlier visitors are not asked again)
   var mt = document.getElementById('mtNote');
   if (mt) {
-    var seen = false;
-    try { seen = localStorage.getItem('mt-note') === 'seen'; } catch (e) {}
+    var seen = false, lang = document.documentElement.lang || '';
+    var key = lang.indexOf('de') === 0 ? 'mt-note' : 'mt-note-' + lang;
+    try { seen = localStorage.getItem(key) === 'seen'; } catch (e) {}
     if (!seen) {
       mt.hidden = false;
       mt.querySelector('button').addEventListener('click', function () {
         mt.hidden = true;
-        try { localStorage.setItem('mt-note', 'seen'); } catch (e) {}
+        try { localStorage.setItem(key, 'seen'); } catch (e) {}
       });
     }
   }

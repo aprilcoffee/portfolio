@@ -56,7 +56,7 @@
 ## 翻譯
 
 網站有三種語言：英文在根目錄（`/`），德文在 `/de/`，繁體中文在 `/zh/`。
-德文版第一次開啟時，右下角會出現一次提醒「部分德文由人工智慧翻譯，可能有錯誤」（`UI` 的 `mt_note`／`mt_ok`，`assets/site.js` 用 localStorage 的 `mt-note` 記住已看過）。要暫時隱藏某個語言，把它加進 `build.py` 的 `HIDDEN_LANGS`（該語言每一頁會轉址到英文版，並從語言切換、hreflang、sitemap、`llms.txt` 拿掉），同時把 `scripts/wiki-sitemap.py` 的 `LANGS` 對應那一行拿掉。程式裡的語言代碼是 `en`、`de`、`zh`
+德文版與中文版第一次開啟時，右下角會出現一次提醒「本網站以英文為主，部分翻譯由人工智慧完成，可能有錯誤」（`UI` 的 `mt_note`／`mt_ok`，下方附英文；`assets/site.js` 用 localStorage 記住已看過：德文 `mt-note`、中文 `mt-note-zh-Hant`）。要暫時隱藏某個語言，把它加進 `build.py` 的 `HIDDEN_LANGS`（該語言每一頁會轉址到英文版，並從語言切換、hreflang、sitemap、`llms.txt` 拿掉），同時把 `scripts/wiki-sitemap.py` 的 `LANGS` 對應那一行拿掉。程式裡的語言代碼是 `en`、`de`、`zh`
 （`LANGS`、`LP` 路徑前綴、`HREFLANG` 的 `zh` 對應 `zh-Hant`、`LOCALE` 的 `zh_TW`，都在 `build.py` 開頭）。
 
 ### 1. 內容：`data/site.json` 的 `_de` / `_zh` 欄位

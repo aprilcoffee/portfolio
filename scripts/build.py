@@ -496,7 +496,7 @@ UI = {
         "ask_note": "caution: AI may create random correlations",
         "ask_more": "Privacy",
         "read_at": "Read on %s", "tba": "Date TBA", "kinds": {"talk": "Talk", "workshop": "Workshop"}, "read": "Read", "img_credit": "Image: %s", "upcoming": "Upcoming", "recent": "Past talks & workshops", "shops_h": "Workshops", "cv_all": "Full list in the CV", "writing": "Writing",
-        "mt_note": "Parts of the German translation were made with AI and may contain errors.",
+        "mt_note": "This website is written in English. Parts of the translation were made with AI and may contain errors.",
         "mt_ok": "OK",
         "ask_err": "Sorry, that didn’t work. Please try again in a moment, or write to %s.",
         "ask_busy": "Too many questions right now. Please wait a minute.",
@@ -533,7 +533,7 @@ UI = {
         "ask_note": "Achtung: KI kann zufällige Zusammenhänge erzeugen · %s",
         "ask_more": "Datenschutz",
         "read_at": "Lesen auf %s", "tba": "Termin folgt", "kinds": {"talk": "Vortrag", "workshop": "Workshop"}, "read": "Lesen", "img_credit": "Bild: %s", "upcoming": "Demnächst", "recent": "Vergangene Vorträge & Workshops", "shops_h": "Workshops", "cv_all": "Vollständige Liste im Lebenslauf", "writing": "Texte",
-        "mt_note": "Bitte beachten Sie: Teile der deutschen Übersetzung wurden mit KI erstellt und können Fehler enthalten.",
+        "mt_note": "Bitte beachten Sie: Diese Website wird auf Englisch verfasst. Teile der deutschen Übersetzung wurden mit KI erstellt und können Fehler enthalten.",
         "mt_ok": "Verstanden",
         "ask_err": "Das hat leider nicht geklappt. Bitte gleich noch einmal versuchen oder an %s schreiben.",
         "ask_busy": "Gerade kommen zu viele Fragen. Bitte eine Minute warten.",
@@ -570,7 +570,7 @@ UI = {
         "ask_note": "注意：人工智慧可能產生隨機的關聯性",
         "ask_more": "隱私權",
         "read_at": "在 %s 閱讀", "tba": "日期待定", "kinds": {"talk": "演講", "workshop": "工作坊"}, "read": "閱讀", "img_credit": "圖：%s", "upcoming": "即將舉行", "recent": "過往講座與工作坊", "shops_h": "工作坊", "cv_all": "完整列表見關於頁", "writing": "書寫",
-        "mt_note": "請注意：部分德文為人工智慧翻譯，可能會有錯誤。",
+        "mt_note": "請注意：本網站以英文為主，部分中文由人工智慧翻譯，可能會有錯誤。",
         "mt_ok": "知道了",
         "ask_err": "抱歉，暫時無法回答。請稍後再試，或寫信至 %s。",
         "ask_busy": "目前提問太多，請稍候一分鐘。",
@@ -723,7 +723,7 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
            year=datetime.date.today().year, full=" full" if full else "", body=body,
            # German pages: a one-time notice that parts of the translation were made with AI (assets/site.js shows it)
            mt='<div class="mt-note" id="mtNote" role="status" hidden><p>%s<span lang="en">%s</span></p><button type="button">%s</button></div>' % (
-               esc(u["mt_note"]), esc(UI["en"]["mt_note"]), esc(u["mt_ok"])) if lang == "de" else "")
+               esc(u["mt_note"]), esc(UI["en"]["mt_note"]), esc(u["mt_ok"])) if lang in ("de", "zh") else "")
 
 
 def person(lang):
