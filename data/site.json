@@ -1892,11 +1892,12 @@
           },
           {
             "year": "2024",
-            "text": "Hello, hello, hello, hello? Hello? Hello! Human! Exhibition catalogue “Hello, Human!”, Museum of Contemporary Art Taipei (Mandarin/English; English translation by 吳中平)",
+            "text": "Hello, hello, hello, hello? Hello? Hello! Human! Catalogue of the exhibition “Hello, Human!”, curated by Keith Lam and Escher Tsai, Museum of Contemporary Art Taipei, 27 Jan – 12 May 2024 (Mandarin/English; English translation by 吳中平)",
             "url": "https://www.mocataipei.org.tw/tw/ExhibitionAndEvent/Info/%E4%BD%A0%E5%A5%BD%EF%BC%8C%E4%BA%BA%E9%A1%9E%EF%BC%81Hello,*Human!",
-            "text_zh": "你好，你好，你好，你好？你好？你好！人類！「你好，人類！」展覽專刊，臺北當代藝術館（中英；英譯：吳中平）",
+            "text_zh": "你好，你好，你好，你好？你好？你好！人類！「你好，人類！」展覽專刊，策展人林欣傑、蔡宏賢，臺北當代藝術館，2024 年 1 月 27 日至 5 月 12 日（中英；英譯：吳中平）",
             "thumb": "images/texts/hello-human-moca.jpg",
-            "credit": "MOCA Taipei, Hello, Human! (2024), design: Javin Mo @ Milkxhake"
+            "credit": "MOCA Taipei, Hello, Human! (2024), curators Keith Lam, Escher Tsai, design: Javin Mo @ Milkxhake",
+            "text_de": "Hello, hello, hello, hello? Hello? Hello! Human! Katalog der Ausstellung „Hello, Human!“, kuratiert von Keith Lam und Escher Tsai, Museum of Contemporary Art Taipei, 27. Januar – 12. Mai 2024 (Mandarin/Englisch; englische Übersetzung: 吳中平)"
           },
           {
             "year": "2024",
