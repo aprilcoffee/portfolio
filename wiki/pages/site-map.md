@@ -152,7 +152,7 @@ Organisers', institutions' and publishers' pages for entries in the CV (About pa
 
 - 2026 Heat as (Generative) Image Making, FIfF-Kommunikation 1/26, p. 64, FIfF e.V. Essay for the Weizenbaum-Studienpreis 2025: https://www.fiff.de/fiff-kommunikation/2026/1/
 - 2025 Heat as (Generative) Image Making, postgraduate thesis, Academy of Media Arts Cologne (KHM): https://aprilcoffee.github.io/heat_as_image/index.html
-- 2025 Stereotype Encoding: How AI Images Learn Cultural Bias, Latent Space, Filmwerkstatt Düsseldorf: https://www.academia.edu/165438573/Stereotype_Encoding_How_AI_Images_Learn_Cultural_Bias
+- 2025 Stereotype Encoding: How AI Images Learn Cultural Bias, Latent Space, Filmwerkstatt Düsseldorf, w/ Leon-Etienne Kühr: https://www.academia.edu/165438573/Stereotype_Encoding_How_AI_Images_Learn_Cultural_Bias
 - 2025 On the Materiality of Artificial Intelligence, in: un/learn ai – integrating AI in aesthetic practices, Vol. 3, pp. 218–223, Forschungsprojekt KITeGG: https://unlearn.gestaltung.ai/de
 - 2024 Hello, hello, hello, hello? Hello? Hello! Human! Exhibition catalogue “Hello, Human!”, Museum of Contemporary Art Taipei (Mandarin/English; English translation by 吳中平): https://www.mocataipei.org.tw/tw/ExhibitionAndEvent/Info/你好，人類！Hello,*Human!
 - 2024 Positioning – A Prerequisite for Immersion, Digiarts, National Taiwan Museum of Fine Arts: https://www.digiarts.org.tw/DigiArts/DataBasePage/4_236170297334000/Chi

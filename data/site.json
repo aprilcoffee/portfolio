@@ -1650,8 +1650,8 @@
         "title": "Lectures, Talks & Workshops",
         "items": [
           {
-            "year": "2026",
-            "date": "TBA",
+            "year": "2027",
+            "date": "2027-01-13",
             "kind": "talk",
             "url": "",
             "text": "LLM & Operational Image, guest talk in the seminar “A Different View of the World (What Are/Do/Change Operational Images?)”, Prof. Dr. Jan Distelmeyer, European Media Studies, University of Potsdam / FH Potsdam",
@@ -1854,44 +1854,51 @@
             "year": "2026",
             "text": "Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images, Expanded 2026: Conference on Animation and Interactive Art, ACM, forthcoming (DOI 10.1145/3840416.3840463), w/ Leon-Etienne Kühr",
             "url": "",
-            "text_zh": "Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images，Expanded 2026：動畫與互動藝術研討會（Conference on Animation and Interactive Art），ACM，即將出版（DOI 10.1145/3840416.3840463），與 Leon-Etienne Kühr"
+            "text_zh": "Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images，Expanded 2026：動畫與互動藝術研討會（Conference on Animation and Interactive Art），ACM，即將出版（DOI 10.1145/3840416.3840463），與 Leon-Etienne Kühr",
+            "thumb": "images/wix/4eb1dd_3b92c3e56ced47f4968d13c82a46d250~mv2.webp"
           },
           {
             "year": "2026",
             "text": "Heat as (Generative) Image Making, FIfF-Kommunikation 1/26, p. 64, FIfF e.V. Essay for the Weizenbaum-Studienpreis 2025",
             "url": "https://www.fiff.de/fiff-kommunikation/2026/1/",
-            "text_zh": "Heat as (Generative) Image Making，《FIfF-Kommunikation》1/26，第 64 頁，FIfF e.V.。2025 Weizenbaum 學位論文獎文章"
+            "text_zh": "Heat as (Generative) Image Making，《FIfF-Kommunikation》1/26，第 64 頁，FIfF e.V.。2025 Weizenbaum 學位論文獎文章",
+            "thumb": "images/wix/4eb1dd_89bed6e0c0da46979abc1b61f04b44e8~mv2.webp"
           },
           {
             "year": "2025",
             "url": "https://aprilcoffee.github.io/heat_as_image/index.html",
             "text": "Heat as (Generative) Image Making, postgraduate thesis, Academy of Media Arts Cologne (KHM)",
             "text_de": "Heat as (Generative) Image Making, Abschlussarbeit (Postgraduales Diplom), Kunsthochschule für Medien Köln (KHM)",
-            "text_zh": "Heat as (Generative) Image Making，研究所論文，科隆媒體藝術學院（KHM）"
+            "text_zh": "Heat as (Generative) Image Making，研究所論文，科隆媒體藝術學院（KHM）",
+            "thumb": "images/og-latent-heat-2.jpg"
           },
           {
             "year": "2025",
-            "text": "Stereotype Encoding: How AI Images Learn Cultural Bias, Latent Space, Filmwerkstatt Düsseldorf",
+            "text": "Stereotype Encoding: How AI Images Learn Cultural Bias, Latent Space, Filmwerkstatt Düsseldorf, w/ Leon-Etienne Kühr",
             "url": "https://www.academia.edu/165438573/Stereotype_Encoding_How_AI_Images_Learn_Cultural_Bias",
-            "text_zh": "Stereotype Encoding: How AI Images Learn Cultural Bias，Latent Space，杜塞道夫 Filmwerkstatt"
+            "text_zh": "Stereotype Encoding: How AI Images Learn Cultural Bias，Latent Space，杜塞道夫 Filmwerkstatt，與 Leon-Etienne Kühr",
+            "thumb": "images/workshops/paranoia-de-prompting/01.jpg"
           },
           {
             "year": "2025",
             "text": "On the Materiality of Artificial Intelligence, in: un/learn ai – integrating AI in aesthetic practices, Vol. 3, pp. 218–223, Forschungsprojekt KITeGG",
             "url": "https://unlearn.gestaltung.ai/de",
-            "text_zh": "On the Materiality of Artificial Intelligence，收錄於《un/learn ai – integrating AI in aesthetic practices》第 3 冊，第 218–223 頁，KITeGG 研究計畫"
+            "text_zh": "On the Materiality of Artificial Intelligence，收錄於《un/learn ai – integrating AI in aesthetic practices》第 3 冊，第 218–223 頁，KITeGG 研究計畫",
+            "thumb": "images/talks/arafed-futures-an-artist-dialogue-on-chip-storage-and-ai-acc.jpg"
           },
           {
             "year": "2024",
             "text": "Hello, hello, hello, hello? Hello? Hello! Human! Exhibition catalogue “Hello, Human!”, Museum of Contemporary Art Taipei (Mandarin/English; English translation by 吳中平)",
             "url": "https://www.mocataipei.org.tw/tw/ExhibitionAndEvent/Info/你好，人類！Hello,*Human!",
-            "text_zh": "你好，你好，你好，你好？你好？你好！人類！「你好，人類！」展覽專刊，臺北當代藝術館（中英；英譯：吳中平）"
+            "text_zh": "你好，你好，你好，你好？你好？你好！人類！「你好，人類！」展覽專刊，臺北當代藝術館（中英；英譯：吳中平）",
+            "thumb": "images/wix/4eb1dd_421aecd14d774616bcf61525e555dd6e~mv2.webp"
           },
           {
             "year": "2024",
             "text": "Positioning – A Prerequisite for Immersion, Digiarts, National Taiwan Museum of Fine Arts",
             "url": "https://www.digiarts.org.tw/DigiArts/DataBasePage/4_236170297334000/Chi",
-            "text_zh": "定位—沉浸的先決條件（Positioning – A Prerequisite for Immersion），《Digiarts》，國立臺灣美術館"
+            "text_zh": "定位—沉浸的先決條件（Positioning – A Prerequisite for Immersion），《Digiarts》，國立臺灣美術館",
+            "thumb": "images/wix/4eb1dd_d6cb6b7ed04f4029a04075b64bc5c976~mv2.webp"
           },
           {
             "year": "2021",
