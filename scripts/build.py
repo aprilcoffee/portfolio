@@ -626,9 +626,10 @@ def breadcrumbs(path, title, lang):
 
 
 def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld=None, full=False, section="",
-           alts=None, content_lang=None):
+           alts=None, content_lang=None, og_title=None):
     """lang: language of the interface; content_lang: of the page text (a Chinese post in the English frame);
-    alts: {lang: path} of the same page in the other languages (hreflang + language switch)."""
+    alts: {lang: path} of the same page in the other languages (hreflang + language switch);
+    og_title: a longer title for share previews only (home, About), the <title> stays short."""
     u = UI[lang]
     page_title = "%s — %s" % (title, S["name"]) if title else "%s %s" % (S["name"], S.get("name_zh", ""))
     canonical = abs_url(path)
@@ -663,13 +664,13 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
 {hreflang}{fb}<meta property="og:site_name" content="{name}">
 <meta property="og:locale" content="{locale}">
 {locale_alt}<meta property="og:type" content="{ogt}">
-<meta property="og:title" content="{t}">
+<meta property="og:title" content="{ot}">
 <meta property="og:description" content="{d}">
 <meta property="og:url" content="{c}">
 <meta property="og:image" content="{img}">
 {img_meta}<meta property="og:image:alt" content="{t}">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{t}">
+<meta name="twitter:title" content="{ot}">
 <meta name="twitter:description" content="{d}">
 <meta name="twitter:image" content="{img}">
 <meta name="theme-color" content="#ffffff">
@@ -712,7 +713,7 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
 </html>
 """.format(lang=cl, side_lang=' lang="%s"' % HREFLANG[lang] if cl != HREFLANG[lang] else "",
            locale=LOCALE[lang] if not content_lang else ("zh_TW" if content_lang.startswith("zh") else LOCALE[lang]),
-           t=esc(page_title), d=esc(desc or tr(S, "description", lang)), name=esc(S["name"]), zh=esc(S.get("name_zh", "")),
+           t=esc(page_title), ot=esc(og_title or page_title), d=esc(desc or tr(S, "description", lang)), name=esc(S["name"]), zh=esc(S.get("name_zh", "")),
            c=esc(canonical), hreflang=hreflang, ogt=og_type, img=esc(image), icon=versioned("assets/favicon-32.png"), ico=versioned("favicon.ico"), touch=versioned("assets/apple-touch-icon.png"), manifest=url("site.webmanifest"),
            css=versioned("assets/style.css"), fonts=versioned("assets/fonts/fonts.css"), fonts_g=versioned("assets/fonts/fonts-google.css"), font_r=url("assets/fonts/Minipax-Regular.woff2"), font_b=url("assets/fonts/Minipax-Bold.woff2"), js=versioned("assets/site.js"), fx=versioned("assets/effects.js"), feed=url("blog/feed.xml"),
            img_meta=('<meta property="og:image:width" content="%d">\n<meta property="og:image:height" content="%d">\n' % (img_w, img_h)) if img_w else "",
@@ -897,21 +898,34 @@ def redirect(old, new):
     noindex.add(old)
 
 
+def hidden_links(P):
+    """The titles hidden in the home page's character field (site.hidden_links): each opens its page when clicked.
+    A site path (works/…, workshops/#talks) gets the language prefix; a full URL (an article) is kept as it is."""
+    out = []
+    for h in S.get("hidden_links", []):
+        if isinstance(h, str):
+            out.append({"t": h})
+        elif h.get("text"):
+            link = h.get("url", "")
+            out.append({"t": h["text"], "u": link if link.startswith("http") else url(P + link) if link else ""})
+    return out
+
+
 for L in LANGS:
     CUR[0] = L
     u, P = UI[L], LP[L]
 
     # home: generative field + statement, then a few recent works
-    page(P, "", share_text("about", L, tr(S, "description", L)),  # the home page shares the same text as About
+    page(P, "", share_text("about", L, tr(S, "description", L)),  # home shares the same text and title as About (site.share_about, site.share_title)
          '<section class="home-hero"><div class="field" data-effect="field" data-words="%s" aria-hidden="true"></div>'
          '<h1 class="sr-only">%s %s</h1>%s%s</section>'
          '<section class="home-selected" aria-label="%s"><div class="grid">%s</div>'
          '<a class="more" href="%s">%s</a></section>' % (
-             esc(json.dumps(S.get("hidden_words", []), ensure_ascii=False)),
+             esc(json.dumps(hidden_links(P), ensure_ascii=False)),
              esc(S["name"]), esc(S.get("name_zh", "")), ask_box(L), home_text(L),
              esc(u["selected"]),
              "".join(work_card(i + 1, w, L) for i, w in enumerate(works[:3])), url(P + "works/"), esc(u["all_works"] % len(works))),
-         ld=person(L), full=True, lang=L, alts=each(""))
+         ld=person(L), full=True, lang=L, alts=each(""), og_title=tr(S, "share_title", L) or None)
 
     SHORT_HOST = {"thephotographersgallery.org.uk": "The Photographers’ Gallery"}
     # each performance record and talk recording opens on Vimeo / YouTube / the host's site in a new tab
@@ -1065,7 +1079,7 @@ for L in LANGS:
                  "" if L == "en" or D["about"].get("text_" + L) else ' lang="en"', prose(more)) if more else "",
              esc(u["Email"]), esc(about_mail), esc(about_mail), esc(u["contact_note"]),
              esc(u["Topics"]), esc(u["tags"]["about"]), cv_nav, cv),
-         ld=dict(person(L), description=bio, keywords=u["tags"]["about"]), og_type="profile", section="about", lang=L, alts=each("about/"))
+         ld=dict(person(L), description=bio, keywords=u["tags"]["about"]), og_type="profile", section="about", lang=L, alts=each("about/"), og_title=tr(S, "share_title", L) or None)
 
     # workshops: what a workshop can be, one page each (site.json "workshops", images in images/workshops/),
     # then the talk recordings (site.json "press", group "watch")

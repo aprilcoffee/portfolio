@@ -66,29 +66,9 @@
     "description_zh": "劉庭均（Ting-Chun Liu）是一位研究型媒體藝術家，以批判性人工智慧為核心，創作橫跨音像媒體與網路實踐。",
     "statement_de": "Ting-Chun Liu ist ein forschungsbasierter Medienkünstler, der mit kritischer KI, audiovisuellen Medien und Netzwerkpraxis arbeitet. Er seziert technologische Systeme durch feedbackbasierte Interventionen.",
     "statement_zh": "劉庭均（Ting-Chun Liu）是一位研究型媒體藝術家，以批判性人工智慧為核心，創作橫跨音像媒體與網路實踐，以回授（Feedback）驅動的介入手法，拆解科技系統。",
-    "home_text": "Why does technology keep us fascinated, confused and at a loss? Yet when we look closely, it is novel yet ancient, delicate yet provocative, lavish yet hollow, complex but dangerous.\n\nTo think about what technology is, is to think about how symbols are made, whose labor they carry, and which techniques hold them in place.",
-    "home_text_de": "Warum fasziniert, verwirrt und überfordert uns Technologie immer wieder? Doch wenn wir genau hinsehen, ist sie neu und doch uralt, zart und doch provokant, prachtvoll und doch hohl, komplex, aber gefährlich.\n\nDarüber nachzudenken, was Technologie ist, heißt, darüber nachzudenken, wie Symbole entstehen, wessen Arbeit in ihnen steckt und welche Techniken sie zusammenhalten.",
-    "home_text_zh": "為什麼科技總讓我們著迷、困惑、又無所適從。然而當我們仔細端詳，它既新穎卻又古老，細膩卻帶著挑釁，華麗卻又空洞，複雜卻也危險。\n\n思考何為科技，就是思考符號如何被製造、背後承載著誰的勞動，以及哪些技術讓它們得以成立。",
-    "hidden_words": [
-      "critical AI",
-      "feedback",
-      "latent space",
-      "heat as image",
-      "recursion",
-      "jailbreak",
-      "self-cannibalizing AI",
-      "audio-visual",
-      "network art",
-      "noise",
-      "Taipei",
-      "Köln",
-      "Weimar",
-      "劉庭均",
-      "p5.js",
-      "Processing",
-      "Raspberry Pi",
-      "artistic research"
-    ],
+    "home_text": "I often wonder why technology keeps us fascinated, confused and at a loss. Yet when we look closely, it is novel yet ancient, delicate yet provocative, lavish yet hollow, complex but dangerous. To think about what technology is, is to think about how symbols are made, whose labor they carry, and which techniques hold them in place.",
+    "home_text_de": "Ich frage mich oft, warum Technologie uns immer wieder fasziniert, verwirrt und überfordert. Doch wenn wir genau hinsehen, ist sie neu und doch uralt, zart und doch provokant, prachtvoll und doch hohl, komplex, aber gefährlich. Darüber nachzudenken, was Technologie ist, heißt, darüber nachzudenken, wie Symbole entstehen, wessen Arbeit in ihnen steckt und welche Techniken sie zusammenhalten.",
+    "home_text_zh": "我常在想，為什麼科技總讓我們著迷、困惑、又無所適從。然而當我們仔細端詳，它既新穎卻又古老，細膩卻帶著挑釁，華麗卻又空洞，複雜卻也危險。思考何為科技，就是思考符號如何被製造、背後承載著誰的勞動，以及哪些技術讓它們得以成立。",
     "video_thumbs": {
       "324791977": "https://i.vimeocdn.com/video/768341727-28ae4536ed569138a9e71ed451783e33a427fd4915456f5eafe5ed6e194ad88b-d_1280"
     },
@@ -108,7 +88,76 @@
     "share_blog_zh": "部落格封存：作品筆記，以及 Raspberry Pi、Processing、Python 技術文章。",
     "share_friends": "Friends, collaborators and fellow artists.",
     "share_friends_de": "Freund*innen, Kollaborateur*innen und befreundete Künstler*innen.",
-    "share_friends_zh": "朋友、合作夥伴與藝術家們。"
+    "share_friends_zh": "朋友、合作夥伴與藝術家們。",
+    "hidden_links": [
+      {
+        "text": "Steering Through the Inner Residue",
+        "url": "works/steering-through-the-inner-residue/"
+      },
+      {
+        "text": "Interpolation of the Invisible Color",
+        "url": "works/interpolation-of-the-invisible-color/"
+      },
+      {
+        "text": "Latent Heat Generation",
+        "url": "works/latent-heat-generation/"
+      },
+      {
+        "text": "51 Ways to Spell the Image Giraffe",
+        "url": "works/51-ways-to-spell-the-image-giraffe/"
+      },
+      {
+        "text": "Sixteen Tokens for a Cave",
+        "url": "works/sixteen-tokens-for-a-cave/"
+      },
+      {
+        "text": "Just Jailbreak",
+        "url": "works/just-jailbreak/"
+      },
+      {
+        "text": "Imaginary Landscape",
+        "url": "works/imaginary-landscape/"
+      },
+      {
+        "text": "Achtung! Verwischung",
+        "url": "works/achtung-verwischung/"
+      },
+      {
+        "text": "Conditions for Emotions",
+        "url": "workshops/conditions-for-emotions/"
+      },
+      {
+        "text": "The Given Image",
+        "url": "workshops/the-given-image/"
+      },
+      {
+        "text": "arafed futures (38C3)",
+        "url": "workshops/#talks"
+      },
+      {
+        "text": "51 Ways to Spell the Image Giraffe (39C3)",
+        "url": "workshops/#talks"
+      },
+      {
+        "text": "Self-cannibalizing AI (37C3)",
+        "url": "workshops/#talks"
+      },
+      {
+        "text": "Heat as (Generative) Image Making",
+        "url": "https://aprilcoffee.github.io/heat_as_image/index.html"
+      },
+      {
+        "text": "Stereotype Encoding",
+        "url": "https://www.academia.edu/165438573/Stereotype_Encoding_How_AI_Images_Learn_Cultural_Bias"
+      },
+      {
+        "text": "On the Materiality of Artificial Intelligence",
+        "url": "https://unlearn.gestaltung.ai/de/article/gpm91yc8?chunks=gpm91yc8"
+      }
+    ],
+    "share_title": "Ting-Chun Liu —— Media artist, critical AI",
+    "share_title_de": "Ting-Chun Liu —— Medienkünstler, kritische KI",
+    "share_title_zh": "劉庭均 Ting-Chun Liu —— 媒體藝術家，批判性人工智慧"
   },
   "works": [
     {
@@ -1967,7 +2016,7 @@
           {
             "year": "2025",
             "text": "On the Materiality of Artificial Intelligence, in: un/learn ai – integrating AI in aesthetic practices, Vol. 3, pp. 218–223, Forschungsprojekt KITeGG",
-            "url": "https://unlearn.gestaltung.ai/de",
+            "url": "https://unlearn.gestaltung.ai/de/article/gpm91yc8?chunks=gpm91yc8",
             "text_zh": "On the Materiality of Artificial Intelligence，收錄於《un/learn ai – integrating AI in aesthetic practices》第 3 冊，第 218–223 頁，KITeGG 研究計畫",
             "thumb": "images/texts/on-the-materiality-of-ai-map.jpg"
           },

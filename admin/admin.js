@@ -501,12 +501,14 @@
       field('預設分享縮圖（直式 800×1200：臉書會顯示小圖＋多行小字；換圖請用新檔名，臉書才會重新抓）', s, 'og_image'),
       field('Facebook App ID（選填；只為了消除臉書 Sharing Debugger 的 fb:app_id 警告）', s, 'fb_app_id'),
       h('h3', { text: '分享預覽小字（貼到臉書、LINE 時的說明；留空＝用網站內建的句子）' }),
+      h('div', { className: 'row' }, [field('首頁與關於頁的分享標題（手機上一定會顯示；瀏覽器分頁的標題不變）', s, 'share_title'), field('分享標題 DE', s, 'share_title_de'), field('分享標題 中文', s, 'share_title_zh')]),
       h('div', { className: 'row' }, [field('首頁與關於頁（留空＝首頁用網站描述、關於頁用簡介 bio）', s, 'share_about', { area: true }), field('首頁與關於頁 DE', s, 'share_about_de', { area: true }), field('首頁與關於頁 中文', s, 'share_about_zh', { area: true })]),
       h('div', { className: 'row' }, [field('作品頁', s, 'share_works', { area: true }), field('作品頁 DE', s, 'share_works_de', { area: true }), field('作品頁 中文', s, 'share_works_zh', { area: true })]),
       h('div', { className: 'row' }, [field('講座、工作坊與書寫頁', s, 'share_workshops', { area: true }), field('講座與工作坊 DE', s, 'share_workshops_de', { area: true }), field('講座與工作坊 中文', s, 'share_workshops_zh', { area: true })]),
       h('div', { className: 'row' }, [field('部落格頁', s, 'share_blog', { area: true }), field('部落格 DE', s, 'share_blog_de', { area: true }), field('部落格 中文', s, 'share_blog_zh', { area: true })]),
       h('div', { className: 'row' }, [field('朋友頁', s, 'share_friends', { area: true }), field('朋友頁 DE', s, 'share_friends_de', { area: true }), field('朋友頁 中文', s, 'share_friends_zh', { area: true })]),
-      lines('側欄連結（每行：名稱 | 網址）', s, 'links', ['label', 'url'])
+      lines('側欄連結（每行：名稱 | 網址）', s, 'links', ['label', 'url']),
+      lines('首頁背景藏的標題（每行：文字 | 連結）', s, 'hidden_links', ['text', 'url'], '游標靠近時以藍色浮現，點一下就前往連結。站內頁面寫 works/作品slug/、workshops/工作坊slug/、workshops/#talks（會自動加上 /de/、/zh/）；文章可直接貼完整網址。英文即可，太長的標題在手機上可能放不下。')
     ]));
   };
 

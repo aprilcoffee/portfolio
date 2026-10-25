@@ -2,7 +2,8 @@
    field  — home: a drifting field of characters. The characters are ordered by how much of
             their box they fill, measured with the Monte Carlo method from the 2019 post
             "Processing 蒙地卡羅演算法做文字動畫". The mouse raises the density locally,
-            and uncovers keywords hidden in the field (site.hidden_words), in water blue.
+            and uncovers titles hidden in the field (site.hidden_links), in water blue;
+            a revealed title can be clicked and opens its page.
    signal — sidebar: a thin noise line, like an oscilloscope left running. */
 (function () {
   'use strict';
@@ -45,7 +46,9 @@
           p.randomSeed(85227);
           var taken = {};
           WORDS.forEach(function (w) {
-            var chars = Array.from(w), n = chars.length;
+            if (typeof w === 'string') w = { t: w };
+            var chars = Array.from(w.t || ''), n = chars.length;
+            if (!n) return;
             if (n + 4 > cols) return;
             for (var tries = 0; tries < 60; tries++) {
               var j = 2 + Math.floor(p.random(Math.max(1, rows - 4)));
@@ -54,12 +57,13 @@
               for (var dj = -2; dj <= 2 && free; dj++)
                 for (var di = -2; di < n + 2 && free; di++) if (taken[(j + dj) + ',' + (i + di)]) free = false;
               if (!free) continue;
-              var word = { x: (i + (n - 1) / 2) * cell, y: j * cell * 1.25, a: 0 };
+              var word = { x: (i + (n - 1) / 2) * cell, y: j * cell * 1.25, a: 0, w: n * cell, u: w.u || '' };
               chars.forEach(function (c, k) { taken[j + ',' + (i + k)] = 1; at[j + ',' + (i + k)] = [word, c]; });
               placed.push(word);
               return;
             }
           });
+          el.setAttribute('data-placed', placed.length);  // how many titles fit on this screen
         }
         // the page is sized in rem (80% on desktop), so the field scales with it
         var k = parseFloat(getComputedStyle(document.documentElement).fontSize) / 16 || 1;
@@ -85,6 +89,24 @@
         p.windowResized = size;
         p.mouseMoved = function () { mx = p.mouseX; my = p.mouseY; };
         p.touchMoved = function () { mx = p.mouseX; my = p.mouseY; };
+        p.touchStarted = function () { mx = p.mouseX; my = p.mouseY; };
+
+        // the revealed title under a point (canvas coordinates), if it has a link
+        function linkAt(x, y) {
+          for (var q = 0; q < placed.length; q++) {
+            var w = placed[q];
+            if (w.u && w.a > 0.5 && Math.abs(x - w.x) < w.w / 2 + cell * 0.3 && Math.abs(y - w.y) < cell * 0.9) return w;
+          }
+          return null;
+        }
+        // clicks pass through the text and the chat box above the field, so listen on the whole hero
+        // and leave real controls (links, buttons, the chat input) alone
+        var hero = el.parentNode;
+        hero.addEventListener('click', function (e) {
+          if (e.target.closest && e.target.closest('a, button, input, textarea, select, label, form')) return;
+          var r = el.getBoundingClientRect(), w = linkAt(e.clientX - r.left, e.clientY - r.top);
+          if (w) window.location.href = w.u;
+        });
         p.draw = function () {
           p.clear();
           p.textSize(cell * 0.78);
@@ -120,6 +142,7 @@
             p.fill(RED[0], RED[1], RED[2]);
             p.text(hot[2] === ' ' ? '#' : hot[2], hot[0], hot[1]);
           }
+          hero.style.cursor = linkAt(mx, my) ? 'pointer' : '';
           t += 0.006;
         };
       };
