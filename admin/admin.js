@@ -226,6 +226,8 @@
       h('div', { className: 'row' }, [field('關鍵字一行 Keywords（作品列表標題下的小字，例：AI video installation）', w, 'kw'), field('關鍵字 DE', w, 'kw_de'), field('關鍵字 中文', w, 'kw_zh')]),
       tagsField('主題標籤 Topics（逗號分隔；顯示在作品頁並給搜尋引擎）', w, 'tags'),
       h('div', { className: 'row' }, [tagsField('主題標籤 DE（留空＝德文頁顯示英文）', w, 'tags_de'), tagsField('主題標籤 中文（留空＝中文頁顯示英文）', w, 'tags_zh')]),
+      field('分享預覽小字 Summary（貼到臉書、LINE 時的說明，也是搜尋結果的描述；留空＝用說明文字開頭）', w, 'summary', { area: true }),
+      h('div', { className: 'row' }, [field('分享小字 DE', w, 'summary_de', { area: true }), field('分享小字 中文', w, 'summary_zh', { area: true })]),
       field('說明文字 English（空一行＝分段；以「# 」開頭＝小標題）', w, 'text', { area: true, cls: 'tall' }),
       field('說明文字 Deutsch（留空＝德文頁顯示英文）', w, 'text_de', { area: true, cls: 'tall' }),
       field('說明文字 中文（留空＝中文頁顯示英文）', w, 'text_zh', { area: true, cls: 'tall' }),
@@ -389,7 +391,7 @@
 
   tabs.about = function () {
     var a = D.about;
-    var box = h('div', { className: 'form' }, [field('簡介 Bio (English)', a, 'bio', { area: true }),
+    var box = h('div', { className: 'form' }, [field('簡介 Bio (English；也是關於頁的分享預覽小字)', a, 'bio', { area: true }),
       field('簡介 Bio (Deutsch)', a, 'bio_de', { area: true }), field('簡介 Bio（中文）', a, 'bio_zh', { area: true }),
       field('較長的介紹 About text (English；空一行＝分段；顯示在簡介下方)', a, 'text', { area: true, cls: 'tall' }),
       field('較長的介紹 DE', a, 'text_de', { area: true, cls: 'tall' }), field('較長的介紹 中文', a, 'text_zh', { area: true, cls: 'tall' })]);
@@ -477,7 +479,7 @@
     var s = D.site;
     main.append(bar('網站設定'), h('div', { className: 'form' }, [
       h('div', { className: 'row' }, [field('名字', s, 'name'), field('中文名字', s, 'name_zh')]),
-      field('網站描述（搜尋引擎用）', s, 'description', { area: true }),
+      field('網站描述（首頁的分享預覽小字與搜尋結果描述）', s, 'description', { area: true }),
       h('div', { className: 'row' }, [field('網站描述 DE', s, 'description_de', { area: true }), field('網站描述 中文', s, 'description_zh', { area: true })]),
       h('div', { className: 'row' }, [field('Email（側欄、Impressum、About）', s, 'email'), field('About 頁顯示的 Email（留空＝用左邊那個）', s, 'email_alt')]),
       field('ORCID iD（只填 0000-0000-0000-0000；顯示在 About 頁，留空＝不顯示）', s, 'orcid'),
@@ -496,6 +498,11 @@
       field('Google Analytics ID（G-…）', s, 'ga_id'),
       field('網站網址（搜尋引擎、分享連結用；換網域時改這裡）', s, 'base_url'),
       field('預設分享縮圖', s, 'og_image'),
+      h('h3', { text: '分享預覽小字（貼到臉書、LINE 時的說明；留空＝用網站內建的句子）' }),
+      h('div', { className: 'row' }, [field('作品頁', s, 'share_works', { area: true }), field('作品頁 DE', s, 'share_works_de', { area: true }), field('作品頁 中文', s, 'share_works_zh', { area: true })]),
+      h('div', { className: 'row' }, [field('講座與工作坊頁', s, 'share_workshops', { area: true }), field('講座與工作坊 DE', s, 'share_workshops_de', { area: true }), field('講座與工作坊 中文', s, 'share_workshops_zh', { area: true })]),
+      h('div', { className: 'row' }, [field('部落格頁', s, 'share_blog', { area: true }), field('部落格 DE', s, 'share_blog_de', { area: true }), field('部落格 中文', s, 'share_blog_zh', { area: true })]),
+      h('div', { className: 'row' }, [field('朋友頁', s, 'share_friends', { area: true }), field('朋友頁 DE', s, 'share_friends_de', { area: true }), field('朋友頁 中文', s, 'share_friends_zh', { area: true })]),
       lines('側欄連結（每行：名稱 | 網址）', s, 'links', ['label', 'url'])
     ]));
   };
