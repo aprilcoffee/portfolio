@@ -26,4 +26,4 @@ Answers given by Ting-Chun Liu on 25 October 2026 to questions visitors ask the 
 24. Interviews and podcasts: yes, get in touch.
 25. Personal questions the knowledge base does not cover: answer playfully, and the chat may answer with anything he has written.
 26. Topics: everything can be discussed (private data still stays private).
-27. Personal path: see the About page; he started with sound and media art, came to Germany in 2019 and was admitted to the Academy of Media Arts Cologne (KHM).
+27. Personal path: see the About page; he started with sound and media art, came to Germany in 2019 to attend the language school IIK in Düsseldorf, applied to the Academy of Media Arts Cologne (KHM) in 2020 and began studying there once admitted.

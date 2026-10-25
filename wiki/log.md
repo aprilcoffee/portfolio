@@ -150,3 +150,4 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 ## [2026-10-25] ingest | raw/questionnaire-2026-10b-answers.md (artist)
 - faq.md: lighter questions (sea salt ice cream, Cologne, Flusser, Hearthstone, LeWitt quote), how he got into AI, methods, tools, collaboration, AI and artists, geopolitics, local models, workshop format, requests
 - worker RULES: light personal questions answered playfully or with his own words; titles never translated; 操作性影像, 技術政治, 講座、工作坊與書寫
+- overview.md, faq.md: 2019 language school IIK in Düsseldorf, KHM application and start in 2020 (artist)

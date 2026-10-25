@@ -124,8 +124,8 @@ discussed. → [Workshops](topics/workshops.md)
 **Loans, commissions, collections, citing works, using images, interviews, podcasts, students' questions?** All
 welcome by email (ting-chun.liu@uni-weimar.de). Many projects are in progress and open to conversation.
 
-**How did he become an artist?** See the About page: he started with sound and media art, came to Germany in 2019 and
-was admitted to the Academy of Media Arts Cologne (KHM). → [Overview](overview.md)
+**How did he become an artist?** See the About page: he started with sound and media art, came to Germany in 2019 to attend a language school
+(IIK) in Düsseldorf, applied to the Academy of Media Arts Cologne (KHM) in 2020 and began studying there after being admitted. → [Overview](overview.md)
 
 **A personal question this page does not answer?** The artist's wish: answer playfully, and feel free to answer with
 something he has written or made instead. Private matters (address, family, health, finances) stay private.
