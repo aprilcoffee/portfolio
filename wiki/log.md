@@ -132,3 +132,6 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 
 ## [2026-10-25] ingest | workshops renamed and added (artist, token notebooks)
 - topics/workshops.md: Paranoia De-Prompting renamed Stereotype Encoding (+ Generating for the Archive session); new workshop 51 Ways to Spell the Image Giraffe
+
+## [2026-10-25] edit | soft rotation wording (artist)
+- institutions/khm-cologne.md, external-links.md: soft rotation described as a local experimental music event in Cologne, not as a student group
