@@ -1056,7 +1056,7 @@ for L in LANGS:
     bio = tr(D["about"], "bio", L)
     more = tr(D["about"], "text", L)  # the longer text under the bio (the bio alone stays the page description)
     about_mail = S.get("email_alt") or S["email"]  # the address shown on the About page (the sidebar has site.email)
-    page(P + "about/", u["about"], bio,
+    page(P + "about/", u["about"], share_text("about", L, bio),
          '<div class="about-top"><h1 class="page-title">%s</h1><div><p class="bio">%s</p>%s'
          '<p class="contact"><span class="mono">%s</span><a href="mailto:%s">%s</a></p>'
          '<p class="contact-note">%s</p>'
