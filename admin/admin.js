@@ -506,7 +506,8 @@
       h('div', { className: 'row' }, [field('講座、工作坊與書寫頁', s, 'share_workshops', { area: true }), field('講座與工作坊 DE', s, 'share_workshops_de', { area: true }), field('講座與工作坊 中文', s, 'share_workshops_zh', { area: true })]),
       h('div', { className: 'row' }, [field('部落格頁', s, 'share_blog', { area: true }), field('部落格 DE', s, 'share_blog_de', { area: true }), field('部落格 中文', s, 'share_blog_zh', { area: true })]),
       h('div', { className: 'row' }, [field('朋友頁', s, 'share_friends', { area: true }), field('朋友頁 DE', s, 'share_friends_de', { area: true }), field('朋友頁 中文', s, 'share_friends_zh', { area: true })]),
-      lines('側欄連結（每行：名稱 | 網址）', s, 'links', ['label', 'url'])
+      lines('側欄連結（每行：名稱 | 網址）', s, 'links', ['label', 'url']),
+      lines('首頁背景藏的標題（每行：文字 | 連結）', s, 'hidden_links', ['text', 'url'], '游標靠近時以藍色浮現，點一下就前往連結。站內頁面寫 works/作品slug/、workshops/工作坊slug/、workshops/#talks（會自動加上 /de/、/zh/）；文章可直接貼完整網址。英文即可，太長的標題在手機上可能放不下。')
     ]));
   };
 

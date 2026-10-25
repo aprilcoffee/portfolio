@@ -127,9 +127,9 @@ html:lang(zh) .nav a { font-family: var(--display); font-synthesis: none; }
 .home-hero .field canvas { width: 100% !important; height: 100% !important; }
 .home-statement {
   position: relative; z-index: 1; align-self: stretch; margin: auto var(--pad) 4.5rem 0; padding-top: 3rem;
-  max-width: 51.25rem; font-size: clamp(1.125rem, 1.75vw, 1.625rem); line-height: 1.45; font-weight: 700; font-synthesis: none; letter-spacing: -0.015em;
+  max-width: 51.25rem; font-size: clamp(1rem, 1.3vw, 1.25rem); line-height: 1.5; font-weight: 700; font-synthesis: none; letter-spacing: -0.015em;
 }
-html:lang(zh) .home-statement { font-family: var(--display); font-weight: 400; letter-spacing: 0.02em; line-height: 1.6; }
+html:lang(zh) .home-statement { font-family: var(--note); font-weight: 400; letter-spacing: 0.03em; line-height: 1.75; }  /* 芫荽 Iansui: calmer than the round display face for a reflective sentence */
 .home-statement.empty::before { content: ""; display: block; height: 2.6em; }
 .home-statement span { background: var(--bg); box-decoration-break: clone; -webkit-box-decoration-break: clone; padding: 0 .12em; }
 .home-selected { padding: 6rem var(--pad) 7.5rem 0; }
@@ -346,7 +346,7 @@ button.embed.lite:hover img { opacity: 1; }
   .main { margin-left: 0; padding: 1.75rem var(--pad) 5rem; }
   .main.full { padding: 0; }
   .home-hero { min-height: calc(100svh - 3.4375rem); }
-  .home-statement { margin: auto var(--pad) 2rem; font-size: 1.1875rem; }
+  .home-statement { margin: auto var(--pad) 2rem; font-size: 1.0625rem; }
   .home-selected { padding: 4rem var(--pad) 5rem; }
   .ask { margin-top: 1.5rem; padding: 1rem 0.875rem 0.75rem; font-size: 1rem; }
   .ask-form input { font-size: 1rem; }

@@ -897,6 +897,19 @@ def redirect(old, new):
     noindex.add(old)
 
 
+def hidden_links(P):
+    """The titles hidden in the home page's character field (site.hidden_links): each opens its page when clicked.
+    A site path (works/…, workshops/#talks) gets the language prefix; a full URL (an article) is kept as it is."""
+    out = []
+    for h in S.get("hidden_links", []):
+        if isinstance(h, str):
+            out.append({"t": h})
+        elif h.get("text"):
+            link = h.get("url", "")
+            out.append({"t": h["text"], "u": link if link.startswith("http") else url(P + link) if link else ""})
+    return out
+
+
 for L in LANGS:
     CUR[0] = L
     u, P = UI[L], LP[L]
@@ -907,7 +920,7 @@ for L in LANGS:
          '<h1 class="sr-only">%s %s</h1>%s%s</section>'
          '<section class="home-selected" aria-label="%s"><div class="grid">%s</div>'
          '<a class="more" href="%s">%s</a></section>' % (
-             esc(json.dumps(S.get("hidden_words", []), ensure_ascii=False)),
+             esc(json.dumps(hidden_links(P), ensure_ascii=False)),
              esc(S["name"]), esc(S.get("name_zh", "")), ask_box(L), home_text(L),
              esc(u["selected"]),
              "".join(work_card(i + 1, w, L) for i, w in enumerate(works[:3])), url(P + "works/"), esc(u["all_works"] % len(works))),
