@@ -17,7 +17,7 @@
       }
     ],
     "base_url": "https://liutingchun.com",
-    "og_image": "images/og-latent-heat-2.jpg",
+    "og_image": "images/og-latent-heat-wafer.jpg",
     "ga_id": "G-5XL9T33VG0",
     "statement": "Ting-Chun Liu is a research-based media artist working with critical AI, audiovisual media and network practice. Dissecting technological systems through feedback-driven interventions.",
     "address": [
@@ -93,7 +93,22 @@
       "324791977": "https://i.vimeocdn.com/video/768341727-28ae4536ed569138a9e71ed451783e33a427fd4915456f5eafe5ed6e194ad88b-d_1280"
     },
     "email_alt": "ting-chun.liu@uni-weimar.de",
-    "orcid": ""
+    "orcid": "",
+    "share_about": "Research-based media artist based in Germany, working and teaching across critical AI, audiovisual and network practice. Drawing on cybernetics and operational images, he takes machine systems apart: how perception, aesthetics and power travel through computation, and the technopolitics behind it.",
+    "share_about_de": "Forschungsbasierter Medienkünstler in Deutschland, der zu kritischer KI, audiovisueller und Netzwerkpraxis arbeitet und lehrt. Ausgehend von Kybernetik und operativen Bildern zerlegt er maschinelle Systeme: wie Wahrnehmung, Ästhetik und Macht durch Rechenprozesse wandern und welche Technopolitik dahintersteht.",
+    "share_about_zh": "現居德國的研究型媒體藝術家，創作與教學以批判性人工智慧為核心，橫跨音像與網路實踐。從模控論與操作性影像出發，拆解機器系統，追問感知、美學與權力如何在運算中流動，以及背後的技術政治。",
+    "share_works": "Installations, audiovisual performances, internet art and artistic research on AI.",
+    "share_works_de": "Installationen, audiovisuelle Performances, Netzkunst und künstlerische Forschung zu KI.",
+    "share_works_zh": "裝置、音像演出、網路藝術與人工智慧藝術研究。",
+    "share_workshops": "Talks, workshops and writing on local AI, embeddings and the biases inside AI models. For beginners, artists, companies and scholars.",
+    "share_workshops_de": "Vorträge, Workshops und Texte zu lokaler KI, Embeddings und den Biases in KI-Modellen. Für Einsteiger*innen, Künstler*innen, Unternehmen und Wissenschaft.",
+    "share_workshops_zh": "講座、工作坊與書寫：本地端人工智慧、嵌入向量與模型偏見。適合初學者、藝術家、企業與研究者。",
+    "share_blog": "Archived blog: notes on works and how-tos for Raspberry Pi, Processing and Python.",
+    "share_blog_de": "Archivierter Blog: Notizen zu Arbeiten und Anleitungen zu Raspberry Pi, Processing und Python.",
+    "share_blog_zh": "部落格封存：作品筆記，以及 Raspberry Pi、Processing、Python 技術文章。",
+    "share_friends": "Friends, collaborators and fellow artists.",
+    "share_friends_de": "Freund*innen, Kollaborateur*innen und befreundete Künstler*innen.",
+    "share_friends_zh": "朋友、合作夥伴與藝術家們。"
   },
   "works": [
     {

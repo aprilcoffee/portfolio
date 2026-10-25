@@ -38,9 +38,9 @@
 | 問答紀錄（每次提問與回答，存在 Cloudflare D1，不存 IP） | 寫入：`worker/src/index.js` 的 `save()`、主題分類 `TOPICS`；本機查看：`python3 worker/log-viewer.py`（說明在 `worker/README.md`）。改了存的內容要同步改 Datenschutz 的 `CHAT_PRIVACY` |
 | 問答的知識（作品、經歷、說法） | `wiki/`（規則見 `wiki/CLAUDE.md`） |
 | `llms.txt` 最後的彩蛋（ASCII 顯卡、給 agent 的話、藝術家介紹） | `data/llms-extra.md`（原樣接在後面） |
-| 圖示、分享圖 | `favicon.ico`、`assets/favicon-32.png`、`assets/apple-touch-icon.png`、`assets/icon-192/512.png`、`site.webmanifest`、`images/og-latent-heat-2.jpg`（`site.og_image`，後台「預設分享縮圖」；換圖時用新檔名，臉書才會重新抓） |
+| 圖示、分享圖 | `favicon.ico`、`assets/favicon-32.png`、`assets/apple-touch-icon.png`、`assets/icon-192/512.png`、`site.webmanifest`、`images/og-latent-heat-wafer.jpg`（`site.og_image`，後台「預設分享縮圖」；換圖時用新檔名，臉書才會重新抓）。預設分享圖刻意用直式（800×1200）：臉書遇到直式圖會用「左小圖、右文字」的版型，小字能顯示三、四行；橫式 1200×630 會變成大圖、小字只剩一行。作品與工作坊的分享卡片仍是橫式大圖 |
 | 圖片與影片檔 | `images/wix/`（新的 Wix 圖用 `scripts/download-images.sh` 下載） |
-| 分享預覽（貼到臉書、LINE、IG 私訊等時出現的標題、小字與圖） | `build.py` 的 `layout()` 產生 `og:title`、`og:description`（就是頁面描述）、`og:image`（含寬高與替代文字）、`og:locale:alternate`；`og_image()` 把本機圖片轉成最長邊 1200px 的 JPEG 放在 `images/_og/`（因為 LINE 等不顯示 WebP），自動產生並一起 commit，不要手改。作品與工作坊的分享圖是自動做的卡片（`og_card()`：封面或 `share_image` 裁成 1200×630，下方深色漸層加 Minipax 標題與「Ting-Chun Liu · 年份」，存在 `images/_og/cards/<slug>-<雜湊>.jpg`，標題或圖換了就換檔名；需要 fonttools＋brotli 讀 Minipax）。網站小圖示（favicon、apple-touch-icon、icon-192/512）是 Latent Heat Generation 熱像中的一個顯示卡風扇。預覽小字的來源（都能在後台改）：首頁＝`site.description`；關於＝`about.bio`；每件作品＝`works[].summary`（留空用說明文字開頭）；每個工作坊＝`workshops[].summary`；作品列表、講座與工作坊、部落格、朋友頁＝`site.share_works`／`share_workshops`／`share_blog`／`share_friends`（+ `_de/_zh`，留空用 `UI` 的 `*_desc`，`build.py` 的 `share_text()`）。改了之後臉書要用 Sharing Debugger 重新抓才會更新；臉書新版貼文常只顯示圖、網域與標題，不一定顯示小字 |
+| 分享預覽（貼到臉書、LINE、IG 私訊等時出現的標題、小字與圖） | `build.py` 的 `layout()` 產生 `og:title`、`og:description`（就是頁面描述）、`og:image`（含寬高與替代文字）、`og:locale:alternate`；`og_image()` 把本機圖片轉成最長邊 1200px 的 JPEG 放在 `images/_og/`（因為 LINE 等不顯示 WebP），自動產生並一起 commit，不要手改。作品與工作坊的分享圖是自動做的卡片（`og_card()`：封面或 `share_image` 裁成 1200×630，下方深色漸層加 Minipax 標題與「Ting-Chun Liu · 年份」，存在 `images/_og/cards/<slug>-<雜湊>.jpg`，標題或圖換了就換檔名；需要 fonttools＋brotli 讀 Minipax）。網站小圖示（favicon、apple-touch-icon、icon-192/512）是 Latent Heat Generation 的 UV 印刷晶圓（熱像中的顯示卡）裁成正方形，跟預設分享圖同一件。預覽小字的來源（都能在後台改）：首頁＝`site.description`；關於＝`site.share_about`（+ `_de/_zh`，留空用 `about.bio`）；每件作品＝`works[].summary`（留空用說明文字開頭）；每個工作坊＝`workshops[].summary`；作品列表、講座與工作坊、部落格、朋友頁＝`site.share_works`／`share_workshops`／`share_blog`／`share_friends`（+ `_de/_zh`，留空用 `UI` 的 `*_desc`，`build.py` 的 `share_text()`）。改了之後臉書要用 Sharing Debugger 重新抓才會更新；臉書新版貼文常只顯示圖、網域與標題，不一定顯示小字 |
 | 作品頁圖片排版 | `works[].images` 第一張放大，其餘兩欄；某一行結尾加「 \| wide」（例如 `images/tokens/giraffe-hijack.webp | wide`）＝那張佔滿整寬，適合圖表與投影片，前後的圖照樣分組成兩欄（`build.py` 作品頁那段）。後台作品分頁的圖片欄也這樣寫 |
 | 響應式小圖 | `images/_w/<寬度>/…webp`（480、960），由 `build.py` 的 `srcset()` 用 Pillow 自動產生並一起 commit，不要手改；原圖換了會自動重做 |
 | GA 語言分組與問答事件 | `assets/analytics.js` 把頁面語言設成 `content_group`；`assets/chat.js` 的 `track()` 送 `chat_question`（不含問題文字）與 `chat_link`。改了要同步 Datenschutz 的 GA 段落 |
@@ -56,7 +56,7 @@
 ## 翻譯
 
 網站有三種語言：英文在根目錄（`/`），德文在 `/de/`，繁體中文在 `/zh/`。
-德文版第一次開啟時，右下角會出現一次提醒「部分德文由人工智慧翻譯，可能有錯誤」（`UI` 的 `mt_note`／`mt_ok`，`assets/site.js` 用 localStorage 的 `mt-note` 記住已看過）。要暫時隱藏某個語言，把它加進 `build.py` 的 `HIDDEN_LANGS`（該語言每一頁會轉址到英文版，並從語言切換、hreflang、sitemap、`llms.txt` 拿掉），同時把 `scripts/wiki-sitemap.py` 的 `LANGS` 對應那一行拿掉。程式裡的語言代碼是 `en`、`de`、`zh`
+德文版與中文版第一次開啟時，右下角會出現一次提醒「本網站以英文為主，部分翻譯由人工智慧完成，可能有錯誤」（`UI` 的 `mt_note`／`mt_ok`，下方附英文；`assets/site.js` 用 localStorage 記住已看過：德文 `mt-note`、中文 `mt-note-zh-Hant`）。要暫時隱藏某個語言，把它加進 `build.py` 的 `HIDDEN_LANGS`（該語言每一頁會轉址到英文版，並從語言切換、hreflang、sitemap、`llms.txt` 拿掉），同時把 `scripts/wiki-sitemap.py` 的 `LANGS` 對應那一行拿掉。程式裡的語言代碼是 `en`、`de`、`zh`
 （`LANGS`、`LP` 路徑前綴、`HREFLANG` 的 `zh` 對應 `zh-Hant`、`LOCALE` 的 `zh_TW`，都在 `build.py` 開頭）。
 
 ### 1. 內容：`data/site.json` 的 `_de` / `_zh` 欄位
@@ -92,7 +92,7 @@
 - 表演影片標題（除了上面說的區分用 `title_zh`）、合作者（`collaborators`）、年份、網址不翻譯。
 - 新增一個要翻譯的欄位時：在 `site.json` 加 `xxx_de`/`xxx_zh`，在 `build.py` 用 `tr(obj, "xxx", L)` 讀，
   並在 `admin/admin.js` 加對應的輸入框（照 `text_de`、`type_zh` 那幾行的寫法），作者才能在後台編輯。
-- 翻譯風格：德文用 Sie、性別中立寫法（`Künstler*innen`）；中文用繁體、台灣用語、全形標點，作品名用《》；中文裡能不用英文就不用：AI 一律寫「人工智慧」；技術詞用中文，長文裡第一次出現時括號附英文：回授（Feedback）、詞元（Token）、嵌入向量（Embedding）、強制登入頁面（captive portal），之後只寫中文。其他固定譯法：cybernetics 寫「模控論」、operational image 寫「操作性影像」、audiovisual performance 寫「音像演出」、prompt 寫「提示詞」。職稱、機構、活動保留原文括號，例如「講師暨藝術研究員（Künstlerischer Mitarbeiter）」「科隆媒體藝術學院（KHM）」「（39C3）」，但 TNUA 不加；博物館等不音譯，寫原文全名再括號附中文意思，例如 Rautenstrauch-Joest-Museum – Kulturen der Welt（科隆世界文化民族學博物館，RJM）。Storage Museum、Transformer 保留英文。保留英文的還有：作品與文章標題、人名、軟體與模型名稱（Stable Diffusion、CLIP、ChatGPT）、實驗裡實際輸入的英文字（giraffe、happy）。
+- 翻譯風格：德文用 Sie、性別中立寫法（`Künstler*innen`）；中文用繁體、台灣用語、全形標點，作品名用《》；中文裡能不用英文就不用：AI 一律寫「人工智慧」；技術詞用中文，長文裡第一次出現時括號附英文：回授（Feedback）、詞元（Token）、嵌入向量（Embedding）、強制登入頁面（captive portal），之後只寫中文。其他固定譯法：cybernetics 寫「模控論」、operational image 寫「操作性影像」、technopolitics 寫「技術政治」（作者喜歡這三個詞）、audiovisual performance 寫「音像演出」、prompt 寫「提示詞」。職稱、機構、活動保留原文括號，例如「講師暨藝術研究員（Künstlerischer Mitarbeiter）」「科隆媒體藝術學院（KHM）」「（39C3）」，但 TNUA 不加；博物館等不音譯，寫原文全名再括號附中文意思，例如 Rautenstrauch-Joest-Museum – Kulturen der Welt（科隆世界文化民族學博物館，RJM）。Storage Museum、Transformer 保留英文。保留英文的還有：作品與文章標題、人名、軟體與模型名稱（Stable Diffusion、CLIP、ChatGPT）、實驗裡實際輸入的英文字（giraffe、happy）。
 
 ### 2. 介面文字：`scripts/build.py` 的 `UI` 字典
 
