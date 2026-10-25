@@ -495,7 +495,7 @@ UI = {
         "ask_ex": ["What is Latent Heat Generation about?", "Why can “giraffe” be spelled in 51 ways?", "Which of your works deal with AI?", "What are you working on now?"],
         "ask_note": "caution: AI may create random correlations",
         "ask_more": "Privacy",
-        "read_at": "Read on %s", "tba": "Date TBA", "kinds": {"talk": "Talk", "workshop": "Workshop"}, "read": "Read", "upcoming": "Upcoming", "recent": "Recent", "cv_all": "Full list in the CV", "writing": "Writing",
+        "read_at": "Read on %s", "tba": "Date TBA", "kinds": {"talk": "Talk", "workshop": "Workshop"}, "read": "Read", "img_credit": "Image: %s", "upcoming": "Upcoming", "recent": "Recent", "cv_all": "Full list in the CV", "writing": "Writing",
         "mt_note": "Parts of the German translation were made with AI and may contain errors.",
         "mt_ok": "OK",
         "ask_err": "Sorry, that didn’t work. Please try again in a moment, or write to %s.",
@@ -532,7 +532,7 @@ UI = {
         "ask_ex": ["Worum geht es in Latent Heat Generation?", "Warum lässt sich „giraffe“ auf 51 Arten schreiben?", "Welche Ihrer Arbeiten beschäftigen sich mit KI?", "Woran arbeiten Sie gerade?"],
         "ask_note": "Achtung: KI kann zufällige Zusammenhänge erzeugen · %s",
         "ask_more": "Datenschutz",
-        "read_at": "Lesen auf %s", "tba": "Termin folgt", "kinds": {"talk": "Vortrag", "workshop": "Workshop"}, "read": "Lesen", "upcoming": "Demnächst", "recent": "Zuletzt", "cv_all": "Vollständige Liste im Lebenslauf", "writing": "Texte",
+        "read_at": "Lesen auf %s", "tba": "Termin folgt", "kinds": {"talk": "Vortrag", "workshop": "Workshop"}, "read": "Lesen", "img_credit": "Bild: %s", "upcoming": "Demnächst", "recent": "Zuletzt", "cv_all": "Vollständige Liste im Lebenslauf", "writing": "Texte",
         "mt_note": "Bitte beachten Sie: Teile der deutschen Übersetzung wurden mit KI erstellt und können Fehler enthalten.",
         "mt_ok": "Verstanden",
         "ask_err": "Das hat leider nicht geklappt. Bitte gleich noch einmal versuchen oder an %s schreiben.",
@@ -569,7 +569,7 @@ UI = {
         "ask_ex": ["《Latent Heat Generation》在談什麼？", "為什麼「giraffe」可以有 51 種拼法？", "你有哪些作品跟人工智慧有關？", "你現在在做什麼？"],
         "ask_note": "注意：人工智慧可能產生隨機的關聯性",
         "ask_more": "隱私權",
-        "read_at": "在 %s 閱讀", "tba": "日期待定", "kinds": {"talk": "演講", "workshop": "工作坊"}, "read": "閱讀", "upcoming": "即將舉行", "recent": "近期場次", "cv_all": "完整列表見關於頁", "writing": "書寫",
+        "read_at": "在 %s 閱讀", "tba": "日期待定", "kinds": {"talk": "演講", "workshop": "工作坊"}, "read": "閱讀", "img_credit": "圖：%s", "upcoming": "即將舉行", "recent": "近期場次", "cv_all": "完整列表見關於頁", "writing": "書寫",
         "mt_note": "請注意：部分德文為人工智慧翻譯，可能會有錯誤。",
         "mt_ok": "知道了",
         "ask_err": "抱歉，暫時無法回答。請稍後再試，或寫信至 %s。",
@@ -1111,9 +1111,10 @@ for L in LANGS:
         same = L != "en" and not it.get("text_" + L)
         href = it.get("url") or abs_url(P + "about/") + "#cv-publications-writing"
         pic = img(it["thumb"], 240, "") if it.get("thumb") else '<span class="ph"></span>'
-        return ('<a class="text-row" href="%s"%s><span class="pic">%s</span><span class="t"%s>%s</span><span class="y mono">%s%s</span></a>') % (
+        return ('<a class="text-row" href="%s"%s><span class="pic">%s</span><span class="t"%s>%s</span><span class="y mono">%s%s%s</span></a>') % (
             esc(href), ' target="_blank" rel="noopener"' if it.get("url") else "", pic, ' lang="en"' if same else "", esc(text),
-            esc(it.get("year", "")), " · %s ↗" % esc(u["read"]) if it.get("url") else "")
+            esc(it.get("year", "")), " · %s ↗" % esc(u["read"]) if it.get("url") else "",
+            '<span class="credit">%s</span>' % esc(u["img_credit"] % it["credit"]) if it.get("thumb") and it.get("credit") else "")
     writing_html = ('<section class="sub-sec" id="writing"><header class="sub-head"><h2>%s</h2></header><div class="text-list">%s</div></section>' % (
         esc(u["writing"]), "".join(text_row(it) for it in pubs))) if pubs else ""
     jumps = [x for x in (("upcoming", u["upcoming"]) if soon else None, ("recent", u["recent"]) if past else None,

@@ -405,7 +405,7 @@
           btn('↑', function () { if (i) { a.sections.splice(i - 1, 0, a.sections.splice(i, 1)[0]); save(); render(); } }, 'sm'),
           btn('刪除', function () { if (confirm('刪除段落「' + sec.title + '」？')) { a.sections.splice(i, 1); save(); render(); } }, 'sm danger')
         ]),
-        lines('每行：年份 | 內容 | 連結 | 中文 | DE | 日期 | 類型 | 預覽圖（類型寫 talk 或 workshop，會在近期場次標成「演講」「工作坊」；日期也可以寫 TBA＝日期待定；後面幾欄都可留空；日期寫 2026-12-17，日期還沒到的講座會出現在「講座與工作坊」頁的「即將舉行」；最後一欄是預覽圖路徑，出版與寫作留空會自動抓）', sec, 'items', ['year', 'text', 'url', 'text_zh', 'text_de', 'date', 'kind', 'thumb'], null, sec.items.length > 8 ? 'tall' : '')
+        lines('每行：年份 | 內容 | 連結 | 中文 | DE | 日期 | 類型 | 預覽圖 | 圖片來源（圖片來源會在書寫列表顯示成「圖：…」；類型寫 talk 或 workshop，會在近期場次標成「演講」「工作坊」；日期也可以寫 TBA＝日期待定；後面幾欄都可留空；日期寫 2026-12-17，日期還沒到的講座會出現在「講座與工作坊」頁的「即將舉行」；最後一欄是預覽圖路徑，出版與寫作留空會自動抓）', sec, 'items', ['year', 'text', 'url', 'text_zh', 'text_de', 'date', 'kind', 'thumb', 'credit'], null, sec.items.length > 8 ? 'tall' : '')
       ]));
     });
     box.appendChild(h('div', {}, [btn('+ 新增段落', function () { a.sections.push({ title: 'New section', items: [] }); save(); render(); })]));

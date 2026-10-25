@@ -1877,34 +1877,38 @@
             "text": "Stereotype Encoding: How AI Images Learn Cultural Bias, Latent Space, Filmwerkstatt Düsseldorf, w/ Leon-Etienne Kühr",
             "url": "https://www.academia.edu/165438573/Stereotype_Encoding_How_AI_Images_Learn_Cultural_Bias",
             "text_zh": "Stereotype Encoding: How AI Images Learn Cultural Bias，Latent Space，杜塞道夫 Filmwerkstatt，與 Leon-Etienne Kühr",
-            "thumb": "images/workshops/paranoia-de-prompting/01.jpg"
+            "thumb": "images/texts/stereotype-encoding.jpg"
           },
           {
             "year": "2025",
             "text": "On the Materiality of Artificial Intelligence, in: un/learn ai – integrating AI in aesthetic practices, Vol. 3, pp. 218–223, Forschungsprojekt KITeGG",
             "url": "https://unlearn.gestaltung.ai/de",
             "text_zh": "On the Materiality of Artificial Intelligence，收錄於《un/learn ai – integrating AI in aesthetic practices》第 3 冊，第 218–223 頁，KITeGG 研究計畫",
-            "thumb": "images/talks/arafed-futures-an-artist-dialogue-on-chip-storage-and-ai-acc.jpg"
+            "thumb": "images/texts/on-the-materiality-of-ai-map.jpg"
           },
           {
             "year": "2024",
             "text": "Hello, hello, hello, hello? Hello? Hello! Human! Exhibition catalogue “Hello, Human!”, Museum of Contemporary Art Taipei (Mandarin/English; English translation by 吳中平)",
-            "url": "https://www.mocataipei.org.tw/tw/ExhibitionAndEvent/Info/你好，人類！Hello,*Human!",
+            "url": "https://www.mocataipei.org.tw/tw/ExhibitionAndEvent/Info/%E4%BD%A0%E5%A5%BD%EF%BC%8C%E4%BA%BA%E9%A1%9E%EF%BC%81Hello,*Human!",
             "text_zh": "你好，你好，你好，你好？你好？你好！人類！「你好，人類！」展覽專刊，臺北當代藝術館（中英；英譯：吳中平）",
-            "thumb": "images/wix/4eb1dd_421aecd14d774616bcf61525e555dd6e~mv2.webp"
+            "thumb": "images/texts/hello-human-moca.jpg",
+            "credit": "MOCA Taipei, Hello, Human! (2024), design: Javin Mo @ Milkxhake"
           },
           {
             "year": "2024",
             "text": "Positioning – A Prerequisite for Immersion, Digiarts, National Taiwan Museum of Fine Arts",
             "url": "https://www.digiarts.org.tw/DigiArts/DataBasePage/4_236170297334000/Chi",
             "text_zh": "定位—沉浸的先決條件（Positioning – A Prerequisite for Immersion），《Digiarts》，國立臺灣美術館",
-            "thumb": "images/wix/4eb1dd_d6cb6b7ed04f4029a04075b64bc5c976~mv2.webp"
+            "thumb": "images/texts/project-34-north-118-west.jpg",
+            "credit": "Jeff Knowlton, Naomi Spellman, Jeremy Hight, Project 34 North 118 West (2003)"
           },
           {
             "year": "2021",
-            "text": "The Rule Becomes the Author!, [ ] ground zero – poetics of technics and cognition",
+            "text": "»_ell_ Worl_!« – The Rule Becomes the Author, 10th Encontro Internacional de Grupos de Pesquisa, UNESP, São Paulo, and [ ] ground zero – poetics of technics and cognition, w/ Christian Heck, Mattis Kuhn, Tiago Ive Rubini, Julia Nakotte",
             "url": "https://ground-zero.khm.de/portfolio/_ell_-worl_-the-rule-becomes-the-author/",
-            "text_zh": "The Rule Becomes the Author!，[ ] ground zero – poetics of technics and cognition"
+            "text_zh": "»_ell_ Worl_!« – The Rule Becomes the Author，第 10 屆國際研究群會議（Encontro Internacional de Grupos de Pesquisa），聖保羅州立大學（UNESP），並刊於 [ ] ground zero – poetics of technics and cognition，與 Christian Heck、Mattis Kuhn、Tiago Ive Rubini、Julia Nakotte",
+            "thumb": "images/texts/ell-worl-the-rule-becomes-the-author.jpg",
+            "text_de": "»_ell_ Worl_!« – The Rule Becomes the Author, 10. Encontro Internacional de Grupos de Pesquisa, UNESP, São Paulo, und [ ] ground zero – poetics of technics and cognition, mit Christian Heck, Mattis Kuhn, Tiago Ive Rubini, Julia Nakotte"
           }
         ],
         "title_de": "Publikationen & Texte",

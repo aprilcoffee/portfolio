@@ -540,3 +540,4 @@ html.zoomed { overflow: hidden; }
 .text-row .y { margin-top: 0.35rem; font-size: 0.8125rem; color: var(--mut); }
 .text-row:hover .t { text-decoration: underline; text-underline-offset: 0.2rem; text-decoration-thickness: 1px; }
 @media (max-width: 800px) { .text-list { grid-template-columns: 1fr; } .text-row { grid-template-columns: 5rem 1fr; } }
+.text-row .credit { display: block; margin-top: 0.2rem; font-size: 0.75rem; }
