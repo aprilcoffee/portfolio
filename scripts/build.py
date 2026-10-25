@@ -772,10 +772,12 @@ def work_card(n, w, lang, kw=False):
     c = cover_of(w)
     line = tr(w, "kw", lang) if kw else ""
     return ('<a class="card" href="%s"><div class="thumb">%s</div><div class="cap">%s<span class="t">%s%s</span>'
-            '<span class="mono">%s</span>%s</div></a>') % (
+            '<span class="mono">%s</span>%s%s</div></a>') % (
         url(LP[lang] + "works/%s/" % w["slug"]), img(c, 900, work_alt(w, lang)) if c else '<span class="ph">%s</span>' % esc(w["title"]),
         idx(n), esc(w["title"]), '<span class="zh" lang="zh-Hant">%s</span>' % esc(w["title_zh"]) if w.get("title_zh") else "",
         esc(w.get("year")) + (" · " + esc(tr(w, "status", lang)) if w.get("status") else ""),
+        # collaborations are named on every card, not only on the work page (part before ";" = the people)
+        '<span class="with mono">%s</span>' % esc(UI[lang]["work_with"] % w["collaborators"].split(";")[0].strip()) if w.get("collaborators") else "",
         '<span class="kw">%s</span>' % esc(line) if line else "")
 
 

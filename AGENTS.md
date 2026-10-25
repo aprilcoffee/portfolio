@@ -88,6 +88,7 @@
 - **搜尋引擎（SEO）用語**：主要敘述是 “research-based media artist working with critical AI”（`site.description`、`statement`、About 的 bio 第一句）；看不到的地方（JSON-LD 的 `jobTitle`、`occupations`、`llms.txt`）用 “Critical AI Artist”；首頁 `<title>` 刻意只放名字。文字裡一律寫全名 Ting-Chun Liu。部落格文章的作者列寫 “Ting-Chun Liu, media artist”。
 - 主題標籤：`works[].tags`（`_de/_zh` 沒填就顯示英文）顯示在作品頁的「Topics」列，也寫進 JSON-LD 的 `keywords`；各列表頁的標籤在 `build.py` 的 `UI[...]["tags"]`。
 - `data/lastmod.json` 由 `build.py` 自動維護（每頁的內容雜湊與最後更新日），給 `sitemap.xml` 的 `<lastmod>` 用，不要手改。HTML 版網站地圖在 `/sitemap/`（`/de/sitemap/`、`/zh/sitemap/`），側欄頁尾有連結。
+- **合作一律在最外層標出來**：作品卡片（`work_card()`，取 `collaborators` 分號前的部分）與工作坊卡片（`shop_card()`，`with`）都顯示「與 X 合作」，不只在內頁。新增合作作品或工作坊時一定要填 `collaborators`／`with`。
 - 表演影片標題（除了上面說的區分用 `title_zh`）、合作者（`collaborators`）、年份、網址不翻譯。
 - 新增一個要翻譯的欄位時：在 `site.json` 加 `xxx_de`/`xxx_zh`，在 `build.py` 用 `tr(obj, "xxx", L)` 讀，
   並在 `admin/admin.js` 加對應的輸入框（照 `text_de`、`type_zh` 那幾行的寫法），作者才能在後台編輯。
