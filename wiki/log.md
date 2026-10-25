@@ -135,3 +135,7 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 
 ## [2026-10-25] edit | soft rotation wording (artist)
 - institutions/khm-cologne.md, external-links.md: soft rotation described as a local experimental music event in Cologne, not as a student group
+
+## [2026-10-25] ingest | share description chosen by the artist
+- overview.md: the short description (based in Germany, working and teaching; cybernetics, operational images, technopolitics), feedback not always the method, perception rather than cognition
+- works/51-ways-to-spell-the-image-giraffe.md, works/sixteen-tokens-for-a-cave.md: link to the token workshop

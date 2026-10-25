@@ -52,6 +52,7 @@ unaccepted 2026 conference abstract, October 2026.)
 
 - [51 Ways to Spell the Image Giraffe](51-ways-to-spell-the-image-giraffe.md)
 - [Critical AI and image models](../topics/critical-ai-and-image-models.md)
+- [Workshops](../topics/workshops.md): the workshop 51 Ways to Spell the Image Giraffe (tokens, the token dictionary, prompting with token IDs, rebuilding an image) at https://liutingchun.com/workshops/51-ways-to-spell-the-image-giraffe/
 - [Chaos Communication Congress](../institutions/chaos-communication-congress.md)
 - [Leon-Etienne Kühr](../people/leon-etienne-kuehr.md)
 
