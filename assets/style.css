@@ -410,6 +410,7 @@ button.embed.lite:hover img { opacity: 1; }
 
 /* workshops */
 .shop-card .cap .mono { grid-column: 1 / -1; }
+.card .cap .with { grid-column: 1 / -1; margin-top: 0.1875rem; }
 .shop-sum { margin-top: 1.75rem; font-size: 1.3125rem; line-height: 1.5; }
 .held { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line); }
 .held h2 { font-weight: 400; color: var(--mut); margin-bottom: 0.5rem; }

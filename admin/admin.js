@@ -151,7 +151,7 @@
     var thumbs = h('div', { className: 'thumbs' });
     function drawThumbs() {
       thumbs.innerHTML = '';
-      [w.cover].concat(w.images || []).filter(Boolean).forEach(function (u) {
+      [w.cover].concat(w.images || []).filter(Boolean).map(function (u) { return u.replace(/\s*\|\s*wide\s*$/, ''); }).forEach(function (u) {
         thumbs.appendChild(h('img', { src: resolve(u), loading: 'lazy' }));
       });
     }
@@ -235,7 +235,7 @@
       lines('連結（每行：名稱 | 網址）', w, 'links', ['label', 'url']),
       field('封面圖（留空＝用第一張圖）', w, 'cover', { after: drawThumbs }),
       field('分享縮圖（貼到臉書時的圖；會自動裁成 1200×630 並加上標題；留空＝用封面）', w, 'share_image'),
-      h('label', {}, ['圖片（每行一個網址或 images/… 路徑）', imagesTa]),
+      h('label', {}, ['圖片（每行一個網址或 images/… 路徑；第一張放大顯示，其餘兩欄；行尾加「 | wide」＝這張佔滿整寬，適合圖表與投影片）', imagesTa]),
       h('div', { className: 'actions' }, [btn('上傳圖片到 GitHub…', function () { upload.click(); }, 'sm'), upStatus, upload]),
       thumbs
     ]);

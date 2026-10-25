@@ -7,7 +7,7 @@ sources:
   - https://liutingchun.com/works/sixteen-tokens-for-a-cave/
   - https://liutingchun.com/zh/works/sixteen-tokens-for-a-cave/
   - https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai
-updated: 2026-10-07
+updated: 2026-10-25
 ---
 # Sixteen Tokens for a Cave
 
@@ -33,6 +33,20 @@ Multimodal poetry in token language, with Leon-Etienne Kühr, in development. St
 - **CLIP similarity to the target photograph:** the sixteen tokens 0.433; a (lazy) human description, "a photo of a cave and the ocean", 0.272; ChatGPT 0.258; JoyCaption Beta One 0.271; Gemini 0.273. Because this score is what the algorithm maximised, the transfer to other models is the part that counts.
 - **Reading:** poetry for a machine reader, overheard by humans; a way of writing that grows out of the token dictionary described in [51 Ways to Spell the Image Giraffe](51-ways-to-spell-the-image-giraffe.md). This is a reading of the work, not the artist's statement.
 - Target photograph: Stefan Kunze / Unsplash. First shown as "Prompt Reconstruction" in the 39C3 talk, 2025.
+
+
+## Method: a genetic algorithm against CLIP
+
+The sixteen tokens were bred with a genetic algorithm: a population of random token sequences is scored by CLIP
+similarity to the target photograph (CLIP ViT-L/14; image features from the Vision Transformer, text features from the
+text transformer, compared in one embedding space); the best are kept as elites, and new sequences come from tournament
+selection, one-point crossover, swapping and random token mutation, over about two hundred generations. The result is a
+local optimum, one of many possible sequences. The token IDs are passed straight to the text encoders of image models
+(SDXL Turbo in the notebook; FLUX.1-dev, Stable Diffusion 3.5, SDXL and 1.5 in the slides), skipping the tokenizer.
+The same method reconstructs photographs of people ("Prompt Reconstruction"). The artists call the result adversarial
+poetry: adversarial to the model, optimised only against its own score, and to the human reader, as writing that resists
+paraphrase. (Sources: the artists' notebook "Evolutionary Algorithms for Text Encoder Optimization", their slides and an
+unaccepted 2026 conference abstract, October 2026.)
 
 ## Related
 
