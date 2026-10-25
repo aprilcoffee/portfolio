@@ -37,7 +37,7 @@ Notes on this wording, from the artist:
 
 **The text on the website's home page (October 2026)**, in the artist's words: "I often wonder why technology keeps us fascinated, confused and at a loss. Yet when we look closely, it is novel yet ancient, delicate yet provocative, lavish yet hollow, complex but dangerous. To think about what technology is, is to think about how symbols are made, whose labor they carry, and which techniques hold them in place." (Chinese: 我常在想，為什麼科技總讓我們著迷、困惑、又無所適從。然而當我們仔細端詳，它既新穎卻又古老，細膩卻帶著挑釁，華麗卻又空洞，複雜卻也危險。思考何為科技，就是思考符號如何被製造、背後承載著誰的勞動，以及哪些技術讓它們得以成立。)
 
-Liu came to Germany in 2019, began studying at the Academy of Media Arts Cologne in 2020 (as the pandemic began) and has
+Liu came to Germany in 2019 and first attended a language school (IIK) in Düsseldorf; he applied to the Academy of Media Arts Cologne in 2020 and began studying there that year (as the pandemic began) and has
 worked at Bauhaus University Weimar since the end of 2024; he works in Cologne and Weimar. He works mainly in English,
 and also in Mandarin.
 

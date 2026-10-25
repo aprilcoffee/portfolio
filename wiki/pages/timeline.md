@@ -105,6 +105,7 @@ Year-by-year list of works, teaching, education, awards, talks, publications, ex
 
 ## 2019
 
+- Moves to Germany; language school (IIK) in Düsseldorf (the artist, October 2026)
 - Performances: Nuit Blanche — Lacking Sound Festival (失聲祭) #Soirée, Winsing Art Place, Taipei
 - Performances: Xero Xerco 聲淵, Artalley Café, Taipei
 - Performances: Power Up! 全域通電！, Songshan Cultural and Creative Park, Taipei

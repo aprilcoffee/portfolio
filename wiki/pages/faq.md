@@ -5,7 +5,8 @@ tags: [faq]
 sources:
   - ../../data/site.json
   - https://liutingchun.com/
-updated: 2026-10-20
+  - ../raw/questionnaire-2026-10b-answers.md
+updated: 2026-10-25
 ---
 # Frequently asked questions
 
@@ -74,6 +75,65 @@ Liu's answer is no: artists use AI to interact with the technical objects around
 Anything that is not on the website or in the sources listed on each page: private life (which Liu keeps private), prices,
 availability, unpublished projects. The chat should say so instead of guessing.
 
+## Lighter questions (the artist's answers, October 2026)
+
+**What ice cream does Ting-Chun like most?**
+Sea salt. The question is fitting: "How ice cream is the word red, compared to blue?" is the opening question of his
+workshop [Conditions for Emotions](topics/workshops.md), where small language models answer such absurd questions with
+full confidence.
+
+**Favourite city?** Cologne.
+
+**What is he reading?** Vilém Flusser and Harun Farocki (October 2026). For reading tips on a theme, see the
+[seminar reading list](topics/seminar-reading-list.md).
+
+**What does he teach this semester?** The seminar *Seeing Like a Machine: Telling Stories With and Against How AI
+Judges Images* at Bauhaus University Weimar (winter 2026/27). → [Teaching](teaching-education-awards.md)
+
+**What does he do outside work?** He plays Hearthstone.
+
+**A quote he likes?** Sol LeWitt: "Obviously a drawing of a person is not a real person, but a drawing of a line is a
+real line." (He remembers it as being about a painted flower and a drawn line; the wording above is the one attributed
+to LeWitt.)
+
+**How did he get into AI?** He started by playing with natural language processing; in 2022 he tried the earliest
+DALL·E and found the idea of joining text and images interesting.
+
+**How does a work start?** From the aesthetics of a technical framework. Methods besides feedback: research context,
+historical stories, experiments and tests, hacking, overtuning.
+
+**Which work is hardest to explain?** 51 Ways to Spell the Image Giraffe, because so many technical questions have to
+be described; in his words, all the works need a lot of prior knowledge to be understood.
+→ [51 Ways to Spell the Image Giraffe](works/51-ways-to-spell-the-image-giraffe.md)
+
+**How do Ting-Chun and Leon-Etienne Kühr work together?** They discuss with each other and write code together.
+→ [Leon-Etienne Kühr](people/leon-etienne-kuehr.md)
+
+**Which tools?** All of them: p5.js, Processing, Python, TouchDesigner and others. He uses generative AI himself when
+writing code.
+
+**Will AI replace artists?** No. Artists adapt new technologies and aesthetics; whatever happens, they have to stay
+experimental and must not be bound by the technology.
+
+**Semiconductors and geopolitics?** For him it is a contradictory concept, not simply about the environment or labour;
+geopolitics is in it too. Artists should not handle a single issue but discuss this many-sided contradiction, which is
+something only art can do. → [Material infrastructure of AI](topics/material-infrastructure-of-ai.md)
+
+**Local or cloud models?** Both. Local small models mainly in teaching, because students have no budget and should still
+be able to use AI.
+
+**Workshops: format?** On participants' computers or in the cloud; mainly in English and Chinese; the length can be
+discussed. → [Workshops](topics/workshops.md)
+
+**Loans, commissions, collections, citing works, using images, interviews, podcasts, students' questions?** All
+welcome by email (ting-chun.liu@uni-weimar.de). Many projects are in progress and open to conversation.
+
+**How did he become an artist?** See the About page: he started with sound and media art, came to Germany in 2019 to attend a language school
+(IIK) in Düsseldorf, applied to the Academy of Media Arts Cologne (KHM) in 2020 and began studying there after being admitted. → [Overview](overview.md)
+
+**A personal question this page does not answer?** The artist's wish: answer playfully, and feel free to answer with
+something he has written or made instead. Private matters (address, family, health, finances) stay private.
+
 ## Related
 
 - [Overview](overview.md)
@@ -83,3 +143,4 @@ availability, unpublished projects. The chat should say so instead of guessing.
 
 - ../../data/site.json
 - https://liutingchun.com/
+- wiki/raw/questionnaire-2026-10b-answers.md (the artist's answers, 25 October 2026)

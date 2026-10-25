@@ -146,3 +146,16 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 
 ## [2026-10-25] edit | share title (artist)
 - overview.md: share title now "Media Art, Critical AI, Artistic Research"
+
+## [2026-10-25] ingest | raw/questionnaire-2026-10b-answers.md (artist)
+- faq.md: lighter questions (sea salt ice cream, Cologne, Flusser, Hearthstone, LeWitt quote), how he got into AI, methods, tools, collaboration, AI and artists, geopolitics, local models, workshop format, requests
+- worker RULES: light personal questions answered playfully or with his own words; titles never translated; 操作性影像, 技術政治, 講座、工作坊與書寫
+- overview.md, faq.md: 2019 language school IIK in Düsseldorf, KHM application and start in 2020 (artist)
+
+## [2026-10-25] ingest | raw/seminar-2026-27.md (artist)
+- topics/seminar-reading-list.md (new): the seminar and teaching readings, for reading recommendations
+- teaching-education-awards.md: winter 2026/27 seminar Seeing Like a Machine
+- faq.md: reading Flusser and Farocki; this semester's seminar
+- worker: look_up tool for live questions only (SEARCH_MODEL); reading recommendations one or two at a time
+- topics/seminar-reading-list.md: authors and sources for Wallenborn and Zachlod (un/learn ai vol. 2), Hunger (Training the Archive WP 6), Steyerl (NLR 140/141), Ciston (ladymouth) (artist, screenshots)
+- topics/seminar-reading-list.md: Steyerl, The Hardest Part removed (artist)

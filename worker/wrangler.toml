@@ -20,6 +20,9 @@ MODEL = "gpt-5.4-mini"
 # function tools (suggest_links) together with any other reasoning effort on gpt-5.4 models.
 # Remove the line for models without reasoning (for example gpt-4.1-mini).
 REASONING_EFFORT = "none"
+# Web look-up for live questions only (weather, today's news): a search model the chat may call
+# at most once per question through the look_up tool. Remove the line to switch the look-up off.
+SEARCH_MODEL = "gpt-4o-mini-search-preview"
 # Pages allowed to call the Worker.
 ALLOWED_ORIGINS = "https://liutingchun.com,https://www.liutingchun.com"
 

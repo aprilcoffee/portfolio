@@ -34,7 +34,7 @@
 | p5.js 背景特效（首頁字元場、側欄訊號線） | `assets/effects.js`；首頁字元場裡藏的藍色標題是 `site.hidden_links`（每筆 `text`、`url`；後台「首頁背景藏的標題」），游標靠近才浮現，浮現時點一下前往連結：站內路徑由 `build.py` 的 `hidden_links()` 加上語言前綴，完整網址（文章）照原樣。只放近期的作品、工作坊、講座與文章，英文即可 |
 | 首頁問答框的前端（打字機效果、ASCII 顯卡風扇與溫度顏色） | `assets/chat.js`；ASCII 顯卡由 `build.py` 的 `_ask_gpu()` 產生，HTML 在 `ask_box()` |
 | GA4 同意橫幅 | `assets/analytics.js` |
-| 問答的 AI 規則、模型、連結工具 | `worker/src/index.js`（`RULES`、`suggest_links`、`localize()`），設定在 `worker/wrangler.toml` |
+| 問答的 AI 規則、模型、連結工具 | `worker/src/index.js`（`RULES`、`suggest_links`、`localize()`），設定在 `worker/wrangler.toml`。另有很少用的 `look_up` 網路查詢：只給「天氣、今天的新聞」這類即時問題，每題最多一次，關於庭均的事實仍只來自 wiki；用的模型是 `wrangler.toml` 的 `SEARCH_MODEL`，刪掉那行就關閉。Datenschutz 的 `CHAT_PRIVACY` 有一句說明。推薦讀物來自 `wiki/pages/topics/seminar-reading-list.md`，每次只推一兩篇 |
 | 問答紀錄（每次提問與回答，存在 Cloudflare D1，不存 IP） | 寫入：`worker/src/index.js` 的 `save()`、主題分類 `TOPICS`；本機查看：`python3 worker/log-viewer.py`（說明在 `worker/README.md`）。改了存的內容要同步改 Datenschutz 的 `CHAT_PRIVACY` |
 | 問答的知識（作品、經歷、說法） | `wiki/`（規則見 `wiki/CLAUDE.md`） |
 | `llms.txt` 最後的彩蛋（ASCII 顯卡、給 agent 的話、藝術家介紹） | `data/llms-extra.md`（原樣接在後面） |
