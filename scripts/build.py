@@ -902,7 +902,7 @@ for L in LANGS:
     u, P = UI[L], LP[L]
 
     # home: generative field + statement, then a few recent works
-    page(P, "", tr(S, "description", L),
+    page(P, "", share_text("about", L, tr(S, "description", L)),  # the home page shares the same text as About
          '<section class="home-hero"><div class="field" data-effect="field" data-words="%s" aria-hidden="true"></div>'
          '<h1 class="sr-only">%s %s</h1>%s%s</section>'
          '<section class="home-selected" aria-label="%s"><div class="grid">%s</div>'
