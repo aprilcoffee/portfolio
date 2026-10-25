@@ -569,7 +569,7 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
 <meta name="description" content="{d}">
 <meta name="author" content="{name}">
 <link rel="canonical" href="{c}">
-{hreflang}<meta property="og:site_name" content="{name}">
+{hreflang}{fb}<meta property="og:site_name" content="{name}">
 <meta property="og:locale" content="{locale}">
 {locale_alt}<meta property="og:type" content="{ogt}">
 <meta property="og:title" content="{t}">
@@ -626,6 +626,7 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
            css=versioned("assets/style.css"), fonts=versioned("assets/fonts/fonts.css"), fonts_g=versioned("assets/fonts/fonts-google.css"), font_r=url("assets/fonts/Minipax-Regular.woff2"), font_b=url("assets/fonts/Minipax-Bold.woff2"), js=versioned("assets/site.js"), fx=versioned("assets/effects.js"), feed=url("blog/feed.xml"),
            img_meta=('<meta property="og:image:width" content="%d">\n<meta property="og:image:height" content="%d">\n' % (img_w, img_h)) if img_w else "",
            locale_alt="".join('<meta property="og:locale:alternate" content="%s">\n' % LOCALE[l] for l in (alts or {}) if l != lang),
+           fb=('<meta property="fb:app_id" content="%s">\n' % esc(S["fb_app_id"])) if S.get("fb_app_id") else "",
            ga=ga, ld=ld_tag, home=url(LP[lang]), imp=url("impressum/"), dsg=url("datenschutz/"), nav=nav, foot_nav=foot_nav, more=u["more"], switch=switch,
            menu=u["menu"], language=u["language"], privacy=u["privacy"], email=esc(S["email"]), links=links,
            year=datetime.date.today().year, full=" full" if full else "", body=body,
