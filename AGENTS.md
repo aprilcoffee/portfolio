@@ -9,7 +9,7 @@
    `impressum/`、`datenschutz/`、`sitemap.xml`、`robots.txt`、`llms.txt`、`blog/feed.xml`，還有根目錄那些舊 Wix 網址的
    轉址資料夾（`cv/`、`post/`、`sun/`、`fall/`、`beneath/`…）全部由 `scripts/build.py` 產生，下一次建置就會被覆蓋。
    要改就改來源（`data/`、`posts/`、`scripts/build.py`、`assets/`）。
-2. **改完要重建。** `pip install markdown pillow && python3 scripts/build.py`（沒有 Pillow 也能建，但圖片就不會有 `srcset` 小圖，頁面會跟著變）。產生的檔案可以一起 commit；
+2. **改完要重建。** `pip install markdown pillow fonttools brotli && python3 scripts/build.py`（沒有 Pillow 也能建，但圖片就不會有 `srcset` 小圖，頁面會跟著變）。產生的檔案可以一起 commit；
    就算沒有，push 到 main 之後 `.github/workflows/build.yml` 也會重建並自己 commit「Rebuild pages」。
 3. **三種語言要一起改。** 新增或修改任何顯示在網頁上的文字，英文、德文、繁體中文都要處理（見下面〈翻譯〉）。
 4. **另一個 repo 的東西不要動。** `aprilcoffee.github.io` 上的 `sun/` 和 `heat_as_image/` 是獨立作品，絕對不要改；
@@ -38,9 +38,9 @@
 | 問答紀錄（每次提問與回答，存在 Cloudflare D1，不存 IP） | 寫入：`worker/src/index.js` 的 `save()`、主題分類 `TOPICS`；本機查看：`python3 worker/log-viewer.py`（說明在 `worker/README.md`）。改了存的內容要同步改 Datenschutz 的 `CHAT_PRIVACY` |
 | 問答的知識（作品、經歷、說法） | `wiki/`（規則見 `wiki/CLAUDE.md`） |
 | `llms.txt` 最後的彩蛋（ASCII 顯卡、給 agent 的話、藝術家介紹） | `data/llms-extra.md`（原樣接在後面） |
-| 圖示、分享圖 | `favicon.ico`、`assets/favicon-32.png`、`assets/apple-touch-icon.png`、`assets/icon-192/512.png`、`site.webmanifest`、`images/og-latent-heat.jpg`（`site.og_image`，後台「預設分享縮圖」；換圖時用新檔名，臉書才會重新抓） |
+| 圖示、分享圖 | `favicon.ico`、`assets/favicon-32.png`、`assets/apple-touch-icon.png`、`assets/icon-192/512.png`、`site.webmanifest`、`images/og-latent-heat-2.jpg`（`site.og_image`，後台「預設分享縮圖」；換圖時用新檔名，臉書才會重新抓） |
 | 圖片與影片檔 | `images/wix/`（新的 Wix 圖用 `scripts/download-images.sh` 下載） |
-| 分享預覽（貼到臉書、LINE、IG 私訊等時出現的標題、小字與圖） | `build.py` 的 `layout()` 產生 `og:title`、`og:description`（就是頁面描述）、`og:image`（含寬高與替代文字）、`og:locale:alternate`；`og_image()` 把本機圖片轉成最長邊 1200px 的 JPEG 放在 `images/_og/`（因為 LINE 等不顯示 WebP），自動產生並一起 commit，不要手改。預覽小字的來源（都能在後台改）：首頁＝`site.description`；關於＝`about.bio`；每件作品＝`works[].summary`（留空用說明文字開頭）；每個工作坊＝`workshops[].summary`；作品列表、講座與工作坊、部落格、朋友頁＝`site.share_works`／`share_workshops`／`share_blog`／`share_friends`（+ `_de/_zh`，留空用 `UI` 的 `*_desc`，`build.py` 的 `share_text()`）。改了之後臉書要用 Sharing Debugger 重新抓才會更新；臉書新版貼文常只顯示圖、網域與標題，不一定顯示小字 |
+| 分享預覽（貼到臉書、LINE、IG 私訊等時出現的標題、小字與圖） | `build.py` 的 `layout()` 產生 `og:title`、`og:description`（就是頁面描述）、`og:image`（含寬高與替代文字）、`og:locale:alternate`；`og_image()` 把本機圖片轉成最長邊 1200px 的 JPEG 放在 `images/_og/`（因為 LINE 等不顯示 WebP），自動產生並一起 commit，不要手改。作品與工作坊的分享圖是自動做的卡片（`og_card()`：封面或 `share_image` 裁成 1200×630，下方深色漸層加 Minipax 標題與「Ting-Chun Liu · 年份」，存在 `images/_og/cards/<slug>-<雜湊>.jpg`，標題或圖換了就換檔名；需要 fonttools＋brotli 讀 Minipax）。網站小圖示（favicon、apple-touch-icon、icon-192/512）是 Latent Heat Generation 熱像中的一個顯示卡風扇。預覽小字的來源（都能在後台改）：首頁＝`site.description`；關於＝`about.bio`；每件作品＝`works[].summary`（留空用說明文字開頭）；每個工作坊＝`workshops[].summary`；作品列表、講座與工作坊、部落格、朋友頁＝`site.share_works`／`share_workshops`／`share_blog`／`share_friends`（+ `_de/_zh`，留空用 `UI` 的 `*_desc`，`build.py` 的 `share_text()`）。改了之後臉書要用 Sharing Debugger 重新抓才會更新；臉書新版貼文常只顯示圖、網域與標題，不一定顯示小字 |
 | 響應式小圖 | `images/_w/<寬度>/…webp`（480、960），由 `build.py` 的 `srcset()` 用 Pillow 自動產生並一起 commit，不要手改；原圖換了會自動重做 |
 | GA 語言分組與問答事件 | `assets/analytics.js` 把頁面語言設成 `content_group`；`assets/chat.js` 的 `track()` 送 `chat_question`（不含問題文字）與 `chat_link`。改了要同步 Datenschutz 的 GA 段落 |
 | 講座與工作坊頁（`/workshops/`，每個工作坊另有 `/workshops/<slug>/`） | `data/site.json` 的 `workshops[]`：`slug`、`title`、`summary`（卡片與頁首的一句話）、`text`（用 `# ` 分小標，`· ` 開頭的行當清單）、`with`、`held`（場次，每行一場，放在頁面最下方）、`images`（第一張是封面；可以是路徑字串，或 `{"src", "alt", "alt_de", "alt_zh"}`，後台一行寫成「路徑 | 說明 | DE | 中文」），除 `slug`／`with`／`images` 外都有 `_de/_zh`。這頁是在介紹「可以辦哪些工作坊」，辦在哪裡只放在 `held`。圖片放 `images/workshops/<slug>/`（見該資料夾 `README.md`）。下方的「講座錄影」來自 `press[]` 的 `group: watch` |
