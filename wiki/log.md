@@ -119,3 +119,6 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 ## [2026-10-24] lint | German back on the site
 - site-map.md (generated) lists German pages again, plus the blog index and HTML site map in every language
 - overview.md, index.md: website languages include German
+
+## [2026-10-25] ingest | About text refocused
+- topics/medium-specificity-and-practice.md: complex-systems aesthetics and operational images as the lead of the practice (artist's instruction)

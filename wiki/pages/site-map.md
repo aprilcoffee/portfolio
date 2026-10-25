@@ -155,7 +155,6 @@ Organisers', institutions' and publishers' pages for entries in the CV (About pa
 - 2025 On the Materiality of Artificial Intelligence, in: un/learn ai – integrating AI in aesthetic practices, Vol. 3, pp. 218–223, Forschungsprojekt KITeGG: https://openscience.ub.uni-mainz.de/items/7d8cb85f-0e1a-409e-b9a1-a9dac96e48a0
 - 2024 Hello, hello, hello, hello? Hello? Hello! Human! Exhibition catalogue “Hello, Human!”, Museum of Contemporary Art Taipei (Mandarin/English; English translation by 吳中平): https://www.mocataipei.org.tw/tw/ExhibitionAndEvent/Info/你好，人類！Hello,*Human!
 - 2024 Positioning – A Prerequisite for Immersion, Digiarts, National Taiwan Museum of Fine Arts: https://www.digiarts.org.tw/DigiArts/DataBasePage/4_236170297334000/Chi
-- 2022 Poetic Materialization – Regarding Midjourney, [ ] ground zero – poetics of technics and cognition: https://ground-zero.khm.de/portfolio/disruptive-news-22-english/#poet
 - 2021 The Rule Becomes the Author!, [ ] ground zero – poetics of technics and cognition: https://ground-zero.khm.de/portfolio/_ell_-worl_-the-rule-becomes-the-author/
 
 **Education**

@@ -1651,6 +1651,22 @@
         "items": [
           {
             "year": "2026",
+            "date": "2026-12-17",
+            "text": "Conditions for Emotions (workshop), Code & Context, TH Köln",
+            "text_de": "Conditions for Emotions (Workshop), Code & Context, TH Köln",
+            "text_zh": "Conditions for Emotions 工作坊，科隆應用科技大學（TH Köln）Code & Context 學程",
+            "url": ""
+          },
+          {
+            "year": "2026",
+            "date": "2026-11-13",
+            "text": "Conditions for Emotions (workshop), Academy of Media Arts Cologne (KHM)",
+            "text_de": "Conditions for Emotions (Workshop), Kunsthochschule für Medien Köln (KHM)",
+            "text_zh": "Conditions for Emotions 工作坊，科隆媒體藝術學院（KHM）",
+            "url": ""
+          },
+          {
+            "year": "2026",
             "text": "Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images, Expanded 2026 (Art Track), Linz, w/ Leon-Etienne Kühr",
             "url": "https://expanded-conf.org/speaker/ting-chun-liu-leon-etienne-kuhr/",
             "text_zh": "Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images，Expanded 2026（藝術軌 Art Track），林茲，與 Leon-Etienne Kühr"
@@ -1659,13 +1675,14 @@
             "year": "2026",
             "text": "Paranoia De-Prompting: Artistic Experiments on Generative Image, University of Bonn, invited by Junge GI Hochschulgruppe Bonn, w/ Leon-Etienne Kühr",
             "url": "https://junge.gi.de/veranstaltung/paranoia-de-prompting-artistic-experiments-on-generative-image-vortrag-hsg-bonn",
-            "text_zh": "Paranoia De-Prompting: Artistic Experiments on Generative Image，波昂大學（Universität Bonn），受 Junge GI 波昂大學小組（Hochschulgruppe Bonn）邀請，與 Leon-Etienne Kühr"
+            "text_zh": "Paranoia De-Prompting: Artistic Experiments on Generative Image，波昂大學，德國資訊學會青年部（Junge GI）邀請，與 Leon-Etienne Kühr"
           },
           {
             "year": "2026",
             "text": "Conditions for Emotions, DFG network “Das Wissen der digitalen Literatur”",
             "url": "https://digitale-burg.de/studio/das-wissen-der-digitalen-literatur",
-            "text_zh": "Conditions for Emotions，DFG 研究網絡「Das Wissen der digitalen Literatur」（數位文學的知識）"
+            "text_zh": "Conditions for Emotions，DFG 研究網絡「Das Wissen der digitalen Literatur」（數位文學的知識）",
+            "date": "2026-06-13"
           },
           {
             "year": "2026",
@@ -1677,13 +1694,15 @@
             "year": "2026",
             "text": "mtrail Ausbildungscamp, Lindau, w/ Leon-Etienne Kühr",
             "url": "",
-            "text_zh": "mtrail Ausbildungscamp，林道，與 Leon-Etienne Kühr"
+            "text_zh": "mtrail Ausbildungscamp，林道，與 Leon-Etienne Kühr",
+            "date": "2026-05-07"
           },
           {
             "year": "2026",
             "text": "KISDtalk: Paranoia De-Prompting, KISD Köln International School of Design, w/ Leon-Etienne Kühr",
             "url": "https://kisd.de/en/termine/kisdtalk-paranoia-de-prompting/",
-            "text_zh": "KISDtalk: Paranoia De-Prompting，科隆國際設計學院（KISD），與 Leon-Etienne Kühr"
+            "text_zh": "KISDtalk: Paranoia De-Prompting，科隆國際設計學院（KISD），與 Leon-Etienne Kühr",
+            "date": "2026-01-06"
           },
           {
             "year": "2026",
@@ -1835,12 +1854,6 @@
             "text": "Positioning – A Prerequisite for Immersion, Digiarts, National Taiwan Museum of Fine Arts",
             "url": "https://www.digiarts.org.tw/DigiArts/DataBasePage/4_236170297334000/Chi",
             "text_zh": "定位—沉浸的先決條件（Positioning – A Prerequisite for Immersion），《Digiarts》，國立臺灣美術館"
-          },
-          {
-            "year": "2022",
-            "text": "Poetic Materialization – Regarding Midjourney, [ ] ground zero – poetics of technics and cognition",
-            "url": "https://ground-zero.khm.de/portfolio/disruptive-news-22-english/#poet",
-            "text_zh": "Poetic Materialization – Regarding Midjourney，[ ] ground zero – poetics of technics and cognition"
           },
           {
             "year": "2021",
@@ -2026,9 +2039,9 @@
     ],
     "bio_de": "Ting-Chun Liu (Taipeh, Taiwan) ist ein forschungsbasierter Medienkünstler, der mit kritischer KI arbeitet. Seine Praxis und Forschung sind an den Schnittstellen von kritischer künstlicher Intelligenz, audiovisuellen Medien und Netzwerkpraxis angesiedelt. Indem er technologische Systeme mit feedbackbasierten Interventionen seziert, untersucht er, wie sich Wahrnehmung, Ästhetik und Machtverhältnisse durch computergestützte Prozesse fortpflanzen.",
     "bio_zh": "劉庭均（台灣台北）是一位研究型媒體藝術家，創作與研究橫跨批判性人工智慧、音像媒體與網路實踐。他以回授（Feedback）驅動的介入手法拆解科技系統，探究感知、美學與權力關係如何在運算過程中傳遞與擴散。",
-    "text": "Ting-Chun Liu's work follows a question media art has always asked: the question of medium specificity, of what is particular to each medium. Applied to artificial intelligence, it means going beyond prompting and asking what image models, language models and datasets do on their own terms. Debates on AI art often circle around who the author is, the person who writes the prompt or the machine; his work starts elsewhere. Feedback and recursion are his method: letting a system confront its own output, the way a voice is re-recorded in a room until only the resonance of the room remains, in order to explore latent and embedding spaces and to bring out aesthetics and biases that nobody designed.\n\nFrom the medium, the questions lead outward: to geopolitics, data politics and the operational image. AI looks immaterial, but it runs on graphics cards, electricity and semiconductor supply chains, many of which lead back to Taiwan, where he grew up; as a Taiwanese media artist, this shapes how he imagines materials, technology and capital. Running small models locally is part of the practice: it allows more variation and more ways of operating them, and the aesthetics are not held by cloud companies. For him, artists use AI to interact with the technical objects around them, not to be replaced by them.\n\nHe is a lecturer and artistic associate at the Faculty of Art and Design of the Bauhaus University Weimar, where he teaches creative coding, critical AI and interactive video installation. In talks and workshops he shows how to run AI locally, how to work with embeddings and how to see the biases inside AI models, for anyone from people who have never written code to artists, companies and scholars. He works closely with Leon-Etienne Kühr on installations, curatorial projects and talks.\n\nHe studied New Media Art at Taipei National University of the Arts (B.F.A., 2018), came to Germany in 2019 and completed a Postgraduate Diploma in Media and Fine Art at the Academy of Media Arts Cologne (2020–2025). His thesis Heat as (Generative) Image Making received the Weizenbaum-Studienpreis 2025.",
-    "text_de": "Die Arbeit von Ting-Chun Liu folgt einer Frage, die die Medienkunst immer gestellt hat: der Frage nach der Medienspezifik, nach dem, was einem Medium eigen ist. Auf künstliche Intelligenz übertragen heißt das, über das Prompten hinauszugehen und zu fragen, was Bildmodelle, Sprachmodelle und Datensätze von sich aus tun. Debatten über KI-Kunst kreisen oft um die Frage, wer der Autor ist, die Person, die den Prompt schreibt, oder die Maschine; seine Arbeit setzt woanders an. Feedback und Rekursion sind seine Methode: Ein System wird mit seiner eigenen Ausgabe konfrontiert, so wie eine Stimme in einem Raum immer wieder neu aufgenommen wird, bis nur noch der Klang des Raumes bleibt. So erkundet er latente Räume und Embedding-Räume und macht Ästhetiken und Biases sichtbar, die niemand entworfen hat.\n\nVom Medium aus führen die Fragen weiter: zu Geopolitik, Datenpolitik und dem operativen Bild. KI wirkt immateriell, läuft aber auf Grafikkarten, Strom und Halbleiter-Lieferketten, von denen viele nach Taiwan führen, wo er aufgewachsen ist; als taiwanischer Medienkünstler prägt das, wie er sich Material, Technologie und Kapital vorstellt. Kleine Modelle lokal laufen zu lassen gehört zur Praxis: Das erlaubt mehr Variation und mehr Arten, sie zu bedienen, und die Ästhetik liegt nicht in der Hand von Cloud-Firmen. Künstler*innen nutzen KI für ihn, um mit den technischen Objekten um sie herum zu interagieren, nicht um von ihnen ersetzt zu werden.\n\nEr ist Dozent und Künstlerischer Mitarbeiter an der Fakultät Kunst und Gestaltung der Bauhaus-Universität Weimar und unterrichtet Creative Coding, kritische KI und interaktive Videoinstallation. In Vorträgen und Workshops zeigt er, wie man KI lokal betreibt, mit Embeddings arbeitet und die Biases in KI-Modellen erkennt, für alle, von Menschen ohne Programmiererfahrung bis zu Künstler*innen, Unternehmen und Wissenschaftler*innen. Eng arbeitet er mit Leon-Etienne Kühr an Installationen, kuratorischen Projekten und Vorträgen.\n\nEr studierte New Media Art an der Taipei National University of the Arts (B.F.A., 2018), kam 2019 nach Deutschland und schloss an der Kunsthochschule für Medien Köln das Postgraduale Diplom Medien und Kunst ab (2020–2025). Seine Abschlussarbeit Heat as (Generative) Image Making erhielt den Weizenbaum-Studienpreis 2025.",
-    "text_zh": "劉庭均的創作沿著媒體藝術一直在追問的問題前進：媒介特異性，也就是每種媒介獨有的性質是什麼。放到人工智慧上，這意味著超越單純下提示詞，追問圖像模型、語言模型與資料集本身如何運作。談到人工智慧藝術，大家常爭論作者是誰：是寫提示詞的人，還是機器？他從完全不同的角度切入。回授（Feedback）與遞迴是他的方法：讓系統面對自己的輸出，就像一段聲音在房間裡一再重錄，直到只剩下房間本身的共鳴；藉此探索潛在空間與嵌入空間，讓那些無人設計的美學與偏見浮現出來。\n\n從媒介出發，提問也延伸到地緣政治、資料政治與操作性影像。人工智慧看似無形，卻運行在顯示卡、電力與半導體供應鏈之上，其中許多環節都通往他成長的台灣；身為台灣的媒體藝術家，這影響了他如何想像材料、技術與資本。在自己的電腦上運行小型模型也是創作的一部分：模型能有更多變化、更多操作方式，美學也不必掌握在雲端公司手中。對他而言，藝術家使用人工智慧，是為了與身邊的技術物件互動，而不是被它取代。\n\n劉庭均任教於威瑪包浩斯大學藝術與設計學院，擔任講師暨藝術研究員，教授創意程式設計、批判性人工智慧與互動影像裝置。他也受邀演講並開設工作坊，內容包含在自己的電腦上使用人工智慧、動手操作嵌入向量，以及辨識人工智慧模型中的偏見，對象從沒有寫程式經驗的人到藝術家、企業與研究者。他與 Leon-Etienne Kühr 長期合作裝置、策展計畫與講座。\n\n他畢業於國立臺北藝術大學新媒體藝術學系（2018），2019 年來到德國，2020 至 2025 年就讀科隆媒體藝術學院，取得媒體與藝術研究所文憑。論文《Heat as (Generative) Image Making》獲 2025 年 Weizenbaum 學位論文獎。"
+    "text": "Ting-Chun Liu's work is about the aesthetics of complex systems: what images look like when they come out of feedback loops, recursion and long technical pipelines rather than from a single intention. It follows a question media art has always asked, that of medium specificity. Applied to artificial intelligence, this means going beyond prompting. Fed back into themselves, image and language models drift, saturate and break into patterns; each leaves a visual fingerprint that nobody designed, an order that grows from the system's own structure, like a Turing pattern.\n\nMany of these images are operational images, made by and for machines rather than for human eyes: captions written for datasets, scores that rank a face, tokens that decide what a model can see before any training begins. Using feedback, misuse and hacking, his works and talks take such pipelines apart to show where perception, aesthetics and bias are produced inside them.\n\nFrom there the questions lead to geopolitics and data politics. AI looks immaterial, but it runs on graphics cards, electricity and semiconductor supply chains, many of which lead back to Taiwan, where he grew up; as a Taiwanese media artist, this shapes how he imagines materials, technology and capital. Running small models locally is part of the practice: it allows more variation and more ways of operating them, and the aesthetics are not held by cloud companies.\n\nHe is a lecturer and artistic associate at the Faculty of Art and Design of the Bauhaus University Weimar, where he teaches creative coding, critical AI and interactive video installation. In talks and workshops he shows how to run AI locally, how to work with embeddings and how to see the biases inside AI models, for anyone from people who have never written code to artists, companies and scholars. He works closely with Leon-Etienne Kühr on installations, curatorial projects and talks.\n\nHe studied New Media Art at Taipei National University of the Arts (B.F.A., 2018), came to Germany in 2019 and completed a Postgraduate Diploma in Media and Fine Art at the Academy of Media Arts Cologne (2020–2025). His thesis Heat as (Generative) Image Making received the Weizenbaum-Studienpreis 2025.",
+    "text_de": "Die Arbeit von Ting-Chun Liu handelt von der Ästhetik komplexer Systeme: wie Bilder aussehen, die aus Feedbackschleifen, Rekursion und langen technischen Pipelines entstehen statt aus einer einzelnen Absicht. Sie folgt einer Frage, die die Medienkunst immer gestellt hat, der Frage nach der Medienspezifik. Auf künstliche Intelligenz übertragen heißt das, über das Prompten hinauszugehen. Mit ihrer eigenen Ausgabe gespeist, driften Bild- und Sprachmodelle, übersättigen und zerfallen in Muster; jedes hinterlässt einen visuellen Fingerabdruck, den niemand entworfen hat, eine Ordnung, die aus der Struktur des Systems selbst wächst, wie ein Turing-Muster.\n\nViele dieser Bilder sind operative Bilder, von Maschinen für Maschinen gemacht und nicht für menschliche Augen: Bildbeschreibungen für Datensätze, Werte, die ein Gesicht einstufen, Token, die festlegen, was ein Modell sehen kann, bevor das Training beginnt. Mit Feedback, Zweckentfremdung und Hacking zerlegen seine Arbeiten und Vorträge solche Pipelines und zeigen, wo in ihnen Wahrnehmung, Ästhetik und Bias entstehen.\n\nVon dort führen die Fragen zu Geopolitik und Datenpolitik. KI wirkt immateriell, läuft aber auf Grafikkarten, Strom und Halbleiter-Lieferketten, von denen viele nach Taiwan führen, wo er aufgewachsen ist; als taiwanischer Medienkünstler prägt das, wie er sich Material, Technologie und Kapital vorstellt. Kleine Modelle lokal laufen zu lassen gehört zur Praxis: Das erlaubt mehr Variation und mehr Arten, sie zu bedienen, und die Ästhetik liegt nicht in der Hand von Cloud-Firmen.\n\nEr ist Dozent und Künstlerischer Mitarbeiter an der Fakultät Kunst und Gestaltung der Bauhaus-Universität Weimar und unterrichtet Creative Coding, kritische KI und interaktive Videoinstallation. In Vorträgen und Workshops zeigt er, wie man KI lokal betreibt, mit Embeddings arbeitet und die Biases in KI-Modellen erkennt, für alle, von Menschen ohne Programmiererfahrung bis zu Künstler*innen, Unternehmen und Wissenschaftler*innen. Eng arbeitet er mit Leon-Etienne Kühr an Installationen, kuratorischen Projekten und Vorträgen.\n\nEr studierte New Media Art an der Taipei National University of the Arts (B.F.A., 2018), kam 2019 nach Deutschland und schloss an der Kunsthochschule für Medien Köln das Postgraduale Diplom Medien und Kunst ab (2020–2025). Seine Abschlussarbeit Heat as (Generative) Image Making erhielt den Weizenbaum-Studienpreis 2025.",
+    "text_zh": "劉庭均的創作關注複雜系統的美學：當圖像不是出自單一的意圖，而是從回授（Feedback）迴圈、遞迴與冗長的技術管線中產生時，它們會是什麼樣子。這延續了媒體藝術一直在追問的媒介特異性問題；放到人工智慧上，意味著超越單純下提示詞。把圖像模型與語言模型的輸出餵回給它們自己，畫面會漂移、過度飽和、碎裂成圖樣；每個模型都留下一種無人設計的視覺指紋，一種從系統自身結構長出來的秩序，就像圖靈斑圖。\n\n這些圖像有許多是操作性影像：由機器產生、也為機器而生，而不是給人看的。例如為資料集寫的圖說、替一張臉打的分數，以及在訓練開始之前就決定模型能看見什麼的詞元（Token）。他的作品與講座以回授、誤用與駭入的方式拆解這些管線，指出感知、美學與偏見是在哪裡被製造出來的。\n\n從這裡，提問延伸到地緣政治與資料政治。人工智慧看似無形，卻運行在顯示卡、電力與半導體供應鏈之上，其中許多環節都通往他成長的台灣；身為台灣的媒體藝術家，這影響了他如何想像材料、技術與資本。在自己的電腦上運行小型模型也是創作的一部分：模型能有更多變化、更多操作方式，美學也不必掌握在雲端公司手中。\n\n劉庭均任教於威瑪包浩斯大學藝術與設計學院，擔任講師暨藝術研究員，教授創意程式設計、批判性人工智慧與互動影像裝置。他也受邀演講並開設工作坊，內容包含在自己的電腦上使用人工智慧、動手操作嵌入向量，以及辨識人工智慧模型中的偏見，對象從沒有寫程式經驗的人到藝術家、企業與研究者。他與 Leon-Etienne Kühr 長期合作裝置、策展計畫與講座。\n\n他畢業於國立臺北藝術大學新媒體藝術學系（2018），2019 年來到德國，2020 至 2025 年就讀科隆媒體藝術學院，取得媒體與藝術研究所文憑。論文《Heat as (Generative) Image Making》獲 2025 年 Weizenbaum 學位論文獎。"
   },
   "friends": [
     {
@@ -2244,9 +2257,9 @@
       "outlet": "39C3, media.ccc.de",
       "date": "2025-12",
       "url": "https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai",
-      "note": "Talk with Leon-Etienne Kühr, English with German translation, CC BY 4.0. The 51 spellings of “giraffe” from tokens, and what the token dictionary decides before any training.",
-      "note_de": "Vortrag mit Leon-Etienne Kühr, Englisch mit deutscher Übersetzung, CC BY 4.0. Die 51 Schreibweisen von „giraffe“ aus Token und was das Token-Wörterbuch vor jedem Training entscheidet.",
-      "note_zh": "與 Leon-Etienne Kühr 共同演講，以英語進行、附德語口譯，CC BY 4.0 授權。談「giraffe」這個字為什麼能用詞元（Token）拼出 51 種寫法，以及在模型開始訓練之前，詞元字典就已經替它決定了哪些事。",
+      "note": "Talk with Leon-Etienne Kühr, in English with German translation. Before an image model reads a prompt, a tokenizer cuts the text into pieces from a fixed dictionary: “giraffe” can be spelled from tokens in 51 ways, and some images cannot be prompted at all because words were cleaned out of that dictionary. The talk reads tokenization as politics, decided before any training begins.",
+      "note_de": "Vortrag mit Leon-Etienne Kühr, auf Englisch mit deutscher Übersetzung. Bevor ein Bildmodell einen Prompt liest, zerlegt ein Tokenizer den Text in Stücke aus einem festen Wörterbuch: „giraffe“ lässt sich auf 51 Arten aus Token buchstabieren, und manche Bilder lassen sich gar nicht prompten, weil Wörter aus diesem Wörterbuch entfernt wurden. Der Vortrag liest Tokenisierung als Politik, die vor jedem Training entschieden ist.",
+      "note_zh": "與 Leon-Etienne Kühr 共同演講，英語進行、附德語口譯。圖像模型讀到提示詞之前，文字會先被切成一本固定字典裡的詞元（Token）：「giraffe」可以用詞元拼出 51 種寫法，有些圖像則因為字詞被字典清掉，根本無法用提示詞叫出來。演講把斷詞看成一種政治：在任何訓練開始之前就已經決定了。",
       "thumb": "images/talks/51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-to.jpg"
     },
     {
@@ -2255,9 +2268,9 @@
       "outlet": "The Photographers’ Gallery, London, with Fotomuseum Winterthur",
       "date": "2025-03",
       "url": "https://thephotographersgallery.org.uk/whats-on/watch-screen-walk-leon-etienne-kuhr-and-ting-chun-liu",
-      "note": "Live-coded session on generative AI fed with its own output: feedback as a strategy and cybernetics as a framework. Recording on the gallery’s page.",
-      "note_de": "Live-codierte Session über generative KI, die mit ihrer eigenen Ausgabe gespeist wird: Feedback als Strategie, Kybernetik als Rahmen. Aufzeichnung auf der Seite der Galerie.",
-      "note_zh": "現場寫程式的線上導覽：把生成式人工智慧的輸出再餵回給它自己，以回授（Feedback）作為方法、以模控論作為思考框架。錄影可在藝廊網站上觀看。",
+      "note": "Online Screen Walk for The Photographers’ Gallery and Fotomuseum Winterthur, 26 March 2025. Live-coding on screen, Kühr and Liu feed generative models their own output and watch where the images drift: feedback as an artistic strategy, cybernetics as the frame. The recording is on the gallery’s page.",
+      "note_de": "Online-Screen-Walk für The Photographers’ Gallery und das Fotomuseum Winterthur, 26. März 2025. Live am Bildschirm programmierend speisen Kühr und Liu generative Modelle mit ihrer eigenen Ausgabe und verfolgen, wohin die Bilder driften: Feedback als künstlerische Strategie, Kybernetik als Rahmen. Die Aufzeichnung ist auf der Seite der Galerie.",
+      "note_zh": "為 The Photographers’ Gallery 與 Fotomuseum Winterthur 進行的線上 Screen Walk，2025 年 3 月 26 日。兩人在螢幕上現場寫程式，把生成模型的輸出再餵回給它自己，看圖像一步步漂移到哪裡：以回授（Feedback）作為藝術策略，以模控論作為思考框架。錄影在藝廊網站上。",
       "thumb": "images/talks/screen-walk-with-leon-etienne-k-hr-and-ting-chun-liu.jpg"
     },
     {
@@ -2266,9 +2279,9 @@
       "outlet": "38C3, media.ccc.de",
       "date": "2024-12",
       "url": "https://media.ccc.de/v/38c3-arafed-futures-an-artist-dialogue-on-chip-storage-and-ai-accelerationism",
-      "note": "Artist dialogue with Leon-Etienne Kühr. “arafed” is a meaningless word that spread across captions and product texts, set beside NVIDIA A100 chips made by TSMC.",
-      "note_de": "Künstlerdialog mit Leon-Etienne Kühr. „arafed“ ist ein bedeutungsloses Wort, das sich in Bildunterschriften und Produkttexten verbreitet hat, hier neben NVIDIA-A100-Chips von TSMC gestellt.",
-      "note_zh": "與 Leon-Etienne Kühr 的藝術家對談。「arafed」是一個沒有意義的詞，卻隨著人工智慧自動產生的圖說，大量出現在圖片說明和商品文案裡；對談把它和台積電製造的 NVIDIA A100 晶片放在一起討論。",
+      "note": "Artist dialogue with Leon-Etienne Kühr. It starts from the chip shortage of the pandemic years and the load generative AI puts on hardware, then follows “arafed”, a meaningless word made by captioning models that has spread into image captions and product texts. These oddities of the embedding space are tied to the geopolitics of semiconductor supply chains, with NVIDIA A100 chips made by TSMC as the case.",
+      "note_de": "Künstlerdialog mit Leon-Etienne Kühr. Er beginnt beim Chipmangel der Pandemiejahre und der Last, die generative KI der Hardware auferlegt, und folgt dann „arafed“, einem bedeutungslosen Wort aus Bildbeschreibungsmodellen, das sich in Bildunterschriften und Produkttexte ausgebreitet hat. Diese Eigenheiten des Embedding-Raums werden mit der Geopolitik der Halbleiter-Lieferketten verknüpft, am Beispiel von NVIDIA-A100-Chips aus der Fertigung von TSMC.",
+      "note_zh": "與 Leon-Etienne Kühr 的藝術家對談。從疫情期間的晶片短缺、生成式人工智慧對硬體的負荷談起，接著追蹤「arafed」：一個由自動圖說模型產生、沒有意義的字，卻擴散到圖片說明與商品文案裡。對談把嵌入空間裡的這些異常，連到半導體供應鏈的地緣政治，以台積電製造的 NVIDIA A100 晶片為例。",
       "thumb": "images/talks/arafed-futures-an-artist-dialogue-on-chip-storage-and-ai-acc.jpg"
     },
     {
@@ -2277,9 +2290,9 @@
       "outlet": "37C3, media.ccc.de",
       "date": "2023-12",
       "url": "https://media.ccc.de/v/37c3-12125-self-cannibalizing_ai",
-      "note": "Talk with Leon-Etienne Kühr. Feedback, misuse and hacking on text-to-image models: dataset filtering, CLIP, recursive generation.",
-      "note_de": "Vortrag mit Leon-Etienne Kühr. Feedback, Zweckentfremdung und Hacking an Text-zu-Bild-Modellen: Datenfilterung, CLIP, rekursive Generierung.",
-      "note_zh": "與 Leon-Etienne Kühr 共同演講。用回授（Feedback）、挪用與駭入的方式拆解文字生成圖像模型，談資料集過濾、CLIP 與遞迴生成。",
+      "note": "Talk with Leon-Etienne Kühr. What happens when machines learn from each other and feed on their own output? Can an image model pick the happiest person in a photo, or guess ethnicity from a random image? With feedback, misuse and hacking, the talk takes text-to-image pipelines apart: dataset filtering, labelling with CLIP, and recursive generation that turns images into purple patterns or mundane concepts.",
+      "note_de": "Vortrag mit Leon-Etienne Kühr. Was passiert, wenn Maschinen voneinander lernen und sich von ihrer eigenen Ausgabe ernähren? Kann ein Bildmodell die glücklichste Person auf einem Foto finden oder aus einem beliebigen Bild auf Ethnizität schließen? Mit Feedback, Zweckentfremdung und Hacking zerlegt der Vortrag Text-zu-Bild-Pipelines: Datenfilterung, Beschriftung mit CLIP und rekursive Generierung, die Bilder in violette Muster oder banale Motive verwandelt.",
+      "note_zh": "與 Leon-Etienne Kühr 共同演講。當機器彼此學習、吞食自己的輸出時，會發生什麼事？圖像模型能挑出照片裡最快樂的人，或從隨機圖片猜出族裔嗎？演講用回授（Feedback）、誤用與駭入拆解文字生成圖像的管線：資料集過濾、用 CLIP 標註圖片，以及讓圖像逐漸變成紫色圖樣或平庸概念的遞迴生成。",
       "thumb": "images/talks/self-cannibalizing-ai.jpg"
     },
     {

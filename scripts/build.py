@@ -486,7 +486,7 @@ UI = {
         "blog_lead": "Notes on works, and technical write-ups on Raspberry Pi, Processing and Python. The posts are written in Mandarin.",
         "blog_desc": "Blog archive of %s: notes on artworks and technical write-ups on Raspberry Pi, Processing and Python.",
         "friends_desc": "Friends and fellow artists of %s.",
-        "workshops_lead": "Workshops I offer: using AI locally on your own computer, working hands-on with embeddings, and seeing the biases inside AI models. They work for anyone, from people who have never written code to artists, companies and scholars. Talk recordings below.",
+        "workshops_lead": "Workshops I offer: using AI locally on your own computer, working hands-on with embeddings, and seeing the biases inside AI models. They work for anyone, from people who have never written code to artists, companies and scholars. Below: recent dates, talk recordings and writing.",
         "workshops_desc": "Workshops and talks by %s on local AI usage, embedding practice and biases in AI models, with talk recordings.",
         "workshops_ask": "Workshop and lecture requests: please get in touch by email.",
         "press_groups": {"watch": "Talk recordings", "read": "Cited and discussed"},
@@ -495,6 +495,7 @@ UI = {
         "ask_ex": ["What is Latent Heat Generation about?", "Why can “giraffe” be spelled in 51 ways?", "Which of your works deal with AI?", "What are you working on now?"],
         "ask_note": "caution: AI may create random correlations",
         "ask_more": "Privacy",
+        "upcoming": "Upcoming", "recent": "Recent", "cv_all": "Full list in the CV", "writing": "Writing",
         "mt_note": "Parts of the German translation were made with AI and may contain errors.",
         "mt_ok": "OK",
         "ask_err": "Sorry, that didn’t work. Please try again in a moment, or write to %s.",
@@ -522,7 +523,7 @@ UI = {
         "blog_lead": "Notizen zu Arbeiten und technische Anleitungen zu Raspberry Pi, Processing und Python. Die Beiträge sind auf Chinesisch (Mandarin) verfasst.",
         "blog_desc": "Blog-Archiv von %s: Notizen zu Arbeiten und technische Anleitungen zu Raspberry Pi, Processing und Python.",
         "friends_desc": "Freund*innen und befreundete Künstler*innen von %s.",
-        "workshops_lead": "Workshops, die ich anbiete: KI lokal auf dem eigenen Rechner nutzen, praktisch mit Embeddings arbeiten und die Biases in KI-Modellen sichtbar machen. Sie eignen sich für alle, von Menschen ohne Programmiererfahrung bis zu Künstler*innen, Unternehmen und Wissenschaftler*innen. Darunter Aufzeichnungen von Vorträgen.",
+        "workshops_lead": "Workshops, die ich anbiete: KI lokal auf dem eigenen Rechner nutzen, praktisch mit Embeddings arbeiten und die Biases in KI-Modellen sichtbar machen. Sie eignen sich für alle, von Menschen ohne Programmiererfahrung bis zu Künstler*innen, Unternehmen und Wissenschaftler*innen. Darunter: aktuelle Termine, Vortragsaufzeichnungen und Texte.",
         "workshops_desc": "Workshops und Vorträge von %s zu lokaler KI-Anwendung, Embedding-Praxis und Biases in KI-Modellen, mit Vortragsaufzeichnungen.",
         "workshops_ask": "Anfragen für Workshops und Vorträge richten Sie bitte per E-Mail an mich.",
         "press_groups": {"watch": "Vortragsaufzeichnungen", "read": "Zitiert und besprochen"},
@@ -531,6 +532,7 @@ UI = {
         "ask_ex": ["Worum geht es in Latent Heat Generation?", "Warum lässt sich „giraffe“ auf 51 Arten schreiben?", "Welche Ihrer Arbeiten beschäftigen sich mit KI?", "Woran arbeiten Sie gerade?"],
         "ask_note": "Achtung: KI kann zufällige Zusammenhänge erzeugen · %s",
         "ask_more": "Datenschutz",
+        "upcoming": "Demnächst", "recent": "Zuletzt", "cv_all": "Vollständige Liste im Lebenslauf", "writing": "Texte",
         "mt_note": "Bitte beachten Sie: Teile der deutschen Übersetzung wurden mit KI erstellt und können Fehler enthalten.",
         "mt_ok": "Verstanden",
         "ask_err": "Das hat leider nicht geklappt. Bitte gleich noch einmal versuchen oder an %s schreiben.",
@@ -558,7 +560,7 @@ UI = {
         "blog_lead": "作品筆記，以及 Raspberry Pi、Processing 與 Python 的技術文章。",
         "blog_desc": "%s的部落格文章彙整：作品筆記，以及 Raspberry Pi、Processing 與 Python 技術文章。",
         "friends_desc": "%s的朋友、合作夥伴與藝術家夥伴，以及他們的作品網站連結。",
-        "workshops_lead": "工作坊內容包含：在自己的電腦上使用人工智慧、動手操作嵌入向量，以及辨識人工智慧模型中的偏見。沒有寫程式經驗的人、藝術家、企業與研究者皆可參加。頁面下方為講座錄影。",
+        "workshops_lead": "工作坊內容包含：在自己的電腦上使用人工智慧、動手操作嵌入向量，以及辨識人工智慧模型中的偏見。沒有寫程式經驗的人、藝術家、企業與研究者皆可參加。頁面下方為近期場次、講座錄影與文章。",
         "workshops_desc": "%s的講座與工作坊：講座錄影，以及在自己的電腦上使用人工智慧、嵌入向量實作與人工智慧模型偏見的工作坊。",
         "workshops_ask": "工作坊與講座邀約，歡迎來信。",
         "press_groups": {"watch": "講座錄影", "read": "引用與討論"},
@@ -567,6 +569,7 @@ UI = {
         "ask_ex": ["《Latent Heat Generation》在談什麼？", "為什麼「giraffe」可以有 51 種拼法？", "你有哪些作品跟人工智慧有關？", "你現在在做什麼？"],
         "ask_note": "注意：人工智慧可能產生隨機的關聯性",
         "ask_more": "隱私權",
+        "upcoming": "即將舉行", "recent": "近期場次", "cv_all": "完整列表見關於頁", "writing": "書寫",
         "mt_note": "請注意：部分德文為人工智慧翻譯，可能會有錯誤。",
         "mt_ok": "知道了",
         "ask_err": "抱歉，暫時無法回答。請稍後再試，或寫信至 %s。",
@@ -1069,14 +1072,46 @@ for L in LANGS:
             url(P + "workshops/%s/" % x["slug"]), img(pics[0], 900, tr(x, "title", L)) if pics else '<span class="ph">%s</span>' % esc(x["title"]),
             esc(tr(x, "title", L)), esc(x.get("with") and u["work_with"] % x["with"] or ""), esc(tr(x, "summary", L)))
 
+    # upcoming and recent talks and workshops come from the CV ("Lectures, Talks & Workshops"): a row whose
+    # "date" (YYYY-MM-DD) lies after the build day is upcoming; the newest other rows are recent
+    today = datetime.date.today().isoformat()
+    lec = next((s_ for s_ in D["about"]["sections"] if s_["title"].startswith("Lectures")), {"items": [], "title": ""})
+    soon = sorted((it for it in lec["items"] if (it.get("date") or "") >= today), key=lambda it: it["date"])
+    past = [it for it in lec["items"] if not (it.get("date") or "") >= today][:6]
+
+    def ev_rows(items, dated):
+        out = ""
+        for it in items:
+            text = tr(it, "text", L)
+            same = L != "en" and not it.get("text_" + L)
+            d = it.get("date") or ""
+            when = ("%s.%s.%s" % (d[8:10], d[5:7], d[:4]) if L == "de" else d if L == "zh" else d) if dated and d else it.get("year", "")
+            out += '<div class="cv-row"%s><span class="mono">%s</span><span>%s</span></div>' % (
+                ' lang="en"' if same else "", esc(when), a(it["url"], esc(text)) if it.get("url") else esc(text))
+        return out
+
+    cv_link = '<p class="ev-more mono"><a href="%s#%s">%s →</a></p>' % (url(P + "about/"), "cv-" + re.sub(r"[^a-z]+", "-", lec["title"].lower()).strip("-"), esc(u["cv_all"]))
+    soon_html = ('<section class="sub-sec ev" id="upcoming"><header class="sub-head"><h2>%s</h2></header><div class="ev-list">%s</div></section>' % (
+        esc(u["upcoming"]), ev_rows(soon, True))) if soon else ""
+    past_html = ('<section class="sub-sec ev" id="recent"><header class="sub-head"><h2>%s</h2></header><div class="ev-list">%s</div>%s</section>' % (
+        esc(u["recent"]), ev_rows(past, False), cv_link)) if past else ""
+
+    # the artist's own texts, also from the CV ("Publications & Writing"), so they are entered once
+    pubs = next((s_ for s_ in D["about"]["sections"] if s_["title"].startswith("Publications")), {"items": []})["items"]
+    writing_html = ('<section class="sub-sec ev" id="writing"><header class="sub-head"><h2>%s</h2></header><div class="ev-list">%s</div></section>' % (
+        esc(u["writing"]), ev_rows(pubs, False))) if pubs else ""
+
     talks = [it for it in D.get("press", []) if it.get("group") == "watch" and it.get("url")]
     talk_html = "".join(watch_card(it["url"], it.get("thumb"), it["title"], " · ".join(x for x in (it.get("outlet"), (it.get("date") or "")[:4]) if x),
                                    tr(it, "note", L), ' lang="en"' if L != "en" else "", (it.get("outlet") or "").split(",")[0]) for it in talks)
     page(P + "workshops/", u["nav"]["workshops"], share_text("workshops", L, u["workshops_desc"] % lname(L)),
          page_head(u["nav"]["workshops"], u["workshops_lead"]) +
+         soon_html +
          ('<div class="grid">%s</div>' % "".join(shop_card(x) for x in shops) if shops else "") +
+         past_html +
          ('<section class="sub-sec" id="talks"><header class="sub-head"><h2>%s</h2></header><div class="perf talks">%s</div></section>' % (
              esc(u["press_groups"]["watch"]), talk_html) if talks else "") +
+         writing_html +
          '<div class="sub-sec">%s</div>' % contact,
          ld=webpage_ld("CollectionPage", P + "workshops/", u["nav"]["workshops"], share_text("workshops", L, u["workshops_desc"] % lname(L)), L, u["tags"]["workshops"]),
          section="workshops", lang=L, alts=each("workshops/"))

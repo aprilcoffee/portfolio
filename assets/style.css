@@ -524,3 +524,9 @@ html.zoomed { overflow: hidden; }
 .cv-nav { font-size: 0.875rem; }
 .about-top .contact, .about-top .topics { grid-template-columns: 6.75rem 1fr; }
 .about-top .contact-note { margin-left: 6.75rem; }
+/* Talks & Workshops: upcoming and recent dates (rows from the CV) */
+.ev-list .cv-row { grid-template-columns: 7rem 1fr; gap: 0.75rem; padding: 0.2rem 0; font-size: 1.0625rem; line-height: 1.5; max-width: 62rem; }
+.ev-list .cv-row .mono { font-size: 0.875rem; }
+.ev-more { margin-top: 0.9rem; font-size: 0.8125rem; color: var(--mut); }
+.ev-more a:hover { color: var(--ink); }
+#upcoming { margin-top: 0; margin-bottom: 3rem; }

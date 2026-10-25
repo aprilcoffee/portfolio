@@ -5,13 +5,21 @@ tags: [practice, medium-specificity, prompting, cybernetics, feedback, local-ai,
 sources:
   - ../../raw/questionnaire-2026-10-answers.md
   - ../../../data/site.json (works: steering-through-the-inner-residue)
-updated: 2026-10-24
+updated: 2026-10-25
 ---
 # Medium specificity: the practice in the artist's own words
 
 Asked in October 2026 what he is doing, Liu answered: he approaches artificial-intelligence art along the line of
 media art's question of **medium specificity**, and asks how to go beyond simply prompting. This page collects his own
 statements on the ideas behind the work, so that questions about "why" can be answered from them.
+
+## Complex systems and operational images
+
+In October 2026 Liu asked that his About text lead with these two terms: the **aesthetics of complex systems** (images
+that come out of feedback loops, recursion and long technical pipelines rather than from a single intention, with
+orders nobody designed, like Turing patterns) and **operational images** (images made by and for machines: dataset
+captions, scores that rank a face, tokens that decide what a model can see). Geopolitics follows from there.
+(Source: the artist's instruction for the About page, 25 October 2026; data/site.json about.text.)
 
 ## Beyond the prompt
 
