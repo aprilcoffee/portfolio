@@ -345,6 +345,11 @@ def read_post(slug):
     return open(p, encoding="utf-8").read() if os.path.exists(p) else ""
 
 
+def share_text(key, lang, default):
+    """The share/search text of a list page: site.share_<key> (+ _de/_zh, edited in the admin) or the built-in one."""
+    return tr(S, "share_" + key, lang) or default
+
+
 def summary(text, n=160, words=False):
     t = re.sub(r"!\[[^\]]*\]\([^)]*\)|```.*?```", " ", text or "", flags=re.S)
     t = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", t)
@@ -831,13 +836,13 @@ for L in LANGS:
     perfs = [p for p in D.get("performances", []) if not p.get("hidden") and p.get("video")]
     perf_html = "".join(watch_card(p["video"], p.get("thumb") or cover_of({"video": p.get("video")}), tr(p, "title", L),
                                    p.get("year", ""), tr(p, "note", L), more=p.get("link", "")) for p in perfs)
-    page(P + "works/", u["nav"]["works"], u["works_desc"] % (lname(L), y0, y1),
+    page(P + "works/", u["nav"]["works"], share_text("works", L, u["works_desc"] % (lname(L), y0, y1)),
          '<header class="page-head"><h1 class="page-title">%s</h1>%s</header>' % (
              esc(u["nav"]["works"]), '<p class="lead jump"><a href="#performances">%s ↓</a></p>' % esc(u["perf_title"]) if perfs else "") +
          '<div class="grid">%s</div>' % "".join(work_card(i + 1, w, L, kw=True) for i, w in enumerate(works)) +
          ('<section class="sub-sec" id="performances"><header class="sub-head"><h2>%s</h2></header>'
           '<div class="perf">%s</div></section>' % (esc(u["perf_title"]), perf_html) if perfs else ""),
-         ld=webpage_ld("CollectionPage", P + "works/", u["nav"]["works"], u["works_desc"] % (lname(L), y0, y1), L, u["tags"]["works"]),
+         ld=webpage_ld("CollectionPage", P + "works/", u["nav"]["works"], share_text("works", L, u["works_desc"] % (lname(L), y0, y1)), L, u["tags"]["works"]),
          section="works", lang=L, alts=each("works/"))
 
     for i, w in enumerate(works):
@@ -977,13 +982,13 @@ for L in LANGS:
     talks = [it for it in D.get("press", []) if it.get("group") == "watch" and it.get("url")]
     talk_html = "".join(watch_card(it["url"], it.get("thumb"), it["title"], " · ".join(x for x in (it.get("outlet"), (it.get("date") or "")[:4]) if x),
                                    tr(it, "note", L), ' lang="en"' if L != "en" else "", (it.get("outlet") or "").split(",")[0]) for it in talks)
-    page(P + "workshops/", u["nav"]["workshops"], u["workshops_desc"] % lname(L),
+    page(P + "workshops/", u["nav"]["workshops"], share_text("workshops", L, u["workshops_desc"] % lname(L)),
          page_head(u["nav"]["workshops"], u["workshops_lead"]) +
          ('<div class="grid">%s</div>' % "".join(shop_card(x) for x in shops) if shops else "") +
          ('<section class="sub-sec" id="talks"><header class="sub-head"><h2>%s</h2></header><div class="perf talks">%s</div></section>' % (
              esc(u["press_groups"]["watch"]), talk_html) if talks else "") +
          '<div class="sub-sec">%s</div>' % contact,
-         ld=webpage_ld("CollectionPage", P + "workshops/", u["nav"]["workshops"], u["workshops_desc"] % lname(L), L, u["tags"]["workshops"]),
+         ld=webpage_ld("CollectionPage", P + "workshops/", u["nav"]["workshops"], share_text("workshops", L, u["workshops_desc"] % lname(L)), L, u["tags"]["workshops"]),
          section="workshops", lang=L, alts=each("workshops/"))
 
     for i, x in enumerate(shops):
@@ -1023,7 +1028,7 @@ for L in LANGS:
                          '<span class="ex">%s</span></a></li>' % (
                              url("blog/%s/" % p["slug"]), p.get("lang", "zh-Hant"), esc(p["title"]), esc(p.get("category")),
                              esc(p.get("excerpt"))))
-    page(P + "blog/", u["blog_title"], u["blog_desc"] % lname(L),
+    page(P + "blog/", u["blog_title"], share_text("blog", L, u["blog_desc"] % lname(L)),
          page_head(u["blog_title"], u["blog_lead"]) +
          "".join('<section class="year-group"><span class="mono">%s</span><ul>%s</ul></section>' % (y, "".join(groups[y]))
                  for y in order),
@@ -1038,10 +1043,10 @@ for L in LANGS:
                 '<div class="cap"><span class="t">%s</span><span class="mono">↗</span></div></a>') % (
             esc(f["url"]), thumb, esc(f["name"]))
 
-    page(P + "friends/", u["nav"]["friends"], u["friends_desc"] % lname(L),
+    page(P + "friends/", u["nav"]["friends"], share_text("friends", L, u["friends_desc"] % lname(L)),
          page_head(u["nav"]["friends"]) +
          '<div class="grid friends">%s</div>' % "".join(friend(f) for f in D.get("friends", [])),
-         ld=webpage_ld("CollectionPage", P + "friends/", u["nav"]["friends"], u["friends_desc"] % lname(L), L, ""),
+         ld=webpage_ld("CollectionPage", P + "friends/", u["nav"]["friends"], share_text("friends", L, u["friends_desc"] % lname(L)), L, ""),
          section="friends", lang=L, alts=each("friends/"))
 
     # HTML site map: every page in one list, for visitors and for crawlers
