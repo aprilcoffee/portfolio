@@ -552,3 +552,20 @@ html.zoomed { overflow: hidden; }
 .text-row .pic { grid-row: auto; }
 .text-row .body { display: flex; flex-direction: column; min-width: 0; }
 @media (max-width: 800px) { .text-row { grid-template-columns: 5rem 1fr; } }
+/* Talks, Workshops & Writing (3): workshops, talk recordings and writing as small-picture rows,
+   two columns where there is room, one on narrow screens; the type sizes stay those of the cards */
+#workshop-list .grid, #talks .perf.talks, .text-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 34rem), 1fr)); gap: 2rem 3rem; max-width: none; }
+#workshop-list .card, #talks .perf-card { display: grid; grid-template-columns: 13rem 1fr; column-gap: 1.25rem; align-items: start; }
+#workshop-list .card .thumb { aspect-ratio: 4 / 3; }
+#workshop-list .card .cap { margin-top: 0; align-content: start; }
+#talks .perf-card .cap { margin-top: 0; }
+#talks .perf-card .cap h3 { margin-top: 0; }
+#talks .perf-card .watch { left: 0.5rem; bottom: 0.5rem; padding: 0.25rem 0.5rem; white-space: nowrap; max-width: calc(100% - 1rem); overflow: hidden; text-overflow: ellipsis; }
+#talks .perf-card .thumb::after { right: 0.5rem; top: 0.5rem; }
+#talks .perf-item { display: flex; flex-direction: column; }
+#talks .perf-more { align-self: flex-start; margin-left: 14.25rem; }
+@media (max-width: 800px) {
+  #workshop-list .card, #talks .perf-card { grid-template-columns: 8rem 1fr; column-gap: 1rem; }
+  #talks .perf-more { margin-left: 9rem; }
+  #talks .perf-card .watch { display: none; }
+}
