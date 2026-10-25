@@ -1306,9 +1306,9 @@
     {
       "title": "valentinstag",
       "year": "2024",
-      "note": "soft rotation, Valentine’s Day edition, with 674FM, 14 February 2024. A set about talking with a chatbot about what love is, through granular synthesis. soft rotation is a concert series organised by students of the Academy of Media Arts Cologne (KHM).",
-      "note_de": "soft rotation, Valentinstagsausgabe, mit 674FM, 14. Februar 2024. Ein Set darüber, mit einem Chatbot per Granularsynthese darüber zu sprechen, was Liebe ist. soft rotation ist eine Konzertreihe von Studierenden der Kunsthochschule für Medien Köln (KHM).",
-      "note_zh": "soft rotation 情人節特別場，與 674FM 合作，2024 年 2 月 14 日。這場演出用顆粒合成（granular synthesis）和聊天機器人聊「什麼是愛」。soft rotation 是科隆媒體藝術學院（KHM）學生策劃的音樂會系列。",
+      "note": "soft rotation, Valentine’s Day edition, with 674FM, 14 February 2024. A set about talking with a chatbot about what love is, through granular synthesis. soft rotation is a local experimental music event in Cologne.",
+      "note_de": "soft rotation, Valentinstagsausgabe, mit 674FM, 14. Februar 2024. Ein Set darüber, mit einem Chatbot per Granularsynthese darüber zu sprechen, was Liebe ist. soft rotation ist eine lokale Veranstaltung für experimentelle Musik in Köln.",
+      "note_zh": "soft rotation 情人節特別場，與 674FM 合作，2024 年 2 月 14 日。這場演出用顆粒合成（granular synthesis）和聊天機器人聊「什麼是愛」。soft rotation 是科隆在地的實驗音樂活動。",
       "video": "https://vimeo.com/924343918",
       "thumb": "images/wix/4eb1dd_795521947e294861bd6aaf4318159c32~mv2.webp",
       "link": "https://softrotation.substack.com/p/soft-rotation-3"
@@ -1416,6 +1416,12 @@
       "held_de": "6. Januar 2026 · KISDtalk, KISD Köln International School of Design, Köln\n7. Mai 2026 · mtrail Ausbildungscamp, Lindau",
       "held_zh": "2026 年 1 月 6 日 · KISDtalk，科隆國際設計學院（KISD），科隆\n2026 年 5 月 7 日 · mtrail Ausbildungscamp，林道",
       "images": [
+        {
+          "src": "images/workshops/51-ways-to-spell-the-image-giraffe/00.webp",
+          "alt": "Left: giraffes generated from giraffe as one token. Right: spotted animals that do not exist, generated from the same word cut into gi + ra + ff + e",
+          "alt_de": "Links: Giraffen aus giraffe als ein Token. Rechts: gefleckte Tiere, die es nicht gibt, aus demselben Wort, zerlegt in gi + ra + ff + e",
+          "alt_zh": "左：以一整個 giraffe 詞元生成的長頸鹿。右：同一個字切成 gi + ra + ff + e 後，生成出世上不存在的斑點動物"
+        },
         {
           "src": "images/workshops/51-ways-to-spell-the-image-giraffe/01.webp",
           "alt": "The word giraffe with every dictionary entry that fits inside it and its token ID: 51 possible spellings",
