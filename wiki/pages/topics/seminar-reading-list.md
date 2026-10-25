@@ -38,7 +38,10 @@ where only the title is known, only the title is given.
   form of ekphrasis.
 - **Adam Harvey and Jules LaPlace, "Researchers Gone Wild" (2021).** On face and image datasets scraped from the web
   "in the wild" and where they end up.
-- **Hito Steyerl, "Mean Images" (2023).** Generated images as statistical averages ("mean" in both senses).
+- **Hito Steyerl, "Mean Images", *New Left Review* 140/141 (2023).** Images made by machine learning are statistical
+  renderings rather than pictures of existing things: they trade photographic indexicality for probability, converge on
+  the average like Galton's composites, and so are "mean" in both senses. Steyerl shows what Stable Diffusion makes of
+  "an image of hito steyerl".
 - **Hito Steyerl, "The Hardest Part" (2025).**
 
 ## Data, bias and power
@@ -50,15 +53,20 @@ where only the title is known, only the title is given.
   analysis: worst for darker-skinned women.
 - **Catherine D'Ignazio and Lauren F. Klein, *Data Feminism* (2020)**, including the chapter "Show Your Work" on the
   invisible labour behind data.
-- **"(Un)dressed: How AI Reinforces Regressive Gender Politics".**
+- **Johanna T. Wallenborn, "(Un)dressed: How AI Reinforces Regressive Gender Politics"**, in *un/learn ai*, the
+  KITeGG publication series, vol. 2 (the series in which Ting-Chun's own text appears in vol. 3).
 - **Kate Crawford, *Atlas of AI* (2021).** AI as an extractive industry: minerals, labour, data, classification.
 - **James Bridle, *New Dark Age* (2018).** How more data and computation can make the world harder, not easier, to
   understand.
 - **Dominik Vrabič Dežman (2025), on images of artificial intelligence in public media.** How AI is pictured (robots,
   blue brains) and what those stock images do.
-- **Francis Hunger, "Unhype AI".**
-- **"I Will Rather Lose My Job to AI Than My Dad".**
-- **ladymouth, "Anti-Social Media: Art as Research".**
+- **Francis Hunger, "Unhype Artificial 'Intelligence'! A proposal to replace the deceiving terminology of AI"**,
+  *Training the Archive* Working Paper 6. Argues that words like "intelligence" and "learning" mislead, and proposes
+  more accurate terms for what these systems do.
+- **Dzennifer Zachlod, "I Will Rather Lose My Job to AI Than My Dad"**, in *un/learn ai* (KITeGG), vol. 2.
+- **Sarah Ciston, "ladymouth: Anti-Social-Media Art As Research"** (issue 15). ladymouth is a bot that answers posts
+  in misogynist online forums (such as Reddit's Red Pill) with feminist quotes; the text treats the bot and the
+  reactions it provokes as artistic research.
 - **Fabian Offert and Ranjodh Singh Dhaliwal, "The Method of Critical AI Studies, A Propaedeutic".**
 
 ## Related
