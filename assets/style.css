@@ -565,7 +565,12 @@ html.zoomed { overflow: hidden; }
 #talks .perf-item { display: flex; flex-direction: column; }
 #talks .perf-more { align-self: flex-start; margin-left: 14.25rem; }
 @media (max-width: 800px) {
-  #workshop-list .card, #talks .perf-card { grid-template-columns: 8rem 1fr; column-gap: 1rem; }
-  #talks .perf-more { margin-left: 9rem; }
-  #talks .perf-card .watch { display: none; }
+  /* phones: a tiny picture, and the description cut to three lines (the full text is one tap away) */
+  #workshop-list .grid, #talks .perf.talks, .text-list { gap: 1.5rem; }
+  #workshop-list .card, #talks .perf-card, .text-row { grid-template-columns: 4.5rem 1fr; column-gap: 0.875rem; }
+  #workshop-list .card .thumb, #talks .perf-card .thumb, .text-row .pic { aspect-ratio: 1 / 1; }
+  #workshop-list .card .thumb img { object-fit: cover; }
+  #talks .perf-more { margin-left: 5.375rem; }
+  #talks .perf-card .watch, #talks .perf-card .thumb::after { display: none; }
+  #workshop-list .card .cap .kw, #talks .perf-card .cap p:not(.by) { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
 }

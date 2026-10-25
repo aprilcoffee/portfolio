@@ -1417,6 +1417,12 @@
       "held_zh": "2026 年 1 月 6 日 · KISDtalk，科隆國際設計學院（KISD），科隆\n2026 年 5 月 7 日 · mtrail Ausbildungscamp，林道",
       "images": [
         {
+          "src": "images/workshops/51-ways-to-spell-the-image-giraffe/00.webp",
+          "alt": "Left: giraffes generated from giraffe as one token. Right: spotted animals that do not exist, generated from the same word cut into gi + ra + ff + e",
+          "alt_de": "Links: Giraffen aus giraffe als ein Token. Rechts: gefleckte Tiere, die es nicht gibt, aus demselben Wort, zerlegt in gi + ra + ff + e",
+          "alt_zh": "左：以一整個 giraffe 詞元生成的長頸鹿。右：同一個字切成 gi + ra + ff + e 後，生成出世上不存在的斑點動物"
+        },
+        {
           "src": "images/workshops/51-ways-to-spell-the-image-giraffe/01.webp",
           "alt": "The word giraffe with every dictionary entry that fits inside it and its token ID: 51 possible spellings",
           "alt_de": "Das Wort giraffe mit allen Wörterbucheinträgen, die hineinpassen, und ihren Token-IDs: 51 mögliche Schreibweisen",
