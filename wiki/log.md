@@ -139,3 +139,7 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 ## [2026-10-25] ingest | share description chosen by the artist
 - overview.md: the short description (based in Germany, working and teaching; cybernetics, operational images, technopolitics), feedback not always the method, perception rather than cognition
 - works/51-ways-to-spell-the-image-giraffe.md, works/sixteen-tokens-for-a-cave.md: link to the token workshop
+
+## [2026-10-25] ingest | home text, bio and workshop summaries edited by the artist
+- overview.md: current bio wording (cybernetics, operational images), share title, the home page text
+- topics/workshops.md: each workshop's one-line summary in the artist's wording

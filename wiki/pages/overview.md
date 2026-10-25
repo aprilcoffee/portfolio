@@ -16,9 +16,9 @@ updated: 2026-10-25
 Ting-Chun Liu (劉庭均, born in Taipei, Taiwan) is a research-based media artist working with critical AI
 (a critical AI artist) and an artistic researcher. His practice and research operate at the
 intersections of critical artificial intelligence, audiovisual media and network practice. In the
-artist's own words, the practice dissects "technological systems through feedback-driven
-interventions", examining "how perception, aesthetics, and power dynamics propagate through
-computational processes". Asked in 2026 what he does, he put it this way: he approaches AI art along media art's question of
+artist's own words (website bio, October 2026): "Drawing on cybernetics and operational images, he dissects
+technological systems with feedback-driven interventions, and examines how perception, aesthetics, and power dynamics
+propagate through computational processes". Asked in 2026 what he does, he put it this way: he approaches AI art along media art's question of
 **medium specificity** and asks how to go beyond simply prompting (see
 [Medium specificity: the practice in his own words](topics/medium-specificity-and-practice.md)).
 
@@ -27,12 +27,15 @@ artist based in Germany, working and teaching across critical AI, audiovisual an
 cybernetics and operational images, he takes machine systems apart: how perception, aesthetics and power travel through
 computation, and the technopolitics behind it." (Chinese: 現居德國的研究型媒體藝術家，創作與教學以批判性人工智慧為核心，
 橫跨音像與網路實踐。從模控論與操作性影像出發，拆解機器系統，追問感知、美學與權力如何在運算中流動，以及背後的技術政治。)
+The share title next to it: "Ting-Chun Liu —— Media artist, critical AI" (Chinese: 劉庭均 Ting-Chun Liu —— 媒體藝術家，批判性人工智慧).
 Notes on this wording, from the artist:
 - Key terms he likes: **cybernetics** (模控論), **operational images** (操作性影像) and **technopolitics** (技術政治).
 - Feedback is a frequent method but **not always** the method; do not describe every work as feedback-based.
 - **Perception** rather than cognition: the works ask how machines "see" and how people see machine-made images
   (operational images in Farocki's sense are images that no longer need human perception), and aesthetics comes from
   aisthesis, perception.
+
+**The text on the website's home page (October 2026)**, in the artist's words: "I often wonder why technology keeps us fascinated, confused and at a loss. Yet when we look closely, it is novel yet ancient, delicate yet provocative, lavish yet hollow, complex but dangerous. To think about what technology is, is to think about how symbols are made, whose labor they carry, and which techniques hold them in place." (Chinese: 我常在想，為什麼科技總讓我們著迷、困惑、又無所適從。然而當我們仔細端詳，它既新穎卻又古老，細膩卻帶著挑釁，華麗卻又空洞，複雜卻也危險。思考何為科技，就是思考符號如何被製造、背後承載著誰的勞動，以及哪些技術讓它們得以成立。)
 
 Liu came to Germany in 2019, began studying at the Academy of Media Arts Cologne in 2020 (as the pandemic began) and has
 worked at Bauhaus University Weimar since the end of 2024; he works in Cologne and Weimar. He works mainly in English,
