@@ -8,7 +8,8 @@ sources:
   - https://liutingchun.com/about/
   - https://www.stifterverband.org/digital-lehrfellows-thueringen/2026/liu
   - ../raw/questionnaire-2026-10-answers.md
-updated: 2026-10-24
+  - ../../data/site.json (site.share_about, October 2026)
+updated: 2026-10-25
 ---
 # Ting-Chun Liu (劉庭均) — overview
 
@@ -20,6 +21,18 @@ interventions", examining "how perception, aesthetics, and power dynamics propag
 computational processes". Asked in 2026 what he does, he put it this way: he approaches AI art along media art's question of
 **medium specificity** and asks how to go beyond simply prompting (see
 [Medium specificity: the practice in his own words](topics/medium-specificity-and-practice.md)).
+
+**The short description the artist chose (October 2026)**, used when the website is shared: "Research-based media
+artist based in Germany, working and teaching across critical AI, audiovisual and network practice. Drawing on
+cybernetics and operational images, he takes machine systems apart: how perception, aesthetics and power travel through
+computation, and the technopolitics behind it." (Chinese: 現居德國的研究型媒體藝術家，創作與教學以批判性人工智慧為核心，
+橫跨音像與網路實踐。從模控論與操作性影像出發，拆解機器系統，追問感知、美學與權力如何在運算中流動，以及背後的技術政治。)
+Notes on this wording, from the artist:
+- Key terms he likes: **cybernetics** (模控論), **operational images** (操作性影像) and **technopolitics** (技術政治).
+- Feedback is a frequent method but **not always** the method; do not describe every work as feedback-based.
+- **Perception** rather than cognition: the works ask how machines "see" and how people see machine-made images
+  (operational images in Farocki's sense are images that no longer need human perception), and aesthetics comes from
+  aisthesis, perception.
 
 Liu came to Germany in 2019, began studying at the Academy of Media Arts Cologne in 2020 (as the pandemic began) and has
 worked at Bauhaus University Weimar since the end of 2024; he works in Cologne and Weimar. He works mainly in English,
@@ -90,3 +103,4 @@ and also in Mandarin.
 - https://liutingchun.com/about/
 - https://www.stifterverband.org/digital-lehrfellows-thueringen/2026/liu
 - wiki/raw/questionnaire-2026-10-answers.md (the artist's answers, October 2026)
+- data/site.json, site.share_about (the short description chosen by the artist, October 2026)

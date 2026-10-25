@@ -47,6 +47,7 @@ transformer for language in one shared embedding space. (Source: the artists' sl
 - [Sixteen Tokens for a Cave](sixteen-tokens-for-a-cave.md)
 - [Self-cannibalizing AI](self-cannibalizing-ai.md): the 37C3 talk, earlier in the same line
 - [Critical AI and image models](../topics/critical-ai-and-image-models.md)
+- [Workshops](../topics/workshops.md): the workshop 51 Ways to Spell the Image Giraffe (tokens, the token dictionary, prompting with token IDs, rebuilding an image) at https://liutingchun.com/workshops/51-ways-to-spell-the-image-giraffe/
 - [Chaos Communication Congress](../institutions/chaos-communication-congress.md)
 - [Leon-Etienne Kühr](../people/leon-etienne-kuehr.md)
 - [External links](../external-links.md)
