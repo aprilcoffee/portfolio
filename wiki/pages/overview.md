@@ -27,7 +27,7 @@ artist based in Germany, working and teaching across critical AI, audiovisual an
 cybernetics and operational images, he takes machine systems apart: how perception, aesthetics and power travel through
 computation, and the technopolitics behind it." (Chinese: 現居德國的研究型媒體藝術家，創作與教學以批判性人工智慧為核心，
 橫跨音像與網路實踐。從模控論與操作性影像出發，拆解機器系統，追問感知、美學與權力如何在運算中流動，以及背後的技術政治。)
-The share title next to it: "Ting-Chun Liu —— Media artist, critical AI" (Chinese: 劉庭均 Ting-Chun Liu —— 媒體藝術家，批判性人工智慧).
+The share title next to it: "Ting-Chun Liu – Media Art, Critical AI, Artistic Research" (Chinese: 劉庭均 Ting-Chun Liu – 媒體藝術、批判性人工智慧、藝術研究).
 Notes on this wording, from the artist:
 - Key terms he likes: **cybernetics** (模控論), **operational images** (操作性影像) and **technopolitics** (技術政治).
 - Feedback is a frequent method but **not always** the method; do not describe every work as feedback-based.
