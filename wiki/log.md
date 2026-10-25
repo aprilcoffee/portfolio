@@ -158,3 +158,4 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 - faq.md: reading Flusser and Farocki; this semester's seminar
 - worker: look_up tool for live questions only (SEARCH_MODEL); reading recommendations one or two at a time
 - topics/seminar-reading-list.md: authors and sources for Wallenborn and Zachlod (un/learn ai vol. 2), Hunger (Training the Archive WP 6), Steyerl (NLR 140/141), Ciston (ladymouth) (artist, screenshots)
+- topics/seminar-reading-list.md: Steyerl, The Hardest Part removed (artist)

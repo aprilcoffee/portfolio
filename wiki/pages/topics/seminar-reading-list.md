@@ -42,7 +42,6 @@ where only the title is known, only the title is given.
   renderings rather than pictures of existing things: they trade photographic indexicality for probability, converge on
   the average like Galton's composites, and so are "mean" in both senses. Steyerl shows what Stable Diffusion makes of
   "an image of hito steyerl".
-- **Hito Steyerl, "The Hardest Part" (2025).**
 
 ## Data, bias and power
 
