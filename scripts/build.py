@@ -466,15 +466,15 @@ LANG_NAME = {"en": "EN", "de": "DE", "zh": "繁中"}
 
 UI = {
     "en": {
-        "nav": {"works": "Works", "workshops": "Talks & Workshops", "about": "About", "blog": "Blog (archived)", "friends": "Friends"},
+        "nav": {"works": "Works", "workshops": "Talks, Workshops & Writing", "about": "About", "blog": "Blog (archived)", "friends": "Friends"},
         "menu": "Menu", "more": "More", "language": "Language", "privacy": "Privacy",
         "selected": "Selected works", "all_works": "All works (%d) →",
         "works_lead": "Installations, performances, internet art and artistic research, %s–%s.",
         "works_desc": "Selected works by %s, %s–%s: installations, performances, internet art and artistic research on AI.",
-        "Topics": "Topics", "Email": "Email", "contact_note": "I host workshops about local AI usage, embedding practice, and understanding biases in AI models. Workshop and lecture requests: please get in touch by email.", "work_by": "%s by %s, %s.",
+        "Topics": "Topics", "Email": "Email", "contact_note": "Workshops, talks and collaborations: please get in touch by email.", "work_by": "%s by %s, %s.",
         "tags": {"works": "Critical AI, generative art, artistic research, cybernetics, internet art, audio-visual performance",
                  "about": "Critical AI, generative art, artistic research, cybernetics, internet art, audio-visual performance",
-                 "workshops": "local AI, embedding practice, AI bias, workshops, talks, talk recordings"},
+                 "workshops": "local AI, embedding practice, AI bias, workshops, talks, talk recordings, writing"},
         "sitemap": "Site map", "sitemap_lead": "Every page of this website.",
         "sitemap_desc": "Site map of the website of %s: works and performances, talks and workshops, about, blog.",
         "Year": "Year", "Status": "Status", "Type": "Type", "Materials": "Materials", "With": "With", "Link": "Link",
@@ -486,7 +486,7 @@ UI = {
         "blog_lead": "Notes on works, and technical write-ups on Raspberry Pi, Processing and Python. The posts are written in Mandarin.",
         "blog_desc": "Blog archive of %s: notes on artworks and technical write-ups on Raspberry Pi, Processing and Python.",
         "friends_desc": "Friends and fellow artists of %s.",
-        "workshops_lead": "Workshops I offer: using AI locally on your own computer, working hands-on with embeddings, and seeing the biases inside AI models. They work for anyone, from people who have never written code to artists, companies and scholars. Talk recordings below.",
+        "workshops_lead": "Workshops I offer: using AI locally on your own computer, working hands-on with embeddings, and seeing the biases inside AI models. They work for anyone, from people who have never written code to artists, companies and scholars. Below: recent dates, talk recordings and writing.",
         "workshops_desc": "Workshops and talks by %s on local AI usage, embedding practice and biases in AI models, with talk recordings.",
         "workshops_ask": "Workshop and lecture requests: please get in touch by email.",
         "press_groups": {"watch": "Talk recordings", "read": "Cited and discussed"},
@@ -495,6 +495,7 @@ UI = {
         "ask_ex": ["What is Latent Heat Generation about?", "Why can “giraffe” be spelled in 51 ways?", "Which of your works deal with AI?", "What are you working on now?"],
         "ask_note": "caution: AI may create random correlations",
         "ask_more": "Privacy",
+        "read_at": "Read on %s", "tba": "Date TBA", "kinds": {"talk": "Talk", "workshop": "Workshop"}, "read": "Read", "img_credit": "Image: %s", "upcoming": "Upcoming", "recent": "Recent", "cv_all": "Full list in the CV", "writing": "Writing",
         "mt_note": "Parts of the German translation were made with AI and may contain errors.",
         "mt_ok": "OK",
         "ask_err": "Sorry, that didn’t work. Please try again in a moment, or write to %s.",
@@ -502,15 +503,15 @@ UI = {
         "ask_refusal": "I can’t answer that here, but ask me anything about my work.",
     },
     "de": {
-        "nav": {"works": "Arbeiten", "workshops": "Vorträge & Workshops", "about": "Über mich", "blog": "Blog (archiviert)", "friends": "Freunde"},
+        "nav": {"works": "Arbeiten", "workshops": "Vorträge, Workshops & Texte", "about": "Über mich", "blog": "Blog (archiviert)", "friends": "Freunde"},
         "menu": "Menü", "more": "Mehr", "language": "Sprache", "privacy": "Datenschutz",
         "selected": "Ausgewählte Arbeiten", "all_works": "Alle Arbeiten (%d) →",
         "works_lead": "Installationen, Performances, Netzkunst und künstlerische Forschung, %s–%s.",
         "works_desc": "Ausgewählte Arbeiten von %s, %s–%s: Installationen, Performances, Netzkunst und künstlerische Forschung zu KI.",
-        "Topics": "Themen", "Email": "E-Mail", "contact_note": "Ich gebe Workshops zu lokaler KI-Nutzung, Embedding-Praxis und zum Verständnis von Biases in KI-Modellen. Anfragen für Workshops und Vorträge bitte per E-Mail.", "work_by": "%s von %s, %s.",
+        "Topics": "Themen", "Email": "E-Mail", "contact_note": "Workshops, Vorträge und Kooperationen: Anfragen bitte per E-Mail.", "work_by": "%s von %s, %s.",
         "tags": {"works": "Kritische KI, generative Kunst, künstlerische Forschung, Kybernetik, Netzkunst, audiovisuelle Performance",
                  "about": "Kritische KI, generative Kunst, künstlerische Forschung, Kybernetik, Netzkunst, audiovisuelle Performance",
-                 "workshops": "lokale KI, Embedding-Praxis, KI-Bias, Workshops, Vorträge, Vortragsaufzeichnungen"},
+                 "workshops": "lokale KI, Embedding-Praxis, KI-Bias, Workshops, Vorträge, Vortragsaufzeichnungen, Texte"},
         "sitemap": "Seitenübersicht", "sitemap_lead": "Alle Seiten dieser Website.",
         "sitemap_desc": "Seitenübersicht der Website von %s: Arbeiten und Performances, Vorträge und Workshops, Über mich, Blog.",
         "Year": "Jahr", "Status": "Status", "Type": "Art", "Materials": "Material", "With": "Mit", "Link": "Link",
@@ -522,7 +523,7 @@ UI = {
         "blog_lead": "Notizen zu Arbeiten und technische Anleitungen zu Raspberry Pi, Processing und Python. Die Beiträge sind auf Chinesisch (Mandarin) verfasst.",
         "blog_desc": "Blog-Archiv von %s: Notizen zu Arbeiten und technische Anleitungen zu Raspberry Pi, Processing und Python.",
         "friends_desc": "Freund*innen und befreundete Künstler*innen von %s.",
-        "workshops_lead": "Workshops, die ich anbiete: KI lokal auf dem eigenen Rechner nutzen, praktisch mit Embeddings arbeiten und die Biases in KI-Modellen sichtbar machen. Sie eignen sich für alle, von Menschen ohne Programmiererfahrung bis zu Künstler*innen, Unternehmen und Wissenschaftler*innen. Darunter Aufzeichnungen von Vorträgen.",
+        "workshops_lead": "Workshops, die ich anbiete: KI lokal auf dem eigenen Rechner nutzen, praktisch mit Embeddings arbeiten und die Biases in KI-Modellen sichtbar machen. Sie eignen sich für alle, von Menschen ohne Programmiererfahrung bis zu Künstler*innen, Unternehmen und Wissenschaftler*innen. Darunter: aktuelle Termine, Vortragsaufzeichnungen und Texte.",
         "workshops_desc": "Workshops und Vorträge von %s zu lokaler KI-Anwendung, Embedding-Praxis und Biases in KI-Modellen, mit Vortragsaufzeichnungen.",
         "workshops_ask": "Anfragen für Workshops und Vorträge richten Sie bitte per E-Mail an mich.",
         "press_groups": {"watch": "Vortragsaufzeichnungen", "read": "Zitiert und besprochen"},
@@ -531,6 +532,7 @@ UI = {
         "ask_ex": ["Worum geht es in Latent Heat Generation?", "Warum lässt sich „giraffe“ auf 51 Arten schreiben?", "Welche Ihrer Arbeiten beschäftigen sich mit KI?", "Woran arbeiten Sie gerade?"],
         "ask_note": "Achtung: KI kann zufällige Zusammenhänge erzeugen · %s",
         "ask_more": "Datenschutz",
+        "read_at": "Lesen auf %s", "tba": "Termin folgt", "kinds": {"talk": "Vortrag", "workshop": "Workshop"}, "read": "Lesen", "img_credit": "Bild: %s", "upcoming": "Demnächst", "recent": "Zuletzt", "cv_all": "Vollständige Liste im Lebenslauf", "writing": "Texte",
         "mt_note": "Bitte beachten Sie: Teile der deutschen Übersetzung wurden mit KI erstellt und können Fehler enthalten.",
         "mt_ok": "Verstanden",
         "ask_err": "Das hat leider nicht geklappt. Bitte gleich noch einmal versuchen oder an %s schreiben.",
@@ -538,17 +540,17 @@ UI = {
         "ask_refusal": "Darauf kann ich hier nicht antworten. Fragen Sie mich gern zu meiner Arbeit.",
     },
     "zh": {
-        "nav": {"works": "創作計畫", "workshops": "講座與工作坊", "about": "關於", "blog": "部落格（封存）", "friends": "朋友"},
+        "nav": {"works": "創作計畫", "workshops": "講座、工作坊與書寫", "about": "關於", "blog": "部落格（封存）", "friends": "朋友"},
         "menu": "選單", "more": "更多", "language": "語言", "privacy": "隱私權",
         "selected": "精選作品", "all_works": "全部作品（%d）→",
         "works_lead": "裝置、表演、網路藝術與藝術研究，%s–%s。",
         "works_desc": "%s的精選作品，%s–%s：裝置、表演、網路藝術，以及關於人工智慧的藝術研究。",
-        "Topics": "主題", "Email": "信箱", "contact_note": "工作坊主題包含：在自己的電腦上使用人工智慧、嵌入向量實作，以及辨識人工智慧模型中的偏見。工作坊與講座邀約，歡迎來信。", "work_by": "%s，%s，%s。",
+        "Topics": "主題", "Email": "信箱", "contact_note": "工作坊、講座與合作邀約，歡迎來信。", "work_by": "%s，%s，%s。",
         "tags": {"works": "批判性人工智慧、生成藝術、藝術研究、模控論、網路藝術、音像演出",
                  "about": "批判性人工智慧、生成藝術、藝術研究、模控論、網路藝術、音像演出",
-                 "workshops": "本地端人工智慧、嵌入向量實作、人工智慧偏見、工作坊、講座、講座錄影"},
+                 "workshops": "本地端人工智慧、嵌入向量實作、人工智慧偏見、工作坊、講座、講座錄影、書寫"},
         "sitemap": "網站地圖", "sitemap_lead": "這個網站的所有頁面。",
-        "sitemap_desc": "%s網站的網站地圖：創作計畫與表演、講座與工作坊、關於、部落格。",
+        "sitemap_desc": "%s網站的網站地圖：創作計畫與表演、講座、工作坊與書寫、關於、部落格。",
         "Year": "年份", "Status": "狀態", "Type": "類型", "Materials": "媒材", "With": "合作", "Link": "連結",
         "work_desc": "%s（%s），%s，%s。", "work": "作品", "work_with": "與 %s 合作", "show_all": "顯示全部（%d）", "event": "活動頁面", "held": "場次", "workshop": "工作坊",
         "perf_title": "表演紀錄",
@@ -558,7 +560,7 @@ UI = {
         "blog_lead": "作品筆記，以及 Raspberry Pi、Processing 與 Python 的技術文章。",
         "blog_desc": "%s的部落格文章彙整：作品筆記，以及 Raspberry Pi、Processing 與 Python 技術文章。",
         "friends_desc": "%s的朋友、合作夥伴與藝術家夥伴，以及他們的作品網站連結。",
-        "workshops_lead": "工作坊內容包含：在自己的電腦上使用人工智慧、動手操作嵌入向量，以及辨識人工智慧模型中的偏見。沒有寫程式經驗的人、藝術家、企業與研究者皆可參加。頁面下方為講座錄影。",
+        "workshops_lead": "工作坊內容包含：在自己的電腦上使用人工智慧、動手操作嵌入向量，以及辨識人工智慧模型中的偏見。沒有寫程式經驗的人、藝術家、企業與研究者皆可參加。頁面下方為近期場次、講座錄影與文章。",
         "workshops_desc": "%s的講座與工作坊：講座錄影，以及在自己的電腦上使用人工智慧、嵌入向量實作與人工智慧模型偏見的工作坊。",
         "workshops_ask": "工作坊與講座邀約，歡迎來信。",
         "press_groups": {"watch": "講座錄影", "read": "引用與討論"},
@@ -567,6 +569,7 @@ UI = {
         "ask_ex": ["《Latent Heat Generation》在談什麼？", "為什麼「giraffe」可以有 51 種拼法？", "你有哪些作品跟人工智慧有關？", "你現在在做什麼？"],
         "ask_note": "注意：人工智慧可能產生隨機的關聯性",
         "ask_more": "隱私權",
+        "read_at": "在 %s 閱讀", "tba": "日期待定", "kinds": {"talk": "演講", "workshop": "工作坊"}, "read": "閱讀", "img_credit": "圖：%s", "upcoming": "即將舉行", "recent": "近期場次", "cv_all": "完整列表見關於頁", "writing": "書寫",
         "mt_note": "請注意：部分德文為人工智慧翻譯，可能會有錯誤。",
         "mt_ok": "知道了",
         "ask_err": "抱歉，暫時無法回答。請稍後再試，或寫信至 %s。",
@@ -910,14 +913,14 @@ for L in LANGS:
 
     SHORT_HOST = {"thephotographersgallery.org.uk": "The Photographers’ Gallery"}
     # each performance record and talk recording opens on Vimeo / YouTube / the host's site in a new tab
-    def watch_card(href, thumb, title, sub, note, title_lang="", ph="", more=""):
+    def watch_card(href, thumb, title, sub, note, title_lang="", ph="", more="", verb="watch"):
         v = video_id(href)
         where = "YouTube" if v and v[0] == "youtube" else "Vimeo" if v else urlparse(href).netloc.replace("www.", "")
         where = SHORT_HOST.get(where, where)
         pic = img(thumb, 1100, title) if thumb else '<span class="ph">%s</span>' % esc(ph or title)
         return ('<div class="perf-item"><a class="perf-card" href="%s" target="_blank" rel="noopener"><div class="thumb">%s'
                 '<span class="watch">%s</span></div><div class="cap"><h3%s>%s</h3>%s%s</div></a>') % (
-            esc(href), pic, esc(u["watch"] % where), title_lang, esc(title),
+            esc(href), pic, esc(u[verb] % where), title_lang, esc(title),
             '<p class="by mono">%s</p>' % esc(sub) if sub else "", '<p>%s</p>' % esc(note) if note else "") + (
             # an event page next to the recording (a link can't sit inside the card's own link)
             '<a class="perf-more mono" href="%s" target="_blank" rel="noopener">%s ↗</a>' % (esc(more), esc(u["event"])) if more else "") + "</div>"
@@ -1069,14 +1072,66 @@ for L in LANGS:
             url(P + "workshops/%s/" % x["slug"]), img(pics[0], 900, tr(x, "title", L)) if pics else '<span class="ph">%s</span>' % esc(x["title"]),
             esc(tr(x, "title", L)), esc(x.get("with") and u["work_with"] % x["with"] or ""), esc(tr(x, "summary", L)))
 
+    # upcoming and recent talks and workshops come from the CV ("Lectures, Talks & Workshops"): a row whose
+    # "date" (YYYY-MM-DD) lies after the build day is upcoming; the newest other rows are recent
+    today = datetime.date.today().isoformat()
+    lec = next((s_ for s_ in D["about"]["sections"] if s_["title"].startswith("Lectures")), {"items": [], "title": ""})
+    def is_soon(it):  # a future date, or a date not set yet ("TBA")
+        d = it.get("date") or ""
+        return bool(d) and (d >= today or not re.match(r"^\d{4}-\d\d-\d\d$", d))
+    soon = sorted((it for it in lec["items"] if is_soon(it)), key=lambda it: it["date"] if it["date"][:1].isdigit() else "9999")
+    past = [it for it in lec["items"] if not is_soon(it)][:6]
+
+    def ev_rows(items, dated):
+        out = ""
+        for it in items:
+            text = tr(it, "text", L)
+            same = L != "en" and not it.get("text_" + L)
+            d = it.get("date") or ""
+            iso = re.match(r"^\d{4}-\d\d-\d\d$", d)
+            when = ((("%s.%s.%s" % (d[8:10], d[5:7], d[:4]) if L == "de" else d) if iso else u["tba"]) if dated and d else it.get("year", ""))
+            kind = u["kinds"].get(it.get("kind") or "")
+            out += '<div class="cv-row"%s><span class="mono">%s</span><span>%s%s</span></div>' % (
+                ' lang="en"' if same else "", esc(when), '<span class="kind mono">%s</span>' % esc(kind) if kind else "",
+                a(it["url"], esc(text)) if it.get("url") else esc(text))
+        return out
+
+    cv_link = '<p class="ev-more mono"><a href="%s#%s">%s →</a></p>' % (url(P + "about/"), "cv-" + re.sub(r"[^a-z]+", "-", lec["title"].lower()).strip("-"), esc(u["cv_all"]))
+    soon_html = ('<section class="sub-sec ev" id="upcoming"><header class="sub-head"><h2>%s</h2></header><div class="ev-list">%s</div></section>' % (
+        esc(u["upcoming"]), ev_rows(soon, True))) if soon else ""
+    past_html = ('<section class="sub-sec ev" id="recent"><header class="sub-head"><h2>%s</h2></header><div class="ev-list">%s</div>%s</section>' % (
+        esc(u["recent"]), ev_rows(past, False), cv_link)) if past else ""
+
+    # the artist's own texts, also from the CV ("Publications & Writing"), so they are entered once
+    pubs = next((s_ for s_ in D["about"]["sections"] if s_["title"].startswith("Publications")), {"items": []})["items"]
+    # own texts as a compact list: a small preview image (CV "thumb", fetched by scripts/fetch-talk-thumbs.py),
+    # the title and where it appeared, the year
+    def text_row(it):
+        text = tr(it, "text", L)
+        same = L != "en" and not it.get("text_" + L)
+        href = it.get("url") or abs_url(P + "about/") + "#cv-publications-writing"
+        pic = img(it["thumb"], 240, "") if it.get("thumb") else '<span class="ph"></span>'
+        return ('<a class="text-row" href="%s"%s><span class="pic">%s</span><span class="t"%s>%s</span><span class="y mono">%s%s%s</span></a>') % (
+            esc(href), ' target="_blank" rel="noopener"' if it.get("url") else "", pic, ' lang="en"' if same else "", esc(text),
+            esc(it.get("year", "")), " · %s ↗" % esc(u["read"]) if it.get("url") else "",
+            '<span class="credit">%s</span>' % esc(u["img_credit"] % it["credit"]) if it.get("thumb") and it.get("credit") else "")
+    writing_html = ('<section class="sub-sec" id="writing"><header class="sub-head"><h2>%s</h2></header><div class="text-list">%s</div></section>' % (
+        esc(u["writing"]), "".join(text_row(it) for it in pubs))) if pubs else ""
+    jumps = [x for x in (("upcoming", u["upcoming"]) if soon else None, ("recent", u["recent"]) if past else None,
+                         ("talks", u["press_groups"]["watch"]), ("writing", u["writing"]) if pubs else None) if x]
+    jump = '<p class="lead jump">%s</p>' % " · ".join('<a href="#%s">%s ↓</a>' % (i, esc(t)) for i, t in jumps)
+
     talks = [it for it in D.get("press", []) if it.get("group") == "watch" and it.get("url")]
     talk_html = "".join(watch_card(it["url"], it.get("thumb"), it["title"], " · ".join(x for x in (it.get("outlet"), (it.get("date") or "")[:4]) if x),
                                    tr(it, "note", L), ' lang="en"' if L != "en" else "", (it.get("outlet") or "").split(",")[0]) for it in talks)
     page(P + "workshops/", u["nav"]["workshops"], share_text("workshops", L, u["workshops_desc"] % lname(L)),
-         page_head(u["nav"]["workshops"], u["workshops_lead"]) +
+         page_head(u["nav"]["workshops"], u["workshops_lead"]).replace("</header>", jump + "</header>", 1) +
+         soon_html +
          ('<div class="grid">%s</div>' % "".join(shop_card(x) for x in shops) if shops else "") +
+         past_html +
          ('<section class="sub-sec" id="talks"><header class="sub-head"><h2>%s</h2></header><div class="perf talks">%s</div></section>' % (
              esc(u["press_groups"]["watch"]), talk_html) if talks else "") +
+         writing_html +
          '<div class="sub-sec">%s</div>' % contact,
          ld=webpage_ld("CollectionPage", P + "workshops/", u["nav"]["workshops"], share_text("workshops", L, u["workshops_desc"] % lname(L)), L, u["tags"]["workshops"]),
          section="workshops", lang=L, alts=each("workshops/"))
@@ -1274,7 +1329,7 @@ llms = ["# %s (%s)" % (S["name"], S.get("name_zh", "")), "",
         "- [About / CV](%s): biography, teaching, exhibitions, talks, publications, texts by others" % abs_url("about/"),
         "- [Blog Archive](%s): texts and technical notes (in Mandarin)" % abs_url("blog/"),
         "- [Performances](%s): recordings of live audio-visual sets, 2016–2024 (on the works page)" % abs_url("works/#performances"),
-        "- [Talks & Workshops](%s): talk recordings, and workshops on local AI, embeddings and AI bias" % abs_url("workshops/"),
+        "- [Talks, Workshops & Writing](%s): upcoming and recent dates, workshops on local AI, embeddings and AI bias, talk recordings and the artist's own texts" % abs_url("workshops/"),
         "- [Cited and discussed](%s): texts by others that cite or discuss the work, on the About page" % abs_url("about/#texts"), "",
         "The site is also available in Traditional Chinese (%s)." % abs_url("zh/"), "",
         "## Works", ""]

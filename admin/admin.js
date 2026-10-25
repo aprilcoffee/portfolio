@@ -405,7 +405,7 @@
           btn('↑', function () { if (i) { a.sections.splice(i - 1, 0, a.sections.splice(i, 1)[0]); save(); render(); } }, 'sm'),
           btn('刪除', function () { if (confirm('刪除段落「' + sec.title + '」？')) { a.sections.splice(i, 1); save(); render(); } }, 'sm danger')
         ]),
-        lines('每行：年份 | 內容 | 連結（選填）', sec, 'items', ['year', 'text', 'url'], null, sec.items.length > 8 ? 'tall' : '')
+        lines('每行：年份 | 內容 | 連結 | 中文 | DE | 日期 | 類型 | 預覽圖 | 圖片來源（圖片來源會在書寫列表顯示成「圖：…」；類型寫 talk 或 workshop，會在近期場次標成「演講」「工作坊」；日期也可以寫 TBA＝日期待定；後面幾欄都可留空；日期寫 2026-12-17，日期還沒到的講座會出現在「講座與工作坊」頁的「即將舉行」；最後一欄是預覽圖路徑，出版與寫作留空會自動抓）', sec, 'items', ['year', 'text', 'url', 'text_zh', 'text_de', 'date', 'kind', 'thumb', 'credit'], null, sec.items.length > 8 ? 'tall' : '')
       ]));
     });
     box.appendChild(h('div', {}, [btn('+ 新增段落', function () { a.sections.push({ title: 'New section', items: [] }); save(); render(); })]));
@@ -502,7 +502,7 @@
       field('Facebook App ID（選填；只為了消除臉書 Sharing Debugger 的 fb:app_id 警告）', s, 'fb_app_id'),
       h('h3', { text: '分享預覽小字（貼到臉書、LINE 時的說明；留空＝用網站內建的句子）' }),
       h('div', { className: 'row' }, [field('作品頁', s, 'share_works', { area: true }), field('作品頁 DE', s, 'share_works_de', { area: true }), field('作品頁 中文', s, 'share_works_zh', { area: true })]),
-      h('div', { className: 'row' }, [field('講座與工作坊頁', s, 'share_workshops', { area: true }), field('講座與工作坊 DE', s, 'share_workshops_de', { area: true }), field('講座與工作坊 中文', s, 'share_workshops_zh', { area: true })]),
+      h('div', { className: 'row' }, [field('講座、工作坊與書寫頁', s, 'share_workshops', { area: true }), field('講座與工作坊 DE', s, 'share_workshops_de', { area: true }), field('講座與工作坊 中文', s, 'share_workshops_zh', { area: true })]),
       h('div', { className: 'row' }, [field('部落格頁', s, 'share_blog', { area: true }), field('部落格 DE', s, 'share_blog_de', { area: true }), field('部落格 中文', s, 'share_blog_zh', { area: true })]),
       h('div', { className: 'row' }, [field('朋友頁', s, 'share_friends', { area: true }), field('朋友頁 DE', s, 'share_friends_de', { area: true }), field('朋友頁 中文', s, 'share_friends_zh', { area: true })]),
       lines('側欄連結（每行：名稱 | 網址）', s, 'links', ['label', 'url'])

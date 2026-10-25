@@ -53,7 +53,7 @@ Lectures, talks, workshops and publications, as listed in the CV on the website.
 - 2024 — Hello, hello, hello, hello? Hello? Hello! Human! Exhibition catalogue “Hello, Human!”, Museum of Contemporary Art Taipei (Mandarin/English) ([link](https://www.mocataipei.org.tw/tw/ExhibitionAndEvent/Info/你好，人類！Hello,*Human!))
 - 2024 — Positioning – A Prerequisite for Immersion, Digiarts, National Taiwan Museum of Fine Arts ([link](https://www.digiarts.org.tw/DigiArts/DataBasePage/4_236170297334000/Chi))
 - 2022 — Poetic Materialization – Regarding Midjourney, [ ] ground zero – poetics of technics and cognition ([summary](texts/poetic-materialization-regarding-midjourney.md); [link](https://ground-zero.khm.de/portfolio/disruptive-news-22-english/#poet))
-- 2021 — The Rule Becomes the Author!, [ ] ground zero – poetics of technics and cognition ([link](https://dev.ground-zero.khm.de/ell-worl-paper/1rule-author.html))
+- 2021 — »_ell_ Worl_!« – The Rule Becomes the Author, with Christian Heck, Mattis Kuhn, Tiago Ive Rubini and Julia Nakotte, [ ] ground zero – poetics of technics and cognition ([summary](texts/ell-worl-the-rule-becomes-the-author.md)) ([link](https://dev.ground-zero.khm.de/ell-worl-paper/1rule-author.html))
 
 ## Open questions
 

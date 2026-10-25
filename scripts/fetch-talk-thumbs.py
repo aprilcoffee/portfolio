@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Give every talk recording (site.json "press", group "watch") a screenshot.
+"""Give every talk recording (site.json "press", group "watch") and every own text (CV "Publications & Writing") a preview image.
 
 For each entry without "thumb", reads the preview image the host page offers (og:image; on
 media.ccc.de that is a frame of the recording), saves it as images/talks/<name>.jpg
 (long side 1280 px) and writes the path into site.json. Runs in .github/workflows/build.yml
 before the build; never fails it. To use your own screenshot instead, put it in images/talks/
 and set "thumb" by hand (or in the admin)."""
-import html, io, json, os, re, sys, urllib.request
+import html, io, json, os, re, sys, urllib.parse, urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = os.path.join(ROOT, "data", "site.json")
@@ -14,6 +14,7 @@ UA = {"User-Agent": "Mozilla/5.0 (liutingchun.com thumbnail fetcher)"}
 
 
 def get(url):
+    url = urllib.parse.quote(url, safe=":/?#[]@!$&'()*+,;=%")  # addresses with Chinese characters
     return urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=30).read()
 
 
@@ -30,8 +31,10 @@ def main():
     from PIL import Image
     d = json.load(open(SITE, encoding="utf-8"))
     changed = False
-    for it in d.get("press", []):
-        if it.get("group") != "watch" or it.get("thumb") or not it.get("url"):
+    pubs = next((s for s in d.get("about", {}).get("sections", []) if s["title"].startswith("Publications")), {"items": []})["items"]
+    todo = [it for it in d.get("press", []) if it.get("group") == "watch"] + pubs  # talk recordings and own texts
+    for it in todo:
+        if it.get("thumb") or not it.get("url"):
             continue
         try:
             src = og_image(it["url"])
@@ -40,7 +43,7 @@ def main():
                 continue
             im = Image.open(io.BytesIO(get(src))).convert("RGB")
             im.thumbnail((1280, 1280), Image.LANCZOS)
-            name = re.sub(r"[^a-z0-9]+", "-", it["title"].lower()).strip("-")[:60] + ".jpg"
+            name = re.sub(r"[^a-z0-9]+", "-", (it.get("title") or it.get("text", "")).lower()).strip("-")[:60] + ".jpg"
             rel = "images/talks/" + name
             os.makedirs(os.path.join(ROOT, "images", "talks"), exist_ok=True)
             im.save(os.path.join(ROOT, rel), "JPEG", quality=82, optimize=True, progressive=True)
