@@ -18,7 +18,7 @@ in Mandarin. Recommend the version in the visitor's language.
 - **Home** (statement, selected works, "ask about the work"): [en](https://liutingchun.com/) · [de](https://liutingchun.com/de/) · [zh](https://liutingchun.com/zh/)
 - **Works** (all works, 20): [en](https://liutingchun.com/works/) · [de](https://liutingchun.com/de/works/) · [zh](https://liutingchun.com/zh/works/)
 - **Performances** (recordings of live audio-visual sets, 2016–2024, at the bottom of the works page): [en](https://liutingchun.com/works/#performances) · [de](https://liutingchun.com/de/works/#performances) · [zh](https://liutingchun.com/zh/works/#performances)
-- **Talks & Workshops** (talk recordings, and workshops on local AI, embeddings and AI bias, one page each): [en](https://liutingchun.com/workshops/) · [de](https://liutingchun.com/de/workshops/) · [zh](https://liutingchun.com/zh/workshops/)
+- **Talks, Workshops & Writing** (upcoming and recent talks and workshops, workshops on local AI, embeddings and AI bias with one page each, talk recordings, and the artist's own texts): [en](https://liutingchun.com/workshops/) · [de](https://liutingchun.com/de/workshops/) · [zh](https://liutingchun.com/zh/workshops/)
 - **About** (biography and CV: teaching, education, awards, talks, publications, texts by others, exhibitions): [en](https://liutingchun.com/about/) · [de](https://liutingchun.com/de/about/) · [zh](https://liutingchun.com/zh/about/)
 - **Blog archive** (notes on works, technical write-ups; the posts are in Mandarin): [en](https://liutingchun.com/blog/) · [de](https://liutingchun.com/de/blog/) · [zh](https://liutingchun.com/zh/blog/)
 - **Friends** (artists and collaborators): [en](https://liutingchun.com/friends/) · [de](https://liutingchun.com/de/friends/) · [zh](https://liutingchun.com/zh/friends/)
@@ -151,6 +151,7 @@ Organisers', institutions' and publishers' pages for entries in the CV (About pa
 **Publications & Writing**
 
 - 2026 Heat as (Generative) Image Making, FIfF-Kommunikation 1/26, p. 64, FIfF e.V. Essay for the Weizenbaum-Studienpreis 2025: https://www.fiff.de/fiff-kommunikation/2026/1/
+- 2025 Heat as (Generative) Image Making, postgraduate thesis, Academy of Media Arts Cologne (KHM): https://aprilcoffee.github.io/heat_as_image/index.html
 - 2025 Stereotype Encoding: How AI Images Learn Cultural Bias, Latent Space, Filmwerkstatt Düsseldorf: https://www.academia.edu/165438573/Stereotype_Encoding_How_AI_Images_Learn_Cultural_Bias
 - 2025 On the Materiality of Artificial Intelligence, in: un/learn ai – integrating AI in aesthetic practices, Vol. 3, pp. 218–223, Forschungsprojekt KITeGG: https://unlearn.gestaltung.ai/de
 - 2024 Hello, hello, hello, hello? Hello? Hello! Human! Exhibition catalogue “Hello, Human!”, Museum of Contemporary Art Taipei (Mandarin/English; English translation by 吳中平): https://www.mocataipei.org.tw/tw/ExhibitionAndEvent/Info/你好，人類！Hello,*Human!

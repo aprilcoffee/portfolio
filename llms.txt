@@ -12,7 +12,7 @@ Areas: Critical artificial intelligence, Generative AI, Artistic research on AI,
 - [About / CV](https://liutingchun.com/about/): biography, teaching, exhibitions, talks, publications, texts by others
 - [Blog Archive](https://liutingchun.com/blog/): texts and technical notes (in Mandarin)
 - [Performances](https://liutingchun.com/works/#performances): recordings of live audio-visual sets, 2016–2024 (on the works page)
-- [Talks & Workshops](https://liutingchun.com/workshops/): talk recordings, and workshops on local AI, embeddings and AI bias
+- [Talks, Workshops & Writing](https://liutingchun.com/workshops/): upcoming and recent dates, workshops on local AI, embeddings and AI bias, talk recordings and the artist's own texts
 - [Cited and discussed](https://liutingchun.com/about/#texts): texts by others that cite or discuss the work, on the About page
 
 The site is also available in Traditional Chinese (https://liutingchun.com/zh/).
