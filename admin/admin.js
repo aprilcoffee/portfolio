@@ -234,6 +234,7 @@
       field('Credits（每行一條）', w, 'credits', { area: true }),
       lines('連結（每行：名稱 | 網址）', w, 'links', ['label', 'url']),
       field('封面圖（留空＝用第一張圖）', w, 'cover', { after: drawThumbs }),
+      field('分享縮圖（貼到臉書時的圖；會自動裁成 1200×630 並加上標題；留空＝用封面）', w, 'share_image'),
       h('label', {}, ['圖片（每行一個網址或 images/… 路徑）', imagesTa]),
       h('div', { className: 'actions' }, [btn('上傳圖片到 GitHub…', function () { upload.click(); }, 'sm'), upStatus, upload]),
       thumbs

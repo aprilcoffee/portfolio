@@ -10,6 +10,7 @@ under de/ and Traditional Chinese under zh/ (the blog posts are not translated).
 """
 import base64
 import datetime
+import glob
 import hashlib
 import html
 import json
@@ -153,6 +154,9 @@ OG_W = 1200
 
 def og_image(u):
     rel = (u or "").lstrip("/")
+    if _PIL is not None and rel.startswith("images/_og/") and os.path.exists(os.path.join(ROOT, rel)):
+        with _PIL.open(os.path.join(ROOT, rel)) as im:
+            return abs_url(rel), im.size[0], im.size[1]
     if _PIL is None or not re.match(r"^images/(?!_w/|_og/).+\.(jpe?g|png|webp)$", rel, re.I):
         return asset_abs(u), 0, 0
     src = os.path.join(ROOT, rel)
@@ -177,6 +181,90 @@ def og_image(u):
     except OSError:
         return asset_abs(u), 0, 0
     return abs_url(orel), w, h
+
+
+# share cards for works and workshops: the cover cut to 1200x630 with the title on a soft dark band
+# (images/_og/cards/<slug>-<hash>.jpg; a new title or cover gives a new file name, so Facebook fetches it again)
+_card_fonts = {}
+
+
+def _card_font(name, size):
+    key = (name, size)
+    if key not in _card_fonts:
+        from fontTools.ttLib import TTFont  # Minipax ships as woff2; Pillow needs plain TrueType
+        import io
+        f = TTFont(os.path.join(ROOT, "assets", "fonts", name))
+        f.flavor = None
+        b = io.BytesIO()
+        f.save(b)
+        b.seek(0)
+        from PIL import ImageFont
+        _card_fonts[key] = ImageFont.truetype(b, size)
+    return _card_fonts[key]
+
+
+def og_card(u, title, sub, slug):
+    rel = (u or "").lstrip("/")
+    if _PIL is None or not re.match(r"^images/(?!_w/|_og/).+\.(jpe?g|png|webp)$", rel, re.I):
+        return u
+    import hashlib
+    src = os.path.join(ROOT, rel)
+    try:
+        stamp = "%s|%s|%s|%d|card2" % (rel, title, sub, os.path.getsize(src))
+    except OSError:
+        return u
+    crel = "images/_og/cards/%s-%s.jpg" % (slug, hashlib.md5(stamp.encode("utf-8")).hexdigest()[:8])
+    cpath = os.path.join(ROOT, crel)
+    if os.path.exists(cpath):
+        return crel
+    try:
+        from PIL import ImageDraw
+        _card_font("Minipax-Bold.woff2", 60)
+    except Exception:  # no fontTools / brotli: share the plain cover instead
+        return u
+    try:
+        with _PIL.open(src) as im:
+            im = im.convert("RGB")
+            W, H = 1200, 630
+            s = max(W / im.size[0], H / im.size[1])
+            im = im.resize((max(W, round(im.size[0] * s)), max(H, round(im.size[1] * s))), _PIL.LANCZOS)
+            x = (im.size[0] - W) // 2
+            y = min(max(0, round(im.size[1] * 0.45 - H / 2)), im.size[1] - H)  # a little above the middle
+            im = im.crop((x, y, x + W, y + H))
+        shade = _PIL.new("L", (1, H))
+        for yy in range(H):  # transparent at the top, dark at the bottom
+            t = max(0.0, (yy - H * 0.45) / (H * 0.55))
+            shade.putpixel((0, yy), int(225 * t ** 1.3))
+        black = _PIL.new("RGB", (W, H), (12, 12, 12))
+        im = _PIL.composite(black, im, shade.resize((W, H)))
+        d = ImageDraw.Draw(im)
+        size, lines = 64, [title]
+        while size >= 40:  # wrap the title into at most two lines, smaller if needed
+            font = _card_font("Minipax-Bold.woff2", size)
+            words, lines, cur = title.split(), [], ""
+            for wd in words:
+                tryl = (cur + " " + wd).strip()
+                if d.textlength(tryl, font=font) <= W - 120 or not cur:
+                    cur = tryl
+                else:
+                    lines.append(cur)
+                    cur = wd
+            lines.append(cur)
+            if len(lines) <= 2 and all(d.textlength(l, font=font) <= W - 120 for l in lines):
+                break
+            size -= 4
+        small = _card_font("Minipax-Regular.woff2", 28)
+        y0 = H - 60 - 56 - len(lines) * int(size * 1.12)
+        for i, l in enumerate(lines):
+            d.text((60, y0 + i * int(size * 1.12)), l, font=font, fill=(255, 255, 255))
+        d.text((62, H - 60 - 30), sub, font=small, fill=(225, 225, 225))
+        os.makedirs(os.path.dirname(cpath), exist_ok=True)
+        for old in glob.glob(os.path.join(ROOT, "images", "_og", "cards", slug + "-*.jpg")):
+            os.remove(old)
+        im.save(cpath, "JPEG", quality=86, optimize=True, progressive=True)
+    except OSError:
+        return u
+    return crel
 
 
 def img(u, w, alt="", cls="", lazy=True, sizes=None):
@@ -897,7 +985,8 @@ for L in LANGS:
                              else "https://www.youtube-nocookie.com/embed/%s" % vid[1]),
                 "inLanguage": HREFLANG[L], "creator": {"@type": "Person", "name": S["name"], "url": abs_url(P)}}.items() if v})
         page(P + "works/%s/" % w["slug"], w["title"] + (" " + w["title_zh"] if w.get("title_zh") else ""), desc, body,
-             image=cover_of(w), og_type="article", ld=lds, section="works", lang=L,
+             image=og_card(w.get("share_image") or cover_of(w), w["title"], "Ting-Chun Liu · %s" % w.get("year", ""), w["slug"]),
+             og_type="article", ld=lds, section="works", lang=L,
              alts=each("works/%s/" % w["slug"]))
 
     def press_rows(group):
@@ -1007,7 +1096,7 @@ for L in LANGS:
             '<div class="held"><h2 class="mono">%s</h2><p>%s</p></div>' % (esc(u["held"]), "<br>".join(linkify(h) for h in held.split("\n") if h.strip())) if held else "",
             contact, plates, pager(shops, i, P + "workshops/%s/", "title", u["nav"]["workshops"]))
         desc = summary(tr(x, "summary", L) or text, 100 if L == "zh" else 155, words=L != "zh")
-        page(P + "workshops/%s/" % x["slug"], tr(x, "title", L), desc, body, image=pics[0] if pics else None, og_type="article",
+        page(P + "workshops/%s/" % x["slug"], tr(x, "title", L), desc, body, image=og_card(x.get("share_image") or pics[0], x["title"], "Workshop · Ting-Chun Liu", "workshop-" + x["slug"]) if (x.get("share_image") or pics) else None, og_type="article",
              ld={k: v for k, v in {"@context": "https://schema.org", "@type": "CreativeWork", "genre": "Workshop", "name": tr(x, "title", L),
                  "description": desc, "url": abs_url(P + "workshops/%s/" % x["slug"]), "inLanguage": HREFLANG[L],
                  "image": asset_abs(pics[0]) if pics else None,
