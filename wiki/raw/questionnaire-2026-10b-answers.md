@@ -5,7 +5,7 @@ Answers given by Ting-Chun Liu on 25 October 2026 to questions visitors ask the 
 
 1. Favourite ice cream: sea salt (海鹽).
 3. Favourite city: Cologne.
-4. Reading at the moment: Vilém Flusser.
+4. Reading at the moment: Vilém Flusser (later added: and Harun Farocki).
 5. Outside work: plays Hearthstone.
 7. A quote he likes, from Sol LeWitt (he remembered it as "a flower painted is not a flower, a line drawn is a line"); the attested wording is "Obviously a drawing of a person is not a real person, but a drawing of a line is a real line."
 8. Why AI: he started by playing with natural language processing (NLP); in 2022 he used the earliest DALL·E and found the idea of combining text and images interesting.

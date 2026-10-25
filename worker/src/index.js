@@ -38,6 +38,8 @@ How to answer:
 - Nothing private: no address, phone number, health, family, relationships or finances. If asked about private life, say kindly that this is private and turn to the work.
 - Light personal questions (a favourite flavour, a city, what Ting-Chun reads or plays) are welcome: answer from the knowledge base when the answer is there (see the FAQ). When it is not, answer playfully without inventing a fact, and you may answer with something Ting-Chun has written or made instead; that is his own wish.
 - You are an AI; if asked, say so.
+- If the look_up tool is offered: use it only when a question needs live, current information that the knowledge base cannot hold (the weather somewhere now, today's news, whether something is open). Do not use it for anything about Ting-Chun, his works or his ideas, and not for general knowledge. Most questions need no look-up. After a look-up, answer briefly, say lightly that you looked it up, and, if it fits, turn back to the work.
+- Reading recommendations: when someone asks what to read about a theme, suggest one or two texts from Ting-Chun's seminar reading list (in the knowledge base) that fit the question, with a sentence on why; never dump the whole list.
 
 Knowledge base (a wiki written from the artist's own website; each page is in a <page> tag):
 
@@ -79,6 +81,23 @@ const TOOLS = [{
     },
   },
 }];
+
+// A small web look-up for questions that need live information (weather, today's news, current facts).
+// Offered only when SEARCH_MODEL is set (wrangler.toml); the model may call it at most once per question,
+// and never for facts about Ting-Chun, which come only from the knowledge base.
+const LOOKUP = {
+  type: "function",
+  function: {
+    name: "look_up",
+    description: "Look something up on the web. Only for questions that need current, live information the knowledge base cannot have (weather, today's news, opening hours, a recent public event). Never for anything about Ting-Chun Liu or his work, and not for general knowledge you already have.",
+    parameters: {
+      type: "object",
+      properties: { query: { type: "string", description: "A short web search query in the visitor's language" } },
+      required: ["query"],
+      additionalProperties: false,
+    },
+  },
+};
 
 // The only URLs the chat may link to: those written in the knowledge base.
 const norm = (u) => u.replace(/[)\].,;:!?。，]+$/, "").replace(/\/$/, "");
@@ -161,11 +180,14 @@ export default {
         // Second system message (after the cached prefix): the language of the page the
         // visitor is on, so link titles do not drift into another language.
         const convo = [{ role: "system", content: SYSTEM }, { role: "system", content: pageNote(body.lang) }, ...messages];
-        let linksSent = false;
-        // Round 1 may end in the suggest_links call with little or no text; if so, round 2
-        // asks for the written answer (tools disabled), so the visitor always gets both.
-        for (let round = 0; round < 2; round++) {
-          const r = await streamRound(client, { ...base, messages: convo, tool_choice: round ? "none" : "auto" },
+        let linksSent = false, searched = false, forceText = false;
+        // A round may end in tool calls with little or no text. A look_up call (at most one per
+        // question) is answered with a short web result and the model continues; after a
+        // suggest_links call alone, the next round asks for the written answer (tools disabled),
+        // so the visitor always gets both.
+        for (let round = 0; round < 3; round++) {
+          const tools = env.SEARCH_MODEL ? [...TOOLS, LOOKUP] : TOOLS;
+          const r = await streamRound(client, { ...base, tools, messages: convo, tool_choice: forceText ? "none" : "auto" },
                                       async (t) => { text += t; await send({ t }); if (gone) throw new Gone(); });
           log.tokensIn += r.usage?.prompt_tokens || 0;
           log.tokensOut += r.usage?.completion_tokens || 0;
@@ -176,10 +198,21 @@ export default {
             if (links.length) { await send({ links }); linksSent = true; log.links = links; }
             if (gone) throw new Gone();
           }
-          if (text.trim() || !r.calls.length) break;
-          convo.push({ role: "assistant", content: null, tool_calls: r.calls.map((c) => ({
+          const lookups = r.calls.filter((c) => c.name === "look_up");
+          if ((text.trim() && !lookups.length) || !r.calls.length) break;
+          convo.push({ role: "assistant", content: text.trim() ? text : null, tool_calls: r.calls.map((c) => ({
             id: c.id, type: "function", function: { name: c.name, arguments: c.args } })) });
-          for (const c of r.calls) convo.push({ role: "tool", tool_call_id: c.id, content: "Shown to the visitor." });
+          for (const c of r.calls) {
+            let content = "Shown to the visitor.";
+            if (c.name === "look_up") {
+              if (searched) content = "Already looked up once for this question; answer now with what you have.";
+              else content = (await lookUp(client, env, c.args, log)) || "No web result. Answer from what you know and say that you could not check it.";
+              searched = true;
+            }
+            convo.push({ role: "tool", tool_call_id: c.id, content });
+          }
+          if (!lookups.length) forceText = true;
+          if (gone) throw new Gone();
         }
         if (!text.trim()) { log.status = "error"; await send({ error: "error" }); }
       } catch (err) {
@@ -212,6 +245,29 @@ function pageNote(lang) {
     `Write every suggest_links title in that same answer language, never in another one: ` +
     `in English use "Works", "About", "Performance", "Blog", "Friends", "Home" or the work title; ` +
     `do not copy German or Chinese labels such as "Werke", "Über mich", "作品", "關於" unless the answer itself is in German or Chinese.`;
+}
+
+// The web look-up behind the look_up tool: one short, non-streamed answer from a search model.
+async function lookUp(client, env, args, log) {
+  let query = "";
+  try { query = String(JSON.parse(args || "{}").query || "").slice(0, 200); } catch {}
+  if (!query) return null;
+  try {
+    const r = await client.chat.completions.create({
+      model: env.SEARCH_MODEL,
+      web_search_options: { search_context_size: "low" },
+      messages: [{ role: "user", content: `Answer in at most three sentences, with today's facts and no links: ${query}` }],
+    });
+    log.tokensIn += r.usage?.prompt_tokens || 0;
+    log.tokensOut += r.usage?.completion_tokens || 0;
+    console.log(JSON.stringify({ lookup: query, model: env.SEARCH_MODEL }));
+    // links are not shown to visitors (only knowledge-base URLs are), so keep the link text and drop the URLs
+    return String(r.choices?.[0]?.message?.content || "").replace(/\[([^\]]*)\]\([^)]*\)/g, "$1")
+      .replace(/\(?https?:\/\/[^\s)]+\)?/g, "").replace(/\(\s*\)/g, "").trim().slice(0, 800) || null;
+  } catch (err) {
+    console.error("look_up: " + (err instanceof OpenAI.APIError ? `${err.status} ${err.message}` : String(err)));
+    return null;
+  }
 }
 
 // One streamed completion: forwards text as it arrives, collects tool calls.

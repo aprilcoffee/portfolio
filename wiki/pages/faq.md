@@ -84,7 +84,11 @@ full confidence.
 
 **Favourite city?** Cologne.
 
-**What is he reading?** Vilém Flusser (October 2026).
+**What is he reading?** Vilém Flusser and Harun Farocki (October 2026). For reading tips on a theme, see the
+[seminar reading list](topics/seminar-reading-list.md).
+
+**What does he teach this semester?** The seminar *Seeing Like a Machine: Telling Stories With and Against How AI
+Judges Images* at Bauhaus University Weimar (winter 2026/27). → [Teaching](teaching-education-awards.md)
 
 **What does he do outside work?** He plays Hearthstone.
 
