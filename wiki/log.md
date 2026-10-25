@@ -125,3 +125,7 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 
 ## [2026-10-25] ingest | »_ell_ Worl_!« paper (PDF from the artist)
 - texts/ell-worl-the-rule-becomes-the-author.md (new): co-authors Heck, Liu, Kuhn, Rubini, Nakotte; Beatnik esolang; authorship
+
+## [2026-10-25] ingest | token slides, GA notebook (artist)
+- works/51-ways-to-spell-the-image-giraffe.md: the pipeline hijack, CLIP / Vision Transformer
+- works/sixteen-tokens-for-a-cave.md: genetic algorithm method, prompt reconstruction, adversarial poetry
