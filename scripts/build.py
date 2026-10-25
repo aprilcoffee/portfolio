@@ -146,6 +146,39 @@ def srcset(u):
     return ", ".join(out + ["%s %dw" % (url(rel), full)]) if out else ""
 
 
+# share images (og:image): a JPEG of at most 1200px for each local photo (images/_og/…jpg), because LINE,
+# some messengers and older Facebook previews do not show WebP; returns (absolute url, width, height)
+OG_W = 1200
+
+
+def og_image(u):
+    rel = (u or "").lstrip("/")
+    if _PIL is None or not re.match(r"^images/(?!_w/|_og/).+\.(jpe?g|png|webp)$", rel, re.I):
+        return asset_abs(u), 0, 0
+    src = os.path.join(ROOT, rel)
+    if re.search(r"\.jpe?g$", rel, re.I):  # a JPEG that is already small enough is shared as it is
+        try:
+            with _PIL.open(src) as im:
+                if im.size[0] <= OG_W and im.size[1] <= OG_W:
+                    return asset_abs(u), im.size[0], im.size[1]
+        except OSError:
+            return asset_abs(u), 0, 0
+    orel = "images/_og/%s.jpg" % os.path.splitext(rel[len("images/"):])[0]
+    opath = os.path.join(ROOT, orel)
+    try:
+        if not os.path.exists(opath) or (os.path.getmtime(opath) < os.path.getmtime(src) and not os.environ.get("GITHUB_ACTIONS")):
+            with _PIL.open(src) as im:
+                im = im.convert("RGB")
+                im.thumbnail((OG_W, OG_W), _PIL.LANCZOS)
+                os.makedirs(os.path.dirname(opath), exist_ok=True)
+                im.save(opath, "JPEG", quality=84, optimize=True, progressive=True)
+        with _PIL.open(opath) as im:
+            w, h = im.size
+    except OSError:
+        return asset_abs(u), 0, 0
+    return abs_url(orel), w, h
+
+
 def img(u, w, alt="", cls="", lazy=True, sizes=None):
     fb = asset(u)
     ss = srcset(u)
@@ -336,7 +369,7 @@ SHOWN_LANGS = [l for l in LANGS if l not in HIDDEN_LANGS]
 LP = {"en": "", "de": "de/", "zh": "zh/"}
 HREFLANG = {"en": "en", "de": "de", "zh": "zh-Hant"}
 LOCALE = {"en": "en_US", "de": "de_DE", "zh": "zh_TW"}
-LANG_NAME = {"en": "EN", "de": "DE", "zh": "中文"}
+LANG_NAME = {"en": "EN", "de": "DE", "zh": "繁中"}
 
 UI = {
     "en": {
@@ -503,7 +536,7 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
     u = UI[lang]
     page_title = "%s — %s" % (title, S["name"]) if title else "%s %s" % (S["name"], S.get("name_zh", ""))
     canonical = abs_url(path)
-    image = asset_abs(image or S.get("og_image") or "")
+    image, img_w, img_h = og_image(image or S.get("og_image") or "")
     nav = "".join('<a href="%s"%s><span>%s</span></a>' % (
         url(LP[lang] + s + "/"), ' class="on" aria-current="page"' if s == section else "", esc(u["nav"][s]))
         for s in NAV)
@@ -533,11 +566,12 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
 <link rel="canonical" href="{c}">
 {hreflang}<meta property="og:site_name" content="{name}">
 <meta property="og:locale" content="{locale}">
-<meta property="og:type" content="{ogt}">
+{locale_alt}<meta property="og:type" content="{ogt}">
 <meta property="og:title" content="{t}">
 <meta property="og:description" content="{d}">
 <meta property="og:url" content="{c}">
 <meta property="og:image" content="{img}">
+{img_meta}<meta property="og:image:alt" content="{t}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{t}">
 <meta name="twitter:description" content="{d}">
@@ -585,6 +619,8 @@ def layout(path, title, desc, body, image=None, og_type="website", lang="en", ld
            t=esc(page_title), d=esc(desc or tr(S, "description", lang)), name=esc(S["name"]), zh=esc(S.get("name_zh", "")),
            c=esc(canonical), hreflang=hreflang, ogt=og_type, img=esc(image), icon=url("assets/favicon-32.png"), ico=url("favicon.ico"), touch=url("assets/apple-touch-icon.png"), manifest=url("site.webmanifest"),
            css=versioned("assets/style.css"), fonts=versioned("assets/fonts/fonts.css"), fonts_g=versioned("assets/fonts/fonts-google.css"), font_r=url("assets/fonts/Minipax-Regular.woff2"), font_b=url("assets/fonts/Minipax-Bold.woff2"), js=versioned("assets/site.js"), fx=versioned("assets/effects.js"), feed=url("blog/feed.xml"),
+           img_meta=('<meta property="og:image:width" content="%d">\n<meta property="og:image:height" content="%d">\n' % (img_w, img_h)) if img_w else "",
+           locale_alt="".join('<meta property="og:locale:alternate" content="%s">\n' % LOCALE[l] for l in (alts or {}) if l != lang),
            ga=ga, ld=ld_tag, home=url(LP[lang]), imp=url("impressum/"), dsg=url("datenschutz/"), nav=nav, foot_nav=foot_nav, more=u["more"], switch=switch,
            menu=u["menu"], language=u["language"], privacy=u["privacy"], email=esc(S["email"]), links=links,
            year=datetime.date.today().year, full=" full" if full else "", body=body,
