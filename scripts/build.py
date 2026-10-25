@@ -471,7 +471,7 @@ UI = {
         "selected": "Selected works", "all_works": "All works (%d) →",
         "works_lead": "Installations, performances, internet art and artistic research, %s–%s.",
         "works_desc": "Selected works by %s, %s–%s: installations, performances, internet art and artistic research on AI.",
-        "Topics": "Topics", "Email": "Email", "contact_note": "I host workshops about local AI usage, embedding practice, and understanding biases in AI models. Workshop and lecture requests: please get in touch by email.", "work_by": "%s by %s, %s.",
+        "Topics": "Topics", "Email": "Email", "contact_note": "Workshops, talks and collaborations: please get in touch by email.", "work_by": "%s by %s, %s.",
         "tags": {"works": "Critical AI, generative art, artistic research, cybernetics, internet art, audio-visual performance",
                  "about": "Critical AI, generative art, artistic research, cybernetics, internet art, audio-visual performance",
                  "workshops": "local AI, embedding practice, AI bias, workshops, talks, talk recordings"},
@@ -495,7 +495,7 @@ UI = {
         "ask_ex": ["What is Latent Heat Generation about?", "Why can “giraffe” be spelled in 51 ways?", "Which of your works deal with AI?", "What are you working on now?"],
         "ask_note": "caution: AI may create random correlations",
         "ask_more": "Privacy",
-        "upcoming": "Upcoming", "recent": "Recent", "cv_all": "Full list in the CV", "writing": "Writing",
+        "read_at": "Read on %s", "upcoming": "Upcoming", "recent": "Recent", "cv_all": "Full list in the CV", "writing": "Writing",
         "mt_note": "Parts of the German translation were made with AI and may contain errors.",
         "mt_ok": "OK",
         "ask_err": "Sorry, that didn’t work. Please try again in a moment, or write to %s.",
@@ -508,7 +508,7 @@ UI = {
         "selected": "Ausgewählte Arbeiten", "all_works": "Alle Arbeiten (%d) →",
         "works_lead": "Installationen, Performances, Netzkunst und künstlerische Forschung, %s–%s.",
         "works_desc": "Ausgewählte Arbeiten von %s, %s–%s: Installationen, Performances, Netzkunst und künstlerische Forschung zu KI.",
-        "Topics": "Themen", "Email": "E-Mail", "contact_note": "Ich gebe Workshops zu lokaler KI-Nutzung, Embedding-Praxis und zum Verständnis von Biases in KI-Modellen. Anfragen für Workshops und Vorträge bitte per E-Mail.", "work_by": "%s von %s, %s.",
+        "Topics": "Themen", "Email": "E-Mail", "contact_note": "Workshops, Vorträge und Kooperationen: Anfragen bitte per E-Mail.", "work_by": "%s von %s, %s.",
         "tags": {"works": "Kritische KI, generative Kunst, künstlerische Forschung, Kybernetik, Netzkunst, audiovisuelle Performance",
                  "about": "Kritische KI, generative Kunst, künstlerische Forschung, Kybernetik, Netzkunst, audiovisuelle Performance",
                  "workshops": "lokale KI, Embedding-Praxis, KI-Bias, Workshops, Vorträge, Vortragsaufzeichnungen"},
@@ -532,7 +532,7 @@ UI = {
         "ask_ex": ["Worum geht es in Latent Heat Generation?", "Warum lässt sich „giraffe“ auf 51 Arten schreiben?", "Welche Ihrer Arbeiten beschäftigen sich mit KI?", "Woran arbeiten Sie gerade?"],
         "ask_note": "Achtung: KI kann zufällige Zusammenhänge erzeugen · %s",
         "ask_more": "Datenschutz",
-        "upcoming": "Demnächst", "recent": "Zuletzt", "cv_all": "Vollständige Liste im Lebenslauf", "writing": "Texte",
+        "read_at": "Lesen auf %s", "upcoming": "Demnächst", "recent": "Zuletzt", "cv_all": "Vollständige Liste im Lebenslauf", "writing": "Texte",
         "mt_note": "Bitte beachten Sie: Teile der deutschen Übersetzung wurden mit KI erstellt und können Fehler enthalten.",
         "mt_ok": "Verstanden",
         "ask_err": "Das hat leider nicht geklappt. Bitte gleich noch einmal versuchen oder an %s schreiben.",
@@ -545,7 +545,7 @@ UI = {
         "selected": "精選作品", "all_works": "全部作品（%d）→",
         "works_lead": "裝置、表演、網路藝術與藝術研究，%s–%s。",
         "works_desc": "%s的精選作品，%s–%s：裝置、表演、網路藝術，以及關於人工智慧的藝術研究。",
-        "Topics": "主題", "Email": "信箱", "contact_note": "工作坊主題包含：在自己的電腦上使用人工智慧、嵌入向量實作，以及辨識人工智慧模型中的偏見。工作坊與講座邀約，歡迎來信。", "work_by": "%s，%s，%s。",
+        "Topics": "主題", "Email": "信箱", "contact_note": "工作坊、講座與合作邀約，歡迎來信。", "work_by": "%s，%s，%s。",
         "tags": {"works": "批判性人工智慧、生成藝術、藝術研究、模控論、網路藝術、音像演出",
                  "about": "批判性人工智慧、生成藝術、藝術研究、模控論、網路藝術、音像演出",
                  "workshops": "本地端人工智慧、嵌入向量實作、人工智慧偏見、工作坊、講座、講座錄影"},
@@ -569,7 +569,7 @@ UI = {
         "ask_ex": ["《Latent Heat Generation》在談什麼？", "為什麼「giraffe」可以有 51 種拼法？", "你有哪些作品跟人工智慧有關？", "你現在在做什麼？"],
         "ask_note": "注意：人工智慧可能產生隨機的關聯性",
         "ask_more": "隱私權",
-        "upcoming": "即將舉行", "recent": "近期場次", "cv_all": "完整列表見關於頁", "writing": "書寫",
+        "read_at": "在 %s 閱讀", "upcoming": "即將舉行", "recent": "近期場次", "cv_all": "完整列表見關於頁", "writing": "書寫",
         "mt_note": "請注意：部分德文為人工智慧翻譯，可能會有錯誤。",
         "mt_ok": "知道了",
         "ask_err": "抱歉，暫時無法回答。請稍後再試，或寫信至 %s。",
@@ -913,14 +913,14 @@ for L in LANGS:
 
     SHORT_HOST = {"thephotographersgallery.org.uk": "The Photographers’ Gallery"}
     # each performance record and talk recording opens on Vimeo / YouTube / the host's site in a new tab
-    def watch_card(href, thumb, title, sub, note, title_lang="", ph="", more=""):
+    def watch_card(href, thumb, title, sub, note, title_lang="", ph="", more="", verb="watch"):
         v = video_id(href)
         where = "YouTube" if v and v[0] == "youtube" else "Vimeo" if v else urlparse(href).netloc.replace("www.", "")
         where = SHORT_HOST.get(where, where)
         pic = img(thumb, 1100, title) if thumb else '<span class="ph">%s</span>' % esc(ph or title)
         return ('<div class="perf-item"><a class="perf-card" href="%s" target="_blank" rel="noopener"><div class="thumb">%s'
                 '<span class="watch">%s</span></div><div class="cap"><h3%s>%s</h3>%s%s</div></a>') % (
-            esc(href), pic, esc(u["watch"] % where), title_lang, esc(title),
+            esc(href), pic, esc(u[verb] % where), title_lang, esc(title),
             '<p class="by mono">%s</p>' % esc(sub) if sub else "", '<p>%s</p>' % esc(note) if note else "") + (
             # an event page next to the recording (a link can't sit inside the card's own link)
             '<a class="perf-more mono" href="%s" target="_blank" rel="noopener">%s ↗</a>' % (esc(more), esc(u["event"])) if more else "") + "</div>"
@@ -1098,14 +1098,19 @@ for L in LANGS:
 
     # the artist's own texts, also from the CV ("Publications & Writing"), so they are entered once
     pubs = next((s_ for s_ in D["about"]["sections"] if s_["title"].startswith("Publications")), {"items": []})["items"]
-    writing_html = ('<section class="sub-sec ev" id="writing"><header class="sub-head"><h2>%s</h2></header><div class="ev-list">%s</div></section>' % (
-        esc(u["writing"]), ev_rows(pubs, False))) if pubs else ""
+    # each text as a card with the preview image of its page (CV "thumb", fetched by scripts/fetch-talk-thumbs.py)
+    writing_html = ('<section class="sub-sec" id="writing"><header class="sub-head"><h2>%s</h2></header><div class="perf talks">%s</div></section>' % (
+        esc(u["writing"]), "".join(watch_card(it.get("url") or abs_url(P + "about/") + "#cv-publications-writing", it.get("thumb"), tr(it, "text", L), it.get("year", ""), "",
+                                              ' lang="en"' if L != "en" and not it.get("text_" + L) else "", u["writing"], verb="read_at") for it in pubs))) if pubs else ""
+    jumps = [x for x in (("upcoming", u["upcoming"]) if soon else None, ("recent", u["recent"]) if past else None,
+                         ("talks", u["press_groups"]["watch"]), ("writing", u["writing"]) if pubs else None) if x]
+    jump = '<p class="lead jump">%s</p>' % " · ".join('<a href="#%s">%s ↓</a>' % (i, esc(t)) for i, t in jumps)
 
     talks = [it for it in D.get("press", []) if it.get("group") == "watch" and it.get("url")]
     talk_html = "".join(watch_card(it["url"], it.get("thumb"), it["title"], " · ".join(x for x in (it.get("outlet"), (it.get("date") or "")[:4]) if x),
                                    tr(it, "note", L), ' lang="en"' if L != "en" else "", (it.get("outlet") or "").split(",")[0]) for it in talks)
     page(P + "workshops/", u["nav"]["workshops"], share_text("workshops", L, u["workshops_desc"] % lname(L)),
-         page_head(u["nav"]["workshops"], u["workshops_lead"]) +
+         page_head(u["nav"]["workshops"], u["workshops_lead"]).replace("</header>", jump + "</header>", 1) +
          soon_html +
          ('<div class="grid">%s</div>' % "".join(shop_card(x) for x in shops) if shops else "") +
          past_html +
