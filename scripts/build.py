@@ -333,7 +333,7 @@ def cover_of(w):
     if w.get("cover"):
         return w["cover"]
     if w.get("images"):
-        return w["images"][0]
+        return re.sub(r"\s*\|\s*wide\s*$", "", w["images"][0])
     if w.get("video_thumb"):
         return w["video_thumb"]
     v = video_id(w.get("video"))
@@ -942,19 +942,29 @@ for L in LANGS:
         rows = [(u["Year"], esc(w.get("year"))), (u["Status"], esc(tr(w, "status", L))), (u["Type"], esc(tr(w, "type", L))),
                 (u["Materials"], esc(tr(w, "materials", L))), (u["Topics"], esc(", ".join(wtags))), (u["With"], esc(w.get("collaborators")))]
         rows += [(u["Link"], a(l["url"], esc(l.get("label") or l["url"]))) for l in w.get("links", []) if l.get("url")]
-        ims = w.get("images", [])
+        # an image line may end in " | wide": shown at full width (diagrams, slides), the others in two columns
+        ims = [re.sub(r"\s*\|\s*wide\s*$", "", x) for x in w.get("images", [])]
+        wide = [bool(re.search(r"\|\s*wide\s*$", x)) for x in w.get("images", [])]
         plates = embed(w.get("video"), w.get("video_thumb", ""), w["title"]) + "".join(clip(c, w["title"]) for c in w.get("clips", []))
         moving = w.get("video") or w.get("clips")
         # full-width lead (video, clips or the first photo), then the rest in two masonry
-        # columns so photos of different proportions leave no gaps
-        figs = ["<figure>%s</figure>" % img(im, 1600 if k == 0 else 1000, work_alt(w, L, k + 1, len(ims)))
+        # columns so photos of different proportions leave no gaps; "wide" images break the columns
+        figs = [("<figure>%s</figure>" % img(im, 1600 if k == 0 or wide[k] else 1000, work_alt(w, L, k + 1, len(ims))), wide[k])
                 for k, im in enumerate(ims)]
         if not moving and figs:
-            plates += figs.pop(0).replace("<figure>", '<figure class="hero">', 1)
-        if len(figs) == 1:
-            plates += figs[0].replace("<figure>", '<figure class="hero">', 1)
-        elif figs:
-            plates += '<div class="cols">%s</div>' % "".join(figs)
+            plates += figs.pop(0)[0].replace("<figure>", '<figure class="hero">', 1)
+        group = []
+        for f, is_wide in figs + [(None, True)]:
+            if f is not None and not is_wide:
+                group.append(f)
+                continue
+            if len(group) == 1:
+                plates += group[0].replace("<figure>", '<figure class="hero">', 1)
+            elif group:
+                plates += '<div class="cols">%s</div>' % "".join(group)
+            group = []
+            if f is not None:
+                plates += f.replace("<figure>", '<figure class="hero">', 1)
         text = tr(w, "text", L)
         # a translation may be missing: then the English text is shown, marked as English
         tl = HREFLANG[L] if L == "en" or w.get("text_" + L) else "en"
