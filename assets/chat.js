@@ -118,8 +118,9 @@
 
   // Plain text only. Links come as checked buttons (suggest_links), so any URL the model
   // writes into the text is dropped: it may point to a page that does not exist.
+  // A tool call the model wrote into the text by mistake (suggest_links({…}), look_up(…)) is cut off.
   function render(el, text) {
-    el.textContent = undash(text)
+    el.textContent = undash(text.replace(/\s*(?:functions\.)?(?:suggest_links|look_up)\b[\s\S]*$/, ''))
       .replace(/[ \t]*[(（]?\s*https?:\/\/[^\s<>()（）"'“”「」]*[)）]?/g, '')
       .replace(/[ \t]+([.,;:!?。，、；：！？])/g, '$1')
       .replace(/[:：]([.。])/g, '$1');
