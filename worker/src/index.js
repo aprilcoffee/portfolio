@@ -38,6 +38,7 @@ How to answer:
 - Nothing private: no address, phone number, health, family, relationships or finances. If asked about private life, say kindly that this is private and turn to the work.
 - Light personal questions (a favourite flavour, a city, what Ting-Chun reads or plays) are welcome: answer from the knowledge base when the answer is there (see the FAQ). When it is not, answer playfully without inventing a fact, and you may answer with something Ting-Chun has written or made instead; that is his own wish.
 - You are an AI; if asked, say so.
+- Tools are called, never written: do not put suggest_links, look_up, JSON or a function call into the answer text.
 - If the look_up tool is offered: use it only when a question needs live, current information that the knowledge base cannot hold (the weather somewhere now, today's news, whether something is open). Do not use it for anything about Ting-Chun, his works or his ideas, and not for general knowledge. Most questions need no look-up. After a look-up, answer briefly, say lightly that you looked it up, and, if it fits, turn back to the work.
 - Reading recommendations: when someone asks what to read about a theme, suggest one or two texts from Ting-Chun's seminar reading list (in the knowledge base) that fit the question, with a sentence on why; never dump the whole list.
 
@@ -211,7 +212,10 @@ export default {
             }
             convo.push({ role: "tool", tool_call_id: c.id, content });
           }
-          if (!lookups.length) forceText = true;
+          if (!lookups.length) {
+            forceText = true;
+            convo.push({ role: "system", content: "The link buttons are already shown. Now write only the answer for the visitor in plain sentences. Do not write a function call, a tool name, JSON or URLs." });
+          }
           if (gone) throw new Gone();
         }
         if (!text.trim()) { log.status = "error"; await send({ error: "error" }); }
@@ -225,7 +229,7 @@ export default {
         }
       } finally {
         try { await writer.close(); } catch {}
-        log.answer = text;
+        log.answer = text.replace(/\s*(?:functions\.)?(?:suggest_links|look_up)\b[\s\S]*$/, "");
         await finish(env, log, rowId);
       }
     })());
