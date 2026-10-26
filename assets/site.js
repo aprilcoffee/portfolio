@@ -34,10 +34,29 @@
     }
   }
 
+  // Google Analytics: which videos people open (talk recordings and performance records open in a new
+  // tab, players on work pages start in place). gtag exists unless the visitor turned analytics off.
+  function videoEvent(title, href, section) {
+    var host = '';
+    try { host = new URL(href, location.href).hostname.replace(/^www\./, ''); } catch (e) {}
+    try {
+      if (window.gtag) window.gtag('event', 'video_open', {
+        video_title: (title || '').trim().slice(0, 100), video_host: host, video_section: section, link_url: href
+      });
+    } catch (e) {}
+  }
+  document.addEventListener('click', function (e) {
+    var card = e.target.closest && e.target.closest('.perf-card');
+    if (!card) return;
+    var h = card.querySelector('h3'), sec = card.closest('section[id]');
+    videoEvent(h ? h.textContent : '', card.href, sec ? sec.id : 'videos');
+  });
+
   // Video thumbnails turn into the player on click.
   document.addEventListener('click', function (e) {
     var el = e.target.closest && e.target.closest('.embed.lite');
     if (!el) return;
+    videoEvent((el.getAttribute('aria-label') || document.title).replace(/^[^:：]*[:：]\s*/, ''), el.getAttribute('data-src'), 'work');
     var f = document.createElement('iframe');
     f.src = el.getAttribute('data-src');
     f.allow = 'autoplay; fullscreen; picture-in-picture';
