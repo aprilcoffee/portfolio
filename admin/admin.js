@@ -361,6 +361,7 @@
       ]),
       h('div', { className: 'row' }, [field('資料夾代稱 slug（上傳的圖片放在 images/workshops/<slug>/；只用英文小寫與 -）', x, 'slug'), field('年份 Year', x, 'year')]),
       field('合作 With（例：Leon-Etienne Kühr；留空＝不顯示）', x, 'with'),
+      field('工作坊工具（網址，例：/tools/conditions-for-emotions/；會在工作坊頁顯示「開啟工作坊工具」按鈕，開新分頁；留空＝不顯示）', x, 'tool_url'),
       h('div', { className: 'row' }, [field('一句話介紹 Summary（列表卡片與頁首大字）', x, 'summary', { area: true }), field('一句話 DE', x, 'summary_de', { area: true }), field('一句話 中文', x, 'summary_zh', { area: true })]),
       field('說明文字 English（空一行＝分段；以「# 」開頭＝小標題）', x, 'text', { area: true, cls: 'tall' }),
       field('說明文字 Deutsch（留空＝德文頁顯示英文）', x, 'text_de', { area: true, cls: 'tall' }),
