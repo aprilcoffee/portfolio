@@ -127,6 +127,9 @@
   .getbar a.go{text-decoration:none;display:inline-block}
   .getbar code{background:#fff;border:1px solid var(--track);padding:1px 6px}
   .getbar ol{margin:6px 0 0;padding-left:20px}
+  .getbar .os{margin:8px 0 0}
+  .getbar .os ol{margin:4px 0 0}
+  .getbar .os ol.de{color:var(--muted);margin-top:8px}
   /* footer */
   footer{max-width:1040px;margin:64px auto 0;padding-top:20px;border-top:1px solid var(--track);
     font:11px var(--mono);color:var(--muted);letter-spacing:.04em;
@@ -144,9 +147,26 @@
     <ol>
       <li>Install Ollama: <a href="https://ollama.com/download" target="_blank" rel="noopener">ollama.com/download</a></li>
       <li>In a terminal, pull the two models: <code>ollama pull gemma3:4b</code> and <code>ollama pull embeddinggemma</code></li>
-      <li>Best: download this page and open the file in your browser; it talks to Ollama directly.
-        To use it here online instead, Ollama has to allow this website: start it with
-        <code>OLLAMA_ORIGINS=https://liutingchun.com ollama serve</code></li>
+      <li>Allow the browser to talk to Ollama:
+        <div class="os"><b>Mac</b> in a terminal: <code>launchctl setenv OLLAMA_ORIGINS "*"</code>, then quit and reopen Ollama</div>
+        <div class="os"><b>Windows</b>
+          <ol>
+            <li>Search <b>environment variables</b> in the Start menu</li>
+            <li>Click <i>Edit environment variables for your account</i></li>
+            <li>Click <b>New</b> → Variable name: <code>OLLAMA_ORIGINS</code> · Value: <code>*</code></li>
+            <li>Click OK</li>
+            <li>Reopen Ollama from the Start menu</li>
+          </ol>
+          <ol lang="de" class="de">
+            <li>Im Startmenü nach <b>Umgebungsvariablen</b> suchen</li>
+            <li><i>Umgebungsvariablen für dieses Konto bearbeiten</i> anklicken</li>
+            <li><b>Neu</b> klicken → Variablenname: <code>OLLAMA_ORIGINS</code> · Wert: <code>*</code></li>
+            <li>OK klicken</li>
+            <li>Ollama über das Startmenü neu starten</li>
+          </ol>
+        </div>
+      </li>
+      <li>Download this tool (button above) and open the file in your browser.</li>
     </ol>
   </div>
   <div class="dot"></div>
