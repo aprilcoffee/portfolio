@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conditions for Emotions</title>
+<meta name="description" content="Workshop tool for Conditions for Emotions by Ting-Chun Liu: small language models on your own computer through Ollama.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<style>
+  :root{
+    --paper:#FFFFFF; --ink:#111111; --muted:#8A8A8A;
+    --acc:#6A6A6A; --varc:#111111; --card:#F4F4F4; --track:#E2E2E2;
+    --serif:Georgia,'Cambria',serif;
+    --mono:ui-monospace,Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+       font:16px/1.6 var(--serif);padding:44px 28px 120px}
+  .wrap{max-width:1040px;margin:0 auto}
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--acc);margin-bottom:14px}
+  h1{font:400 30px/1.2 var(--serif);margin:0 0 4px}
+  .sub{color:var(--muted);font-size:13px;margin:0 0 36px;font-family:var(--mono)}
+
+  nav{display:flex;gap:16px;margin-bottom:34px;flex-wrap:wrap}
+  nav button{appearance:none;background:none;border:0;cursor:pointer;padding:0 0 8px;
+    font:13.5px var(--serif);color:var(--muted);border-bottom:2px solid transparent}
+  nav button.on{color:var(--ink);border-bottom-color:var(--acc)}
+  .panel{display:none} .panel.on{display:block}
+
+  label{display:block;font:10px var(--mono);letter-spacing:.18em;text-transform:uppercase;
+        color:var(--muted);margin:0 0 6px}
+  input[type=text],input[type=number],textarea{width:100%;background:#fff;border:1px solid var(--track);
+    color:var(--ink);font:15px/1.5 var(--serif);padding:10px 12px;margin-bottom:16px}
+  textarea{resize:vertical;min-height:170px}
+  textarea.short{min-height:90px}
+  input:focus,textarea:focus{outline:none;border-color:var(--acc)}
+  input[type=number]{width:90px}
+  .go{appearance:none;cursor:pointer;background:var(--ink);color:var(--paper);border:0;
+      font:12px var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:11px 18px}
+  .go:hover{background:var(--acc)}
+  .go.alt{background:none;color:var(--ink);border:1px solid var(--track)}
+  .go.alt:hover{border-color:var(--acc);color:var(--acc)}
+  .row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:6px}
+  .row label{margin:0}
+
+  .toggle{display:flex;margin-bottom:16px}
+  .toggle button{appearance:none;cursor:pointer;background:none;border:1px solid var(--track);
+    font:11px var(--mono);color:var(--muted);padding:8px 14px}
+  .toggle button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+  .out{margin-top:26px;min-height:24px}
+  .m{margin:0 0 12px}
+  .m.clickable{cursor:pointer}
+  .m.clickable:hover .l{color:var(--acc)}
+  .m .t{display:flex;justify-content:space-between;align-items:baseline}
+  .m .l{font:14px var(--serif)} .m .l.tok{font:12.5px var(--mono)}
+  .m .r{font:11px var(--mono);color:var(--muted)}
+  .m .track{height:6px;background:var(--track);margin-top:5px}
+  .m .fill{height:6px;background:var(--acc);transition:width .4s}
+  .note{color:var(--muted);font-style:italic;font-size:13px}
+  .err{color:var(--acc);font-size:13px}
+  .prose{font:15px/1.7 var(--serif);background:var(--card);padding:16px 18px;margin-top:14px;white-space:pre-wrap}
+  .hint{font-size:11.5px;color:var(--muted);margin-top:22px;font-family:var(--mono)}
+
+  /* chat */
+  .chatbox{background:#fff;border:1px solid var(--track);height:300px;overflow-y:auto;
+    padding:14px 16px;margin-bottom:12px}
+  .cl{margin:0 0 10px;font:14.5px/1.55 var(--serif)}
+  .cl.user{color:var(--muted)} .cl.bot{color:var(--ink)}
+  .cl.bot b{color:var(--acc);font-weight:400}
+
+  /* tokens */
+  .chip{display:inline-block;font:13px var(--mono);padding:4px 8px;margin:0 3px 6px 0;
+    background:var(--card);border:1px solid var(--track)}
+  .chip:nth-child(even){background:#fff}
+
+  /* model picker */
+  .picker{display:flex;align-items:baseline;gap:22px;flex-wrap:wrap;margin:0 0 10px}
+  .picker .grp{display:flex;align-items:baseline;gap:8px}
+  .picker label{margin:0;font-size:9.5px;letter-spacing:.16em}
+  select{appearance:none;background:transparent;border:0;border-bottom:1px solid var(--track);
+    color:var(--ink);font:13px var(--mono);padding:2px 18px 3px 2px;cursor:pointer;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='9' height='9'><path d='M1 2.5l3.5 4 3.5-4' fill='none' stroke='%236A6A6A' stroke-width='1.4'/></svg>");
+    background-repeat:no-repeat;background-position:right 2px center}
+  select:hover{border-bottom-color:var(--acc)}
+  select:focus{outline:none;border-bottom-color:var(--acc)}
+  .rec{font:11.5px var(--mono);color:var(--muted);margin:0 0 4px}
+  .rec b{color:var(--acc);font-weight:400}
+  .modnote{font:11.5px var(--mono);color:var(--muted);margin:0 0 34px}
+
+  /* map */
+  svg.map{width:100%;background:#fff;border:1px solid var(--track);touch-action:none;cursor:grab}
+  svg.map:active{cursor:grabbing}
+  svg text{font:11px var(--mono);fill:var(--ink);user-select:none}
+  .nb{margin-top:14px;font-size:13px}
+  .nb span.w{cursor:pointer;border-bottom:1px dotted var(--muted);margin-right:14px;font-family:var(--mono);font-size:12px}
+  .nb span.w:hover{color:var(--acc)}
+
+  /* axis rows */
+  .axhead{display:flex;justify-content:space-between;font:12px var(--mono);color:var(--acc);
+    padding:0 0 8px;margin-top:8px}
+  .axrow{display:flex;align-items:center;gap:14px;margin:0 0 16px}
+  .axrow .w{width:150px;font:14px var(--serif);text-align:right;flex:none}
+  .axrow .tr{position:relative;flex:1;height:6px;background:var(--track)}
+  .axrow .tr::after{content:"";position:absolute;left:50%;top:-4px;width:1px;height:14px;background:var(--track)}
+  .axrow .pt{position:absolute;top:-4px;width:14px;height:14px;border-radius:50%;
+    background:var(--acc);transform:translateX(-50%)}
+  .axrow .v{width:64px;font:11px var(--mono);color:var(--muted);flex:none}
+
+  /* camera */
+  video{width:100%;background:#000;display:block}
+  .camwrap{position:relative;margin-bottom:12px}
+  .camtext{position:absolute;left:0;right:0;bottom:0;background:rgba(0,0,0,.55);color:#fff;
+    font:14px/1.5 var(--serif);padding:10px 14px;white-space:pre-wrap}
+
+  /* names */
+  .nm{margin:0 0 14px}
+  .nm b{font:12px var(--mono);color:var(--varc);font-weight:400}
+  .varhl{color:var(--varc);text-decoration:underline;text-underline-offset:3px}
+
+  /* get-started bar (website copy only) */
+  .getbar{border:1px solid var(--track);background:var(--card);padding:14px 16px;margin:0 0 30px;
+    font:12.5px/1.6 var(--mono);color:var(--ink)}
+  .getbar .row{margin:0 0 8px}
+  .getbar a:not(.go){color:var(--ink)}
+  .getbar a.go{text-decoration:none;display:inline-block}
+  .getbar code{background:#fff;border:1px solid var(--track);padding:1px 6px}
+  .getbar ol{margin:6px 0 0;padding-left:20px}
+  .getbar .os{margin:8px 0 0}
+  .getbar .os ol{margin:4px 0 0}
+  .getbar .os ol.de{color:var(--muted);margin-top:8px}
+  /* footer */
+  footer{max-width:1040px;margin:64px auto 0;padding-top:20px;border-top:1px solid var(--track);
+    font:11px var(--mono);color:var(--muted);letter-spacing:.04em;
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="getbar">
+    <div class="row">
+      <a class="go" href="./index.html" download="conditions_for_emotions.html">download this tool</a>
+      <a class="go alt" href="https://liutingchun.com/workshops/conditions-for-emotions/">about the workshop</a>
+    </div>
+    This tool talks to small language models on your own computer, nothing goes to the cloud. Before you start:
+    <ol>
+      <li>Install Ollama: <a href="https://ollama.com/download" target="_blank" rel="noopener">ollama.com/download</a></li>
+      <li>In a terminal, pull the two models: <code>ollama pull gemma3:4b</code> and <code>ollama pull embeddinggemma</code></li>
+      <li>Allow the browser to talk to Ollama:
+        <div class="os"><b>Mac</b> in a terminal: <code>launchctl setenv OLLAMA_ORIGINS "*"</code>, then quit and reopen Ollama</div>
+        <div class="os"><b>Windows</b>
+          <ol>
+            <li>Search <b>environment variables</b> in the Start menu</li>
+            <li>Click <i>Edit environment variables for your account</i></li>
+            <li>Click <b>New</b> → Variable name: <code>OLLAMA_ORIGINS</code> · Value: <code>*</code></li>
+            <li>Click OK</li>
+            <li>Reopen Ollama from the Start menu</li>
+          </ol>
+          <ol lang="de" class="de">
+            <li>Im Startmenü nach <b>Umgebungsvariablen</b> suchen</li>
+            <li><i>Umgebungsvariablen für dieses Konto bearbeiten</i> anklicken</li>
+            <li><b>Neu</b> klicken → Variablenname: <code>OLLAMA_ORIGINS</code> · Wert: <code>*</code></li>
+            <li>OK klicken</li>
+            <li>Ollama über das Startmenü neu starten</li>
+          </ol>
+        </div>
+      </li>
+      <li>Download this tool (button above) and open the file in your browser.</li>
+    </ol>
+  </div>
+  <div class="dot"></div>
+  <h1>Conditions for Emotions</h1>
+  <div class="picker">
+    <div class="grp"><label>generation · vision</label>
+      <select id="selGen"><option>gemma3:4b</option></select></div>
+    <div class="grp"><label>embedding</label>
+      <select id="selEmb"><option>embeddinggemma</option></select></div>
+  </div>
+  <p class="rec">recommended — <b>gemma3:4b</b> (generation, image, camera) · <b>embeddinggemma</b> (distance, axis, map, tokens)</p>
+  <p class="modnote">image &amp; camera need a vision model (gemma3:4b / llava); text-only models like gemma3:1b answer everywhere except those two.</p>
+
+  <nav>
+    <button class="on" data-p="pchat">chat</button>
+    <button data-p="ptok">tokens</button>
+    <button data-p="pmap">map</button>
+    <button data-p="pdist">distance</button>
+    <button data-p="paxis">axis</button>
+    <button data-p="pnext">next token</button>
+    <button data-p="pnames">variable</button>
+    <button data-p="pimg">image</button>
+    <button data-p="pcam">camera</button>
+  </nav>
+
+  <!-- CHAT -->
+  <section class="panel on" id="pchat">
+    <label>system prompt — the condition</label>
+    <textarea id="sys" class="short">Only respond with emoji.</textarea>
+    <div class="chatbox" id="chatlog"></div>
+    <div class="row">
+      <input type="text" id="chatin" placeholder="type a message…" style="flex:1;margin:0">
+      <button class="go" onclick="sendChat()">send</button>
+      <button class="go alt" onclick="restartChat()">⟳ restart</button>
+    </div>
+    <p class="hint">restart applies a changed system prompt</p>
+  </section>
+
+  <!-- TOKENS -->
+  <section class="panel" id="ptok">
+    <label>compare token cost — one text per line</label>
+    <textarea id="tokin" class="short">giraffe
+Giraffe
+GIRAFFE
+the first spring rain
+der erste Frühlingsregen
+Donaudampfschifffahrtsgesellschaft
+春雨的氣味</textarea>
+    <button class="go" onclick="runTokCount()">count</button>
+    <div class="out" id="outtokc"></div>
+    <label style="margin-top:28px">probe the boundaries — one word or short phrase</label>
+    <input type="text" id="spellin" value="Frühlingsregen">
+    <button class="go" onclick="probeSpell()">probe</button>
+    <div class="out" id="outspell"></div>
+    <p class="hint">a 262,144-entry SentencePiece dictionary, shared with Gemini · Ollama exposes no tokenizer — counts read from prompt_eval_count, boundaries measured by growing the prefix one character at a time (merges approximate)</p>
+  </section>
+
+  <!-- MAP -->
+  <section class="panel" id="pmap">
+    <label>words or sentences — one per line, at least three</label>
+    <textarea id="mapin">icecream
+rainbow
+red
+blue
+melancholy
+Verwaltung
+the first spring rain
+petrichor
+Sunday afternoon</textarea>
+    <button class="go" onclick="runMap()">project</button>
+    <div class="out" id="outmap"></div>
+    <p class="hint">PCA 768→2 · drag to pan · scroll to zoom</p>
+  </section>
+
+  <!-- DISTANCE -->
+  <section class="panel" id="pdist">
+    <label>anchor sentence</label>
+    <input type="text" id="anchor" value="I am feeling sad today.">
+    <label>candidates — one per line</label>
+    <textarea id="cands">joy
+sadness
+anger
+a rainy afternoon
+icecream</textarea>
+    <button class="go" onclick="runDistance()">measure</button>
+    <div class="out" id="outdist"></div>
+    <p class="hint">cosine similarity in 768-dimensional space</p>
+  </section>
+
+  <!-- AXIS -->
+  <section class="panel" id="paxis">
+    <div class="row">
+      <div style="flex:1"><label>pole A</label><input type="text" id="poleA" value="icecream"></div>
+      <div style="flex:1"><label>pole B</label><input type="text" id="poleB" value="rainbow"></div>
+    </div>
+    <label>words to place — one per line</label>
+    <textarea id="axin" class="short">red
+blue
+melancholy
+bureaucracy
+summer</textarea>
+    <button class="go" onclick="runAxis()">place</button>
+    <div class="out" id="outaxis"></div>
+    <p class="hint">semantic differential (Osgood 1957) · position = cos(w,B) − cos(w,A)</p>
+  </section>
+
+  <!-- NEXT WORD -->
+  <section class="panel" id="pnext">
+    <label>prompt — the machine continues this</label>
+    <input type="text" id="prompt" value="My name is Alice and I am">
+    <div class="toggle">
+      <button class="on" id="modeRaw" onclick="setMode(true)">continue the text (raw)</button>
+      <button id="modeChat" onclick="setMode(false)">reply as assistant</button>
+    </div>
+    <div class="row">
+      <button class="go" onclick="runNext()">next token</button>
+      <button class="go alt" onclick="runContinue()">continue</button>
+      <label>tokens</label>
+      <input type="number" id="ntok" value="30" min="5" max="300" step="5" style="margin:0">
+    </div>
+    <div class="out" id="outnext"></div>
+    <p class="hint">click a token to take that path</p>
+  </section>
+
+  <!-- VARIABLE -->
+  <section class="panel" id="pnames">
+    <label>sentence — write [Variable] where the value goes</label>
+    <input type="text" id="nmtpl" value="My name is [Variable], I am happy because">
+    <label>variable — separated by comma</label>
+    <input type="text" id="nmlist" value="Alice, Bob, Mohammed, Mei, Jürgen">
+    <div class="row">
+      <button class="go" onclick="runNames()">complete</button>
+      <label>tokens</label>
+      <input type="number" id="nmtok" value="20" min="10" max="120" step="5" style="margin:0">
+    </div>
+    <div class="out" id="outnames"></div>
+    <p class="hint">same sentence, one substitution, raw continuation — any language works</p>
+  </section>
+
+  <!-- IMAGE -->
+  <section class="panel" id="pimg">
+    <label>image</label>
+    <input type="file" id="img" accept="image/*">
+    <label>question</label>
+    <input type="text" id="imgq" value="How much smell of the first spring rain is in this image? Answer with a percentage, then justify it.">
+    <button class="go" onclick="runImage()">ask</button>
+    <div class="out" id="outimg"></div>
+    <p class="hint">narration, not measurement</p>
+  </section>
+
+  <!-- CAMERA -->
+  <section class="panel" id="pcam">
+    <label>question — asked about every frame</label>
+    <input type="text" id="camq" value="You are a comedian. Directly Roast this person in ONE SINGLE sentences, no list, and no extra commentary.">
+    <div class="camwrap">
+      <video id="cam" autoplay playsinline muted></video>
+      <div class="camtext" id="camtext" style="display:none"></div>
+    </div>
+    <div class="row">
+      <button class="go" id="cambtn" onclick="toggleCam()">start camera</button>
+      <button class="go alt" onclick="snapNow()">ask now</button>
+      <label>every</label>
+      <input type="number" id="camint" value="10" min="3" max="120" style="margin:0">
+      <label>s</label>
+      <label style="margin-left:10px"><input type="checkbox" id="camspeak" checked> speak</label>
+    </div>
+    <div class="out" id="outcam"></div>
+    <p class="hint">camera on file:// works in Firefox (allow when asked) — Chrome needs http://localhost</p>
+  </section>
+
+</div>
+
+<footer>
+  <span>Ting-Chun Liu 2026</span>
+</footer>
+
+<script>
+const OLLAMA = "http://localhost:11434";
+let GEN = "gemma3:4b";
+let EMB = "embeddinggemma";
+let RAW = true;
+
+/* ---------- model picker: fetch installed models from /api/tags ---------- */
+async function loadModels(){
+  const selG=document.getElementById("selGen"), selE=document.getElementById("selEmb");
+  try{
+    const r=await fetch(OLLAMA+"/api/tags");
+    if(!r.ok) throw new Error(r.status);
+    const names=((await r.json()).models||[]).map(m=>m.name).sort();
+    if(!names.length) return;
+    const fill=(sel,preferred)=>{
+      sel.innerHTML="";
+      names.forEach(n=>{
+        const o=document.createElement("option"); o.value=n; o.textContent=n;
+        sel.appendChild(o);
+      });
+      const pick = names.find(n=>n===preferred) || names.find(n=>n.startsWith(preferred.split(":")[0])) || names[0];
+      sel.value=pick;
+    };
+    fill(selG, GEN); fill(selE, EMB);
+    GEN=selG.value; EMB=selE.value;
+  }catch(e){ /* keep defaults if Ollama not reachable yet */ }
+  selG.onchange=()=>GEN=selG.value;
+  selE.onchange=()=>EMB=selE.value;
+}
+loadModels();
+
+/* ---------- nav ---------- */
+document.querySelectorAll("nav button").forEach(b => b.onclick = () => {
+  document.querySelectorAll("nav button").forEach(x => x.classList.remove("on"));
+  document.querySelectorAll(".panel").forEach(x => x.classList.remove("on"));
+  b.classList.add("on"); document.getElementById(b.dataset.p).classList.add("on");
+});
+function setMode(raw){
+  RAW = raw;
+  document.getElementById("modeRaw").classList.toggle("on", raw);
+  document.getElementById("modeChat").classList.toggle("on", !raw);
+}
+
+/* ---------- shared ---------- */
+const esc = s => String(s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const dot = (a,b) => a.reduce((s,v,i)=>s+v*b[i],0);
+const cos = (a,b) => dot(a,b)/(Math.sqrt(dot(a,a))*Math.sqrt(dot(b,b))+1e-9);
+function meter(label, frac, read, opts={}){
+  return `<div class="m ${opts.click?'clickable':''}" ${opts.data||''}>`+
+         `<div class="t"><span class="l ${opts.tok?'tok':''}">${esc(label)}</span>`+
+         `<span class="r">${read}</span></div>`+
+         `<div class="track"><div class="fill" style="width:${Math.max(1,Math.min(100,frac*100)).toFixed(1)}%"></div></div></div>`;
+}
+function fail(el, e){ el.innerHTML = `<p class="err">no reading — Ollama running? OLLAMA_ORIGINS set? model pulled? (${esc(e.message||e)})</p>`; }
+async function post(path, body){
+  const r = await fetch(OLLAMA+path,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+  if(!r.ok) throw new Error(path+" "+r.status);
+  return r.json();
+}
+async function embed(texts){
+  const out = [];
+  for(let i=0;i<texts.length;i+=120){
+    const d = await post("/api/embed",{model:EMB,input:texts.slice(i,i+120)});
+    out.push(...d.embeddings);
+  }
+  return out;
+}
+function readFileB64(f){
+  return new Promise((res,rej)=>{
+    const r=new FileReader();
+    r.onload=()=>res(r.result.split(",")[1]);
+    r.onerror=()=>rej(new Error("file read failed"));
+    r.readAsDataURL(f);
+  });
+}
+
+/* ---------- CHAT ---------- */
+let chatMsgs=[];
+function restartChat(){ chatMsgs=[]; document.getElementById("chatlog").innerHTML=""; }
+function chatLine(cls,html){
+  const d=document.createElement("div"); d.className="cl "+cls; d.innerHTML=html;
+  const box=document.getElementById("chatlog"); box.appendChild(d); box.scrollTop=box.scrollHeight;
+  return d;
+}
+document.getElementById("chatin").addEventListener("keydown",e=>{
+  if(e.key==="Enter"){e.preventDefault();sendChat();}
+});
+async function sendChat(){
+  const inp=document.getElementById("chatin");
+  const text=inp.value.trim(); if(!text)return;
+  inp.value="";
+  chatLine("user","you — "+esc(text));
+  const thinking=chatLine("bot","<b>…</b>");
+  chatMsgs.push({role:"user",content:text});
+  const sys=document.getElementById("sys").value.trim();
+  const msgs=(sys?[{role:"system",content:sys}]:[]).concat(chatMsgs);
+  try{
+    const d=await post("/api/chat",{model:GEN,messages:msgs,stream:false});
+    const reply=(d.message&&d.message.content)||"(no response)";
+    chatMsgs.push({role:"assistant",content:reply});
+    thinking.innerHTML="<b>gemma —</b> "+esc(reply);
+  }catch(e){ thinking.innerHTML=`<span class="err">error — ${esc(e.message||e)}</span>`; }
+}
+
+
+/* ---------- TOKENS — counting and boundary probing ---------- */
+async function tokCount(text){
+  const d=await post("/api/embed",{model:EMB,input:[text]});
+  return d.prompt_eval_count;
+}
+async function runTokCount(){
+  const out=document.getElementById("outtokc");
+  const lines=document.getElementById("tokin").value.split("\n").filter(s=>s.trim());
+  if(!lines.length){out.innerHTML=`<p class="note">one text per line.</p>`;return;}
+  out.innerHTML=`<p class="note">counting…</p>`;
+  try{
+    const counts=[];
+    for(const l of lines) counts.push(await tokCount(l));
+    const hi=Math.max(...counts)||1;
+    out.innerHTML=lines.map((l,i)=>
+      meter(l, counts[i]/hi, `${counts[i]} tok · ${(l.length/counts[i]).toFixed(1)} ch/tok`)
+    ).join("");
+  }catch(e){fail(out,e);}
+}
+async function probeSpell(){
+  const out=document.getElementById("outspell");
+  const s=document.getElementById("spellin").value.slice(0,48);
+  if(!s.trim()){out.innerHTML=`<p class="note">a word, please.</p>`;return;}
+  try{
+    const counts=[];
+    for(let i=1;i<=s.length;i++){
+      out.innerHTML=`<p class="note">probing… ${i}/${s.length}</p>`;
+      counts.push(await tokCount(s.slice(0,i)));
+    }
+    // group consecutive characters sharing the same running count
+    const segs=[]; let cur=s[0];
+    for(let i=1;i<s.length;i++){
+      if(counts[i]===counts[i-1]) cur+=s[i];
+      else { segs.push(cur); cur=s[i]; }
+    }
+    segs.push(cur);
+    out.innerHTML=`<div>`+segs.map(x=>`<span class="chip">${esc(x.replace(/ /g,"␣"))}</span>`).join("")+`</div>`+
+      `<p class="note" style="margin-top:10px">${counts[counts.length-1]} tokens as measured from outside — the dictionary itself stays sealed.</p>`;
+  }catch(e){fail(out,e);}
+}
+
+/* ---------- DISTANCE ---------- */
+async function runDistance(){
+  const out=document.getElementById("outdist");
+  const a=document.getElementById("anchor").value.trim();
+  const cs=document.getElementById("cands").value.split("\n").map(s=>s.trim()).filter(Boolean);
+  if(!a||!cs.length){out.innerHTML=`<p class="note">enter an anchor and candidates.</p>`;return;}
+  out.innerHTML=`<p class="note">measuring…</p>`;
+  try{
+    const v=await embed([a,...cs]);
+    const sc=cs.map((c,i)=>[c,cos(v[0],v[i+1])]).sort((x,y)=>y[1]-x[1]);
+    const hi=sc[0][1]||1e-9;
+    out.innerHTML=sc.map(([c,s])=>meter(c,s/hi,s.toFixed(3))).join("");
+  }catch(e){fail(out,e);}
+}
+
+/* ---------- AXIS — one row per word ---------- */
+async function runAxis(){
+  const out=document.getElementById("outaxis");
+  const A=document.getElementById("poleA").value.trim();
+  const B=document.getElementById("poleB").value.trim();
+  const ws=document.getElementById("axin").value.split("\n").map(s=>s.trim()).filter(Boolean);
+  if(!A||!B||!ws.length){out.innerHTML=`<p class="note">two poles and some words.</p>`;return;}
+  out.innerHTML=`<p class="note">placing…</p>`;
+  try{
+    const v=await embed([A,B,...ws]);
+    const sc=ws.map((w,i)=>({w,s:cos(v[i+2],v[1])-cos(v[i+2],v[0])}))
+               .sort((a,b)=>a.s-b.s);
+    const mx=Math.max(...sc.map(x=>Math.abs(x.s)))||1e-9;
+    out.innerHTML=
+      `<div class="axhead"><span>← ${esc(A)}</span><span>${esc(B)} →</span></div>`+
+      sc.map(x=>{
+        const pct=((x.s/mx)+1)/2*100;
+        return `<div class="axrow"><span class="w">${esc(x.w)}</span>`+
+               `<span class="tr"><span class="pt" style="left:${pct.toFixed(1)}%"></span></span>`+
+               `<span class="v">${x.s>=0?"+":""}${x.s.toFixed(3)}</span></div>`;
+      }).join("");
+  }catch(e){fail(out,e);}
+}
+
+/* ---------- NEXT TOKEN ---------- */
+function genBody(extra){
+  return Object.assign({model:GEN,prompt:document.getElementById("prompt").value,stream:false,raw:RAW},extra);
+}
+async function runNext(){
+  const out=document.getElementById("outnext");
+  out.innerHTML=`<p class="note">predicting…</p>`;
+  try{
+    const d=await post("/api/generate",genBody({logprobs:true,top_logprobs:10,options:{num_predict:1,temperature:0.8}}));
+    const steps=d.logprobs||[];
+    if(!steps.length){out.innerHTML=`<p class="err">no logprobs — Ollama ≥ 0.12.11 needed.</p>`;return;}
+    const cands=steps[0].top_logprobs||[];
+    const m=Math.max(...cands.map(c=>c.logprob));
+    const exps=cands.map(c=>Math.exp(c.logprob-m));
+    const sum=exps.reduce((s,v)=>s+v,0);
+    const hi=Math.max(...exps)/sum;
+    out.innerHTML=cands.map((c,i)=>{
+      const t=(c.token.replace(/\n/g,"⏎").replace(/ /g,"␣"))||"∅";
+      const p=exps[i]/sum*100;
+      return meter(t,(p/100)/hi,p.toFixed(1)+"%",{tok:true,click:true,data:`data-tok="${esc(c.token)}"`});
+    }).join("");
+    out.querySelectorAll(".m.clickable").forEach(el=>el.onclick=()=>{
+      document.getElementById("prompt").value += el.dataset.tok;
+      runNext();
+    });
+  }catch(e){fail(out,e);}
+}
+async function runContinue(){
+  const out=document.getElementById("outnext");
+  const n=parseInt(document.getElementById("ntok").value)||30;
+  out.innerHTML=`<p class="note">continuing…</p>`;
+  try{
+    const d=await post("/api/generate",genBody({options:{num_predict:n,temperature:0.8}}));
+    out.innerHTML=`<div class="prose">${esc(document.getElementById("prompt").value)}<span style="color:var(--acc)">${esc(d.response||"")}</span></div>`;
+  }catch(e){fail(out,e);}
+}
+
+/* ---------- VARIABLE — one template, many substitutions ---------- */
+async function runNames(){
+  const out=document.getElementById("outnames");
+  const tpl=document.getElementById("nmtpl").value;
+  const vals=document.getElementById("nmlist").value.split(",").map(s=>s.trim()).filter(Boolean);
+  const n=parseInt(document.getElementById("nmtok").value)||20;
+  if(!tpl.includes("[Variable]")){out.innerHTML=`<p class="note">the sentence needs a [Variable] placeholder.</p>`;return;}
+  if(!vals.length){out.innerHTML=`<p class="note">give me some values.</p>`;return;}
+  out.innerHTML="";
+  for(let i=0;i<vals.length;i++){
+    const promptTxt=tpl.split("[Variable]").join(vals[i]);
+    const promptHtml=tpl.split("[Variable]").map(esc).join(`<span class="varhl">${esc(vals[i])}</span>`);
+    out.innerHTML+=`<div class="nm" id="nm-${i}"><b>${esc(vals[i])}</b><div class="prose">${promptHtml} <span class="note">…</span></div></div>`;
+    try{
+      const d=await post("/api/generate",{model:GEN,prompt:promptTxt,stream:false,raw:true,
+        options:{num_predict:n,temperature:0.8}});
+      document.getElementById("nm-"+i).innerHTML=
+        `<b>${esc(vals[i])}</b><div class="prose">${promptHtml}<span style="color:var(--acc)">${esc(d.response||"")}</span></div>`;
+    }catch(e){
+      document.getElementById("nm-"+i).innerHTML=`<b>${esc(vals[i])}</b> <span class="err">${esc(e.message||e)}</span>`;
+      break;
+    }
+  }
+}
+
+/* ---------- IMAGE ---------- */
+async function runImage(){
+  const out=document.getElementById("outimg");
+  const f=document.getElementById("img").files[0];
+  if(!f){out.innerHTML=`<p class="note">choose an image first.</p>`;return;}
+  out.innerHTML=`<p class="note">looking… (4b can be slow)</p>`;
+  try{
+    const b64=await readFileB64(f);
+    const d=await post("/api/generate",{model:GEN,prompt:document.getElementById("imgq").value,images:[b64],stream:false});
+    out.innerHTML=`<div class="prose">${esc(d.response||"")}</div>`;
+  }catch(e){fail(out,e);}
+}
+
+/* ---------- CAMERA — live frames to gemma3:4b, spoken aloud ---------- */
+let camStream=null, camTimer=null, camBusy=false, lastAsk=0;
+async function toggleCam(){
+  const btn=document.getElementById("cambtn");
+  const out=document.getElementById("outcam");
+  if(camStream){ stopCam(); btn.textContent="start camera"; return; }
+  try{
+    camStream=await navigator.mediaDevices.getUserMedia({video:true,audio:false});
+    document.getElementById("cam").srcObject=camStream;
+    btn.textContent="stop camera";
+    lastAsk=0;
+    camTimer=setInterval(()=>{
+      const iv=(parseInt(document.getElementById("camint").value)||10)*1000;
+      if(Date.now()-lastAsk>=iv && !camBusy) snapNow();
+    },1000);
+  }catch(e){
+    out.innerHTML=`<p class="err">no camera — on file:// use Firefox and allow access; Chrome needs http://localhost. (${esc(e.message||e)})</p>`;
+  }
+}
+function stopCam(){
+  if(camTimer)clearInterval(camTimer); camTimer=null;
+  if(camStream)camStream.getTracks().forEach(t=>t.stop()); camStream=null;
+  document.getElementById("cam").srcObject=null;
+}
+async function snapNow(){
+  if(!camStream||camBusy)return;
+  camBusy=true; lastAsk=Date.now();
+  const out=document.getElementById("outcam");
+  out.innerHTML=`<p class="note">looking…</p>`;
+  try{
+    const v=document.getElementById("cam");
+    const c=document.createElement("canvas");
+    c.width=v.videoWidth||640; c.height=v.videoHeight||480;
+    c.getContext("2d").drawImage(v,0,0);
+    const b64=c.toDataURL("image/jpeg",0.8).split(",")[1];
+    const d=await post("/api/generate",{model:GEN,prompt:document.getElementById("camq").value,
+      images:[b64],stream:false});
+    const text=(d.response||"").trim();
+    const ct=document.getElementById("camtext");
+    ct.style.display="block"; ct.textContent=text;
+    out.innerHTML="";
+    if(document.getElementById("camspeak").checked && "speechSynthesis" in window){
+      speechSynthesis.cancel();
+      speechSynthesis.speak(new SpeechSynthesisUtterance(text));
+    }
+  }catch(e){ fail(out,e); }
+  finally{ camBusy=false; }
+}
+
+/* ---------- MAP ---------- */
+let mapState=null;
+function pca2d(vecs){
+  const n=vecs.length,d=vecs[0].length;
+  const mean=new Array(d).fill(0);
+  vecs.forEach(v=>v.forEach((x,i)=>mean[i]+=x/n));
+  const X=vecs.map(v=>v.map((x,i)=>x-mean[i]));
+  const G=Array.from({length:n},(_,i)=>Array.from({length:n},(_,j)=>dot(X[i],X[j])));
+  function power(M){
+    let v=Array.from({length:n},()=>Math.random()-0.5);
+    for(let t=0;t<300;t++){
+      const w=M.map(row=>row.reduce((s,m,j)=>s+m*v[j],0));
+      const nm=Math.sqrt(dot(w,w))||1; v=w.map(x=>x/nm);
+    }
+    const Mv=M.map(row=>row.reduce((s,m,j)=>s+m*v[j],0));
+    return {v,lam:Math.max(dot(v,Mv),0)};
+  }
+  const e1=power(G);
+  const G2=G.map((row,i)=>row.map((m,j)=>m-e1.lam*e1.v[i]*e1.v[j]));
+  const e2=power(G2);
+  function axis(e){                       // 768-d principal axis from gram eigenvector
+    const sq=Math.sqrt(e.lam)||1;
+    const p=new Array(d).fill(0);
+    X.forEach((row,i)=>row.forEach((x,j)=>p[j]+=x*e.v[i]/sq));
+    return p;
+  }
+  return {pts:vecs.map((_,i)=>[e1.v[i]*Math.sqrt(e1.lam),e2.v[i]*Math.sqrt(e2.lam)]),
+          mean, p1:axis(e1), p2:axis(e2)};
+}
+async function runMap(){
+  const out=document.getElementById("outmap");
+  const lines=document.getElementById("mapin").value.split("\n").map(s=>s.trim()).filter(Boolean);
+  if(lines.length<3){out.innerHTML=`<p class="note">at least three lines.</p>`;return;}
+  out.innerHTML=`<p class="note">projecting…</p>`;
+  try{
+    const vecs=await embed(lines);
+    const items=lines.map((l,i)=>({label:l,vec:vecs[i]}));
+    const {pts,mean,p1,p2}=pca2d(vecs);
+    mapState={items,pts,mean,p1,p2};
+    drawMap(out);
+  }catch(e){fail(out,e);}
+}
+function drawMap(out){
+  const {items,pts}=mapState;
+  const xs=pts.map(p=>p[0]),ys=pts.map(p=>p[1]);
+  const x0=Math.min(...xs),x1=Math.max(...xs),y0=Math.min(...ys),y1=Math.max(...ys);
+  const W=860,H=520,P=76;
+  const sx=v=>P+(x1-x0?(v-x0)/(x1-x0):.5)*(W-2*P);
+  const sy=v=>H-P-(y1-y0?(v-y0)/(y1-y0):.5)*(H-2*P);
+  out.innerHTML=`<svg class="map" viewBox="0 0 ${W} ${H}"><g id="vp">`+
+    pts.map((pt,i)=>
+      `<circle cx="${sx(pt[0]).toFixed(1)}" cy="${sy(pt[1]).toFixed(1)}" r="5" fill="var(--acc)"/>`+
+      `<text x="${(sx(pt[0])+9).toFixed(1)}" y="${(sy(pt[1])+4).toFixed(1)}">${esc(items[i].label)}</text>`
+    ).join("")+`</g></svg>`;
+  attachZoom(out.querySelector("svg"), out.querySelector("#vp"));
+}
+function attachZoom(svg,g){
+  let k=1,tx=0,ty=0,drag=null,moved=0;
+  const apply=()=>g.setAttribute("transform",`translate(${tx},${ty}) scale(${k})`);
+  svg.addEventListener("wheel",e=>{
+    e.preventDefault();
+    const r=svg.getBoundingClientRect(), vb=svg.viewBox.baseVal;
+    const mx=(e.clientX-r.left)/r.width*vb.width, my=(e.clientY-r.top)/r.height*vb.height;
+    const f=Math.exp(-e.deltaY*0.0015), k2=Math.min(12,Math.max(.3,k*f));
+    tx=mx-(mx-tx)*k2/k; ty=my-(my-ty)*k2/k; k=k2; apply();
+  },{passive:false});
+  svg.addEventListener("pointerdown",e=>{
+    drag={x:e.clientX,y:e.clientY,tx,ty}; moved=0;
+    svg.setPointerCapture(e.pointerId);
+  });
+  svg.addEventListener("pointermove",e=>{
+    if(!drag)return;
+    const r=svg.getBoundingClientRect(), vb=svg.viewBox.baseVal;
+    const dx=(e.clientX-drag.x)/r.width*vb.width, dy=(e.clientY-drag.y)/r.height*vb.height;
+    moved=Math.max(moved,Math.abs(e.clientX-drag.x)+Math.abs(e.clientY-drag.y));
+    tx=drag.tx+dx; ty=drag.ty+dy; apply();
+  });
+  svg.addEventListener("pointerup",()=>{ drag=null; });
+}
+
+</script>
+</body>
+</html>

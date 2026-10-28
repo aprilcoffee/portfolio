@@ -159,3 +159,6 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 - worker: look_up tool for live questions only (SEARCH_MODEL); reading recommendations one or two at a time
 - topics/seminar-reading-list.md: authors and sources for Wallenborn and Zachlod (un/learn ai vol. 2), Hunger (Training the Archive WP 6), Steyerl (NLR 140/141), Ciston (ladymouth) (artist, screenshots)
 - topics/seminar-reading-list.md: Steyerl, The Hardest Part removed (artist)
+
+## [2026-10-27] edit | Conditions for Emotions tool online
+- topics/workshops.md: the web tool at /tools/conditions-for-emotions/, needs Ollama

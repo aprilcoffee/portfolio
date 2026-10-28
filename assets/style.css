@@ -574,3 +574,7 @@ html.zoomed { overflow: hidden; }
   #talks .perf-card .watch, #talks .perf-card .thumb::after { display: none; }
   #workshop-list .card .cap .kw, #talks .perf-card .cap p:not(.by) { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
 }
+/* workshop tool button (workshops[].tool_url) */
+.shop-tool { margin-top: 1.5rem; }
+.shop-tool .btn { display: inline-block; font-family: var(--mono); font-size: 0.875rem; padding: 0.55rem 0.9rem; background: var(--ink); color: var(--bg); text-decoration: none; }
+.shop-tool .btn:hover { background: var(--red); }
