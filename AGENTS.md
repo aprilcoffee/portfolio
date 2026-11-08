@@ -48,6 +48,7 @@
 | 講座錄影截圖 | `press[].thumb`；留空時 `build.yml` 會先跑 `scripts/fetch-talk-thumbs.py`，抓錄影頁的預覽圖（og:image）存到 `images/talks/` 並寫回 `site.json` |
 | 圖片壓縮／轉檔 | `python3 scripts/compress-images.py [資料夾或檔案]`（預設 `images/workshops/`；需要 Pillow；長邊 2400px、JPEG 品質 82、移除 EXIF／GPS，PNG／HEIC 照片轉成 `.jpg`） |
 | 工作坊工具（例如 Conditions for Emotions 的網頁工具） | `tools/<名稱>/index.html`，作者給的獨立網頁，**不是** `build.py` 產生的，可以直接改；最上方有下載鍵與 Ollama 安裝說明（`ollama pull gemma3:4b`、`ollama pull embeddinggemma`，再設定 `OLLAMA_ORIGINS` 為 `*`：Mac 用 `launchctl setenv`，Windows 用環境變數，英德兩種步驟；建議下載後打開檔案使用）。工作坊頁的「開啟工作坊工具 ↗」按鈕來自 `workshops[].tool_url`（後台「工作坊工具」欄），開新分頁 |
+| 隱藏的工作坊工具 Safety Online（`/workshops/safety-online/`） | `workshops/safety-online/index.html`（手寫，可以直接改）＋ Worker `worker-studio/`（部署 `deploy-studio.yml`，說明在 `worker-studio/README.md`）。**刻意不連結**：不要從任何頁面、`site.json`、sitemap、`llms.txt`、wiki 連到它；`build.py` 的 `KEEP` 讓重建時不被刪掉 |
 | 後台 | `admin/index.html`、`admin/admin.js`；草稿預覽 `preview.html`（在瀏覽器用 Pyodide 跑同一個 `build.py`） |
 | 自動化 | `.github/workflows/`：`build.yml`（重建網站）、`deploy-chat.yml`（部署問答 Worker）、`check-links.yml`（每月檢查連結）、`download-wix-images.yml` |
 
