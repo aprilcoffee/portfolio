@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<title>Safety Online</title>
+<script>
+  // Address of the Cloudflare Worker (worker-studio/ in this repo). ?api=... overrides it for testing.
+  const WORKER_URL = "https://feeling-safe-studio.8765498-208.workers.dev";
+</script>
+<style>
+  :root { --ink:#141414; --muted:#8a8a8a; --soft:#f3f3f3; --line:#e2e2e2; --accent:#2b35d8; --bad:#b3261e; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:#fff; color:var(--ink); font:16px/1.45 Helvetica, Arial, sans-serif; }
+  main { max-width: 560px; margin: 0 auto; padding: 48px 16px 64px; }
+  h1 { font-size: 20px; margin: 0 0 32px; }
+  h2 { font-size: 15px; font-weight: 600; margin: 0 0 14px; color: var(--muted); letter-spacing: .04em; text-transform: uppercase; }
+  section { padding: 28px 0; border-top: 1px solid var(--line); }
+  input[type=password], textarea, select { width:100%; font:inherit; padding:10px 12px; border:1px solid var(--line); border-radius:8px; background:#fff; color:inherit; }
+  textarea { min-height: 120px; resize: vertical; margin-top: 12px; }
+  select { margin-top: 10px; }
+  button { font:inherit; border:0; border-radius:8px; padding:10px 16px; cursor:pointer; background:var(--soft); color:var(--ink); }
+  button.go { background: var(--accent); color:#fff; width:100%; margin-top: 14px; padding: 12px; }
+  button:disabled { opacity:.4; cursor:default; }
+  .row { display:flex; gap:8px; align-items:center; }
+  .tabs { display:flex; gap:4px; margin-bottom: 12px; }
+  .tabs button { padding:6px 12px; font-size:14px; background:transparent; color:var(--muted); }
+  .tabs button.on { background:var(--soft); color:var(--ink); }
+  .dot { width:9px; height:9px; border-radius:50%; background:var(--bad); display:none; }
+  .recording .dot { display:inline-block; animation: blink 1s infinite; }
+  @keyframes blink { 50% { opacity:.2; } }
+  .muted { color: var(--muted); font-size: 14px; }
+  .status { margin-top:10px; font-size:14px; color: var(--muted); min-height: 1.4em; }
+  .status.err { color: var(--bad); }
+  audio, video { width:100%; margin-top:12px; }
+  video { max-height: 70vh; background:#000; border-radius:8px; }
+  .result { display:none; margin-top: 14px; }
+  .result.show { display:block; }
+  .result a { color: var(--accent); font-size: 14px; }
+  .photo { display:flex; gap:12px; align-items:center; }
+  .photo img { width:96px; height:96px; object-fit:contain; background:var(--soft); border-radius:6px; display:none; }
+  input[type=file] { font-size: 14px; }
+  details { margin-top: 10px; font-size: 14px; color: var(--muted); }
+  details p { margin: 6px 0 0; }
+  .groups { display:flex; gap:8px; margin-top:10px; }
+  .groups button { flex:1; padding:14px; font-size:17px; }
+  .who { font-size:14px; color:var(--muted); margin:-20px 0 24px; }
+  .who a { color:var(--muted); }
+  .hidden { display:none !important; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Safety Online</h1>
+
+  <div id="gate">
+    <input id="pw" type="password" placeholder="Class password" autocomplete="current-password">
+    <div class="groups"><button data-g="A">Group A</button><button data-g="B">Group B</button></div>
+    <p class="status" id="pwStatus"></p>
+  </div>
+
+  <div id="app" class="hidden">
+    <div class="who">Group <span id="grp"></span> · <a href="#" id="switch">switch</a></div>
+    <section>
+      <h2>1 · Voice</h2>
+      <div class="tabs" id="refMode"><button class="on" data-v="rec">Record</button><button data-v="file">Upload</button></div>
+      <div id="refRec">
+        <div class="row"><button id="recBtn">● Record</button><span class="dot"></span><span id="recTime" class="muted">10–30 s, only you</span></div>
+        <details><summary>Text to read</summary><p>Hello, this is my voice. I'm recording it for a workshop on synthetic media, and I agree to let a model copy it — for this class only. On Monday the sky was grey over Weimar, but by Thursday the sun came out. Five quick questions: who is speaking, what did they say, where, when — and why should anyone believe it?</p></details>
+      </div>
+      <div id="refFile" class="hidden"><input id="refInput" type="file" accept="audio/*"></div>
+      <audio id="refPlayer" controls class="hidden"></audio>
+
+      <textarea id="text" maxlength="1200" placeholder="Your script"></textarea>
+      <div class="row muted" style="justify-content:space-between;margin-top:6px"><span id="words">0 words</span><span>≈ 130 words per minute</span></div>
+      <select id="lang"></select>
+
+      <button id="voiceBtn" class="go">Generate voice</button>
+      <p class="status" id="voiceStatus"></p>
+      <div class="result" id="voiceResult">
+        <audio id="voicePlayer" controls></audio>
+        <a id="voiceDl" download>Download MP3</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>2 · Face</h2>
+      <div class="photo"><img id="photoPreview" alt=""><div><input id="photo" type="file" accept="image/*"><div class="muted" style="margin-top:6px">Face to the camera, mouth closed · portrait or 16:9 (e.g. at a news desk) · <span id="shapeInfo"></span></div></div></div>
+
+      <div class="tabs" id="audMode" style="margin-top:16px"><button class="on" data-v="voice">Voice from 1</button><button data-v="file">Upload audio</button></div>
+      <div id="audFile" class="hidden"><input id="audInput" type="file" accept="audio/*"></div>
+      <div class="muted" id="audInfo"></div>
+
+      <button id="videoBtn" class="go">Generate video</button>
+      <p class="status" id="videoStatus"></p>
+      <div class="result" id="videoResult">
+        <video id="videoPlayer" controls playsinline></video>
+        <a id="videoDl" download>Download MP4</a>
+      </div>
+    </section>
+
+    <p class="muted">Only you, or fiction. Label it as AI-generated.</p>
+  </div>
+</main>
+
+<script>
+(() => {
+  const API = (new URLSearchParams(location.search).get("api") || WORKER_URL).replace(/\/$/, "");
+  const LANGS = ["English", "German", "Chinese", "French", "Italian", "Spanish", "Portuguese", "Russian", "Japanese", "Korean"];
+  const PROMPT = "A news anchor speaks calmly and clearly to the camera in a TV studio.";
+  const $ = (id) => document.getElementById(id);
+  const store = { get(k) { try { return localStorage.getItem(k); } catch { return null; } },
+                  set(k, v) { try { localStorage.setItem(k, v); } catch {} } };
+  let password = "", group = "";
+  const state = { refBlob: null, refName: "", voiceBlob: null, audBlob: null, audName: "", photoBlob: null, shape: "portrait" };
+
+  // ---------- API
+  async function call(path, opts = {}) {
+    const headers = Object.assign({ "x-class-password": password, "x-group": group }, opts.headers || {});
+    let r;
+    try { r = await fetch(API + path, Object.assign({}, opts, { headers })); }
+    catch { throw new Error("Cannot reach the studio. Check your connection."); }
+    if (!r.ok) { let m = `Error ${r.status}`; try { m = (await r.json()).error || m; } catch {} throw new Error(m); }
+    return r;
+  }
+  async function upload(blob, name, k) {
+    const h = { "content-type": blob.type || "application/octet-stream", "x-filename": name };
+    if (k !== undefined) h["x-key-index"] = String(k);
+    return (await call("/upload", { method: "POST", headers: h, body: blob })).json();
+  }
+  const post = async (path, body) => (await call(path, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body) })).json();
+
+  async function waitFor(job, k, show) {
+    const t0 = Date.now();
+    while (true) {
+      const j = await (await call(`/job/${job}?k=${k}`)).json();
+      const sec = Math.round((Date.now() - t0) / 1000);
+      if (j.status === "succeeded") return j;
+      if (["failed", "canceled", "expired"].includes(j.status)) throw new Error(j.error ? "Failed: " + j.error : "Failed.");
+      show(j.status === "queued" ? `In the queue${j.queue_position ? " (" + j.queue_position + ")" : ""} · ${sec}s` : `Generating · ${sec}s`);
+      await new Promise((r) => setTimeout(r, 2500));
+    }
+  }
+  // once the result is in the browser, remove inputs and outputs from the school's account
+  const forget = (k, ids) => post("/delete", { k, ids }).catch(() => {});
+  async function fetchOutput(j, k) {
+    const o = j.outputs[0];
+    if (!o) throw new Error("No file came back.");
+    return (await call(`/file/${o.id}?k=${k}`)).blob();
+  }
+
+  // ---------- helpers
+  function status(el, msg, err) { el.textContent = msg || ""; el.classList.toggle("err", !!err); }
+  function tabs(id, onChange) {
+    const root = $(id);
+    root.addEventListener("click", (e) => {
+      const b = e.target.closest("button"); if (!b) return;
+      root.querySelectorAll("button").forEach((x) => x.classList.toggle("on", x === b));
+      onChange(b.dataset.v);
+    });
+  }
+  const stamp = () => new Date().toISOString().slice(0, 16).replace(/[-:T]/g, "");
+  async function duration(blob) {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    try { return (await ctx.decodeAudioData(await blob.arrayBuffer())).duration; }
+    finally { ctx.close(); }
+  }
+
+  // ---------- password
+  async function enter(g) {
+    password = $("pw").value.trim();
+    if (!password) return status($("pwStatus"), "Type the class password.", true);
+    group = g;
+    status($("pwStatus"), "…");
+    try {
+      await call("/check");
+      store.set("fs-pw", password); store.set("fs-group", group);
+      $("grp").textContent = group;
+      $("gate").classList.add("hidden"); $("app").classList.remove("hidden"); status($("pwStatus"), "");
+      resume();
+    } catch (e) { status($("pwStatus"), e.message, true); }
+  }
+  document.querySelectorAll(".groups button").forEach((b) => b.onclick = () => enter(b.dataset.g));
+  $("switch").onclick = (e) => { e.preventDefault(); $("app").classList.add("hidden"); $("gate").classList.remove("hidden"); };
+  const saved = store.get("fs-pw"); if (saved) $("pw").value = saved;
+
+  // ---------- jobs survive a closed tab: remember them, pick them up again on the next visit
+  const pending = { get() { try { return JSON.parse(store.get("fs-pending") || "{}"); } catch { return {}; } },
+                    put(kind, v) { const p = pending.get(); if (v) p[kind] = v; else delete p[kind]; store.set("fs-pending", JSON.stringify(p)); } };
+  async function resume() {
+    const p = pending.get();
+    for (const kind of ["voice", "video"]) {
+      const j = p[kind]; if (!j) continue;
+      if (Date.now() - j.t > 24 * 3600e3) { pending.put(kind, null); continue; }
+      const prev = group; group = j.group;   // the job lives in the account of the group that started it
+      try { await finish(kind, j, "Picking up your last " + kind + " · "); } catch {}
+      group = prev;
+    }
+  }
+  async function finish(kind, j, prefix) {
+    const st = $(kind + "Status"), btn = $(kind + "Btn");
+    btn.disabled = true;
+    try {
+      const done = await waitFor(j.job, j.k, (m) => status(st, prefix + m + (kind === "video" ? " · you can close this tab and come back" : "")));
+      const blob = await fetchOutput(done, j.k);
+      forget(j.k, j.ids.concat([done.outputs[0].id]));
+      pending.put(kind, null);
+      show(kind, blob);
+      status(st, "");
+    } catch (e) {
+      if (!/connection/.test(e.message)) pending.put(kind, null);   // keep it only if we were just offline
+      status(st, e.message, true);
+      throw e;
+    } finally { btn.disabled = false; }
+  }
+  function show(kind, blob) {
+    if (kind === "voice") {
+      state.voiceBlob = new Blob([blob], { type: "audio/mpeg" });
+      const url = URL.createObjectURL(state.voiceBlob);
+      $("voicePlayer").src = url; $("voiceDl").href = url; $("voiceDl").download = `voice-${stamp()}.mp3`;
+      $("voiceResult").classList.add("show");
+      updateAudInfo();
+    } else {
+      const url = URL.createObjectURL(new Blob([blob], { type: "video/mp4" }));
+      $("videoPlayer").src = url; $("videoDl").href = url; $("videoDl").download = `face-${stamp()}.mp4`;
+      $("videoResult").classList.add("show");
+    }
+  }
+
+  // ---------- 1 · reference recording
+  LANGS.forEach((l) => $("lang").add(new Option(l, l)));
+  tabs("refMode", (v) => { $("refRec").classList.toggle("hidden", v !== "rec"); $("refFile").classList.toggle("hidden", v !== "file"); });
+  function setRef(blob, name) {
+    state.refBlob = blob; state.refName = name;
+    $("refPlayer").src = URL.createObjectURL(blob); $("refPlayer").classList.remove("hidden");
+  }
+  $("refInput").onchange = (e) => { const f = e.target.files[0]; if (f) setRef(f, f.name); };
+
+  let rec = null;
+  $("recBtn").onclick = async () => {
+    if (rec) { rec.stop(); return; }
+    let stream;
+    try { stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: false, noiseSuppression: true } }); }
+    catch { status($("voiceStatus"), "No microphone access. Allow it, or upload a file.", true); return; }
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const src = ctx.createMediaStreamSource(stream);
+    const proc = ctx.createScriptProcessor(4096, 1, 1);
+    const chunks = []; const t0 = Date.now();
+    proc.onaudioprocess = (e) => {
+      chunks.push(new Float32Array(e.inputBuffer.getChannelData(0)));
+      $("recTime").textContent = ((Date.now() - t0) / 1000).toFixed(1) + " s";
+    };
+    src.connect(proc); proc.connect(ctx.destination);
+    $("recBtn").textContent = "■ Stop"; $("refRec").classList.add("recording");
+    rec = { stop() {
+      proc.disconnect(); src.disconnect(); stream.getTracks().forEach((t) => t.stop());
+      const secs = (Date.now() - t0) / 1000;
+      const wav = encodeWav(chunks, ctx.sampleRate); ctx.close();
+      rec = null; $("recBtn").textContent = "● Record again"; $("refRec").classList.remove("recording");
+      status($("voiceStatus"), secs < 5 ? "Short — 10 s or more works better." : "", secs < 5);
+      setRef(wav, "recording.wav");
+    } };
+  };
+  function encodeWav(chunks, rate) {
+    const target = 24000, ratio = rate / target;
+    const total = chunks.reduce((n, c) => n + c.length, 0), all = new Float32Array(total);
+    let o = 0; chunks.forEach((c) => { all.set(c, o); o += c.length; });
+    const n = Math.floor(total / ratio), buf = new ArrayBuffer(44 + n * 2), v = new DataView(buf);
+    const w = (p, s) => [...s].forEach((ch, i) => v.setUint8(p + i, ch.charCodeAt(0)));
+    w(0, "RIFF"); v.setUint32(4, 36 + n * 2, true); w(8, "WAVE"); w(12, "fmt ");
+    v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 1, true);
+    v.setUint32(24, target, true); v.setUint32(28, target * 2, true); v.setUint16(32, 2, true); v.setUint16(34, 16, true);
+    w(36, "data"); v.setUint32(40, n * 2, true);
+    for (let i = 0; i < n; i++) {
+      const s = Math.max(-1, Math.min(1, all[Math.floor(i * ratio)]));
+      v.setInt16(44 + i * 2, s < 0 ? s * 0x8000 : s * 0x7fff, true);
+    }
+    return new Blob([buf], { type: "audio/wav" });
+  }
+  $("text").oninput = () => { const n = ($("text").value.match(/\S+/g) || []).length; $("words").textContent = n + (n === 1 ? " word" : " words"); };
+
+  // ---------- 1 · generate voice
+  $("voiceBtn").onclick = async () => {
+    const st = $("voiceStatus");
+    if (!state.refBlob) return status(st, "Record or upload your voice first.", true);
+    if (!$("text").value.trim()) return status(st, "Type a script.", true);
+    $("voiceBtn").disabled = true; $("voiceResult").classList.remove("show");
+    try {
+      status(st, "Uploading…");
+      const up = await upload(state.refBlob, state.refName, undefined);
+      const { k, job } = await post("/voice", { k: up.k, ref: up.asset, text: $("text").value, language: $("lang").value });
+      const j = { job, k, group, ids: [up.asset.id], t: Date.now() };
+      pending.put("voice", j);
+      await finish("voice", j, "");
+    } catch (e) { status(st, e.message, true); }
+    finally { $("voiceBtn").disabled = false; }
+  };
+
+  // ---------- 2 · photo + audio
+  $("photo").onchange = async (e) => {
+    const f = e.target.files[0]; if (!f) return;
+    try { state.photoBlob = await shrink(f); } catch { state.photoBlob = f; }
+    $("photoPreview").src = URL.createObjectURL(state.photoBlob); $("photoPreview").style.display = "block";
+  };
+  async function shrink(file) {   // max. 1280 px JPEG: faster upload, same result
+    const img = await createImageBitmap(file);
+    state.shape = img.width > img.height ? "landscape" : "portrait";   // the video follows the photo
+    $("shapeInfo").textContent = state.shape === "landscape" ? "16:9 video" : "Portrait video";
+    const s = Math.min(1, 1280 / Math.max(img.width, img.height));
+    const c = document.createElement("canvas"); c.width = Math.round(img.width * s); c.height = Math.round(img.height * s);
+    c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
+    return await new Promise((r) => c.toBlob(r, "image/jpeg", 0.92));
+  }
+  let audMode = "voice";
+  tabs("audMode", (v) => { audMode = v; $("audFile").classList.toggle("hidden", v !== "file"); updateAudInfo(); });
+  $("audInput").onchange = (e) => { const f = e.target.files[0]; if (f) { state.audBlob = f; state.audName = f.name; } updateAudInfo(); };
+  const currentAudio = () => audMode === "voice" ? (state.voiceBlob && { blob: state.voiceBlob, name: "voice.mp3" })
+                                                 : (state.audBlob && { blob: state.audBlob, name: state.audName });
+  async function updateAudInfo() {
+    const a = currentAudio();
+    if (!a) { $("audInfo").textContent = audMode === "voice" ? "Generate a voice in 1 first." : ""; return; }
+    try {
+      const d = await duration(a.blob); a.blob.seconds = d;
+      const est = 20 + 7 * d;   // measured: 6.5 s of audio ≈ 1 min
+      $("audInfo").textContent = d > 45 ? `${d.toFixed(0)} s — too long (max. 45 s)` : `${d.toFixed(0)} s of audio · about ${Math.max(1, Math.round(est / 60))}–${Math.max(2, Math.round(est * 1.5 / 60))} min`;
+    } catch { $("audInfo").textContent = "Can't read this audio file. Try wav or mp3."; }
+  }
+
+  $("videoBtn").onclick = async () => {
+    const st = $("videoStatus");
+    const a = currentAudio();
+    if (!state.photoBlob) return status(st, "Choose a photo.", true);
+    if (!a) return status(st, audMode === "voice" ? "Generate a voice in 1 first." : "Choose an audio file.", true);
+    $("videoBtn").disabled = true; $("videoResult").classList.remove("show");
+    try {
+      const seconds = a.blob.seconds || await duration(a.blob);
+      if (seconds > 45) throw new Error("Audio longer than 45 s.");
+      status(st, "Uploading…");
+      const img = await upload(state.photoBlob, "photo.jpg", undefined);
+      const aud = await upload(a.blob, a.name, img.k);
+      const { k, job } = await post("/video", { k: img.k, image: img.asset, audio: aud.asset, seconds, prompt: PROMPT, shape: state.shape });
+      const j = { job, k, group, ids: [img.asset.id, aud.asset.id], t: Date.now() };
+      pending.put("video", j);
+      await finish("video", j, "");
+    } catch (e) { status(st, e.message, true); }
+    finally { $("videoBtn").disabled = false; }
+  };
+})();
+</script>
+</body>
+</html>

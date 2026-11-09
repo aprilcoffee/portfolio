@@ -1,0 +1,15 @@
+# Cloudflare Worker for the Safety Online workshop tool (page: workshops/safety-online/, not linked anywhere).
+# Holds the Comfy Cloud keys; the page never sees them. Deployed by .github/workflows/deploy-studio.yml.
+name = "feeling-safe-studio"
+main = "worker.js"
+compatibility_date = "2026-11-01"
+# Served at https://feeling-safe-studio.8765498-208.workers.dev; no per-version preview URLs.
+workers_dev = true
+preview_urls = false
+
+[vars]
+# Pages allowed to call the Worker (comma-separated; "*" = anyone, only for local testing).
+ALLOWED_ORIGINS = "https://liutingchun.com,https://www.liutingchun.com"
+# Last day the studio works (YYYY-MM-DD).
+END_DATE = "2026-12-08"
+MAX_VIDEO_SECONDS = "45"

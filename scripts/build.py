@@ -1334,8 +1334,20 @@ def write(rel, text):
     open(p, "w", encoding="utf-8").write(text)
 
 
+# Hand-written pages inside generated folders: kept through the clean-up below, never linked,
+# never in sitemap.xml, llms.txt or the HTML site map (reachable only by typing the address).
+KEEP = ["workshops/safety-online"]  # workshop tool for Safety Online (worker in worker-studio/)
+_kept = {}
+for k in KEEP:
+    for d, _, files in os.walk(os.path.join(ROOT, k)):
+        for f in files:
+            p = os.path.join(d, f)
+            _kept[p] = open(p, "rb").read()
 for s in SECTIONS + ["impressum", "datenschutz", "writing", "sitemap"] + [LP[l].strip("/") for l in LANGS if LP[l]]:  # start clean so removed works/posts disappear
     shutil.rmtree(os.path.join(ROOT, s), ignore_errors=True)
+for p, data in _kept.items():
+    os.makedirs(os.path.dirname(p), exist_ok=True)
+    open(p, "wb").write(data)
 for path, text in pages.items():
     write(path + "index.html", text)
 
