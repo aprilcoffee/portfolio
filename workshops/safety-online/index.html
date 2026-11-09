@@ -400,7 +400,7 @@
     try {
       const d = await duration(a.blob); a.blob.seconds = d;
       const est = 20 + 7 * d;   // measured: 6.5 s of audio ≈ 1 min
-      $("audInfo").textContent = d > 45 ? `${d.toFixed(0)} s — too long (max. 45 s)` : `${d.toFixed(0)} s of audio · about ${Math.max(1, Math.round(est / 60))}–${Math.max(2, Math.round(est * 1.5 / 60))} min`;
+      $("audInfo").textContent = d > 45 ? `${d.toFixed(0)} s — too long (max. 45 s)` : `${d.toFixed(0)} s of audio · about ${Math.max(1, Math.round(est / 60))}–${Math.max(1, Math.round(est / 60)) + Math.max(1, Math.round(est / 120))} min`;
     } catch { $("audInfo").textContent = "Can't read this audio file. Try wav or mp3."; }
   }
 
