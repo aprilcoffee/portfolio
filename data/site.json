@@ -1990,14 +1990,23 @@
             "text": "Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images, Expanded 2026: Conference on Animation and Interactive Art, ACM, forthcoming (DOI 10.1145/3840416.3840463), w/ Leon-Etienne Kühr",
             "url": "",
             "text_zh": "Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images，Expanded 2026：動畫與互動藝術研討會（Conference on Animation and Interactive Art），ACM，即將出版（DOI 10.1145/3840416.3840463），與 Leon-Etienne Kühr",
-            "thumb": "images/wix/4eb1dd_3b92c3e56ced47f4968d13c82a46d250~mv2.webp"
+            "thumb": "images/wix/4eb1dd_3b92c3e56ced47f4968d13c82a46d250~mv2.webp",
+            "title": "Steering Through the Inner Residue",
+            "subtitle": "Feedback as an Artistic Strategy against Generative Images",
+            "venue": "Expanded 2026: Conference on Animation and Interactive Art, ACM, forthcoming (DOI 10.1145/3840416.3840463) · with Leon-Etienne Kühr",
+            "venue_de": "Expanded 2026: Conference on Animation and Interactive Art, ACM, im Erscheinen (DOI 10.1145/3840416.3840463) · mit Leon-Etienne Kühr",
+            "venue_zh": "Expanded 2026：動畫與互動藝術研討會，ACM，即將出版（DOI 10.1145/3840416.3840463） · 與 Leon-Etienne Kühr"
           },
           {
             "year": "2026",
             "text": "Heat as (Generative) Image Making, FIfF-Kommunikation 1/26, p. 64, FIfF e.V. Essay for the Weizenbaum-Studienpreis 2025",
             "url": "https://www.fiff.de/fiff-kommunikation/2026/1/",
             "text_zh": "Heat as (Generative) Image Making，《FIfF-Kommunikation》1/26，第 64 頁，FIfF e.V.。2025 Weizenbaum 學位論文獎文章",
-            "thumb": "images/wix/4eb1dd_89bed6e0c0da46979abc1b61f04b44e8~mv2.webp"
+            "thumb": "images/wix/4eb1dd_89bed6e0c0da46979abc1b61f04b44e8~mv2.webp",
+            "title": "Heat as (Generative) Image Making",
+            "venue": "FIfF-Kommunikation 1/26, p. 64, FIfF e.V. · Essay for the Weizenbaum-Studienpreis 2025",
+            "venue_de": "FIfF-Kommunikation 1/26, S. 64, FIfF e.V. · Essay zum Weizenbaum-Studienpreis 2025",
+            "venue_zh": "《FIfF-Kommunikation》1/26，第 64 頁，FIfF e.V. · 2025 Weizenbaum 學位論文獎文章"
           },
           {
             "year": "2025",
@@ -2005,21 +2014,34 @@
             "text": "Heat as (Generative) Image Making, postgraduate thesis, Academy of Media Arts Cologne (KHM)",
             "text_de": "Heat as (Generative) Image Making, Abschlussarbeit (Postgraduales Diplom), Kunsthochschule für Medien Köln (KHM)",
             "text_zh": "Heat as (Generative) Image Making，研究所論文，科隆媒體藝術學院（KHM）",
-            "thumb": "images/og-latent-heat-2.jpg"
+            "thumb": "images/og-latent-heat-2.jpg",
+            "title": "Heat as (Generative) Image Making",
+            "venue": "Postgraduate thesis, Academy of Media Arts Cologne (KHM)",
+            "venue_de": "Abschlussarbeit (Postgraduales Diplom), Kunsthochschule für Medien Köln (KHM)",
+            "venue_zh": "研究所論文，科隆媒體藝術學院（KHM）"
           },
           {
             "year": "2025",
             "text": "Stereotype Encoding: How AI Images Learn Cultural Bias, Latent Space, Filmwerkstatt Düsseldorf, w/ Leon-Etienne Kühr",
             "url": "https://www.academia.edu/165438573/Stereotype_Encoding_How_AI_Images_Learn_Cultural_Bias",
             "text_zh": "Stereotype Encoding: How AI Images Learn Cultural Bias，Latent Space，杜塞道夫 Filmwerkstatt，與 Leon-Etienne Kühr",
-            "thumb": "images/texts/stereotype-encoding.jpg"
+            "thumb": "images/texts/stereotype-encoding.jpg",
+            "title": "Stereotype Encoding",
+            "subtitle": "How AI Images Learn Cultural Bias",
+            "venue": "Latent Space, Filmwerkstatt Düsseldorf · with Leon-Etienne Kühr",
+            "venue_de": "Latent Space, Filmwerkstatt Düsseldorf · mit Leon-Etienne Kühr",
+            "venue_zh": "Latent Space，杜塞道夫 Filmwerkstatt · 與 Leon-Etienne Kühr"
           },
           {
             "year": "2025",
             "text": "On the Materiality of Artificial Intelligence, in: un/learn ai – integrating AI in aesthetic practices, Vol. 3, pp. 218–223, Forschungsprojekt KITeGG",
             "url": "https://unlearn.gestaltung.ai/de/article/gpm91yc8?chunks=gpm91yc8",
             "text_zh": "On the Materiality of Artificial Intelligence，收錄於《un/learn ai – integrating AI in aesthetic practices》第 3 冊，第 218–223 頁，KITeGG 研究計畫",
-            "thumb": "images/texts/on-the-materiality-of-ai-map.jpg"
+            "thumb": "images/texts/on-the-materiality-of-ai-map.jpg",
+            "title": "On the Materiality of Artificial Intelligence",
+            "venue": "In: un/learn ai – integrating AI in aesthetic practices, vol. 3, pp. 218–223, research project KITeGG",
+            "venue_de": "In: un/learn ai – integrating AI in aesthetic practices, Bd. 3, S. 218–223, Forschungsprojekt KITeGG",
+            "venue_zh": "收錄於《un/learn ai – integrating AI in aesthetic practices》第 3 冊，第 218–223 頁，KITeGG 研究計畫"
           },
           {
             "year": "2024",
@@ -2028,7 +2050,12 @@
             "text_zh": "你好，你好，你好，你好？你好？你好！人類！「你好，人類！」展覽專刊，策展人林欣傑、蔡宏賢，臺北當代藝術館，2024 年 1 月 27 日至 5 月 12 日（中英；英譯：吳中平）",
             "thumb": "images/texts/hello-human-moca.jpg",
             "credit": "MOCA Taipei, Hello, Human! (2024), curators Keith Lam, Escher Tsai, design: Javin Mo @ Milkxhake",
-            "text_de": "Hello, hello, hello, hello? Hello? Hello! Human! Katalog der Ausstellung „Hello, Human!“, kuratiert von Keith Lam und Escher Tsai, Museum of Contemporary Art Taipei, 27. Januar – 12. Mai 2024 (Mandarin/Englisch; englische Übersetzung: 吳中平)"
+            "text_de": "Hello, hello, hello, hello? Hello? Hello! Human! Katalog der Ausstellung „Hello, Human!“, kuratiert von Keith Lam und Escher Tsai, Museum of Contemporary Art Taipei, 27. Januar – 12. Mai 2024 (Mandarin/Englisch; englische Übersetzung: 吳中平)",
+            "title": "Hello, hello, hello, hello? Hello? Hello! Human!",
+            "title_zh": "你好，你好，你好，你好？你好？你好！人類！",
+            "venue": "Catalogue of the exhibition “Hello, Human!”, curated by Keith Lam and Escher Tsai, Museum of Contemporary Art Taipei, 27 Jan – 12 May 2024 (Mandarin/English; English translation by 吳中平)",
+            "venue_de": "Katalog der Ausstellung „Hello, Human!“, kuratiert von Keith Lam und Escher Tsai, Museum of Contemporary Art Taipei, 27. Januar – 12. Mai 2024 (Mandarin/Englisch; englische Übersetzung: 吳中平)",
+            "venue_zh": "「你好，人類！」展覽專刊，策展人林欣傑、蔡宏賢，臺北當代藝術館，2024 年 1 月 27 日至 5 月 12 日（中英；英譯：吳中平）"
           },
           {
             "year": "2024",
@@ -2036,7 +2063,12 @@
             "url": "https://www.digiarts.org.tw/DigiArts/DataBasePage/4_236170297334000/Chi",
             "text_zh": "定位—沉浸的先決條件（Positioning – A Prerequisite for Immersion），《Digiarts》，國立臺灣美術館",
             "thumb": "images/texts/project-34-north-118-west.jpg",
-            "credit": "Jeff Knowlton, Naomi Spellman, Jeremy Hight, Project 34 North 118 West (2003)"
+            "credit": "Jeff Knowlton, Naomi Spellman, Jeremy Hight, Project 34 North 118 West (2003)",
+            "title": "Positioning – A Prerequisite for Immersion",
+            "title_zh": "定位—沉浸的先決條件",
+            "venue": "Digiarts, National Taiwan Museum of Fine Arts",
+            "venue_de": "Digiarts, National Taiwan Museum of Fine Arts",
+            "venue_zh": "《Digiarts》，國立臺灣美術館"
           },
           {
             "year": "2021",
@@ -2044,7 +2076,12 @@
             "url": "https://ground-zero.khm.de/portfolio/_ell_-worl_-the-rule-becomes-the-author/",
             "text_zh": "»_ell_ Worl_!« – The Rule Becomes the Author，第 10 屆國際研究群會議（Encontro Internacional de Grupos de Pesquisa），聖保羅州立大學（UNESP），並刊於 [ ] ground zero – poetics of technics and cognition，與 Christian Heck、Mattis Kuhn、Tiago Ive Rubini、Julia Nakotte",
             "thumb": "images/texts/ell-worl-the-rule-becomes-the-author.jpg",
-            "text_de": "»_ell_ Worl_!« – The Rule Becomes the Author, 10. Encontro Internacional de Grupos de Pesquisa, UNESP, São Paulo, und [ ] ground zero – poetics of technics and cognition, mit Christian Heck, Mattis Kuhn, Tiago Ive Rubini, Julia Nakotte"
+            "text_de": "»_ell_ Worl_!« – The Rule Becomes the Author, 10. Encontro Internacional de Grupos de Pesquisa, UNESP, São Paulo, und [ ] ground zero – poetics of technics and cognition, mit Christian Heck, Mattis Kuhn, Tiago Ive Rubini, Julia Nakotte",
+            "title": "»_ell_ Worl_!«",
+            "subtitle": "The Rule Becomes the Author",
+            "venue": "10th Encontro Internacional de Grupos de Pesquisa, UNESP, São Paulo, and [ ] ground zero – poetics of technics and cognition · with Christian Heck, Mattis Kuhn, Tiago Ive Rubini, Julia Nakotte",
+            "venue_de": "10. Encontro Internacional de Grupos de Pesquisa, UNESP, São Paulo, und [ ] ground zero – poetics of technics and cognition · mit Christian Heck, Mattis Kuhn, Tiago Ive Rubini, Julia Nakotte",
+            "venue_zh": "第 10 屆國際研究群會議（Encontro Internacional de Grupos de Pesquisa），聖保羅州立大學（UNESP），並刊於 [ ] ground zero – poetics of technics and cognition · 與 Christian Heck、Mattis Kuhn、Tiago Ive Rubini、Julia Nakotte"
           }
         ],
         "title_de": "Publikationen & Texte",

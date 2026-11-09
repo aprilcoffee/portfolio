@@ -1132,13 +1132,21 @@ for L in LANGS:
     pubs = next((s_ for s_ in D["about"]["sections"] if s_["title"].startswith("Publications")), {"items": []})["items"]
     # own texts as a compact list: a small preview image (CV "thumb", fetched by scripts/fetch-talk-thumbs.py),
     # the title and where it appeared, the year
+    # each text in three lines when the CV row has them: title, subtitle, where it appeared
+    # (title / title_zh, subtitle, venue + _de/_zh); otherwise the CV line as it is
     def text_row(it):
-        text = tr(it, "text", L)
-        same = L != "en" and not it.get("text_" + L)
         href = it.get("url") or abs_url(P + "about/") + "#cv-publications-writing"
         pic = img(it["thumb"], 240, "") if it.get("thumb") else '<span class="ph"></span>'
-        return ('<a class="text-row" href="%s"%s><span class="pic">%s</span><span class="body"><span class="t"%s>%s</span><span class="y mono">%s%s%s</span></span></a>') % (
-            esc(href), ' target="_blank" rel="noopener"' if it.get("url") else "", pic, ' lang="en"' if same else "", esc(text),
+        en = lambda k: ' lang="en"' if L != "en" and not it.get(k + "_" + L) else ""
+        if it.get("title"):
+            head = '<span class="t"%s>%s</span>%s%s' % (
+                en("title"), esc(tr(it, "title", L)),
+                '<span class="st" lang="en">%s</span>' % esc(it["subtitle"]) if it.get("subtitle") else "",
+                '<span class="v"%s>%s</span>' % (en("venue"), esc(tr(it, "venue", L))) if it.get("venue") else "")
+        else:
+            head = '<span class="t"%s>%s</span>' % (en("text"), esc(tr(it, "text", L)))
+        return ('<a class="text-row" href="%s"%s><span class="pic">%s</span><span class="body">%s<span class="y mono">%s%s%s</span></span></a>') % (
+            esc(href), ' target="_blank" rel="noopener"' if it.get("url") else "", pic, head,
             esc(it.get("year", "")), " · %s ↗" % esc(u["read"]) if it.get("url") else "",
             '<span class="credit">%s</span>' % esc(u["img_credit"] % it["credit"]) if it.get("thumb") and it.get("credit") else "")
     writing_html = ('<section class="sub-sec" id="writing"><header class="sub-head"><h2>%s</h2></header><div class="text-list">%s</div></section>' % (
