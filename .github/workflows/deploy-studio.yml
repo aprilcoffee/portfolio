@@ -4,7 +4,7 @@
 #   CLOUDFLARE_API_TOKEN  (already there for the chat worker)
 #   COMFY_KEYS_A          Comfy Cloud API key(s) for group A, comma-separated
 #   COMFY_KEYS_B          Comfy Cloud API key(s) for group B, comma-separated
-#   CLASS_PASSWORD        the password the students type
+#   STUDIO_ACCOUNTS       student logins, one per line:  name:password:group   (group A or B)
 # Without them the job is skipped.
 name: Deploy studio worker
 
@@ -24,10 +24,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      READY: ${{ secrets.CLOUDFLARE_API_TOKEN != '' && secrets.COMFY_KEYS_A != '' && secrets.COMFY_KEYS_B != '' && secrets.CLASS_PASSWORD != '' }}
+      READY: ${{ secrets.CLOUDFLARE_API_TOKEN != '' && secrets.COMFY_KEYS_A != '' && secrets.COMFY_KEYS_B != '' && secrets.STUDIO_ACCOUNTS != '' }}
     steps:
       - if: env.READY != 'true'
-        run: echo "CLOUDFLARE_API_TOKEN, COMFY_KEYS_A, COMFY_KEYS_B or CLASS_PASSWORD is not set; skipping the deploy."
+        run: echo "CLOUDFLARE_API_TOKEN, COMFY_KEYS_A, COMFY_KEYS_B or STUDIO_ACCOUNTS is not set; skipping the deploy."
       - if: env.READY == 'true'
         uses: actions/checkout@v4
       - if: env.READY == 'true'
@@ -45,8 +45,8 @@ jobs:
           secrets: |
             COMFY_KEYS_A
             COMFY_KEYS_B
-            CLASS_PASSWORD
+            STUDIO_ACCOUNTS
         env:
           COMFY_KEYS_A: ${{ secrets.COMFY_KEYS_A }}
           COMFY_KEYS_B: ${{ secrets.COMFY_KEYS_B }}
-          CLASS_PASSWORD: ${{ secrets.CLASS_PASSWORD }}
+          STUDIO_ACCOUNTS: ${{ secrets.STUDIO_ACCOUNTS }}

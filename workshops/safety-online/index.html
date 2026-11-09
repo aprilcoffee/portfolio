@@ -18,7 +18,7 @@
   h1 { font-size: 20px; margin: 0 0 32px; }
   h2 { font-size: 15px; font-weight: 600; margin: 0 0 14px; color: var(--muted); letter-spacing: .04em; text-transform: uppercase; }
   section { padding: 28px 0; border-top: 1px solid var(--line); }
-  input[type=password], textarea, select { width:100%; font:inherit; padding:10px 12px; border:1px solid var(--line); border-radius:8px; background:#fff; color:inherit; }
+  input[type=password], input[type=text], textarea, select { width:100%; font:inherit; padding:10px 12px; border:1px solid var(--line); border-radius:8px; background:#fff; color:inherit; }
   textarea { min-height: 120px; resize: vertical; margin-top: 12px; }
   select { margin-top: 10px; }
   button { font:inherit; border:0; border-radius:8px; padding:10px 16px; cursor:pointer; background:var(--soft); color:var(--ink); }
@@ -44,8 +44,6 @@
   input[type=file] { font-size: 14px; }
   details { margin-top: 10px; font-size: 14px; color: var(--muted); }
   details p { margin: 6px 0 0; }
-  .groups { display:flex; gap:8px; margin-top:10px; }
-  .groups button { flex:1; padding:14px; font-size:17px; }
   .who { font-size:14px; color:var(--muted); margin:-20px 0 24px; }
   .who a { color:var(--muted); }
   .hidden { display:none !important; }
@@ -56,13 +54,16 @@
   <h1>Safety Online</h1>
 
   <div id="gate">
-    <input id="pw" type="password" placeholder="Class password" autocomplete="current-password">
-    <div class="groups"><button data-g="A">Group A</button><button data-g="B">Group B</button></div>
+    <form id="login">
+      <input id="user" type="text" placeholder="Name" autocomplete="username" autocapitalize="off" spellcheck="false">
+      <input id="pw" type="password" placeholder="Password" autocomplete="current-password" style="margin-top:8px">
+      <button class="go" type="submit">Enter</button>
+    </form>
     <p class="status" id="pwStatus"></p>
   </div>
 
   <div id="app" class="hidden">
-    <div class="who">Group <span id="grp"></span> · <a href="#" id="switch">switch</a></div>
+    <div class="who"><span id="who"></span> · Group <span id="grp"></span> · <a href="#" id="switch">log out</a></div>
     <section>
       <h2>1 · Voice</h2>
       <div class="tabs" id="refMode"><button class="on" data-v="rec">Record</button><button data-v="file">Upload</button></div>
@@ -113,12 +114,12 @@
   const $ = (id) => document.getElementById(id);
   const store = { get(k) { try { return localStorage.getItem(k); } catch { return null; } },
                   set(k, v) { try { localStorage.setItem(k, v); } catch {} } };
-  let password = "", group = "";
+  let user = "", password = "", group = "";
   const state = { refBlob: null, refName: "", voiceBlob: null, audBlob: null, audName: "", photoBlob: null, shape: "portrait" };
 
   // ---------- API
   async function call(path, opts = {}) {
-    const headers = Object.assign({ "x-class-password": password, "x-group": group }, opts.headers || {});
+    const headers = Object.assign({ "x-user": user, "x-password": password }, opts.headers || {});
     let r;
     try { r = await fetch(API + path, Object.assign({}, opts, { headers })); }
     catch { throw new Error("Cannot reach the studio. Check your connection."); }
@@ -168,23 +169,27 @@
     finally { ctx.close(); }
   }
 
-  // ---------- password
-  async function enter(g) {
-    password = $("pw").value.trim();
-    if (!password) return status($("pwStatus"), "Type the class password.", true);
-    group = g;
+  // ---------- login: name + password (accounts are set by the teacher; the account decides the group)
+  $("login").onsubmit = async (e) => {
+    e.preventDefault();
+    user = $("user").value.trim(); password = $("pw").value;
+    if (!user || !password) return status($("pwStatus"), "Type your name and password.", true);
     status($("pwStatus"), "…");
     try {
-      await call("/check");
-      store.set("fs-pw", password); store.set("fs-group", group);
-      $("grp").textContent = group;
+      const me = await (await call("/check")).json();
+      group = me.group;
+      store.set("fs-user", user);
+      $("who").textContent = me.user; $("grp").textContent = group;
       $("gate").classList.add("hidden"); $("app").classList.remove("hidden"); status($("pwStatus"), "");
       resume();
     } catch (e) { status($("pwStatus"), e.message, true); }
-  }
-  document.querySelectorAll(".groups button").forEach((b) => b.onclick = () => enter(b.dataset.g));
-  $("switch").onclick = (e) => { e.preventDefault(); $("app").classList.add("hidden"); $("gate").classList.remove("hidden"); };
-  const saved = store.get("fs-pw"); if (saved) $("pw").value = saved;
+  };
+  $("switch").onclick = (e) => {
+    e.preventDefault(); user = password = group = ""; $("pw").value = "";
+    $("app").classList.add("hidden"); $("gate").classList.remove("hidden");
+  };
+  try { localStorage.removeItem("fs-pw"); localStorage.removeItem("fs-group"); } catch {}
+  const saved = store.get("fs-user"); if (saved) $("user").value = saved;
 
   // ---------- jobs survive a closed tab: remember them, pick them up again on the next visit
   const pending = { get() { try { return JSON.parse(store.get("fs-pending") || "{}"); } catch { return {}; } },
@@ -194,9 +199,8 @@
     for (const kind of ["voice", "video"]) {
       const j = p[kind]; if (!j) continue;
       if (Date.now() - j.t > 24 * 3600e3) { pending.put(kind, null); continue; }
-      const prev = group; group = j.group;   // the job lives in the account of the group that started it
+      if (j.user && j.user.toLowerCase() !== user.toLowerCase()) continue;   // someone else's job on a shared computer
       try { await finish(kind, j, "Picking up your last " + kind + " · "); } catch {}
-      group = prev;
     }
   }
   async function finish(kind, j, prefix) {
@@ -291,7 +295,7 @@
       status(st, "Uploading…");
       const up = await upload(state.refBlob, state.refName, undefined);
       const { k, job } = await post("/voice", { k: up.k, ref: up.asset, text: $("text").value, language: $("lang").value });
-      const j = { job, k, group, ids: [up.asset.id], t: Date.now() };
+      const j = { job, k, user, ids: [up.asset.id], t: Date.now() };
       pending.put("voice", j);
       await finish("voice", j, "");
     } catch (e) { status(st, e.message, true); }
@@ -341,7 +345,7 @@
       const img = await upload(state.photoBlob, "photo.jpg", undefined);
       const aud = await upload(a.blob, a.name, img.k);
       const { k, job } = await post("/video", { k: img.k, image: img.asset, audio: aud.asset, seconds, prompt: PROMPT, shape: state.shape });
-      const j = { job, k, group, ids: [img.asset.id, aud.asset.id], t: Date.now() };
+      const j = { job, k, user, ids: [img.asset.id, aud.asset.id], t: Date.now() };
       pending.put("video", j);
       await finish("video", j, "");
     } catch (e) { status(st, e.message, true); }
