@@ -6,7 +6,9 @@
 
 這個 Worker（`feeling-safe-studio`）替頁面呼叫 Comfy Cloud，金鑰只在 Cloudflare：
 
-- 聲音：錄音或上傳 10–30 秒 + 文字 → 用自己的聲音念出的 MP3（Qwen3-TTS 0.6B）
+- 聲音：錄音或上傳 1–1.5 分鐘 + 文字 → 用自己的聲音念出的 MP3（ElevenLabs v4，經 Comfy 的夥伴節點；稿子裡可寫 `[happy]`、`[whispers]` 等情緒標籤）。
+  費用從 Comfy 點數扣：複製聲音約 $0.15（同一段錄音會沿用快取），念稿每 1000 字元約 $0.11。學生的聲音會送到 ElevenLabs。
+- 圖片：一段描述 → 一張圖（Z-Image Turbo，直式 768×1344 或 16:9 1344×768，約 15 秒），可直接當影片的臉
 - 臉：照片 + MP3 → 對嘴影片 MP4（Wan2.1 InfiniteTalk，`video_workflow.json`）
 
 ## 部署
