@@ -43,6 +43,13 @@ function videoWorkflow(image, audio, seconds, prompt, seed, landscape) {
   return g;
 }
 
+const klingWorkflow = (image, audio, prompt, seed) => ({
+  "1": { class_type: "LoadImage", inputs: { image: assetRef(image) } },
+  "2": { class_type: "LoadAudio", inputs: { audio: assetRef(audio) } },
+  "3": { class_type: "KlingAvatarNode", inputs: { image: ["1", 0], sound_file: ["2", 0], mode: "std", seed, prompt } },
+  "4": { class_type: "SaveVideo", inputs: { video: ["3", 0], filename_prefix: "video/kling", format: "auto", codec: "auto" } },
+});
+
 function assetRef(a) {
   if (!a || typeof a.id !== "string" || typeof a.hash !== "string") throw new HttpError(400, "Missing file. Please upload it again.");
   return { __type: "core/ASSET", info: { id: a.id, hash: a.hash, file_path: String(a.file_path || "input") } };
@@ -107,7 +114,11 @@ export default {
         if (!(seconds > 0)) throw new HttpError(400, "Could not read the length of the audio.");
         if (seconds > max) throw new HttpError(400, `The audio is ${seconds.toFixed(1)} s; the limit is ${max} s.`);
         const prompt = String(b.prompt || DEFAULT_PROMPT).slice(0, 400);
-        const job = await comfy(keys[k], "/jobs", { method: "POST", json: { workflow: videoWorkflow(b.image, b.audio, seconds, prompt, seed(), b.shape === "landscape") } });
+        // TEST: engine "kling" = Kling Avatar (paid partner node, ~$0.056/s, image + audio go to Kling).
+        // The page never sends it; only for comparing with InfiniteTalk.
+        const job = b.engine === "kling"
+          ? await comfy(keys[k], "/jobs", { method: "POST", json: { workflow: klingWorkflow(b.image, b.audio, prompt, seed()), extra_data: { api_key_comfy_org: keys[k] } } })
+          : await comfy(keys[k], "/jobs", { method: "POST", json: { workflow: videoWorkflow(b.image, b.audio, seconds, prompt, seed(), b.shape === "landscape") } });
         return json({ k, job: job.id }, cors);
       }
 
