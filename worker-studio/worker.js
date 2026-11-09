@@ -6,10 +6,9 @@
 //   GET  /job/:id?k=        job status and outputs
 //   GET  /file/:assetId?k=  download an output
 //   POST /delete            { k, ids } remove uploads and outputs from Comfy
-//   GET  /check             login test -> { ok, user, group }
+//   GET  /check             password test
 // Secrets (set by the GitHub Action): COMFY_KEYS_A, COMFY_KEYS_B (comma-separated keys per group),
-// STUDIO_ACCOUNTS: one account per line (or comma-separated) as  name:password:group  (group A or B).
-// Every request sends headers x-user and x-password; the account decides the group.
+// CLASS_PASSWORD. Every request names its group in the header x-group: A or B.
 // Comfy queues extra jobs per account (tested: 6 at once on one key all ran), so several
 // students at the same time just wait in that group's queue.
 // Vars (wrangler.toml): ALLOWED_ORIGINS, END_DATE, MAX_VIDEO_SECONDS.
@@ -62,8 +61,10 @@ export default {
     try {
       const url = new URL(req.url);
       if (url.pathname === "/health") return json({ ok: true, end: env.END_DATE || null }, cors);
-      const { user, group } = checkAccess(req, env);
-      if (url.pathname === "/check") return json({ ok: true, user, group }, cors);
+      checkAccess(req, env);
+      if (url.pathname === "/check") return json({ ok: true }, cors);
+      const group = (req.headers.get("x-group") || "").toUpperCase();
+      if (!["A", "B"].includes(group)) throw new HttpError(400, "Choose group A or B.");
       const keys = (env["COMFY_KEYS_" + group] || env.COMFY_KEYS || "").split(/[\s,]+/).filter(Boolean);
       if (!keys.length) throw new HttpError(500, `Group ${group} has no Comfy key yet.`);
       const pick = (k) => {
@@ -148,28 +149,10 @@ export default {
   },
 };
 
-// STUDIO_ACCOUNTS -> Map(lowercase name -> { name, password, group })
-function accounts(env) {
-  const m = new Map();
-  for (const line of String(env.STUDIO_ACCOUNTS || "").split(/[\n,]+/)) {
-    const [name, password, group] = line.split(":").map((x) => (x || "").trim());
-    if (name && password) m.set(name.toLowerCase(), { name, password, group: (group || "A").toUpperCase() === "B" ? "B" : "A" });
-  }
-  return m;
-}
-
 function checkAccess(req, env) {
   if (env.END_DATE && new Date() > new Date(env.END_DATE + "T23:59:59")) throw new HttpError(403, "The studio is closed.");
-  const a = accounts(env).get((req.headers.get("x-user") || "").trim().toLowerCase());
-  if (!a || !same(req.headers.get("x-password") || "", a.password)) throw new HttpError(401, "Wrong name or password.");
-  return { user: a.name, group: a.group };
-}
-
-// compare without leaking where the strings differ
-function same(a, b) {
-  let d = a.length ^ b.length;
-  for (let i = 0; i < Math.max(a.length, b.length); i++) d |= (a.charCodeAt(i) || 0) ^ (b.charCodeAt(i) || 0);
-  return d === 0;
+  const pw = env.CLASS_PASSWORD;
+  if (!pw || req.headers.get("x-class-password") !== pw) throw new HttpError(401, "Wrong class password.");
 }
 
 function corsHeaders(req, env) {
@@ -179,7 +162,7 @@ function corsHeaders(req, env) {
   return {
     "Access-Control-Allow-Origin": ok ? (origin || "*") : allowed[0],
     "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-    "Access-Control-Allow-Headers": "content-type, x-user, x-password, x-filename, x-key-index",
+    "Access-Control-Allow-Headers": "content-type, x-class-password, x-filename, x-key-index, x-group",
     "Access-Control-Max-Age": "86400",
     "Vary": "Origin",
   };
