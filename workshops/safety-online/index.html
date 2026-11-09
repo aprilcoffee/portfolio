@@ -49,6 +49,13 @@
   .who { font-size:14px; color:var(--muted); margin:-20px 0 24px; }
   .who a { color:var(--muted); }
   .hidden { display:none !important; }
+  .tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:12px; }
+  .tags button { padding:5px 10px; font-size:13px; }
+  label.small { display:block; font-size:13px; color:var(--muted); margin-top:12px; }
+  label.small + select, label.small + textarea { margin-top:4px; }
+  .picture img { width:100%; margin-top:12px; border-radius:8px; background:var(--soft); }
+  .links { display:flex; gap:16px; align-items:center; flex-wrap:wrap; margin-top:6px; }
+  .links button { padding:6px 12px; font-size:14px; }
 </style>
 </head>
 <body>
@@ -67,14 +74,16 @@
       <h2>1 · Voice</h2>
       <div class="tabs" id="refMode"><button class="on" data-v="rec">Record</button><button data-v="file">Upload</button></div>
       <div id="refRec">
-        <div class="row"><button id="recBtn">● Record</button><span class="dot"></span><span id="recTime" class="muted">10–30 s, only you</span></div>
-        <details><summary>Text to read</summary><p>Hello, this is my voice. I'm recording it for a workshop on synthetic media, and I agree to let a model copy it — for this class only. On Monday the sky was grey over Weimar, but by Thursday the sun came out. Five quick questions: who is speaking, what did they say, where, when — and why should anyone believe it?</p></details>
+        <div class="row"><button id="recBtn">● Record</button><span class="dot"></span><span id="recTime" class="muted">1–1.5 min, only you</span></div>
+        <details><summary>Something to read (or just talk about anything)</summary><p>Hello, this is my voice. I'm recording it for a workshop on synthetic media, and I agree to let a model copy it — for this class only. On Monday the sky was grey over Weimar, but by Thursday the sun came out. Five quick questions: who is speaking, what did they say, where, when — and why should anyone believe it?</p><p>This morning I woke up late and was sure I had missed the train. I ran down the stairs, no coffee, nothing — and then I saw it was Sunday! I just stood there, laughing at myself. Later I went to the market. It was cold, really cold, but the light over the square was beautiful. A little boy dropped his ice cream and he was so sad, and then his father bought him a new one, and suddenly he was the happiest person in town. Honestly, small things like that make my day. What only matters is that you sound like yourself: calm, excited, tired — whatever is true today.</p></details>
       </div>
       <div id="refFile" class="hidden"><input id="refInput" type="file" accept="audio/*"></div>
       <audio id="refPlayer" controls class="hidden"></audio>
 
-      <textarea id="text" maxlength="1200" placeholder="Your script"></textarea>
+      <div class="tags" id="tags" title="Click to add a mood to your script"></div>
+      <textarea id="text" maxlength="1200" placeholder="Your script. Add moods like [happy] or [whispers] before a sentence."></textarea>
       <div class="row muted" style="justify-content:space-between;margin-top:6px"><span id="words">0 words</span><span>≈ 130 words per minute</span></div>
+      <label class="small" for="lang">Language</label>
       <select id="lang"></select>
 
       <button id="voiceBtn" class="go">Generate voice</button>
@@ -86,8 +95,20 @@
     </section>
 
     <section>
-      <h2>2 · Face</h2>
-      <div class="photo"><img id="photoPreview" alt=""><div><input id="photo" type="file" accept="image/*"><div class="muted" style="margin-top:6px">Face to the camera, mouth closed · portrait or 16:9 (e.g. at a news desk) · <span id="shapeInfo"></span></div></div></div>
+      <h2>2 · Picture <span style="text-transform:none;letter-spacing:0">(optional)</span></h2>
+      <textarea id="imgPrompt" maxlength="800" placeholder="Describe a picture, e.g. a fictional news anchor at a desk, looking into the camera, mouth closed"></textarea>
+      <div class="tabs" id="imgShape" style="margin-top:12px"><button class="on" data-v="portrait">Portrait</button><button data-v="landscape">16:9</button></div>
+      <button id="imageBtn" class="go">Generate picture</button>
+      <p class="status" id="imageStatus"></p>
+      <div class="result picture" id="imageResult">
+        <img id="imagePlayer" alt="Generated picture">
+        <div class="links"><a id="imageDl" download>Download PNG</a><button id="useImage">Use as the face in 3</button></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>3 · Face</h2>
+      <div class="photo"><img id="photoPreview" alt=""><div><input id="photo" type="file" accept="image/*"><div class="muted" style="margin-top:6px">Your photo, or a picture from 2 · face to the camera, mouth closed · portrait or 16:9 (e.g. at a news desk) · <span id="shapeInfo"></span></div></div></div>
 
       <div class="tabs" id="audMode" style="margin-top:16px"><button class="on" data-v="voice">Voice from 1</button><button data-v="file">Upload audio</button></div>
       <div id="audFile" class="hidden"><input id="audInput" type="file" accept="audio/*"></div>
@@ -108,13 +129,17 @@
 <script>
 (() => {
   const API = (new URLSearchParams(location.search).get("api") || WORKER_URL).replace(/\/$/, "");
-  const LANGS = ["English", "German", "Chinese", "French", "Italian", "Spanish", "Portuguese", "Russian", "Japanese", "Korean"];
+  const LANGS = [["", "Detect automatically"], ["en", "English"], ["de", "German"], ["zh", "Chinese"], ["ja", "Japanese"], ["ko", "Korean"],
+    ["fr", "French"], ["es", "Spanish"], ["it", "Italian"], ["pt", "Portuguese"], ["nl", "Dutch"], ["pl", "Polish"], ["tr", "Turkish"],
+    ["ru", "Russian"], ["uk", "Ukrainian"], ["cs", "Czech"], ["sv", "Swedish"], ["da", "Danish"], ["fi", "Finnish"], ["no", "Norwegian"],
+    ["el", "Greek"], ["ar", "Arabic"], ["hi", "Hindi"], ["id", "Indonesian"], ["vi", "Vietnamese"]];
+  const TAGS = ["happy", "excited", "sad", "angry", "calm", "whispers", "shouts", "laughs", "sighs", "sarcastic"];
   const PROMPT = "A news anchor speaks calmly and clearly to the camera in a TV studio.";
   const $ = (id) => document.getElementById(id);
   const store = { get(k) { try { return localStorage.getItem(k); } catch { return null; } },
                   set(k, v) { try { localStorage.setItem(k, v); } catch {} } };
   let password = "", group = "";
-  const state = { refBlob: null, refName: "", voiceBlob: null, audBlob: null, audName: "", photoBlob: null, shape: "portrait" };
+  const state = { refBlob: null, refName: "", voiceBlob: null, audBlob: null, audName: "", photoBlob: null, shape: "portrait", imageBlob: null, imageShape: "portrait" };
 
   // ---------- API
   async function call(path, opts = {}) {
@@ -146,7 +171,7 @@
   // once the result is in the browser, remove inputs and outputs from the school's account
   const forget = (k, ids) => post("/delete", { k, ids }).catch(() => {});
   async function fetchOutput(j, k) {
-    const o = j.outputs[0];
+    const o = j.outputs.find((x) => /^(audio|video|image)\//.test(x.content_type || "")) || j.outputs[0];
     if (!o) throw new Error("No file came back.");
     return (await call(`/file/${o.id}?k=${k}`)).blob();
   }
@@ -191,7 +216,7 @@
                     put(kind, v) { const p = pending.get(); if (v) p[kind] = v; else delete p[kind]; store.set("fs-pending", JSON.stringify(p)); } };
   async function resume() {
     const p = pending.get();
-    for (const kind of ["voice", "video"]) {
+    for (const kind of ["voice", "image", "video"]) {
       const j = p[kind]; if (!j) continue;
       if (Date.now() - j.t > 24 * 3600e3) { pending.put(kind, null); continue; }
       const prev = group; group = j.group;   // the job lives in the account of the group that started it
@@ -205,7 +230,7 @@
     try {
       const done = await waitFor(j.job, j.k, (m) => status(st, prefix + m + (kind === "video" ? " · you can close this tab and come back" : "")));
       const blob = await fetchOutput(done, j.k);
-      forget(j.k, j.ids.concat([done.outputs[0].id]));
+      forget(j.k, j.ids.concat(done.outputs.map((o) => o.id)));
       pending.put(kind, null);
       show(kind, blob);
       status(st, "");
@@ -222,6 +247,11 @@
       $("voicePlayer").src = url; $("voiceDl").href = url; $("voiceDl").download = `voice-${stamp()}.mp3`;
       $("voiceResult").classList.add("show");
       updateAudInfo();
+    } else if (kind === "image") {
+      state.imageBlob = new Blob([blob], { type: "image/png" });
+      const url = URL.createObjectURL(state.imageBlob);
+      $("imagePlayer").src = url; $("imageDl").href = url; $("imageDl").download = `picture-${stamp()}.png`;
+      $("imageResult").classList.add("show");
     } else {
       const url = URL.createObjectURL(new Blob([blob], { type: "video/mp4" }));
       $("videoPlayer").src = url; $("videoDl").href = url; $("videoDl").download = `face-${stamp()}.mp4`;
@@ -230,13 +260,34 @@
   }
 
   // ---------- 1 · reference recording
-  LANGS.forEach((l) => $("lang").add(new Option(l, l)));
+  LANGS.forEach(([code, name]) => $("lang").add(new Option(name, code)));
+  TAGS.forEach((t) => {
+    const b = document.createElement("button"); b.type = "button"; b.textContent = `[${t}]`;
+    b.onclick = () => {   // insert the tag where the cursor is
+      const el = $("text"), at = el.selectionStart ?? el.value.length, ins = `[${t}] `;
+      el.value = el.value.slice(0, at) + ins + el.value.slice(el.selectionEnd ?? at);
+      el.focus(); el.selectionStart = el.selectionEnd = at + ins.length; el.oninput();
+    };
+    $("tags").appendChild(b);
+  });
   tabs("refMode", (v) => { $("refRec").classList.toggle("hidden", v !== "rec"); $("refFile").classList.toggle("hidden", v !== "file"); });
   function setRef(blob, name) {
     state.refBlob = blob; state.refName = name;
     $("refPlayer").src = URL.createObjectURL(blob); $("refPlayer").classList.remove("hidden");
   }
-  $("refInput").onchange = (e) => { const f = e.target.files[0]; if (f) setRef(f, f.name); };
+  $("refInput").onchange = async (e) => {
+    const f = e.target.files[0]; if (!f) return;
+    const st = $("voiceStatus");
+    try {   // any audio file -> 24 kHz mono WAV, first 2 minutes: small upload, same voice
+      const ctx = new (window.AudioContext || window.webkitAudioContext)();
+      const buf = await ctx.decodeAudioData(await f.arrayBuffer()); ctx.close();
+      const n = Math.min(buf.length, Math.floor(120 * buf.sampleRate));
+      const mono = new Float32Array(n);
+      for (let c = 0; c < buf.numberOfChannels; c++) { const d = buf.getChannelData(c); for (let i = 0; i < n; i++) mono[i] += d[i] / buf.numberOfChannels; }
+      setRef(encodeWav([mono], buf.sampleRate), "reference.wav");
+      status(st, buf.duration < 30 ? "Short — 1 minute or more works better." : buf.duration > 120 ? "Using the first 2 minutes." : "", buf.duration < 30);
+    } catch { status(st, "Can't read this audio file. Try wav or mp3.", true); }
+  };
 
   let rec = null;
   $("recBtn").onclick = async () => {
@@ -250,7 +301,9 @@
     const chunks = []; const t0 = Date.now();
     proc.onaudioprocess = (e) => {
       chunks.push(new Float32Array(e.inputBuffer.getChannelData(0)));
-      $("recTime").textContent = ((Date.now() - t0) / 1000).toFixed(1) + " s";
+      const s = (Date.now() - t0) / 1000;
+      $("recTime").textContent = `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, "0")}` + (s < 60 ? " · keep going, 1 min or more" : s < 90 ? " · good" : " · enough, you can stop");
+      if (s >= 120 && rec) rec.stop();
     };
     src.connect(proc); proc.connect(ctx.destination);
     $("recBtn").textContent = "■ Stop"; $("refRec").classList.add("recording");
@@ -259,7 +312,7 @@
       const secs = (Date.now() - t0) / 1000;
       const wav = encodeWav(chunks, ctx.sampleRate); ctx.close();
       rec = null; $("recBtn").textContent = "● Record again"; $("refRec").classList.remove("recording");
-      status($("voiceStatus"), secs < 5 ? "Short — 10 s or more works better." : "", secs < 5);
+      status($("voiceStatus"), secs < 30 ? "Short — 1 minute or more works better." : "", secs < 30);
       setRef(wav, "recording.wav");
     } };
   };
@@ -279,7 +332,7 @@
     }
     return new Blob([buf], { type: "audio/wav" });
   }
-  $("text").oninput = () => { const n = ($("text").value.match(/\S+/g) || []).length; $("words").textContent = n + (n === 1 ? " word" : " words"); };
+  $("text").oninput = () => { const n = ($("text").value.replace(/\[[^\]]*\]/g, " ").match(/\S+/g) || []).length; $("words").textContent = n + (n === 1 ? " word" : " words"); };
 
   // ---------- 1 · generate voice
   $("voiceBtn").onclick = async () => {
@@ -298,12 +351,35 @@
     finally { $("voiceBtn").disabled = false; }
   };
 
-  // ---------- 2 · photo + audio
-  $("photo").onchange = async (e) => {
-    const f = e.target.files[0]; if (!f) return;
+  // ---------- 2 · picture
+  tabs("imgShape", (v) => { state.imageShape = v; });
+  $("imageBtn").onclick = async () => {
+    const st = $("imageStatus");
+    const prompt = $("imgPrompt").value.trim();
+    if (!prompt) return status(st, "Describe the picture first.", true);
+    $("imageBtn").disabled = true; $("imageResult").classList.remove("show");
+    try {
+      status(st, "Starting…");
+      const { k, job } = await post("/image", { prompt, shape: state.imageShape });
+      const j = { job, k, group, ids: [], t: Date.now() };
+      pending.put("image", j);
+      await finish("image", j, "");
+    } catch (e) { status(st, e.message, true); }
+    finally { $("imageBtn").disabled = false; }
+  };
+  $("useImage").onclick = async () => {
+    if (!state.imageBlob) return;
+    await setPhoto(state.imageBlob);
+    $("photo").value = "";
+    $("photoPreview").scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+
+  // ---------- 3 · photo + audio
+  async function setPhoto(f) {
     try { state.photoBlob = await shrink(f); } catch { state.photoBlob = f; }
     $("photoPreview").src = URL.createObjectURL(state.photoBlob); $("photoPreview").style.display = "block";
-  };
+  }
+  $("photo").onchange = (e) => { const f = e.target.files[0]; if (f) setPhoto(f); };
   async function shrink(file) {   // max. 1280 px JPEG: faster upload, same result
     const img = await createImageBitmap(file);
     state.shape = img.width > img.height ? "landscape" : "portrait";   // the video follows the photo

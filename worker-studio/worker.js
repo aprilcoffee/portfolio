@@ -1,7 +1,8 @@
 // Feeling Safe Studio — Cloudflare Worker.
 // Keeps the Comfy Cloud API keys away from the browser and forwards four calls:
 //   POST /upload            raw file body          -> { k, asset }
-//   POST /voice             { k, ref, text, language }           -> { k, job }
+//   POST /voice             { k, ref, text, language }           -> { k, job }   ElevenLabs v4 (clone + speech, tags like [happy])
+//   POST /image             { k, prompt, shape }                 -> { k, job }   Z-Image Turbo, one picture
 //   POST /video             { k, image, audio, seconds, prompt, shape } -> { k, job }   shape: "portrait" | "landscape"
 //   GET  /job/:id?k=        job status and outputs
 //   GET  /file/:assetId?k=  download an output
@@ -16,19 +17,37 @@
 import VIDEO_WORKFLOW from "./video_workflow.json";
 
 const API = "https://cloud.comfy.org/api/v2";
-const LANGUAGES = ["English", "German", "Chinese", "French", "Italian", "Spanish",
-  "Portuguese", "Russian", "Japanese", "Korean"];
 const MAX_UPLOAD = 15 * 1024 * 1024;
 const MAX_TEXT = 1200;
 const FPS = 25;
 const DEFAULT_PROMPT = "A news anchor speaks calmly and clearly to the camera in a TV studio.";
 
+// ElevenLabs (partner node, billed in Comfy credits): clone the reference (~$0.15, reused from Comfy's cache
+// for the same recording), then speak the script with eleven_v4 (~$0.11 per 1000 characters).
+// Audio tags in the script ([happy], [whispers], [laughs] …) steer the delivery and are not read out.
 const voiceWorkflow = (text, language, ref, seed) => ({
-  "1": { class_type: "FB_Qwen3TTSVoiceClone", inputs: {
-    target_text: text, model_choice: "0.6B", device: "auto", precision: "bf16",
-    language, ref_audio: ["2", 0], seed, x_vector_only: true } },
-  "2": { class_type: "LoadAudio", inputs: { audio: assetRef(ref) } },
-  "3": { class_type: "SaveAudioMP3", inputs: { audio: ["1", 0], filename_prefix: "audio/voice", quality: "V0" } },
+  "1": { class_type: "LoadAudio", inputs: { audio: assetRef(ref) } },
+  "2": { class_type: "ElevenLabsInstantVoiceClone", inputs: { "files.audio0": ["1", 0], remove_background_noise: false } },
+  "3": { class_type: "ElevenLabsTextToSpeech", inputs: {
+    voice: ["2", 0], text, stability: 0.5, apply_text_normalization: "auto",
+    model: "eleven_v4", "model.speed": 1.0, "model.similarity_boost": 0.75,
+    language_code: language, seed, output_format: "mp3_44100_192" } },
+  "4": { class_type: "SaveAudioMP3", inputs: { audio: ["3", 0], filename_prefix: "audio/voice", quality: "V0" } },
+});
+
+// Z-Image Turbo: one picture from a text prompt, 768 x 1344 portrait or 1344 x 768 (16:9).
+const imageWorkflow = (prompt, seed, landscape) => ({
+  "1": { class_type: "UNETLoader", inputs: { unet_name: "z_image_turbo_bf16.safetensors", weight_dtype: "default" } },
+  "2": { class_type: "CLIPLoader", inputs: { clip_name: "qwen_3_4b.safetensors", type: "lumina2", device: "default" } },
+  "3": { class_type: "VAELoader", inputs: { vae_name: "ae.safetensors" } },
+  "4": { class_type: "ModelSamplingAuraFlow", inputs: { model: ["1", 0], shift: 3 } },
+  "5": { class_type: "CLIPTextEncode", inputs: { clip: ["2", 0], text: prompt } },
+  "6": { class_type: "ConditioningZeroOut", inputs: { conditioning: ["5", 0] } },
+  "7": { class_type: "EmptySD3LatentImage", inputs: { width: landscape ? 1344 : 768, height: landscape ? 768 : 1344, batch_size: 1 } },
+  "8": { class_type: "KSampler", inputs: { model: ["4", 0], positive: ["5", 0], negative: ["6", 0], latent_image: ["7", 0],
+    seed, steps: 8, cfg: 1, sampler_name: "res_multistep", scheduler: "simple", denoise: 1 } },
+  "9": { class_type: "VAEDecode", inputs: { samples: ["8", 0], vae: ["3", 0] } },
+  "10": { class_type: "SaveImage", inputs: { images: ["9", 0], filename_prefix: "image/picture" } },
 });
 
 function videoWorkflow(image, audio, seconds, prompt, seed, landscape) {
@@ -94,8 +113,19 @@ export default {
         const text = String(b.text || "").trim();
         if (!text) throw new HttpError(400, "Please type a script.");
         if (text.length > MAX_TEXT) throw new HttpError(400, `The script is too long (max. ${MAX_TEXT} characters).`);
-        if (!LANGUAGES.includes(b.language)) throw new HttpError(400, "Unknown language.");
-        const job = await comfy(keys[k], "/jobs", { method: "POST", json: { workflow: voiceWorkflow(text, b.language, b.ref, seed()) } });
+        const language = String(b.language || "");
+        if (language && !/^[a-z]{2}$/.test(language)) throw new HttpError(400, "Unknown language.");
+        // partner nodes (ElevenLabs) need the key inside the job as well
+        const job = await comfy(keys[k], "/jobs", { method: "POST", json: { workflow: voiceWorkflow(text, language, b.ref, seed()), extra_data: { api_key_comfy_org: keys[k] } } });
+        return json({ k, job: job.id }, cors);
+      }
+
+      if (req.method === "POST" && url.pathname === "/image") {
+        const b = await req.json();
+        const k = pick(b.k);
+        const prompt = String(b.prompt || "").trim().slice(0, 800);
+        if (!prompt) throw new HttpError(400, "Please describe the picture.");
+        const job = await comfy(keys[k], "/jobs", { method: "POST", json: { workflow: imageWorkflow(prompt, seed(), b.shape === "landscape") } });
         return json({ k, job: job.id }, cors);
       }
 
