@@ -75,7 +75,7 @@
       <label class="small" style="margin-top:0">Reference voice</label>
       <div class="tabs" id="refMode" style="margin-top:6px"><button class="on" data-v="rec">Record</button><button data-v="file">Upload</button><button data-v="none">No recording</button></div>
       <div id="refRec">
-        <div class="row"><button id="recBtn">● Record</button><span class="dot"></span><span id="recTime" class="muted">1–1.5 min, only you</span></div>
+        <div class="row"><button id="recBtn">● Record</button><span class="dot"></span><span id="recTime" class="muted">any length, only you · longer sounds more like you (up to 2 min)</span></div>
         <details><summary>Something to read (or just talk about anything)</summary><p>Hello, this is my voice. I'm recording it for a workshop on synthetic media, and I agree to let a model copy it — for this class only. On Monday the sky was grey over Weimar, but by Thursday the sun came out. Five quick questions: who is speaking, what did they say, where, when — and why should anyone believe it?</p><p>This morning I woke up late and was sure I had missed the train. I ran down the stairs, no coffee, nothing — and then I saw it was Sunday! I just stood there, laughing at myself. Later I went to the market. It was cold, really cold, but the light over the square was beautiful. A little boy dropped his ice cream and he was so sad, and then his father bought him a new one, and suddenly he was the happiest person in town. Honestly, small things like that make my day. What only matters is that you sound like yourself: calm, excited, tired — whatever is true today.</p></details>
       </div>
       <div id="refFile" class="hidden"><input id="refInput" type="file" accept="audio/*"></div>
@@ -311,7 +311,7 @@
       const mono = new Float32Array(n);
       for (let c = 0; c < buf.numberOfChannels; c++) { const d = buf.getChannelData(c); for (let i = 0; i < n; i++) mono[i] += d[i] / buf.numberOfChannels; }
       setRef(encodeWav([mono], buf.sampleRate), "reference.wav");
-      status(st, buf.duration < 30 ? "Short — 1 minute or more works better." : buf.duration > 120 ? "Using the first 2 minutes." : "", buf.duration < 30);
+      status(st, buf.duration < 3 ? "Very short — a few seconds more helps." : buf.duration > 120 ? "Using the first 2 minutes." : "", false);
     } catch { status(st, "Can't read this audio file. Try wav or mp3.", true); }
   };
 
@@ -328,7 +328,7 @@
     proc.onaudioprocess = (e) => {
       chunks.push(new Float32Array(e.inputBuffer.getChannelData(0)));
       const s = (Date.now() - t0) / 1000;
-      $("recTime").textContent = `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, "0")}` + (s < 60 ? " · keep going, 1 min or more" : s < 90 ? " · good" : " · enough, you can stop");
+      $("recTime").textContent = `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, "0")}` + (s >= 110 ? " · stops at 2:00" : "");
       if (s >= 120 && rec) rec.stop();
     };
     src.connect(proc); proc.connect(ctx.destination);
@@ -338,7 +338,7 @@
       const secs = (Date.now() - t0) / 1000;
       const wav = encodeWav(chunks, ctx.sampleRate); ctx.close();
       rec = null; $("recBtn").textContent = "● Record again"; $("refRec").classList.remove("recording");
-      status($("voiceStatus"), secs < 30 ? "Short — 1 minute or more works better." : "", secs < 30);
+      status($("voiceStatus"), secs < 3 ? "Very short — a few seconds more helps." : "", false);
       setRef(wav, "recording.wav");
     } };
   };
