@@ -114,6 +114,7 @@
       <div id="audFile" class="hidden"><input id="audInput" type="file" accept="audio/*"></div>
       <div class="muted" id="audInfo"></div>
 
+      <p class="status hidden" id="videoClosed"></p>
       <button id="videoBtn" class="go">Generate video</button>
       <p class="status" id="videoStatus"></p>
       <div class="result" id="videoResult">
@@ -122,6 +123,7 @@
       </div>
     </section>
 
+    <p class="muted">Download what you want to keep: this page does not store your voice, pictures or videos.</p>
     <p class="muted">Only you, or fiction. Label it as AI-generated.</p>
   </div>
 </main>
@@ -200,7 +202,8 @@
     group = g;
     status($("pwStatus"), "…");
     try {
-      await call("/check");
+      const me = await (await call("/check")).json();
+      videoGate(me.video_from);
       store.set("fs-pw", password); store.set("fs-group", group);
       $("grp").textContent = group;
       $("gate").classList.add("hidden"); $("app").classList.remove("hidden"); status($("pwStatus"), "");
@@ -210,6 +213,17 @@
   document.querySelectorAll(".groups button").forEach((b) => b.onclick = () => enter(b.dataset.g));
   $("switch").onclick = (e) => { e.preventDefault(); $("app").classList.add("hidden"); $("gate").classList.remove("hidden"); };
   const saved = store.get("fs-pw"); if (saved) $("pw").value = saved;
+
+  // ---------- step 3 opens later in the workshop (wrangler.toml VIDEO_FROM)
+  function videoGate(from) {
+    const closed = !!from;
+    $("videoBtn").classList.toggle("hidden", closed);
+    $("videoClosed").classList.toggle("hidden", !closed);
+    if (closed) {
+      const d = new Date(from + "T12:00:00");
+      $("videoClosed").textContent = `Opens on ${d.toLocaleDateString("en-GB", { day: "numeric", month: "long" })}. Until then: make voices and pictures, and download the ones you like.`;
+    }
+  }
 
   // ---------- jobs survive a closed tab: remember them, pick them up again on the next visit
   const pending = { get() { try { return JSON.parse(store.get("fs-pending") || "{}"); } catch { return {}; } },

@@ -13,3 +13,6 @@ ALLOWED_ORIGINS = "https://liutingchun.com,https://www.liutingchun.com"
 # Last day the studio works (YYYY-MM-DD).
 END_DATE = "2026-12-08"
 MAX_VIDEO_SECONDS = "45"
+# Step 3 (video) opens on this day, Weimar time (YYYY-MM-DD). Before that only voice and picture work.
+# Change the date and push to open it earlier or later; remove the line to open it now.
+VIDEO_FROM = "2026-11-17"

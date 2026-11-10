@@ -22,7 +22,7 @@
    `curl -H 'x-class-password: …' https://feeling-safe-studio.8765498-208.workers.dev/check`
    再到頁面做一次聲音、一次短影片。
 
-`wrangler.toml`：`ALLOWED_ORIGINS`（只接受 liutingchun.com）、`END_DATE`（2026-12-08 之後關閉）、`MAX_VIDEO_SECONDS`。
+`wrangler.toml`：`VIDEO_FROM`（第 3 步影片從這天開放，威瑪時間；之前只能做聲音和圖片，Worker 也會擋下影片請求。改日期後 push 到 main 就會重新部署）、`ALLOWED_ORIGINS`（只接受 liutingchun.com）、`END_DATE`（2026-12-08 之後關閉）、`MAX_VIDEO_SECONDS`。
 
 ## 本機測試
 

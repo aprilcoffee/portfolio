@@ -12,7 +12,7 @@
 // CLASS_PASSWORD. Every request names its group in the header x-group: A or B.
 // Comfy queues extra jobs per account (tested: 6 at once on one key all ran), so several
 // students at the same time just wait in that group's queue.
-// Vars (wrangler.toml): ALLOWED_ORIGINS, END_DATE, MAX_VIDEO_SECONDS.
+// Vars (wrangler.toml): ALLOWED_ORIGINS, END_DATE, MAX_VIDEO_SECONDS, VIDEO_FROM (video opens on that day, Weimar time).
 
 import VIDEO_WORKFLOW from "./video_workflow.json";
 
@@ -79,9 +79,9 @@ export default {
     if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: cors });
     try {
       const url = new URL(req.url);
-      if (url.pathname === "/health") return json({ ok: true, end: env.END_DATE || null }, cors);
+      if (url.pathname === "/health") return json({ ok: true, end: env.END_DATE || null, video_from: env.VIDEO_FROM || null }, cors);
       checkAccess(req, env);
-      if (url.pathname === "/check") return json({ ok: true }, cors);
+      if (url.pathname === "/check") return json({ ok: true, video_from: videoOpen(env) ? null : env.VIDEO_FROM }, cors);
       const group = (req.headers.get("x-group") || "").toUpperCase();
       if (!["A", "B"].includes(group)) throw new HttpError(400, "Choose group A or B.");
       const keys = (env["COMFY_KEYS_" + group] || env.COMFY_KEYS || "").split(/[\s,]+/).filter(Boolean);
@@ -130,6 +130,7 @@ export default {
       }
 
       if (req.method === "POST" && url.pathname === "/video") {
+        if (!videoOpen(env)) throw new HttpError(403, `Video opens on ${env.VIDEO_FROM}.`);
         const b = await req.json();
         const k = pick(b.k);
         const max = Number(env.MAX_VIDEO_SECONDS || 45);
@@ -178,6 +179,9 @@ export default {
     }
   },
 };
+
+// the video step opens at midnight Weimar time (CET, UTC+1 in November/December) on VIDEO_FROM
+const videoOpen = (env) => !env.VIDEO_FROM || new Date() >= new Date(env.VIDEO_FROM + "T00:00:00+01:00");
 
 function checkAccess(req, env) {
   if (env.END_DATE && new Date() > new Date(env.END_DATE + "T23:59:59")) throw new HttpError(403, "The studio is closed.");
