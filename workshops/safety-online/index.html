@@ -56,6 +56,13 @@
   .picture img { width:100%; margin-top:12px; border-radius:8px; background:var(--soft); }
   .links { display:flex; gap:16px; align-items:center; flex-wrap:wrap; margin-top:6px; }
   .links button { padding:6px 12px; font-size:14px; }
+  .field-foot { display:flex; justify-content:space-between; gap:8px; font-size:13px; color:var(--muted); margin-top:4px; }
+  .field-foot > span:last-child { white-space:nowrap; }
+  .field-foot button { background:none; padding:0; font-size:13px; color:var(--muted); text-decoration:underline; }
+  .refbar { display:flex; gap:10px; align-items:center; margin-top:10px; }
+  .refbar audio { margin-top:0; flex:1; }
+  .refbar button { padding:6px 10px; font-size:13px; }
+  .local { font-size:13px; color:var(--muted); margin:8px 0 0; }
 </style>
 </head>
 <body>
@@ -79,18 +86,19 @@
         <details><summary>Something to read (or just talk about anything)</summary><p>Hello, this is my voice. I'm recording it for a workshop on synthetic media, and I agree to let a model copy it — for this class only. On Monday the sky was grey over Weimar, but by Thursday the sun came out. Five quick questions: who is speaking, what did they say, where, when — and why should anyone believe it?</p><p>This morning I woke up late and was sure I had missed the train. I ran down the stairs, no coffee, nothing — and then I saw it was Sunday! I just stood there, laughing at myself. Later I went to the market. It was cold, really cold, but the light over the square was beautiful. A little boy dropped his ice cream and he was so sad, and then his father bought him a new one, and suddenly he was the happiest person in town. Honestly, small things like that make my day. What only matters is that you sound like yourself: calm, excited, tired — whatever is true today.</p></details>
       </div>
       <div id="refFile" class="hidden"><input id="refInput" type="file" accept="audio/*"></div>
-      <audio id="refPlayer" controls class="hidden"></audio>
+      <div class="refbar hidden" id="refBar"><audio id="refPlayer" controls></audio><button type="button" id="refDelete">Delete</button></div>
+      <p class="local" id="refLocal">Your recording stays on this device. It is sent only when you press Generate voice.</p>
       <p id="refNone" class="muted hidden" style="margin:0">The voice will be made from your description below.</p>
 
       <label class="small" for="voiceDesc">Voice description</label>
       <textarea id="voiceDesc" maxlength="400" style="min-height:70px" placeholder="e.g. a deep, slow, slightly raspy voice of an old radio announcer, warm and amused"></textarea>
-      <div class="muted" id="descHint" style="font-size:13px;margin-top:4px">Used when there is no recording. With a recording, the recording decides the voice.</div>
+      <div class="field-foot"><span>Used when there is no recording. With a recording, the recording decides the voice.</span><span><span data-count="voiceDesc"></span> · <button type="button" data-clear="voiceDesc">clear</button></span></div>
 
       <label class="small">Script</label>
 
       <div class="tags" id="tags" title="Click to add a mood to your script" style="margin-top:6px"></div>
       <textarea id="text" maxlength="1200" placeholder="Your script. Add moods like [happy] or [whispers] before a sentence."></textarea>
-      <div class="row muted" style="justify-content:space-between;margin-top:6px"><span id="words">0 words</span><span>≈ 130 words per minute</span></div>
+      <div class="field-foot"><span><span id="words">0 words</span> · ≈ 130 words per minute</span><span><span data-count="text"></span> · <button type="button" data-clear="text">clear</button></span></div>
       <label class="small" for="lang">Language</label>
       <select id="lang"></select>
 
@@ -105,6 +113,7 @@
     <section>
       <h2>2 · Picture <span style="text-transform:none;letter-spacing:0">(phone, vertical 9:16)</span></h2>
       <textarea id="imgPrompt" maxlength="800" placeholder="Describe a picture, e.g. a fictional news anchor at a desk, looking into the camera, mouth closed"></textarea>
+      <div class="field-foot"><span>Your texts are kept on this device while you work.</span><span><span data-count="imgPrompt"></span> · <button type="button" data-clear="imgPrompt">clear</button></span></div>
       <button id="imageBtn" class="go">Generate picture</button>
       <p class="status" id="imageStatus"></p>
       <div class="result picture" id="imageResult">
@@ -130,7 +139,7 @@
       </div>
     </section>
 
-    <p class="muted">Download what you want to keep: this page does not store your voice, pictures or videos.</p>
+    <p class="muted">Download what you want to keep: results are not stored. Your texts and your last recording stay only in this browser.</p>
     <p class="muted">Only you, or fiction. Label it as AI-generated.</p>
   </div>
 </main>
@@ -147,6 +156,19 @@
   const $ = (id) => document.getElementById(id);
   const store = { get(k) { try { return localStorage.getItem(k); } catch { return null; } },
                   set(k, v) { try { localStorage.setItem(k, v); } catch {} } };
+  // recording kept in this browser only (IndexedDB); nothing leaves the device before Generate voice
+  const local = {
+    db: null,
+    open() { return this.db || (this.db = new Promise((ok, no) => {
+      const r = indexedDB.open("safety-online", 1);
+      r.onupgradeneeded = () => r.result.createObjectStore("kv");
+      r.onsuccess = () => ok(r.result); r.onerror = () => no(r.error);
+    })); },
+    async put(k, v) { try { const db = await this.open(); await new Promise((ok) => {
+      const tx = db.transaction("kv", "readwrite"); v ? tx.objectStore("kv").put(v, k) : tx.objectStore("kv").delete(k);
+      tx.oncomplete = tx.onerror = tx.onabort = ok; }); } catch {} },
+    async get(k) { try { const db = await this.open(); return await new Promise((ok) => { const r = db.transaction("kv").objectStore("kv").get(k); r.onsuccess = () => ok(r.result); r.onerror = () => ok(null); }); } catch { return null; } },
+  };
   let password = "", group = "";
   const state = { refBlob: null, refName: "", voiceBlob: null, audBlob: null, audName: "", photoBlob: null, shape: "portrait", imageBlob: null, imageShape: "portrait" };
 
@@ -295,12 +317,18 @@
   tabs("refMode", (v) => {
     refMode = v;
     $("refRec").classList.toggle("hidden", v !== "rec"); $("refFile").classList.toggle("hidden", v !== "file");
-    $("refPlayer").classList.toggle("hidden", v === "none" || !state.refBlob); $("refNone").classList.toggle("hidden", v !== "none");
+    if (v !== "rec" && rec) rec.stop();
+    $("refBar").classList.toggle("hidden", v === "none" || !state.refBlob); $("refNone").classList.toggle("hidden", v !== "none");
+    $("refLocal").classList.toggle("hidden", v === "none");
+    store.set("fs-refmode", v);
   });
-  function setRef(blob, name) {
+  function setRef(blob, name, keep = true) {   // keep: also save it in this browser
     state.refBlob = blob; state.refName = name;
-    $("refPlayer").src = URL.createObjectURL(blob); $("refPlayer").classList.remove("hidden");
+    if (blob) { $("refPlayer").src = URL.createObjectURL(blob); $("refBar").classList.remove("hidden"); }
+    else { $("refPlayer").removeAttribute("src"); $("refBar").classList.add("hidden"); }
+    if (keep) local.put("ref", blob ? { blob, name } : null);
   }
+  $("refDelete").onclick = async () => { if (rec) rec.stop(); setRef(null, "", false); await local.put("ref", null); $("refInput").value = ""; $("recBtn").textContent = "● Record"; status($("voiceStatus"), "Recording deleted from this device."); };
   $("refInput").onchange = async (e) => {
     const f = e.target.files[0]; if (!f) return;
     const st = $("voiceStatus");
@@ -316,12 +344,18 @@
   };
 
   let rec = null;
+  let starting = false;
   $("recBtn").onclick = async () => {
     if (rec) { rec.stop(); return; }
+    if (starting) return;
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) { status($("voiceStatus"), "This browser can't record. Upload a file instead.", true); return; }
+    starting = true;
     let stream;
     try { stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: false, noiseSuppression: true } }); }
-    catch { status($("voiceStatus"), "No microphone access. Allow it, or upload a file.", true); return; }
+    catch { starting = false; status($("voiceStatus"), "No microphone access. Allow it, or upload a file.", true); return; }
+    starting = false;
     const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    try { await ctx.resume(); } catch {}   // Safari starts suspended
     const src = ctx.createMediaStreamSource(stream);
     const proc = ctx.createScriptProcessor(4096, 1, 1);
     const chunks = []; const t0 = Date.now();
@@ -332,11 +366,13 @@
       if (s >= 120 && rec) rec.stop();
     };
     src.connect(proc); proc.connect(ctx.destination);
-    $("recBtn").textContent = "■ Stop"; $("refRec").classList.add("recording");
+    $("recBtn").textContent = "■ Stop"; $("refRec").classList.add("recording"); status($("voiceStatus"), "");
+    stream.getTracks().forEach((t) => t.addEventListener("ended", () => rec && rec.stop()));   // mic unplugged / permission taken away
     rec = { stop() {
+      if (rec !== this) return;
       proc.disconnect(); src.disconnect(); stream.getTracks().forEach((t) => t.stop());
       const secs = (Date.now() - t0) / 1000;
-      const wav = encodeWav(chunks, ctx.sampleRate); ctx.close();
+      const wav = encodeWav(chunks, ctx.sampleRate); ctx.close().catch(() => {});
       rec = null; $("recBtn").textContent = "● Record again"; $("refRec").classList.remove("recording");
       status($("voiceStatus"), secs < 3 ? "Very short — a few seconds more helps." : "", false);
       setRef(wav, "recording.wav");
@@ -360,9 +396,33 @@
   }
   $("text").oninput = () => { const n = ($("text").value.replace(/\[[^\]]*\]/g, " ").match(/\S+/g) || []).length; $("words").textContent = n + (n === 1 ? " word" : " words"); };
 
+  // ---------- fields: saved as you type (this browser only), counters, clear
+  const FIELDS = ["voiceDesc", "text", "imgPrompt"];
+  function count(id) { const el = $(id), c = document.querySelector(`[data-count="${id}"]`); if (c) c.textContent = `${el.value.length} / ${el.maxLength}`; }
+  FIELDS.forEach((id) => {
+    const el = $(id), saved = store.get("fs-f-" + id);
+    if (saved && !el.value) el.value = saved;
+    const prev = el.oninput;
+    el.oninput = () => { store.set("fs-f-" + id, el.value); count(id); if (prev) prev(); };
+    count(id);
+  });
+  $("text").oninput && $("text").oninput();
+  document.querySelectorAll("[data-clear]").forEach((b) => b.onclick = () => {
+    const el = $(b.dataset.clear); if (el.value && !confirm("Clear this field?")) return;
+    el.value = ""; el.oninput(); el.focus();
+  });
+  const savedLang = store.get("fs-lang"); if (savedLang !== null) $("lang").value = savedLang;
+  $("lang").onchange = () => store.set("fs-lang", $("lang").value);
+  (async () => {   // bring back the last recording and the chosen mode
+    const r = await local.get("ref"); if (r && r.blob) setRef(r.blob, r.name || "recording.wav", false);
+    const m = store.get("fs-refmode"); if (m) { const b = document.querySelector(`#refMode button[data-v="${m}"]`); if (b) b.click(); }
+  })();
+  window.addEventListener("pagehide", () => { if (rec) rec.stop(); });
+
   // ---------- 1 · generate voice
   $("voiceBtn").onclick = async () => {
     const st = $("voiceStatus");
+    if (rec) rec.stop();
     const useRef = refMode !== "none" && state.refBlob, description = $("voiceDesc").value.trim();
     if (!useRef && !description) return status(st, refMode === "none" ? "Describe the voice first." : "Record or upload a voice, or choose “No recording” and describe one.", true);
     if (!$("text").value.trim()) return status(st, "Type a script.", true);
