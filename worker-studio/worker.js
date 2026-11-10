@@ -1,7 +1,8 @@
 // Feeling Safe Studio — Cloudflare Worker.
 // Keeps the Comfy Cloud API keys away from the browser and forwards four calls:
 //   POST /upload            raw file body          -> { k, asset }
-//   POST /voice             { k, ref, text, language }           -> { k, job }   ElevenLabs v4 (clone + speech, tags like [happy])
+//   POST /voice             { k, ref?, description?, text, language } -> { k, job }   ElevenLabs v4 (clone + speech, tags like [happy]);
+//                           without ref, Qwen3 VoiceDesign first makes a voice sample from the description
 //   POST /image             { k, prompt, shape }                 -> { k, job }   Z-Image Turbo, one picture
 //   POST /video             { k, image, audio, seconds, prompt, shape } -> { k, job }   shape: "portrait" | "landscape"
 //   GET  /job/:id?k=        job status and outputs
@@ -25,8 +26,16 @@ const DEFAULT_PROMPT = "A news anchor speaks calmly and clearly to the camera in
 // ElevenLabs (partner node, billed in Comfy credits): clone the reference (~$0.15, reused from Comfy's cache
 // for the same recording), then speak the script with eleven_v4 (~$0.11 per 1000 characters).
 // Audio tags in the script ([happy], [whispers], [laughs] …) steer the delivery and are not read out.
-const voiceWorkflow = (text, language, ref, seed) => ({
-  "1": { class_type: "LoadAudio", inputs: { audio: assetRef(ref) } },
+// No recording: Qwen3 VoiceDesign (open) speaks this neutral sample in a voice made from the description,
+// and ElevenLabs clones that sample like a recording.
+const DESIGN_SAMPLE = "Hello, and welcome. This is a short sample of my voice, so you can hear how I sound. " +
+  "I speak about the weather, the news, and the small things of everyday life. " +
+  "Sometimes I am calm, sometimes I am surprised, and sometimes I simply tell a story, one sentence after another.";
+const designNode = (description, seed) => ({ class_type: "FB_Qwen3TTSVoiceDesign", inputs: {
+  text: DESIGN_SAMPLE, instruct: description, model_choice: "1.7B", device: "auto", precision: "bf16", language: "English", seed } });
+
+const voiceWorkflow = (text, language, ref, description, seed) => ({
+  "1": ref ? { class_type: "LoadAudio", inputs: { audio: assetRef(ref) } } : designNode(description, seed),
   "2": { class_type: "ElevenLabsInstantVoiceClone", inputs: { "files.audio0": ["1", 0], remove_background_noise: false } },
   "3": { class_type: "ElevenLabsTextToSpeech", inputs: {
     voice: ["2", 0], text, stability: 0.5, apply_text_normalization: "auto",
@@ -115,8 +124,10 @@ export default {
         if (text.length > MAX_TEXT) throw new HttpError(400, `The script is too long (max. ${MAX_TEXT} characters).`);
         const language = String(b.language || "");
         if (language && !/^[a-z]{2}$/.test(language)) throw new HttpError(400, "Unknown language.");
+        const description = String(b.description || "").trim().slice(0, 400);
+        if (!b.ref && !description) throw new HttpError(400, "Record or upload a voice, or describe one.");
         // partner nodes (ElevenLabs) need the key inside the job as well
-        const job = await comfy(keys[k], "/jobs", { method: "POST", json: { workflow: voiceWorkflow(text, language, b.ref, seed()), extra_data: { api_key_comfy_org: keys[k] } } });
+        const job = await comfy(keys[k], "/jobs", { method: "POST", json: { workflow: voiceWorkflow(text, language, b.ref || null, description, seed()), extra_data: { api_key_comfy_org: keys[k] } } });
         return json({ k, job: job.id }, cors);
       }
 
@@ -125,7 +136,8 @@ export default {
         const k = pick(b.k);
         const prompt = String(b.prompt || "").trim().slice(0, 800);
         if (!prompt) throw new HttpError(400, "Please describe the picture.");
-        const job = await comfy(keys[k], "/jobs", { method: "POST", json: { workflow: imageWorkflow(prompt, seed(), b.shape === "landscape") } });
+        // always phone-vertical (9:16)
+        const job = await comfy(keys[k], "/jobs", { method: "POST", json: { workflow: imageWorkflow(prompt, seed(), false) } });
         return json({ k, job: job.id }, cors);
       }
 
