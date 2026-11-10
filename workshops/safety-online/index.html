@@ -72,15 +72,23 @@
     <div class="who">Group <span id="grp"></span> · <a href="#" id="switch">switch</a></div>
     <section>
       <h2>1 · Voice</h2>
-      <div class="tabs" id="refMode"><button class="on" data-v="rec">Record</button><button data-v="file">Upload</button></div>
+      <label class="small" style="margin-top:0">Reference voice</label>
+      <div class="tabs" id="refMode" style="margin-top:6px"><button class="on" data-v="rec">Record</button><button data-v="file">Upload</button><button data-v="none">No recording</button></div>
       <div id="refRec">
         <div class="row"><button id="recBtn">● Record</button><span class="dot"></span><span id="recTime" class="muted">1–1.5 min, only you</span></div>
         <details><summary>Something to read (or just talk about anything)</summary><p>Hello, this is my voice. I'm recording it for a workshop on synthetic media, and I agree to let a model copy it — for this class only. On Monday the sky was grey over Weimar, but by Thursday the sun came out. Five quick questions: who is speaking, what did they say, where, when — and why should anyone believe it?</p><p>This morning I woke up late and was sure I had missed the train. I ran down the stairs, no coffee, nothing — and then I saw it was Sunday! I just stood there, laughing at myself. Later I went to the market. It was cold, really cold, but the light over the square was beautiful. A little boy dropped his ice cream and he was so sad, and then his father bought him a new one, and suddenly he was the happiest person in town. Honestly, small things like that make my day. What only matters is that you sound like yourself: calm, excited, tired — whatever is true today.</p></details>
       </div>
       <div id="refFile" class="hidden"><input id="refInput" type="file" accept="audio/*"></div>
       <audio id="refPlayer" controls class="hidden"></audio>
+      <p id="refNone" class="muted hidden" style="margin:0">The voice will be made from your description below.</p>
 
-      <div class="tags" id="tags" title="Click to add a mood to your script"></div>
+      <label class="small" for="voiceDesc">Voice description</label>
+      <textarea id="voiceDesc" maxlength="400" style="min-height:70px" placeholder="e.g. a deep, slow, slightly raspy voice of an old radio announcer, warm and amused"></textarea>
+      <div class="muted" id="descHint" style="font-size:13px;margin-top:4px">Used when there is no recording. With a recording, the recording decides the voice.</div>
+
+      <label class="small">Script</label>
+
+      <div class="tags" id="tags" title="Click to add a mood to your script" style="margin-top:6px"></div>
       <textarea id="text" maxlength="1200" placeholder="Your script. Add moods like [happy] or [whispers] before a sentence."></textarea>
       <div class="row muted" style="justify-content:space-between;margin-top:6px"><span id="words">0 words</span><span>≈ 130 words per minute</span></div>
       <label class="small" for="lang">Language</label>
@@ -95,9 +103,8 @@
     </section>
 
     <section>
-      <h2>2 · Picture <span style="text-transform:none;letter-spacing:0">(optional)</span></h2>
+      <h2>2 · Picture <span style="text-transform:none;letter-spacing:0">(phone, vertical 9:16)</span></h2>
       <textarea id="imgPrompt" maxlength="800" placeholder="Describe a picture, e.g. a fictional news anchor at a desk, looking into the camera, mouth closed"></textarea>
-      <div class="tabs" id="imgShape" style="margin-top:12px"><button class="on" data-v="portrait">Portrait</button><button data-v="landscape">16:9</button></div>
       <button id="imageBtn" class="go">Generate picture</button>
       <p class="status" id="imageStatus"></p>
       <div class="result picture" id="imageResult">
@@ -284,7 +291,12 @@
     };
     $("tags").appendChild(b);
   });
-  tabs("refMode", (v) => { $("refRec").classList.toggle("hidden", v !== "rec"); $("refFile").classList.toggle("hidden", v !== "file"); });
+  let refMode = "rec";
+  tabs("refMode", (v) => {
+    refMode = v;
+    $("refRec").classList.toggle("hidden", v !== "rec"); $("refFile").classList.toggle("hidden", v !== "file");
+    $("refPlayer").classList.toggle("hidden", v === "none" || !state.refBlob); $("refNone").classList.toggle("hidden", v !== "none");
+  });
   function setRef(blob, name) {
     state.refBlob = blob; state.refName = name;
     $("refPlayer").src = URL.createObjectURL(blob); $("refPlayer").classList.remove("hidden");
@@ -351,14 +363,16 @@
   // ---------- 1 · generate voice
   $("voiceBtn").onclick = async () => {
     const st = $("voiceStatus");
-    if (!state.refBlob) return status(st, "Record or upload your voice first.", true);
+    const useRef = refMode !== "none" && state.refBlob, description = $("voiceDesc").value.trim();
+    if (!useRef && !description) return status(st, refMode === "none" ? "Describe the voice first." : "Record or upload a voice, or choose “No recording” and describe one.", true);
     if (!$("text").value.trim()) return status(st, "Type a script.", true);
     $("voiceBtn").disabled = true; $("voiceResult").classList.remove("show");
     try {
-      status(st, "Uploading…");
-      const up = await upload(state.refBlob, state.refName, undefined);
-      const { k, job } = await post("/voice", { k: up.k, ref: up.asset, text: $("text").value, language: $("lang").value });
-      const j = { job, k, group, ids: [up.asset.id], t: Date.now() };
+      let up = null;
+      if (useRef) { status(st, "Uploading…"); up = await upload(state.refBlob, state.refName, undefined); }
+      else status(st, "Making a voice from your description…");
+      const { k, job } = await post("/voice", { k: up ? up.k : undefined, ref: up ? up.asset : undefined, description, text: $("text").value, language: $("lang").value });
+      const j = { job, k, group, ids: up ? [up.asset.id] : [], t: Date.now() };
       pending.put("voice", j);
       await finish("voice", j, "");
     } catch (e) { status(st, e.message, true); }
@@ -366,7 +380,6 @@
   };
 
   // ---------- 2 · picture
-  tabs("imgShape", (v) => { state.imageShape = v; });
   $("imageBtn").onclick = async () => {
     const st = $("imageStatus");
     const prompt = $("imgPrompt").value.trim();
@@ -374,7 +387,7 @@
     $("imageBtn").disabled = true; $("imageResult").classList.remove("show");
     try {
       status(st, "Starting…");
-      const { k, job } = await post("/image", { prompt, shape: state.imageShape });
+      const { k, job } = await post("/image", { prompt, shape: "portrait" });
       const j = { job, k, group, ids: [], t: Date.now() };
       pending.put("image", j);
       await finish("image", j, "");
