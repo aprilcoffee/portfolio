@@ -9,7 +9,7 @@
 //   POST /delete            { k, ids } remove uploads and outputs from Comfy
 //   GET  /check             password test
 // Secrets (set by the GitHub Action): COMFY_KEYS_A, COMFY_KEYS_B (comma-separated keys per group),
-// CLASS_PASSWORD. Every request names its group in the header x-group: A or B.
+// CLASS_PASSWORD, optional CLASS_PASSWORD_MASTER (teacher: everything open). Every request names its group in the header x-group: A or B.
 // Comfy queues extra jobs per account (tested: 6 at once on one key all ran), so several
 // students at the same time just wait in that group's queue.
 // Vars (wrangler.toml): ALLOWED_ORIGINS, END_DATE, MAX_VIDEO_SECONDS, VIDEO_FROM (video opens on that day, Weimar time).
@@ -80,8 +80,8 @@ export default {
     try {
       const url = new URL(req.url);
       if (url.pathname === "/health") return json({ ok: true, end: env.END_DATE || null, video_from: env.VIDEO_FROM || null }, cors);
-      checkAccess(req, env);
-      if (url.pathname === "/check") return json({ ok: true, video_from: videoOpen(env) ? null : env.VIDEO_FROM }, cors);
+      const master = checkAccess(req, env);
+      if (url.pathname === "/check") return json({ ok: true, video_from: master || videoOpen(env) ? null : env.VIDEO_FROM }, cors);
       const group = (req.headers.get("x-group") || "").toUpperCase();
       if (!["A", "B"].includes(group)) throw new HttpError(400, "Choose group A or B.");
       const keys = (env["COMFY_KEYS_" + group] || env.COMFY_KEYS || "").split(/[\s,]+/).filter(Boolean);
@@ -130,7 +130,7 @@ export default {
       }
 
       if (req.method === "POST" && url.pathname === "/video") {
-        if (!videoOpen(env)) throw new HttpError(403, `Video opens on ${env.VIDEO_FROM}.`);
+        if (!master && !videoOpen(env)) throw new HttpError(403, `Video opens on ${env.VIDEO_FROM}.`);
         const b = await req.json();
         const k = pick(b.k);
         const max = Number(env.MAX_VIDEO_SECONDS || 45);
@@ -185,8 +185,11 @@ const videoOpen = (env) => !env.VIDEO_FROM || new Date() >= new Date(env.VIDEO_F
 
 function checkAccess(req, env) {
   if (env.END_DATE && new Date() > new Date(env.END_DATE + "T23:59:59")) throw new HttpError(403, "The studio is closed.");
-  const pw = env.CLASS_PASSWORD;
-  if (!pw || req.headers.get("x-class-password") !== pw) throw new HttpError(401, "Wrong class password.");
+  // CLASS_PASSWORD_MASTER (the teacher's) opens everything, also the video step before VIDEO_FROM
+  const given = req.headers.get("x-class-password") || "";
+  if (env.CLASS_PASSWORD_MASTER && given === env.CLASS_PASSWORD_MASTER) return true;
+  if (!env.CLASS_PASSWORD || given !== env.CLASS_PASSWORD) throw new HttpError(401, "Wrong class password.");
+  return false;
 }
 
 function corsHeaders(req, env) {

@@ -5,6 +5,7 @@
 #   COMFY_KEYS_A          Comfy Cloud API key(s) for group A, comma-separated
 #   COMFY_KEYS_B          Comfy Cloud API key(s) for group B, comma-separated
 #   CLASS_PASSWORD        the password the students type
+# Optional: CLASS_PASSWORD_MASTER (the teacher's password: everything open, also video before VIDEO_FROM)
 # Without them the job is skipped.
 name: Deploy studio worker
 
@@ -24,6 +25,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
+      HAS_MASTER: ${{ secrets.CLASS_PASSWORD_MASTER != '' }}
       READY: ${{ secrets.CLOUDFLARE_API_TOKEN != '' && secrets.COMFY_KEYS_A != '' && secrets.COMFY_KEYS_B != '' && secrets.CLASS_PASSWORD != '' }}
     steps:
       - if: env.READY != 'true'
@@ -37,7 +39,7 @@ jobs:
       - if: env.READY == 'true'
         working-directory: worker-studio
         run: npm install --no-audit --no-fund
-      - if: env.READY == 'true'
+      - if: env.READY == 'true' && env.HAS_MASTER != 'true'
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -50,3 +52,18 @@ jobs:
           COMFY_KEYS_A: ${{ secrets.COMFY_KEYS_A }}
           COMFY_KEYS_B: ${{ secrets.COMFY_KEYS_B }}
           CLASS_PASSWORD: ${{ secrets.CLASS_PASSWORD }}
+      - if: env.READY == 'true' && env.HAS_MASTER == 'true'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          workingDirectory: worker-studio
+          secrets: |
+            COMFY_KEYS_A
+            COMFY_KEYS_B
+            CLASS_PASSWORD
+            CLASS_PASSWORD_MASTER
+        env:
+          COMFY_KEYS_A: ${{ secrets.COMFY_KEYS_A }}
+          COMFY_KEYS_B: ${{ secrets.COMFY_KEYS_B }}
+          CLASS_PASSWORD: ${{ secrets.CLASS_PASSWORD }}
+          CLASS_PASSWORD_MASTER: ${{ secrets.CLASS_PASSWORD_MASTER }}
