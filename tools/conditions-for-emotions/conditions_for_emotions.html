@@ -279,7 +279,7 @@ summer</textarea>
       <input type="number" id="nmtok" value="20" min="10" max="120" step="5" style="margin:0">
     </div>
     <div class="out" id="outnames"></div>
-    <p class="hint">same sentence, one substitution, raw continuation — any language works</p>
+    <p class="hint">same sentence, one substitution, instructed continuation — any language works</p>
   </section>
 
   <!-- IMAGE DISTANCE -->
@@ -520,7 +520,9 @@ async function runNames(){
     const promptHtml=tpl.split("[Variable]").map(esc).join(`<span class="varhl">${esc(vals[i])}</span>`);
     out.innerHTML+=`<div class="nm" id="nm-${i}"><b>${esc(vals[i])}</b><div class="prose">${promptHtml} <span class="note">…</span></div></div>`;
     try{
-      const d=await post("/api/generate",{model:GEN,prompt:promptTxt,stream:false,raw:true,
+      const d=await post("/api/generate",{model:GEN,
+        prompt:"Continue the unfinished sentence below. Return ONLY the missing continuation, not the original sentence. Do not explain or repeat yourself.\n\n"+promptTxt,
+        stream:false,raw:false,think:false,
         options:{num_predict:n,temperature:0.8}});
       document.getElementById("nm-"+i).innerHTML=
         `<b>${esc(vals[i])}</b><div class="prose">${promptHtml}<span style="color:var(--acc)">${esc(d.response||"")}</span></div>`;
