@@ -168,3 +168,4 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 
 ## [2026-11-13] edit | Conditions for Emotions tool, new version (artist)
 - topics/workshops.md: download link, embeddinggemma-2:440m, the tool's tabs
+- topics/workshops.md: Conditions for Emotions exercises follow the new tool (chat, image distance, camera; no tokens tab)
