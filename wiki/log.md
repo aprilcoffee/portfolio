@@ -165,3 +165,6 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 
 ## [2026-11-09] edit | upcoming workshops (artist)
 - topics/workshops.md: 13 Nov 2026 Conditions for Emotions; 17 Dec 2026 »Speaking the Token Language« with Leon-Etienne Kühr (the earlier note that 17 Dec was Conditions for Emotions was wrong)
+
+## [2026-11-13] edit | Conditions for Emotions tool, new version (artist)
+- topics/workshops.md: download link, embeddinggemma-2:440m, the tool's tabs

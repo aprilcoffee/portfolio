@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Conditions for Emotions</title>
-<meta name="description" content="Workshop tool for Conditions for Emotions by Ting-Chun Liu: small language models on your own computer through Ollama.">
 <meta name="robots" content="noindex">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <style>
@@ -18,7 +17,6 @@
   body{margin:0;background:var(--paper);color:var(--ink);
        font:16px/1.6 var(--serif);padding:44px 28px 120px}
   .wrap{max-width:1040px;margin:0 auto}
-  .dot{width:9px;height:9px;border-radius:50%;background:var(--acc);margin-bottom:14px}
   h1{font:400 30px/1.2 var(--serif);margin:0 0 4px}
   .sub{color:var(--muted);font-size:13px;margin:0 0 36px;font-family:var(--mono)}
 
@@ -70,10 +68,6 @@
   .cl.user{color:var(--muted)} .cl.bot{color:var(--ink)}
   .cl.bot b{color:var(--acc);font-weight:400}
 
-  /* tokens */
-  .chip{display:inline-block;font:13px var(--mono);padding:4px 8px;margin:0 3px 6px 0;
-    background:var(--card);border:1px solid var(--track)}
-  .chip:nth-child(even){background:#fff}
 
   /* model picker */
   .picker{display:flex;align-items:baseline;gap:22px;flex-wrap:wrap;margin:0 0 10px}
@@ -119,17 +113,25 @@
   .nm b{font:12px var(--mono);color:var(--varc);font-weight:400}
   .varhl{color:var(--varc);text-decoration:underline;text-underline-offset:3px}
 
-  /* get-started bar (website copy only) */
-  .getbar{border:1px solid var(--track);background:var(--card);padding:14px 16px;margin:0 0 30px;
-    font:12.5px/1.6 var(--mono);color:var(--ink)}
-  .getbar .row{margin:0 0 8px}
-  .getbar a:not(.go){color:var(--ink)}
-  .getbar a.go{text-decoration:none;display:inline-block}
-  .getbar code{background:#fff;border:1px solid var(--track);padding:1px 6px}
-  .getbar ol{margin:6px 0 0;padding-left:20px}
-  .getbar .os{margin:8px 0 0}
-  .getbar .os ol{margin:4px 0 0}
-  .getbar .os ol.de{color:var(--muted);margin-top:8px}
+  /* ollama status + setup */
+  .status{display:flex;align-items:baseline;gap:10px;font:11.5px var(--mono);color:var(--muted);margin:0 0 6px}
+  .status .led{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--track);margin-right:6px}
+  .status.ok .led{background:#3a8a4a} .status.ok{color:var(--ink)}
+  .status.bad .led{background:#b33}
+  .status a{color:var(--muted);cursor:pointer;border-bottom:1px dotted var(--muted)}
+  .status a:hover{color:var(--ink)}
+  details.setup{margin:0 0 18px;font:13.5px/1.6 var(--serif)}
+  details.setup summary{cursor:pointer;font:11.5px var(--mono);color:var(--muted);list-style:none}
+  details.setup summary::-webkit-details-marker{display:none}
+  details.setup summary:hover{color:var(--ink)}
+  details.setup summary::after{content:" ▸"}
+  details.setup[open] summary::after{content:" ▾"}
+  .setupbox{display:grid;grid-template-columns:1fr 1fr;gap:18px;background:var(--card);padding:16px 18px;margin-top:8px}
+  .setupbox h4{font:10px var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 8px;font-weight:400}
+  .setupbox ol{margin:0;padding-left:18px} .setupbox li{margin:0 0 4px}
+  .setupbox code{font:12px var(--mono);background:#fff;padding:1px 5px}
+  @media(max-width:700px){.setupbox{grid-template-columns:1fr}}
+
   /* footer */
   footer{max-width:1040px;margin:64px auto 0;padding-top:20px;border-top:1px solid var(--track);
     font:11px var(--mono);color:var(--muted);letter-spacing:.04em;
@@ -138,57 +140,52 @@
 </head>
 <body>
 <div class="wrap">
-  <div class="getbar">
-    <div class="row">
-      <a class="go" href="./index.html" download="conditions_for_emotions.html">download this tool</a>
-      <a class="go alt" href="https://liutingchun.com/workshops/conditions-for-emotions/">about the workshop</a>
-    </div>
-    This tool talks to small language models on your own computer, nothing goes to the cloud. Before you start:
-    <ol>
-      <li>Install Ollama: <a href="https://ollama.com/download" target="_blank" rel="noopener">ollama.com/download</a></li>
-      <li>In a terminal, pull the two models: <code>ollama pull gemma3:4b</code> and <code>ollama pull embeddinggemma</code></li>
-      <li>Allow the browser to talk to Ollama:
-        <div class="os"><b>Mac</b> in a terminal: <code>launchctl setenv OLLAMA_ORIGINS "*"</code>, then quit and reopen Ollama</div>
-        <div class="os"><b>Windows</b>
-          <ol>
-            <li>Search <b>environment variables</b> in the Start menu</li>
-            <li>Click <i>Edit environment variables for your account</i></li>
-            <li>Click <b>New</b> → Variable name: <code>OLLAMA_ORIGINS</code> · Value: <code>*</code></li>
-            <li>Click OK</li>
-            <li>Reopen Ollama from the Start menu</li>
-          </ol>
-          <ol lang="de" class="de">
-            <li>Im Startmenü nach <b>Umgebungsvariablen</b> suchen</li>
-            <li><i>Umgebungsvariablen für dieses Konto bearbeiten</i> anklicken</li>
-            <li><b>Neu</b> klicken → Variablenname: <code>OLLAMA_ORIGINS</code> · Wert: <code>*</code></li>
-            <li>OK klicken</li>
-            <li>Ollama über das Startmenü neu starten</li>
-          </ol>
-        </div>
-      </li>
-      <li>Download this tool (button above) and open the file in your browser.</li>
-    </ol>
-  </div>
-  <div class="dot"></div>
   <h1>Conditions for Emotions</h1>
+  <div class="status" id="status"><span><span class="led"></span><span id="stxt">checking Ollama…</span></span><a onclick="loadModels()">retry</a></div>
+  <details class="setup" id="setup">
+    <summary>setup / Einrichtung</summary>
+    <div class="setupbox">
+      <div>
+        <h4>English</h4>
+        <ol>
+          <li>Install Ollama from <code>ollama.com</code> and open it.</li>
+          <li>In a terminal:<br><code>ollama pull gemma3:4b</code><br><code>ollama pull embeddinggemma-2:440m</code></li>
+          <li>Allow the browser to talk to Ollama:<br>
+            <b>Mac</b> — <code>launchctl setenv OLLAMA_ORIGINS "*"</code><br>
+            <b>Windows</b> — Start menu → “environment variables” → <i>Edit environment variables for your account</i> → New: <code>OLLAMA_ORIGINS</code> = <code>*</code></li>
+          <li>Quit and reopen Ollama, then click retry.</li>
+        </ol>
+      </div>
+      <div>
+        <h4>Deutsch</h4>
+        <ol>
+          <li>Ollama von <code>ollama.com</code> installieren und öffnen.</li>
+          <li>Im Terminal:<br><code>ollama pull gemma3:4b</code><br><code>ollama pull embeddinggemma-2:440m</code></li>
+          <li>Dem Browser den Zugriff auf Ollama erlauben:<br>
+            <b>Mac</b> — <code>launchctl setenv OLLAMA_ORIGINS "*"</code><br>
+            <b>Windows</b> — Startmenü → „Umgebungsvariablen“ → <i>Umgebungsvariablen für dieses Konto bearbeiten</i> → Neu: <code>OLLAMA_ORIGINS</code> = <code>*</code></li>
+          <li>Ollama beenden und neu starten, dann auf retry klicken.</li>
+        </ol>
+      </div>
+    </div>
+  </details>
   <div class="picker">
     <div class="grp"><label>generation · vision</label>
       <select id="selGen"><option>gemma3:4b</option></select></div>
     <div class="grp"><label>embedding</label>
-      <select id="selEmb"><option>embeddinggemma</option></select></div>
+      <select id="selEmb"><option>embeddinggemma-2:440m</option></select></div>
   </div>
-  <p class="rec">recommended — <b>gemma3:4b</b> (generation, image, camera) · <b>embeddinggemma</b> (distance, axis, map, tokens)</p>
-  <p class="modnote">image &amp; camera need a vision model (gemma3:4b / llava); text-only models like gemma3:1b answer everywhere except those two.</p>
+  <p class="rec">recommended — <b>gemma3:4b</b> · <b>embeddinggemma-2:440m</b></p>
+  <p class="modnote">camera needs a vision model (gemma3:4b / gemma4); image distance needs a multimodal embedding model (embeddinggemma-2:440m).</p>
 
   <nav>
     <button class="on" data-p="pchat">chat</button>
-    <button data-p="ptok">tokens</button>
     <button data-p="pmap">map</button>
     <button data-p="pdist">distance</button>
+    <button data-p="pimgd">image distance</button>
     <button data-p="paxis">axis</button>
     <button data-p="pnext">next token</button>
     <button data-p="pnames">variable</button>
-    <button data-p="pimg">image</button>
     <button data-p="pcam">camera</button>
   </nav>
 
@@ -203,25 +200,6 @@
       <button class="go alt" onclick="restartChat()">⟳ restart</button>
     </div>
     <p class="hint">restart applies a changed system prompt</p>
-  </section>
-
-  <!-- TOKENS -->
-  <section class="panel" id="ptok">
-    <label>compare token cost — one text per line</label>
-    <textarea id="tokin" class="short">giraffe
-Giraffe
-GIRAFFE
-the first spring rain
-der erste Frühlingsregen
-Donaudampfschifffahrtsgesellschaft
-春雨的氣味</textarea>
-    <button class="go" onclick="runTokCount()">count</button>
-    <div class="out" id="outtokc"></div>
-    <label style="margin-top:28px">probe the boundaries — one word or short phrase</label>
-    <input type="text" id="spellin" value="Frühlingsregen">
-    <button class="go" onclick="probeSpell()">probe</button>
-    <div class="out" id="outspell"></div>
-    <p class="hint">a 262,144-entry SentencePiece dictionary, shared with Gemini · Ollama exposes no tokenizer — counts read from prompt_eval_count, boundaries measured by growing the prefix one character at a time (merges approximate)</p>
   </section>
 
   <!-- MAP -->
@@ -306,15 +284,23 @@ summer</textarea>
     <p class="hint">same sentence, one substitution, raw continuation — any language works</p>
   </section>
 
-  <!-- IMAGE -->
-  <section class="panel" id="pimg">
-    <label>image</label>
-    <input type="file" id="img" accept="image/*">
-    <label>question</label>
-    <input type="text" id="imgq" value="How much smell of the first spring rain is in this image? Answer with a percentage, then justify it.">
-    <button class="go" onclick="runImage()">ask</button>
-    <div class="out" id="outimg"></div>
-    <p class="hint">narration, not measurement</p>
+  <!-- IMAGE DISTANCE -->
+  <section class="panel" id="pimgd">
+    <label>image — the anchor</label>
+    <input type="file" id="imgd" accept="image/*">
+    <img id="imgdprev" alt="" style="display:none;max-width:100%;max-height:340px;margin:0 0 16px">
+    <label>texts — one per line</label>
+    <textarea id="imgdcands">the first spring rain
+petrichor
+melancholy
+Sunday afternoon
+joy
+sadness
+icecream
+bureaucracy</textarea>
+    <button class="go" onclick="runImgDist()">measure</button>
+    <div class="out" id="outimgd"></div>
+    <p class="hint">image and text in the same 768-dimensional space · cosine similarity · needs a multimodal embedding model (embeddinggemma-2:440m)</p>
   </section>
 
   <!-- CAMERA -->
@@ -346,16 +332,20 @@ summer</textarea>
 <script>
 const OLLAMA = "http://localhost:11434";
 let GEN = "gemma3:4b";
-let EMB = "embeddinggemma";
+let EMB = "embeddinggemma-2:440m";
 let RAW = true;
 
 /* ---------- model picker: fetch installed models from /api/tags ---------- */
 async function loadModels(){
   const selG=document.getElementById("selGen"), selE=document.getElementById("selEmb");
+  const st=document.getElementById("status"), sx=document.getElementById("stxt");
+  st.className="status"; sx.textContent="checking Ollama…";
   try{
     const r=await fetch(OLLAMA+"/api/tags");
     if(!r.ok) throw new Error(r.status);
     const names=((await r.json()).models||[]).map(m=>m.name).sort();
+    st.className="status ok";
+    sx.textContent=`Ollama connected · ${names.length} model${names.length===1?"":"s"}`;
     if(!names.length) return;
     const fill=(sel,preferred)=>{
       sel.innerHTML="";
@@ -368,7 +358,10 @@ async function loadModels(){
     };
     fill(selG, GEN); fill(selE, EMB);
     GEN=selG.value; EMB=selE.value;
-  }catch(e){ /* keep defaults if Ollama not reachable yet */ }
+  }catch(e){
+    st.className="status bad";
+    sx.textContent="Ollama not detected — open setup below";
+  }
   selG.onchange=()=>GEN=selG.value;
   selE.onchange=()=>EMB=selE.value;
 }
@@ -410,15 +403,6 @@ async function embed(texts){
   }
   return out;
 }
-function readFileB64(f){
-  return new Promise((res,rej)=>{
-    const r=new FileReader();
-    r.onload=()=>res(r.result.split(",")[1]);
-    r.onerror=()=>rej(new Error("file read failed"));
-    r.readAsDataURL(f);
-  });
-}
-
 /* ---------- CHAT ---------- */
 let chatMsgs=[];
 function restartChat(){ chatMsgs=[]; document.getElementById("chatlog").innerHTML=""; }
@@ -447,47 +431,6 @@ async function sendChat(){
   }catch(e){ thinking.innerHTML=`<span class="err">error — ${esc(e.message||e)}</span>`; }
 }
 
-
-/* ---------- TOKENS — counting and boundary probing ---------- */
-async function tokCount(text){
-  const d=await post("/api/embed",{model:EMB,input:[text]});
-  return d.prompt_eval_count;
-}
-async function runTokCount(){
-  const out=document.getElementById("outtokc");
-  const lines=document.getElementById("tokin").value.split("\n").filter(s=>s.trim());
-  if(!lines.length){out.innerHTML=`<p class="note">one text per line.</p>`;return;}
-  out.innerHTML=`<p class="note">counting…</p>`;
-  try{
-    const counts=[];
-    for(const l of lines) counts.push(await tokCount(l));
-    const hi=Math.max(...counts)||1;
-    out.innerHTML=lines.map((l,i)=>
-      meter(l, counts[i]/hi, `${counts[i]} tok · ${(l.length/counts[i]).toFixed(1)} ch/tok`)
-    ).join("");
-  }catch(e){fail(out,e);}
-}
-async function probeSpell(){
-  const out=document.getElementById("outspell");
-  const s=document.getElementById("spellin").value.slice(0,48);
-  if(!s.trim()){out.innerHTML=`<p class="note">a word, please.</p>`;return;}
-  try{
-    const counts=[];
-    for(let i=1;i<=s.length;i++){
-      out.innerHTML=`<p class="note">probing… ${i}/${s.length}</p>`;
-      counts.push(await tokCount(s.slice(0,i)));
-    }
-    // group consecutive characters sharing the same running count
-    const segs=[]; let cur=s[0];
-    for(let i=1;i<s.length;i++){
-      if(counts[i]===counts[i-1]) cur+=s[i];
-      else { segs.push(cur); cur=s[i]; }
-    }
-    segs.push(cur);
-    out.innerHTML=`<div>`+segs.map(x=>`<span class="chip">${esc(x.replace(/ /g,"␣"))}</span>`).join("")+`</div>`+
-      `<p class="note" style="margin-top:10px">${counts[counts.length-1]} tokens as measured from outside — the dictionary itself stays sealed.</p>`;
-  }catch(e){fail(out,e);}
-}
 
 /* ---------- DISTANCE ---------- */
 async function runDistance(){
@@ -590,16 +533,40 @@ async function runNames(){
   }
 }
 
-/* ---------- IMAGE ---------- */
-async function runImage(){
-  const out=document.getElementById("outimg");
-  const f=document.getElementById("img").files[0];
-  if(!f){out.innerHTML=`<p class="note">choose an image first.</p>`;return;}
-  out.innerHTML=`<p class="note">looking… (4b can be slow)</p>`;
+/* ---------- IMAGE DISTANCE — one image, many texts, one embedding space ---------- */
+function imgToB64(f, max=1024){              // downscale big photos before sending
+  return new Promise((res,rej)=>{
+    const url=URL.createObjectURL(f), im=new Image();
+    im.onload=()=>{
+      const k=Math.min(1, max/Math.max(im.width,im.height));
+      const c=document.createElement("canvas");
+      c.width=Math.round(im.width*k); c.height=Math.round(im.height*k);
+      c.getContext("2d").drawImage(im,0,0,c.width,c.height);
+      URL.revokeObjectURL(url);
+      res(c.toDataURL("image/jpeg",0.9).split(",")[1]);
+    };
+    im.onerror=()=>rej(new Error("image read failed"));
+    im.src=url;
+  });
+}
+document.getElementById("imgd").addEventListener("change",e=>{
+  const f=e.target.files[0], pv=document.getElementById("imgdprev");
+  if(!f){pv.style.display="none";return;}
+  pv.src=URL.createObjectURL(f); pv.style.display="block";
+});
+async function runImgDist(){
+  const out=document.getElementById("outimgd");
+  const f=document.getElementById("imgd").files[0];
+  const cs=document.getElementById("imgdcands").value.split("\n").map(s=>s.trim()).filter(Boolean);
+  if(!f||!cs.length){out.innerHTML=`<p class="note">choose an image and write some texts.</p>`;return;}
+  out.innerHTML=`<p class="note">measuring…</p>`;
   try{
-    const b64=await readFileB64(f);
-    const d=await post("/api/generate",{model:GEN,prompt:document.getElementById("imgq").value,images:[b64],stream:false});
-    out.innerHTML=`<div class="prose">${esc(d.response||"")}</div>`;
+    const b64=await imgToB64(f);
+    const v=await embed([{image:b64},...cs]);
+    if(!v[0]||v.length!==cs.length+1) throw new Error("no image vector — use a multimodal embedding model, e.g. embeddinggemma-2:440m");
+    const sc=cs.map((c,i)=>[c,cos(v[0],v[i+1])]).sort((x,y)=>y[1]-x[1]);
+    const hi=sc[0][1]||1e-9;
+    out.innerHTML=sc.map(([c,s])=>meter(c,s/hi,s.toFixed(3))).join("");
   }catch(e){fail(out,e);}
 }
 
