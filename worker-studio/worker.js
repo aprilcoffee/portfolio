@@ -1,7 +1,8 @@
 // Feeling Safe Studio — Cloudflare Worker.
 // Keeps the Comfy Cloud API keys away from the browser and forwards four calls:
 //   POST /upload            raw file body          -> { k, asset }
-//   POST /voice             { k, ref, text, language }           -> { k, job }   ElevenLabs v4 (clone + speech, tags like [happy])
+//   POST /voice             { k, ref?, description?, text, language } -> { k, job }   ElevenLabs v4 (clone + speech, tags like [happy]);
+//                           without ref, Qwen3 VoiceDesign first makes a voice sample from the description
 //   POST /image             { k, prompt, shape }                 -> { k, job }   Z-Image Turbo, one picture
 //   POST /video             { k, image, audio, seconds, prompt, shape } -> { k, job }   shape: "portrait" | "landscape"
 //   GET  /job/:id?k=        job status and outputs
@@ -9,10 +10,10 @@
 //   POST /delete            { k, ids } remove uploads and outputs from Comfy
 //   GET  /check             password test
 // Secrets (set by the GitHub Action): COMFY_KEYS_A, COMFY_KEYS_B (comma-separated keys per group),
-// CLASS_PASSWORD. Every request names its group in the header x-group: A or B.
+// CLASS_PASSWORD, optional CLASS_PASSWORD_MASTER (teacher: everything open). Every request names its group in the header x-group: A or B.
 // Comfy queues extra jobs per account (tested: 6 at once on one key all ran), so several
 // students at the same time just wait in that group's queue.
-// Vars (wrangler.toml): ALLOWED_ORIGINS, END_DATE, MAX_VIDEO_SECONDS.
+// Vars (wrangler.toml): ALLOWED_ORIGINS, END_DATE, MAX_VIDEO_SECONDS, VIDEO_FROM (video opens on that day, Weimar time).
 
 import VIDEO_WORKFLOW from "./video_workflow.json";
 
@@ -25,8 +26,16 @@ const DEFAULT_PROMPT = "A news anchor speaks calmly and clearly to the camera in
 // ElevenLabs (partner node, billed in Comfy credits): clone the reference (~$0.15, reused from Comfy's cache
 // for the same recording), then speak the script with eleven_v4 (~$0.11 per 1000 characters).
 // Audio tags in the script ([happy], [whispers], [laughs] …) steer the delivery and are not read out.
-const voiceWorkflow = (text, language, ref, seed) => ({
-  "1": { class_type: "LoadAudio", inputs: { audio: assetRef(ref) } },
+// No recording: Qwen3 VoiceDesign (open) speaks this neutral sample in a voice made from the description,
+// and ElevenLabs clones that sample like a recording.
+const DESIGN_SAMPLE = "Hello, and welcome. This is a short sample of my voice, so you can hear how I sound. " +
+  "I speak about the weather, the news, and the small things of everyday life. " +
+  "Sometimes I am calm, sometimes I am surprised, and sometimes I simply tell a story, one sentence after another.";
+const designNode = (description, seed) => ({ class_type: "FB_Qwen3TTSVoiceDesign", inputs: {
+  text: DESIGN_SAMPLE, instruct: description, model_choice: "1.7B", device: "auto", precision: "bf16", language: "English", seed } });
+
+const voiceWorkflow = (text, language, ref, description, seed) => ({
+  "1": ref ? { class_type: "LoadAudio", inputs: { audio: assetRef(ref) } } : designNode(description, seed),
   "2": { class_type: "ElevenLabsInstantVoiceClone", inputs: { "files.audio0": ["1", 0], remove_background_noise: false } },
   "3": { class_type: "ElevenLabsTextToSpeech", inputs: {
     voice: ["2", 0], text, stability: 0.5, apply_text_normalization: "auto",
@@ -79,9 +88,9 @@ export default {
     if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: cors });
     try {
       const url = new URL(req.url);
-      if (url.pathname === "/health") return json({ ok: true, end: env.END_DATE || null }, cors);
-      checkAccess(req, env);
-      if (url.pathname === "/check") return json({ ok: true }, cors);
+      if (url.pathname === "/health") return json({ ok: true, end: env.END_DATE || null, video_from: env.VIDEO_FROM || null }, cors);
+      const master = checkAccess(req, env);
+      if (url.pathname === "/check") return json({ ok: true, video_from: master || videoOpen(env) ? null : env.VIDEO_FROM }, cors);
       const group = (req.headers.get("x-group") || "").toUpperCase();
       if (!["A", "B"].includes(group)) throw new HttpError(400, "Choose group A or B.");
       const keys = (env["COMFY_KEYS_" + group] || env.COMFY_KEYS || "").split(/[\s,]+/).filter(Boolean);
@@ -115,8 +124,10 @@ export default {
         if (text.length > MAX_TEXT) throw new HttpError(400, `The script is too long (max. ${MAX_TEXT} characters).`);
         const language = String(b.language || "");
         if (language && !/^[a-z]{2}$/.test(language)) throw new HttpError(400, "Unknown language.");
+        const description = String(b.description || "").trim().slice(0, 400);
+        if (!b.ref && !description) throw new HttpError(400, "Record or upload a voice, or describe one.");
         // partner nodes (ElevenLabs) need the key inside the job as well
-        const job = await comfy(keys[k], "/jobs", { method: "POST", json: { workflow: voiceWorkflow(text, language, b.ref, seed()), extra_data: { api_key_comfy_org: keys[k] } } });
+        const job = await comfy(keys[k], "/jobs", { method: "POST", json: { workflow: voiceWorkflow(text, language, b.ref || null, description, seed()), extra_data: { api_key_comfy_org: keys[k] } } });
         return json({ k, job: job.id }, cors);
       }
 
@@ -125,11 +136,13 @@ export default {
         const k = pick(b.k);
         const prompt = String(b.prompt || "").trim().slice(0, 800);
         if (!prompt) throw new HttpError(400, "Please describe the picture.");
-        const job = await comfy(keys[k], "/jobs", { method: "POST", json: { workflow: imageWorkflow(prompt, seed(), b.shape === "landscape") } });
+        // always phone-vertical (9:16)
+        const job = await comfy(keys[k], "/jobs", { method: "POST", json: { workflow: imageWorkflow(prompt, seed(), false) } });
         return json({ k, job: job.id }, cors);
       }
 
       if (req.method === "POST" && url.pathname === "/video") {
+        if (!master && !videoOpen(env)) throw new HttpError(403, `Video opens on ${env.VIDEO_FROM}.`);
         const b = await req.json();
         const k = pick(b.k);
         const max = Number(env.MAX_VIDEO_SECONDS || 45);
@@ -179,10 +192,16 @@ export default {
   },
 };
 
+// the video step opens at midnight Weimar time (CET, UTC+1 in November/December) on VIDEO_FROM
+const videoOpen = (env) => !env.VIDEO_FROM || new Date() >= new Date(env.VIDEO_FROM + "T00:00:00+01:00");
+
 function checkAccess(req, env) {
   if (env.END_DATE && new Date() > new Date(env.END_DATE + "T23:59:59")) throw new HttpError(403, "The studio is closed.");
-  const pw = env.CLASS_PASSWORD;
-  if (!pw || req.headers.get("x-class-password") !== pw) throw new HttpError(401, "Wrong class password.");
+  // CLASS_PASSWORD_MASTER (the teacher's) opens everything, also the video step before VIDEO_FROM
+  const given = req.headers.get("x-class-password") || "";
+  if (env.CLASS_PASSWORD_MASTER && given === env.CLASS_PASSWORD_MASTER) return true;
+  if (!env.CLASS_PASSWORD || given !== env.CLASS_PASSWORD) throw new HttpError(401, "Wrong class password.");
+  return false;
 }
 
 function corsHeaders(req, env) {
