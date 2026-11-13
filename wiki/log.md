@@ -162,3 +162,10 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 
 ## [2026-10-27] edit | Conditions for Emotions tool online
 - topics/workshops.md: the web tool at /tools/conditions-for-emotions/, needs Ollama
+
+## [2026-11-09] edit | upcoming workshops (artist)
+- topics/workshops.md: 13 Nov 2026 Conditions for Emotions; 17 Dec 2026 »Speaking the Token Language« with Leon-Etienne Kühr (the earlier note that 17 Dec was Conditions for Emotions was wrong)
+
+## [2026-11-13] edit | Conditions for Emotions tool, new version (artist)
+- topics/workshops.md: download link, embeddinggemma-2:440m, the tool's tabs
+- topics/workshops.md: Conditions for Emotions exercises follow the new tool (chat, image distance, camera; no tokens tab)
