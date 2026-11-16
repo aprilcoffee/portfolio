@@ -279,7 +279,7 @@ summer</textarea>
       <input type="number" id="nmtok" value="20" min="10" max="120" step="5" style="margin:0">
     </div>
     <div class="out" id="outnames"></div>
-    <p class="hint">same sentence, one substitution, raw continuation — any language works</p>
+    <p class="hint">same sentence, one substitution, instructed continuation — any language works</p>
   </section>
 
   <!-- IMAGE DISTANCE -->
@@ -345,16 +345,18 @@ async function loadModels(){
     st.className="status ok";
     sx.textContent=`Ollama connected · ${names.length} model${names.length===1?"":"s"}`;
     if(!names.length) return;
-    const fill=(sel,preferred)=>{
+    const fill=(sel,preferred,emb)=>{
       sel.innerHTML="";
       names.forEach(n=>{
         const o=document.createElement("option"); o.value=n; o.textContent=n;
         sel.appendChild(o);
       });
-      const pick = names.find(n=>n===preferred) || names.find(n=>n.startsWith(preferred.split(":")[0])) || names[0];
+      const opts=[...sel.options].map(o=>o.value);
+      const pick = opts.find(n=>n===preferred) || opts.find(n=>n.startsWith(preferred.split(":")[0]))
+                || (emb ? opts.find(n=>/embeddinggemma/.test(n)) : opts.find(n=>/^gemma/.test(n))) || opts[0];
       sel.value=pick;
     };
-    fill(selG, GEN); fill(selE, EMB);
+    fill(selG, GEN, false); fill(selE, EMB, true);
     GEN=selG.value; EMB=selE.value;
   }catch(e){
     st.className="status bad";
@@ -378,7 +380,7 @@ function setMode(raw){
 }
 
 /* ---------- shared ---------- */
-const esc = s => String(s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const dot = (a,b) => a.reduce((s,v,i)=>s+v*b[i],0);
 const cos = (a,b) => dot(a,b)/(Math.sqrt(dot(a,a))*Math.sqrt(dot(b,b))+1e-9);
 function meter(label, frac, read, opts={}){
@@ -389,8 +391,18 @@ function meter(label, frac, read, opts={}){
 }
 function fail(el, e){ el.innerHTML = `<p class="err">no reading — Ollama running? OLLAMA_ORIGINS set? model pulled? (${esc(e.message||e)})</p>`; }
 async function post(path, body){
+  const sg=document.getElementById("selGen"), se=document.getElementById("selEmb");
+  if(sg&&sg.value) GEN=sg.value; if(se&&se.value) EMB=se.value;
+  if(body.model!==undefined) body.model = path==="/api/embed" ? EMB : GEN;
+  try{ return await post1(path, body); }
+  catch(e){                                   // some models reject the think flag — retry without it
+    if("think" in body && /think/i.test(e.message)){ const b={...body}; delete b.think; return post1(path, b); }
+    throw e;
+  }
+}
+async function post1(path, body){
   const r = await fetch(OLLAMA+path,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
-  if(!r.ok) throw new Error(path+" "+r.status);
+  if(!r.ok){ let m=""; try{ m=(await r.json()).error||""; }catch(_){} throw new Error(path+" "+r.status+(m?" — "+m:"")); }
   return r.json();
 }
 async function embed(texts){
@@ -470,8 +482,13 @@ async function runAxis(){
 }
 
 /* ---------- NEXT TOKEN ---------- */
+// raw mode skips the chat template, and with it the <bos> start token. Some Gemma builds (e.g. gemma4:e4b)
+// then loop on the prompt ("I work as I work as…"). Add it back for Gemma models; invisible in the page.
+function rawPrompt(txt){ return /gemma/i.test(GEN) && !txt.startsWith("<bos>") ? "<bos>"+txt : txt; }
 function genBody(extra){
-  return Object.assign({model:GEN,prompt:document.getElementById("prompt").value,stream:false,raw:RAW},extra);
+  const sg=document.getElementById("selGen"); if(sg&&sg.value) GEN=sg.value;
+  const txt=document.getElementById("prompt").value;
+  return Object.assign({model:GEN,prompt:RAW?rawPrompt(txt):txt,stream:false,raw:RAW,think:false},extra);
 }
 async function runNext(){
   const out=document.getElementById("outnext");
@@ -479,7 +496,7 @@ async function runNext(){
   try{
     const d=await post("/api/generate",genBody({logprobs:true,top_logprobs:10,options:{num_predict:1,temperature:0.8}}));
     const steps=d.logprobs||[];
-    if(!steps.length){out.innerHTML=`<p class="err">no logprobs — Ollama ≥ 0.12.11 needed.</p>`;return;}
+    if(!steps.length){out.innerHTML=`<p class="err">no logprobs from ${esc(GEN)} — update Ollama (≥ 0.12.11) or pick another model.</p>`;return;}
     const cands=steps[0].top_logprobs||[];
     const m=Math.max(...cands.map(c=>c.logprob));
     const exps=cands.map(c=>Math.exp(c.logprob-m));
@@ -507,6 +524,8 @@ async function runContinue(){
 }
 
 /* ---------- VARIABLE — one template, many substitutions ---------- */
+// the instructed reply rarely starts with a space: add one unless the sentence or reply already has it, or the reply starts with punctuation
+function joinCont(sent, cont){ return (/\s$/.test(sent) || /^[\s.,;:!?…'’)\]]/.test(cont) || !cont) ? cont : " "+cont; }
 async function runNames(){
   const out=document.getElementById("outnames");
   const tpl=document.getElementById("nmtpl").value;
@@ -520,10 +539,13 @@ async function runNames(){
     const promptHtml=tpl.split("[Variable]").map(esc).join(`<span class="varhl">${esc(vals[i])}</span>`);
     out.innerHTML+=`<div class="nm" id="nm-${i}"><b>${esc(vals[i])}</b><div class="prose">${promptHtml} <span class="note">…</span></div></div>`;
     try{
-      const d=await post("/api/generate",{model:GEN,prompt:promptTxt,stream:false,raw:true,
+      const sg=document.getElementById("selGen"); if(sg&&sg.value) GEN=sg.value;
+      const d=await post("/api/generate",{model:GEN,
+        prompt:"Continue the unfinished sentence below. Return ONLY the missing continuation, not the original sentence. Do not explain or repeat yourself.\n\n"+promptTxt,
+        stream:false,raw:false,think:false,
         options:{num_predict:n,temperature:0.8}});
       document.getElementById("nm-"+i).innerHTML=
-        `<b>${esc(vals[i])}</b><div class="prose">${promptHtml}<span style="color:var(--acc)">${esc(d.response||"")}</span></div>`;
+        `<b>${esc(vals[i])}</b><div class="prose">${promptHtml}<span style="color:var(--acc)">${esc(joinCont(promptTxt,(d.response||"").trimEnd()))}</span></div>`;
     }catch(e){
       document.getElementById("nm-"+i).innerHTML=`<b>${esc(vals[i])}</b> <span class="err">${esc(e.message||e)}</span>`;
       break;
@@ -625,18 +647,28 @@ function pca2d(vecs){
   vecs.forEach(v=>v.forEach((x,i)=>mean[i]+=x/n));
   const X=vecs.map(v=>v.map((x,i)=>x-mean[i]));
   const G=Array.from({length:n},(_,i)=>Array.from({length:n},(_,j)=>dot(X[i],X[j])));
-  function power(M){
-    let v=Array.from({length:n},()=>Math.random()-0.5);
-    for(let t=0;t<300;t++){
-      const w=M.map(row=>row.reduce((s,m,j)=>s+m*v[j],0));
-      const nm=Math.sqrt(dot(w,w))||1; v=w.map(x=>x/nm);
+  // exact, deterministic eigenvectors (Jacobi) — power iteration from a random start gave a different map on every run
+  const A=G.map(r=>r.slice()), V=Array.from({length:n},(_,i)=>Array.from({length:n},(_,j)=>i===j?1:0));
+  for(let sweep=0;sweep<100;sweep++){
+    let off=0; for(let i=0;i<n;i++)for(let j=i+1;j<n;j++)off+=A[i][j]*A[i][j];
+    if(off<1e-18)break;
+    for(let p=0;p<n;p++)for(let q=p+1;q<n;q++){
+      if(Math.abs(A[p][q])<1e-14)continue;
+      const th=(A[q][q]-A[p][p])/(2*A[p][q]);
+      const t=Math.sign(th||1)/(Math.abs(th)+Math.sqrt(th*th+1)), c=1/Math.sqrt(t*t+1), sn=t*c;
+      for(let k=0;k<n;k++){const akp=A[k][p],akq=A[k][q];A[k][p]=c*akp-sn*akq;A[k][q]=sn*akp+c*akq;}
+      for(let k=0;k<n;k++){const apk=A[p][k],aqk=A[q][k];A[p][k]=c*apk-sn*aqk;A[q][k]=sn*apk+c*aqk;}
+      for(let k=0;k<n;k++){const vkp=V[k][p],vkq=V[k][q];V[k][p]=c*vkp-sn*vkq;V[k][q]=sn*vkp+c*vkq;}
     }
-    const Mv=M.map(row=>row.reduce((s,m,j)=>s+m*v[j],0));
-    return {v,lam:Math.max(dot(v,Mv),0)};
   }
-  const e1=power(G);
-  const G2=G.map((row,i)=>row.map((m,j)=>m-e1.lam*e1.v[i]*e1.v[j]));
-  const e2=power(G2);
+  const order=[...Array(n).keys()].sort((a,b)=>A[b][b]-A[a][a]);
+  const eig=k=>{
+    let v=V.map(r=>r[order[k]]);
+    const big=v.reduce((m,x,i)=>Math.abs(x)>Math.abs(v[m])?i:m,0);   // fixed sign: largest entry positive
+    if(v[big]<0)v=v.map(x=>-x);
+    return {v,lam:Math.max(A[order[k]][order[k]],0)};
+  };
+  const e1=eig(0), e2=eig(Math.min(1,n-1));
   function axis(e){                       // 768-d principal axis from gram eigenvector
     const sq=Math.sqrt(e.lam)||1;
     const p=new Array(d).fill(0);
