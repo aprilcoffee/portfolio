@@ -649,18 +649,28 @@ function pca2d(vecs){
   vecs.forEach(v=>v.forEach((x,i)=>mean[i]+=x/n));
   const X=vecs.map(v=>v.map((x,i)=>x-mean[i]));
   const G=Array.from({length:n},(_,i)=>Array.from({length:n},(_,j)=>dot(X[i],X[j])));
-  function power(M){
-    let v=Array.from({length:n},()=>Math.random()-0.5);
-    for(let t=0;t<300;t++){
-      const w=M.map(row=>row.reduce((s,m,j)=>s+m*v[j],0));
-      const nm=Math.sqrt(dot(w,w))||1; v=w.map(x=>x/nm);
+  // exact, deterministic eigenvectors (Jacobi) — power iteration from a random start gave a different map on every run
+  const A=G.map(r=>r.slice()), V=Array.from({length:n},(_,i)=>Array.from({length:n},(_,j)=>i===j?1:0));
+  for(let sweep=0;sweep<100;sweep++){
+    let off=0; for(let i=0;i<n;i++)for(let j=i+1;j<n;j++)off+=A[i][j]*A[i][j];
+    if(off<1e-18)break;
+    for(let p=0;p<n;p++)for(let q=p+1;q<n;q++){
+      if(Math.abs(A[p][q])<1e-14)continue;
+      const th=(A[q][q]-A[p][p])/(2*A[p][q]);
+      const t=Math.sign(th||1)/(Math.abs(th)+Math.sqrt(th*th+1)), c=1/Math.sqrt(t*t+1), sn=t*c;
+      for(let k=0;k<n;k++){const akp=A[k][p],akq=A[k][q];A[k][p]=c*akp-sn*akq;A[k][q]=sn*akp+c*akq;}
+      for(let k=0;k<n;k++){const apk=A[p][k],aqk=A[q][k];A[p][k]=c*apk-sn*aqk;A[q][k]=sn*apk+c*aqk;}
+      for(let k=0;k<n;k++){const vkp=V[k][p],vkq=V[k][q];V[k][p]=c*vkp-sn*vkq;V[k][q]=sn*vkp+c*vkq;}
     }
-    const Mv=M.map(row=>row.reduce((s,m,j)=>s+m*v[j],0));
-    return {v,lam:Math.max(dot(v,Mv),0)};
   }
-  const e1=power(G);
-  const G2=G.map((row,i)=>row.map((m,j)=>m-e1.lam*e1.v[i]*e1.v[j]));
-  const e2=power(G2);
+  const order=[...Array(n).keys()].sort((a,b)=>A[b][b]-A[a][a]);
+  const eig=k=>{
+    let v=V.map(r=>r[order[k]]);
+    const big=v.reduce((m,x,i)=>Math.abs(x)>Math.abs(v[m])?i:m,0);   // fixed sign: largest entry positive
+    if(v[big]<0)v=v.map(x=>-x);
+    return {v,lam:Math.max(A[order[k]][order[k]],0)};
+  };
+  const e1=eig(0), e2=eig(Math.min(1,n-1));
   function axis(e){                       // 768-d principal axis from gram eigenvector
     const sq=Math.sqrt(e.lam)||1;
     const p=new Array(d).fill(0);
