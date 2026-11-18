@@ -1189,7 +1189,9 @@ for L in LANGS:
              if x["tool_url"].endswith(".html") else
              '<p class="shop-tool"><a class="btn" href="%s" target="_blank" rel="noopener">%s</a></p>' % (esc(url(x["tool_url"].lstrip("/")) if not x["tool_url"].startswith("http") else x["tool_url"]), esc(u["tool"]))) if x.get("tool_url") else "",
             ' lang="%s"' % tl if tl != HREFLANG[L] else "", prose(text),
-            '<div class="held"><h2 class="mono">%s</h2><p>%s</p></div>' % (esc(u["held"]), "<br>".join(linkify(h) for h in held.split("\n") if h.strip())) if held else "",
+            ('<div class="held"><h2 class="mono">%s</h2><p>%s</p></div>' % (esc(u["held"]), "<br>".join(linkify(h) for h in held.split("\n") if h.strip())) if held else "") +
+            # photo credits (site.json "credits", + _de/_zh), e.g. for documentation by a photographer
+            ('<p class="credits">%s</p>' % esc(tr(x, "credits", L)) if tr(x, "credits", L) else ""),
             contact, plates, pager(shops, i, P + "workshops/%s/", "title", u["nav"]["workshops"]))
         desc = summary(tr(x, "summary", L) or text, 100 if L == "zh" else 155, words=L != "zh")
         page(P + "workshops/%s/" % x["slug"], tr(x, "title", L), desc, body, image=og_card(x.get("share_image") or pics[0], x["title"], "Workshop · Ting-Chun Liu", "workshop-" + x["slug"]) if (x.get("share_image") or pics) else None, og_type="article",
