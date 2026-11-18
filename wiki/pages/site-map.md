@@ -132,10 +132,10 @@ Organisers', institutions' and publishers' pages for entries in the CV (About pa
 - 2026 Paranoia De-Prompting: Artistic Experiments on Generative Image, University of Bonn, invited by Junge GI Hochschulgruppe Bonn, w/ Leon-Etienne Kühr: https://junge.gi.de/veranstaltung/paranoia-de-prompting-artistic-experiments-on-generative-image-vortrag-hsg-bonn
 - 2026 Conditions for Emotions, DFG network “Das Wissen der digitalen Literatur”: https://digitale-burg.de/studio/das-wissen-der-digitalen-literatur
 - 2026 Animism Revisited, Digital Arts Community, ACM SIGGRAPH, w/ Leon-Etienne Kühr: https://dac.siggraph.org/sparks/2026-05-29_animism-revisited/
+- 2026 Latenz, exhibition talk on Interpolation of the Invisible Color, Storage Museum Düsseldorf, in cooperation with Filmwerkstatt Düsseldorf, w/ Leon-Etienne Kühr, Dominik Bönisch-Alpári, Prof. Dr. Ludger Schwarte: https://storagemuseum.org/en/program/latenz
 - 2026 KISDtalk: Paranoia De-Prompting, KISD Köln International School of Design, w/ Leon-Etienne Kühr: https://kisd.de/en/termine/kisdtalk-paranoia-de-prompting/
-- 2026 Latenz, Storage Museum Düsseldorf, w/ Leon-Etienne Kühr, Dominik Bönisch-Alpári, Prof. Dr. Ludger Schwarte: https://www.filmwerkstatt-duesseldorf.de/latenz/
 - 2025 Stereotype Encoding, Latent Space Symposium, Filmwerkstatt Düsseldorf, w/ Leon-Etienne Kühr: https://www.filmwerkstatt-duesseldorf.de/latent-space-symposium/
-- 2025 Generating for the Archive, Storage Museum Düsseldorf, w/ Leon-Etienne Kühr: https://www.filmwerkstatt-duesseldorf.de/generating-for-the-archive/
+- 2025 Generating for the Archive (workshop), Latent Space, Storage Museum Düsseldorf, in cooperation with Filmwerkstatt Düsseldorf, w/ Leon-Etienne Kühr: https://storagemuseum.org/en/program/generating-for-the-archive
 - 2025 51 Ways to Spell the Image Giraffe: The Hidden Politics of Token Languages in Generative AI, 39th Chaos Communication Congress, w/ Leon-Etienne Kühr: https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai
 - 2025 Reverberation of the Blackbox Image, Auditory Aesthetics Series, National Tsing Hua University: https://www.instagram.com/p/DO3v9txD3oe/
 - 2025 Bauhaus Master Lecture, Bauhaus University Weimar: https://www.uni-weimar.de/de/kunst-und-gestaltung/aktuell/aktuelles/titel/bauhaus-master-lectures-im-sommersemester-2025/
