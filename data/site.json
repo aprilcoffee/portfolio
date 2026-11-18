@@ -437,7 +437,8 @@
       ],
       "kw": "Artistic Research, Talk",
       "kw_de": "Künstlerische Forschung, Vortrag",
-      "kw_zh": "藝術研究、講座"
+      "kw_zh": "藝術研究、講座",
+      "materials_zh": "CLIP 分詞器、Stable Diffusion"
     },
     {
       "slug": "sixteen-tokens-for-a-cave",
@@ -1442,23 +1443,28 @@
       "images": [
         {
           "src": "images/workshops/conditions-for-emotions/01.jpg",
-          "alt": "Words placed on a line between the poles “condition” and “emotion” by their distance in embedding space"
+          "alt": "Words placed on a line between the poles “condition” and “emotion” by their distance in embedding space",
+          "alt_zh": "依照嵌入向量（Embedding）空間中的距離，把詞放在「condition」與「emotion」兩端之間的一條線上"
         },
         {
           "src": "images/workshops/conditions-for-emotions/02.jpg",
-          "alt": "The workshop tool measuring the distance between “I am feeling sad today” and five other phrases"
+          "alt": "The workshop tool measuring the distance between “I am feeling sad today” and five other phrases",
+          "alt_zh": "工作坊工具測量「I am feeling sad today」與另外五個句子之間的距離"
         },
         {
           "src": "images/workshops/conditions-for-emotions/03.jpg",
-          "alt": "A language model continuing “My name is Alice and I am a” one word at a time, with the probability of each next word"
+          "alt": "A language model continuing “My name is Alice and I am a” one word at a time, with the probability of each next word",
+          "alt_zh": "語言模型一個詞一個詞接續「My name is Alice and I am a」，並列出每個下一個詞的機率"
         },
         {
           "src": "images/workshops/conditions-for-emotions/04.jpg",
-          "alt": "The same sentence about being sad, continued by a model after only the name was changed"
+          "alt": "The same sentence about being sad, continued by a model after only the name was changed",
+          "alt_zh": "同一句關於難過的句子，只換了名字，模型接著寫出的結果"
         },
         {
           "src": "images/workshops/conditions-for-emotions/05.jpg",
-          "alt": "A model answering the question “Is this a pigeon?” about a meme image"
+          "alt": "A model answering the question “Is this a pigeon?” about a meme image",
+          "alt_zh": "模型回答一張迷因圖的問題「Is this a pigeon?」"
         }
       ],
       "hidden": false,
@@ -1479,7 +1485,7 @@
       "text_zh": "圖像生成器從來不讀提示詞裡的字。分詞器會先把字切成詞元（Token），也就是一本約 49,000 個條目的固定字典裡的碎片，模型只收到它們的編號：「what is tokenization?」送進去時是 49406、768、533、32634、10847、286、49407。每個編號再對應到一串 768 個數值的嵌入向量（Embedding），真正進到模型裡的只有這串數值。\n\n這個工作坊延續在 39C3 發表的講座《51 Ways to Spell the Image Giraffe》，用一套在瀏覽器裡操作的小工具打開這一層。不需要寫程式的經驗。\n\n# 什麼是詞元\n\n參與者輸入句子，看它們被拆開。常見的英文字、品牌名稱和主題標籤都是單一條目；「schnitzel（炸肉排）」要兩塊，「Kaffee（咖啡）」要三塊，一個中文名字則被拆成九個原始位元組。許多表情符號也沒有自己的條目，同樣由位元組碎片拼成。這本字典是為誰寫的，從每種語言要付出多少詞元就看得出來。\n\n# 詞元字典\n\n整本字典都能搜尋。「giraffe」裡藏著許多本身就是條目的碎片，從 gira、ffe 一直到單一字母，能拼出 51 種不同的組合。平常分詞器永遠只選同一種。\n\n# 用數字寫提示詞\n\n工作坊使用一個改寫過的圖像生成器（SDXL Turbo），讓它直接接收詞元編號。參與者跳過分詞器，自己決定怎麼切：一整個 giraffe、gira + ffe，或 gi + ra + ff + e，每一種都是一個獨立的提示詞。多數拼法仍然畫出長頸鹿，有些卻畫出世上不存在的動物。\n\n# 重建一張圖\n\n最後一個練習反過來做：從一張照片出發，用遺傳演算法培育 16 個詞元長的序列，直到 CLIP 認為它們和照片夠接近。結果讀起來像雜訊，圖像生成器卻能從中把照片畫回來。畫出來的東西，顯示了機器留下了什麼，又有什麼是它從來沒有字可以說的。",
       "held": "16 January 2026 · KISDtalk, KISD Köln International School of Design, Cologne\n7 May 2026 · mtrail Ausbildungscamp, Lindau",
       "held_de": "16. Januar 2026 · KISDtalk, KISD Köln International School of Design, Köln\n7. Mai 2026 · mtrail Ausbildungscamp, Lindau",
-      "held_zh": "2026 年 1 月 16 日 · KISDtalk，科隆國際設計學院（KISD），科隆\n2026 年 5 月 7 日 · mtrail Ausbildungscamp，林道",
+      "held_zh": "2026 年 1 月 16 日 · KISDtalk，科隆國際設計學院（KISD），科隆\n2026 年 5 月 7 日 · mtrail 培訓營（Ausbildungscamp），林道",
       "images": [
         {
           "src": "images/workshops/51-ways-to-spell-the-image-giraffe/00.webp",
@@ -1541,19 +1547,22 @@
       "text_zh": "工作坊的起點是一個疑問：為什麼生成器會生出這一張圖？為了找答案，研究從 CLIP，以及 CLIP Interrogator 這類能從圖片反推提示詞的工具開始。\n\nCLIP 會把圖片和文字放進同一個空間，再用一個分數表示兩者有多相符。許多圖像生成器和圖片搜尋工具，都靠它判斷「這張圖是不是符合這段描述」，只是使用者通常看不到這個步驟。\n\n# 配對\n\n參與者給 CLIP 一張圖和幾段短文字，看它覺得哪一段最貼切：馬格利特（René Magritte）畫的那支煙斗，對上「this is a pipe」和「this isn’t a pipe」；一張貓的照片，對上英文「cat」、德文「Katze」和西班牙文「gato」；一張人工智慧生成的人臉，對上四個不同表情的表情符號。分數幾乎從來不是中立的，而這些出乎意料的結果，正是這個練習想讓大家看到的。\n\n# 搜尋\n\n接著反過來，讓 CLIP 去找圖。程式不斷從一個專門生成「不存在的人」的網站抓取隨機人臉，每一張都拿去跟一個詞（例如「happy」）比對打分，只留下目前分數最高和最低的那兩張。把詞換成「nurse（護理師）」、「programmer（程式設計師）」或「dumplings（餃子）」再跑一次，機器對這些詞的刻板印象就會一點一點浮現。拿食物來試也一樣奇怪：有一輪測「happy」，一盤配香腸的湯拿到 20.48 分，比一盤金黃的炸肉排（19.38 分）還高。",
       "held": "28 November 2025 · Generating for the Archive, Storage Museum Düsseldorf\n16 January 2026 · KISDtalk, KISD Köln International School of Design, Cologne\n7 May 2026 · mtrail Ausbildungscamp, Lindau",
       "held_de": "28. November 2025 · Generating for the Archive, Storage Museum Düsseldorf\n16. Januar 2026 · KISDtalk, KISD Köln International School of Design, Köln\n7. Mai 2026 · mtrail Ausbildungscamp, Lindau",
-      "held_zh": "2025 年 11 月 28 日 · Generating for the Archive，杜塞道夫 Storage Museum\n2026 年 1 月 16 日 · KISDtalk，科隆國際設計學院（KISD），科隆\n2026 年 5 月 7 日 · mtrail Ausbildungscamp，林道",
+      "held_zh": "2025 年 11 月 28 日 · Generating for the Archive，杜塞道夫 Storage Museum\n2026 年 1 月 16 日 · KISDtalk，科隆國際設計學院（KISD），科隆\n2026 年 5 月 7 日 · mtrail 培訓營（Ausbildungscamp），林道",
       "images": [
         {
           "src": "images/workshops/stereotype-encoding/01.jpg",
-          "alt": "Generated faces with the highest and lowest CLIP scores for the words dumplings, nurse, schnitzel and programmer"
+          "alt": "Generated faces with the highest and lowest CLIP scores for the words dumplings, nurse, schnitzel and programmer",
+          "alt_zh": "對 dumplings、nurse、schnitzel、programmer 這幾個詞，CLIP 分數最高與最低的生成人臉"
         },
         {
           "src": "images/workshops/stereotype-encoding/02.jpg",
-          "alt": "Two food photos scored against the word “happy”: a plate of soup with a sausage (20.48) and a schnitzel (19.38)"
+          "alt": "Two food photos scored against the word “happy”: a plate of soup with a sausage (20.48) and a schnitzel (19.38)",
+          "alt_zh": "兩張食物照片對「happy」這個詞的分數：一盤配香腸的湯（20.48）與一份炸肉排（19.38）"
         },
         {
           "src": "images/workshops/stereotype-encoding/03.jpg",
-          "alt": "CLIP scores for a cat photo against “cat”, “katze” and “gato”, and for a generated face against four emojis"
+          "alt": "CLIP scores for a cat photo against “cat”, “katze” and “gato”, and for a generated face against four emojis",
+          "alt_zh": "一張貓的照片對「cat」、「katze」、「gato」的 CLIP 分數，以及一張生成人臉對四個表情符號的分數"
         },
         {
           "src": "images/workshops/stereotype-encoding/04.jpg",
@@ -1591,23 +1600,28 @@
       "images": [
         {
           "src": "images/workshops/the-given-image/01.jpg",
-          "alt": "Printed images laid out on a table in rows, each row a chain of pictures that drifts from one to the next"
+          "alt": "Printed images laid out on a table in rows, each row a chain of pictures that drifts from one to the next",
+          "alt_zh": "印出來的圖片在桌上排成好幾列，每一列都是一串從一張漂移到下一張的圖像"
         },
         {
           "src": "images/workshops/the-given-image/02.jpg",
-          "alt": "Participants around a table arranging printed image chains"
+          "alt": "Participants around a table arranging printed image chains",
+          "alt_zh": "參與者圍著桌子排列印出來的圖像鏈"
         },
         {
           "src": "images/workshops/the-given-image/03.jpg",
-          "alt": "One chain from a workshop run: a meatball stew photo, described and regenerated five times"
+          "alt": "One chain from a workshop run: a meatball stew photo, described and regenerated five times",
+          "alt_zh": "一次工作坊中的一條圖像鏈：一張肉丸燉菜的照片，被描述再重新生成五次"
         },
         {
           "src": "images/workshops/the-given-image/04.jpg",
-          "alt": "An ice-cream café terrace drifting through three descriptions into a courtyard with turquoise chairs"
+          "alt": "An ice-cream café terrace drifting through three descriptions into a courtyard with turquoise chairs",
+          "alt_zh": "一張冰淇淋店露台的照片，經過三次描述漂移成擺著土耳其藍椅子的庭院"
         },
         {
           "src": "images/workshops/the-given-image/05.jpg",
-          "alt": "The player screen of the web app: the given image, the group’s prompt and the generated draft"
+          "alt": "The player screen of the web app: the given image, the group’s prompt and the generated draft",
+          "alt_zh": "網頁應用程式的玩家畫面：給定的圖像、小組寫的提示詞，以及生成的草稿"
         }
       ],
       "hidden": false
@@ -1629,19 +1643,19 @@
             "year": "2026",
             "text": "Erasmus+ Staff Mobility for Teaching, Digital Art, Institute of Fine Arts and Media Art, University of Applied Arts Vienna",
             "url": "",
-            "text_zh": "Erasmus+ 教學人員交流（Staff Mobility for Teaching），維也納應用藝術大學 美術與媒體藝術研究所 數位藝術系"
+            "text_zh": "Erasmus+ 教學人員交流（Staff Mobility for Teaching），維也納應用藝術大學（Universität für angewandte Kunst Wien）美術與媒體藝術研究所數位藝術組（Digitale Kunst）"
           },
           {
             "year": "2024",
             "text": "Guest Lecturer (Lehrbeauftragter), Chair of Media Environments, Faculty of Art and Design, Bauhaus University Weimar",
             "url": "",
-            "text_zh": "客座講師（Lehrbeauftragter），威瑪包浩斯大學藝術與設計學院 媒體環境組（Chair of Media Environments）"
+            "text_zh": "客座講師（Lehrbeauftragter），威瑪包浩斯大學藝術與設計學院媒體環境教席（Chair of Media Environments）"
           },
           {
             "year": "2022–2024",
             "text": "Student Assistant, Experimental Informatics, Academy of Media Arts Cologne",
             "url": "https://ground-zero.khm.de/about/",
-            "text_zh": "學生助理，科隆媒體藝術學院 實驗資訊學（Experimental Informatics）"
+            "text_zh": "學生助理，科隆媒體藝術學院實驗資訊學（Experimental Informatics）"
           }
         ],
         "title_de": "Lehre",
@@ -1714,7 +1728,7 @@
             "year": "2025",
             "text": "Ausstellung Kreisläufen, Café Nimmersatt, Wolfhagen",
             "url": "",
-            "text_zh": "Ausstellung Kreisläufen，Café Nimmersatt，沃爾夫哈根"
+            "text_zh": "《Kreisläufen》展覽，Café Nimmersatt，沃爾夫哈根"
           },
           {
             "year": "2024",
@@ -1802,7 +1816,7 @@
             "url": "",
             "text": "LLM & Operational Image, guest talk in the seminar “A Different View of the World (What Are/Do/Change Operational Images?)”, Prof. Dr. Jan Distelmeyer, European Media Studies, University of Potsdam / FH Potsdam",
             "text_de": "LLM & Operational Image, Gastvortrag im Seminar „A Different View of the World (What Are/Do/Change Operational Images?)“, Prof. Dr. Jan Distelmeyer, Europäische Medienwissenschaft, Universität Potsdam / FH Potsdam",
-            "text_zh": "LLM & Operational Image，客座演講，Jan Distelmeyer 教授的研討課「A Different View of the World (What Are/Do/Change Operational Images?)」，波茨坦大學／波茨坦應用科技大學歐洲媒體學（Europäische Medienwissenschaft）"
+            "text_zh": "LLM & Operational Image，Jan Distelmeyer 教授研討課「A Different View of the World (What Are/Do/Change Operational Images?)」客座演講，波茨坦大學／波茨坦應用科技大學歐洲媒體研究（Europäische Medienwissenschaft）"
           },
           {
             "year": "2026",
@@ -1826,21 +1840,21 @@
             "year": "2026",
             "text": "Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images, Expanded 2026 (Art Track), Linz, w/ Leon-Etienne Kühr",
             "url": "https://expanded-conf.org/speaker/ting-chun-liu-leon-etienne-kuhr/",
-            "text_zh": "Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images，Expanded 2026（藝術軌 Art Track），林茲，與 Leon-Etienne Kühr",
+            "text_zh": "Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images，Expanded 2026 藝術單元（Art Track），林茲，與 Leon-Etienne Kühr",
             "kind": "talk"
           },
           {
             "year": "2026",
             "text": "Paranoia De-Prompting: Artistic Experiments on Generative Image, University of Bonn, invited by Junge GI Hochschulgruppe Bonn, w/ Leon-Etienne Kühr",
             "url": "https://junge.gi.de/veranstaltung/paranoia-de-prompting-artistic-experiments-on-generative-image-vortrag-hsg-bonn",
-            "text_zh": "Paranoia De-Prompting: Artistic Experiments on Generative Image，波昂大學，德國資訊學會青年部（Junge GI）邀請，與 Leon-Etienne Kühr",
+            "text_zh": "Paranoia De-Prompting: Artistic Experiments on Generative Image，波昂大學，受德國資訊學會青年部（Junge GI）波昂大學小組邀請，與 Leon-Etienne Kühr",
             "kind": "talk"
           },
           {
             "year": "2026",
             "text": "Conditions for Emotions, DFG network “Das Wissen der digitalen Literatur”",
             "url": "https://digitale-burg.de/studio/das-wissen-der-digitalen-literatur",
-            "text_zh": "Conditions for Emotions，DFG 研究網絡「Das Wissen der digitalen Literatur」（數位文學的知識）",
+            "text_zh": "Conditions for Emotions，德國研究基金會（DFG）研究網絡「Das Wissen der digitalen Literatur」（數位文學的知識）",
             "date": "2026-06-13",
             "kind": "workshop"
           },
@@ -1858,13 +1872,13 @@
             "url": "",
             "text": "Algorithmisches Entwerfen, Erasmus+ teaching mobility, Digital Art, University of Applied Arts Vienna",
             "text_de": "Algorithmisches Entwerfen, Erasmus+-Lehraufenthalt, Digitale Kunst, Universität für angewandte Kunst Wien",
-            "text_zh": "Algorithmisches Entwerfen，Erasmus+ 教學交流，維也納應用藝術大學（Universität für angewandte Kunst Wien）數位藝術系（Digitale Kunst）"
+            "text_zh": "Algorithmisches Entwerfen，Erasmus+ 教學交流，維也納應用藝術大學（Universität für angewandte Kunst Wien）數位藝術組（Digitale Kunst）"
           },
           {
             "year": "2026",
             "text": "mtrail Ausbildungscamp, Lindau, w/ Leon-Etienne Kühr",
             "url": "",
-            "text_zh": "mtrail Ausbildungscamp，林道，與 Leon-Etienne Kühr",
+            "text_zh": "mtrail 培訓營（Ausbildungscamp），林道，與 Leon-Etienne Kühr",
             "date": "2026-05-07",
             "kind": "workshop"
           },
@@ -1972,7 +1986,7 @@
             "year": "2024",
             "text": "Künstliche Intelligenz – Heilsbringer oder Apokalypse, Alfred Toepfer Stiftung, Siggen, w/ Leon-Etienne Kühr",
             "url": "",
-            "text_zh": "Künstliche Intelligenz – Heilsbringer oder Apokalypse，Alfred Toepfer 基金會，西根，與 Leon-Etienne Kühr",
+            "text_zh": "Künstliche Intelligenz – Heilsbringer oder Apokalypse，Alfred Toepfer 基金會（Alfred Toepfer Stiftung），Siggen，與 Leon-Etienne Kühr",
             "kind": "talk"
           },
           {
@@ -2040,12 +2054,12 @@
             "year": "2026",
             "text": "Heat as (Generative) Image Making, FIfF-Kommunikation 1/26, p. 64, FIfF e.V. Essay for the Weizenbaum-Studienpreis 2025",
             "url": "https://www.fiff.de/fiff-kommunikation/2026/1/",
-            "text_zh": "Heat as (Generative) Image Making，《FIfF-Kommunikation》1/26，第 64 頁，FIfF e.V.。2025 Weizenbaum 學位論文獎文章",
+            "text_zh": "Heat as (Generative) Image Making，《FIfF-Kommunikation》1/26，第 64 頁，FIfF e.V.。2025 年 Weizenbaum 學位論文獎得獎文章",
             "thumb": "images/wix/4eb1dd_89bed6e0c0da46979abc1b61f04b44e8~mv2.webp",
             "title": "Heat as (Generative) Image Making",
             "venue": "FIfF-Kommunikation 1/26, p. 64, FIfF e.V. · Essay for the Weizenbaum-Studienpreis 2025",
             "venue_de": "FIfF-Kommunikation 1/26, S. 64, FIfF e.V. · Essay zum Weizenbaum-Studienpreis 2025",
-            "venue_zh": "《FIfF-Kommunikation》1/26，第 64 頁，FIfF e.V. · 2025 Weizenbaum 學位論文獎文章"
+            "venue_zh": "《FIfF-Kommunikation》1/26，第 64 頁，FIfF e.V. · 2025 年 Weizenbaum 學位論文獎得獎文章"
           },
           {
             "year": "2025",
@@ -2139,7 +2153,7 @@
             "year": "2014–2018",
             "text": "B.F.A. in New Media Art, Taipei National University of the Arts (TNUA)",
             "url": "https://nma.tnua.edu.tw/",
-            "text_zh": "國立臺北藝術大學新媒體藝術學系 學士"
+            "text_zh": "國立臺北藝術大學新媒體藝術學系學士"
           }
         ],
         "title_de": "Ausbildung",
