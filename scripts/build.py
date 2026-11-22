@@ -478,7 +478,7 @@ UI = {
         "sitemap": "Site map", "sitemap_lead": "Every page of this website.",
         "sitemap_desc": "Site map of the website of %s: works and performances, talks and workshops, about, blog.",
         "Year": "Year", "Status": "Status", "Type": "Type", "Materials": "Materials", "With": "With", "Link": "Link",
-        "work_desc": "%s (%s), %s by %s.", "work": "work", "work_with": "with %s", "show_all": "Show all (%d)", "event": "Event page", "held": "Sessions", "workshop": "Workshop", "tool": "Open the workshop tool ↗",
+        "work_desc": "%s (%s), %s by %s.", "work": "work", "work_with": "with %s", "show_all": "Show all (%d)", "event": "Event page", "held": "Sessions", "workshop": "Workshop", "tool": "Open the workshop tool ↗", "tool_dl": "Download the workshop tool ↓",
         "perf_title": "Performance archive",
         "watch": "Watch on %s ↗",
         "about": "About",
@@ -515,7 +515,7 @@ UI = {
         "sitemap": "Seitenübersicht", "sitemap_lead": "Alle Seiten dieser Website.",
         "sitemap_desc": "Seitenübersicht der Website von %s: Arbeiten und Performances, Vorträge und Workshops, Über mich, Blog.",
         "Year": "Jahr", "Status": "Status", "Type": "Art", "Materials": "Material", "With": "Mit", "Link": "Link",
-        "work_desc": "%s (%s), %s von %s.", "work": "Arbeit", "work_with": "mit %s", "show_all": "Alle anzeigen (%d)", "event": "Veranstaltung", "held": "Termine", "workshop": "Workshop", "tool": "Workshop-Tool öffnen ↗",
+        "work_desc": "%s (%s), %s von %s.", "work": "Arbeit", "work_with": "mit %s", "show_all": "Alle anzeigen (%d)", "event": "Veranstaltung", "held": "Termine", "workshop": "Workshop", "tool": "Workshop-Tool öffnen ↗", "tool_dl": "Workshop-Tool herunterladen ↓",
         "perf_title": "Performance-Archiv",
         "watch": "Auf %s ansehen ↗",
         "about": "Über mich",
@@ -552,7 +552,7 @@ UI = {
         "sitemap": "網站地圖", "sitemap_lead": "這個網站的所有頁面。",
         "sitemap_desc": "%s網站的網站地圖：創作計畫與表演、講座、工作坊與書寫、關於、部落格。",
         "Year": "年份", "Status": "狀態", "Type": "類型", "Materials": "媒材", "With": "合作", "Link": "連結",
-        "work_desc": "%s（%s），%s，%s。", "work": "作品", "work_with": "與 %s 合作", "show_all": "顯示全部（%d）", "event": "活動頁面", "held": "場次", "workshop": "工作坊", "tool": "開啟工作坊工具 ↗",
+        "work_desc": "%s（%s），%s，%s。", "work": "作品", "work_with": "與 %s 合作", "show_all": "顯示全部（%d）", "event": "活動頁面", "held": "場次", "workshop": "工作坊", "tool": "開啟工作坊工具 ↗", "tool_dl": "下載工作坊工具 ↓",
         "perf_title": "表演紀錄",
         "watch": "在 %s 觀看 ↗",
         "about": "關於",
@@ -1132,13 +1132,21 @@ for L in LANGS:
     pubs = next((s_ for s_ in D["about"]["sections"] if s_["title"].startswith("Publications")), {"items": []})["items"]
     # own texts as a compact list: a small preview image (CV "thumb", fetched by scripts/fetch-talk-thumbs.py),
     # the title and where it appeared, the year
+    # each text in three lines when the CV row has them: title, subtitle, where it appeared
+    # (title / title_zh, subtitle, venue + _de/_zh); otherwise the CV line as it is
     def text_row(it):
-        text = tr(it, "text", L)
-        same = L != "en" and not it.get("text_" + L)
         href = it.get("url") or abs_url(P + "about/") + "#cv-publications-writing"
         pic = img(it["thumb"], 240, "") if it.get("thumb") else '<span class="ph"></span>'
-        return ('<a class="text-row" href="%s"%s><span class="pic">%s</span><span class="body"><span class="t"%s>%s</span><span class="y mono">%s%s%s</span></span></a>') % (
-            esc(href), ' target="_blank" rel="noopener"' if it.get("url") else "", pic, ' lang="en"' if same else "", esc(text),
+        en = lambda k: ' lang="en"' if L != "en" and not it.get(k + "_" + L) else ""
+        if it.get("title"):
+            head = '<span class="t"%s>%s</span>%s%s' % (
+                en("title"), esc(tr(it, "title", L)),
+                '<span class="st" lang="en">%s</span>' % esc(it["subtitle"]) if it.get("subtitle") else "",
+                '<span class="v"%s>%s</span>' % (en("venue"), esc(tr(it, "venue", L))) if it.get("venue") else "")
+        else:
+            head = '<span class="t"%s>%s</span>' % (en("text"), esc(tr(it, "text", L)))
+        return ('<a class="text-row" href="%s"%s><span class="pic">%s</span><span class="body">%s<span class="y mono">%s%s%s</span></span></a>') % (
+            esc(href), ' target="_blank" rel="noopener"' if it.get("url") else "", pic, head,
             esc(it.get("year", "")), " · %s ↗" % esc(u["read"]) if it.get("url") else "",
             '<span class="credit">%s</span>' % esc(u["img_credit"] % it["credit"]) if it.get("thumb") and it.get("credit") else "")
     writing_html = ('<section class="sub-sec" id="writing"><header class="sub-head"><h2>%s</h2></header><div class="text-list">%s</div></section>' % (
@@ -1176,7 +1184,10 @@ for L in LANGS:
                 '%s%s</aside><div class="plates">%s</div>%s</article>') % (
             url(P + "workshops/"), esc(u["workshop"]), esc(tr(x, "title", L)), meta([(u["With"], esc(x.get("with")))]), esc(tr(x, "summary", L)),
             # a workshop tool (site.json "tool_url", e.g. /tools/conditions-for-emotions/) opens in a new tab
-            '<p class="shop-tool"><a class="btn" href="%s" target="_blank" rel="noopener">%s</a></p>' % (esc(url(x["tool_url"].lstrip("/")) if not x["tool_url"].startswith("http") else x["tool_url"]), esc(u["tool"])) if x.get("tool_url") else "",
+            # a .html tool_url is the tool itself and is downloaded; any other address opens in a new tab
+            ('<p class="shop-tool"><a class="btn" href="%s" download>%s</a></p>' % (esc(url(x["tool_url"].lstrip("/"))), esc(u["tool_dl"]))
+             if x["tool_url"].endswith(".html") else
+             '<p class="shop-tool"><a class="btn" href="%s" target="_blank" rel="noopener">%s</a></p>' % (esc(url(x["tool_url"].lstrip("/")) if not x["tool_url"].startswith("http") else x["tool_url"]), esc(u["tool"]))) if x.get("tool_url") else "",
             ' lang="%s"' % tl if tl != HREFLANG[L] else "", prose(text),
             '<div class="held"><h2 class="mono">%s</h2><p>%s</p></div>' % (esc(u["held"]), "<br>".join(linkify(h) for h in held.split("\n") if h.strip())) if held else "",
             contact, plates, pager(shops, i, P + "workshops/%s/", "title", u["nav"]["workshops"]))

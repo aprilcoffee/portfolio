@@ -578,3 +578,8 @@ html.zoomed { overflow: hidden; }
 .shop-tool { margin-top: 1.5rem; }
 .shop-tool .btn { display: inline-block; font-family: var(--mono); font-size: 0.875rem; padding: 0.55rem 0.9rem; background: var(--ink); color: var(--bg); text-decoration: none; }
 .shop-tool .btn:hover { background: var(--red); }
+/* writing list: title, subtitle and where it appeared on separate lines */
+.text-row .t { font-family: var(--display); font-weight: 700; font-synthesis: none; }
+.text-row .st { display: block; margin-top: 0.15rem; font-size: 0.9688rem; line-height: 1.4; }
+.text-row .v { display: block; margin-top: 0.3rem; font-size: 0.875rem; line-height: 1.5; color: var(--mut); }
+html:lang(zh) .text-row .v { font-family: var(--note); }
