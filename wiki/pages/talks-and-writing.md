@@ -20,15 +20,18 @@ Lectures, talks, workshops and publications, as listed in the CV on the website.
 
 ## Lectures, Talks & Workshops
 
+- 2026 — “Conditions for Emotions”, invited by Alphabete der Automatisierung (Burg Hülshoff – Center for Literature), held at KHM Köln on 13 November 2026, for students of University of Münster, TH Köln Code & Context and KHM Computational Thinking & Aesthetic Doing
 - 2026 — Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images, Expanded 2026 (Art Track), Linz, w/ Leon-Etienne Kühr ([speaker page](https://expanded-conf.org/speaker/ting-chun-liu-leon-etienne-kuhr/); conference 9–11 September 2026; the paper is forthcoming in the ACM proceedings; see [Steering Through the Inner Residue](works/steering-through-the-inner-residue.md))
 - 2026 — Paranoia De-Prompting: Artistic Experiments on Generative Image, University of Bonn, invited by Junge GI Hochschulgruppe Bonn, w/ Leon-Etienne Kühr ([event page](https://junge.gi.de/veranstaltung/paranoia-de-prompting-artistic-experiments-on-generative-image-vortrag-hsg-bonn); Thursday 16 July 2026, 16:30, Hörsaal 1, Campus Poppelsdorf; see [Workshops](topics/workshops.md))
 - 2026 — “Conditions for Emotions”, DFG network “Das Wissen der digitalen Literatur” ([link](https://digitale-burg.de/studio/das-wissen-der-digitalen-literatur))
 - 2026 — Animism Revisited, Digital Arts Community, ACM SIGGRAPH, w/ Leon-Etienne Kühr
+- 2026 — Algorithmisches Entwerfen, Erasmus+ teaching mobility, Digital Art, University of Applied Arts Vienna (May 2026)
 - 2026 — mtrail Ausbildungscamp, Lindau, w/ Leon-Etienne Kühr
-- 2026 — KISDtalk: Paranoia De-Prompting, KISD Köln International School of Design, w/ Leon-Etienne Kühr
-- 2026 — Latenz, Storage Museum Düsseldorf, w/ Leon-Etienne Kühr, Dominik Bönisch-Alpári, Prof. Dr. Ludger Schwarte ([link](https://www.filmwerkstatt-duesseldorf.de/latenz/); organiser's date: 20 January 2026)
+- 2026 — Latenz, exhibition talk on [Interpolation of the Invisible Color](works/interpolation-of-the-invisible-color.md), Storage Museum Düsseldorf, in cooperation with Filmwerkstatt Düsseldorf, w/ Leon-Etienne Kühr, Dominik Bönisch-Alpári, Prof. Dr. Ludger Schwarte ([link](https://storagemuseum.org/en/program/latenz); 20 January 2026; the organiser writes the title as “Interpolation of Invisible Colors”)
+- 2026 — KISDtalk: Paranoia De-Prompting, KISD Köln International School of Design, w/ Leon-Etienne Kühr ([event page](https://kisd.de/en/termine/kisdtalk-paranoia-de-prompting/): 16 January 2026, 17:30–19:00)
+- 2026 — Latent Space Studies, internal expert workshop for the research project “Template Cultures: Generative AI in Design”, TH Köln / KISD, w/ Leon-Etienne Kühr (morning of 16 January 2026, the day of the KISDtalk)
 - 2025 — Stereotype Encoding, Latent Space Symposium, Filmwerkstatt Düsseldorf, w/ Leon-Etienne Kühr ([organiser's page](https://www.filmwerkstatt-duesseldorf.de/latent-space-symposium/): 29 November 2025; see [Stereotype Encoding](texts/stereotype-encoding.md))
-- 2025 — Generating for the Archive, Storage Museum Düsseldorf, w/ Leon-Etienne Kühr ([link](https://www.filmwerkstatt-duesseldorf.de/generating-for-the-archive/); organiser's date: 28 November 2025)
+- 2025 — Generating for the Archive (workshop), Latent Space, Storage Museum Düsseldorf, in cooperation with Filmwerkstatt Düsseldorf, w/ Leon-Etienne Kühr ([link](https://storagemuseum.org/en/program/generating-for-the-archive); 28 November 2025)
 - 2025 — 51 Ways to Spell the Image Giraffe: The Hidden Politics of Token Languages in Generative AI, 39th Chaos Communication Congress, w/ Leon-Etienne Kühr ([recording](https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai))
 - 2025 — Reverberation of the Blackbox Image, Auditory Aesthetics Series, National Tsing Hua University
 - 2025 — Bauhaus Master Lecture, Bauhaus University Weimar

@@ -15,7 +15,7 @@ updated: 2026-10-25
 
 Ting-Chun Liu (劉庭均, born in Taipei, Taiwan) is a research-based media artist working with critical AI
 (a critical AI artist) and an artistic researcher. His practice and research operate at the
-intersections of critical artificial intelligence, audiovisual media and network practice. In the
+intersections of critical artificial intelligence, the media specificity of generative content, audiovisual media and network practice. In the
 artist's own words (website bio, October 2026): "Drawing on cybernetics and operational images, he dissects
 technological systems with feedback-driven interventions, and examines how perception, aesthetics, and power dynamics
 propagate through computational processes". Asked in 2026 what he does, he put it this way: he approaches AI art along media art's question of
