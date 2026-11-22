@@ -172,3 +172,6 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 
 ## [2026-11-18] edit | CV talks and workshops (artist)
 - talks-and-writing.md: KISDtalk date is 16 January 2026 (organiser page; the CV had 6 January); added Latent Space Studies (KISD), Algorithmisches Entwerfen (Erasmus+, Angewandte Wien), Conditions for Emotions 13 Nov (held at KHM Köln); Latenz and Generating for the Archive with Storage Museum links and dates
+
+## [2026-11-22] fix | Latent Heat Generation (artist)
+- works/latent-heat-generation.md and site text: the thermal images are the base images for image-to-image, not prompts
