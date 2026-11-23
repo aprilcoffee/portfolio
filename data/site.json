@@ -181,6 +181,10 @@
       "video": "https://vimeo.com/1171767792",
       "links": [
         {
+          "label": "Paper (Academia.edu)",
+          "url": "https://www.academia.edu/181544684/Steering_Through_the_Inner_Residue_Feedback_as_an_Artistic_Strategy_against_Generative_Images"
+        },
+        {
           "label": "Talk, Expanded 2026, Linz",
           "url": "https://expanded-conf.org/speaker/ting-chun-liu-leon-etienne-kuhr/"
         }
@@ -2041,7 +2045,7 @@
           {
             "year": "2026",
             "text": "Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images, Expanded 2026: Conference on Animation and Interactive Art, ACM, forthcoming (DOI 10.1145/3840416.3840463), w/ Leon-Etienne Kühr",
-            "url": "",
+            "url": "https://www.academia.edu/181544684/Steering_Through_the_Inner_Residue_Feedback_as_an_Artistic_Strategy_against_Generative_Images",
             "text_zh": "Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images，Expanded 2026：動畫與互動藝術研討會（Conference on Animation and Interactive Art），ACM，即將出版（DOI 10.1145/3840416.3840463），與 Leon-Etienne Kühr",
             "thumb": "images/wix/4eb1dd_3b92c3e56ced47f4968d13c82a46d250~mv2.webp",
             "title": "Steering Through the Inner Residue",

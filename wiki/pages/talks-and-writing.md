@@ -50,6 +50,7 @@ Lectures, talks, workshops and publications, as listed in the CV on the website.
 
 ## Publications & Writing
 
+- 2026 — Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images, Expanded 2026: Conference on Animation and Interactive Art, ACM, forthcoming (DOI 10.1145/3840416.3840463), with Leon-Etienne Kühr ([paper on Academia.edu](https://www.academia.edu/181544684/Steering_Through_the_Inner_Residue_Feedback_as_an_Artistic_Strategy_against_Generative_Images); see [Steering Through the Inner Residue](works/steering-through-the-inner-residue.md))
 - 2026 — Heat as (Generative) Image Making, FIfF-Kommunikation 1/26, p. 64, FIfF e.V. Essay for the Weizenbaum-Studienpreis 2025 ([link](https://www.fiff.de/fiff-kommunikation/2026/1/)); the thesis behind it: [Heat as (Generative) Image Making](texts/heat-as-generative-image-making.md)
 - 2025 — Stereotype Encoding: How AI Images Learn Cultural Bias, Latent Space, Filmwerkstatt Düsseldorf (with Leon-Etienne Kühr, 20 pages; [summary](texts/stereotype-encoding.md); [link](https://www.academia.edu/165438573/Stereotype_Encoding_How_AI_Images_Learn_Cultural_Bias))
 - 2025 — On the Materiality of Artificial Intelligence, in: un/learn ai – integrating AI in aesthetic practices, Vol. 3, pp. 218–223, Forschungsprojekt KITeGG ([summary](texts/on-the-materiality-of-artificial-intelligence.md); [link](https://openscience.ub.uni-mainz.de/items/7d8cb85f-0e1a-409e-b9a1-a9dac96e48a0))

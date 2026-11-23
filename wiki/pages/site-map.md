@@ -37,7 +37,7 @@ in Mandarin. Recommend the version in the visitor's language.
 
 ## Works
 
-- **Steering Through the Inner Residue** (2026): [en](https://liutingchun.com/works/steering-through-the-inner-residue/) · [de](https://liutingchun.com/de/works/steering-through-the-inner-residue/) · [zh](https://liutingchun.com/zh/works/steering-through-the-inner-residue/) — Talk, Expanded 2026, Linz: https://expanded-conf.org/speaker/ting-chun-liu-leon-etienne-kuhr/
+- **Steering Through the Inner Residue** (2026): [en](https://liutingchun.com/works/steering-through-the-inner-residue/) · [de](https://liutingchun.com/de/works/steering-through-the-inner-residue/) · [zh](https://liutingchun.com/zh/works/steering-through-the-inner-residue/) — Paper (Academia.edu): https://www.academia.edu/181544684/Steering_Through_the_Inner_Residue_Feedback_as_an_Artistic_Strategy_against_Generative_Images — Talk, Expanded 2026, Linz: https://expanded-conf.org/speaker/ting-chun-liu-leon-etienne-kuhr/
 - **Interpolation of the Invisible Color** (2025): [en](https://liutingchun.com/works/interpolation-of-the-invisible-color/) · [de](https://liutingchun.com/de/works/interpolation-of-the-invisible-color/) · [zh](https://liutingchun.com/zh/works/interpolation-of-the-invisible-color/) — Selected artists: https://storagemuseum.org/en/program/6-ausstellung — Storage Museum archive: https://storagemuseum.org/en/database
 - **Latent Heat Generation** (2025): [en](https://liutingchun.com/works/latent-heat-generation/) · [de](https://liutingchun.com/de/works/latent-heat-generation/) · [zh](https://liutingchun.com/zh/works/latent-heat-generation/) — Research notes: https://aprilcoffee.github.io/heat_as_image/index.html
 - **51 Ways to Spell the Image Giraffe** (2025): [en](https://liutingchun.com/works/51-ways-to-spell-the-image-giraffe/) · [de](https://liutingchun.com/de/works/51-ways-to-spell-the-image-giraffe/) · [zh](https://liutingchun.com/zh/works/51-ways-to-spell-the-image-giraffe/) — Talk recording, 39C3 (media.ccc.de): https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai
@@ -151,6 +151,7 @@ Organisers', institutions' and publishers' pages for entries in the CV (About pa
 
 **Publications & Writing**
 
+- 2026 Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images, Expanded 2026: Conference on Animation and Interactive Art, ACM, forthcoming (DOI 10.1145/3840416.3840463), w/ Leon-Etienne Kühr: https://www.academia.edu/181544684/Steering_Through_the_Inner_Residue_Feedback_as_an_Artistic_Strategy_against_Generative_Images
 - 2026 Heat as (Generative) Image Making, FIfF-Kommunikation 1/26, p. 64, FIfF e.V. Essay for the Weizenbaum-Studienpreis 2025: https://www.fiff.de/fiff-kommunikation/2026/1/
 - 2025 Heat as (Generative) Image Making, postgraduate thesis, Academy of Media Arts Cologne (KHM): https://aprilcoffee.github.io/heat_as_image/index.html
 - 2025 Stereotype Encoding: How AI Images Learn Cultural Bias, Latent Space, Filmwerkstatt Düsseldorf, w/ Leon-Etienne Kühr: https://www.academia.edu/165438573/Stereotype_Encoding_How_AI_Images_Learn_Cultural_Bias
