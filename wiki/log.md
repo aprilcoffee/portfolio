@@ -178,3 +178,6 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 
 ## [2026-11-22] edit | About bio (artist)
 - overview.md: bio adds the media specificity of generative content
+
+## [2026-11-23] edit | Steering Through the Inner Residue paper link (artist)
+- works page and talks-and-writing.md: paper on Academia.edu
