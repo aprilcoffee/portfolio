@@ -63,7 +63,6 @@ Year-by-year list of works, teaching, education, awards, talks, publications, ex
 - Lectures, Talks & Workshops: Fotografie in der KI-Krise? Lecture Series Photographic Studies, Fachhochschule Dortmund
 - Lectures, Talks & Workshops: Kulturelle Bildung in postdigitalen Lebenswelten, jfc Medienzentrum, Cologne, w/ Benita Martis
 - Publications & Writing: Hello, hello, hello, hello? Hello? Hello! Human! Exhibition catalogue “Hello, Human!”, Museum of Contemporary Art Taipei (Mandarin/English)
-- Publications & Writing: Positioning – A Prerequisite for Immersion, Digiarts, National Taiwan Museum of Fine Arts
 
 ## 2023
 
@@ -84,6 +83,7 @@ Year-by-year list of works, teaching, education, awards, talks, publications, ex
 - Work: [Beneath](works/beneath.md) — Sound Installation
 - Teaching: Student Assistant, Experimental Informatics, Academy of Media Arts Cologne (2022–2024)
 - Publications & Writing: Poetic Materialization – Regarding Midjourney, [ ] ground zero – poetics of technics and cognition
+- Publications & Writing: Positioning – A Prerequisite for Immersion, Digiarts, issue 2022.06, National Taiwan Museum of Fine Arts (in Chinese)
 - Exhibitions: ACHT BRÜCKEN Festival, Kölner Philharmonie, Cologne
 
 ## 2021

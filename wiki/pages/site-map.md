@@ -157,7 +157,7 @@ Organisers', institutions' and publishers' pages for entries in the CV (About pa
 - 2025 Stereotype Encoding: How AI Images Learn Cultural Bias, Latent Space, Filmwerkstatt Düsseldorf, w/ Leon-Etienne Kühr: https://www.academia.edu/165438573/Stereotype_Encoding_How_AI_Images_Learn_Cultural_Bias
 - 2025 On the Materiality of Artificial Intelligence, in: un/learn ai – integrating AI in aesthetic practices, Vol. 3, pp. 218–223, Forschungsprojekt KITeGG: https://unlearn.gestaltung.ai/de/article/gpm91yc8?chunks=gpm91yc8
 - 2024 Hello, hello, hello, hello? Hello? Hello! Human! Catalogue of the exhibition “Hello, Human!”, curated by Keith Lam and Escher Tsai, Museum of Contemporary Art Taipei, 27 Jan – 12 May 2024 (Mandarin/English; English translation by 吳中平): https://www.mocataipei.org.tw/tw/ExhibitionAndEvent/Info/%E4%BD%A0%E5%A5%BD%EF%BC%8C%E4%BA%BA%E9%A1%9E%EF%BC%81Hello,*Human!
-- 2024 Positioning – A Prerequisite for Immersion, Digiarts, National Taiwan Museum of Fine Arts: https://www.digiarts.org.tw/DigiArts/DataBasePage/4_236170297334000/Chi
+- 2022 Positioning – A Prerequisite for Immersion, Digiarts, issue 2022.06, National Taiwan Museum of Fine Arts (in Chinese): https://www.digiarts.org.tw/DigiArts/DataBasePage/4_236170297334000/Chi
 - 2021 »_ell_ Worl_!« – The Rule Becomes the Author, 10th Encontro Internacional de Grupos de Pesquisa, UNESP, São Paulo, and [ ] ground zero – poetics of technics and cognition, w/ Christian Heck, Mattis Kuhn, Tiago Ive Rubini, Julia Nakotte: https://ground-zero.khm.de/portfolio/_ell_-worl_-the-rule-becomes-the-author/
 
 **Education**

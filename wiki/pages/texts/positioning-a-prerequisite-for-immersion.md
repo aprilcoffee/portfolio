@@ -3,20 +3,20 @@ title: "Positioning – A Prerequisite for Immersion (定位—沉浸的先決�
 type: text
 tags: [text, immersion, virtual-reality, locative-media, positioning, game-engine, mandarin]
 sources:
-  - ../../../data/site.json (about.sections, Publications & Writing 2024)
+  - ../../../data/site.json (about.sections, Publications & Writing 2022)
   - https://www.digiarts.org.tw/DigiArts/DataBasePage/4_236170297334000/Chi
   - ../../raw/texts/positioning-a-prerequisite-for-immersion.md
 updated: 2026-10-24
 ---
 # Positioning – A Prerequisite for Immersion (定位—沉浸的先決條件) (text)
 
-A Mandarin essay by Ting-Chun Liu (劉庭均), published in 2024 on Digiarts, the online platform of the National Taiwan Museum of Fine Arts. Its thesis is in the title: before we can feel "presence" in any medium, real or virtual, we have to be *positioned* in it. Liu moves from navigation (stars, GPS, tuning forks, aircraft warning lights) through locative media and Huizinga's "magic circle", to how virtual space is built inside a computer (ray casting in *Wolfenstein 3D*, VRML, the octree data structure), and finally to how the body is placed in virtual reality (hand tracking, outside-in and inside-out tracking, SLAM). Artworks by Jeremy Hight and collaborators, Gilbertto Prado, Marshmallow Laser Feast and Shehani Fernando serve as examples. It ends with the body, the interface, the virtual camera and the objects forming one "magic circle" system in which each part finds its position relative to the others, and immersion arises from that.
+A Mandarin essay by Ting-Chun Liu (劉庭均), published in June 2022 (issue 2022.06) on Digiarts, the online platform of the National Taiwan Museum of Fine Arts. Its thesis is in the title: before we can feel "presence" in any medium, real or virtual, we have to be *positioned* in it. Liu moves from navigation (stars, GPS, tuning forks, aircraft warning lights) through locative media and Huizinga's "magic circle", to how virtual space is built inside a computer (ray casting in *Wolfenstein 3D*, VRML, the octree data structure), and finally to how the body is placed in virtual reality (hand tracking, outside-in and inside-out tracking, SLAM). Artworks by Jeremy Hight and collaborators, Gilbertto Prado, Marshmallow Laser Feast and Shehani Fernando serve as examples. It ends with the body, the interface, the virtual camera and the objects forming one "magic circle" system in which each part finds its position relative to the others, and immersion arises from that.
 
 ## Facts
 
 - **Title:** 「定位—沉浸的先決條件」, *Positioning – A Prerequisite for Immersion*. (The CV's Mandarin line gives 「定位——沉浸的前提」; the supplied PDF is titled 「定位—沉浸的先決條件」.)
 - **Author:** Ting-Chun Liu (劉庭均), single author.
-- **Where:** Digiarts, National Taiwan Museum of Fine Arts, 2024 (year from the CV). Online: https://www.digiarts.org.tw/DigiArts/DataBasePage/4_236170297334000/Chi
+- **Where:** Digiarts, issue 2022.06, National Taiwan Museum of Fine Arts (the artist's earlier CV; the website said 2024 until November 2026). Online: https://www.digiarts.org.tw/DigiArts/DataBasePage/4_236170297334000/Chi
 - **Language:** Mandarin (Traditional Chinese). Four pages, ten footnotes, seven figures.
 - **Structure:** introduction; 技術輔助下的現實定位 (Positioning in reality with technical help); 空間如何存在於虛擬 (How space exists in the virtual); 身體於虛擬空間的定位 (Positioning the body in virtual space); 結語 (Conclusion).
 
@@ -62,7 +62,7 @@ We relate to the world by locating consciousness in the body and meeting the wor
 ## Open questions
 
 - The CV's Mandarin title (「定位——沉浸的前提」) differs from the PDF title (「定位—沉浸的先決條件」). Which wording does the artist prefer?
-- Exact publication date on Digiarts is not given in the supplied text (the CV says 2024).
+- Issue 2022.06 (June 2022), from the artist's earlier CV; the website listed 2024 by mistake until November 2026.
 
 ## Related
 
@@ -74,6 +74,6 @@ We relate to the world by locating consciousness in the body and meeting the wor
 
 ## Sources
 
-- data/site.json, about.sections: Publications & Writing (2024)
+- data/site.json, about.sections: Publications & Writing (2022)
 - https://www.digiarts.org.tw/DigiArts/DataBasePage/4_236170297334000/Chi
 - Text supplied by the artist, October 2026 (PDF; extract in [raw/texts/positioning-a-prerequisite-for-immersion.md](../../raw/texts/positioning-a-prerequisite-for-immersion.md))
