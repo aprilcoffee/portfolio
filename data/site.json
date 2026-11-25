@@ -325,7 +325,14 @@
         "images/wix/4eb1dd_01cbb15d36604cb2926fd47a16d83672~mv2.webp",
         "images/wix/4eb1dd_429853f4003e43c8977ee4f09b855bc1~mv2.webp",
         "images/wix/4eb1dd_4ff189789ac14a5bb265273066f1fe33~mv2.webp",
-        "images/wix/4eb1dd_67f954e444864c7a83de013aa0743842~mv2.webp"
+        "images/wix/4eb1dd_67f954e444864c7a83de013aa0743842~mv2.webp",
+        {
+          "src": "images/latent-heat/system-diagram.webp",
+          "wide": true,
+          "alt": "System diagram: a thermal camera films the RTX 4090; a phone sends the image by NDI to StreamDiffusion in TouchDesigner; Python handles temperature control, voice and scene control; Processing drives the LED panel",
+          "alt_de": "Systemdiagramm: Eine Wärmebildkamera filmt die RTX 4090; ein Smartphone sendet das Bild per NDI an StreamDiffusion in TouchDesigner; Python übernimmt Temperatursteuerung, Stimme und Szenensteuerung; Processing steuert das LED-Panel",
+          "alt_zh": "系統圖：熱像儀拍攝 RTX 4090，手機把影像經 NDI 傳到 TouchDesigner 裡的 StreamDiffusion；Python 負責溫度控制、語音與場景控制；Processing 輸出到 LED 面板"
+        }
       ],
       "video": "",
       "links": [

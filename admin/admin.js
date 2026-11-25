@@ -151,15 +151,30 @@
     var thumbs = h('div', { className: 'thumbs' });
     function drawThumbs() {
       thumbs.innerHTML = '';
-      [w.cover].concat(w.images || []).filter(Boolean).map(function (u) { return u.replace(/\s*\|\s*wide\s*$/, ''); }).forEach(function (u) {
+      [w.cover].concat(w.images || []).filter(Boolean).map(function (u) { return typeof u === 'string' ? u.replace(/\s*\|\s*wide\s*$/, '') : u.src; }).forEach(function (u) {
         thumbs.appendChild(h('img', { src: resolve(u), loading: 'lazy' }));
       });
     }
     drawThumbs();
 
-    var imagesTa = h('textarea', { className: 'lines', value: (w.images || []).join('\n') });
+    // one line per image: "path", "path | wide", or "path | wide | caption | DE | 中文" (or "path | | caption …" for a normal-width image with a caption)
+    function workImgLine(m) {
+      if (typeof m === 'string') return m;
+      return [m.src, m.wide ? 'wide' : '', m.alt || '', m.alt_de || '', m.alt_zh || ''].join(' | ').replace(/( \| )+$/, '');
+    }
+    function parseWorkImg(t) {
+      var p = t.split('|').map(function (v) { return v.trim(); });
+      if (p.length <= 2 && (p.length === 1 || p[1] === 'wide')) return t;
+      var o = { src: p[0] };
+      if (p[1] === 'wide') o.wide = true;
+      if (p[2]) o.alt = p[2];
+      if (p[3]) o.alt_de = p[3];
+      if (p[4]) o.alt_zh = p[4];
+      return o;
+    }
+    var imagesTa = h('textarea', { className: 'lines', value: (w.images || []).map(workImgLine).join('\n') });
     imagesTa.addEventListener('input', function () {
-      w.images = imagesTa.value.split('\n').map(function (s) { return s.trim(); }).filter(Boolean);
+      w.images = imagesTa.value.split('\n').map(function (s) { return s.trim(); }).filter(Boolean).map(parseWorkImg);
       save(); drawThumbs();
     });
 
@@ -180,7 +195,7 @@
             return putFile(c, repoPath(c, rel), b64, 'Upload image ' + rel);
           }).then(function () {
             w.images = (w.images || []).concat(rel);
-            imagesTa.value = w.images.join('\n');
+            imagesTa.value = w.images.map(workImgLine).join('\n');
             done++; upStatus.textContent = '已上傳 ' + done + '/' + files.length;
             save(); drawThumbs();
           });
@@ -235,7 +250,7 @@
       lines('連結（每行：名稱 | 網址）', w, 'links', ['label', 'url']),
       field('封面圖（留空＝用第一張圖）', w, 'cover', { after: drawThumbs }),
       field('分享縮圖（貼到臉書時的圖；會自動裁成 1200×630 並加上標題；留空＝用封面）', w, 'share_image'),
-      h('label', {}, ['圖片（每行一個網址或 images/… 路徑；第一張放大顯示，其餘兩欄；行尾加「 | wide」＝這張佔滿整寬，適合圖表與投影片）', imagesTa]),
+      h('label', {}, ['圖片（每行一個網址或 images/… 路徑；第一張放大顯示，其餘兩欄；行尾加「 | wide」＝這張佔滿整寬，適合圖表與投影片；要加圖說就寫「路徑 | wide | 圖說 | DE | 中文」，不是整寬就把 wide 空著）', imagesTa]),
       h('div', { className: 'actions' }, [btn('上傳圖片到 GitHub…', function () { upload.click(); }, 'sm'), upStatus, upload]),
       thumbs
     ]);

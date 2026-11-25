@@ -612,3 +612,6 @@ html:lang(zh) .about-more summary { font-family: var(--note); }
   .about-more[open] summary { display: none; }
   .about-more .about-text { margin-top: 0; max-width: 40rem; font-size: 0.9688rem; line-height: 1.75; }
 }
+/* work pages: a caption under an image that has its own (site.json works[].images as {"src", "alt", …}) */
+.plates figcaption { font-family: var(--mono); font-size: 0.8125rem; color: var(--mut); margin-top: 0.5rem; line-height: 1.6; max-width: 52rem; }
+html:lang(zh) .plates figcaption { font-family: var(--note); }
