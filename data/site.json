@@ -181,6 +181,10 @@
       "video": "https://vimeo.com/1171767792",
       "links": [
         {
+          "label": "Paper (ACM Digital Library)",
+          "url": "https://dl.acm.org/doi/10.1145/3840416.3840463"
+        },
+        {
           "label": "Paper (Academia.edu)",
           "url": "https://www.academia.edu/181544684/Steering_Through_the_Inner_Residue_Feedback_as_an_Artistic_Strategy_against_Generative_Images"
         },
@@ -2044,15 +2048,15 @@
         "items": [
           {
             "year": "2026",
-            "text": "Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images, Expanded 2026: Conference on Animation and Interactive Art, ACM, forthcoming (DOI 10.1145/3840416.3840463), w/ Leon-Etienne Kühr",
-            "url": "https://www.academia.edu/181544684/Steering_Through_the_Inner_Residue_Feedback_as_an_Artistic_Strategy_against_Generative_Images",
-            "text_zh": "Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images，Expanded 2026：動畫與互動藝術研討會（Conference on Animation and Interactive Art），ACM，即將出版（DOI 10.1145/3840416.3840463），與 Leon-Etienne Kühr",
+            "text": "Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images, Expanded 2026: Conference on Animation and Interactive Art, ACM (DOI 10.1145/3840416.3840463), w/ Leon-Etienne Kühr",
+            "url": "https://dl.acm.org/doi/10.1145/3840416.3840463",
+            "text_zh": "Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images，Expanded 2026：動畫與互動藝術研討會（Conference on Animation and Interactive Art），ACM（DOI 10.1145/3840416.3840463），與 Leon-Etienne Kühr",
             "thumb": "images/wix/4eb1dd_3b92c3e56ced47f4968d13c82a46d250~mv2.webp",
             "title": "Steering Through the Inner Residue",
             "subtitle": "Feedback as an Artistic Strategy against Generative Images",
-            "venue": "Expanded 2026: Conference on Animation and Interactive Art, ACM, forthcoming (DOI 10.1145/3840416.3840463) · with Leon-Etienne Kühr",
-            "venue_de": "Expanded 2026: Conference on Animation and Interactive Art, ACM, im Erscheinen (DOI 10.1145/3840416.3840463) · mit Leon-Etienne Kühr",
-            "venue_zh": "Expanded 2026：動畫與互動藝術研討會，ACM，即將出版（DOI 10.1145/3840416.3840463） · 與 Leon-Etienne Kühr"
+            "venue": "Expanded 2026: Conference on Animation and Interactive Art, ACM (DOI 10.1145/3840416.3840463) · with Leon-Etienne Kühr",
+            "venue_de": "Expanded 2026: Conference on Animation and Interactive Art, ACM (DOI 10.1145/3840416.3840463) · mit Leon-Etienne Kühr",
+            "venue_zh": "Expanded 2026：動畫與互動藝術研討會，ACM（DOI 10.1145/3840416.3840463） · 與 Leon-Etienne Kühr"
           },
           {
             "year": "2026",

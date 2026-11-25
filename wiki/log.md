@@ -184,3 +184,6 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 
 ## [2026-11-24] fix | Positioning – A Prerequisite for Immersion is 2022 (artist)
 - Digiarts issue 2022.06, not 2024: texts page, talks-and-writing.md, timeline.md. On the Materiality of AI stays 2025 (un/learn ai vol. 3, Mainz 2025)
+
+## [2026-11-25] edit | Steering Through the Inner Residue published (artist)
+- paper now in the ACM Digital Library (10.1145/3840416.3840463): works page, talks-and-writing.md, external-links.md; no longer "forthcoming"
