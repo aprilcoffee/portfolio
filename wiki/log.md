@@ -187,3 +187,6 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 
 ## [2026-11-25] edit | Steering Through the Inner Residue published (artist)
 - paper now in the ACM Digital Library (10.1145/3840416.3840463): works page, talks-and-writing.md, external-links.md; no longer "forthcoming"
+
+## [2026-11-25] fix | Latent Heat Generation signal path (artist diagram)
+- thermal camera image of the GPU → phone → NDI → StreamDiffusion (TouchDesigner) as image-to-image base; temperature only self-regulated via nvidia-smi, not input; Processing → LED panel, Parler → speaker
