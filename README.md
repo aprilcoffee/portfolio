@@ -115,3 +115,23 @@ python3 -m http.server 8000      # 在 repo 根目錄執行
 CLOUDFLARE_API_TOKEN=<只有 D1 Read 權限的 token> python3 worker/log-viewer.py
 # 自動打開 http://localhost:8790 ，可依主題、語言、日期篩選與搜尋
 ```
+
+## 網站訪客（Google Analytics）
+
+`scripts/ga-viewer.py` 在自己電腦上開 http://localhost:8791 ：左邊選國家（再選城市），右邊看那裡的人讀了哪些頁面、
+每一頁做了什麼（開影片、問答框提問、點外部連結、捲到頁底）、從哪裡來、第一頁落在哪、用什麼裝置與語言，上方是過去 30 分鐘的即時人數。
+只用 Python 與 macOS 內建的 `openssl`，不用裝套件。
+
+```bash
+GA_PROPERTY=<GA 資源編號（數字）> GA_KEY=~/.config/liutingchun/ga-key.json python3 scripts/ga-viewer.py
+```
+
+第一次要設定（一次就好）：
+
+1. console.cloud.google.com → 新專案 → APIs & Services → Library → 「Google Analytics Data API」→ Enable。
+2. IAM & Admin → Service accounts → Create（不用給角色）→ Keys → Add key → JSON，存到 repo 外面，例如 `~/.config/liutingchun/ga-key.json`。
+3. GA → 管理 → 資源存取權管理 → ＋ → 加入服務帳號的 email（`…@….iam.gserviceaccount.com`），角色「檢視者」。
+4. GA → 管理 → 資源詳細資料：右上角的「資源 ID」（純數字，不是 G-…）就是 `GA_PROPERTY`。
+5. 選用：GA → 管理 → 自訂定義 → 建立自訂維度 `video_title`、`video_section`（範圍：事件），影片欄才看得到標題（從建立那天開始算）。
+
+`python3 scripts/ga-viewer.py --demo` 用假資料打開，不需要 GA。

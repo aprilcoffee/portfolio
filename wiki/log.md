@@ -169,3 +169,15 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 ## [2026-11-13] edit | Conditions for Emotions tool, new version (artist)
 - topics/workshops.md: download link, embeddinggemma-2:440m, the tool's tabs
 - topics/workshops.md: Conditions for Emotions exercises follow the new tool (chat, image distance, camera; no tokens tab)
+
+## [2026-11-18] edit | CV talks and workshops (artist)
+- talks-and-writing.md: KISDtalk date is 16 January 2026 (organiser page; the CV had 6 January); added Latent Space Studies (KISD), Algorithmisches Entwerfen (Erasmus+, Angewandte Wien), Conditions for Emotions 13 Nov (held at KHM Köln); Latenz and Generating for the Archive with Storage Museum links and dates
+
+## [2026-11-22] fix | Latent Heat Generation (artist)
+- works/latent-heat-generation.md and site text: the thermal images are the base images for image-to-image, not prompts
+
+## [2026-11-22] edit | About bio (artist)
+- overview.md: bio adds the media specificity of generative content
+
+## [2026-11-23] edit | Steering Through the Inner Residue paper link (artist)
+- works page and talks-and-writing.md: paper on Academia.edu

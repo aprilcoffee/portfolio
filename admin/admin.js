@@ -367,6 +367,7 @@
       field('說明文字 Deutsch（留空＝德文頁顯示英文）', x, 'text_de', { area: true, cls: 'tall' }),
       field('說明文字 中文（留空＝中文頁顯示英文）', x, 'text_zh', { area: true, cls: 'tall' }),
       h('div', { className: 'row' }, [field('場次 Sessions（每行一場：日期 · 地點／主辦；顯示在頁面最下方）', x, 'held', { area: true }), field('場次 DE', x, 'held_de', { area: true }), field('場次 中文', x, 'held_zh', { area: true })]),
+      h('div', { className: 'row' }, [field('照片 Credits（攝影者等，例：Fotos: …；顯示在場次下方）', x, 'credits', { area: true }), field('Credits DE', x, 'credits_de', { area: true }), field('Credits 中文', x, 'credits_zh', { area: true })]),
       h('label', {}, ['圖片（每行一張：路徑 | 圖片說明 | 說明 DE | 說明 中文；第一張是封面。圖片說明給看不到圖的人與搜尋引擎，描述畫面上有什麼）', imagesTa]),
       h('div', { className: 'actions' }, [btn('上傳圖片到 GitHub…（自動縮到長邊 2400px、轉 JPEG）', function () { upload.click(); }, 'sm'), upStatus, upload]),
       thumbs

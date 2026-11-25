@@ -583,3 +583,32 @@ html.zoomed { overflow: hidden; }
 .text-row .st { display: block; margin-top: 0.15rem; font-size: 0.9688rem; line-height: 1.4; }
 .text-row .v { display: block; margin-top: 0.3rem; font-size: 0.875rem; line-height: 1.5; color: var(--mut); }
 html:lang(zh) .text-row .v { font-family: var(--note); }
+/* About: bio first; the longer text folds on phones and tablets ("Read more") and sits in a right-hand column on wide screens */
+.about-cols { display: grid; grid-template-columns: 1fr; gap: 0; max-width: 54rem; }
+.about-cols .bio { max-width: 54rem; }
+.about-more { margin-top: 1.5rem; }
+.about-more summary { cursor: pointer; display: inline-block; list-style: none; font-size: 0.875rem; color: var(--ink);
+  border: 1px solid var(--line); padding: 0.45rem 0.8rem; }
+.about-more summary::-webkit-details-marker { display: none; }
+.about-more summary::before { content: "+ "; }
+.about-more[open] summary::before { content: "− "; }
+.about-more summary:hover { border-color: var(--ink); }
+.about-more .about-text { margin-top: 1.25rem; }
+.about-meta .contact { margin-top: 2rem; }
+html:lang(zh) .about-more summary { font-family: var(--note); }
+@media (max-width: 800px) {
+  .about-top .bio { font-size: 1.0625rem; line-height: 1.7; }
+  .about-top > .page-title { margin-bottom: 1.25rem; }
+  .about-more .about-text { font-size: 1rem; line-height: 1.8; }
+  .about-top .contact, .about-top .topics { grid-template-columns: 5.25rem 1fr; }
+  .about-top .contact-note { margin-left: 5.25rem; }
+}
+@media (min-width: 1025px) {
+  .about-cols { max-width: none; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); column-gap: 4rem;
+    grid-template-areas: "bio more" "meta more"; grid-template-rows: auto 1fr; align-items: start; }
+  .about-cols .bio { grid-area: bio; }
+  .about-cols .about-meta { grid-area: meta; }
+  .about-cols .about-more { grid-area: more; margin-top: 0.35rem; }
+  .about-more[open] summary { display: none; }
+  .about-more .about-text { margin-top: 0; max-width: 40rem; font-size: 0.9688rem; line-height: 1.75; }
+}

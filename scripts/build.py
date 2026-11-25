@@ -495,7 +495,7 @@ UI = {
         "ask_ex": ["What is Latent Heat Generation about?", "Why can “giraffe” be spelled in 51 ways?", "Which of your works deal with AI?", "What are you working on now?"],
         "ask_note": "caution: AI may create random correlations",
         "ask_more": "Privacy",
-        "read_at": "Read on %s", "tba": "Date TBA", "kinds": {"talk": "Talk", "workshop": "Workshop"}, "read": "Read", "img_credit": "Image: %s", "upcoming": "Upcoming", "recent": "Past talks & workshops", "shops_h": "Workshops", "cv_all": "Full list in the CV", "writing": "Writing",
+        "read_at": "Read on %s", "tba": "Date TBA", "kinds": {"talk": "Talk", "workshop": "Workshop"}, "read": "Read", "img_credit": "Image: %s", "about_more": "Read more", "upcoming": "Upcoming", "recent": "Past talks & workshops", "shops_h": "Workshops", "cv_all": "Full list in the CV", "writing": "Writing",
         "mt_note": "This website is written in English. Parts of the translation were made with AI and may contain errors.",
         "mt_ok": "OK",
         "ask_err": "Sorry, that didn’t work. Please try again in a moment, or write to %s.",
@@ -532,7 +532,7 @@ UI = {
         "ask_ex": ["Worum geht es in Latent Heat Generation?", "Warum lässt sich „giraffe“ auf 51 Arten schreiben?", "Welche Ihrer Arbeiten beschäftigen sich mit KI?", "Woran arbeiten Sie gerade?"],
         "ask_note": "Achtung: KI kann zufällige Zusammenhänge erzeugen · %s",
         "ask_more": "Datenschutz",
-        "read_at": "Lesen auf %s", "tba": "Termin folgt", "kinds": {"talk": "Vortrag", "workshop": "Workshop"}, "read": "Lesen", "img_credit": "Bild: %s", "upcoming": "Demnächst", "recent": "Vergangene Vorträge & Workshops", "shops_h": "Workshops", "cv_all": "Vollständige Liste im Lebenslauf", "writing": "Texte",
+        "read_at": "Lesen auf %s", "tba": "Termin folgt", "kinds": {"talk": "Vortrag", "workshop": "Workshop"}, "read": "Lesen", "img_credit": "Bild: %s", "about_more": "Mehr lesen", "upcoming": "Demnächst", "recent": "Vergangene Vorträge & Workshops", "shops_h": "Workshops", "cv_all": "Vollständige Liste im Lebenslauf", "writing": "Texte",
         "mt_note": "Bitte beachten Sie: Diese Website wird auf Englisch verfasst. Teile der deutschen Übersetzung wurden mit KI erstellt und können Fehler enthalten.",
         "mt_ok": "Verstanden",
         "ask_err": "Das hat leider nicht geklappt. Bitte gleich noch einmal versuchen oder an %s schreiben.",
@@ -569,7 +569,7 @@ UI = {
         "ask_ex": ["《Latent Heat Generation》在談什麼？", "為什麼「giraffe」可以有 51 種拼法？", "你有哪些作品跟人工智慧有關？", "你現在在做什麼？"],
         "ask_note": "注意：人工智慧可能產生隨機的關聯性",
         "ask_more": "隱私權",
-        "read_at": "在 %s 閱讀", "tba": "日期待定", "kinds": {"talk": "演講", "workshop": "工作坊"}, "read": "閱讀", "img_credit": "圖：%s", "upcoming": "即將舉行", "recent": "過往講座與工作坊", "shops_h": "工作坊", "cv_all": "完整列表見關於頁", "writing": "書寫",
+        "read_at": "在 %s 閱讀", "tba": "日期待定", "kinds": {"talk": "演講", "workshop": "工作坊"}, "read": "閱讀", "img_credit": "圖：%s", "about_more": "閱讀完整介紹", "upcoming": "即將舉行", "recent": "過往講座與工作坊", "shops_h": "工作坊", "cv_all": "完整列表見關於頁", "writing": "書寫",
         "mt_note": "請注意：本網站以英文為主，部分中文由人工智慧翻譯，可能會有錯誤。",
         "mt_ok": "知道了",
         "ask_err": "抱歉，暫時無法回答。請稍後再試，或寫信至 %s。",
@@ -1071,12 +1071,14 @@ for L in LANGS:
     more = tr(D["about"], "text", L)  # the longer text under the bio (the bio alone stays the page description)
     about_mail = S.get("email_alt") or S["email"]  # the address shown on the About page (the sidebar has site.email)
     page(P + "about/", u["about"], share_text("about", L, bio),
-         '<div class="about-top"><h1 class="page-title">%s</h1><div><p class="bio">%s</p>%s'
-         '<p class="contact"><span class="mono">%s</span><a href="mailto:%s">%s</a></p>'
+         # the bio first; the longer text sits in a column on the right on wide screens and is folded
+         # on phones and tablets ("Read more"; assets/site.js opens it on wide screens)
+         '<div class="about-top"><h1 class="page-title">%s</h1><div class="about-cols"><p class="bio">%s</p>%s'
+         '<div class="about-meta"><p class="contact"><span class="mono">%s</span><a href="mailto:%s">%s</a></p>'
          '<p class="contact-note">%s</p>'
-         '<p class="topics"><span class="mono">%s</span> %s</p></div></div>%s%s' % (
-             esc(u["about"]), esc(bio), '<div class="prose about-text"%s>%s</div>' % (
-                 "" if L == "en" or D["about"].get("text_" + L) else ' lang="en"', prose(more)) if more else "",
+         '<p class="topics"><span class="mono">%s</span> %s</p></div></div></div>%s%s' % (
+             esc(u["about"]), esc(bio), '<details class="about-more" id="about-more"><summary class="mono">%s</summary><div class="prose about-text"%s>%s</div></details>' % (
+                 esc(u["about_more"]), "" if L == "en" or D["about"].get("text_" + L) else ' lang="en"', prose(more)) if more else "",
              esc(u["Email"]), esc(about_mail), esc(about_mail), esc(u["contact_note"]),
              esc(u["Topics"]), esc(u["tags"]["about"]), cv_nav, cv),
          ld=dict(person(L), description=bio, keywords=u["tags"]["about"]), og_type="profile", section="about", lang=L, alts=each("about/"), og_title=tr(S, "share_title", L) or None)
@@ -1189,7 +1191,9 @@ for L in LANGS:
              if x["tool_url"].endswith(".html") else
              '<p class="shop-tool"><a class="btn" href="%s" target="_blank" rel="noopener">%s</a></p>' % (esc(url(x["tool_url"].lstrip("/")) if not x["tool_url"].startswith("http") else x["tool_url"]), esc(u["tool"]))) if x.get("tool_url") else "",
             ' lang="%s"' % tl if tl != HREFLANG[L] else "", prose(text),
-            '<div class="held"><h2 class="mono">%s</h2><p>%s</p></div>' % (esc(u["held"]), "<br>".join(linkify(h) for h in held.split("\n") if h.strip())) if held else "",
+            ('<div class="held"><h2 class="mono">%s</h2><p>%s</p></div>' % (esc(u["held"]), "<br>".join(linkify(h) for h in held.split("\n") if h.strip())) if held else "") +
+            # photo credits (site.json "credits", + _de/_zh), e.g. for documentation by a photographer
+            ('<p class="credits">%s</p>' % esc(tr(x, "credits", L)) if tr(x, "credits", L) else ""),
             contact, plates, pager(shops, i, P + "workshops/%s/", "title", u["nav"]["workshops"]))
         desc = summary(tr(x, "summary", L) or text, 100 if L == "zh" else 155, words=L != "zh")
         page(P + "workshops/%s/" % x["slug"], tr(x, "title", L), desc, body, image=og_card(x.get("share_image") or pics[0], x["title"], "Workshop · Ting-Chun Liu", "workshop-" + x["slug"]) if (x.get("share_image") or pics) else None, og_type="article",

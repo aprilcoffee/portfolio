@@ -9,11 +9,11 @@ sources:
   - https://aprilcoffee.github.io/heat_as_image/index.html
   - https://github.com/aprilcoffee/heat_as_image
   - https://ars.electronica.art/panic/en/view/cybernetic-subjects-21338ddb450c817ab718ce48a0a628f5/
-updated: 2026-10-01
+updated: 2026-11-22
 ---
 # Latent Heat Generation
 
-An artistic research project that makes the material side of AI visible. Thermal readings of working GPUs are turned into prompts for Stable Diffusion, so the waste heat of computation becomes the material of the images, a recursive loop in which graphics cards look at their own physical conditions.
+An artistic research project that makes the material side of AI visible. Thermal images of working GPUs become the base images of Stable Diffusion’s image-to-image process (not prompts), so the waste heat of computation becomes the material of the images, a recursive loop in which graphics cards look at their own physical conditions.
 
 ## Facts
 

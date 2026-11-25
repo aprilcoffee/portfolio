@@ -143,3 +143,13 @@
   if (document.readyState === 'complete') start();
   else window.addEventListener('load', start);
 })();
+
+// About: the longer introduction is folded on phones and tablets, open beside the bio on wide screens
+(function () {
+  var d = document.getElementById("about-more");
+  if (!d || !window.matchMedia) return;
+  var wide = window.matchMedia("(min-width: 1025px)");
+  function apply() { if (wide.matches) d.open = true; }
+  apply();
+  if (wide.addEventListener) wide.addEventListener("change", apply);
+})();
