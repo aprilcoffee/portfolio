@@ -121,7 +121,7 @@ Year-by-year list of works, teaching, education, awards, talks, publications, ex
 - Performances: Department of “ ” Media Art, Underground Gallery, Taipei
 - Performances: Undefined Senses – That Party Looks So “Pa”, Huashan 1914 Creative Park, Taipei
 - New Media Projects & Theater: 夜長夢多, National Human Rights Museum, Taipei (Interactive Design)
-- New Media Projects & Theater: Undefined Senses, Huashan 1914 Creative Park, Taipei (Director / Technical Coordinator)
+- New Media Projects & Theater: Undefined Senses (登出台北), Huashan 1914 Creative Park, Taipei (General Coordinator, 總召)
 - New Media Projects & Theater: Yue-Jin Lantern Festival, Tainan (Co-Artist)
 
 ## 2017

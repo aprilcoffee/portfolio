@@ -62,7 +62,7 @@ Exhibitions, performances and collaborative new-media / theatre projects, as lis
 - 2019 — Baroque Robotics Studio — Ship of Fools, The Bamboo Curtain Studio, New Taipei City (Sound Design)
 - 2019 — Sleep 79 — Sanatorium for Information Shock-Workers, First Set, C-LAB, Taipei (Brainwave Programming Assistant)
 - 2018 — 夜長夢多, National Human Rights Museum, Taipei (Interactive Design)
-- 2018 — Undefined Senses, Huashan 1914 Creative Park, Taipei (Director / Technical Coordinator) ([link](http://newmedia.tnua.edu.tw/UndefinedSenses/))
+- 2018 — Undefined Senses (登出台北), Huashan 1914 Creative Park, Taipei (General Coordinator, 總召) ([link](http://newmedia.tnua.edu.tw/UndefinedSenses/))
 - 2018 — Yue-Jin Lantern Festival, Tainan (Co-Artist)
 - 2017 — Bengaluru Fantastic 2017, Rangoli Metro Arts Center, Bengaluru (Sound Engineer)
 - 2017 — Nuit Blanche, Taipei (Co-Artist)

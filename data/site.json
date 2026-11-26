@@ -1678,7 +1678,7 @@
           {
             "year": "2026",
             "text": "Overseas exhibition grant, National Culture and Arts Foundation (NCAF, Taiwan), for Steering Through the Inner Residue at WIP Arts & Technology Festival, Nicosia",
-            "text_zh": "國家文化藝術基金會（國藝會）海外展出補助，《Steering Through the Inner Residue》於尼科西亞 WIP 藝術與科技節展出"
+            "text_zh": "國家文化藝術基金會（國藝會）國際文化交流補助，《Steering Through the Inner Residue》於尼科西亞 WIP 藝術與科技節展出"
           },
           {
             "year": "2026",
@@ -2219,7 +2219,7 @@
             "year": "2018",
             "text": "Undefined Senses – That Party Looks So “Pa”, Huashan 1914 Creative Park, Taipei",
             "url": "",
-            "text_zh": "Undefined Senses – That Party Looks So “Pa”，華山1914文化創意產業園區，台北"
+            "text_zh": "登出台北（Undefined Senses）– That Party Looks So “Pa”，華山1914文化創意產業園區，台北"
           },
           {
             "year": "2017",
@@ -2296,9 +2296,9 @@
           },
           {
             "year": "2018",
-            "text": "Undefined Senses, Huashan 1914 Creative Park, Taipei (Director / Technical Coordinator)",
+            "text": "Undefined Senses, Huashan 1914 Creative Park, Taipei (General Coordinator)",
             "url": "http://newmedia.tnua.edu.tw/UndefinedSenses/",
-            "text_zh": "Undefined Senses，華山1914文化創意產業園區，台北（導演／技術統籌）"
+            "text_zh": "登出台北（Undefined Senses），華山1914文化創意產業園區，台北（總召）"
           },
           {
             "year": "2018",
@@ -2597,9 +2597,9 @@
       "outlet": "Image Exhaust, Unthinking Photography (The Photographers’ Gallery)",
       "date": "2025-01",
       "url": "https://unthinking.photography/imgexhaust/self-cannibalizing-ai",
-      "note": "Entry on the 37C3 talk, credited to Ting-Chun Liu and Leon-Etienne Kühr: artistic methods for examining image-generation models, and how model collapse could happen through the repeated use of generated material.",
-      "note_de": "Eintrag zum 37C3-Vortrag, Ting-Chun Liu und Leon-Etienne Kühr zugeschrieben: künstlerische Methoden, Bildgeneratoren zu untersuchen, und wie ein Modellkollaps durch die wiederholte Verwendung generierten Materials entstehen könnte.",
-      "note_zh": "Unthinking Photography 平台上關於 37C3 講座的條目，署名劉庭均與 Leon-Etienne Kühr：介紹用藝術方法檢視圖像生成模型，以及反覆使用生成內容可能如何導致模型崩潰。"
+      "note": "Entry on the 37C3 talk by Ting-Chun Liu and Leon-Etienne Kühr: artistic methods for examining image-generation models, and how model collapse could happen through the repeated use of generated material.",
+      "note_de": "Eintrag zum 37C3-Vortrag von Ting-Chun Liu und Leon-Etienne Kühr: künstlerische Methoden, Bildgeneratoren zu untersuchen, und wie ein Modellkollaps durch die wiederholte Verwendung generierten Materials entstehen könnte.",
+      "note_zh": "The Photographers’ Gallery 的 Unthinking Photography 平台在「Image Exhaust」單元收錄了劉庭均與 Leon-Etienne Kühr 的 37C3 講座，介紹他們如何用藝術方法檢視圖像生成模型，以及反覆使用生成內容可能如何導致模型崩潰。"
     },
     {
       "group": "read",

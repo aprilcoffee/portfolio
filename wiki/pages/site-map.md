@@ -178,7 +178,7 @@ Organisers', institutions' and publishers' pages for entries in the CV (About pa
 - 2021 EAT – KuanDu Light Art Festival, TNUA Da Vinci's Kitchen, Taipei (Co-Artist): https://w3.tnua.edu.tw/2021%E9%97%9C%E6%B8%A1%E5%85%89%E8%97%9D%E8%A1%93%E7%AF%80%E3%80%8Aeat%E9%81%94%E6%96%87%E8%A5%BF%E3%80%8B-%E6%8C%91%E6%88%B0%E5%91%B3%E8%95%BE%E8%88%87%E8%A6%96%E8%A6%BA%E7%9A%84%E5%85%A8%E6%96%B0/
 - 2020 Wang Lien-cheng: The Scenery of Little Light, National Taichung Theater (New Media Art Team): https://www.npac-ntt.org/program/events/c-BbfPi80tx6Q
 - 2019 Sleep 79 — Sanatorium for Information Shock-Workers, First Set, C-LAB, Taipei (Brainwave Programming Assistant): https://rebase.clab.org.tw/Shu-Lea-Cheang_Sanatorium-for-Information-Shock-Workers-2_en
-- 2018 Undefined Senses, Huashan 1914 Creative Park, Taipei (Director / Technical Coordinator): http://newmedia.tnua.edu.tw/UndefinedSenses/
+- 2018 Undefined Senses, Huashan 1914 Creative Park, Taipei (General Coordinator): http://newmedia.tnua.edu.tw/UndefinedSenses/
 
 
 ## Friends' websites

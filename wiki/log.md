@@ -190,3 +190,6 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 
 ## [2026-11-25] fix | Latent Heat Generation signal path (artist diagram)
 - thermal camera image of the GPU → phone → NDI → StreamDiffusion (TouchDesigner) as image-to-image base; temperature only self-regulated via nvidia-smi, not input; Processing → LED panel, Parler → speaker
+
+## [2026-11-26] edit | Chinese originals in the CV (artist)
+- Undefined Senses is 登出台北; Liu was 總召 (General Coordinator), not Director / Technical Coordinator. NCAF grant in Chinese: 國際文化交流補助
