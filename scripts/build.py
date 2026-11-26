@@ -1190,7 +1190,10 @@ for L in LANGS:
         alts = [(i.get("alt_" + L) or i.get("alt")) if isinstance(i, dict) else None for i in x.get("images", [])]
         figs = ["<figure>%s</figure>" % img(im, 1600 if k == 0 else 1000, alts[k] or "%s (%d/%d)" % (tr(x, "title", L), k + 1, len(pics)))
                 for k, im in enumerate(pics)]
-        plates = "".join(f.replace("<figure>", '<figure class="hero">', 1) for f in figs)  # screenshots: each at full width
+        # the cover at full width, the other images smaller in two columns (click to enlarge)
+        plates = (figs[0].replace("<figure>", '<figure class="hero">', 1) if figs else "") + (
+            '<div class="cols shop-cols">%s</div>' % "".join(figs[1:]) if len(figs) > 2 else
+            "".join(f.replace("<figure>", '<figure class="hero">', 1) for f in figs[1:]))
         text, held = tr(x, "text", L), tr(x, "held", L)
         tl = HREFLANG[L] if L == "en" or x.get("text_" + L) else "en"
         body = ('<article class="work"><aside class="work-info"><p class="kicker mono"><a href="%s">%s</a></p><h1>%s</h1>%s<p class="shop-sum">%s</p>%s<div class="prose"%s>%s</div>'
