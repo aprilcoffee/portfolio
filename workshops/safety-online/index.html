@@ -80,15 +80,15 @@
     <section>
       <h2>1 · Voice</h2>
       <label class="small" style="margin-top:0">Reference voice</label>
-      <div class="tabs" id="refMode" style="margin-top:6px"><button class="on" data-v="rec">Record</button><button data-v="file">Upload</button><button data-v="none">No recording</button></div>
-      <div id="refRec">
+      <div class="tabs" id="refMode" style="margin-top:6px"><button class="on" data-v="none">No recording</button><button data-v="rec">Record</button><button data-v="file">Upload</button></div>
+      <div id="refRec" class="hidden">
         <div class="row"><button id="recBtn">● Record</button><span class="dot"></span><span id="recTime" class="muted">any length, only you · longer sounds more like you (up to 2 min)</span></div>
         <details><summary>Something to read (or just talk about anything)</summary><p>Hello, this is my voice. I'm recording it for a workshop on synthetic media, and I agree to let a model copy it — for this class only. On Monday the sky was grey over Weimar, but by Thursday the sun came out. Five quick questions: who is speaking, what did they say, where, when — and why should anyone believe it?</p><p>This morning I woke up late and was sure I had missed the train. I ran down the stairs, no coffee, nothing — and then I saw it was Sunday! I just stood there, laughing at myself. Later I went to the market. It was cold, really cold, but the light over the square was beautiful. A little boy dropped his ice cream and he was so sad, and then his father bought him a new one, and suddenly he was the happiest person in town. Honestly, small things like that make my day. What only matters is that you sound like yourself: calm, excited, tired — whatever is true today.</p></details>
       </div>
       <div id="refFile" class="hidden"><input id="refInput" type="file" accept="audio/*"></div>
       <div class="refbar hidden" id="refBar"><audio id="refPlayer" controls></audio><button type="button" id="refDelete">Delete</button></div>
-      <p class="local" id="refLocal">Your recording stays on this device. It is sent only when you press Generate voice.</p>
-      <p id="refNone" class="muted hidden" style="margin:0">The voice will be made from your description below.</p>
+      <p class="local hidden" id="refLocal">Your recording stays on this device. It is sent only when you press Generate voice.</p>
+      <p id="refNone" class="muted" style="margin:0">The voice will be made from your description below.</p>
 
       <label class="small" for="voiceDesc">Voice description</label>
       <textarea id="voiceDesc" maxlength="400" style="min-height:70px" placeholder="e.g. a deep, slow, slightly raspy voice of an old radio announcer, warm and amused"></textarea>
@@ -101,6 +101,9 @@
       <div class="field-foot"><span><span id="words">0 words</span> · ≈ 130 words per minute</span><span><span data-count="text"></span> · <button type="button" data-clear="text">clear</button></span></div>
       <label class="small" for="lang">Language</label>
       <select id="lang"></select>
+      <label class="small" for="pitch">Pitch: <b id="pitchVal">−3</b> semitones</label>
+      <input id="pitch" type="range" min="-8" max="4" step="1" value="-3" style="width:100%">
+      <div class="field-foot"><span>The voice model tends to come out higher than the reference; −3 brings it back. Lower = deeper.</span></div>
 
       <button id="voiceBtn" class="go">Generate voice</button>
       <p class="status" id="voiceStatus"></p>
@@ -112,7 +115,8 @@
 
     <section>
       <h2>2 · Picture <span style="text-transform:none;letter-spacing:0">(phone, vertical 9:16)</span></h2>
-      <textarea id="imgPrompt" maxlength="800" placeholder="Describe a picture, e.g. a fictional news anchor at a desk, looking into the camera, mouth closed"></textarea>
+      <label class="small" for="imgPrompt" style="margin-top:0">Description</label>
+      <textarea id="imgPrompt" maxlength="800" placeholder="Describe a picture, e.g. a fictional news anchor at a desk, looking into the camera, mouth closed."></textarea>
       <div class="field-foot"><span>Your texts are kept on this device while you work.</span><span><span data-count="imgPrompt"></span> · <button type="button" data-clear="imgPrompt">clear</button></span></div>
       <button id="imageBtn" class="go">Generate picture</button>
       <p class="status" id="imageStatus"></p>
@@ -140,7 +144,6 @@
     </section>
 
     <p class="muted">Download what you want to keep: results are not stored. Your texts and your last recording stay only in this browser.</p>
-    <p class="muted">Only you, or fiction. Label it as AI-generated.</p>
   </div>
 </main>
 
@@ -171,6 +174,11 @@
   };
   let password = "", group = "";
   const state = { refBlob: null, refName: "", voiceBlob: null, audBlob: null, audName: "", photoBlob: null, shape: "portrait", imageBlob: null, imageShape: "portrait" };
+  // object URLs: free the old one when a new file replaces it
+  const urls = {};
+  const objURL = (key, blob) => { if (urls[key]) URL.revokeObjectURL(urls[key]); return (urls[key] = blob ? URL.createObjectURL(blob) : ""); };
+  // only the newest job of each kind may show its result (an older or resumed one finishing later is dropped)
+  const active = {};
 
   // ---------- API
   async function call(path, opts = {}) {
@@ -257,46 +265,53 @@
   // ---------- jobs survive a closed tab: remember them, pick them up again on the next visit
   const pending = { get() { try { return JSON.parse(store.get("fs-pending") || "{}"); } catch { return {}; } },
                     put(kind, v) { const p = pending.get(); if (v) p[kind] = v; else delete p[kind]; store.set("fs-pending", JSON.stringify(p)); } };
+  let resumed = false;
   async function resume() {
+    if (resumed) return; resumed = true;   // once per page load, not again after "switch"
     const p = pending.get();
     for (const kind of ["voice", "image", "video"]) {
       const j = p[kind]; if (!j) continue;
       if (Date.now() - j.t > 24 * 3600e3) { pending.put(kind, null); continue; }
       const prev = group; group = j.group;   // the job lives in the account of the group that started it
-      try { await finish(kind, j, "Picking up your last " + kind + " · "); } catch {}
-      group = prev;
+      const run = finish(kind, j, "Picking up your last " + kind + " · ").catch(() => {});
+      group = prev; await run;
     }
   }
   async function finish(kind, j, prefix) {
     const st = $(kind + "Status"), btn = $(kind + "Btn");
+    active[kind] = j.job;
+    const mine = () => active[kind] === j.job;
+    const clearPending = () => { const p = pending.get()[kind]; if (p && p.job === j.job) pending.put(kind, null); };
     btn.disabled = true;
     try {
-      const done = await waitFor(j.job, j.k, (m) => status(st, prefix + m + (kind === "video" ? " · you can close this tab and come back" : "")));
+      const done = await waitFor(j.job, j.k, (m) => mine() && status(st, prefix + m + (kind === "video" ? " · you can close this tab and come back" : "")));
+      if (!mine()) { forget(j.k, j.ids.concat(done.outputs.map((o) => o.id))); clearPending(); return; }
       const blob = await fetchOutput(done, j.k);
       forget(j.k, j.ids.concat(done.outputs.map((o) => o.id)));
-      pending.put(kind, null);
+      clearPending();
+      if (!mine()) return;
       show(kind, blob);
       status(st, "");
     } catch (e) {
-      if (!/connection/.test(e.message)) pending.put(kind, null);   // keep it only if we were just offline
-      status(st, e.message, true);
+      if (!/connection/.test(e.message)) clearPending();   // keep it only if we were just offline
+      if (mine()) status(st, e.message, true);
       throw e;
-    } finally { btn.disabled = false; }
+    } finally { if (mine()) btn.disabled = false; }
   }
   function show(kind, blob) {
     if (kind === "voice") {
       state.voiceBlob = new Blob([blob], { type: "audio/mpeg" });
-      const url = URL.createObjectURL(state.voiceBlob);
+      const url = objURL("voice", state.voiceBlob);
       $("voicePlayer").src = url; $("voiceDl").href = url; $("voiceDl").download = `voice-${stamp()}.mp3`;
       $("voiceResult").classList.add("show");
       updateAudInfo();
     } else if (kind === "image") {
       state.imageBlob = new Blob([blob], { type: "image/png" });
-      const url = URL.createObjectURL(state.imageBlob);
+      const url = objURL("image", state.imageBlob);
       $("imagePlayer").src = url; $("imageDl").href = url; $("imageDl").download = `picture-${stamp()}.png`;
       $("imageResult").classList.add("show");
     } else {
-      const url = URL.createObjectURL(new Blob([blob], { type: "video/mp4" }));
+      const url = objURL("video", new Blob([blob], { type: "video/mp4" }));
       $("videoPlayer").src = url; $("videoDl").href = url; $("videoDl").download = `face-${stamp()}.mp4`;
       $("videoResult").classList.add("show");
     }
@@ -313,7 +328,7 @@
     };
     $("tags").appendChild(b);
   });
-  let refMode = "rec";
+  let refMode = "none";
   tabs("refMode", (v) => {
     refMode = v;
     $("refRec").classList.toggle("hidden", v !== "rec"); $("refFile").classList.toggle("hidden", v !== "file");
@@ -324,7 +339,7 @@
   });
   function setRef(blob, name, keep = true) {   // keep: also save it in this browser
     state.refBlob = blob; state.refName = name;
-    if (blob) { $("refPlayer").src = URL.createObjectURL(blob); $("refBar").classList.remove("hidden"); }
+    if (blob) { $("refPlayer").src = objURL("ref", blob); $("refBar").classList.remove("hidden"); }
     else { $("refPlayer").removeAttribute("src"); $("refBar").classList.add("hidden"); }
     if (keep) local.put("ref", blob ? { blob, name } : null);
   }
@@ -411,6 +426,12 @@
     const el = $(b.dataset.clear); if (el.value && !confirm("Clear this field?")) return;
     el.value = ""; el.oninput(); el.focus();
   });
+  const showPitch = () => { const v = Number($("pitch").value); $("pitchVal").textContent = v > 0 ? "+" + v : String(v).replace("-", "−"); };
+  const savedPitch = store.get("fs-pitch"); if (savedPitch !== null) $("pitch").value = savedPitch;
+  $("pitch").oninput = () => { store.set("fs-pitch", $("pitch").value); showPitch(); }; showPitch();
+  // the browser may refill file pickers after a reload without the page having the file: start them empty
+  document.querySelectorAll('input[type="file"]').forEach((i) => { i.value = ""; });
+  document.querySelectorAll("textarea, select").forEach((el) => el.setAttribute("autocomplete", "off"));
   const savedLang = store.get("fs-lang"); if (savedLang !== null) $("lang").value = savedLang;
   $("lang").onchange = () => store.set("fs-lang", $("lang").value);
   (async () => {   // bring back the last recording and the chosen mode
@@ -431,7 +452,7 @@
       let up = null;
       if (useRef) { status(st, "Uploading…"); up = await upload(state.refBlob, state.refName, undefined); }
       else status(st, "Making a voice from your description…");
-      const { k, job } = await post("/voice", { k: up ? up.k : undefined, ref: up ? up.asset : undefined, description, text: $("text").value, language: $("lang").value });
+      const { k, job } = await post("/voice", { k: up ? up.k : undefined, ref: up ? up.asset : undefined, description, text: $("text").value, language: $("lang").value, pitch: Number($("pitch").value) });
       const j = { job, k, group, ids: up ? [up.asset.id] : [], t: Date.now() };
       pending.put("voice", j);
       await finish("voice", j, "");
@@ -464,7 +485,7 @@
   // ---------- 3 · photo + audio
   async function setPhoto(f) {
     try { state.photoBlob = await shrink(f); } catch { state.photoBlob = f; }
-    $("photoPreview").src = URL.createObjectURL(state.photoBlob); $("photoPreview").style.display = "block";
+    $("photoPreview").src = objURL("photo", state.photoBlob); $("photoPreview").style.display = "block";
   }
   $("photo").onchange = (e) => { const f = e.target.files[0]; if (f) setPhoto(f); };
   async function shrink(file) {   // max. 1280 px JPEG: faster upload, same result

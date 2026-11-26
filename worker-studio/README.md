@@ -8,7 +8,8 @@
 
 - 聲音：參考錄音（錄或上傳，長度不限、最多取前 2 分鐘，可以不給；越長通常越像）＋音色描述＋稿子 → MP3。沒有錄音時，先用 Qwen3 VoiceDesign（開源）依描述合成一段樣本聲音，再交給 ElevenLabs 複製。用自己的聲音念出的 MP3（ElevenLabs v4，經 Comfy 的夥伴節點；稿子裡可寫 `[happy]`、`[whispers]` 等情緒標籤）。
   費用從 Comfy 點數扣：複製聲音約 $0.15（同一段錄音會沿用快取），念稿每 1000 字元約 $0.11。學生的聲音會送到 ElevenLabs。
-- 圖片：一段描述 → 一張手機直式 9:16 的圖（Z-Image Turbo，768×1344，約 15 秒），可直接當影片的臉
+- 圖片：一段描述 → 一張手機直式 9:16 的圖（Z-Image Turbo，768×1344，約 15 秒，seed 固定為 42：同樣的描述會得到同一張圖，想要不同的圖就改描述），可直接當影片的臉
+- 聲音的音高：eleven_v4 念出來常比參考聲音高（實測 152 Hz → 225 Hz），所以頁面有音高滑桿（預設 −3 半音），Worker 在 ElevenLabs 之後接 `AudioPitchTime`，長度不變
 - 臉：照片 + MP3 → 對嘴影片 MP4（Wan2.1 InfiniteTalk，`video_workflow.json`）
 
 ## 部署

@@ -3,7 +3,8 @@
 //   POST /upload            raw file body          -> { k, asset }
 //   POST /voice             { k, ref?, description?, text, language } -> { k, job }   ElevenLabs v4 (clone + speech, tags like [happy]);
 //                           without ref, Qwen3 VoiceDesign first makes a voice sample from the description
-//   POST /image             { k, prompt, shape }                 -> { k, job }   Z-Image Turbo, one picture
+//   POST /voice also takes pitch (semitones, -12..12): AudioPitchTime after ElevenLabs, length unchanged
+//   POST /image             { k, prompt }                        -> { k, job }   9:16, Z-Image Turbo, fixed seed (same text -> same picture)
 //   POST /video             { k, image, audio, seconds, prompt, shape } -> { k, job }   shape: "portrait" | "landscape"
 //   GET  /job/:id?k=        job status and outputs
 //   GET  /file/:assetId?k=  download an output
@@ -44,6 +45,15 @@ const voiceWorkflow = (text, language, ref, description, seed) => ({
   "4": { class_type: "SaveAudioMP3", inputs: { audio: ["3", 0], filename_prefix: "audio/voice", quality: "V0" } },
 });
 
+// eleven_v4 tends to speak higher than the reference (measured: 152 Hz recording -> 225 Hz), so students can shift it
+function withPitch(g, semitones) {
+  if (!semitones) return g;
+  g["5"] = { class_type: "AudioPitchTime", inputs: { audio: ["3", 0], pitch_semitones: semitones, tempo_factor: 1.0 } };
+  g["4"].inputs.audio = ["5", 0];
+  return g;
+}
+
+
 // Z-Image Turbo: one picture from a text prompt, 768 x 1344 portrait or 1344 x 768 (16:9).
 const imageWorkflow = (prompt, seed, landscape) => ({
   "1": { class_type: "UNETLoader", inputs: { unet_name: "z_image_turbo_bf16.safetensors", weight_dtype: "default" } },
@@ -81,6 +91,7 @@ class HttpError extends Error {
 }
 
 const seed = () => Math.floor(Math.random() * 2 ** 31);
+const IMAGE_SEED = 42;
 
 export default {
   async fetch(req, env) {
@@ -127,7 +138,8 @@ export default {
         const description = String(b.description || "").trim().slice(0, 400);
         if (!b.ref && !description) throw new HttpError(400, "Record or upload a voice, or describe one.");
         // partner nodes (ElevenLabs) need the key inside the job as well
-        const job = await comfy(keys[k], "/jobs", { method: "POST", json: { workflow: voiceWorkflow(text, language, b.ref || null, description, seed()), extra_data: { api_key_comfy_org: keys[k] } } });
+        const pitch = Math.max(-12, Math.min(12, Math.round((Number(b.pitch) || 0) * 2) / 2));
+        const job = await comfy(keys[k], "/jobs", { method: "POST", json: { workflow: withPitch(voiceWorkflow(text, language, b.ref || null, description, seed()), pitch), extra_data: { api_key_comfy_org: keys[k] } } });
         return json({ k, job: job.id }, cors);
       }
 
@@ -136,8 +148,8 @@ export default {
         const k = pick(b.k);
         const prompt = String(b.prompt || "").trim().slice(0, 800);
         if (!prompt) throw new HttpError(400, "Please describe the picture.");
-        // always phone-vertical (9:16)
-        const job = await comfy(keys[k], "/jobs", { method: "POST", json: { workflow: imageWorkflow(prompt, seed(), false) } });
+        // always phone-vertical (9:16); fixed seed, so the same description gives the same picture
+        const job = await comfy(keys[k], "/jobs", { method: "POST", json: { workflow: imageWorkflow(prompt, IMAGE_SEED, false) } });
         return json({ k, job: job.id }, cors);
       }
 
