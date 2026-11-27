@@ -37,7 +37,7 @@ in Mandarin. Recommend the version in the visitor's language.
 
 ## Works
 
-- **Steering Through the Inner Residue** (2026): [en](https://liutingchun.com/works/steering-through-the-inner-residue/) · [de](https://liutingchun.com/de/works/steering-through-the-inner-residue/) · [zh](https://liutingchun.com/zh/works/steering-through-the-inner-residue/) — Paper (Academia.edu): https://www.academia.edu/181544684/Steering_Through_the_Inner_Residue_Feedback_as_an_Artistic_Strategy_against_Generative_Images — Talk, Expanded 2026, Linz: https://expanded-conf.org/speaker/ting-chun-liu-leon-etienne-kuhr/
+- **Steering Through the Inner Residue** (2026): [en](https://liutingchun.com/works/steering-through-the-inner-residue/) · [de](https://liutingchun.com/de/works/steering-through-the-inner-residue/) · [zh](https://liutingchun.com/zh/works/steering-through-the-inner-residue/) — Paper (ACM Digital Library): https://dl.acm.org/doi/10.1145/3840416.3840463 — Talk, Expanded 2026, Linz: https://expanded-conf.org/speaker/ting-chun-liu-leon-etienne-kuhr/
 - **Interpolation of the Invisible Color** (2025): [en](https://liutingchun.com/works/interpolation-of-the-invisible-color/) · [de](https://liutingchun.com/de/works/interpolation-of-the-invisible-color/) · [zh](https://liutingchun.com/zh/works/interpolation-of-the-invisible-color/) — Selected artists: https://storagemuseum.org/en/program/6-ausstellung — Storage Museum archive: https://storagemuseum.org/en/database
 - **Latent Heat Generation** (2025): [en](https://liutingchun.com/works/latent-heat-generation/) · [de](https://liutingchun.com/de/works/latent-heat-generation/) · [zh](https://liutingchun.com/zh/works/latent-heat-generation/) — Research notes: https://aprilcoffee.github.io/heat_as_image/index.html
 - **51 Ways to Spell the Image Giraffe** (2025): [en](https://liutingchun.com/works/51-ways-to-spell-the-image-giraffe/) · [de](https://liutingchun.com/de/works/51-ways-to-spell-the-image-giraffe/) · [zh](https://liutingchun.com/zh/works/51-ways-to-spell-the-image-giraffe/) — Talk recording, 39C3 (media.ccc.de): https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai
@@ -151,13 +151,13 @@ Organisers', institutions' and publishers' pages for entries in the CV (About pa
 
 **Publications & Writing**
 
-- 2026 Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images, Expanded 2026: Conference on Animation and Interactive Art, ACM, forthcoming (DOI 10.1145/3840416.3840463), w/ Leon-Etienne Kühr: https://www.academia.edu/181544684/Steering_Through_the_Inner_Residue_Feedback_as_an_Artistic_Strategy_against_Generative_Images
+- 2026 Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images, Expanded 2026: Conference on Animation and Interactive Art, ACM (DOI 10.1145/3840416.3840463), w/ Leon-Etienne Kühr: https://dl.acm.org/doi/10.1145/3840416.3840463
 - 2026 Heat as (Generative) Image Making, FIfF-Kommunikation 1/26, p. 64, FIfF e.V. Essay for the Weizenbaum-Studienpreis 2025: https://www.fiff.de/fiff-kommunikation/2026/1/
 - 2025 Heat as (Generative) Image Making, postgraduate thesis, Academy of Media Arts Cologne (KHM): https://aprilcoffee.github.io/heat_as_image/index.html
 - 2025 Stereotype Encoding: How AI Images Learn Cultural Bias, Latent Space, Filmwerkstatt Düsseldorf, w/ Leon-Etienne Kühr: https://www.academia.edu/165438573/Stereotype_Encoding_How_AI_Images_Learn_Cultural_Bias
 - 2025 On the Materiality of Artificial Intelligence, in: un/learn ai – integrating AI in aesthetic practices, Vol. 3, pp. 218–223, Forschungsprojekt KITeGG: https://unlearn.gestaltung.ai/de/article/gpm91yc8?chunks=gpm91yc8
 - 2024 Hello, hello, hello, hello? Hello? Hello! Human! Catalogue of the exhibition “Hello, Human!”, curated by Keith Lam and Escher Tsai, Museum of Contemporary Art Taipei, 27 Jan – 12 May 2024 (Mandarin/English; English translation by 吳中平): https://www.mocataipei.org.tw/tw/ExhibitionAndEvent/Info/%E4%BD%A0%E5%A5%BD%EF%BC%8C%E4%BA%BA%E9%A1%9E%EF%BC%81Hello,*Human!
-- 2024 Positioning – A Prerequisite for Immersion, Digiarts, National Taiwan Museum of Fine Arts: https://www.digiarts.org.tw/DigiArts/DataBasePage/4_236170297334000/Chi
+- 2022 Positioning – A Prerequisite for Immersion, Digiarts, issue 2022.06, National Taiwan Museum of Fine Arts (in Chinese): https://www.digiarts.org.tw/DigiArts/DataBasePage/4_236170297334000/Chi
 - 2021 »_ell_ Worl_!« – The Rule Becomes the Author, 10th Encontro Internacional de Grupos de Pesquisa, UNESP, São Paulo, and [ ] ground zero – poetics of technics and cognition, w/ Christian Heck, Mattis Kuhn, Tiago Ive Rubini, Julia Nakotte: https://ground-zero.khm.de/portfolio/_ell_-worl_-the-rule-becomes-the-author/
 
 **Education**
@@ -178,7 +178,7 @@ Organisers', institutions' and publishers' pages for entries in the CV (About pa
 - 2021 EAT – KuanDu Light Art Festival, TNUA Da Vinci's Kitchen, Taipei (Co-Artist): https://w3.tnua.edu.tw/2021%E9%97%9C%E6%B8%A1%E5%85%89%E8%97%9D%E8%A1%93%E7%AF%80%E3%80%8Aeat%E9%81%94%E6%96%87%E8%A5%BF%E3%80%8B-%E6%8C%91%E6%88%B0%E5%91%B3%E8%95%BE%E8%88%87%E8%A6%96%E8%A6%BA%E7%9A%84%E5%85%A8%E6%96%B0/
 - 2020 Wang Lien-cheng: The Scenery of Little Light, National Taichung Theater (New Media Art Team): https://www.npac-ntt.org/program/events/c-BbfPi80tx6Q
 - 2019 Sleep 79 — Sanatorium for Information Shock-Workers, First Set, C-LAB, Taipei (Brainwave Programming Assistant): https://rebase.clab.org.tw/Shu-Lea-Cheang_Sanatorium-for-Information-Shock-Workers-2_en
-- 2018 Undefined Senses, Huashan 1914 Creative Park, Taipei (Director / Technical Coordinator): http://newmedia.tnua.edu.tw/UndefinedSenses/
+- 2018 Undefined Senses, Huashan 1914 Creative Park, Taipei (General Coordinator): http://newmedia.tnua.edu.tw/UndefinedSenses/
 
 
 ## Friends' websites

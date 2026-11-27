@@ -181,8 +181,8 @@
       "video": "https://vimeo.com/1171767792",
       "links": [
         {
-          "label": "Paper (Academia.edu)",
-          "url": "https://www.academia.edu/181544684/Steering_Through_the_Inner_Residue_Feedback_as_an_Artistic_Strategy_against_Generative_Images"
+          "label": "Paper (ACM Digital Library)",
+          "url": "https://dl.acm.org/doi/10.1145/3840416.3840463"
         },
         {
           "label": "Talk, Expanded 2026, Linz",
@@ -325,7 +325,14 @@
         "images/wix/4eb1dd_01cbb15d36604cb2926fd47a16d83672~mv2.webp",
         "images/wix/4eb1dd_429853f4003e43c8977ee4f09b855bc1~mv2.webp",
         "images/wix/4eb1dd_4ff189789ac14a5bb265273066f1fe33~mv2.webp",
-        "images/wix/4eb1dd_67f954e444864c7a83de013aa0743842~mv2.webp"
+        "images/wix/4eb1dd_67f954e444864c7a83de013aa0743842~mv2.webp",
+        {
+          "src": "images/latent-heat/system-diagram.webp",
+          "wide": true,
+          "alt": "System diagram: a thermal camera films the RTX 4090; a phone sends the image by NDI to StreamDiffusion in TouchDesigner; Python handles temperature control, voice and scene control; Processing drives the LED panel",
+          "alt_de": "Systemdiagramm: Eine Wärmebildkamera filmt die RTX 4090; ein Smartphone sendet das Bild per NDI an StreamDiffusion in TouchDesigner; Python übernimmt Temperatursteuerung, Stimme und Szenensteuerung; Processing steuert das LED-Panel",
+          "alt_zh": "系統圖：熱像儀拍攝 RTX 4090，手機把影像經 NDI 傳到 TouchDesigner 裡的 StreamDiffusion；Python 負責溫度控制、語音與場景控制；Processing 輸出到 LED 面板"
+        }
       ],
       "video": "",
       "links": [
@@ -335,13 +342,13 @@
         }
       ],
       "credits": "",
-      "text": "Latent Heat Generation is an artistic research project investigating the hidden material infrastructures of AI systems through thermal imaging feedback loops, creating real-time feedback where computational waste heat becomes generative material for AI imagery. Developed from the vantage point of a Taiwanese artist, the work emerges from a personal dilemma: being limited by computational power while simultaneously being connected to the very infrastructure that enables AI development globally.\n\nThe installation reveals multiple forms of generation: thermal energy production, AI image creation, semiconductor manufacturing generations, and generational politics of technological dependency. Custom software turns the thermal images into the base images of Stable Diffusion’s image-to-image process, creating recursive loops where GPUs examine their own material conditions through heat visualization.\n\nThe thermal investigation reveals how computational heat carries signatures of global manufacturing dependencies, questioning the apparent immateriality of digital processes by making visible the energy transformations and geopolitical relationships embedded within AI systems.",
+      "text": "Latent Heat Generation is an artistic research project investigating the hidden material infrastructures of AI systems through thermal imaging feedback loops, creating real-time feedback where computational waste heat becomes generative material for AI imagery. Developed from the vantage point of a Taiwanese artist, the work emerges from a personal dilemma: being limited by computational power while simultaneously being connected to the very infrastructure that enables AI development globally.\n\nThe installation reveals multiple forms of generation: thermal energy production, AI image creation, semiconductor manufacturing generations, and generational politics of technological dependency. A thermal camera films the working graphics card, and its live image is streamed into Stable Diffusion as the base image of an image-to-image process; the temperature itself is not read as input, the card regulates it on its own. This creates recursive loops where GPUs examine their own material conditions through heat visualization.\n\nThe thermal investigation reveals how computational heat carries signatures of global manufacturing dependencies, questioning the apparent immateriality of digital processes by making visible the energy transformations and geopolitical relationships embedded within AI systems.",
       "hidden": false,
       "aliases": [
         "/works/latent-heat-generation"
       ],
-      "text_zh": "《Latent Heat Generation》是一項藝術研究計畫，透過熱影像的回授（Feedback）迴圈探問人工智慧系統隱藏的物質基礎設施：運算產生的廢熱在即時回授中成為人工智慧圖像的生成素材。作品從一位台灣藝術家的位置出發，源自一個個人的兩難——既受限於不足的運算能力，同時又與支撐全球人工智慧發展的那套基礎設施緊密相連。\n\n裝置揭示了多重意義的「生成」：熱能的產生、人工智慧圖像的生成、半導體製程的世代，以及技術依賴的世代政治。自製軟體把熱影像作為 Stable Diffusion 以圖生圖（image-to-image）的底圖，形成遞迴迴圈，讓顯示卡透過熱影像檢視自身的物質條件。\n\n這項關於熱的研究揭示：運算產生的熱，帶著全球製造依賴的印記，並透過顯現嵌入人工智慧系統之中的能量轉換與地緣政治關係，質疑數位過程看似非物質的表象。",
-      "text_de": "Latent Heat Generation ist ein künstlerisches Forschungsprojekt, das die verborgenen materiellen Infrastrukturen von KI-Systemen über Rückkopplungsschleifen mit Wärmebildern untersucht: In Echtzeit wird die Abwärme der Rechner zum generativen Material für KI-Bilder. Aus der Perspektive eines taiwanischen Künstlers entwickelt, geht die Arbeit von einem persönlichen Dilemma aus – begrenzt durch fehlende Rechenleistung und zugleich mit genau jener Infrastruktur verbunden, die KI-Entwicklung weltweit erst ermöglicht.\n\nDie Installation macht mehrere Formen von „Generation“ sichtbar: die Erzeugung von Wärme, die Erzeugung von KI-Bildern, die Generationen der Halbleiterfertigung und die generationenübergreifende Politik technologischer Abhängigkeit. Eigene Software macht die Wärmebilder zu Ausgangsbildern für das Image-to-Image-Verfahren von Stable Diffusion und erzeugt so rekursive Schleifen, in denen Grafikprozessoren ihre eigenen materiellen Bedingungen als Wärmebild betrachten.\n\nDie thermische Untersuchung zeigt, wie Rechenwärme die Spuren globaler Fertigungsabhängigkeiten trägt. Sie stellt die scheinbare Immaterialität digitaler Prozesse infrage, indem sie die Energieumwandlungen und geopolitischen Verhältnisse sichtbar macht, die in KI-Systeme eingeschrieben sind.",
+      "text_zh": "《Latent Heat Generation》是一項藝術研究計畫，透過熱影像的回授（Feedback）迴圈探問人工智慧系統隱藏的物質基礎設施：運算產生的廢熱在即時回授中成為人工智慧圖像的生成素材。作品從一位台灣藝術家的位置出發，源自一個個人的兩難——既受限於不足的運算能力，同時又與支撐全球人工智慧發展的那套基礎設施緊密相連。\n\n裝置揭示了多重意義的「生成」：熱能的產生、人工智慧圖像的生成、半導體製程的世代，以及技術依賴的世代政治。熱像儀拍攝運轉中的顯示卡，即時熱影像被傳進 Stable Diffusion，作為以圖生圖（image-to-image）的底圖；溫度本身並不是輸入，而是由顯示卡自行調節。由此形成遞迴迴圈，讓顯示卡透過熱影像檢視自身的物質條件。\n\n這項關於熱的研究揭示：運算產生的熱，帶著全球製造依賴的印記，並透過顯現嵌入人工智慧系統之中的能量轉換與地緣政治關係，質疑數位過程看似非物質的表象。",
+      "text_de": "Latent Heat Generation ist ein künstlerisches Forschungsprojekt, das die verborgenen materiellen Infrastrukturen von KI-Systemen über Rückkopplungsschleifen mit Wärmebildern untersucht: In Echtzeit wird die Abwärme der Rechner zum generativen Material für KI-Bilder. Aus der Perspektive eines taiwanischen Künstlers entwickelt, geht die Arbeit von einem persönlichen Dilemma aus – begrenzt durch fehlende Rechenleistung und zugleich mit genau jener Infrastruktur verbunden, die KI-Entwicklung weltweit erst ermöglicht.\n\nDie Installation macht mehrere Formen von „Generation“ sichtbar: die Erzeugung von Wärme, die Erzeugung von KI-Bildern, die Generationen der Halbleiterfertigung und die generationenübergreifende Politik technologischer Abhängigkeit. Eine Wärmebildkamera filmt die arbeitende Grafikkarte; ihr Livebild wird als Ausgangsbild in ein Image-to-Image-Verfahren von Stable Diffusion übertragen. Die Temperatur selbst dient nicht als Eingabe, die Karte reguliert sie selbst. So entstehen rekursive Schleifen, in denen Grafikprozessoren ihre eigenen materiellen Bedingungen als Wärmebild betrachten.\n\nDie thermische Untersuchung zeigt, wie Rechenwärme die Spuren globaler Fertigungsabhängigkeiten trägt. Sie stellt die scheinbare Immaterialität digitaler Prozesse infrage, indem sie die Energieumwandlungen und geopolitischen Verhältnisse sichtbar macht, die in KI-Systeme eingeschrieben sind.",
       "type_de": "Künstlerische Forschung, Videoinstallation",
       "type_zh": "藝術研究、影像裝置",
       "materials_de": "Computer, Grafikkarten, UV-Druck auf Wafer, Website",
@@ -1671,7 +1678,7 @@
           {
             "year": "2026",
             "text": "Overseas exhibition grant, National Culture and Arts Foundation (NCAF, Taiwan), for Steering Through the Inner Residue at WIP Arts & Technology Festival, Nicosia",
-            "text_zh": "國家文化藝術基金會（國藝會）海外展出補助，《Steering Through the Inner Residue》於尼科西亞 WIP 藝術與科技節展出"
+            "text_zh": "國家文化藝術基金會（國藝會）國際文化交流補助，《Steering Through the Inner Residue》於尼科西亞 WIP 藝術與科技節展出"
           },
           {
             "year": "2026",
@@ -1792,7 +1799,7 @@
             "year": "2018",
             "text": "id_city: Videos by Art Graduates of HK/China/Taiwan, PMQ, Hong Kong",
             "url": "https://www.pmq.org.hk/event/id_city-videos-by-art-graduates-of-china-hk-taiwan/",
-            "text_zh": "id_city：港陸台藝術畢業生錄像展，元創方（PMQ），香港"
+            "text_zh": "id_city：中港台藝術畢業生錄像藝術展，元創方（PMQ），香港"
           },
           {
             "year": "2018",
@@ -1941,7 +1948,7 @@
             "year": "2025",
             "text": "Reverberation of the Blackbox Image, Auditory Aesthetics Series, National Tsing Hua University",
             "url": "https://www.instagram.com/p/DO3v9txD3oe/",
-            "text_zh": "Reverberation of the Blackbox Image，聽覺美學系列講座，國立清華大學",
+            "text_zh": "黑盒子圖像的殘響（Reverberation of the Blackbox Image），聽覺美學系列講座（Auditory Aesthetics），國立清華大學藝術科技研究所",
             "kind": "talk"
           },
           {
@@ -2044,15 +2051,15 @@
         "items": [
           {
             "year": "2026",
-            "text": "Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images, Expanded 2026: Conference on Animation and Interactive Art, ACM, forthcoming (DOI 10.1145/3840416.3840463), w/ Leon-Etienne Kühr",
-            "url": "https://www.academia.edu/181544684/Steering_Through_the_Inner_Residue_Feedback_as_an_Artistic_Strategy_against_Generative_Images",
-            "text_zh": "Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images，Expanded 2026：動畫與互動藝術研討會（Conference on Animation and Interactive Art），ACM，即將出版（DOI 10.1145/3840416.3840463），與 Leon-Etienne Kühr",
+            "text": "Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images, Expanded 2026: Conference on Animation and Interactive Art, ACM (DOI 10.1145/3840416.3840463), w/ Leon-Etienne Kühr",
+            "url": "https://dl.acm.org/doi/10.1145/3840416.3840463",
+            "text_zh": "Steering Through the Inner Residue: Feedback as an Artistic Strategy against Generative Images，Expanded 2026：動畫與互動藝術研討會（Conference on Animation and Interactive Art），ACM（DOI 10.1145/3840416.3840463），與 Leon-Etienne Kühr",
             "thumb": "images/wix/4eb1dd_3b92c3e56ced47f4968d13c82a46d250~mv2.webp",
             "title": "Steering Through the Inner Residue",
             "subtitle": "Feedback as an Artistic Strategy against Generative Images",
-            "venue": "Expanded 2026: Conference on Animation and Interactive Art, ACM, forthcoming (DOI 10.1145/3840416.3840463) · with Leon-Etienne Kühr",
-            "venue_de": "Expanded 2026: Conference on Animation and Interactive Art, ACM, im Erscheinen (DOI 10.1145/3840416.3840463) · mit Leon-Etienne Kühr",
-            "venue_zh": "Expanded 2026：動畫與互動藝術研討會，ACM，即將出版（DOI 10.1145/3840416.3840463） · 與 Leon-Etienne Kühr"
+            "venue": "Expanded 2026: Conference on Animation and Interactive Art, ACM (DOI 10.1145/3840416.3840463) · with Leon-Etienne Kühr",
+            "venue_de": "Expanded 2026: Conference on Animation and Interactive Art, ACM (DOI 10.1145/3840416.3840463) · mit Leon-Etienne Kühr",
+            "venue_zh": "Expanded 2026：動畫與互動藝術研討會，ACM（DOI 10.1145/3840416.3840463） · 與 Leon-Etienne Kühr"
           },
           {
             "year": "2026",
@@ -2115,17 +2122,17 @@
             "venue_zh": "「你好，人類！」展覽專刊，策展人林欣傑、蔡宏賢，臺北當代藝術館，2024 年 1 月 27 日至 5 月 12 日（中英；英譯：吳中平）"
           },
           {
-            "year": "2024",
-            "text": "Positioning – A Prerequisite for Immersion, Digiarts, National Taiwan Museum of Fine Arts",
+            "year": "2022",
+            "text": "Positioning – A Prerequisite for Immersion, Digiarts, issue 2022.06, National Taiwan Museum of Fine Arts (in Chinese)",
             "url": "https://www.digiarts.org.tw/DigiArts/DataBasePage/4_236170297334000/Chi",
-            "text_zh": "定位—沉浸的先決條件（Positioning – A Prerequisite for Immersion），《Digiarts》，國立臺灣美術館",
+            "text_zh": "定位—沉浸的先決條件（Positioning – A Prerequisite for Immersion），《Digiarts》2022.06 期，國立臺灣美術館",
             "thumb": "images/texts/project-34-north-118-west.jpg",
             "credit": "Jeff Knowlton, Naomi Spellman, Jeremy Hight, Project 34 North 118 West (2003)",
             "title": "Positioning – A Prerequisite for Immersion",
             "title_zh": "定位—沉浸的先決條件",
-            "venue": "Digiarts, National Taiwan Museum of Fine Arts",
-            "venue_de": "Digiarts, National Taiwan Museum of Fine Arts",
-            "venue_zh": "《Digiarts》，國立臺灣美術館"
+            "venue": "Digiarts, issue 2022.06, National Taiwan Museum of Fine Arts (in Chinese)",
+            "venue_de": "Digiarts, Ausgabe 2022.06, National Taiwan Museum of Fine Arts (auf Chinesisch)",
+            "venue_zh": "《Digiarts》2022.06 期，國立臺灣美術館"
           },
           {
             "year": "2021",
@@ -2212,7 +2219,7 @@
             "year": "2018",
             "text": "Undefined Senses – That Party Looks So “Pa”, Huashan 1914 Creative Park, Taipei",
             "url": "",
-            "text_zh": "Undefined Senses – That Party Looks So “Pa”，華山1914文化創意產業園區，台北"
+            "text_zh": "登出台北（Undefined Senses）– That Party Looks So “Pa”，華山1914文化創意產業園區，台北"
           },
           {
             "year": "2017",
@@ -2249,7 +2256,7 @@
             "year": "2021",
             "text": "EAT – KuanDu Light Art Festival, TNUA Da Vinci's Kitchen, Taipei (Co-Artist)",
             "url": "https://w3.tnua.edu.tw/2021%E9%97%9C%E6%B8%A1%E5%85%89%E8%97%9D%E8%A1%93%E7%AF%80%E3%80%8Aeat%E9%81%94%E6%96%87%E8%A5%BF%E3%80%8B-%E6%8C%91%E6%88%B0%E5%91%B3%E8%95%BE%E8%88%87%E8%A6%96%E8%A6%BA%E7%9A%84%E5%85%A8%E6%96%B0/",
-            "text_zh": "EAT——關渡光藝術節，北藝大達文西廚房，台北（共同創作）"
+            "text_zh": "《EAT達文西》，關渡光藝術節，北藝大達文西廚房，台北（共同創作）"
           },
           {
             "year": "2021",
@@ -2267,19 +2274,19 @@
             "year": "2020",
             "text": "Wang Lien-cheng: The Scenery of Little Light, National Taichung Theater (New Media Art Team)",
             "url": "https://www.npac-ntt.org/program/events/c-BbfPi80tx6Q",
-            "text_zh": "王連晟：微光風景，臺中國家歌劇院（新媒體藝術團隊）"
+            "text_zh": "王連晟《無光風景》，臺中國家歌劇院台灣國際藝術節（NTT-TIFA），台中（新媒體藝術團隊）"
           },
           {
             "year": "2019",
             "text": "Baroque Robotics Studio — Ship of Fools, The Bamboo Curtain Studio, New Taipei City (Sound Design)",
             "url": "",
-            "text_zh": "巴洛克機器人工作室——愚人船，竹圍工作室，新北（聲音設計）"
+            "text_zh": "《瘋人船》，竹圍工作室，新北（聲音設計）"
           },
           {
             "year": "2019",
             "text": "Sleep 79 — Sanatorium for Information Shock-Workers, First Set, C-LAB, Taipei (Brainwave Programming Assistant)",
             "url": "https://rebase.clab.org.tw/Shu-Lea-Cheang_Sanatorium-for-Information-Shock-Workers-2_en",
-            "text_zh": "Sleep 79——資訊休克勞工療養院，第一場，空總臺灣當代文化實驗場，台北（腦波程式助理）"
+            "text_zh": "鄭淑麗、Matthew Fuller《SLEEP 79》：給資訊產業勞動者的聲音療養院，《Re-Base：當實驗成為態度》展，空總臺灣當代文化實驗場（C-LAB），台北（腦波程式助理）"
           },
           {
             "year": "2018",
@@ -2289,9 +2296,9 @@
           },
           {
             "year": "2018",
-            "text": "Undefined Senses, Huashan 1914 Creative Park, Taipei (Director / Technical Coordinator)",
+            "text": "Undefined Senses, Huashan 1914 Creative Park, Taipei (General Coordinator)",
             "url": "http://newmedia.tnua.edu.tw/UndefinedSenses/",
-            "text_zh": "Undefined Senses，華山1914文化創意產業園區，台北（導演／技術統籌）"
+            "text_zh": "登出台北（Undefined Senses），華山1914文化創意產業園區，台北（總召）"
           },
           {
             "year": "2018",
@@ -2590,9 +2597,9 @@
       "outlet": "Image Exhaust, Unthinking Photography (The Photographers’ Gallery)",
       "date": "2025-01",
       "url": "https://unthinking.photography/imgexhaust/self-cannibalizing-ai",
-      "note": "Entry on the 37C3 talk, credited to Ting-Chun Liu and Leon-Etienne Kühr: artistic methods for examining image-generation models, and how model collapse could happen through the repeated use of generated material.",
-      "note_de": "Eintrag zum 37C3-Vortrag, Ting-Chun Liu und Leon-Etienne Kühr zugeschrieben: künstlerische Methoden, Bildgeneratoren zu untersuchen, und wie ein Modellkollaps durch die wiederholte Verwendung generierten Materials entstehen könnte.",
-      "note_zh": "Unthinking Photography 平台上關於 37C3 講座的條目，署名劉庭均與 Leon-Etienne Kühr：介紹用藝術方法檢視圖像生成模型，以及反覆使用生成內容可能如何導致模型崩潰。"
+      "note": "Entry on the 37C3 talk by Ting-Chun Liu and Leon-Etienne Kühr: artistic methods for examining image-generation models, and how model collapse could happen through the repeated use of generated material.",
+      "note_de": "Eintrag zum 37C3-Vortrag von Ting-Chun Liu und Leon-Etienne Kühr: künstlerische Methoden, Bildgeneratoren zu untersuchen, und wie ein Modellkollaps durch die wiederholte Verwendung generierten Materials entstehen könnte.",
+      "note_zh": "The Photographers’ Gallery 的 Unthinking Photography 平台在「Image Exhaust」單元收錄了劉庭均與 Leon-Etienne Kühr 的 37C3 講座，介紹他們如何用藝術方法檢視圖像生成模型，以及反覆使用生成內容可能如何導致模型崩潰。"
     },
     {
       "group": "read",

@@ -181,3 +181,21 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 
 ## [2026-11-23] edit | Steering Through the Inner Residue paper link (artist)
 - works page and talks-and-writing.md: paper on Academia.edu
+
+## [2026-11-24] fix | Positioning – A Prerequisite for Immersion is 2022 (artist)
+- Digiarts issue 2022.06, not 2024: texts page, talks-and-writing.md, timeline.md. On the Materiality of AI stays 2025 (un/learn ai vol. 3, Mainz 2025)
+
+## [2026-11-25] edit | Steering Through the Inner Residue published (artist)
+- paper now in the ACM Digital Library (10.1145/3840416.3840463): works page, talks-and-writing.md, external-links.md; no longer "forthcoming"
+
+## [2026-11-25] fix | Latent Heat Generation signal path (artist diagram)
+- thermal camera image of the GPU → phone → NDI → StreamDiffusion (TouchDesigner) as image-to-image base; temperature only self-regulated via nvidia-smi, not input; Processing → LED panel, Parler → speaker
+
+## [2026-11-26] edit | Chinese originals in the CV (artist)
+- Undefined Senses is 登出台北; Liu was 總召 (General Coordinator), not Director / Technical Coordinator. NCAF grant in Chinese: 國際文化交流補助
+
+## [2026-11-27] edit | Chinese originals found online
+- 黑盒子圖像的殘響 (NTHU Auditory Aesthetics, 2025-09-24), 王連晟《無光風景》 (NTT-TIFA 2020, the CV had 微光風景), 《EAT達文西》 (Kuandu Light Art Festival 2021)
+
+## [2026-11-27] edit | Chinese originals (artist)
+- Ship of Fools is 《瘋人船》 (no artist name on the site); Sleep 79 is Shu Lea Cheang and Matthew Fuller's SLEEP 79 at C-LAB (Re-Base); id_city keeps its English title in Chinese too

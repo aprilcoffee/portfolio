@@ -329,11 +329,19 @@ def clip(c, title=""):
         attrs, esc(asset(c["src"])), ' poster="%s"' % esc(asset(c["poster"])) if c.get("poster") else "", esc(title))
 
 
+def work_img(x):
+    """A work image line: "path", "path | wide", or {"src", "wide", "alt", "alt_de", "alt_zh"} (the alt is also shown as caption).
+    Returns (path, wide, item or None)."""
+    if isinstance(x, dict):
+        return x["src"], bool(x.get("wide")), x
+    return re.sub(r"\s*\|\s*wide\s*$", "", x), bool(re.search(r"\|\s*wide\s*$", x)), None
+
+
 def cover_of(w):
     if w.get("cover"):
         return w["cover"]
     if w.get("images"):
-        return re.sub(r"\s*\|\s*wide\s*$", "", w["images"][0])
+        return work_img(w["images"][0])[0]
     if w.get("video_thumb"):
         return w["video_thumb"]
     v = video_id(w.get("video"))
@@ -959,13 +967,16 @@ for L in LANGS:
                 (u["Materials"], esc(tr(w, "materials", L))), (u["Topics"], esc(", ".join(wtags))), (u["With"], esc(w.get("collaborators")))]
         rows += [(u["Link"], a(l["url"], esc(l.get("label") or l["url"]))) for l in w.get("links", []) if l.get("url")]
         # an image line may end in " | wide": shown at full width (diagrams, slides), the others in two columns
-        ims = [re.sub(r"\s*\|\s*wide\s*$", "", x) for x in w.get("images", [])]
-        wide = [bool(re.search(r"\|\s*wide\s*$", x)) for x in w.get("images", [])]
+        parts = [work_img(x) for x in w.get("images", [])]
+        ims = [p[0] for p in parts]
+        wide = [p[1] for p in parts]
+        caps = [(p[2].get("alt_" + L) or p[2].get("alt")) if p[2] else "" for p in parts]  # own caption, else the generic alt
         plates = embed(w.get("video"), w.get("video_thumb", ""), w["title"]) + "".join(clip(c, w["title"]) for c in w.get("clips", []))
         moving = w.get("video") or w.get("clips")
         # full-width lead (video, clips or the first photo), then the rest in two masonry
         # columns so photos of different proportions leave no gaps; "wide" images break the columns
-        figs = [("<figure>%s</figure>" % img(im, 1600 if k == 0 or wide[k] else 1000, work_alt(w, L, k + 1, len(ims))), wide[k])
+        figs = [("<figure>%s%s</figure>" % (img(im, 1600 if k == 0 or wide[k] else 1000, caps[k] or work_alt(w, L, k + 1, len(ims))),
+                  '<figcaption>%s</figcaption>' % esc(caps[k]) if caps[k] else ""), wide[k])
                 for k, im in enumerate(ims)]
         if not moving and figs:
             plates += figs.pop(0)[0].replace("<figure>", '<figure class="hero">', 1)
@@ -1179,7 +1190,10 @@ for L in LANGS:
         alts = [(i.get("alt_" + L) or i.get("alt")) if isinstance(i, dict) else None for i in x.get("images", [])]
         figs = ["<figure>%s</figure>" % img(im, 1600 if k == 0 else 1000, alts[k] or "%s (%d/%d)" % (tr(x, "title", L), k + 1, len(pics)))
                 for k, im in enumerate(pics)]
-        plates = "".join(f.replace("<figure>", '<figure class="hero">', 1) for f in figs)  # screenshots: each at full width
+        # the cover at full width, the other images smaller in two columns (click to enlarge)
+        plates = (figs[0].replace("<figure>", '<figure class="hero">', 1) if figs else "") + (
+            '<div class="cols shop-cols">%s</div>' % "".join(figs[1:]) if len(figs) > 2 else
+            "".join(f.replace("<figure>", '<figure class="hero">', 1) for f in figs[1:]))
         text, held = tr(x, "text", L), tr(x, "held", L)
         tl = HREFLANG[L] if L == "en" or x.get("text_" + L) else "en"
         body = ('<article class="work"><aside class="work-info"><p class="kicker mono"><a href="%s">%s</a></p><h1>%s</h1>%s<p class="shop-sum">%s</p>%s<div class="prose"%s>%s</div>'

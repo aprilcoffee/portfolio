@@ -55,14 +55,14 @@ Exhibitions, performances and collaborative new-media / theatre projects, as lis
 
 ## New Media Projects & Theater
 
-- 2021 — EAT – KuanDu Light Art Festival, TNUA Da Vinci's Kitchen, Taipei (Co-Artist)
+- 2021 — EAT – KuanDu Light Art Festival (《EAT達文西》), TNUA Da Vinci's Kitchen, Taipei (Co-Artist)
 - 2021 — Treasure Hill Light Festival, Treasure Hill Artist Village, Taipei (Programmer)
 - 2020 — Nuit Blanche, Nangang, Taipei (Programmer)
-- 2020 — Wang Lien-cheng: The Scenery of Little Light, National Taichung Theater (New Media Art Team)
-- 2019 — Baroque Robotics Studio — Ship of Fools, The Bamboo Curtain Studio, New Taipei City (Sound Design)
-- 2019 — Sleep 79 — Sanatorium for Information Shock-Workers, First Set, C-LAB, Taipei (Brainwave Programming Assistant)
+- 2020 — Wang Lien-cheng: The Scenery of Little Light (王連晟《無光風景》, NTT-TIFA 2020), National Taichung Theater (New Media Art Team)
+- 2019 — Baroque Robotics Studio — Ship of Fools (《瘋人船》), The Bamboo Curtain Studio, New Taipei City (Sound Design)
+- 2019 — Sleep 79 — Sanatorium for Information Shock-Workers, First Set (Shu Lea Cheang and Matthew Fuller, SLEEP 79, Re-Base exhibition; in Chinese 給資訊產業勞動者的聲音療養院; brainwave coding by Wang Lien-Cheng, Liu as assistant), C-LAB, Taipei (Brainwave Programming Assistant)
 - 2018 — 夜長夢多, National Human Rights Museum, Taipei (Interactive Design)
-- 2018 — Undefined Senses, Huashan 1914 Creative Park, Taipei (Director / Technical Coordinator) ([link](http://newmedia.tnua.edu.tw/UndefinedSenses/))
+- 2018 — Undefined Senses (登出台北), Huashan 1914 Creative Park, Taipei (General Coordinator, 總召) ([link](http://newmedia.tnua.edu.tw/UndefinedSenses/))
 - 2018 — Yue-Jin Lantern Festival, Tainan (Co-Artist)
 - 2017 — Bengaluru Fantastic 2017, Rangoli Metro Arts Center, Bengaluru (Sound Engineer)
 - 2017 — Nuit Blanche, Taipei (Co-Artist)

@@ -23,7 +23,7 @@ Liu's diploma thesis at the Academy of Media Arts Cologne (KHM) is a web-based t
 
 - **Author:** Ting-Chun Liu, Academy of Media Arts Cologne. Written in the first person.
 - **Form:** a website with chapters and sections, read page by page: https://aprilcoffee.github.io/heat_as_image/index.html
-- **Code:** https://github.com/aprilcoffee/heat_as_image (MIT licence). GPU temperature is read, sent over OSC to StreamDiffusion in TouchDesigner, the image goes by NDI to a Processing visualisation, and Parler TTS adds a voice that speaks back. Needs an NVIDIA RTX card, Windows 10/11, Python 3.8+, TouchDesigner 2023+, Processing 4, CUDA 12.1.
+- **Code:** https://github.com/aprilcoffee/heat_as_image (MIT licence). A thermal camera image of the GPU goes by NDI into StreamDiffusion in TouchDesigner as the base image for image-to-image; the GPU temperature is only used for temperature control (nvidia-smi), not as input; Processing shows the result and Parler TTS adds a voice (see [Latent Heat Generation](../works/latent-heat-generation.md)). Needs an NVIDIA RTX card, Windows 10/11, Python 3.8+, TouchDesigner 2023+, Processing 4, CUDA 12.1.
 - **Essay version:** *Heat as (Generative) Image Making*, FIfF-Kommunikation 1/26, p. 64 (essay for the Weizenbaum-Studienpreis).
 - **Bibliography:** 43 entries, from Wiener and Turing to *Chip War* and *Atlas of AI*.
 - **Date:** the site's title block shows "2024-03-27"; Liu graduated with the thesis in June 2025.

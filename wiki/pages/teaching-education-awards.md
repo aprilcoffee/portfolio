@@ -42,7 +42,7 @@ exhibition. Readings: [Seminar reading list](topics/seminar-reading-list.md).
 
 ## Awards & Fellowships
 
-- 2026 — Overseas exhibition grant, National Culture and Arts Foundation (NCAF, 國藝會, Taiwan), for showing *Steering Through the Inner Residue* at the WIP Arts & Technology Festival in Nicosia, Cyprus
+- 2026 — Overseas exhibition grant, National Culture and Arts Foundation (NCAF, 國藝會, Taiwan; in Chinese 國際文化交流補助), for showing *Steering Through the Inner Residue* at the WIP Arts & Technology Festival in Nicosia, Cyprus
 - 2026 — Fellowship für Innovationen in der digitalen Hochschullehre Thüringen, Stifterverband. Project “Lokale KI-Anwendung im Bewegtbild-Studio” (Local AI Application in the Moving-Image Studio), until 2027 ([fellow page](https://www.stifterverband.org/digital-lehrfellows-thueringen/2026/liu))
 - 2025 — Weizenbaum-Studienpreis, FIfF e.V. (Forum InformatikerInnen für Frieden und gesellschaftliche Verantwortung). Postgraduate thesis: Heat as Generative Image Making
 
