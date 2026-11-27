@@ -55,10 +55,10 @@ Exhibitions, performances and collaborative new-media / theatre projects, as lis
 
 ## New Media Projects & Theater
 
-- 2021 — EAT – KuanDu Light Art Festival, TNUA Da Vinci's Kitchen, Taipei (Co-Artist)
+- 2021 — EAT – KuanDu Light Art Festival (《EAT達文西》), TNUA Da Vinci's Kitchen, Taipei (Co-Artist)
 - 2021 — Treasure Hill Light Festival, Treasure Hill Artist Village, Taipei (Programmer)
 - 2020 — Nuit Blanche, Nangang, Taipei (Programmer)
-- 2020 — Wang Lien-cheng: The Scenery of Little Light, National Taichung Theater (New Media Art Team)
+- 2020 — Wang Lien-cheng: The Scenery of Little Light (王連晟《無光風景》, NTT-TIFA 2020), National Taichung Theater (New Media Art Team)
 - 2019 — Baroque Robotics Studio — Ship of Fools, The Bamboo Curtain Studio, New Taipei City (Sound Design)
 - 2019 — Sleep 79 — Sanatorium for Information Shock-Workers, First Set, C-LAB, Taipei (Brainwave Programming Assistant)
 - 2018 — 夜長夢多, National Human Rights Museum, Taipei (Interactive Design)

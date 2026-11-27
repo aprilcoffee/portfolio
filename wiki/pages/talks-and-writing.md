@@ -33,7 +33,7 @@ Lectures, talks, workshops and publications, as listed in the CV on the website.
 - 2025 — Stereotype Encoding, Latent Space Symposium, Filmwerkstatt Düsseldorf, w/ Leon-Etienne Kühr ([organiser's page](https://www.filmwerkstatt-duesseldorf.de/latent-space-symposium/): 29 November 2025; see [Stereotype Encoding](texts/stereotype-encoding.md))
 - 2025 — Generating for the Archive (workshop), Latent Space, Storage Museum Düsseldorf, in cooperation with Filmwerkstatt Düsseldorf, w/ Leon-Etienne Kühr ([link](https://storagemuseum.org/en/program/generating-for-the-archive); 28 November 2025)
 - 2025 — 51 Ways to Spell the Image Giraffe: The Hidden Politics of Token Languages in Generative AI, 39th Chaos Communication Congress, w/ Leon-Etienne Kühr ([recording](https://media.ccc.de/v/39c3-51-ways-to-spell-the-image-giraffe-the-hidden-politics-of-token-languages-in-generative-ai))
-- 2025 — Reverberation of the Blackbox Image, Auditory Aesthetics Series, National Tsing Hua University
+- 2025 — Reverberation of the Blackbox Image (黑盒子圖像的殘響, 24 September 2025), Auditory Aesthetics Series, Institute of Art and Technology, National Tsing Hua University
 - 2025 — Bauhaus Master Lecture, Bauhaus University Weimar
 - 2025 — Artistic Experiments on AI Image, Taipei National University of the Arts
 - 2025 — Feedback in AI, Screen Walks, London, w/ Leon-Etienne Kühr ([link](https://www.screenwalks.com/); [event page, 26 March 2025](https://thephotographersgallery.org.uk/whats-on/watch-screen-walk-leon-etienne-kuhr-and-ting-chun-liu); [Fotomuseum Winterthur](https://www.fotomuseum.ch/en/events-post/screen-walk-mit-leon-etienne-kuehr-und-ting-chun-liu/))

@@ -193,3 +193,6 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 
 ## [2026-11-26] edit | Chinese originals in the CV (artist)
 - Undefined Senses is 登出台北; Liu was 總召 (General Coordinator), not Director / Technical Coordinator. NCAF grant in Chinese: 國際文化交流補助
+
+## [2026-11-27] edit | Chinese originals found online
+- 黑盒子圖像的殘響 (NTHU Auditory Aesthetics, 2025-09-24), 王連晟《無光風景》 (NTT-TIFA 2020, the CV had 微光風景), 《EAT達文西》 (Kuandu Light Art Festival 2021)

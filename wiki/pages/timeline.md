@@ -38,7 +38,7 @@ Year-by-year list of works, teaching, education, awards, talks, publications, ex
 - Lectures, Talks & Workshops: Stereotype Encoding, Latent Space Symposium, Filmwerkstatt Düsseldorf, w/ Leon-Etienne Kühr
 - Lectures, Talks & Workshops: Generating for the Archive, Storage Museum Düsseldorf, w/ Leon-Etienne Kühr
 - Lectures, Talks & Workshops: 51 Ways to Spell the Image Giraffe: The Hidden Politics of Token Languages in Generative AI, 39th Chaos Communication Congress, w/ Leon-Etienne Kühr
-- Lectures, Talks & Workshops: Reverberation of the Blackbox Image, Auditory Aesthetics Series, National Tsing Hua University
+- Lectures, Talks & Workshops: Reverberation of the Blackbox Image (黑盒子圖像的殘響, 24 September 2025), Auditory Aesthetics Series, Institute of Art and Technology, National Tsing Hua University
 - Lectures, Talks & Workshops: Bauhaus Master Lecture, Bauhaus University Weimar
 - Lectures, Talks & Workshops: Artistic Experiments on AI Image, Taipei National University of the Arts
 - Lectures, Talks & Workshops: Feedback in AI, Screen Walks, London, w/ Leon-Etienne Kühr
@@ -89,7 +89,7 @@ Year-by-year list of works, teaching, education, awards, talks, publications, ex
 ## 2021
 
 - Publications & Writing: The Rule Becomes the Author!, [ ] ground zero – poetics of technics and cognition
-- New Media Projects & Theater: EAT – KuanDu Light Art Festival, TNUA Da Vinci's Kitchen, Taipei (Co-Artist)
+- New Media Projects & Theater: EAT – KuanDu Light Art Festival (《EAT達文西》), TNUA Da Vinci's Kitchen, Taipei (Co-Artist)
 - New Media Projects & Theater: Treasure Hill Light Festival, Treasure Hill Artist Village, Taipei (Programmer)
 
 ## 2020
@@ -101,7 +101,7 @@ Year-by-year list of works, teaching, education, awards, talks, publications, ex
 - Exhibitions: Urban Interpreter Online, 241 Art Gallery, Hsinchu
 - Exhibitions: Ars Electronica .ART Global Gallery, online
 - New Media Projects & Theater: Nuit Blanche, Nangang, Taipei (Programmer)
-- New Media Projects & Theater: Wang Lien-cheng: The Scenery of Little Light, National Taichung Theater (New Media Art Team)
+- New Media Projects & Theater: Wang Lien-cheng: The Scenery of Little Light (王連晟《無光風景》, NTT-TIFA 2020), National Taichung Theater (New Media Art Team)
 
 ## 2019
 
