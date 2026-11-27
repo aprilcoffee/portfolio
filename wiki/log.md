@@ -196,3 +196,6 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 
 ## [2026-11-27] edit | Chinese originals found online
 - 黑盒子圖像的殘響 (NTHU Auditory Aesthetics, 2025-09-24), 王連晟《無光風景》 (NTT-TIFA 2020, the CV had 微光風景), 《EAT達文西》 (Kuandu Light Art Festival 2021)
+
+## [2026-11-27] edit | Chinese originals (artist)
+- Ship of Fools is 周曼儂《瘋人船》; Sleep 79 is Shu Lea Cheang and Matthew Fuller's SLEEP 79 at C-LAB (Re-Base); id_city keeps its English title in Chinese too
