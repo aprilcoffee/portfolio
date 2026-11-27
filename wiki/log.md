@@ -199,3 +199,6 @@ Append-only. Newest entries at the bottom. Format: `## [YYYY-MM-DD] action | sub
 
 ## [2026-11-27] edit | Chinese originals (artist)
 - Ship of Fools is 《瘋人船》 (no artist name on the site); Sleep 79 is Shu Lea Cheang and Matthew Fuller's SLEEP 79 at C-LAB (Re-Base); id_city keeps its English title in Chinese too
+
+## [2026-11-27] fix | Wang Lien-cheng projects (artist)
+- The Scenery of Little Light: Liu worked on the Taipei Digital Art Center part (March 2020), not the NTT-TIFA run; English title is the official one. SLEEP 79: assistant to Wang Lien-cheng (brainwave programming); "First Set" removed

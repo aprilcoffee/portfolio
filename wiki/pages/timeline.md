@@ -101,7 +101,7 @@ Year-by-year list of works, teaching, education, awards, talks, publications, ex
 - Exhibitions: Urban Interpreter Online, 241 Art Gallery, Hsinchu
 - Exhibitions: Ars Electronica .ART Global Gallery, online
 - New Media Projects & Theater: Nuit Blanche, Nangang, Taipei (Programmer)
-- New Media Projects & Theater: Wang Lien-cheng: The Scenery of Little Light (王連晟《無光風景》, NTT-TIFA 2020), National Taichung Theater (New Media Art Team)
+- New Media Projects & Theater: Wang Lien-cheng: The Scenery of Little Light (王連晟《無光風景》), Taipei Digital Art Center, 18–28 March 2020 (New Media Art Team; Liu worked on this first part, not the later NTT-TIFA performance at the National Taichung Theater)
 
 ## 2019
 
@@ -110,7 +110,7 @@ Year-by-year list of works, teaching, education, awards, talks, publications, ex
 - Performances: Xero Xerco 聲淵, Artalley Café, Taipei
 - Performances: Power Up! 全域通電！, Songshan Cultural and Creative Park, Taipei
 - New Media Projects & Theater: Baroque Robotics Studio — Ship of Fools (《瘋人船》), The Bamboo Curtain Studio, New Taipei City (Sound Design)
-- New Media Projects & Theater: Sleep 79 — Sanatorium for Information Shock-Workers, First Set (Shu Lea Cheang and Matthew Fuller, SLEEP 79, Re-Base exhibition; in Chinese 給資訊產業勞動者的聲音療養院; brainwave coding by Wang Lien-Cheng, Liu as assistant), C-LAB, Taipei (Brainwave Programming Assistant)
+- New Media Projects & Theater: Sleep 79 — Sanatorium for Information Shock-Workers (12–13 January 2019; Shu Lea Cheang and Matthew Fuller, SLEEP 79, Re-Base exhibition; in Chinese 給資訊產業勞動者的聲音療養院; brainwave coding by Wang Lien-Cheng, Liu as assistant), C-LAB, Taipei (assistant to Wang Lien-cheng, brainwave programming)
 
 ## 2018
 
